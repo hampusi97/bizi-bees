@@ -1,0 +1,2 @@
+<div class="wrap block"><h1>Shop by category</h1><div class="grid">{% for collection in collections %}<a class="category" href="{{ collection.url }}"><h2>{{ collection.title | escape }}</h2><p>{{ collection.products_count }} finds →</p></a>{% endfor %}</div></div>
+{% schema %}{"name": "Main List Collections", "settings": [], "presets": [{"name": "Main List Collections"}]}{% endschema %}
