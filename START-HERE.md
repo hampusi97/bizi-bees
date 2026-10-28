@@ -1,3 +1,5 @@
+> Current as of October 28, 2026: the live theme is already connected to this repo and Shopify commits theme edits to main. Do not upload bizi-bees-shopify-theme.zip over the published theme. The steps below are the original launch kit, not the current admin checklist. See operations/2026-10-28-christmas-listings.md.
+
 # bizi bees — launch kit
 
 Brand: bizi bees. Tagline: Good finds. Fresh beginnings. Honey #F2CB56, ink #202B29, cream #FCFAF5, sage #E8ECDF. Friendly, practical voice. Use actual-item photos with plain backgrounds, consistent lighting, and close-ups of flaws. Illustrations in the preview are category art, not inventory photos. The wordmark is text and needs no paid font.
