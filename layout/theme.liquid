@@ -1,1 +1,42 @@
-<!doctype html><html lang="{{ request.locale.iso_code }}"><head><meta name="msvalidate.01" content="9913346D7A5735826AFDF855E892A38C"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title><meta name="description" content="{{ page_description | default: shop.description | escape }}"><link rel="canonical" href="{{ canonical_url }}">{{ content_for_header }}{{ 'theme.css' | asset_url | stylesheet_tag }}{% if request.page_type == 'article' %}<script type="application/ld+json">{{ article | structured_data }}</script>{% endif %}</head><body><a class="skip" href="#MainContent">Skip to content</a>{% section 'header' %}<main id="MainContent">{{ content_for_layout }}</main>{% section 'footer' %}</body></html>
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#202B29">
+
+    <title>
+      {% if page_title %}
+        {{ page_title }}
+      {% else %}
+        {{ shop.name }}
+      {% endif %}
+      {% if current_tags %} — {{ current_tags | join: ', ' }}{% endif %}
+      {% if template.name == 'index' %} — Shop secondhand finds{% endif %}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% elsif template == 'index' %}
+      <meta name="description" content="Shop pre-loved books, electronics, toys, and more at bizi bees. Curated finds, honest condition notes, and friendly pricing.">
+    {% else %}
+      <meta name="description" content="{{ shop.name }} offers thoughtfully curated secondhand finds with quality details and easy shopping.">
+    {% endif %}
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title | default: shop.name | escape }}">
+    <meta property="og:description" content="{{ page_description | default: 'Shop pre-loved books, electronics, toys, and more at bizi bees.' | escape }}">
+    <meta property="og:site_name" content="{{ shop.name }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title | default: shop.name | escape }}">
+    <meta name="twitter:description" content="{{ page_description | default: 'Shop pre-loved books, electronics, toys, and more at bizi bees.' | escape }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {{ content_for_header }}
+  </head>
+
+  <body>
+    {{ content_for_layout }}
+  </body>
+</html>
