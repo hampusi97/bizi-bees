@@ -1,3 +1,44 @@
-{% assign hive_offer = shop.metaobjects.bizi_bees_offer.first15 %}<div class="brand-masthead"><a class="logo" href="{{ routes.root_url }}" aria-label="bizi bees home"><span class="bee">{% render 'bee' %}</span>bizi bees</a><p>Little prices. Lovely finds.</p></div><div class="announcement"><a href="/discount/FIRST15?redirect=%2Fcollections%2Fall" style="color:inherit;display:block;padding:4px 12px;text-decoration:none"><strong>{{ hive_offer.headline.value | default: "15% off orders $25+ · Use FIRST15" | escape }} ↗</strong><br><small>{{ hive_offer.terms.value | default: "One use per customer. Cannot combine with other discounts. Shipping and taxes extra." | escape }}</small></a></div><header class="header"><div class="wrap head"><nav aria-label="Main navigation"><a href="{{ routes.root_url }}#gift-picks">Gift picks</a><a href="{{ routes.all_products_collection_url }}">Shop all</a>{% assign primary_handles = 'christmas-gifts,books,clothing,electronics,games,toys,home-decor,beauty-products,more-finds' | split: ',' %}{% for handle in primary_handles %}{% assign nav_collection = collections[handle] %}{% if nav_collection != blank and nav_collection.products_count > 0 %}<a href="{{ nav_collection.url }}">{{ nav_collection.title | escape }}</a>{% endif %}{% endfor %}<a href="{{ routes.collections_url }}">All categories</a></nav><form class="search" action="{{ routes.search_url }}" role="search"><input name="q" type="search" placeholder="Find a treasure" aria-label="Search products"><input type="hidden" name="type" value="product"><button aria-label="Search">⌕</button></form><a href="{{ routes.cart_url }}">Bag ({{ cart.item_count }})</a></div></header>
-<style>.brand-masthead{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 16px 14px;background:#fff9e9;border-top:5px solid #e9b83f}.brand-masthead .logo{font-size:clamp(32px,5vw,46px);line-height:1.1;display:flex;align-items:center;gap:12px}.brand-masthead p{margin:6px 0 0;font-size:13px;letter-spacing:.08em;color:#59492b}.announcement small{font-size:11px;line-height:1.5}.head nav{flex:1}nav a{white-space:nowrap}@media(max-width:600px){.head .search{display:flex;order:4;width:100%;margin-left:0}.head .search input{flex:1;min-width:0;max-width:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.category{transition:none}.category:hover{transform:none}}</style>
-{% schema %}{"name": "Header", "settings": [{"type": "text", "id": "announcement", "label": "Announcement", "default": "Good finds. Fresh beginnings."}], "presets": [{"name": "Header"}]}{% endschema %}
+<div class="brand-bar">
+  <div class="wrap brand-bar-inner">
+    <span>Curated secondhand finds</span>
+    <span>Free shipping over $50</span>
+    <span>Fresh arrivals weekly</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap site-header-inner">
+    <a class="logo" href="{{ routes.root_url }}" aria-label="bizi bees home">
+      <span class="logo-mark">b</span>
+      <span class="logo-word">bizi bees</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ routes.all_products_collection_url }}">Shop all</a>
+      <a href="{{ routes.root_url }}">New</a>
+      <a href="{{ routes.root_url }}">Books</a>
+      <a href="{{ routes.root_url }}">Home</a>
+      <a href="{{ routes.root_url }}">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="text-link" href="{{ routes.root_url }}">Search</a>
+      <a class="button button-secondary" href="{{ routes.cart_url }}">Cart</a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Good finds. Fresh beginnings."
+    }
+  ],
+  "presets": [{ "name": "Header" }]
+}
+{% endschema %}
