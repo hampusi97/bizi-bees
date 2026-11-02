@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hampusi97.github.io/bizi-bees/sitemap.xml
