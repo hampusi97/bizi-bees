@@ -1,0 +1,416 @@
+<!-- Bizi Bees & Luma Wellness High-Conversion Engine -->
+<style>
+  /* Live Sales Toast */
+  #live-sales-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 99998;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 340px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  #live-sales-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .toast-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #FEF2F2;
+    color: #DC2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .toast-body {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #1F2937;
+  }
+  .toast-name {
+    font-weight: 600;
+    color: #111827;
+  }
+  .toast-item {
+    color: #DC2626;
+    font-weight: 500;
+  }
+  .toast-meta {
+    font-size: 11px;
+    color: #9CA3AF;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .toast-verified {
+    color: #059669;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Exit Intent Modal */
+  #bizi-exit-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: fadeIn 0.25s ease;
+  }
+  #bizi-exit-modal.active {
+    display: flex;
+  }
+  .exit-modal-card {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 460px;
+    width: 100%;
+    padding: 36px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 2px solid #FEE2E2;
+  }
+  .exit-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #9CA3AF;
+    cursor: pointer;
+    line-height: 1;
+    padding: 6px;
+  }
+  .exit-badge {
+    display: inline-block;
+    background: #FEE2E2;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .exit-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #111827;
+    line-height: 1.15;
+    margin: 0 0 10px 0;
+  }
+  .exit-desc {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+  .exit-coupon-box {
+    background: #F9FAFB;
+    border: 2px dashed #DC2626;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+  .exit-code-text {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #DC2626;
+    font-family: monospace;
+  }
+  .exit-claim-btn {
+    display: block;
+    width: 100%;
+    background: #DC2626;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .exit-claim-btn:hover {
+    background: #B91C1C;
+    transform: translateY(-1px);
+  }
+  .exit-dismiss-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 12px;
+    color: #9CA3AF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Live Viewers Pill */
+  .live-viewers-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #991B1B;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+  }
+  .live-dot {
+    width: 8px;
+    height: 8px;
+    background: #DC2626;
+    border-radius: 50%;
+    animation: pulseDot 1.5s infinite;
+  }
+  @keyframes pulseDot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+  }
+
+  /* Mobile Sticky Add to Cart Bar */
+  #mobile-sticky-atc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99997;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  #mobile-sticky-atc.visible {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 640px) {
+    #live-sales-toast {
+      bottom: auto;
+      top: 72px;
+      left: 14px;
+      right: 14px;
+      max-width: none;
+    }
+    .exit-modal-card {
+      padding: 26px 20px;
+    }
+    .exit-title {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<!-- Live Sales Toast HTML -->
+<div id="live-sales-toast">
+  <div class="toast-avatar" id="toast-icon">✨</div>
+  <div class="toast-body">
+    <div><span class="toast-name" id="toast-buyer">Sarah M.</span> in <span id="toast-city">Scottsdale, AZ</span></div>
+    <div>purchased <span class="toast-item" id="toast-product">Luma Glow 4-in-1 Wand</span></div>
+    <div class="toast-meta">
+      <span id="toast-time">4m ago</span>
+      <span>·</span>
+      <span class="toast-verified">✓ Verified Purchase</span>
+    </div>
+  </div>
+</div>
+
+<!-- Exit Intent Modal HTML -->
+<div id="bizi-exit-modal">
+  <div class="exit-modal-card">
+    <button class="exit-close-btn" id="exit-close-btn" aria-label="Close dialog">&times;</button>
+    <div class="exit-badge">🔥 TODAY ONLY — 35% OFF</div>
+    <h3 class="exit-title">Wait! Don&apos;t Leave Empty Handed!</h3>
+    <p class="exit-desc">Unlock an instant <strong>35% OFF</strong> on all clinical beauty tools, books, and vintage treasures today.</p>
+    <div class="exit-coupon-box">
+      <div style="font-size: 11px; text-transform: uppercase; color: #6B7280; font-weight: 700; margin-bottom: 2px;">Your Sitewide Promo Code:</div>
+      <div class="exit-code-text">PROVOTODAY</div>
+      <div style="font-size: 11px; color: #059669; font-weight: 600; margin-top: 4px;">✓ Valid for free nationwide shipping on orders over $50</div>
+    </div>
+    <a href="/discount/PROVOTODAY?redirect=/collections/all" class="exit-claim-btn" id="exit-claim-action">
+      CLAIM 35% OFF &amp; SHOP NOW &rarr;
+    </a>
+    <div>
+      <span class="exit-dismiss-link" id="exit-dismiss-btn">No thanks, I&apos;ll pay full price later</span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Sticky Add to Cart Bar -->
+{% if template.name == 'product' %}
+  <div id="mobile-sticky-atc">
+    <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 80 }}" alt="" style="width:40px;height:40px;border-radius:6px;object-fit:cover;flex-shrink:0;">
+      {% endif %}
+      <div style="min-width:0;flex:1;">
+        <div style="font-size:12px;font-weight:700;color:#111827;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ product.title | escape }}</div>
+        <div style="font-size:13px;font-weight:800;color:#dc2626;">
+          {{ product.price | times: 0.65 | money }}
+          <span style="font-size:11px;color:#9ca3af;text-decoration:line-through;">{{ product.price | money }}</span>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="sticky-atc-submit-btn" style="background:#dc2626;color:#ffffff;font-size:13px;font-weight:900;padding:10px 18px;border-radius:8px;border:none;cursor:pointer;flex-shrink:0;letter-spacing:0.04em;">
+      ADD TO BAG 🔒
+    </button>
+  </div>
+{% endif %}
+
+<script>
+  (function() {
+    // 1. Live Sales Toast Notifications
+    var salesData = [
+      { name: "Sarah M.", city: "Scottsdale, AZ", item: "Luma Glow 4-in-1 Wand", time: "3m ago", icon: "✨" },
+      { name: "Tyler B.", city: "Provo, UT", item: "Dune Deluxe Collector Edition", time: "9m ago", icon: "📦" },
+      { name: "Chloe T.", city: "Austin, TX", item: "Luma Firming Neck & Chest Wrap", time: "16m ago", icon: "✨" },
+      { name: "Marcus K.", city: "Salt Lake City, UT", item: "Vintage GameBoy Color", time: "28m ago", icon: "📦" },
+      { name: "Elena R.", city: "Miami, FL", item: "Clinical Activating Peptide Serum", time: "34m ago", icon: "✨" },
+      { name: "Jessica W.", city: "Denver, CO", item: "Cryo-Steel Facial Ice Roller", time: "42m ago", icon: "✨" },
+      { name: "David L.", city: "Orem, UT", item: "Harry Potter First Edition Hardcover", time: "53m ago", icon: "📦" },
+      { name: "Amanda S.", city: "San Diego, CA", item: "Red Light Hair & Scalp Massager", time: "1h ago", icon: "✨" }
+    ];
+
+    var toast = document.getElementById("live-sales-toast");
+    var toastBuyer = document.getElementById("toast-buyer");
+    var toastCity = document.getElementById("toast-city");
+    var toastProduct = document.getElementById("toast-product");
+    var toastTime = document.getElementById("toast-time");
+    var toastIcon = document.getElementById("toast-icon");
+    var saleIndex = 0;
+
+    function showNextSale() {
+      if (!toast) return;
+      var sale = salesData[saleIndex];
+      toastBuyer.textContent = sale.name;
+      toastCity.textContent = sale.city;
+      toastProduct.textContent = sale.item;
+      toastTime.textContent = sale.time;
+      toastIcon.textContent = sale.icon;
+
+      toast.classList.add("show");
+      setTimeout(function() {
+        toast.classList.remove("show");
+      }, 5500);
+
+      saleIndex = (saleIndex + 1) % salesData.length;
+    }
+
+    // First toast after 4 seconds, then repeat every 22 seconds
+    setTimeout(function() {
+      showNextSale();
+      setInterval(showNextSale, 22000);
+    }, 4000);
+
+    // 2. Exit Intent / Welcome Modal
+    var exitModal = document.getElementById("bizi-exit-modal");
+    var closeBtn = document.getElementById("exit-close-btn");
+    var dismissBtn = document.getElementById("exit-dismiss-btn");
+    var claimBtn = document.getElementById("exit-claim-action");
+
+    function dismissModal() {
+      if (exitModal) exitModal.classList.remove("active");
+      try { sessionStorage.setItem("bizi_exit_shown", "true"); } catch(e) {}
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", dismissModal);
+    if (dismissBtn) dismissBtn.addEventListener("click", dismissModal);
+    if (claimBtn) {
+      claimBtn.addEventListener("click", function() {
+        try { sessionStorage.setItem("bizi_exit_shown", "true"); } catch(e) {}
+      });
+    }
+
+    var modalShown = false;
+    try { modalShown = sessionStorage.getItem("bizi_exit_shown") === "true"; } catch(e) {}
+
+    if (!modalShown && exitModal) {
+      document.addEventListener("mouseleave", function(e) {
+        if (e.clientY <= 15 && !modalShown) {
+          modalShown = true;
+          exitModal.classList.add("active");
+        }
+      });
+
+      if (window.innerWidth <= 768) {
+        setTimeout(function() {
+          if (!modalShown) {
+            modalShown = true;
+            exitModal.classList.add("active");
+          }
+        }, 18000);
+      }
+    }
+
+    // 3. Product Page Live Viewer Injector & Sticky Mobile ATC Bar
+    var productForm = document.querySelector("form[action*=\"/cart/add\"]");
+    if (productForm) {
+      var viewerCount = Math.floor(Math.random() * 8) + 9;
+      var pill = document.createElement("div");
+      pill.className = "live-viewers-pill";
+      pill.innerHTML = "<span class=\"live-dot\"></span> <span><strong>" + viewerCount + " people</strong> viewing right now · High demand</span>";
+      productForm.parentNode.insertBefore(pill, productForm);
+
+      // Mobile Sticky Bar Trigger on Scroll
+      var stickyBar = document.getElementById("mobile-sticky-atc");
+      var stickyBtn = document.getElementById("sticky-atc-submit-btn");
+      var mainSubmitBtn = productForm.querySelector("button[type=\"submit\"]");
+
+      if (stickyBar && mainSubmitBtn && window.innerWidth <= 768) {
+        window.addEventListener("scroll", function() {
+          var rect = mainSubmitBtn.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            stickyBar.classList.add("visible");
+          } else {
+            stickyBar.classList.remove("visible");
+          }
+        });
+
+        if (stickyBtn) {
+          stickyBtn.addEventListener("click", function() {
+            mainSubmitBtn.click();
+          });
+        }
+      }
+    }
+  })();
+</script>

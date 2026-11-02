@@ -1,3 +1,71 @@
-{% render 'newsletter' %}
-<footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="logo" href="/"><span class="bee">{% render 'bee' %}</span>bizi bees</a><p>Good things deserve another go.</p><p class="muted" style="color:#c6cec4">Everyday finds with a little more story.</p></div><div><strong>Explore</strong><a href="/collections/all">Shop all finds</a><a href="/blogs/news">Gift guides</a><a href="/pages/about">Our story</a><a href="/pages/condition-guide">Condition guide</a></div><div><strong>Here to help</strong><a href="/pages/shipping">Shipping</a><a href="/pages/returns">Returns</a><a href="/pages/faq">FAQs</a><a href="/pages/contact">Contact</a>{% for policy in shop.policies %}{% if policy.body != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}{% endfor %}</div></div><small>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}. Powered by Shopify.</small></div></footer>
-{% schema %}{"name": "Footer", "settings": [], "presets": [{"name": "Footer"}]}{% endschema %}
+{% render "newsletter" %}
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="/"><span class="bee">{% render "bee" %}</span>bizi bees</a>
+        <p>Good things deserve another go.</p>
+        <p class="muted" style="color:#c6cec4">Everyday finds with a little more story.</p>
+      </div>
+      <div>
+        <strong>Explore</strong>
+        <a href="/collections/luma-wellness" style="color:#ffd166;font-weight:700;">✨ Luma Wellness Tech</a>
+        <a href="/collections/all">Shop all finds</a>
+        <a href="/blogs/news">Gift guides</a>
+        <a href="/pages/about">Our story</a>
+        <a href="/pages/condition-guide">Condition guide</a>
+      </div>
+      <div>
+        <strong>Here to help</strong>
+        <a href="/pages/the-science-of-red-light">The Science of Red Light</a>
+        <a href="/pages/glow-guarantee">60-Day Guarantee</a>
+        <a href="/pages/brand-protection-legal-notice" style="color:#fca5a5;font-weight:600;">⚖️ Brand Protection &amp; IP Policy</a>
+        <a href="/pages/shipping">Shipping</a>
+        <a href="/pages/returns">Returns</a>
+        <a href="/pages/faq">FAQs</a>
+        <a href="/pages/contact">Contact</a>
+        {% for policy in shop.policies %}
+          {% if policy.body != blank %}
+            <a href="{{ policy.url }}">{{ policy.title | escape }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Official Brand & Trademark Legal Protection Notice -->
+    <div style="border-top:1px solid rgba(255,255,255,0.15);margin-top:28px;padding-top:20px;font-size:12px;line-height:1.65;color:#9ca3af;text-align:left;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:16px;">⚖️</span>
+        <strong style="color:#f3f4f6;text-transform:uppercase;letter-spacing:0.06em;font-size:11px;">PROPRIETARY INTELLECTUAL PROPERTY &amp; LEGAL BRAND PROTECTION WARNING</strong>
+      </div>
+      <p style="margin:0 0 10px;color:#d1d5db;">
+        &copy; {{ "now" | date: "%Y" }} <strong>{{ shop.name | escape }}</strong> &amp; <strong>Luma Wellness&trade;</strong>. All Rights Reserved. 
+        All brand names, trade names, logos, custom imagery, product specifications, clinical comparisons, marketing copy, and creative assets displayed across this domain are the exclusive proprietary property of {{ shop.name | escape }}.
+      </p>
+      <p style="margin:0 0 10px;color:#fca5a5;font-weight:600;">
+        ⚠️ STRICT LEGAL WARNING: Any unauthorized use, reproduction, scraping, mirroring, counterfeiting, or commercial redistribution of our brand name, logo, trademarks, or content is strictly prohibited by law. 
+        Unauthorized parties are actively monitored and will be aggressively prosecuted to the fullest extent permitted by federal and international law, including immediate DMCA takedown notices, frozen payment processing accounts, federal civil litigation under the Lanham Act (15 U.S.C. &sect; 1114/1125), and statutory copyright damages up to $150,000 per willful violation plus attorney fees.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:11px;">
+        <a href="/pages/brand-protection-legal-notice" style="color:#ffd166;text-decoration:underline;font-weight:700;">View Full Legal &amp; Enforcement Policy &rarr;</a>
+        <a href="/pages/contact" style="color:#e5e7eb;text-decoration:underline;">Report Unauthorized Reseller / Infringement</a>
+      </div>
+    </div>
+
+    <small style="display:block;margin-top:18px;color:#6b7280;font-size:11px;">
+      &copy; {{ "now" | date: "%Y" }} {{ shop.name | escape }}. All trademarks and brand assets are protected under federal law. Powered by Shopify.
+    </small>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

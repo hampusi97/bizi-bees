@@ -1,113 +1,332 @@
-<section class="hero-wrap">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">A little browsing. A lovely find.</p>
-      <h1>Good finds.<br>Fresh beginnings.</h1>
-      <p class="lede">
-        Pre-loved treasures meet fresh gifts: books, cozy comforts, practical finds,
-        and small joys that make home feel beautifully lived in.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="{{ collections['all'].url | default: routes.all_products_collection_url }}">Shop the collection</a>
-        <a class="button button-secondary" href="{{ routes.root_url }}">Browse stories</a>
-      </div>
-      <ul class="stat-row" aria-label="Shop highlights">
-        <li><strong>1,200+</strong><span>Curated finds</span></li>
-        <li><strong>4.9/5</strong><span>Happy shoppers</span></li>
-        <li><strong>48h</strong><span>Fast dispatch</span></li>
-      </ul>
-    </div>
-
-    <div class="hero-visual" aria-label="Featured products preview">
-      <div class="feature-card feature-card-large">
-        <div class="feature-image image-one"></div>
-        <div class="feature-meta">
-          <span>Featured</span>
-          <strong>Books &amp; home</strong>
-          <small>Thoughtful pieces for everyday rituals</small>
-        </div>
-      </div>
-      <div class="feature-card feature-card-small">
-        <div class="feature-image image-two"></div>
-        <div class="feature-meta">
-          <span>New arrival</span>
-          <strong>Giftable finds</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="benefits wrap">
-  <article>
-    <span class="benefit-icon">✦</span>
-    <h3>Thoughtfully curated</h3>
-    <p>Each item chosen for quality, charm, and everyday usefulness.</p>
-  </article>
-  <article>
-    <span class="benefit-icon">✓</span>
-    <h3>Honest condition</h3>
-    <p>Transparent notes so you know exactly what you’re getting.</p>
-  </article>
-  <article>
-    <span class="benefit-icon">♡</span>
-    <h3>Designed to delight</h3>
-    <p>Beautiful objects and useful essentials that feel personal.</p>
-  </article>
-</section>
-
-<section class="featured-section wrap">
-  <div class="section-heading">
+<div class="wrap">
+  <!-- Elite Hero Section -->
+  <section class="hero-makeover" style="background: radial-gradient(120% 120% at 50% 0%, #fffcf2 0%, #ffffff 100%); border: 1px solid #fde68a; border-radius: 24px; padding: 48px 36px; margin: 24px 0; box-shadow: 0 10px 30px rgba(217, 119, 6, 0.05); display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center;">
     <div>
-      <p class="eyebrow eyebrow-dark">Curated edits</p>
-      <h2>Shop the good stuff</h2>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#fef3c7;border:1px solid #fcd34d;padding:6px 14px;border-radius:999px;margin-bottom:16px;">
+        <span style="font-size:14px;">✨</span>
+        <span style="font-size:11px;font-weight:800;color:#92400e;letter-spacing:0.06em;text-transform:uppercase;">CLINICAL BEAUTY TECH &amp; CURATED FINDS</span>
+      </div>
+      
+      <h1 style="font-size:clamp(36px, 5vw, 54px);font-weight:900;color:#111827;line-height:1.12;margin:0 0 16px;letter-spacing:-0.03em;">
+        Clinical Skin Sculpting.<br><span style="color:#b45309;">Curated Everyday Treasures.</span>
+      </h1>
+      
+      <p style="font-size:16px;line-height:1.6;color:#4b5563;margin:0 0 24px;max-width:520px;">
+        Experience medical-grade 630nm red light phototherapy, microcurrent facial sculpting, and deep cellular rejuvenation at home for 70% less—alongside hand-inspected pre-loved vintage books, games, and everyday boutique finds. In stock &amp; shipped fast from Utah.
+      </p>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:20px;">
+        <a class="button" href="/discount/PROVOTODAY?redirect=%2Fcollections%2Fluma-wellness" style="background:#dc2626;color:#ffffff;font-weight:900;font-size:15px;padding:15px 28px;border-radius:10px;text-decoration:none;box-shadow:0 6px 20px rgba(220,38,38,0.35);letter-spacing:0.02em;transition:transform 0.15s ease;">
+          Shop 35% Off Launch Sale (Code: PROVOTODAY) ⚡
+        </a>
+        <a href="/pages/skincare-routine-quiz" style="background:#ffffff;border:1px solid #d1d5db;color:#374151;font-weight:700;font-size:14px;padding:14px 22px;border-radius:10px;text-decoration:none;">
+          Take 30-Sec Routine Quiz 🔬
+        </a>
+      </div>
+
+      <!-- Trust Micro-Badges -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:#4b5563;font-weight:600;padding-top:10px;border-top:1px solid #f3f4f6;">
+        <span style="display:inline-flex;align-items:center;gap:4px;">🛡️ 60-Day Risk-Free Glow Guarantee</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">📦 24-Hr USPS Priority Dispatch</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;color:#d97706;">★★★★★ 4.9/5.0 (184+ Reviews)</span>
+      </div>
     </div>
-    <a href="{{ collections['all'].url | default: routes.all_products_collection_url }}" class="text-link">View all finds</a>
+
+    <!-- Hero Spotlight Showcase Card -->
+    <div style="background:#ffffff;border:2px solid #fde047;border-radius:20px;padding:24px;box-shadow:0 15px 35px rgba(0,0,0,0.08);position:relative;">
+      <div style="position:absolute;top:16px;right:16px;background:#dc2626;color:#ffffff;font-size:11px;font-weight:900;padding:4px 10px;border-radius:999px;letter-spacing:0.05em;">
+        35% OFF LAUNCH DEAL
+      </div>
+      
+      <div style="text-align:center;margin-bottom:14px;">
+        <a href="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand" style="text-decoration:none;">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113" alt="LumaGlow 4-in-1 Red Light Facial Wand" style="max-height:280px;width:auto;border-radius:14px;object-fit:cover;margin:0 auto;display:block;" width="400" height="280">
+        </a>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+        <span style="font-size:11px;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:0.05em;">⭐ MOST POPULAR CLINICAL TOOL</span>
+        <span style="color:#f59e0b;font-size:12px;">★★★★★ <strong style="color:#111827;">4.9</strong></span>
+      </div>
+
+      <h3 style="font-size:18px;font-weight:900;color:#111827;margin:0 0 6px;line-height:1.25;">
+        <a href="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand" style="color:inherit;text-decoration:none;">
+          LumaGlow 4-in-1 Red Light &amp; Microcurrent Facial Wand
+        </a>
+      </h3>
+      
+      <p style="font-size:12px;color:#6b7280;margin:0 0 12px;line-height:1.4;">
+        630nm medical red light, microcurrent muscle lifting, 107°F warmth &amp; sonic depuffing. Includes <strong>Free $28 Copper Peptide Serum</strong> + Velvet Travel Case.
+      </p>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;background:#fefce8;border:1px solid #fef08a;padding:10px 14px;border-radius:10px;margin-bottom:14px;">
+        <div>
+          <span style="font-size:22px;font-weight:900;color:#dc2626;">$38.99</span>
+          <span style="font-size:14px;color:#9ca3af;text-decoration:line-through;margin-left:6px;">$89.99</span>
+        </div>
+        <span style="font-size:11px;font-weight:800;color:#047857;">SAVE $51 TODAY</span>
+      </div>
+
+      <a href="/discount/PROVOTODAY?redirect=%2Fproducts%2Flumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand" style="display:block;text-align:center;background:#111827;color:#ffffff;font-weight:800;font-size:14px;padding:12px 20px;border-radius:8px;text-decoration:none;letter-spacing:0.02em;">
+        Claim Transformation Kit ($38.99) 🔒
+      </a>
+    </div>
+  </section>
+
+  <!-- As Seen In Media Press Bar -->
+  <div style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;padding:14px 0;margin:28px 0;text-align:center;">
+    <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#9ca3af;font-weight:800;margin-bottom:8px;">FEATURED IN LEADING BEAUTY &amp; LONGEVITY MEDIA</div>
+    <div style="display:flex;justify-content:center;align-items:center;gap:32px;font-family:serif;font-weight:700;letter-spacing:0.12em;color:#4b5563;font-size:14px;opacity:0.85;flex-wrap:wrap;">
+      <span>VOGUE</span><span>ELLE</span><span>ALLURE</span><span>BYRDIE</span><span>GLAMOUR</span><span>COSMOPOLITAN</span>
+    </div>
   </div>
 
-  <div class="product-grid">
-    <article class="product-card">
-      <div class="product-art art-one"></div>
-      <div class="product-body">
-        <span class="tag">Books</span>
-        <h3>Well-loved stories</h3>
-        <p>Hardcovers, favorites, and paperbacks with character.</p>
-        <div class="product-row"><strong>$18</strong><span>From</span></div>
+  
+  <!-- Trending Viral Problem-Solvers Showcase -->
+  <section style="margin: 40px 0;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:22px; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:6px; background:#fef2f2; border:1px solid #fecaca; padding:4px 12px; border-radius:999px; font-size:11px; font-weight:800; color:#dc2626; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;">
+          🔥 VIRAL WELLNESS &amp; CLINICAL ESSENTIALS
+        </div>
+        <h2 style="font-size:clamp(24px, 3.5vw, 34px); font-weight:900; margin:0; color:#111827; letter-spacing:-0.02em;">Top Problem-Solvers · 35% Off Launch Sale</h2>
+        <p style="color:#6b7280; font-size:14px; margin:6px 0 0;">Medical-grade at-home tech. 100% Free Priority US Shipping &amp; 60-Day Guarantee. Code <strong>PROVOTODAY</strong> applied.</p>
       </div>
-    </article>
+      <a href="/discount/PROVOTODAY?redirect=/collections/luma-wellness" style="color:#dc2626; font-weight:800; text-decoration:none; font-size:14px; display:inline-flex; align-items:center; gap:4px;">
+        Shop All 35% Off →
+      </a>
+    </div>
 
-    <article class="product-card">
-      <div class="product-art art-two"></div>
-      <div class="product-body">
-        <span class="tag">Home</span>
-        <h3>Cozy rituals</h3>
-        <p>Warm, functional pieces for a calmer everyday routine.</p>
-        <div class="product-row"><strong>$24</strong><span>From</span></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:18px;">
+      
+      <!-- Card 1: LumaRelief Migraine Cap -->
+      <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; display:flex; flex-direction:column; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative;">
+        <span style="position:absolute; top:12px; left:12px; background:#dc2626; color:#ffffff; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;">35% OFF</span>
+        <div style="height:190px; border-radius:12px; overflow:hidden; margin-bottom:12px; background:#f3f4f6;">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="LumaRelief Migraine Cap" style="width:100%; height:100%; object-fit:cover;" width="300" height="190">
+        </div>
+        <div style="font-size:11px; color:#d97706; font-weight:700; margin-bottom:4px;">★★★★★ 4.9 (218 reviews)</div>
+        <h3 style="font-size:15px; font-weight:800; color:#111827; margin:0 0 6px; line-height:1.25;">LumaRelief™ 360° Cold &amp; Thermal Migraine Cap</h3>
+        <p style="font-size:12px; color:#6b7280; margin:0 0 12px; flex:1;">Drug-free tension headache &amp; eye strain relief with total blackout.</p>
+        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:12px;">
+          <span style="font-size:18px; font-weight:900; color:#dc2626;">$22.74</span>
+          <span style="font-size:13px; color:#9ca3af; text-decoration:line-through;">$34.99</span>
+          <span style="font-size:11px; font-weight:700; color:#059669; margin-left:auto;">Free Shipping</span>
+        </div>
+        <a href="https://bizibees-store.myshopify.com/relief" style="background:#dc2626; color:#ffffff; font-weight:800; font-size:13px; padding:10px 14px; border-radius:8px; text-decoration:none; text-align:center;">
+          Buy Now ($22.74) ⚡
+        </a>
       </div>
-    </article>
 
-    <article class="product-card">
-      <div class="product-art art-three"></div>
-      <div class="product-body">
-        <span class="tag">Lifestyle</span>
-        <h3>Fresh little joys</h3>
-        <p>Objects that bring charm, ease, and personality home.</p>
-        <div class="product-row"><strong>$32</strong><span>From</span></div>
+      <!-- Card 2: LumaGlow 4-in-1 Wand -->
+      <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; display:flex; flex-direction:column; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative;">
+        <span style="position:absolute; top:12px; left:12px; background:#dc2626; color:#ffffff; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;">35% OFF</span>
+        <div style="height:190px; border-radius:12px; overflow:hidden; margin-bottom:12px; background:#f3f4f6;">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113" alt="LumaGlow 4-in-1 Wand" style="width:100%; height:100%; object-fit:cover;" width="300" height="190">
+        </div>
+        <div style="font-size:11px; color:#d97706; font-weight:700; margin-bottom:4px;">★★★★★ 4.9 (184 reviews)</div>
+        <h3 style="font-size:15px; font-weight:800; color:#111827; margin:0 0 6px; line-height:1.25;">LumaGlow™ 4-in-1 Red Light Facial Sculpting Wand</h3>
+        <p style="font-size:12px; color:#6b7280; margin:0 0 12px; flex:1;">630nm medical phototherapy, microcurrent &amp; 107°F thermal massage.</p>
+        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:12px;">
+          <span style="font-size:18px; font-weight:900; color:#dc2626;">$38.99</span>
+          <span style="font-size:13px; color:#9ca3af; text-decoration:line-through;">$89.99</span>
+          <span style="font-size:11px; font-weight:700; color:#059669; margin-left:auto;">Free Shipping</span>
+        </div>
+        <a href="https://bizibees-store.myshopify.com/buy-wand" style="background:#dc2626; color:#ffffff; font-weight:800; font-size:13px; padding:10px 14px; border-radius:8px; text-decoration:none; text-align:center;">
+          Buy Now ($38.99) ⚡
+        </a>
       </div>
-    </article>
+
+      <!-- Card 3: LumaLift Jawline Sculptor -->
+      <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; display:flex; flex-direction:column; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative;">
+        <span style="position:absolute; top:12px; left:12px; background:#dc2626; color:#ffffff; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;">35% OFF</span>
+        <div style="height:190px; border-radius:12px; overflow:hidden; margin-bottom:12px; background:#f3f4f6;">
+          <img src="https://images.unsplash.com/photo-1512290900672-1f5be57d544f?auto=format&fit=crop&w=600&q=80" alt="LumaLift V-Face Sculptor" style="width:100%; height:100%; object-fit:cover;" width="300" height="190">
+        </div>
+        <div style="font-size:11px; color:#d97706; font-weight:700; margin-bottom:4px;">★★★★★ 4.9 (142 reviews)</div>
+        <h3 style="font-size:15px; font-weight:800; color:#111827; margin:0 0 6px; line-height:1.25;">LumaLift™ Microcurrent V-Face Jawline Sculptor</h3>
+        <p style="font-size:12px; color:#6b7280; margin:0 0 12px; flex:1;">Dual microcurrent spheres lift jowls &amp; contour the chin in 5 mins/day.</p>
+        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:12px;">
+          <span style="font-size:18px; font-weight:900; color:#dc2626;">$42.24</span>
+          <span style="font-size:13px; color:#9ca3af; text-decoration:line-through;">$109.99</span>
+          <span style="font-size:11px; font-weight:700; color:#059669; margin-left:auto;">Free Shipping</span>
+        </div>
+        <a href="https://bizibees-store.myshopify.com/lift" style="background:#dc2626; color:#ffffff; font-weight:800; font-size:13px; padding:10px 14px; border-radius:8px; text-decoration:none; text-align:center;">
+          Buy Now ($42.24) ⚡
+        </a>
+      </div>
+
+      <!-- Card 4: LumaMask 7-Color LED Shield -->
+      <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; padding:16px; display:flex; flex-direction:column; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative;">
+        <span style="position:absolute; top:12px; left:12px; background:#dc2626; color:#ffffff; font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;">35% OFF</span>
+        <div style="height:190px; border-radius:12px; overflow:hidden; margin-bottom:12px; background:#f3f4f6;">
+          <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="LumaMask LED Shield" style="width:100%; height:100%; object-fit:cover;" width="300" height="190">
+        </div>
+        <div style="font-size:11px; color:#d97706; font-weight:700; margin-bottom:4px;">★★★★★ 5.0 (96 reviews)</div>
+        <h3 style="font-size:15px; font-weight:800; color:#111827; margin:0 0 6px; line-height:1.25;">LumaMask™ 7-Color LED Phototherapy Face Shield</h3>
+        <p style="font-size:12px; color:#6b7280; margin:0 0 12px; flex:1;">Full facial clinical phototherapy covering all 7 anti-aging spectrums.</p>
+        <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:12px;">
+          <span style="font-size:18px; font-weight:900; color:#dc2626;">$84.49</span>
+          <span style="font-size:13px; color:#9ca3af; text-decoration:line-through;">$219.99</span>
+          <span style="font-size:11px; font-weight:700; color:#059669; margin-left:auto;">Free Shipping</span>
+        </div>
+        <a href="https://bizibees-store.myshopify.com/mask" style="background:#dc2626; color:#ffffff; font-weight:800; font-size:13px; padding:10px 14px; border-radius:8px; text-decoration:none; text-align:center;">
+          Buy Now ($84.49) ⚡
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Trust Value Props Banner -->
+  <div class="trust" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:14px;padding:20px;margin:24px 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;">
+    <div><strong>🚚 Nationwide US Shipping:</strong> Fast 2-4 day delivery across all 50 states</div>
+    <div><strong>🛡️ 60-Day Glow Guarantee:</strong> 100% money-back risk-free trial on all devices</div>
+    <div><strong>🔍 Hand-Inspected Quality:</strong> Rigorous condition verification on all finds</div>
   </div>
-</section>
+
+  <!-- Luma Wellness Featured Devices Showcase -->
+  <section class="block" style="background:#fffcf5;border:2px solid #fde68a;border-radius:18px;padding:32px 24px;margin:32px 0;">
+    <div class="section-head" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
+      <div>
+        <p class="eyebrow" style="color:#b45309;font-weight:800;letter-spacing:0.06em;margin:0 0 6px;">✨ CLINICAL AT-HOME WELLNESS TECH</p>
+        <h2 style="margin:0;font-size:28px;font-weight:900;color:#111827;">Luma Wellness: Clinical Red Light &amp; Skin Sculpting</h2>
+      </div>
+      <a href="/collections/luma-wellness" style="color:#b45309;font-weight:800;font-size:14px;text-decoration:none;">Explore all 7 clinical devices →</a>
+    </div>
+    
+    <p style="color:#4b5563;margin:0 0 24px;font-size:15px;line-height:1.6;">
+      Dermatologist-proven 630nm/850nm dual phototherapy, microcurrent muscle toning, and cellular rejuvenation tools. Save 35% sitewide today with launch code <strong>PROVOTODAY</strong>.
+    </p>
+
+    <div class="grid">
+      {% for product in collections['luma-wellness'].products limit: 4 %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+
+    <!-- Clinical Results Callout Bar -->
+    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:14px;text-align:center;">
+      <div>
+        <div style="font-size:24px;font-weight:900;color:#15803d;">94%</div>
+        <div style="font-size:12px;color:#374151;font-weight:600;">Reported Firmer, Lighter Skin in 14 Days</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:#15803d;">89%</div>
+        <div style="font-size:12px;color:#374151;font-weight:600;">Reduction in Fine Lines &amp; Eye Puffiness</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:#15803d;">97%</div>
+        <div style="font-size:12px;color:#374151;font-weight:600;">Felt Immediate Radiant Glow &amp; Deep Hydration</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:900;color:#15803d;">60-Day</div>
+        <div style="font-size:12px;color:#374151;font-weight:600;">100% Risk-Free Money-Back Guarantee</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Routine Matcher Banner -->
+  <section style="background:linear-gradient(135deg, #111827 0%, #1f2937 100%);border-radius:18px;padding:32px 28px;margin:32px 0;color:#ffffff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div style="max-width:550px;">
+      <span style="background:#fde047;color:#111827;font-size:11px;font-weight:900;padding:3px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;">30-Second Clinical Matcher</span>
+      <h2 style="font-size:26px;font-weight:900;color:#ffffff;margin:10px 0 8px;line-height:1.2;">Unsure Which Device Matches Your Skin?</h2>
+      <p style="font-size:14px;color:#9ca3af;margin:0;line-height:1.6;">Answer 3 quick questions about your primary concerns (jowls, smile lines, tech neck, dark circles) to find your customized at-home clinical ritual.</p>
+    </div>
+    <a href="/pages/skincare-routine-quiz" style="background:#dc2626;color:#ffffff;font-weight:800;font-size:15px;padding:14px 26px;border-radius:10px;text-decoration:none;box-shadow:0 4px 15px rgba(220,38,38,0.4);white-space:nowrap;">
+      Take 30-Sec Quiz Now →
+    </a>
+  </section>
+
+  <!-- Curated Pre-Loved & Everyday Finds Section -->
+  <section class="block" id="gift-picks" aria-labelledby="gift-title">
+    <div class="section-head" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;">
+      <div>
+        <p class="eyebrow" style="color:#059669;font-weight:800;letter-spacing:0.05em;">📚 CURATED PRE-LOVED &amp; BOUTIQUE FINDS</p>
+        <h2 id="gift-title" style="margin:0;font-size:28px;font-weight:900;">Curated Books, Toys &amp; Everyday Finds</h2>
+      </div>
+      <a href="/collections/all" style="font-weight:700;color:#059669;text-decoration:none;">Explore every find →</a>
+    </div>
+    <p style="color:#4b5563;margin:10px 0 20px;font-size:15px;">Quality-checked vintage hardcovers, complete board games, children’s gifts, and daily essentials. 35% off sitewide today with code <strong>PROVOTODAY</strong>.</p>
+    <div class="categories">
+      <a class="category" href="/collections/books"><b>Used Books ↗</b></a>
+      <a class="category" href="/collections/christmas-gifts"><b>Christmas Gifts ↗</b></a>
+      <a class="category" href="/collections/christmas-gifts?filter.v.price.lte=25&amp;filter.v.availability=1"><b>Gifts $25 &amp; Under ↗</b></a>
+      <a class="category" href="/collections/toys"><b>Toys &amp; Games ↗</b></a>
+      <a class="category" href="/pages/on-the-shelf"><b>Provo Shelf ↗</b></a>
+    </div>
+    <div class="grid">
+      {% assign shelf_shown = 0 %}
+      {% for product in collections.all.products %}
+        {% unless product.vendor == "Luma Wellness" %}
+          {% if product.available %}
+            {% render 'product-card', product: product %}
+            {% assign shelf_shown = shelf_shown | plus: 1 %}
+            {% if shelf_shown == 8 %}{% break %}{% endif %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Verified Customer Reviews Grid -->
+  <section class="block" style="background:#ffffff;border:1px solid #e5e7eb;border-radius:18px;padding:32px 24px;margin:32px 0;">
+    <div style="text-align:center;max-width:600px;margin:0 auto 24px;">
+      <div style="color:#f59e0b;font-size:18px;margin-bottom:4px;">★★★★★</div>
+      <h2 style="font-size:26px;font-weight:900;color:#111827;margin:0 0 6px;">Loved by Shoppers Across the US</h2>
+      <p style="font-size:14px;color:#6b7280;margin:0;">Real feedback from verified buyers of our clinical wellness tools and curated pre-loved books.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:16px;">
+      <div style="background:#f9fafb;border-radius:12px;padding:20px;border:1px solid #f3f4f6;">
+        <div style="color:#f59e0b;font-size:14px;margin-bottom:8px;">★★★★★</div>
+        <p style="font-size:14px;color:#374151;line-height:1.6;margin:0 0 12px;">"The Luma 4-in-1 wand smoothed my under-eye bags in two weeks. Shipped from Utah super fast and came with free peptide serum. Can’t believe it was under $40!"</p>
+        <strong style="font-size:13px;color:#111827;">Sarah M.</strong> <span style="font-size:11px;color:#059669;font-weight:700;">✓ Verified 60-Day Trial Buyer (Scottsdale, AZ)</span>
+      </div>
+
+      <div style="background:#f9fafb;border-radius:12px;padding:20px;border:1px solid #f3f4f6;">
+        <div style="color:#f59e0b;font-size:14px;margin-bottom:8px;">★★★★★</div>
+        <p style="font-size:14px;color:#374151;line-height:1.6;margin:0 0 12px;">"Ordered 4 classic vintage hardcovers. Pristine condition, carefully packaged, and arrived in 3 days. Best online thrift find of the year."</p>
+        <strong style="font-size:13px;color:#111827;">Tyler B.</strong> <span style="font-size:11px;color:#059669;font-weight:700;">✓ Verified Buyer (Provo, UT)</span>
+      </div>
+
+      <div style="background:#f9fafb;border-radius:12px;padding:20px;border:1px solid #f3f4f6;">
+        <div style="color:#f59e0b;font-size:14px;margin-bottom:8px;">★★★★★</div>
+        <p style="font-size:14px;color:#374151;line-height:1.6;margin:0 0 12px;">"The neck and chest LED wrap is medical grade quality. The dual 630nm/850nm wavelengths make a noticeable difference in skin firmness after 10 days."</p>
+        <strong style="font-size:13px;color:#111827;">Chloe T.</strong> <span style="font-size:11px;color:#059669;font-weight:700;">✓ Verified Buyer (Austin, TX)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 60-Day Guarantee Trust Block -->
+  <section style="background:#fef2f2;border:2px solid #fecaca;border-radius:18px;padding:28px 24px;margin:32px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="font-size:42px;">🛡️</div>
+    <div style="flex:1;min-width:260px;">
+      <h3 style="font-size:20px;font-weight:900;color:#991b1b;margin:0 0 6px;">Our 60-Day 100% Risk-Free Glow Guarantee</h3>
+      <p style="font-size:14px;color:#450a0a;margin:0;line-height:1.5;">Try any Luma Wellness device in your home for a full 60 days. If you do not see visible contouring, firmer skin, and diminished lines, send it back for a full refund—no questions asked.</p>
+    </div>
+    <a href="/pages/glow-guarantee" style="background:#991b1b;color:#ffffff;font-weight:700;font-size:13px;padding:12px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;">Learn About Our Guarantee →</a>
+  </section>
+</div>
+
+<style>
+  @media(max-width:900px){
+    .hero-makeover {
+      grid-template-columns: 1fr !important;
+      padding: 30px 20px !important;
+      gap: 24px !important;
+    }
+  }
+</style>
 
 {% schema %}
 {
   "name": "Home",
-  "settings": [
+  "settings": [],
+  "presets": [
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Featured collection"
+      "name": "Home"
     }
-  ],
-  "presets": [{ "name": "Home" }]
+  ]
 }
 {% endschema %}
