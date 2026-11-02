@@ -1,0 +1,37 @@
+name: Storefront & 1-Click Link Health Check
+
+on:
+  schedule:
+    # Daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Live Endpoints & 1-Click Redirects
+        run: |
+          urls=(
+            "https://bizibees-store.myshopify.com/"
+            "https://bizibees-store.myshopify.com/buy-wand"
+            "https://bizibees-store.myshopify.com/relief"
+            "https://bizibees-store.myshopify.com/caps"
+            "https://bizibees-store.myshopify.com/mask"
+            "https://bizibees-store.myshopify.com/lift"
+            "https://bizibees-store.myshopify.com/clear"
+            "https://bizibees-store.myshopify.com/clean"
+            "https://bizibees-store.myshopify.com/bundle"
+          )
+          for u in "${urls[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" -L "$u")
+            echo "Checking $u -> HTTP $status"
+            if [ "$status" -ne 200 ]; then
+              echo "FAILED: $u returned HTTP $status"
+              exit 1
+            fi
+          done
+          echo "All critical checkout endpoints returned 200 OK!"
