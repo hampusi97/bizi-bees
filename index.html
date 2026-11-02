@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bizi Bees & Luma Wellness™ — Official Launch & VIP Deals</title>
+  <meta name="description" content="Clinical at-home red light phototherapy, 360° cold migraine relief, microcurrent sculpting & hand-inspected secondhand finds. Shipped fast from Provo, Utah with Free US Shipping.">
+  <link rel="canonical" href="https://bizibees-store.myshopify.com/">
+  
+  <style>
+    :root {
+      --primary: #dc2626;
+      --primary-hover: #b91c1c;
+      --accent: #d97706;
+      --dark: #111827;
+      --light: #fcfaf5;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--light); color: var(--dark); line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    .top-banner { background: var(--dark); color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; }
+    .top-banner a { color: #fde047; text-decoration: underline; margin-left: 8px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 18px 0; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 26px; font-weight: 900; letter-spacing: -0.03em; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--accent); }
+    .header-btn { background: var(--primary); color: #fff; font-weight: 800; padding: 10px 18px; border-radius: 8px; font-size: 13px; transition: 0.15s; }
+    .header-btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+    .hero { padding: 48px 0; text-align: center; background: radial-gradient(120% 120% at 50% 0%, #fffbeb 0%, #fcfaf5 100%); border-bottom: 1px solid var(--border); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: #fef2f2; border: 1px solid #fecaca; color: var(--primary); font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.03em; }
+    .hero p { font-size: 17px; color: #4b5563; max-width: 650px; margin: 0 auto 24px; }
+    .hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .btn-main { background: var(--primary); color: #fff; font-size: 16px; font-weight: 800; padding: 14px 28px; border-radius: 10px; box-shadow: 0 6px 18px rgba(220,38,38,0.3); }
+    .btn-secondary { background: #fff; border: 1px solid #d1d5db; color: #374151; font-size: 15px; font-weight: 700; padding: 14px 24px; border-radius: 10px; }
+
+    .trust-bar { display: flex; justify-content: center; gap: 24px; padding: 16px 0; font-size: 13px; font-weight: 600; color: #4b5563; flex-wrap: wrap; border-bottom: 1px solid var(--border); background: #fff; }
+
+    .section-title { margin: 40px 0 20px; text-align: center; }
+    .section-title h2 { font-size: 32px; font-weight: 900; margin-bottom: 6px; }
+    .section-title p { color: #6b7280; font-size: 15px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 60px; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(0,0,0,0.03); transition: 0.2s; position: relative; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+    .badge { position: absolute; top: 14px; left: 14px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
+    .card-img { height: 210px; border-radius: 12px; overflow: hidden; margin-bottom: 14px; background: #f3f4f6; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .rating { font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+    .card h3 { font-size: 16px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: #6b7280; margin-bottom: 14px; flex: 1; }
+    .price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; }
+    .sale-price { font-size: 20px; font-weight: 900; color: var(--primary); }
+    .compare-price { font-size: 14px; color: #9ca3af; text-decoration: line-through; }
+    .shipping-badge { font-size: 11px; font-weight: 700; color: #059669; margin-left: auto; }
+    .buy-btn { background: var(--primary); color: #fff; text-align: center; font-weight: 800; font-size: 14px; padding: 12px 16px; border-radius: 8px; transition: 0.15s; }
+    .buy-btn:hover { background: var(--primary-hover); }
+
+    footer { background: var(--dark); color: #fff; padding: 40px 0 20px; margin-top: 60px; font-size: 14px; text-align: center; }
+    footer a { color: #fde047; }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    ⚡ GRAND OPENING LAUNCH DEAL · 35% OFF SITEWIDE + 100% FREE US SHIPPING
+    <a href="https://bizibees-store.myshopify.com/discount/PROVOTODAY?redirect=/collections/all">USE CODE: PROVOTODAY →</a>
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">🐝 Bizi Bees &amp; <span>Luma Wellness</span></div>
+      <a class="header-btn" href="https://bizibees-store.myshopify.com/discount/PROVOTODAY?redirect=/collections/all">
+        Shop Store (35% Off) ↗
+      </a>
+    </div>
+  </header>
+
+  <div class="trust-bar">
+    <span>🛡️ 60-Day Money-Back Glow Guarantee</span>
+    <span>📦 100% Free Nationwide US Shipping</span>
+    <span>★ 4.9/5.0 Verified Customer Reviews</span>
+    <span>🇺🇸 Woman-Owned · Dispatched from Utah</span>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">✨ Clinical Beauty Tech &amp; Hand-Curated Secondhand Finds</div>
+      <h1>Clinical Skin Sculpting.<br><span style="color:#b45309;">Curated Everyday Treasures.</span></h1>
+      <p>Experience medical-grade 630nm red light phototherapy, 360° cold migraine compression, and microcurrent toning at home for 70% less—alongside hand-inspected pre-loved vintage books and family finds.</p>
+      <div class="hero-actions">
+        <a class="btn-main" href="https://bizibees-store.myshopify.com/discount/PROVOTODAY?redirect=/collections/luma-wellness">
+          Shop 35% Off Launch Sale (Code: PROVOTODAY) ⚡
+        </a>
+        <a class="btn-secondary" href="https://bizibees-store.myshopify.com/blogs/news">
+          Explore 100 Clinical Guides 🔬
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section-title">
+      <h2>Top Problem-Solvers · 1-Click Checkout</h2>
+      <p>Promo code <strong>PROVOTODAY</strong> pre-applied with 100% Free US Shipping &amp; 60-Day Risk-Free Guarantee.</p>
+    </div>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <span class="badge">35% OFF</span>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="LumaRelief Migraine Cap"></div>
+        <div class="rating">★★★★★ 4.9 (218 reviews)</div>
+        <h3>LumaRelief™ 360° Migraine Cap (Twin Rotation 2-Pack)</h3>
+        <p>Continuous cold therapy: wear one cap while the other stays freezing in the freezer. 100% light blackout.</p>
+        <div class="price-row">
+          <span class="sale-price">$32.49</span>
+          <span class="compare-price">$89.99</span>
+          <span class="shipping-badge">Free Shipping</span>
+        </div>
+        <a class="buy-btn" href="https://bizibees-store.myshopify.com/caps">Buy 2-Pack ($32.49) ⚡</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <span class="badge">35% OFF</span>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="LumaMask LED Shield"></div>
+        <div class="rating">★★★★★ 5.0 (96 reviews)</div>
+        <h3>LumaMask™ 7-Color LED Phototherapy Face Shield</h3>
+        <p>Full clinical face &amp; neck coverage across all 7 medical wavelengths for anti-aging and acne control.</p>
+        <div class="price-row">
+          <span class="sale-price">$84.49</span>
+          <span class="compare-price">$219.99</span>
+          <span class="shipping-badge">Free Shipping</span>
+        </div>
+        <a class="buy-btn" href="https://bizibees-store.myshopify.com/mask">Buy Now ($84.49) ⚡</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <span class="badge">35% OFF</span>
+        <div class="card-img"><img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113" alt="LumaGlow 4-in-1 Wand"></div>
+        <div class="rating">★★★★★ 4.9 (184 reviews)</div>
+        <h3>LumaGlow™ 4-in-1 Red Light Facial Sculpting Wand</h3>
+        <p>630nm medical phototherapy, galvanic microcurrent, 107°F thermal massage &amp; sonic vibration.</p>
+        <div class="price-row">
+          <span class="sale-price">$38.99</span>
+          <span class="compare-price">$89.99</span>
+          <span class="shipping-badge">Free Shipping</span>
+        </div>
+        <a class="buy-btn" href="https://bizibees-store.myshopify.com/buy-wand">Buy Now ($38.99) ⚡</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <span class="badge">35% OFF</span>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1512290900672-1f5be57d544f?auto=format&fit=crop&w=600&q=80" alt="LumaLift V-Face Sculptor"></div>
+        <div class="rating">★★★★★ 4.9 (142 reviews)</div>
+        <h3>LumaLift™ Microcurrent V-Face Jawline Sculptor</h3>
+        <p>Dual-wave microcurrent spheres lift sagging jowls and tone double chins in 5 minutes a day.</p>
+        <div class="price-row">
+          <span class="sale-price">$42.24</span>
+          <span class="compare-price">$109.99</span>
+          <span class="shipping-badge">Free Shipping</span>
+        </div>
+        <a class="buy-btn" href="https://bizibees-store.myshopify.com/lift">Buy Now ($42.24) ⚡</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Bizi Bees &amp; Luma Wellness. All rights reserved. Handcrafted in Provo, Utah.</p>
+      <p style="margin-top:8px; font-size:12px; color:#9ca3af;">Official Flagship Store: <a href="https://bizibees-store.myshopify.com">bizibees-store.myshopify.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
