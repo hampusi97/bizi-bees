@@ -9,18 +9,23 @@
 #    optimal price tiers (65-75% margin), images, and standardized Shopify schemas.
 # 3. Automated Catalog Pruning: Identifies commoditized, low-margin, or high-return
 #    risk items and flags/archives them so store conversion remains maximized.
-# 4. Multi-Channel Synchronization: Updates Shopify CSV imports, GitHub Pages showcase,
-#    and feeds newly curated winners into IndexNow and Google WebSub indexing.
+# 4. Instant Promotional Article Drafting: Whenever a new winner is discovered,
+#    automatically writes a dedicated high-converting comparison article promoting it.
+# 5. Multi-Channel Synchronization: Updates Shopify CSV imports, GitHub Pages showcase,
+#    and feeds newly curated winners and articles into IndexNow and Google WebSub.
 # ==============================================================================
 
 require "fileutils"
 require "json"
 require "time"
+require "net/http"
+require "uri"
 
 REPO_DIR ||= File.expand_path("..", File.dirname(__FILE__))
 CONTENT_DIR ||= File.join(REPO_DIR, "content")
 OPERATIONS_DIR ||= File.join(REPO_DIR, "operations")
 BASE_URL ||= "https://bizibees-store.myshopify.com"
+INDEXNOW_KEY ||= "bizibees7ec43be8a7af3cb99c2376ac"
 
 FileUtils.mkdir_p(CONTENT_DIR)
 FileUtils.mkdir_p(OPERATIONS_DIR)
@@ -31,10 +36,7 @@ IMPORT_CSV_PATH = File.join(CONTENT_DIR, "autonomous_dropship_curator.csv")
 # ==============================================================================
 # PREDICTIVE SCORING MODEL (0 to 100)
 # ==============================================================================
-# Viability Score = (Margin * 0.25) + (ProblemSeverity * 0.30) + 
-#                   (DupeSearchVolume * 0.20) + (Logistics * 0.15) + (Seasonality * 0.10)
 def calculate_viability(item)
-  # 1. Margin Multiplier
   markup = item[:retail_price] / item[:supplier_cogs].to_f
   margin_score = if markup >= 3.5
                    100
@@ -46,17 +48,10 @@ def calculate_viability(item)
                    15
                  end
 
-  # 2. Problem Severity (Pain, Anti-Aging, Confidence)
-  problem_score = item[:problem_severity] # 10 to 100
-
-  # 3. Dupe Search Volume (Active competitor benchmark)
-  dupe_score = item[:search_velocity] # 10 to 100
-
-  # 4. Logistics & Fragility Risk (Lightweight, non-liquid)
-  logistics_score = item[:logistics_score] # 10 to 100
-
-  # 5. Seasonal Momentum
-  seasonality_score = item[:seasonal_score] # 10 to 100
+  problem_score = item[:problem_severity]
+  dupe_score = item[:search_velocity]
+  logistics_score = item[:logistics_score]
+  seasonality_score = item[:seasonal_score]
 
   total = (margin_score * 0.25) + (problem_score * 0.30) + (dupe_score * 0.20) + 
           (logistics_score * 0.15) + (seasonality_score * 0.10)
@@ -75,10 +70,10 @@ CANDIDATE_POOL = [
     compare_at: 109.99,
     category: "Beauty Tech > Facial Sculpting",
     tags: "Microcurrent, V-Face, Jawline Sculptor, Anti-Aging, Trending",
-    problem_severity: 95, # Sagging jowls, loss of jawline definition
-    search_velocity: 95,  # NuFace Trinity dupe ($350)
-    logistics_score: 95,  # 160g, non-liquid, rechargeable
-    seasonal_score: 90,   # Holiday beauty gifting & party prep
+    problem_severity: 95,
+    search_velocity: 95,
+    logistics_score: 95,
+    seasonal_score: 90,
     image_url: "https://images.unsplash.com/photo-1512290900672-1f55b9e715f5?auto=format&fit=crop&w=1200&q=80",
     description: "Bio-compatible dual-sphere microcurrent delivers 350 microamps of electrical stimulation to tone the platysma muscle and stimulate ATP collagen production. Visible jawline lift in 14 days."
   },
@@ -92,10 +87,10 @@ CANDIDATE_POOL = [
     compare_at: 129.99,
     category: "Hair Care Tech > Hair Regrowth",
     tags: "Hair Growth, Red Light Therapy, 650nm Laser, Follicle Revival, Scalp Care",
-    problem_severity: 98, # Hair thinning, androgenic alopecia, shedding
-    search_velocity: 92,  # HairMax laser comb dupe ($299-$499)
-    logistics_score: 90,  # 210g, ergonomic, non-liquid
-    seasonal_score: 88,   # Postpartum and winter hair shedding
+    problem_severity: 98,
+    search_velocity: 92,
+    logistics_score: 90,
+    seasonal_score: 88,
     image_url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
     description: "Combines 650nm low-level clinical laser diodes with soothing micro-vibrations to increase blood flow to dermal papilla cells and reactivate dormant follicles."
   },
@@ -109,10 +104,10 @@ CANDIDATE_POOL = [
     compare_at: 69.99,
     category: "Beauty Tools > Pore Cleansing",
     tags: "Pore Cleansing, Ultrasonic Skin Scrubber, Blackhead Removal, Facial Spatula",
-    problem_severity: 92, # Clogged pores, blackheads, sebum buildup
-    search_velocity: 88,  # Dermapore dupe ($99)
-    logistics_score: 98,  # 95g, surgical stainless steel blade
-    seasonal_score: 85,   # Year-round essential
+    problem_severity: 92,
+    search_velocity: 88,
+    logistics_score: 98,
+    seasonal_score: 85,
     image_url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
     description: "24,000 Hz ultrasonic cavitation pulses atomize water to painlessly dislodge stubborn blackheads, excess sebum, and dead skin cells without bruising or scarring."
   },
@@ -126,10 +121,10 @@ CANDIDATE_POOL = [
     compare_at: 149.99,
     category: "Wellness & Recovery > Sleep Tech",
     tags: "Eye Massager, Thermal Compression, Screen Fatigue, Migraine Relief, Sleep",
-    problem_severity: 94, # Digital eye strain, dry eyes, insomnia, tension
-    search_velocity: 90,  # Renpho eye massager dupe ($80-$120)
-    logistics_score: 88,  # 320g, foldable 180 design
-    seasonal_score: 95,   # WFH screen strain, holiday wellness gifting
+    problem_severity: 94,
+    search_velocity: 90,
+    logistics_score: 88,
+    seasonal_score: 95,
     image_url: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80",
     description: "Acupoint air-cushion compression paired with 104°F soothing thermal heat relieves ocular pressure, stimulates meibomian glands, and induces deep REM sleep."
   },
@@ -143,10 +138,10 @@ CANDIDATE_POOL = [
     compare_at: 49.99,
     category: "Beauty Tools > Cryo Sculpting",
     tags: "Cryo Spoons, Ice Roller, Lymphatic Drainage, Depuffing, Sculpting",
-    problem_severity: 85, # Morning facial swelling, under-eye bags
-    search_velocity: 86,  # Fraîcheur Paris ice globes dupe ($65)
-    logistics_score: 98,  # Unbreakable surgical steel, cannot shatter like glass
-    seasonal_score: 88,   # Morning routine viral trend
+    problem_severity: 85,
+    search_velocity: 86,
+    logistics_score: 98,
+    seasonal_score: 88,
     image_url: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80",
     description: "Surgical-grade stainless steel contour spoons filled with freeze-retaining thermal fluid. Ergonomically shaped to lift cheekbones and drain lymph nodes without glass shattering."
   },
@@ -160,10 +155,10 @@ CANDIDATE_POOL = [
     compare_at: 169.99,
     category: "Body Tech > Lymphatic Drainage",
     tags: "Body Sculpting, Lymphatic Drainage, Cellulite Shaper, Red Light Body",
-    problem_severity: 88, # Cellulite, fluid retention, post-workout soreness
-    search_velocity: 84,  # NuBODY dupe ($399)
-    logistics_score: 85,  # 380g
-    seasonal_score: 85,   # Year-round wellness
+    problem_severity: 88,
+    search_velocity: 84,
+    logistics_score: 85,
+    seasonal_score: 85,
     image_url: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
     description: "High-frequency sonic pulses and thermal deep-tissue stimulation activate lymphatic drainage channels and visibly smooth the appearance of textured skin and fluid retention."
   },
@@ -178,8 +173,8 @@ CANDIDATE_POOL = [
     compare_at: 5.99,
     category: "Electronics > Cables",
     tags: "Cable, USB",
-    problem_severity: 15, # Commoditized, zero brand loyalty
-    search_velocity: 20,  # Saturated by Amazon Prime
+    problem_severity: 15,
+    search_velocity: 20,
     logistics_score: 90,
     seasonal_score: 30,
     image_url: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=1200&q=80",
@@ -197,7 +192,7 @@ CANDIDATE_POOL = [
     tags: "Face Oil, Fragile",
     problem_severity: 40,
     search_velocity: 35,
-    logistics_score: 15,  # Glass breakage + liquid leakage = 18%+ refund rate
+    logistics_score: 15,
     seasonal_score: 40,
     image_url: "https://images.unsplash.com/photo-1608248597359-2e6522c06129?auto=format&fit=crop&w=1200&q=80",
     description: "Liquid face oil in glass vial."
@@ -207,7 +202,6 @@ CANDIDATE_POOL = [
 def run_predictive_curation_cycle
   puts "[#{Time.now.iso8601}] 🧠 Running Autonomous Dropship Prediction & Curation Loop..."
 
-  # Load or initialize database
   db = if File.exist?(DATABASE_PATH)
          begin
            JSON.parse(File.read(DATABASE_PATH), symbolize_names: true)
@@ -227,7 +221,6 @@ def run_predictive_curation_cycle
     handle = candidate[:handle]
 
     if score >= 75.0
-      # PREDICTED WINNER: Add or maintain in active catalog
       status = "active"
       margin_pct = (((candidate[:retail_price] - candidate[:supplier_cogs]) / candidate[:retail_price].to_f) * 100).round(1)
       
@@ -247,7 +240,6 @@ def run_predictive_curation_cycle
       added_count += 1
       puts "  ⭐ PREDICTED WINNER (#{score}/100): '#{candidate[:title]}' [Margin: #{margin_pct}%, Sourced: #{candidate[:supplier]}]"
     else
-      # UNDERPERFORMING / HIGH-RISK ITEM: Prune & archive automatically
       db[:items][handle.to_sym] = {
         title: candidate[:title],
         cogs: candidate[:supplier_cogs],
@@ -273,8 +265,11 @@ def run_predictive_curation_cycle
   # Update HTML showcase & backlink directory
   update_showcase_backlinks(active_winners)
 
-  puts "\n[#{Time.now.iso8601}] ✅ Curation Summary: #{added_count} predicted winners active, #{pruned_count} underperformers safely archived."
-  { added: added_count, pruned: pruned_count, winners: active_winners }
+  # AUTOMATICALLY DRAFT PROMOTIONAL ARTICLES FOR WINNING PRODUCTS
+  newly_promoted = auto_promote_winners(active_winners)
+
+  puts "\n[#{Time.now.iso8601}] ✅ Curation Summary: #{added_count} predicted winners active, #{pruned_count} underperformers safely archived, #{newly_promoted.length} promotional articles drafted & queued."
+  { added: added_count, pruned: pruned_count, winners: active_winners, promoted: newly_promoted }
 end
 
 def export_shopify_csv(winners)
@@ -338,7 +333,6 @@ def export_shopify_csv(winners)
 end
 
 def update_showcase_backlinks(winners)
-  # Prepend new winners to directory.html if not already present
   dir_path = File.join(REPO_DIR, "directory.html")
   return unless File.exist?(dir_path)
 
@@ -362,6 +356,138 @@ def update_showcase_backlinks(winners)
     File.write(dir_path, html)
     puts "  ✓ Added #{links_added} newly predicted winning backlink assets to #{dir_path}"
   end
+end
+
+# ==============================================================================
+# AUTONOMOUS PROMOTIONAL ARTICLE GENERATOR FOR PREDICTED WINNERS
+# ==============================================================================
+def auto_promote_winners(winners)
+  blog_dir = File.join(REPO_DIR, "content", "blog-posts")
+  FileUtils.mkdir_p(blog_dir)
+
+  # Read existing blog post contents to see if product is already promoted
+  existing_content = Dir[File.join(blog_dir, "*.md")].map { |f| File.read(f) }.join(" ")
+
+  promoted_articles = []
+
+  winners.each do |w|
+    if existing_content.include?(w[:handle])
+      next # Already has an educational promotional article!
+    end
+
+    article_slug = "clinical-guide-#{w[:handle]}"
+    article_title = "Clinical Guide: How the #{w[:title]} Solves Root Causes for Less"
+    article_summary = "#{w[:description]} Read the clinical comparison vs luxury brands and claim 35% off with code PROVOTODAY."
+
+    html_content = <<~HTML
+      <div class="article-content" style="max-width:800px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;color:#1f2937;">
+        <div style="background:#fffcf2;border:2px solid #fde047;border-radius:12px;padding:16px 20px;margin-bottom:28px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+            <div>
+              <span style="background:#dc2626;color:#fff;font-size:10px;font-weight:900;padding:2px 8px;border-radius:999px;text-transform:uppercase;">⚡ Predicted Winner • 35% Off Launch</span>
+              <h4 style="margin:6px 0 2px;font-size:16px;font-weight:800;color:#111827;">#{w[:title]}: $#{w[:sale_price]} with code PROVOTODAY</h4>
+              <p style="margin:0;font-size:13px;color:#6b7280;">#{w[:description]} 60-day satisfaction guarantee &amp; free US priority shipping.</p>
+            </div>
+            <a href="#{BASE_URL}/products/#{w[:handle]}" style="background:#dc2626;color:#fff;font-weight:800;padding:12px 20px;border-radius:8px;font-size:13px;text-decoration:none;display:inline-block;">Get 35% Off ($#{w[:sale_price]}) &rarr;</a>
+          </div>
+        </div>
+
+        <p class="lead" style="font-size:18px;color:#374151;font-weight:500;">When looking for high-performance at-home wellness and self-care tools, shoppers are frequently confronted with a frustrating dilemma: paying $150 to $400 for designer brand names, or settling for fragile, unverified items.</p>
+
+        <p>The <strong>#{w[:title]}</strong> is engineered to break that compromise by delivering professional, clinical-grade specifications directly to consumers without distributor markups.</p>
+
+        <h2 style="font-size:24px;font-weight:800;color:#111827;margin-top:32px;">1. The Science &amp; Mechanism of Action</h2>
+        <p>#{w[:description]}</p>
+        <p>Unlike superficial cosmetic treatments that wash away at night, this protocol stimulates underlying cellular activity, fluid drainage, and structural tissue rejuvenation.</p>
+
+        <h2 style="font-size:24px;font-weight:800;color:#111827;margin-top:32px;">2. Brand Name Comparison</h2>
+        <div style="overflow-x:auto;margin:20px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;border:1px solid #e5e7eb;">
+            <thead>
+              <tr style="background:#f9fafb;border-bottom:2px solid #e5e7eb;">
+                <th style="padding:12px;text-align:left;">Specification</th>
+                <th style="padding:12px;text-align:left;">Overpriced Luxury Brand</th>
+                <th style="padding:12px;text-align:left;">#{w[:title]}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e5e7eb;">
+                <td style="padding:12px;font-weight:600;">Build Quality &amp; Specs</td>
+                <td style="padding:12px;">Standard Consumer Tier</td>
+                <td style="padding:12px;font-weight:600;color:#059669;">Medical / Clinical Grade</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e5e7eb;">
+                <td style="padding:12px;font-weight:600;">MSRP Price</td>
+                <td style="padding:12px;">$#{w[:compare_at]}</td>
+                <td style="padding:12px;">$#{w[:retail_price]}</td>
+              </tr>
+              <tr style="background:#fef2f2;">
+                <td style="padding:12px;font-weight:800;color:#dc2626;">Launch Deal (Code PROVOTODAY)</td>
+                <td style="padding:12px;">No Discount</td>
+                <td style="padding:12px;font-weight:800;color:#dc2626;">$#{w[:sale_price]} (Save over 60%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-size:24px;font-weight:800;color:#111827;margin-top:32px;">3. Risk-Free 60-Day In-Home Trial</h2>
+        <p>We know trying new wellness tools can feel uncertain. That's why every device comes with an unconditional 60-day money-back guarantee. If you don't experience visible results within 60 days, return it for a 100% full refund.</p>
+
+        <div style="background:#f3f4f6;border-radius:12px;padding:24px;text-align:center;margin-top:36px;">
+          <h3 style="margin-top:0;font-size:20px;font-weight:800;color:#111827;">Claim Your Launch Discount</h3>
+          <p style="color:#4b5563;font-size:14px;max-width:500px;margin:8px auto 16px;">Orders dispatch within 24 hours from Provo, Utah with 100% free nationwide delivery.</p>
+          <a href="#{BASE_URL}/products/#{w[:handle]}" style="background:#dc2626;color:#fff;font-weight:800;padding:14px 28px;border-radius:8px;font-size:15px;text-decoration:none;display:inline-block;">Order #{w[:title]} for $#{w[:sale_price]} &rarr;</a>
+        </div>
+      </div>
+    HTML
+
+    md_content = <<~MD
+      ---
+      title: #{article_title.to_json}
+      handle: #{article_slug.to_json}
+      author: "Kimberly Harter"
+      tags: #{w[:tags].to_json}
+      summary: #{article_summary.to_json}
+      published_at: #{Time.now.iso8601.to_json}
+      ---
+
+      #{html_content}
+    MD
+
+    file_dest = File.join(blog_dir, "#{article_slug}.md")
+    File.write(file_dest, md_content)
+    puts "  🎉 Autonomously drafted promotional article for predicted winner: '#{article_title}'"
+
+    # Append to trending CSV
+    csv_path = File.join(REPO_DIR, "content", "trending_articles_shopify_import.csv")
+    if File.exist?(csv_path)
+      clean_body = html_content.gsub('"', '""')
+      csv_row = %Q("#{article_slug}","#{article_title}","#{clean_body}","Kimberly Harter","#{w[:tags]}","#{article_summary}",true\n)
+      File.open(csv_path, "a") { |f| f.write(csv_row) }
+    end
+
+    # Instantly push to IndexNow
+    begin
+      new_urls = ["#{BASE_URL}/products/#{w[:handle]}", "#{BASE_URL}/blogs/news/#{article_slug}"]
+      idx_uri = URI("https://api.indexnow.org/indexnow")
+      req = Net::HTTP::Post.new(idx_uri)
+      req["Content-Type"] = "application/json; charset=utf-8"
+      req.body = {
+        host: "bizibees-store.myshopify.com",
+        key: INDEXNOW_KEY,
+        keyLocation: "#{BASE_URL}/#{INDEXNOW_KEY}.txt",
+        urlList: new_urls
+      }.to_json
+      Net::HTTP.start(idx_uri.hostname, idx_uri.port, use_ssl: true, open_timeout: 5, read_timeout: 5) { |h| h.request(req) }
+      puts "  ⚡ Instantly pushed #{w[:handle]} & #{article_slug} to IndexNow network!"
+    rescue => e
+      # Non-fatal
+    end
+
+    promoted_articles << { handle: article_slug, title: article_title, url: "#{BASE_URL}/blogs/news/#{article_slug}" }
+  end
+
+  promoted_articles
 end
 
 if __FILE__ == $0
