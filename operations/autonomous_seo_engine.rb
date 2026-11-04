@@ -26,7 +26,18 @@ REPO_DIR = File.expand_path("..", File.dirname(__FILE__))
 OPERATIONS_DIR = File.join(REPO_DIR, "operations")
 TIMESTAMP = Time.now.iso8601
 
+require_relative "trending_content_engine"
+
 puts "[#{TIMESTAMP}] 🤖 Launching Autonomous SEO, Backlinks & Indexing Engine..."
+
+# ==============================================================================
+# STEP 0: AUTONOMOUS TRENDING ARTICLE DRAFTING & PUBLISHING
+# ==============================================================================
+puts "\n[0/6] ✍️ Mining popular queries & drafting trending product articles..."
+new_article = run_trending_content_cycle
+if new_article
+  puts "  🎉 Successfully generated and published: '#{new_article[:title]}'"
+end
 
 # ==============================================================================
 # STEP 1: COMPREHENSIVE URL & SITEMAP DISCOVERY

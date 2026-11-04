@@ -34,10 +34,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add directory.html operations/seo_backlink_health_report.json || true
+          git add directory.html operations/seo_backlink_health_report.json content/blog-posts/ content/trending_articles_shopify_import.csv || true
           if git diff --staged --quiet; then
-            echo "No directory or SEO changes to commit."
+            echo "No directory, article, or SEO changes to commit."
           else
-            git commit -m "Auto-refresh High-DA backlink directory & SEO audit [skip ci]"
+            git commit -m "Auto-publish trending article & refresh High-DA backlink directory [skip ci]"
             git push
           fi
