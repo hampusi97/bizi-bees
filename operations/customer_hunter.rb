@@ -7,6 +7,9 @@ require "uri"
 require "json"
 require "time"
 
+$stdout.sync = true
+$stderr.sync = true
+
 TOKEN = ENV["SHOPIFY_TOKEN"] || "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"
 BASE_URL = "https://bizibees-store.myshopify.com"
 INDEXNOW_KEY = "bizibees7ec43be8a7af3cb99c2376ac"
