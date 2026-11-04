@@ -27,6 +27,7 @@ OPERATIONS_DIR = File.join(REPO_DIR, "operations")
 TIMESTAMP = Time.now.iso8601
 
 require_relative "trending_content_engine"
+require_relative "autonomous_dropship_curator"
 
 puts "[#{TIMESTAMP}] 🤖 Launching Autonomous SEO, Backlinks & Indexing Engine..."
 
@@ -38,6 +39,12 @@ new_article = run_trending_content_cycle
 if new_article
   puts "  🎉 Successfully generated and published: '#{new_article[:title]}'"
 end
+
+# ==============================================================================
+# STEP 0.5: AUTONOMOUS DROPSHIP PREDICTION, SOURCING & PRUNING
+# ==============================================================================
+puts "\n[0.5/6] 🧠 Running Predictive Dropship Sourcing & Catalog Pruning..."
+curation_summary = run_predictive_curation_cycle
 
 # ==============================================================================
 # STEP 1: COMPREHENSIVE URL & SITEMAP DISCOVERY
