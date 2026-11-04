@@ -1,26 +1,43 @@
-name: Autonomous Search Engine Indexer & Click Hunter
+name: Autonomous 24/7 SEO, Backlink & Indexing Engine
 
 on:
   schedule:
-    # Run every 4 hours automatically 24/7/365 in the cloud
-    - cron: '0 */4 * * *'
+    # Run every 3 hours automatically round-the-clock
+    - cron: '0 */3 * * *'
   push:
     branches:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  ping-search-engines:
+  run-seo-and-indexing-engine:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
 
-      - name: Run Autonomous Indexer & WebSub Broadcast
+      - name: Execute Autonomous SEO, Backlink & Indexing Engine
         run: |
-          ruby operations/customer_hunter.rb
+          ruby operations/autonomous_seo_engine.rb
+
+      - name: Commit and Push Updated Backlink Directory & SEO Audit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add directory.html operations/seo_backlink_health_report.json || true
+          if git diff --staged --quiet; then
+            echo "No directory or SEO changes to commit."
+          else
+            git commit -m "Auto-refresh High-DA backlink directory & SEO audit [skip ci]"
+            git push
+          fi

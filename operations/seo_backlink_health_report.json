@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-11-04T15:19:14-07:00",
+  "total_urls": 492,
+  "checks": {
+    "vanity_redirects": {
+      "/wand": {
+        "status": 301,
+        "ok": true,
+        "location": "/discount/PROVOTODAY?redirect=/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+      },
+      "/caps": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761979654311:1?discount=PROVOTODAY"
+      },
+      "/mask": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761823350951:1?discount=PROVOTODAY"
+      },
+      "/relief": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761824039079:1?discount=PROVOTODAY"
+      },
+      "/lift": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761821417639:1?discount=PROVOTODAY"
+      },
+      "/clean": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761952915623:1?discount=PROVOTODAY"
+      },
+      "/clear": {
+        "status": 301,
+        "ok": true,
+        "location": "/cart/51761822498983:1?discount=PROVOTODAY"
+      }
+    },
+    "discount_provotoday": {
+      "active": true,
+      "code": "302"
+    },
+    "google_shopping_feed": {
+      "ok": true,
+      "items": 224
+    },
+    "robots_txt": {
+      "ok": true
+    }
+  },
+  "indexing": {
+    "indexnow_pushed": 492,
+    "websub_accepted": 6,
+    "xml_rpc_broadcast": 3
+  }
+}
