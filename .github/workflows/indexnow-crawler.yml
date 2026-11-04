@@ -1,9 +1,12 @@
-name: IndexNow Search Engine Sync
+name: Autonomous Search Engine Indexer & Click Hunter
 
 on:
   schedule:
-    # Run every 6 hours automatically
-    - cron: '0 */6 * * *'
+    # Run every 4 hours automatically 24/7/365 in the cloud
+    - cron: '0 */4 * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,6 +21,6 @@ jobs:
         with:
           ruby-version: '3.2'
 
-      - name: Run Customer & Click Hunter (IndexNow Sync)
+      - name: Run Autonomous Indexer & WebSub Broadcast
         run: |
           ruby operations/customer_hunter.rb

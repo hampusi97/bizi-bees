@@ -107,6 +107,9 @@ puts "Broadcasting feeds to Google WebSub (PubSubHubbub)..."
 [
   "#{BASE_URL}/blogs/news.atom",
   "#{BASE_URL}/collections/luma-wellness.atom",
+  "#{BASE_URL}/collections/all.atom",
+  "#{BASE_URL}/sitemap_articles_1.xml",
+  "#{BASE_URL}/sitemap.xml",
   "#{BASE_URL}/pages/google-shopping-feed"
 ].each do |feed_url|
   begin
