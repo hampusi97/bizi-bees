@@ -1,73 +1,5 @@
 <!-- Bizi Bees & Luma Wellness High-Conversion Engine -->
 <style>
-  /* Live Sales Toast */
-  #live-sales-toast {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    z-index: 99998;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(220, 38, 38, 0.15);
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 340px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-  #live-sales-toast.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .toast-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: #FEF2F2;
-    color: #DC2626;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .toast-body {
-    flex: 1;
-    font-size: 13px;
-    line-height: 1.35;
-    color: #1F2937;
-  }
-  .toast-name {
-    font-weight: 600;
-    color: #111827;
-  }
-  .toast-item {
-    color: #DC2626;
-    font-weight: 500;
-  }
-  .toast-meta {
-    font-size: 11px;
-    color: #9CA3AF;
-    margin-top: 2px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .toast-verified {
-    color: #059669;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-  }
-
   /* Exit Intent Modal */
   #bizi-exit-modal {
     position: fixed;
@@ -173,33 +105,6 @@
     cursor: pointer;
   }
 
-  /* Live Viewers Pill */
-  .live-viewers-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #FEF2F2;
-    border: 1px solid #FCA5A5;
-    color: #991B1B;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 8px;
-    margin: 12px 0;
-  }
-  .live-dot {
-    width: 8px;
-    height: 8px;
-    background: #DC2626;
-    border-radius: 50%;
-    animation: pulseDot 1.5s infinite;
-  }
-  @keyframes pulseDot {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
-  }
-
   /* Mobile Sticky Add to Cart Bar */
   #mobile-sticky-atc {
     position: fixed;
@@ -224,13 +129,6 @@
   }
 
   @media (max-width: 640px) {
-    #live-sales-toast {
-      bottom: auto;
-      top: 72px;
-      left: 14px;
-      right: 14px;
-      max-width: none;
-    }
     .exit-modal-card {
       padding: 26px 20px;
     }
@@ -239,20 +137,6 @@
     }
   }
 </style>
-
-<!-- Live Sales Toast HTML -->
-<div id="live-sales-toast">
-  <div class="toast-avatar" id="toast-icon">✨</div>
-  <div class="toast-body">
-    <div><span class="toast-name" id="toast-buyer">Sarah M.</span> in <span id="toast-city">Scottsdale, AZ</span></div>
-    <div>purchased <span class="toast-item" id="toast-product">Luma Glow 4-in-1 Wand</span></div>
-    <div class="toast-meta">
-      <span id="toast-time">4m ago</span>
-      <span>·</span>
-      <span class="toast-verified">✓ Verified Purchase</span>
-    </div>
-  </div>
-</div>
 
 <!-- Exit Intent Modal HTML -->
 <div id="bizi-exit-modal">
@@ -280,7 +164,7 @@
   <div id="mobile-sticky-atc">
     <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
       {% if product.featured_image %}
-        <img src="{{ product.featured_image | image_url: width: 80 }}" alt="" style="width:40px;height:40px;border-radius:6px;object-fit:cover;flex-shrink:0;">
+        <img src="{{ product.featured_image | image_url: width: 80 }}" width="40" height="40" alt="" style="width:40px;height:40px;border-radius:6px;object-fit:cover;flex-shrink:0;">
       {% endif %}
       <div style="min-width:0;flex:1;">
         <div style="font-size:12px;font-weight:700;color:#111827;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ product.title | escape }}</div>
@@ -298,50 +182,6 @@
 
 <script>
   (function() {
-    // 1. Live Sales Toast Notifications
-    var salesData = [
-      { name: "Rachel K.", city: "Salt Lake City, UT", item: "LumaRelief™ Migraine 2-Cap Rotation Pack", time: "2m ago", icon: "❄️" },
-      { name: "Sarah M.", city: "Scottsdale, AZ", item: "LumaGlow 4-in-1 Red Light Wand", time: "5m ago", icon: "✨" },
-      { name: "Tyler B.", city: "Provo, UT", item: "Vintage DUNE Hardcover First Edition", time: "11m ago", icon: "📚" },
-      { name: "Megan P.", city: "Denver, CO", item: "LumaMask™ 7-Color LED Shield", time: "18m ago", icon: "✨" },
-      { name: "Chloe T.", city: "Austin, TX", item: "LumaLift™ V-Face Jawline Sculptor", time: "24m ago", icon: "💎" },
-      { name: "Marcus K.", city: "Orem, UT", item: "1988 Vintage Clue Board Game (Complete)", time: "33m ago", icon: "🎲" },
-      { name: "Elena R.", city: "Miami, FL", item: "LumaClear™ Ultrasonic Pore Spatula", time: "39m ago", icon: "✨" },
-      { name: "Jessica W.", city: "Phoenix, AZ", item: "Cryo-Glow Stainless Steel Ice Roller", time: "48m ago", icon: "❄️" },
-      { name: "Amanda S.", city: "San Diego, CA", item: "Activating Copper Peptide Serum", time: "57m ago", icon: "💧" }
-    ];
-
-    var toast = document.getElementById("live-sales-toast");
-    var toastBuyer = document.getElementById("toast-buyer");
-    var toastCity = document.getElementById("toast-city");
-    var toastProduct = document.getElementById("toast-product");
-    var toastTime = document.getElementById("toast-time");
-    var toastIcon = document.getElementById("toast-icon");
-    var saleIndex = 0;
-
-    function showNextSale() {
-      if (!toast) return;
-      var sale = salesData[saleIndex];
-      toastBuyer.textContent = sale.name;
-      toastCity.textContent = sale.city;
-      toastProduct.textContent = sale.item;
-      toastTime.textContent = sale.time;
-      toastIcon.textContent = sale.icon;
-
-      toast.classList.add("show");
-      setTimeout(function() {
-        toast.classList.remove("show");
-      }, 5500);
-
-      saleIndex = (saleIndex + 1) % salesData.length;
-    }
-
-    // First toast after 4 seconds, then repeat every 22 seconds
-    setTimeout(function() {
-      showNextSale();
-      setInterval(showNextSale, 22000);
-    }, 4000);
-
     // 2. Exit Intent / Welcome Modal
     var exitModal = document.getElementById("bizi-exit-modal");
     var closeBtn = document.getElementById("exit-close-btn");
@@ -385,11 +225,6 @@
     // 3. Product Page Live Viewer Injector & Sticky Mobile ATC Bar
     var productForm = document.querySelector("form[action*=\"/cart/add\"]");
     if (productForm) {
-      var viewerCount = Math.floor(Math.random() * 8) + 9;
-      var pill = document.createElement("div");
-      pill.className = "live-viewers-pill";
-      pill.innerHTML = "<span class=\"live-dot\"></span> <span><strong>" + viewerCount + " people</strong> viewing right now · High demand</span>";
-      productForm.parentNode.insertBefore(pill, productForm);
 
       // Mobile Sticky Bar Trigger on Scroll
       var stickyBar = document.getElementById("mobile-sticky-atc");
