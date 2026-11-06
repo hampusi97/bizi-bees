@@ -12,14 +12,19 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: "autonomous-seo-engine"
+  cancel-in-progress: false
+
 jobs:
   run-seo-and-indexing-engine:
+    if: github.actor != 'github-actions[bot]' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -34,10 +39,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add directory.html rss.xml sitemap.xml operations/seo_backlink_health_report.json operations/predictive_catalog_database.json content/blog-posts/ content/trending_articles_shopify_import.csv content/autonomous_dropship_curator.csv || true
+          git add directory.html rss.xml sitemap.xml index.html operations/seo_backlink_health_report.json operations/predictive_catalog_database.json content/blog-posts/ content/trending_articles_shopify_import.csv content/autonomous_dropship_curator.csv || true
           if git diff --staged --quiet; then
             echo "No directory, catalog, article, or SEO changes to commit."
           else
             git commit -m "Auto-curate dropship winners, prune weak items & refresh High-DA backlinks [skip ci]"
-            git push
+            git pull --rebase origin main || true
+            git push origin HEAD:main
           fi

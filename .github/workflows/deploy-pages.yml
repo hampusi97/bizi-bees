@@ -3,6 +3,9 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    # Redeploy GitHub Pages every 3 hours (15 mins after autonomous SEO engine)
+    - cron: '15 */3 * * *'
   workflow_dispatch:
 
 permissions:

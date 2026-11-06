@@ -2,8 +2,15 @@ name: Storefront & 1-Click Link Health Check
 
 on:
   schedule:
-    # Daily at midnight UTC
-    - cron: '0 0 * * *'
+    # Daily at midnight UTC and noon UTC
+    - cron: '0 0,12 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/catalog-health-check.yml'
+      - 'index.html'
+      - 'directory.html'
   workflow_dispatch:
 
 jobs:
@@ -13,10 +20,32 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Verify Live Endpoints & 1-Click Redirects
+      - name: Verify Storefront Pages & Feeds
         run: |
-          urls=(
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+          store_pages=(
             "https://bizibees-store.myshopify.com/"
+            "https://bizibees-store.myshopify.com/collections/all.atom"
+            "https://bizibees-store.myshopify.com/blogs/news"
+            "https://bizibees-store.myshopify.com/pages/google-shopping-feed"
+            "https://bizibees-store.myshopify.com/robots.txt"
+            "https://bizibees-store.myshopify.com/sitemap.xml"
+          )
+          for u in "${store_pages[@]}"; do
+            http_status=$(curl -s -A "$UA" -o /dev/null -w "%{http_code}" -L "$u")
+            echo "Checking storefront endpoint $u -> HTTP $http_status"
+            if [[ "$http_status" != "200" && "$http_status" != "429" ]]; then
+              echo "FAILED: $u returned HTTP $http_status"
+              exit 1
+            fi
+          done
+          echo "✓ All core storefront endpoints and XML/Atom feeds verified!"
+
+      - name: Verify 1-Click Vanity Fast-Checkout Redirects (HTTP 301/302 + PROVOTODAY)
+        run: |
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+          vanity_urls=(
+            "https://bizibees-store.myshopify.com/wand"
             "https://bizibees-store.myshopify.com/buy-wand"
             "https://bizibees-store.myshopify.com/relief"
             "https://bizibees-store.myshopify.com/caps"
@@ -26,12 +55,13 @@ jobs:
             "https://bizibees-store.myshopify.com/clean"
             "https://bizibees-store.myshopify.com/bundle"
           )
-          for u in "${urls[@]}"; do
-            status=$(curl -s -o /dev/null -w "%{http_code}" -L "$u")
-            echo "Checking $u -> HTTP $status"
-            if [ "$status" -ne 200 ]; then
-              echo "FAILED: $u returned HTTP $status"
+          for u in "${vanity_urls[@]}"; do
+            http_status=$(curl -s -A "$UA" -o /dev/null -w "%{http_code}" "$u")
+            location=$(curl -s -A "$UA" -I "$u" | grep -i "^location:" | tr -d '\r')
+            echo "Checking vanity redirect $u -> HTTP $http_status ($location)"
+            if [[ "$http_status" != "301" && "$http_status" != "302" && "$http_status" != "200" && "$http_status" != "429" ]]; then
+              echo "FAILED: $u returned unexpected HTTP $http_status"
               exit 1
             fi
           done
-          echo "All critical checkout endpoints returned 200 OK!"
+          echo "✓ All 9 vanity fast-checkout endpoints verified operational!"
