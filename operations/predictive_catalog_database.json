@@ -5,12 +5,15 @@
       "supplier": "CJ Dropshipping / Zendrop US (YunExpress 5-8 Day US)",
       "cogs": 9.8,
       "retail": 59.99,
-      "sale_price": 42.24,
+      "sale_price": 38.99,
+      "compare_at": 109.99,
+      "luxury_brand": "NuFACE Trinity+ Facial Trainer ($395)",
+      "fast_link": "/lift",
       "margin_pct": "83.7%",
-      "viability_score": 95.8,
+      "viability_score": 96.2,
       "category": "Beauty Tech > Facial Sculpting",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "lumacrown-650nm-laser-red-light-hair-regrowth-comb": {
       "title": "LumaCrown™ 650nm Laser & Red Light Hair Regrowth Therapy Comb",
@@ -18,11 +21,14 @@
       "cogs": 14.2,
       "retail": 69.99,
       "sale_price": 45.49,
+      "compare_at": 129.99,
+      "luxury_brand": "HairMax LaserBand 82 ($799)",
+      "fast_link": "/wand",
       "margin_pct": "79.7%",
-      "viability_score": 95.1,
+      "viability_score": 95.5,
       "category": "Hair Care Tech > Hair Regrowth",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "sonicglow-ultrasonic-skin-scrubber-pore-extractor": {
       "title": "SonicGlow™ 24kHz Ultrasonic Blackhead & Deep Pore Cleansing Spatula",
@@ -30,11 +36,14 @@
       "cogs": 6.1,
       "retail": 34.99,
       "sale_price": 22.74,
+      "compare_at": 69.99,
+      "luxury_brand": "DERMAFLASH DERMAPORE+ ($109)",
+      "fast_link": "/clean",
       "margin_pct": "82.6%",
-      "viability_score": 93.4,
+      "viability_score": 93.7,
       "category": "Beauty Tools > Pore Cleansing",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "lumasleep-smart-thermal-air-compression-eye-massager": {
       "title": "LumaSleep™ Smart Thermal Air-Compression Eye Massager",
@@ -42,11 +51,14 @@
       "cogs": 16.5,
       "retail": 79.99,
       "sale_price": 51.99,
+      "compare_at": 149.99,
+      "luxury_brand": "Therabody SmartGoggles ($199)",
+      "fast_link": "/caps",
       "margin_pct": "79.4%",
-      "viability_score": 93.9,
+      "viability_score": 94.0,
       "category": "Wellness & Recovery > Sleep Tech",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "cryocontour-stainless-steel-facial-sculpting-spoons": {
       "title": "CryoContour™ Professional Stainless Steel Ice Sculpting Spoons (Pair)",
@@ -54,11 +66,14 @@
       "cogs": 4.8,
       "retail": 29.99,
       "sale_price": 19.49,
+      "compare_at": 49.99,
+      "luxury_brand": "Joanna Czech Cryo Face Tools ($190)",
+      "fast_link": "/relief",
       "margin_pct": "84.0%",
-      "viability_score": 91.2,
+      "viability_score": 91.4,
       "category": "Beauty Tools > Cryo Sculpting",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "lumabody-sonic-lymphatic-drainage-body-contouring-shaper": {
       "title": "LumaBody™ Sonic Lymphatic Drainage & Body Sculpting Shaper",
@@ -66,11 +81,14 @@
       "cogs": 18.2,
       "retail": 89.99,
       "sale_price": 58.49,
+      "compare_at": 169.99,
+      "luxury_brand": "NuBODY Skin Toning Device ($399)",
+      "fast_link": "/lift",
       "margin_pct": "79.8%",
-      "viability_score": 89.5,
+      "viability_score": 89.8,
       "category": "Body Tech > Lymphatic Drainage",
       "status": "active",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "generic-plastic-micro-usb-charging-cable-1m": {
       "title": "Generic Micro USB Charging Cable 1m (Commoditized)",
@@ -78,8 +96,8 @@
       "retail": 3.99,
       "viability_score": 46.3,
       "status": "archived",
-      "prune_reason": "High logistics breakage/return risk",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "prune_reason": "High logistics breakage/dimensional weight risk",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     },
     "fragile-glass-liquid-face-oil-unpadded-dropper": {
       "title": "Fragile Glass Facial Oil Dropper (High Return Risk)",
@@ -88,12 +106,152 @@
       "viability_score": 37.8,
       "status": "archived",
       "prune_reason": "Low problem severity & commoditized margin",
-      "evaluated_at": "2026-11-05T21:16:07+00:00"
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumaneck-triple-action-led-microcurrent-neck-firming-sculptor": {
+      "title": "LumaNeck™ Triple-Action 630nm LED & Thermal Neck Firming Sculptor",
+      "supplier": "CJ Dropshipping US Priority (4-7 Day Delivery)",
+      "cogs": 8.4,
+      "retail": 49.99,
+      "sale_price": 32.49,
+      "compare_at": 119.99,
+      "luxury_brand": "CurrentBody Skin LED Neck & Decolletage ($380)",
+      "fast_link": "/lift",
+      "margin_pct": "83.2%",
+      "viability_score": 96.5,
+      "category": "Beauty Tech > Neck & Jawline",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumasteam-nano-ionic-facial-steamer-humidifier": {
+      "title": "LumaSteam™ Pro Nano-Ionic Warm Mist Pore Opening Facial Steamer",
+      "supplier": "Zendrop US Warehouse",
+      "cogs": 12.9,
+      "retail": 54.99,
+      "sale_price": 35.74,
+      "compare_at": 119.99,
+      "luxury_brand": "Dr. Dennis Gross Pro Facial Steamer ($159)",
+      "fast_link": "/clean",
+      "margin_pct": "76.5%",
+      "viability_score": 94.5,
+      "category": "Beauty Tech > Hydration & Pore Care",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumapulse-cervical-neck-traction-infrared-heat-stretcher": {
+      "title": "LumaPulse™ Ergonomic Cervical Neck Traction & Thermal Acupressure Pillow",
+      "supplier": "CJ Dropshipping US Fast",
+      "cogs": 7.5,
+      "retail": 39.99,
+      "sale_price": 25.99,
+      "compare_at": 79.99,
+      "luxury_brand": "Chirp Halo / Clinical Traction Systems ($129)",
+      "fast_link": "/caps",
+      "margin_pct": "81.2%",
+      "viability_score": 95.9,
+      "category": "Wellness & Recovery > Pain Relief",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumawand-high-frequency-argon-neon-acne-spot-zapper": {
+      "title": "LumaClear™ Clinical High-Frequency Glass Electrode Acne & Follicle Wand",
+      "supplier": "CJ Dropshipping / US Hub",
+      "cogs": 14.8,
+      "retail": 64.99,
+      "sale_price": 42.24,
+      "compare_at": 139.99,
+      "luxury_brand": "NuDerma Clinical High Frequency Wand ($119)",
+      "fast_link": "/clear",
+      "margin_pct": "77.2%",
+      "viability_score": 93.5,
+      "category": "Beauty Tech > Acne & Blemish Control",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumaglass-heated-obsidian-gua-sha-red-light-sculptor": {
+      "title": "LumaStone™ Heated Bian-Stone Gua Sha & 630nm Red Light Lymphatic Tool",
+      "supplier": "Zendrop / US Priority",
+      "cogs": 8.9,
+      "retail": 44.99,
+      "sale_price": 29.24,
+      "compare_at": 89.99,
+      "luxury_brand": "Therabody TheraFace Depuffing Wand ($149)",
+      "fast_link": "/wand",
+      "margin_pct": "80.2%",
+      "viability_score": 95.9,
+      "category": "Beauty Tech > Lymphatic & TMJ Relief",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumalash-heated-ionic-eyelash-curler-lift-pen": {
+      "title": "LumaLash™ 10-Second Thermal Keratin-Safe Eyelash Lift Sculptor",
+      "supplier": "CJ Dropshipping US",
+      "cogs": 4.5,
+      "retail": 27.99,
+      "sale_price": 18.19,
+      "compare_at": 54.99,
+      "luxury_brand": "GrandeLASH Heated Curler + Salon Lash Lift ($95)",
+      "fast_link": "/wand",
+      "margin_pct": "83.9%",
+      "viability_score": 93.0,
+      "category": "Beauty Tools > Eye Enhancement",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumavelvet-nano-crystal-painless-hair-eraser-exfoliator": {
+      "title": "LumaSilk™ Nano-Crystal Painless Hair Eraser & Keratosis Pilaris Buffer",
+      "supplier": "CJ Dropshipping Fast US",
+      "cogs": 3.9,
+      "retail": 24.99,
+      "sale_price": 16.24,
+      "compare_at": 49.99,
+      "luxury_brand": "Bleame Crystal Hair Eraser ($39)",
+      "fast_link": "/clean",
+      "margin_pct": "84.4%",
+      "viability_score": 93.5,
+      "category": "Body Care > Exfoliation",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "lumawrist-heated-tourmaline-carpal-tunnel-thumb-massager": {
+      "title": "LumaGrip™ Far-Infrared Heated Wrist & Hand Compression Massager",
+      "supplier": "CJ Dropshipping US Hub",
+      "cogs": 15.4,
+      "retail": 69.99,
+      "sale_price": 45.49,
+      "compare_at": 129.99,
+      "luxury_brand": "Breo iPalm520E Acupressure Hand Massager ($129)",
+      "fast_link": "/caps",
+      "margin_pct": "78.0%",
+      "viability_score": 93.8,
+      "category": "Wellness & Recovery > Joint & Hand Relief",
+      "status": "active",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "unbranded-cotton-face-towel-single-sheet": {
+      "title": "Basic Unbranded Cotton Washcloth (Zero Differentiation)",
+      "cogs": 2.1,
+      "retail": 4.99,
+      "viability_score": 35.0,
+      "status": "archived",
+      "prune_reason": "Low problem severity & commoditized margin",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
+    },
+    "oversized-heavy-ceramic-foot-basin-fragile": {
+      "title": "Oversized 12lb Ceramic Foot Bath Basin (Dimensional Weight Killer)",
+      "cogs": 28.0,
+      "retail": 49.99,
+      "viability_score": 28.3,
+      "status": "archived",
+      "prune_reason": "Low problem severity & commoditized margin",
+      "evaluated_at": "2026-11-05T21:23:37-07:00"
     }
   },
   "pruned": [
     "generic-plastic-micro-usb-charging-cable-1m",
-    "fragile-glass-liquid-face-oil-unpadded-dropper"
+    "fragile-glass-liquid-face-oil-unpadded-dropper",
+    "unbranded-cotton-face-towel-single-sheet",
+    "oversized-heavy-ceramic-foot-basin-fragile"
   ],
-  "last_updated": "2026-11-05T21:16:07+00:00"
+  "last_updated": "2026-11-05T21:23:37-07:00"
 }

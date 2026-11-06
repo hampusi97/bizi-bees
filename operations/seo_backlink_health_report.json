@@ -1,6 +1,8 @@
 {
-  "timestamp": "2026-11-05T21:16:07+00:00",
-  "total_urls": 492,
+  "timestamp": "2026-11-05T21:23:37-07:00",
+  "total_urls": 641,
+  "curated_winners_active": 14,
+  "pruned_items_archived": 4,
   "checks": {
     "vanity_redirects": {
       "/wand": {
@@ -52,8 +54,8 @@
     }
   },
   "indexing": {
-    "indexnow_pushed": 492,
-    "websub_accepted": 6,
+    "indexnow_pushed": 641,
+    "websub_accepted": 9,
     "xml_rpc_broadcast": 3
   }
 }
