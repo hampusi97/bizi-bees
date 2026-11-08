@@ -10,7 +10,7 @@
       "viability_score": 95.8,
       "category": "Beauty Tech > Facial Sculpting",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "lumacrown-650nm-laser-red-light-hair-regrowth-comb": {
       "title": "LumaCrown™ 650nm Laser & Red Light Hair Regrowth Therapy Comb",
@@ -22,7 +22,7 @@
       "viability_score": 95.1,
       "category": "Hair Care Tech > Hair Regrowth",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "sonicglow-ultrasonic-skin-scrubber-pore-extractor": {
       "title": "SonicGlow™ 24kHz Ultrasonic Blackhead & Deep Pore Cleansing Spatula",
@@ -34,7 +34,7 @@
       "viability_score": 93.4,
       "category": "Beauty Tools > Pore Cleansing",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "lumasleep-smart-thermal-air-compression-eye-massager": {
       "title": "LumaSleep™ Smart Thermal Air-Compression Eye Massager",
@@ -46,7 +46,7 @@
       "viability_score": 93.9,
       "category": "Wellness & Recovery > Sleep Tech",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "cryocontour-stainless-steel-facial-sculpting-spoons": {
       "title": "CryoContour™ Professional Stainless Steel Ice Sculpting Spoons (Pair)",
@@ -58,7 +58,7 @@
       "viability_score": 91.2,
       "category": "Beauty Tools > Cryo Sculpting",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "lumabody-sonic-lymphatic-drainage-body-contouring-shaper": {
       "title": "LumaBody™ Sonic Lymphatic Drainage & Body Sculpting Shaper",
@@ -70,7 +70,7 @@
       "viability_score": 89.5,
       "category": "Body Tech > Lymphatic Drainage",
       "status": "active",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "generic-plastic-micro-usb-charging-cable-1m": {
       "title": "Generic Micro USB Charging Cable 1m (Commoditized)",
@@ -79,7 +79,7 @@
       "viability_score": 46.3,
       "status": "archived",
       "prune_reason": "High logistics breakage/return risk",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     },
     "fragile-glass-liquid-face-oil-unpadded-dropper": {
       "title": "Fragile Glass Facial Oil Dropper (High Return Risk)",
@@ -88,12 +88,12 @@
       "viability_score": 37.8,
       "status": "archived",
       "prune_reason": "Low problem severity & commoditized margin",
-      "evaluated_at": "2026-11-08T17:19:52+00:00"
+      "evaluated_at": "2026-11-08T21:25:44+00:00"
     }
   },
   "pruned": [
     "generic-plastic-micro-usb-charging-cable-1m",
     "fragile-glass-liquid-face-oil-unpadded-dropper"
   ],
-  "last_updated": "2026-11-08T17:19:52+00:00"
+  "last_updated": "2026-11-08T21:25:44+00:00"
 }
