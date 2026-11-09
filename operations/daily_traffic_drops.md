@@ -2592,3 +2592,24 @@
 - **1-Click Link:** https://bizibees-store.myshopify.com/clean
 
 ---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 11:56 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---

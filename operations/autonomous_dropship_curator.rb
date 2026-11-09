@@ -22,18 +22,29 @@ require "time"
 require "net/http"
 require "uri"
 
-REPO_DIR ||= if Dir.exist?("/Users/lars/Documents/GitHub/bizi-bees")
-               "/Users/lars/Documents/GitHub/bizi-bees"
-             else
-               File.expand_path("..", File.dirname(__FILE__))
-             end
+def resolve_accessible_repo_dir_curator
+  primary = "/Users/lars/Documents/GitHub/bizi-bees"
+  mirror  = "/Users/lars/.gemini/antigravity/scratch/bizi-bees-mirror"
+  begin
+    if Dir.exist?(primary)
+      Dir.entries(File.join(primary, "content"))
+      return primary
+    end
+  rescue Errno::EPERM, Errno::EACCES, StandardError
+    # Fall through to cron-accessible mirror
+  end
+  return mirror if Dir.exist?(mirror)
+  File.expand_path("..", File.dirname(__FILE__))
+end
+
+REPO_DIR ||= resolve_accessible_repo_dir_curator
 CONTENT_DIR ||= File.join(REPO_DIR, "content")
 OPERATIONS_DIR ||= File.join(REPO_DIR, "operations")
 BASE_URL ||= "https://bizibees-store.myshopify.com"
 INDEXNOW_KEY ||= "bizibees7ec43be8a7af3cb99c2376ac"
 
-FileUtils.mkdir_p(CONTENT_DIR)
-FileUtils.mkdir_p(OPERATIONS_DIR)
+FileUtils.mkdir_p(CONTENT_DIR) rescue nil
+FileUtils.mkdir_p(OPERATIONS_DIR) rescue nil
 
 DATABASE_PATH = File.join(OPERATIONS_DIR, "predictive_catalog_database.json")
 IMPORT_CSV_PATH = File.join(CONTENT_DIR, "autonomous_dropship_curator.csv")

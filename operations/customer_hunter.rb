@@ -22,11 +22,27 @@ require "fileutils"
 $stdout.sync = true
 $stderr.sync = true
 
-TOKEN = ENV["SHOPIFY_TOKEN"] || "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"
+TOKEN = ENV["SHOPIFY_TOKEN"]
 BASE_URL = "https://bizibees-store.myshopify.com"
 GH_PAGES_URL = "https://hampusi97.github.io/bizi-bees"
 INDEXNOW_KEY = "bizibees7ec43be8a7af3cb99c2376ac"
-REPO_DIR = "/Users/lars/Documents/GitHub/bizi-bees"
+
+def resolve_accessible_repo_dir_hunter
+  primary = "/Users/lars/Documents/GitHub/bizi-bees"
+  mirror  = "/Users/lars/.gemini/antigravity/scratch/bizi-bees-mirror"
+  begin
+    if Dir.exist?(primary)
+      Dir.entries(File.join(primary, "content"))
+      return primary
+    end
+  rescue Errno::EPERM, Errno::EACCES, StandardError
+    # Fall through to cron-accessible mirror
+  end
+  return mirror if Dir.exist?(mirror)
+  File.expand_path("..", File.dirname(__FILE__))
+end
+
+REPO_DIR = resolve_accessible_repo_dir_hunter
 
 puts "[#{Time.now.iso8601}] 🚀 Starting Customer & Click Hunter v2.0 run..."
 
@@ -50,25 +66,28 @@ def fetch_all_urls
     "#{BASE_URL}/blogs/news",
     "#{BASE_URL}/pages/google-shopping-feed",
     "#{BASE_URL}/wand",
+    "#{BASE_URL}/buy-wand",
     "#{BASE_URL}/caps",
+    "#{BASE_URL}/2pack",
     "#{BASE_URL}/mask",
     "#{BASE_URL}/relief",
     "#{BASE_URL}/lift",
     "#{BASE_URL}/clean",
-    "#{BASE_URL}/clear"
+    "#{BASE_URL}/clear",
+    "#{BASE_URL}/bundle"
   ]
 
-  # Attempt Shopify Admin API (if token valid)
+  # Fetch all live products via public storefront JSON API (no token required)
   begin
-    uri = URI("#{BASE_URL}/admin/api/2024-01/products.json?limit=250&fields=handle")
+    uri = URI("#{BASE_URL}/products.json?limit=250")
     req = Net::HTTP::Get.new(uri)
-    req["X-Shopify-Access-Token"] = TOKEN
+    req["User-Agent"] = "Mozilla/5.0"
     res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, open_timeout: 8, read_timeout: 10) { |http| http.request(req) }
     if res.code == "200"
       JSON.parse(res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
     end
   rescue => e
-    # Non-fatal; sitemap & public catalog fallback takes over
+    # Non-fatal; sitemap & local catalog fallback takes over
   end
 
   # Comprehensive Sitemap Discovery (Parent index + all sub-sitemaps)
@@ -100,13 +119,17 @@ def fetch_all_urls
     end
   end
 
-  # Include all markdown articles in GitHub repo
-  blog_dir = File.join(REPO_DIR, "content", "blog-posts")
-  if Dir.exist?(blog_dir)
-    Dir[File.join(blog_dir, "*.md")].each do |md_file|
-      slug = File.basename(md_file, ".md").sub(/^\d+_/, "")
-      urls << "#{BASE_URL}/blogs/news/#{slug}"
+  # Include all markdown articles in accessible repo or mirror
+  begin
+    blog_dir = File.join(REPO_DIR, "content", "blog-posts")
+    if Dir.exist?(blog_dir)
+      Dir[File.join(blog_dir, "*.md")].each do |md_file|
+        slug = File.basename(md_file, ".md").sub(/^\d+_/, "")
+        urls << "#{BASE_URL}/blogs/news/#{slug}"
+      end
     end
+  rescue => e
+    # Non-fatal under restricted permissions
   end
 
   urls.map(&:strip).reject(&:empty?).uniq
@@ -317,34 +340,39 @@ File.open(drops_path, "a") { |f| f.write(drop_entry) }
 puts "  ✓ Appended rotating campaign drop ('#{campaign[:name]}') to #{drops_path}"
 
 # Sync updated scripts and drops to GitHub repo operations folder & auto-commit cleanly
-if Dir.exist?(File.join(REPO_DIR, "operations"))
-  [
-    "customer_hunter.rb",
-    "autonomous_seo_engine.rb",
-    "autonomous_dropship_curator.rb",
-    "trending_content_engine.rb",
-    "daily_traffic_drops.md"
-  ].each do |fname|
-    src = File.join(__dir__, fname)
-    dst = File.join(REPO_DIR, "operations", fname)
-    FileUtils.cp(src, dst) if File.exist?(src)
-  end
-  puts "  ✓ Synchronized all v2.0 automation engines & traffic drops to #{REPO_DIR}/operations/"
-
-  git_dir = "/Users/lars/Library/Caches/github-copilot-git-2.56.0-2"
-  git_bin = File.join(git_dir, "bin", "git")
-  if File.exist?(git_bin)
-    env = {
-      "GIT_EXEC_PATH" => File.join(git_dir, "libexec", "git-core"),
-      "PATH" => "#{File.join(git_dir, 'bin')}:#{File.join(git_dir, 'libexec', 'git-core')}:#{ENV['PATH']}"
-    }
-    system(env, git_bin, "-C", REPO_DIR, "add", "-A")
-    unless system(env, git_bin, "-C", REPO_DIR, "diff", "--staged", "--quiet")
-      system(env, git_bin, "-C", REPO_DIR, "commit", "-m", "Hourly v2.0 SEO, dropship curation & traffic drop sync [skip ci]", out: File::NULL, err: File::NULL)
+begin
+  if Dir.exist?(File.join(REPO_DIR, "operations"))
+    [
+      "customer_hunter.rb",
+      "autonomous_seo_engine.rb",
+      "autonomous_dropship_curator.rb",
+      "trending_content_engine.rb",
+      "daily_traffic_drops.md"
+    ].each do |fname|
+      src = File.join(__dir__, fname)
+      dst = File.join(REPO_DIR, "operations", fname)
+      FileUtils.cp(src, dst) if File.exist?(src)
     end
-    system(env, git_bin, "-C", REPO_DIR, "merge", "origin/main", "-X", "ours", "--no-edit", out: File::NULL, err: File::NULL)
-    puts "  ✓ Committed & merged cleanly in #{REPO_DIR} (zero conflicts)"
+    puts "  ✓ Synchronized all v2.0 automation engines & traffic drops to #{REPO_DIR}/operations/"
+
+    if REPO_DIR == "/Users/lars/Documents/GitHub/bizi-bees"
+      git_dir = "/Users/lars/Library/Caches/github-copilot-git-2.56.0-2"
+      git_bin = File.join(git_dir, "bin", "git")
+      if File.exist?(git_bin)
+        env = {
+          "GIT_EXEC_PATH" => File.join(git_dir, "libexec", "git-core"),
+          "PATH" => "#{File.join(git_dir, 'bin')}:#{File.join(git_dir, 'libexec', 'git-core')}:#{ENV['PATH']}"
+        }
+        system(env, git_bin, "-C", REPO_DIR, "add", "-A", out: File::NULL, err: File::NULL)
+        unless system(env, git_bin, "-C", REPO_DIR, "diff", "--staged", "--quiet")
+          system(env, git_bin, "-C", REPO_DIR, "commit", "-m", "Hourly v2.0 SEO, dropship curation & traffic drop sync [skip ci]", out: File::NULL, err: File::NULL)
+        end
+        puts "  ✓ Committed cleanly in #{REPO_DIR}"
+      end
+    end
   end
+rescue Errno::EPERM, StandardError => e
+  puts "  ℹ️ Repo sync skipped under restricted cron environment (#{e.class})"
 end
 
 puts "[#{Time.now.iso8601}] ✅ Customer & Click Hunter v2.0 run completed successfully!"

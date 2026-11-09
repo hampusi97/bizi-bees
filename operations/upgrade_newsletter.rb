@@ -4,7 +4,7 @@ require "uri"
 
 u = URI("https://bizibees-store.myshopify.com/admin/api/2024-01/themes/157915938983/assets.json?asset[key]=snippets/newsletter.liquid")
 r = Net::HTTP::Get.new(u)
-r["X-Shopify-Access-Token"] = "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"
+r["X-Shopify-Access-Token"] = ENV["SHOPIFY_TOKEN"]
 res = Net::HTTP.start(u.hostname, u.port, use_ssl: true) { |h| h.request(r) }
 
 new_newsletter = %{
@@ -61,7 +61,7 @@ new_newsletter = %{
 
 put_uri = URI("https://bizibees-store.myshopify.com/admin/api/2024-01/themes/157915938983/assets.json")
 put_req = Net::HTTP::Put.new(put_uri)
-put_req["X-Shopify-Access-Token"] = "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"
+put_req["X-Shopify-Access-Token"] = ENV["SHOPIFY_TOKEN"]
 put_req["Content-Type"] = "application/json"
 put_req.body = JSON.generate({ "asset" => { "key" => "snippets/newsletter.liquid", "value" => new_newsletter } })
 

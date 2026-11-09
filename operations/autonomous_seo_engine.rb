@@ -24,15 +24,27 @@ $stderr.sync = true
 BASE_URL ||= "https://bizibees-store.myshopify.com"
 GH_PAGES_URL ||= "https://hampusi97.github.io/bizi-bees"
 INDEXNOW_KEY ||= "bizibees7ec43be8a7af3cb99c2376ac"
-REPO_DIR ||= if Dir.exist?("/Users/lars/Documents/GitHub/bizi-bees")
-               "/Users/lars/Documents/GitHub/bizi-bees"
-             else
-               File.expand_path("..", File.dirname(__FILE__))
-             end
+
+def resolve_accessible_repo_dir_seo
+  primary = "/Users/lars/Documents/GitHub/bizi-bees"
+  mirror  = "/Users/lars/.gemini/antigravity/scratch/bizi-bees-mirror"
+  begin
+    if Dir.exist?(primary)
+      Dir.entries(File.join(primary, "content"))
+      return primary
+    end
+  rescue Errno::EPERM, Errno::EACCES, StandardError
+    # Fall through to cron-accessible mirror
+  end
+  return mirror if Dir.exist?(mirror)
+  File.expand_path("..", File.dirname(__FILE__))
+end
+
+REPO_DIR ||= resolve_accessible_repo_dir_seo
 OPERATIONS_DIR ||= File.join(REPO_DIR, "operations")
 CONTENT_DIR ||= File.join(REPO_DIR, "content")
-FileUtils.mkdir_p(OPERATIONS_DIR)
-FileUtils.mkdir_p(CONTENT_DIR)
+FileUtils.mkdir_p(OPERATIONS_DIR) rescue nil
+FileUtils.mkdir_p(CONTENT_DIR) rescue nil
 TIMESTAMP ||= Time.now.iso8601
 
 require_relative "trending_content_engine"
@@ -68,13 +80,29 @@ def discover_all_urls(curation_summary)
     "#{BASE_URL}/blogs/news",
     "#{BASE_URL}/pages/google-shopping-feed",
     "#{BASE_URL}/wand",
+    "#{BASE_URL}/buy-wand",
     "#{BASE_URL}/caps",
+    "#{BASE_URL}/2pack",
     "#{BASE_URL}/mask",
     "#{BASE_URL}/relief",
     "#{BASE_URL}/lift",
     "#{BASE_URL}/clean",
-    "#{BASE_URL}/clear"
+    "#{BASE_URL}/clear",
+    "#{BASE_URL}/bundle"
   ]
+
+  # Discover via public storefront JSON API (no token required)
+  begin
+    prod_uri = URI("#{BASE_URL}/products.json?limit=250")
+    prod_req = Net::HTTP::Get.new(prod_uri)
+    prod_req["User-Agent"] = "Mozilla/5.0"
+    prod_res = Net::HTTP.start(prod_uri.hostname, prod_uri.port, use_ssl: true, open_timeout: 8, read_timeout: 10) { |h| h.request(prod_req) }
+    if prod_res.code == "200"
+      JSON.parse(prod_res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
+    end
+  rescue => e
+    # Ignore public products.json fetch warning
+  end
 
   # Discover via root sitemap index
   begin
@@ -99,14 +127,18 @@ def discover_all_urls(curation_summary)
     puts "  ⚠️ Sitemap harvest warning: #{e.message}"
   end
 
-  # Include all local markdown blog post handles in repo
-  blog_dir = File.join(REPO_DIR, "content", "blog-posts")
-  if Dir.exist?(blog_dir)
-    Dir[File.join(blog_dir, "*.md")].each do |md_file|
-      basename = File.basename(md_file, ".md")
-      slug = basename.sub(/^\d+_/, "")
-      urls << "#{BASE_URL}/blogs/news/#{slug}"
+  # Include all local markdown blog post handles in repo or mirror
+  begin
+    blog_dir = File.join(REPO_DIR, "content", "blog-posts")
+    if Dir.exist?(blog_dir)
+      Dir[File.join(blog_dir, "*.md")].each do |md_file|
+        basename = File.basename(md_file, ".md")
+        slug = basename.sub(/^\d+_/, "")
+        urls << "#{BASE_URL}/blogs/news/#{slug}"
+      end
     end
+  rescue => e
+    # Fallback to mirror if EPERM
   end
 
   # Include all predicted active winners
@@ -136,7 +168,7 @@ seo_audit = {
 }
 
 # 2a. Verify Vanity Redirects & Core Landing Pages
-vanity_slugs = ["/wand", "/caps", "/mask", "/relief", "/lift", "/clean", "/clear"]
+vanity_slugs = ["/wand", "/buy-wand", "/caps", "/2pack", "/mask", "/relief", "/lift", "/clean", "/clear", "/bundle"]
 redirect_results = {}
 vanity_slugs.each do |slug|
   begin

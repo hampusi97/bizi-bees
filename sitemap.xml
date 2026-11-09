@@ -71,7 +71,21 @@
 </url>
 
 <url>
+  <loc>https://bizibees-store.myshopify.com/buy-wand</loc>
+  <lastmod>2026-11-09</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
   <loc>https://bizibees-store.myshopify.com/caps</loc>
+  <lastmod>2026-11-09</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://bizibees-store.myshopify.com/2pack</loc>
   <lastmod>2026-11-09</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
@@ -107,6 +121,13 @@
 
 <url>
   <loc>https://bizibees-store.myshopify.com/clear</loc>
+  <lastmod>2026-11-09</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://bizibees-store.myshopify.com/bundle</loc>
   <lastmod>2026-11-09</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
@@ -1052,27 +1073,6 @@
 
 <url>
   <loc>https://bizibees-store.myshopify.com/products/bohemian-garlic-beef-jerky</loc>
-  <lastmod>2026-11-09</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
-</url>
-
-<url>
-  <loc>https://bizibees-store.myshopify.com/products/long-run-coffee</loc>
-  <lastmod>2026-11-09</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
-</url>
-
-<url>
-  <loc>https://bizibees-store.myshopify.com/products/grade-3-5-shark-tank-bundle</loc>
-  <lastmod>2026-11-09</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
-</url>
-
-<url>
-  <loc>https://bizibees-store.myshopify.com/products/toffee-blessing-bear%C2%AE</loc>
   <lastmod>2026-11-09</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
