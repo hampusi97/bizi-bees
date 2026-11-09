@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-06T09:56:07-07:00",
-  "total_urls": 648,
+  "timestamp": "2026-11-09T11:34:14-07:00",
+  "total_urls": 649,
   "curated_winners_active": 14,
   "pruned_items_archived": 4,
   "checks": {
@@ -54,7 +54,7 @@
     }
   },
   "indexing": {
-    "indexnow_pushed": 648,
+    "indexnow_pushed": 649,
     "websub_accepted": 9,
     "xml_rpc_broadcast": 3
   }
