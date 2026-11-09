@@ -91,15 +91,31 @@ def discover_all_urls(curation_summary)
     "#{BASE_URL}/bundle"
   ]
 
-  # Discover via public storefront JSON API (no token required)
+  # Discover all 315+ products via multi-page public storefront JSON API (no token required)
   begin
-    prod_uri = URI("#{BASE_URL}/products.json?limit=250")
-    prod_res = Net::HTTP.get_response(prod_uri)
-    if prod_res.code == "200"
-      JSON.parse(prod_res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
+    (1..4).each do |page|
+      prod_uri = URI("#{BASE_URL}/products.json?limit=250&page=#{page}")
+      prod_res = Net::HTTP.get_response(prod_uri)
+      break unless prod_res.code == "200"
+      batch = JSON.parse(prod_res.body)["products"]
+      break if batch.nil? || batch.empty?
+      batch.each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
     end
   rescue => e
     # Ignore public products.json fetch warning
+  end
+
+  # Discover all 55+ collections via public storefront JSON API
+  begin
+    col_uri = URI("#{BASE_URL}/collections.json?limit=250")
+    col_res = Net::HTTP.get_response(col_uri)
+    if col_res.code == "200"
+      (JSON.parse(col_res.body)["collections"] || []).each do |c|
+        urls << "#{BASE_URL}/collections/#{c['handle']}" if c["products_count"].to_i > 0
+      end
+    end
+  rescue => e
+    # Ignore collections.json fetch warning
   end
 
   # Discover via root sitemap index

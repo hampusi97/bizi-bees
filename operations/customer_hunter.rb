@@ -77,12 +77,21 @@ def fetch_all_urls
     "#{BASE_URL}/bundle"
   ]
 
-  # Fetch all live products via public storefront JSON API (no token required)
+  # Fetch all 315+ live products across pages via public storefront JSON API (no token required)
   begin
-    uri = URI("#{BASE_URL}/products.json?limit=250")
-    res = Net::HTTP.get_response(uri)
-    if res.code == "200"
-      JSON.parse(res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
+    (1..4).each do |page|
+      uri = URI("#{BASE_URL}/products.json?limit=250&page=#{page}")
+      res = Net::HTTP.get_response(uri)
+      break unless res.code == "200"
+      batch = JSON.parse(res.body)["products"]
+      break if batch.nil? || batch.empty?
+      batch.each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
+    end
+    col_res = Net::HTTP.get_response(URI("#{BASE_URL}/collections.json?limit=250"))
+    if col_res.code == "200"
+      (JSON.parse(col_res.body)["collections"] || []).each do |c|
+        urls << "#{BASE_URL}/collections/#{c['handle']}" if c["products_count"].to_i > 0
+      end
     end
   rescue => e
     # Non-fatal; sitemap & local catalog fallback takes over
@@ -337,7 +346,7 @@ DROP
 File.open(drops_path, "a") { |f| f.write(drop_entry) }
 puts "  ✓ Appended rotating campaign drop ('#{campaign[:name]}') to #{drops_path}"
 
-# Sync updated scripts and drops to GitHub repo operations folder & auto-commit cleanly
+# Sync updated scripts and drops to operations folder (without dirtying GitHub Desktop branch on hourly cron)
 begin
   if Dir.exist?(File.join(REPO_DIR, "operations"))
     [
@@ -352,22 +361,6 @@ begin
       FileUtils.cp(src, dst) if File.exist?(src)
     end
     puts "  ✓ Synchronized all v2.0 automation engines & traffic drops to #{REPO_DIR}/operations/"
-
-    if REPO_DIR == "/Users/lars/Documents/GitHub/bizi-bees"
-      git_dir = "/Users/lars/Library/Caches/github-copilot-git-2.56.0-2"
-      git_bin = File.join(git_dir, "bin", "git")
-      if File.exist?(git_bin)
-        env = {
-          "GIT_EXEC_PATH" => File.join(git_dir, "libexec", "git-core"),
-          "PATH" => "#{File.join(git_dir, 'bin')}:#{File.join(git_dir, 'libexec', 'git-core')}:#{ENV['PATH']}"
-        }
-        system(env, git_bin, "-C", REPO_DIR, "add", "-A", out: File::NULL, err: File::NULL)
-        unless system(env, git_bin, "-C", REPO_DIR, "diff", "--staged", "--quiet")
-          system(env, git_bin, "-C", REPO_DIR, "commit", "-m", "Hourly v2.0 SEO, dropship curation & traffic drop sync [skip ci]", out: File::NULL, err: File::NULL)
-        end
-        puts "  ✓ Committed cleanly in #{REPO_DIR}"
-      end
-    end
   end
 rescue Errno::EPERM, StandardError => e
   puts "  ℹ️ Repo sync skipped under restricted cron environment (#{e.class})"
