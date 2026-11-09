@@ -80,9 +80,7 @@ def fetch_all_urls
   # Fetch all live products via public storefront JSON API (no token required)
   begin
     uri = URI("#{BASE_URL}/products.json?limit=250")
-    req = Net::HTTP::Get.new(uri)
-    req["User-Agent"] = "Mozilla/5.0"
-    res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, open_timeout: 8, read_timeout: 10) { |http| http.request(req) }
+    res = Net::HTTP.get_response(uri)
     if res.code == "200"
       JSON.parse(res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
     end

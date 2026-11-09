@@ -94,7 +94,7 @@ CANDIDATE_POOL = [
     search_velocity: 95,
     logistics_score: 95,
     seasonal_score: 94,
-    image_url: "https://images.unsplash.com/photo-1512290900672-1f55b9e715f5?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1570172619644-dfd03ed5d881.jpg?v=1793651117",
     description: "Bio-compatible dual-sphere microcurrent delivers 350 microamps of electrical stimulation to tone the platysma muscle and stimulate ATP collagen production. Visible jawline lift in 14 days."
   },
   {
@@ -376,7 +376,7 @@ CANDIDATE_POOL = [
     search_velocity: 35,
     logistics_score: 15,
     seasonal_score: 40,
-    image_url: "https://images.unsplash.com/photo-1608248597359-2e6522c06129?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1620916566398-39f1143ab7be.jpg?v=1793651115",
     description: "Liquid face oil in glass vial."
   },
   {

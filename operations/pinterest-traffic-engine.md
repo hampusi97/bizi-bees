@@ -38,7 +38,7 @@ Pinterest is a visual search engine where women search for solutions with high p
 
 ### Pin 3: 5-Minute At-Home Jawline Sculpting Routine
 * **Board**: *Face Sculpting, Jawline Contouring & Anti-Aging*
-* **Image**: [LumaLift Sculptor Photo](https://images.unsplash.com/photo-1512290900672-1f5be57d544f?auto=format&fit=crop&w=800&q=80)
+* **Image**: [LumaLift Sculptor Photo](https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1570172619644-dfd03ed5d881.jpg?v=1793651117)
 * **Pin Title**: How to Sculpt Your Jawline & Lift Jowls at Home in 5 Mins
 * **Pin Description**:
   > Tone sagging jawline contours and reduce double chin puffiness with the LumaLift dual microcurrent and thermal lymphatic sculptor. Non-invasive face gym workout for under $43 with code PROVOTODAY. Free US shipping. #jawlinesculpting #microcurrent #facegym #antiagingtips #vface

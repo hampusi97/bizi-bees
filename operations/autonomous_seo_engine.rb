@@ -94,9 +94,7 @@ def discover_all_urls(curation_summary)
   # Discover via public storefront JSON API (no token required)
   begin
     prod_uri = URI("#{BASE_URL}/products.json?limit=250")
-    prod_req = Net::HTTP::Get.new(prod_uri)
-    prod_req["User-Agent"] = "Mozilla/5.0"
-    prod_res = Net::HTTP.start(prod_uri.hostname, prod_uri.port, use_ssl: true, open_timeout: 8, read_timeout: 10) { |h| h.request(prod_req) }
+    prod_res = Net::HTTP.get_response(prod_uri)
     if prod_res.code == "200"
       JSON.parse(prod_res.body)["products"].each { |p| urls << "#{BASE_URL}/products/#{p['handle']}" }
     end
