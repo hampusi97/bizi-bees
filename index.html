@@ -309,6 +309,50 @@
       .badge-pos-5 { top: 76%; left: 8%; }
       .badge-pos-6 { display: none; }
     }
+
+    /* DTC Beauty Refinements & Micro-Animations (Spring Scale 1.02) */
+    button, .buy-btn, .btn-main, .header-btn, .bundle-cta-btn, .luma-btn-primary, .policy-tab {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, background 0.2s ease !important;
+    }
+    button:hover, .buy-btn:hover, .btn-main:hover, .header-btn:hover, .bundle-cta-btn:hover, .luma-btn-primary:hover, .policy-tab:hover {
+      transform: translateY(-2px) scale(1.02) !important;
+    }
+    button:active, .buy-btn:active, .btn-main:active, .header-btn:active, .bundle-cta-btn:active, .luma-btn-primary:active, .policy-tab:active {
+      transform: scale(0.98) !important;
+    }
+
+    /* Luma 3-Tier Value Ladder Section */
+    .luma-bundle-section { background: #FFFFFF; padding: 50px 0 30px; }
+    .bundle-header-box { text-align: center; margin-bottom: 36px; }
+    .bundle-badge-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 12px; }
+    .dtc-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 9999px; }
+    .pill-teal { background: #F0FDFA; color: #0D9488; border: 1px solid #99F6E4; }
+    .pill-amber { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
+    .free-ship-meter { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 12px 20px; max-width: 520px; margin: 16px auto 0; font-size: 13px; text-align: center; }
+    .free-ship-meter.unlocked { background: #F0FDFA; border-color: #99F6E4; color: #0D9488; }
+    .meter-bar { height: 6px; background: #E2E8F0; border-radius: 9999px; overflow: hidden; margin-top: 8px; }
+    .meter-fill { height: 100%; background: linear-gradient(90deg, #0D9488, #D97706); border-radius: 9999px; }
+
+    .bundle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px; }
+    .bundle-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(15,23,42,0.05); display: flex; flex-direction: column; position: relative; }
+    .bundle-card.featured { border: 2px solid #D97706; box-shadow: 0 12px 36px rgba(217,119,6,0.18); transform: scale(1.02); background: #FFFDF9; }
+    .featured-ribbon { background: linear-gradient(135deg, #D97706, #B45309); color: #fff; font-size: 11px; font-weight: 900; letter-spacing: 0.06em; text-align: center; padding: 8px 12px; border-radius: 18px 18px 0 0; margin: -28px -24px 20px -24px; }
+    .bundle-price-box { display: flex; align-items: baseline; gap: 8px; margin: 12px 0; padding-bottom: 12px; border-bottom: 1px dashed #E2E8F0; }
+    .bundle-now { font-size: 32px; font-weight: 900; color: #0F172A; }
+    .bundle-now.text-amber { color: #D97706; }
+    .bundle-was { font-size: 16px; text-decoration: line-through; color: #94A3B8; }
+    .bundle-save { background: #FEE2E2; color: #DC2626; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 6px; }
+    .bundle-includes { list-style: none; margin: 16px 0; font-size: 13px; line-height: 1.7; color: #334155; flex-grow: 1; }
+    .bundle-includes li { display: flex; gap: 8px; margin-bottom: 6px; }
+    .bundle-cta-btn { background: linear-gradient(135deg, #0D9488, #0F766E); color: #fff; border: none; padding: 14px 20px; border-radius: 9999px; font-size: 14px; font-weight: 900; cursor: pointer; text-align: center; display: block; margin-top: auto; }
+    .bundle-cta-btn.amber-btn { background: linear-gradient(135deg, #D97706, #B45309); box-shadow: 0 6px 20px rgba(217,119,6,0.3); }
+
+    /* Universal Policies Section */
+    .policies-section { background: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 60px 0; }
+    .policy-tabs-wrap { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .policy-tab { background: #FFFFFF; border: 1px solid #E2E8F0; color: #475569; padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 700; cursor: pointer; }
+    .policy-tab.active { background: #0D9488; color: #FFFFFF; border-color: #0D9488; }
+    .policy-card-panel { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; box-shadow: 0 4px 18px rgba(15,23,42,0.04); }
   </style>
 </head>
 <body>
