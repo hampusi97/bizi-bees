@@ -1,0 +1,76 @@
+<div class="wrap block">
+  {% if collection.handle == 'luma-wellness' %}
+    <div style="background:linear-gradient(180deg, #fffcf5 0%, #ffffff 100%);border:2px solid #fde047;border-radius:16px;padding:28px 24px;margin-bottom:28px;box-shadow:0 10px 30px rgba(217,119,6,0.06);">
+      <div style="max-width:750px;">
+        <p style="color:#b45309;font-weight:800;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 6px;">✨ CLINICAL AT-HOME LONGEVITY TECH</p>
+        <h1 style="font-size:32px;font-weight:900;color:#111827;margin:0 0 10px;line-height:1.2;">Luma Wellness At-Home Clinic</h1>
+        <p style="font-size:15px;color:#4b5563;line-height:1.6;margin:0 0 16px;">Medical-grade 630nm red light phototherapy, microcurrent facial sculpting, targeted décolletage collagen restoration, and cellular rejuvenation tools. Backed by our 60-day risk-free guarantee and fast US dispatch.</p>
+        
+        <!-- As Seen In Media -->
+        <div style="display:flex;align-items:center;gap:18px;font-family:serif;font-weight:700;letter-spacing:0.1em;color:#6b7280;font-size:12px;margin-bottom:18px;flex-wrap:wrap;">
+          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#9ca3af;font-family:sans-serif;font-weight:700;">FEATURED IN:</span>
+          <span>VOGUE</span><span>ELLE</span><span>ALLURE</span><span>BYRDIE</span><span>GLAMOUR</span>
+        </div>
+
+        <!-- Trust Pillars -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:10px;margin-bottom:18px;font-size:13px;color:#374151;">
+          <div style="display:flex;align-items:center;gap:6px;">🛡️ <strong>60-Day Glow Guarantee</strong></div>
+          <div style="display:flex;align-items:center;gap:6px;">📦 <strong>Ships within 24 Hours</strong> (USPS)</div>
+          <div style="display:flex;align-items:center;gap:6px;">🔬 <strong>Dual 630nm / 850nm</strong> Wavelengths</div>
+          <div style="display:flex;align-items:center;gap:6px;">⚡ <strong>35% Off Code:</strong> PROVOTODAY</div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="/pages/skincare-routine-quiz" style="background:#111827;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;">Take 30-Sec Routine Quiz →</a>
+          <a href="/pages/win-a-glow-kit" style="background:#dc2626;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;">🎁 Win a Free Glow Kit ($179 Value)</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <p class="eyebrow">The good-find department</p>
+    <h1>{{ collection.title | escape }}</h1>
+    <div>{{ collection.description }}</div>
+    {% if collection.handle == 'christmas-gifts' %}
+      <p class="notice">Code <a href="/discount/GIFT15?redirect=%2Fcollections%2Fchristmas-gifts">GIFT15</a> takes 15% off this collection through Sunday, November 1. It does not stack with FIRST15. Shipping and taxes are extra.</p>
+    {% endif %}
+    {% if collection.description == blank %}
+      <p>Shop {{ collection.title | downcase | escape }} at bizi bees — a hand-picked selection of quality-checked secondhand finds, honest condition details, and everyday value.</p>
+    {% endif %}
+    <nav class="collection-links" aria-label="Related shopping links">
+      <a href="/collections/all">Shop all finds</a>
+      <a href="/collections/books">Used books</a>
+      <a href="/collections/electronics">Used electronics</a>
+      <a href="/collections/clothing">Secondhand clothing</a>
+      <a href="/collections/toys">Pre-owned toys</a>
+      <a href="/collections/more-finds">More finds</a>
+      <a href="/pages/condition-guide">Condition guide</a>
+      <a href="/pages/shipping">Shipping</a>
+      <a href="/pages/returns">Returns</a>
+    </nav>
+  {% endif %}
+
+  <p class="muted">{{ collection.products_count }} finds</p>
+  {% render 'filters', results: collection %}
+  {% paginate collection.products by 48 %}
+    <div class="grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% else %}
+        <p class="empty">No finds match yet. Try clearing your filters or <a href="/collections/all">browse all finds</a>.</p>
+      {% endfor %}
+    </div>
+    <div class="pagination">{{ paginate | default_pagination }}</div>
+  {% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Collection"
+    }
+  ]
+}
+{% endschema %}

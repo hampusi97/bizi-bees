@@ -1,0 +1,228 @@
+{% comment %}
+  FAQ accordion + matching FAQPage structured data
+  Repo: bizi-bees /sections/luma-faq.liquid
+
+  The JSON-LD is generated from the same blocks that render on the page,
+  so the markup always matches the visible content (a Google requirement).
+  Uses native <details>/<summary>: works without JavaScript and is
+  keyboard / screen-reader accessible by default.
+
+  Note: only enable structured data on ONE FAQ section per page.
+{% endcomment %}
+
+{%- liquid
+  assign s = section.settings
+  assign heading_id = 'LumaFaqHeading-' | append: section.id
+-%}
+
+<section
+  class="luma-faq"
+  style="--faq-bg: {{ s.background }}; --faq-accent: {{ s.accent }};"
+  {% if s.heading != blank %}aria-labelledby="{{ heading_id }}"{% endif %}
+>
+  <div class="luma-faq__container">
+    {%- if s.heading != blank -%}
+      <h2 id="{{ heading_id }}" class="luma-faq__heading">{{ s.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if s.text != blank -%}
+      <div class="luma-faq__text">{{ s.text }}</div>
+    {%- endif -%}
+
+    <div class="luma-faq__list">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.question != blank -%}
+          <details
+            class="luma-faq__item"
+            {% if s.open_first and forloop.first %}open{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <summary class="luma-faq__question">
+              <span>{{ block.settings.question | escape }}</span>
+              <span class="luma-faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="luma-faq__answer">{{ block.settings.answer }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- if s.enable_schema -%}
+  {%- capture faq_entities -%}
+    {%- assign faq_count = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.settings.question != blank and block.settings.answer != blank -%}
+        {%- if faq_count > 0 -%},{%- endif -%}
+        {
+          "@type": "Question",
+          "name": {{ block.settings.question | strip | json }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ block.settings.answer | json }}
+          }
+        }
+        {%- assign faq_count = faq_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- if faq_entities != blank -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{{ faq_entities }}]
+      }
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .luma-faq {
+    padding: 80px 20px;
+    background: var(--faq-bg, #ffffff);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .luma-faq__container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .luma-faq__heading {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-align: center;
+  }
+  .luma-faq__text {
+    margin: 0 auto 35px;
+    max-width: 620px;
+    color: #64748b;
+    font-size: 16px;
+    text-align: center;
+  }
+  .luma-faq__list {
+    border-top: 1px solid #e2e8f0;
+  }
+  .luma-faq__item {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .luma-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 4px;
+    color: #0f172a;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: pointer;
+    list-style: none;
+  }
+  .luma-faq__question::-webkit-details-marker { display: none; }
+  .luma-faq__question:hover { color: var(--faq-accent, #0d9488); }
+  .luma-faq__question:focus-visible {
+    outline: 3px solid var(--faq-accent, #0d9488);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  .luma-faq__icon {
+    position: relative;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .luma-faq__icon::before,
+  .luma-faq__icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+  }
+  .luma-faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .luma-faq__item[open] .luma-faq__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .luma-faq__answer {
+    padding: 0 4px 22px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .luma-faq__answer > :first-child { margin-top: 0; }
+  .luma-faq__answer > :last-child { margin-bottom: 0; }
+  .luma-faq__answer a { color: var(--faq-accent, #0d9488); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .luma-faq__icon::before,
+    .luma-faq__icon::after { transition: none; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Luma FAQ",
+  "tag": "div",
+  "class": "section-luma-faq",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently asked questions" },
+    { "type": "richtext", "id": "text", "label": "Description" },
+    { "type": "checkbox", "id": "open_first", "label": "Open first question by default", "default": false },
+    {
+      "type": "checkbox",
+      "id": "enable_schema",
+      "label": "Add FAQ structured data (SEO)",
+      "info": "Generates FAQPage JSON-LD from the questions below. Enable on only one FAQ section per page.",
+      "default": true
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#0d9488" }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Answer</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luma FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How does at-home red light compare to in-office treatments?",
+            "answer": "<p>The LumaGlow 4-in-1 combines 630nm red light and microcurrent in a handheld device designed for 3-minute daily sessions at home. In-office treatments use higher-powered equipment under professional supervision; at-home devices are designed for gentle, consistent use. Results vary from person to person. If you have a skin condition, check with your dermatologist before use.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can I use my HSA or FSA card?",
+            "answer": "<p>Eligibility depends on your plan, and some plans require a Letter of Medical Necessity. You can try your HSA/FSA card at checkout, or pay another way and submit your itemized receipt to your plan administrator for reimbursement. We recommend confirming with your plan administrator before you order.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How quickly will my order ship?",
+            "answer": "<p>In-stock orders usually ship within 1–2 business days via USPS Priority Mail. You'll get a tracking number by email as soon as your order ships.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

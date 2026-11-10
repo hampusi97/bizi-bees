@@ -1,0 +1,36 @@
+{% comment %}
+  Luma Clinical Wellness - Automated Catalog Sanitizer & Filter
+  File: snippets/luma-catalog-filter.liquid
+
+  Usage:
+  {% render 'luma-catalog-filter', product: product %}
+  Returns 'true' if the product is approved for the Luma Clinical storefront,
+  and 'false' if it belongs to suppressed categories (used books, toys, 3d pens, pdf workbooks).
+{% endcomment %}
+
+{% liquid
+  assign is_approved = true
+  
+  # Normalize title, handle, type, and tags to lowercase
+  assign product_title = product.title | downcase
+  assign product_type = product.type | downcase
+  assign product_handle = product.handle | downcase
+  assign product_tags = product.tags | join: ',' | downcase
+
+  # Blacklist keywords to suppress immediately
+  assign blacklist = "book,used,secondhand,refill,toy,puzzle,pdf,workbook,download,filament,3d pen,craft,novel,paperback,hardcover" | split: ","
+
+  for item in blacklist
+    if product_title contains item or product_type contains item or product_handle contains item or product_tags contains item
+      assign is_approved = false
+      break
+    endif
+  endfor
+
+  # Whitelist check: If tagged with 'luma' or belongs to the Luma Clinical line, always approve
+  if product_title contains "luma" or product_tags contains "luma" or product_type contains "clinical"
+    assign is_approved = true
+  endif
+
+  echo is_approved
+%}

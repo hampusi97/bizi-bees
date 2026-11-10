@@ -1,0 +1,472 @@
+{% comment %}
+  Luma Clinical Wellness - Core Product Grid with Exclusion Filtering
+  File: sections/luma-product-grid.liquid
+{% endcomment %}
+
+<section class="luma-grid-section" id="luma-grid-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="luma-grid__container">
+    
+    <div class="luma-grid__header">
+      <span class="luma-badge-pill luma-badge-teal">
+        {{ section.settings.badge_label | default: "Engineered For Daily Clinical Protocols" }}
+      </span>
+      <h2 class="luma-grid__title">
+        {{ section.settings.title | default: "The Luma Clinical Device Suite" }}
+      </h2>
+      <p class="luma-grid__subtitle">
+        {{ section.settings.subtitle | default: "Targeted 630nm phototherapy, microcurrent sculpting, and cryogenic vasoconstriction. Shipped with tracked Utah dispatch." }}
+      </p>
+    </div>
+
+    <!-- 6 Core Luma Lineup Grid -->
+    <div class="luma-product-cards-grid">
+      
+      <!-- Product 1: LumaGlow 4-in-1 Wand -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-rose">#1 CLINICAL BESTSELLER</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <ellipse cx="80" cy="40" rx="36" ry="12" fill="#EF4444" opacity="0.3" filter="blur(8px)" />
+            <rect x="52" y="32" width="56" height="16" rx="8" fill="#0D9488" />
+            <rect x="74" y="48" width="12" height="110" rx="6" fill="#E5E7EB" />
+            <circle cx="80" cy="110" r="3" fill="#0D9488" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.9 (3,420+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumaglow-4-in-1-facial-wand">LumaGlow™ 4-in-1 Red Light Facial Wand</a>
+          </h3>
+          <p class="luma-card__benefit">630nm Phototherapy • Microcurrent • 107°F Warmth • Sonic Massage</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$38.99</span>
+              <span class="luma-card__compare">$169.00</span>
+            </div>
+            <a href="/products/lumaglow-4-in-1-facial-wand" class="luma-btn-primary luma-card__btn">Shop Wand</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2: LumaRelief Migraine 2-Cap -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-teal">PATIENT FAVORITE</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <ellipse cx="80" cy="110" rx="46" ry="16" fill="rgba(13, 148, 136, 0.12)" filter="blur(6px)" />
+            <path d="M42 95 C42 55, 60 40, 80 40 C100 40, 118 55, 118 95 C118 115, 106 122, 80 122 C54 122, 42 115, 42 95 Z" fill="#1F2937" />
+            <path d="M50 92 C50 68, 62 55, 80 55 C98 55, 110 68, 110 92" stroke="#0D9488" stroke-width="3" fill="none" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.9 (1,840+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumarelief-migraine-2-cap-rotation-pack">LumaRelief™ Migraine 2-Cap Rotation Pack</a>
+          </h3>
+          <p class="luma-card__benefit">360° Cold Compression • Continuous Freezing Rotation • Vasoconstriction</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$22.74</span>
+              <span class="luma-card__compare">$65.00</span>
+            </div>
+            <a href="/products/lumarelief-migraine-2-cap-rotation-pack" class="luma-btn-primary luma-card__btn">Shop 2-Pack</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3: LumaLift V-Face Sculptor -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-green">TARGETED LIFT</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <circle cx="65" cy="55" r="14" fill="#C08479" />
+            <circle cx="95" cy="55" r="14" fill="#C08479" />
+            <path d="M65 65 L76 130 C76 138, 84 138, 84 130 L95 65 Z" fill="#E5E7EB" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.8 (910+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumalift-v-face-microcurrent-sculptor">LumaLift™ V-Face Microcurrent Sculptor</a>
+          </h3>
+          <p class="luma-card__benefit">Dual Roller Microcurrent Spheres • Mandibular Jawline Sculpting</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$42.24</span>
+              <span class="luma-card__compare">$140.00</span>
+            </div>
+            <a href="/products/lumalift-v-face-microcurrent-sculptor" class="luma-btn-primary luma-card__btn">Shop Sculptor</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4: LumaMask 7-Color LED Shield -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-rose">FULL SPECTRUM</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <ellipse cx="80" cy="85" rx="42" ry="58" fill="#F3F4F6" stroke="#0D9488" stroke-width="2" />
+            <ellipse cx="64" cy="74" rx="10" ry="4" fill="#111827" />
+            <ellipse cx="96" cy="74" rx="10" ry="4" fill="#111827" />
+            <rect x="74" y="112" width="12" height="4" rx="2" fill="#111827" />
+            <circle cx="80" cy="85" r="48" fill="rgba(239, 68, 68, 0.15)" filter="blur(8px)" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.9 (1,210+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumamask-7-color-led-shield">LumaMask™ 7-Color LED Shield</a>
+          </h3>
+          <p class="luma-card__benefit">7 Clinically Tuned Wavelengths • Hands-Free Full Dermal Therapy</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$84.49</span>
+              <span class="luma-card__compare">$280.00</span>
+            </div>
+            <a href="/products/lumamask-7-color-led-shield" class="luma-btn-primary luma-card__btn">Shop Mask</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 5: LumaClean Sonic Brush Cleaner -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-teal">DERM HYGIENE</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <rect x="62" y="38" width="36" height="52" rx="18" fill="#CCFBF1" stroke="#0D9488" stroke-width="2" />
+            <rect x="68" y="90" width="24" height="60" rx="12" fill="#E5E7EB" />
+            <circle cx="80" cy="120" r="3" fill="#0D9488" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.8 (750+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumaclean-sonic-brush-cleaner">LumaClean™ Sonic Brush Cleaner</a>
+          </h3>
+          <p class="luma-card__benefit">Medical-Grade Silicone • 12,000 Transdermal Pulsations/Min</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$19.49</span>
+              <span class="luma-card__compare">$49.00</span>
+            </div>
+            <a href="/products/lumaclean-sonic-brush-cleaner" class="luma-btn-primary luma-card__btn">Shop Cleaner</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 6: LumaSculpt Ultrasonic Body -->
+      <article class="luma-card">
+        <div class="luma-card__badge-wrap">
+          <span class="luma-badge-pill luma-badge-green">BODY PROTOCOL</span>
+        </div>
+        <div class="luma-card__image-wrap">
+          <div class="luma-card__glow-bg"></div>
+          <svg viewBox="0 0 160 180" class="luma-card__svg-mock">
+            <ellipse cx="80" cy="55" rx="32" ry="14" fill="#E5E7EB" stroke="#0D9488" stroke-width="2" />
+            <rect x="58" y="65" width="44" height="80" rx="16" fill="#F9FAFB" stroke="#E5E7EB" />
+            <circle cx="80" cy="100" r="6" fill="#EF4444" />
+          </svg>
+        </div>
+        <div class="luma-card__content">
+          <div class="luma-card__rating">
+            <span class="luma-stars">★★★★★</span>
+            <span class="luma-rating__count">4.9 (680+)</span>
+          </div>
+          <h3 class="luma-card__title">
+            <a href="/products/lumasculpt-ultrasonic-body-contouring">LumaSculpt™ Ultrasonic Body Contouring</a>
+          </h3>
+          <p class="luma-card__benefit">1MHz Cavitation Cavitation • Deep Thermal Dermal Tightening</p>
+          <div class="luma-card__footer">
+            <div class="luma-card__pricing">
+              <span class="luma-card__price">$58.49</span>
+              <span class="luma-card__compare">$195.00</span>
+            </div>
+            <a href="/products/lumasculpt-ultrasonic-body-contouring" class="luma-btn-primary luma-card__btn">Shop Sculpt</a>
+          </div>
+          <div class="luma-card__stock-strip">
+            <span class="luma-pulse-dot"></span> In Stock in Utah — Dispatches in 24h
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #luma-grid-{{ section.id }} {
+    padding: 72px 0 64px;
+    background-color: #FAFAFC;
+    font-family: var(--luma-font-body);
+  }
+
+  .luma-grid__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .luma-grid__header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+  }
+
+  .luma-grid__title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: var(--luma-text-heading);
+    letter-spacing: -0.02em;
+    margin: 14px 0 10px;
+  }
+
+  .luma-grid__subtitle {
+    font-size: 1.05rem;
+    color: var(--luma-text-body);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* 3-column desktop, 2-col tablet, 1-col mobile */
+  .luma-product-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .luma-card {
+    background: #FFFFFF;
+    border: 1px solid var(--luma-border-card);
+    border-radius: var(--luma-radius-lg);
+    box-shadow: var(--luma-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luma-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--luma-shadow-lg);
+  }
+
+  .luma-card__badge-wrap {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+  }
+
+  .luma-card__image-wrap {
+    position: relative;
+    background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+    padding: 40px 24px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  }
+
+  .luma-card__glow-bg {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.08) 0%, transparent 70%);
+  }
+
+  .luma-card__svg-mock {
+    width: 130px;
+    height: 150px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .luma-card__content {
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .luma-card__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .luma-rating__count {
+    font-size: 0.78rem;
+    color: var(--luma-text-muted);
+    font-weight: 600;
+  }
+
+  .luma-card__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 8px;
+  }
+
+  .luma-card__title a {
+    color: var(--luma-text-heading);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .luma-card__title a:hover {
+    color: var(--luma-accent-teal);
+  }
+
+  .luma-card__benefit {
+    font-size: 0.85rem;
+    color: var(--luma-text-muted);
+    line-height: 1.45;
+    margin: 0 0 20px;
+    flex-grow: 1;
+  }
+
+  .luma-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--luma-border-light);
+    margin-bottom: 12px;
+  }
+
+  .luma-card__pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .luma-card__price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--luma-accent-teal);
+  }
+
+  .luma-card__compare {
+    font-size: 0.88rem;
+    color: #9CA3AF;
+    text-decoration: line-through;
+  }
+
+  .luma-card__btn {
+    padding: 10px 18px;
+    font-size: 0.88rem;
+  }
+
+  .luma-card__stock-strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--luma-trust-green);
+  }
+
+  @media (max-width: 991px) {
+    .luma-product-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    #luma-grid-{{ section.id }} {
+      padding: 44px 0 36px;
+    }
+
+    .luma-product-cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .luma-card__content {
+      padding: 20px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Luma Clinical Device Grid",
+  "tag": "section",
+  "class": "luma-grid-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge Label",
+      "default": "Engineered For Daily Clinical Protocols"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "default": "The Luma Clinical Device Suite"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subheading",
+      "default": "Targeted 630nm phototherapy, microcurrent sculpting, and cryogenic vasoconstriction. Shipped with tracked Utah dispatch."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luma Clinical Device Grid"
+    }
+  ]
+}
+{% endschema %}

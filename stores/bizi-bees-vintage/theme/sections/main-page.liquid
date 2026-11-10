@@ -1,0 +1,14 @@
+<article class="wrap block prose">
+  <h1>{{ page.title | escape }}</h1>
+
+  {% if page.content != blank %}
+    {{ page.content }}
+  {% endif %}
+
+  {% unless page.handle == 'contact' %}
+    <div class="page-tools">
+      <p>Need help or want to ask about a specific item? <a href="/pages/contact">Contact bizi bees</a> or browse <a href="/collections/all">all finds</a>.</p>
+    </div>
+  {% endunless %}
+</article>
+{% schema %}{"name": "Main Page", "settings": [], "presets": [{"name": "Main Page"}]}{% endschema %}

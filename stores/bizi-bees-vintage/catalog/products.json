@@ -1,0 +1,91 @@
+[
+  {
+    "handle": "blind-date-with-a-book-gift-bundle",
+    "title": "Blind Date with a Book™ — Mystery Curated Paperback Bundle",
+    "productType": "Books & Gifts",
+    "vendor": "Bizi Bees Vintage",
+    "tags": ["books", "blind-date", "gift-bundle", "bestseller", "vintage"],
+    "descriptionHtml": "<h3>The Ultimate Cozy Mystery Reading Experience</h3><p>Wrapped in rustic kraft paper with stamped wax seal and hand-written intrigue clues. Every book is hand-inspected for high readability and pristine spine condition.</p><ul><li><strong>Hand-Selected Paperback:</strong> Gently used, excellent vintage or contemporary condition.</li><li><strong>Curated Reader Extras:</strong> Includes custom pressed floral bookmark, artisan tea sachet, and reading sticker.</li><li><strong>Zero Spoilers:</strong> Choose only by genre vibe and teaser clues.</li></ul>",
+    "options": ["Genre Vibe"],
+    "variants": [
+      {
+        "title": "Cozy Mystery / Whodunit",
+        "price": "24.99",
+        "compareAtPrice": "34.99",
+        "sku": "BIZI-BOOK-MYST",
+        "inventoryQuantity": 45,
+        "requiresShipping": true
+      },
+      {
+        "title": "Classic Sci-Fi & Speculative Fiction",
+        "price": "24.99",
+        "compareAtPrice": "34.99",
+        "sku": "BIZI-BOOK-SCIFI",
+        "inventoryQuantity": 35,
+        "requiresShipping": true
+      },
+      {
+        "title": "Romantic Fiction & Slow-Burn Escapes",
+        "price": "24.99",
+        "compareAtPrice": "34.99",
+        "sku": "BIZI-BOOK-ROM",
+        "inventoryQuantity": 50,
+        "requiresShipping": true
+      }
+    ]
+  },
+  {
+    "handle": "vintage-1000-piece-puzzle-bundle",
+    "title": "Curated 1000-Piece Botanical & Landscape Puzzle Box",
+    "productType": "Puzzles & Games",
+    "vendor": "Bizi Bees Vintage",
+    "tags": ["puzzles", "vintage-games", "family-night", "cozy"],
+    "descriptionHtml": "<h3>Screen-Free Relaxation for Quiet Evenings</h3><p>100% complete guaranteed. Precision ribbon-cut pieces featuring classic botanical, historical map, and vintage national park illustrations.</p><ul><li>Zero missing pieces guarantee (or full replacement).</li><li>High-density recycled board with matte glare-free finish.</li><li>Includes reference poster and reusable canvas storage pouch.</li></ul>",
+    "options": ["Theme Edition"],
+    "variants": [
+      {
+        "title": "Botanical Flora & Pressed Flowers",
+        "price": "28.50",
+        "compareAtPrice": "39.99",
+        "sku": "BIZI-PUZ-FLORA",
+        "inventoryQuantity": 30,
+        "requiresShipping": true
+      },
+      {
+        "title": "Vintage National Parks Heritage Edition",
+        "price": "28.50",
+        "compareAtPrice": "39.99",
+        "sku": "BIZI-PUZ-PARKS",
+        "inventoryQuantity": 25,
+        "requiresShipping": true
+      }
+    ]
+  },
+  {
+    "handle": "curated-vintage-bookstack-trio",
+    "title": "Curated Vintage Decorative Bookstack (Set of 3 Color-Matched Volumes)",
+    "productType": "Home Decor & Collectibles",
+    "vendor": "Bizi Bees Vintage",
+    "tags": ["bookstack", "home-decor", "vintage-books", "gifts"],
+    "descriptionHtml": "<h3>Authentic Hardcover Vintage Decor</h3><p>Real vintage hardcovers hand-selected and color-coordinated to elevate nightstands, coffee tables, and open shelving.</p><ul><li>Authentic cloth-bound vintage spines with embossed gold lettering.</li><li>Color-curated themes (Warm Amber / Forest Green / Antique Linen).</li><li>Bound with natural jute twine.</li></ul>",
+    "options": ["Palette"],
+    "variants": [
+      {
+        "title": "Warm Amber & Honey Gold",
+        "price": "34.00",
+        "compareAtPrice": "48.00",
+        "sku": "BIZI-STACK-AMBER",
+        "inventoryQuantity": 20,
+        "requiresShipping": true
+      },
+      {
+        "title": "Forest Green & Deep Emerald",
+        "price": "34.00",
+        "compareAtPrice": "48.00",
+        "sku": "BIZI-STACK-GREEN",
+        "inventoryQuantity": 18,
+        "requiresShipping": true
+      }
+    ]
+  }
+]

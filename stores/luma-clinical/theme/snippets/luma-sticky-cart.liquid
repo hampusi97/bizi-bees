@@ -1,0 +1,136 @@
+{% comment %}
+  Sticky Mobile Checkout Bar for Luma & Bizi Bees
+  Repo: bizi-bees /snippets/luma-sticky-cart.liquid
+  Features instant 1-click buy now and smooth bundle scroll trigger
+{% endcomment %}
+
+<div class="luma-sticky-bar" id="lumaStickyBar">
+  <div class="luma-sticky-content">
+    <div class="luma-sticky-status">
+      <span class="live-dot"></span>
+      <div class="status-text">
+        <strong>In Stock — Fast Utah Dispatch</strong>
+        <small>Ships in 24–48h · 60-Day Guarantee</small>
+      </div>
+    </div>
+    
+    <div class="luma-sticky-actions">
+      <button type="button" class="luma-buy-now-btn dtc-btn-amber" onclick="lumaDirectBuy()">
+        <span>CLAIM BUNDLE — FROM $38.99</span>
+        <small>⚡ 1-Click Fast Checkout</small>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .luma-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.12);
+    border-top: 1px solid #E2E8F0;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    z-index: 99999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transform: translateZ(0);
+  }
+  .luma-sticky-content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .luma-sticky-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .live-dot {
+    width: 10px;
+    height: 10px;
+    background: #0D9488;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.25);
+  }
+  .status-text strong {
+    display: block;
+    font-size: 13px;
+    color: #0F172A;
+    font-weight: 800;
+  }
+  .status-text small {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .luma-buy-now-btn {
+    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease !important;
+  }
+  .luma-buy-now-btn:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.45) !important;
+  }
+  .luma-buy-now-btn:active {
+    transform: scale(0.98) !important;
+  }
+  .luma-buy-now-btn span {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+  .luma-buy-now-btn small {
+    font-size: 10px;
+    opacity: 0.92;
+  }
+
+  @media (max-width: 580px) {
+    .status-text small {
+      display: none;
+    }
+    .luma-buy-now-btn {
+      padding: 8px 16px;
+    }
+    .luma-buy-now-btn span {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<script>
+  function lumaDirectBuy() {
+    // If bundle builder section is present on page, smooth scroll to it
+    var bundleBuilder = document.querySelector('.luma-bundle-section');
+    if (bundleBuilder) {
+      bundleBuilder.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    // If product form is present, use selected variant
+    var form = document.querySelector('form[action*="/cart/add"]');
+    if (form) {
+      var idInput = form.querySelector('input[name="id"], select[name="id"]');
+      if (idInput && idInput.value) {
+        window.location.href = '/cart/' + idInput.value + ':1';
+        return;
+      }
+    }
+
+    // Otherwise navigate to featured product / bundle
+    window.location.href = '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand';
+  }
+</script>

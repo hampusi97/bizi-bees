@@ -1,0 +1,766 @@
+{% comment %}
+  Section: Bizi Bees "Blind Date with a Book" / Holiday Vibe Selector
+  File: sections/bizi-blind-date-book.liquid
+  Aesthetic: Cozy kraft paper, wax seals, warm tactile boutique mood picker with instant checkout CTA.
+{% endcomment %}
+
+<section 
+  id="BiziBlindDate-{{ section.id }}" 
+  class="bizi-bd-section"
+  style="
+    --bizi-bg: {{ section.settings.bg_color | default: '#FAF7F2' }};
+    --bizi-espresso: {{ section.settings.text_color | default: '#2A241F' }};
+    --bizi-honey: {{ section.settings.accent_color | default: '#D9822B' }};
+    --bizi-olive: {{ section.settings.secondary_accent | default: '#4B5842' }};
+    --bizi-card-bg: #FFFFFF;
+    --bizi-border: #EBD9C5;
+  "
+>
+  <div class="bizi-bd-container">
+    <div class="bizi-bd-header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="bizi-bd-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {% endif %}
+      <h2 class="bizi-bd-title">{{ section.settings.heading | escape }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p class="bizi-bd-subheading">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Mood Picker Navigation Tabs -->
+    <div class="bizi-bd-tabs-wrapper">
+      <div class="bizi-bd-tabs" role="tablist" aria-label="Book Mood Selector">
+        {% for block in section.blocks %}
+          <button 
+            type="button" 
+            role="tab"
+            class="bizi-bd-tab-btn {% if forloop.first %}is-active{% endif %}"
+            id="tab-btn-{{ block.id }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-controls="panel-{{ block.id }}"
+            data-target="panel-{{ block.id }}"
+          >
+            <span class="bizi-bd-tab-emoji">{{ block.settings.tab_emoji }}</span>
+            <span class="bizi-bd-tab-label">{{ block.settings.tab_title | escape }}</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Mood Panels Stage -->
+    <div class="bizi-bd-panels">
+      {% for block in section.blocks %}
+        {% assign featured_product = block.settings.product %}
+        <div 
+          id="panel-{{ block.id }}" 
+          class="bizi-bd-panel {% if forloop.first %}is-active{% endif %}"
+          role="tabpanel"
+          aria-labelledby="tab-btn-{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="bizi-bd-card">
+            <!-- Mystery Book Visual Mockup -->
+            <div class="bizi-bd-visual">
+              <div class="bizi-bd-kraft-wrap">
+                <div class="bizi-bd-twine"></div>
+                <div class="bizi-bd-seal">
+                  <span>{{ block.settings.wax_seal_symbol | default: '🐝' }}</span>
+                </div>
+                <div class="bizi-bd-gift-tag">
+                  <span class="bizi-tag-label">VIBE NO. 0{{ forloop.index }}</span>
+                  <strong class="bizi-tag-vibe">{{ block.settings.tab_title }}</strong>
+                  <span class="bizi-tag-sub">Inspected & Wrapped</span>
+                </div>
+              </div>
+              <div class="bizi-bd-perks">
+                <span class="bizi-bd-pill">🔖 Free Botanical Bookmark</span>
+                <span class="bizi-bd-pill">✨ Hand-Sanitized</span>
+              </div>
+            </div>
+
+            <!-- Mystery Clues & Checkout CTA -->
+            <div class="bizi-bd-details">
+              <div class="bizi-bd-badge-row">
+                <span class="bizi-bd-status-dot"></span>
+                <span class="bizi-bd-status-text">{{ block.settings.rarity_badge | default: 'Curator’s Choice Pick' }}</span>
+              </div>
+
+              <h3 class="bizi-bd-card-heading">{{ block.settings.vibe_headline | escape }}</h3>
+              <p class="bizi-bd-synopsis">{{ block.settings.vibe_desc | escape }}</p>
+
+              <div class="bizi-bd-clues">
+                <h4 class="bizi-bd-clues-title">Three Clues to Your Next Obsession:</h4>
+                <ul class="bizi-bd-clues-list">
+                  {% if block.settings.clue_1 != blank %}
+                    <li><span class="bizi-clue-icon">✦</span> {{ block.settings.clue_1 }}</li>
+                  {% endif %}
+                  {% if block.settings.clue_2 != blank %}
+                    <li><span class="bizi-clue-icon">✦</span> {{ block.settings.clue_2 }}</li>
+                  {% endif %}
+                  {% if block.settings.clue_3 != blank %}
+                    <li><span class="bizi-clue-icon">✦</span> {{ block.settings.clue_3 }}</li>
+                  {% endif %}
+                </ul>
+              </div>
+
+              <!-- Price & Conversion Action -->
+              <div class="bizi-bd-action-area">
+                <div class="bizi-bd-price-box">
+                  <span class="bizi-bd-price-label">Mystery Bundle Price</span>
+                  <span class="bizi-bd-price">
+                    {% if featured_product != blank %}
+                      {{ featured_product.price | money }}
+                    {% else %}
+                      {{ block.settings.custom_price | default: '$14.99' }}
+                    {% endif %}
+                  </span>
+                  <span class="bizi-bd-ships">Ships from Provo, UT</span>
+                </div>
+
+                {% if featured_product != blank and featured_product.available %}
+                  <form action="/cart/add" method="post" enctype="multipart/form-data" class="bizi-bd-form">
+                    <input type="hidden" name="id" value="{{ featured_product.selected_or_first_available_variant.id }}">
+                    <button type="submit" class="bizi-bd-cta-btn">
+                      <span>{{ block.settings.cta_text | default: 'Claim This Mystery Book' }}</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </button>
+                  </form>
+                {% else %}
+                  <a href="{{ block.settings.custom_url | default: '/collections/all' }}" class="bizi-bd-cta-btn">
+                    <span>{{ block.settings.cta_text | default: 'Adopt This Mystery Date' }}</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #BiziBlindDate-{{ section.id }} {
+    background-color: var(--bizi-bg);
+    color: var(--bizi-espresso);
+    padding: clamp(3.5rem, 6vw, 6.5rem) 1.25rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto clamp(2rem, 3.5vw, 3rem);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bizi-honey);
+    background: rgba(217, 130, 43, 0.1);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-title {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--bizi-espresso);
+    margin: 0 0 0.75rem 0;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-subheading {
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.6;
+    color: rgba(42, 36, 31, 0.76);
+    margin: 0;
+  }
+
+  /* Horizontal Scrollable Tabs */
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tabs-wrapper {
+    margin-bottom: 2.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0.25rem;
+  }
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tabs-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    min-width: max-content;
+    margin: 0 auto;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tab-btn {
+    appearance: none;
+    background: #FFFFFF;
+    border: 1px solid var(--bizi-border);
+    border-radius: 999px;
+    padding: 0.65rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: var(--bizi-espresso);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 6px rgba(42, 36, 31, 0.04);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tab-btn:hover {
+    border-color: var(--bizi-honey);
+    transform: translateY(-2px);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-tab-btn.is-active {
+    background: var(--bizi-espresso);
+    color: #FAF7F2;
+    border-color: var(--bizi-espresso);
+    box-shadow: 0 6px 16px rgba(42, 36, 31, 0.18);
+    transform: translateY(-2px);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-panel.is-active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Card Layout */
+  #BiziBlindDate-{{ section.id }} .bizi-bd-card {
+    background: var(--bizi-card-bg);
+    border: 1px solid var(--bizi-border);
+    border-radius: 22px;
+    padding: clamp(1.75rem, 3.5vw, 3rem);
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+    box-shadow: 0 20px 40px -15px rgba(42, 36, 31, 0.08);
+  }
+
+  /* Kraft Wrapped Book Mockup */
+  #BiziBlindDate-{{ section.id }} .bizi-bd-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-kraft-wrap {
+    width: 100%;
+    max-width: 280px;
+    height: 380px;
+    background: linear-gradient(135deg, #d2b48c 0%, #c49d68 100%);
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 15px 35px -5px rgba(110, 75, 40, 0.35), inset 0 0 40px rgba(80, 50, 20, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(138, 98, 51, 0.25);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-twine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(45deg, #e6d3b3, #e6d3b3 8px, #bfa073 8px, #bfa073 16px);
+    transform: translateY(-50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-seal {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(circle at 35% 35%, #9e2a2b, #671516);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.3);
+    z-index: 2;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-gift-tag {
+    position: absolute;
+    bottom: 25px;
+    background: #FAF7F2;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px dashed #b58d60;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-align: center;
+    transform: rotate(-3deg);
+    z-index: 1;
+    width: 78%;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-tag-label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--bizi-olive);
+    font-weight: 700;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-tag-vibe {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--bizi-espresso);
+    margin: 2px 0;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-tag-sub {
+    font-size: 0.7rem;
+    color: rgba(42, 36, 31, 0.65);
+    font-style: italic;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-perks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--bizi-olive);
+    background: rgba(75, 88, 66, 0.08);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  /* Details Column */
+  #BiziBlindDate-{{ section.id }} .bizi-bd-badge-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #27ae60;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-status-text {
+    font-size: 0.775rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--bizi-olive);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-card-heading {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--bizi-espresso);
+    margin: 0 0 0.85rem 0;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-synopsis {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(42, 36, 31, 0.8);
+    margin: 0 0 1.5rem 0;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-clues {
+    background: #FAF7F2;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    border: 1px solid var(--bizi-border);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-clues-title {
+    font-size: 0.825rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bizi-espresso);
+    margin: 0 0 0.75rem 0;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-clues-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-clues-list li {
+    font-size: 0.925rem;
+    line-height: 1.5;
+    color: var(--bizi-espresso);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-clue-icon {
+    color: var(--bizi-honey);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  /* Price & CTA Action */
+  #BiziBlindDate-{{ section.id }} .bizi-bd-action-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(235, 217, 197, 0.6);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-price-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(42, 36, 31, 0.65);
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-price {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--bizi-espresso);
+    line-height: 1.1;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-ships {
+    font-size: 0.75rem;
+    color: var(--bizi-olive);
+    font-weight: 600;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-cta-btn {
+    appearance: none;
+    background: var(--bizi-honey);
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.95rem 1.85rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 8px 20px -3px rgba(217, 130, 43, 0.4);
+    transition: all 0.25s ease;
+  }
+
+  #BiziBlindDate-{{ section.id }} .bizi-bd-cta-btn:hover {
+    background: #c37222;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -3px rgba(217, 130, 43, 0.5);
+  }
+
+  @media (max-width: 860px) {
+    #BiziBlindDate-{{ section.id }} .bizi-bd-card {
+      grid-template-columns: 1fr;
+      padding: 1.75rem 1.25rem;
+      gap: 2rem;
+    }
+    #BiziBlindDate-{{ section.id }} .bizi-bd-action-area {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    #BiziBlindDate-{{ section.id }} .bizi-bd-cta-btn {
+      justify-content: center;
+      width: 100%;
+    }
+    #BiziBlindDate-{{ section.id }} .bizi-bd-tabs {
+      justify-content: flex-start;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const sectionEl = document.getElementById('BiziBlindDate-{{ section.id }}');
+    if (!sectionEl) return;
+
+    const tabs = Array.from(sectionEl.querySelectorAll('.bizi-bd-tab-btn'));
+    const panels = Array.from(sectionEl.querySelectorAll('.bizi-bd-panel'));
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-target');
+
+        // Deactivate all
+        tabs.forEach(t => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(p => {
+          p.classList.remove('is-active');
+        });
+
+        // Activate selected
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const activePanel = sectionEl.querySelector('#' + targetId);
+        if (activePanel) {
+          activePanel.classList.add('is-active');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bizi Blind Date Vibe",
+  "tag": "section",
+  "class": "bizi-section-bd",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Badge",
+      "default": "Mystery Book Program"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Blind Date with a Pre-Loved Book"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Pick your reading vibe. Each book arrives hand-wrapped in recycled brown kraft paper, wax-sealed with handwritten clues."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF7F2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#2A241F"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Primary Accent (Honey Gold)",
+      "default": "#D9822B"
+    },
+    {
+      "type": "color",
+      "id": "secondary_accent",
+      "label": "Secondary Accent (Olive)",
+      "default": "#4B5842"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "vibe_item",
+      "name": "Vibe Mood",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_emoji",
+          "label": "Tab Emoji",
+          "default": "🌧️"
+        },
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Vibe Tab Title",
+          "default": "Rainy Day Mystery"
+        },
+        {
+          "type": "text",
+          "id": "wax_seal_symbol",
+          "label": "Wax Seal Symbol",
+          "default": "🐝"
+        },
+        {
+          "type": "text",
+          "id": "rarity_badge",
+          "label": "Rarity Badge",
+          "default": "Only 3 Copies in Provo Vault"
+        },
+        {
+          "type": "text",
+          "id": "vibe_headline",
+          "label": "Vibe Headline",
+          "default": "Foggy Manor, Hidden Wills & Suspicious Tea"
+        },
+        {
+          "type": "textarea",
+          "id": "vibe_desc",
+          "label": "Teaser Description",
+          "default": "A classic golden-age locked-room puzzle from the late 1960s. Crisp yellowed pages, vintage dust jacket wear, and suspense that keeps you guessing past 2:00 AM."
+        },
+        {
+          "type": "text",
+          "id": "clue_1",
+          "label": "Clue 1",
+          "default": "English countryside estate cut off by heavy autumn floods"
+        },
+        {
+          "type": "text",
+          "id": "clue_2",
+          "label": "Clue 2",
+          "default": "Clever amateur detective with a penchant for cryptic crosswords"
+        },
+        {
+          "type": "text",
+          "id": "clue_3",
+          "label": "Clue 3",
+          "default": "Hand-inspected first-run mass-market paperback edition"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Link Shopify Product (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "custom_price",
+          "label": "Display Price (if no product linked)",
+          "default": "$14.99"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button CTA Text",
+          "default": "Claim This Mystery Book"
+        },
+        {
+          "type": "url",
+          "id": "custom_url",
+          "label": "Fallback Button URL",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bizi Blind Date Vibe",
+      "blocks": [
+        {
+          "type": "vibe_item",
+          "settings": {
+            "tab_emoji": "🌧️",
+            "tab_title": "Rainy Day Mystery",
+            "wax_seal_symbol": "🗝️",
+            "vibe_headline": "Foggy Manor, Cryptic Wills & Suspicious Tea",
+            "vibe_desc": "A classic golden-age puzzle. Crisp deckled edges, gentle book smell, and suspense that keeps you reading through the storm.",
+            "clue_1": "Remote English countryside manor cut off by floodwaters",
+            "clue_2": "Amateur detective with a sharp tongue and an eye for details",
+            "clue_3": "Vintage paperback with preserved original cover art",
+            "custom_price": "$14.99"
+          }
+        },
+        {
+          "type": "vibe_item",
+          "settings": {
+            "tab_emoji": "☕",
+            "tab_title": "Warm Hearth & Home",
+            "wax_seal_symbol": "🕯️",
+            "vibe_headline": "Cottage Recipes, Second Chances & Starlight",
+            "vibe_desc": "A heartwarming mid-century pastoral novel about belonging, hearth-baked bread, and finding peace in quiet towns.",
+            "clue_1": "Set in a windswept coastal harbor town with a cozy bakery",
+            "clue_2": "Found-family warmth, soothing pacing, zero modern cynicism",
+            "clue_3": "Original cloth-bound hardcover edition with gilded embossing",
+            "custom_price": "$16.99"
+          }
+        },
+        {
+          "type": "vibe_item",
+          "settings": {
+            "tab_emoji": "🕰️",
+            "tab_title": "1970s Sci-Fi",
+            "wax_seal_symbol": "🪐",
+            "vibe_headline": "Analog Synthesizers, Deep Orbit & Speculative Futures",
+            "vibe_desc": "Vintage speculative fiction from the golden paperback era. Featuring retro-futuristic cover art and philosophical explorations.",
+            "clue_1": "First-contact intrigue aboard a generation starship",
+            "clue_2": "Thought-provoking mind-bending paradoxes",
+            "clue_3": "Collectible vintage DAW/Ballantine print in great condition",
+            "custom_price": "$15.50"
+          }
+        },
+        {
+          "type": "vibe_item",
+          "settings": {
+            "tab_emoji": "⚡",
+            "tab_title": "Page-Turner Thriller",
+            "wax_seal_symbol": "⚡",
+            "vibe_headline": "High-Stakes Heists, Cold War Espionage & Twists",
+            "vibe_desc": "Fast-paced tension that burns through 300 pages in one sitting. Perfect for holiday travel and long cozy evenings.",
+            "clue_1": "Double agents, sleeper codes, and midnight border crossings",
+            "clue_2": "Short chapters with unrelenting cliffhangers",
+            "clue_3": "Pristine tight spine with zero dog-eared pages",
+            "custom_price": "$13.99"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

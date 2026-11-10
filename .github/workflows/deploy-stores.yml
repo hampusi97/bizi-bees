@@ -1,0 +1,115 @@
+name: Multi-Store Shopify Deployment Automation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'stores/**'
+      - 'scripts/manage_stores.py'
+      - '.github/workflows/deploy-stores.yml'
+  workflow_dispatch:
+    inputs:
+      target_store:
+        description: 'Target Store to Deploy'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - luma-clinical
+          - bizi-bees-vintage
+      action:
+        description: 'Action to Execute'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - seed-catalog
+          - check
+          - export-theme-zip
+      dry_run:
+        description: 'Dry Run Mode (Simulate without mutation)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  # ============================================================================
+  # Store 1: Luma Clinical (https://lumaclinical.com)
+  # ============================================================================
+  deploy-luma-clinical:
+    name: Deploy Luma Clinical
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && (inputs.target_store == 'all' || inputs.target_store == 'luma-clinical'))
+
+    steps:
+      - name: Checkout Monorepo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests
+
+      - name: Validate & Provision Luma Clinical Storefront
+        env:
+          SHOPIFY_STORE_LUMA_URL: ${{ secrets.SHOPIFY_STORE_LUMA_URL || secrets.SHOPIFY_SHOP_URL }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN_LUMA: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN_LUMA || secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+        run: |
+          ACTION="${{ inputs.action || 'all' }}"
+          DRY_RUN_FLAG="${{ inputs.dry_run == true && '--dry-run' || '' }}"
+          python3 scripts/manage_stores.py --store luma-clinical --action "$ACTION" $DRY_RUN_FLAG
+
+      - name: Archive Luma Theme Distribution
+        uses: actions/upload-artifact@v4
+        with:
+          name: luma-clinical-theme-dist
+          path: dist/luma-clinical-theme.zip
+          if-no-files-found: ignore
+
+  # ============================================================================
+  # Store 2: Bizi Bees Vintage (https://shopbizibees.com)
+  # ============================================================================
+  deploy-bizi-bees-vintage:
+    name: Deploy Bizi Bees Vintage
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && (inputs.target_store == 'all' || inputs.target_store == 'bizi-bees-vintage'))
+
+    steps:
+      - name: Checkout Monorepo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests
+
+      - name: Validate & Provision Bizi Bees Vintage Storefront
+        env:
+          SHOPIFY_STORE_BIZIBEES_URL: ${{ secrets.SHOPIFY_STORE_BIZIBEES_URL || secrets.SHOPIFY_SHOP_URL }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN_BIZIBEES: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN_BIZIBEES || secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+        run: |
+          ACTION="${{ inputs.action || 'all' }}"
+          DRY_RUN_FLAG="${{ inputs.dry_run == true && '--dry-run' || '' }}"
+          python3 scripts/manage_stores.py --store bizi-bees-vintage --action "$ACTION" $DRY_RUN_FLAG
+
+      - name: Archive Bizi Bees Vintage Theme Distribution
+        uses: actions/upload-artifact@v4
+        with:
+          name: bizi-bees-vintage-theme-dist
+          path: dist/bizi-bees-vintage-theme.zip
+          if-no-files-found: ignore

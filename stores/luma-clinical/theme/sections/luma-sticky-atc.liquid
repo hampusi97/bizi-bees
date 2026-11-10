@@ -1,0 +1,424 @@
+{% comment %}
+  Luma Clinical Wellness - Sticky Mobile 1-Click Conversion Bar
+  File: sections/luma-sticky-atc.liquid
+{% endcomment %}
+
+{% liquid
+  assign target_product = section.settings.product | default: product
+%}
+
+<div class="luma-sticky-bar" id="luma-sticky-bar-{{ section.id }}" data-section-id="{{ section.id }}" aria-hidden="true">
+  <div class="luma-sticky-bar__inner">
+    
+    <!-- Top Stock & Dispatch Ticker Strip -->
+    <div class="luma-sticky-bar__live-banner">
+      <div class="luma-live-pulse">
+        <span class="luma-pulse-dot"></span>
+        <span class="luma-live-text">{{ section.settings.stock_text | default: "In Stock in Utah — Dispatches in 24 Hours" }}</span>
+      </div>
+      <div class="luma-live-security">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>60-Day Trial</span>
+      </div>
+    </div>
+
+    <!-- Main Content Row -->
+    <div class="luma-sticky-bar__body">
+      
+      <!-- Product Mini Info -->
+      <div class="luma-sticky-bar__product-info">
+        <div class="luma-sticky-bar__thumbnail">
+          {% if target_product.featured_image != blank %}
+            <img src="{{ target_product.featured_image | image_url: width: 120 }}" alt="{{ target_product.title | escape }}" width="48" height="48" loading="lazy">
+          {% else %}
+            <!-- Mini vector device icon -->
+            <div class="luma-sticky-bar__fallback-thumb">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+                <rect x="7" y="2" width="10" height="4" rx="2" fill="#EF4444" />
+                <rect x="10" y="6" width="4" height="16" rx="2" fill="#0D9488" />
+              </svg>
+            </div>
+          {% endif %}
+        </div>
+        
+        <div class="luma-sticky-bar__meta">
+          <span class="luma-sticky-bar__title">
+            {{ target_product.title | default: "LumaGlow™ 4-in-1 Facial Wand" }}
+          </span>
+          <div class="luma-sticky-bar__pricing">
+            <span class="luma-sticky-bar__price" id="luma-sticky-price-{{ section.id }}">
+              {% if target_product.price %}
+                {{ target_product.price | money }}
+              {% else %}
+                $38.99
+              {% endif %}
+            </span>
+            <span class="luma-sticky-bar__compare-price">
+              {% if target_product.compare_at_price > target_product.price %}
+                {{ target_product.compare_at_price | money }}
+              {% else %}
+                $169.00
+              {% endif %}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variant Color Selector & Fast Checkout CTA -->
+      <div class="luma-sticky-bar__action-group">
+        
+        <!-- Color / Variant Picker -->
+        <div class="luma-sticky-bar__variants">
+          <select id="luma-sticky-variant-select-{{ section.id }}" class="luma-sticky-select" aria-label="Select Finish">
+            {% if target_product and target_product.variants.size > 0 %}
+              {% for variant in target_product.variants %}
+                <option value="{{ variant.id }}" data-price="{{ variant.price | money }}" {% if variant == target_product.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>
+                  {{ variant.title }} {% unless variant.available %}(Sold Out){% endunless %}
+                </option>
+              {% endfor %}
+            {% else %}
+              <option value="default_rose" data-price="$38.99">Derm Rose Gold</option>
+              <option value="default_matte" data-price="$38.99">Clinical Matte Teal</option>
+              <option value="default_pearl" data-price="$38.99">Pure Pearl White</option>
+            {% endif %}
+          </select>
+        </div>
+
+        <!-- 1-Click Fast Checkout Button -->
+        <button type="button" class="luma-btn-primary luma-sticky-bar__btn" id="luma-sticky-checkout-btn-{{ section.id }}">
+          <span class="luma-btn-text">Quick Checkout</span>
+          <svg class="luma-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Payment Trust Micro Icons -->
+    <div class="luma-sticky-bar__payment-strip">
+      <span>Express Checkout Supported:</span>
+      <span class="luma-pay-pill">Shop Pay</span>
+      <span class="luma-pay-pill">Apple Pay</span>
+      <span class="luma-pay-pill">PayPal</span>
+      <span class="luma-pay-pill">GPay</span>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .luma-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--luma-border-light);
+    box-shadow: 0 -8px 24px rgba(17, 24, 39, 0.1);
+    z-index: 99999;
+    transform: translateY(110%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, visibility 0.35s;
+    font-family: var(--luma-font-body);
+  }
+
+  .luma-sticky-bar.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .luma-sticky-bar__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 16px 12px;
+  }
+
+  /* Live Inventory Banner */
+  .luma-sticky-bar__live-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+    font-size: 0.72rem;
+  }
+
+  .luma-live-pulse {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--luma-trust-green);
+    font-weight: 700;
+  }
+
+  .luma-live-security {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--luma-text-muted);
+    font-weight: 600;
+  }
+
+  .luma-sticky-bar__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  /* Product Info */
+  .luma-sticky-bar__product-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .luma-sticky-bar__thumbnail {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #F3F4F6;
+    border: 1px solid var(--luma-border-light);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .luma-sticky-bar__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .luma-sticky-bar__meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .luma-sticky-bar__title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--luma-text-heading);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .luma-sticky-bar__pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .luma-sticky-bar__price {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--luma-accent-teal);
+  }
+
+  .luma-sticky-bar__compare-price {
+    font-size: 0.78rem;
+    color: var(--luma-text-muted);
+    text-decoration: line-through;
+  }
+
+  /* Action Group */
+  .luma-sticky-bar__action-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .luma-sticky-select {
+    padding: 10px 12px;
+    border-radius: var(--luma-radius-md);
+    border: 1px solid var(--luma-border-light);
+    font-size: 0.85rem;
+    background: #FFFFFF;
+    color: var(--luma-text-heading);
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    max-width: 160px;
+  }
+
+  .luma-sticky-select:focus {
+    border-color: var(--luma-accent-teal);
+  }
+
+  .luma-sticky-bar__btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-radius: var(--luma-radius-full);
+  }
+
+  /* Payment Strip */
+  .luma-sticky-bar__payment-strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.68rem;
+    color: #9CA3AF;
+  }
+
+  .luma-pay-pill {
+    background: #F3F4F6;
+    color: #4B5563;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.65rem;
+  }
+
+  @media (max-width: 640px) {
+    .luma-sticky-bar__product-info {
+      display: none; /* Emphasize speed & tap targets on mobile */
+    }
+
+    .luma-sticky-bar__action-group {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+    }
+
+    .luma-sticky-select {
+      flex: 1;
+      max-width: 45%;
+      font-size: 0.8rem;
+      padding: 10px 8px;
+    }
+
+    .luma-sticky-bar__btn {
+      flex: 1;
+      max-width: 55%;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      justify-content: center;
+    }
+
+    .luma-sticky-bar__payment-strip {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    function initStickyBar() {
+      const stickyBar = document.getElementById('luma-sticky-bar-{{ section.id }}');
+      const variantSelect = document.getElementById('luma-sticky-variant-select-{{ section.id }}');
+      const checkoutBtn = document.getElementById('luma-sticky-checkout-btn-{{ section.id }}');
+      const priceDisplay = document.getElementById('luma-sticky-price-{{ section.id }}');
+
+      if (!stickyBar) return;
+
+      // Pure requestAnimationFrame scroll listener for sub-1.8s smoothness
+      let ticking = false;
+      let lastScrollY = 0;
+
+      function onScroll() {
+        lastScrollY = window.scrollY || window.pageYOffset;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            // Show after scrolling past 320px
+            if (lastScrollY > 320) {
+              stickyBar.classList.add('is-visible');
+              stickyBar.setAttribute('aria-hidden', 'false');
+            } else {
+              stickyBar.classList.remove('is-visible');
+              stickyBar.setAttribute('aria-hidden', 'true');
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Dynamic price update on variant change
+      if (variantSelect) {
+        variantSelect.addEventListener('change', (e) => {
+          const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+          const newPrice = selectedOption.getAttribute('data-price');
+          if (newPrice && priceDisplay) {
+            priceDisplay.textContent = newPrice;
+          }
+        });
+      }
+
+      // 1-Click Fast Checkout redirect: /cart/{variant_id}:1
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          let variantId = variantSelect ? variantSelect.value : null;
+
+          if (!variantId || variantId.startsWith('default_')) {
+            // Fallback: If no live shopify variant is wired, redirect to first product or checkout
+            const fallbackHandle = 'lumaglow-4-in-1-facial-wand';
+            window.location.href = `/products/${fallbackHandle}`;
+            return;
+          }
+
+          // Direct bypass straight to Shopify native checkout /cart/{id}:1
+          window.location.href = `/cart/${variantId}:1`;
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initStickyBar);
+
+    if (window.Shopify && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', (e) => {
+        if (e.target.id === 'luma-sticky-bar-{{ section.id }}') {
+          initStickyBar();
+        }
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Luma Sticky Conversion Bar",
+  "tag": "section",
+  "class": "luma-sticky-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured Target Product (Optional)",
+      "info": "Defaults to LumaGlow Wand or current page product"
+    },
+    {
+      "type": "text",
+      "id": "stock_text",
+      "label": "Stock & Dispatch Notification",
+      "default": "In Stock in Utah — Dispatches in 24 Hours"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luma Sticky Conversion Bar"
+    }
+  ]
+}
+{% endschema %}

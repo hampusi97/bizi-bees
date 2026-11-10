@@ -1,0 +1,488 @@
+{% comment %}
+  Section: Bizi Bees Interactive Zero-Gravity Curiosity Hub
+  File: sections/bizi-zero-gravity-hub.liquid
+  Aesthetic: Cozy editorial boutique with physics-driven harmonic drift & cursor repulsion.
+{% endcomment %}
+
+<section 
+  id="BiziZeroGravity-{{ section.id }}" 
+  class="bizi-zg-section"
+  style="
+    --bizi-bg: {{ section.settings.bg_color | default: '#FAF7F2' }};
+    --bizi-espresso: {{ section.settings.text_color | default: '#2A241F' }};
+    --bizi-honey: {{ section.settings.accent_color | default: '#D9822B' }};
+    --bizi-olive: {{ section.settings.secondary_accent | default: '#4B5842' }};
+    --bizi-border: #EBD9C5;
+  "
+>
+  <div class="bizi-zg-container">
+    <header class="bizi-zg-header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="bizi-zg-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="bizi-zg-title">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="bizi-zg-subheading">{{ section.settings.subheading | escape }}</p>
+      {% endif %}
+    </header>
+
+    <!-- Stage area where cards gently orbit & drift -->
+    <div class="bizi-zg-stage" id="zgStage-{{ section.id }}">
+      <div class="bizi-zg-grid">
+        {% for block in section.blocks %}
+          <div 
+            class="bizi-zg-card" 
+            id="zgCard-{{ block.id }}"
+            data-index="{{ forloop.index0 }}"
+            data-speed="{{ block.settings.drift_speed | default: 1.0 }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="bizi-zg-card-inner">
+              <div class="bizi-zg-card-top">
+                {% if block.settings.badge != blank %}
+                  <span class="bizi-zg-badge" style="background: {{ block.settings.badge_bg }}; color: {{ block.settings.badge_color }};">
+                    {{ block.settings.badge | escape }}
+                  </span>
+                {% endif %}
+                <span class="bizi-zg-icon">{{ block.settings.icon }}</span>
+              </div>
+              <h3 class="bizi-zg-card-title">{{ block.settings.title | escape }}</h3>
+              <p class="bizi-zg-card-desc">{{ block.settings.text | escape }}</p>
+              {% if block.settings.link_text != blank and block.settings.link_url != blank %}
+                <a href="{{ block.settings.link_url }}" class="bizi-zg-card-link">
+                  <span>{{ block.settings.link_text | escape }}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #BiziZeroGravity-{{ section.id }} {
+    background-color: var(--bizi-bg);
+    color: var(--bizi-espresso);
+    padding: clamp(3rem, 6vw, 6rem) 1.25rem;
+    position: relative;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bizi-olive);
+    background: rgba(75, 88, 66, 0.08);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-title {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--bizi-espresso);
+    margin: 0 0 0.75rem 0;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-subheading {
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.6;
+    color: rgba(42, 36, 31, 0.75);
+    margin: 0;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-stage {
+    position: relative;
+    min-height: 380px;
+    perspective: 1000px;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card {
+    will-change: transform;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 18px;
+    transform-style: preserve-3d;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-inner {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--bizi-border);
+    border-radius: 18px;
+    padding: 2rem 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px -5px rgba(42, 36, 31, 0.05), 0 8px 10px -6px rgba(42, 36, 31, 0.03);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card:hover .bizi-zg-card-inner {
+    border-color: var(--bizi-honey);
+    box-shadow: 0 20px 35px -5px rgba(217, 130, 43, 0.12), 0 12px 16px -8px rgba(42, 36, 31, 0.08);
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--bizi-espresso);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-desc {
+    font-size: 0.925rem;
+    line-height: 1.55;
+    color: rgba(42, 36, 31, 0.78);
+    margin: 0 0 1.25rem 0;
+    flex-grow: 1;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bizi-honey);
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  #BiziZeroGravity-{{ section.id }} .bizi-zg-card-link:hover {
+    color: #b8691b;
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 768px) {
+    #BiziZeroGravity-{{ section.id }} {
+      padding: 2.75rem 1rem;
+    }
+    #BiziZeroGravity-{{ section.id }} .bizi-zg-grid {
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+    #BiziZeroGravity-{{ section.id }} .bizi-zg-card-inner {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #BiziZeroGravity-{{ section.id }} .bizi-zg-card {
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const sectionEl = document.getElementById('BiziZeroGravity-{{ section.id }}');
+    if (!sectionEl) return;
+
+    // Check prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const stage = sectionEl.querySelector('#zgStage-{{ section.id }}');
+    const cards = Array.from(sectionEl.querySelectorAll('.bizi-zg-card'));
+    if (!cards.length) return;
+
+    // Mouse coordinates relative to stage center
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetMouseX = 0;
+    let targetMouseY = 0;
+    let isHovering = false;
+
+    // Seeded unique harmonic frequencies for each card
+    const cardPhysics = cards.map((card, i) => ({
+      el: card,
+      freqX: 0.0008 + (i * 0.0003),
+      freqY: 0.0011 + (i * 0.0002),
+      ampX: 7 + (i % 3) * 3, // Drift amplitude X (px)
+      ampY: 10 + (i % 2) * 4, // Drift amplitude Y (px)
+      phase: i * 1.35,
+      tiltAmp: 5, // degrees
+      curX: 0,
+      curY: 0,
+      curRotX: 0,
+      curRotY: 0
+    }));
+
+    function onMouseMove(e) {
+      const rect = stage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      targetMouseX = (e.clientX - centerX) / (rect.width / 2);
+      targetMouseY = (e.clientY - centerY) / (rect.height / 2);
+      isHovering = true;
+    }
+
+    function onMouseLeave() {
+      targetMouseX = 0;
+      targetMouseY = 0;
+      isHovering = false;
+    }
+
+    stage.addEventListener('mousemove', onMouseMove, { passive: true });
+    stage.addEventListener('mouseleave', onMouseLeave, { passive: true });
+
+    let animationId = null;
+    let startTime = performance.now();
+
+    function render(now) {
+      const elapsed = now - startTime;
+
+      // Smooth interpolation (lerp) of mouse position
+      mouseX += (targetMouseX - mouseX) * 0.05;
+      mouseY += (targetMouseY - mouseY) * 0.05;
+
+      cardPhysics.forEach(item => {
+        // Harmonic drift using sine and cosine waves
+        const driftX = Math.sin(elapsed * item.freqX + item.phase) * item.ampX;
+        const driftY = Math.cos(elapsed * item.freqY + item.phase) * item.ampY;
+
+        // Interactive repulsion & 3D tilt
+        const repulsionX = -mouseX * 12;
+        const repulsionY = -mouseY * 12;
+
+        const targetX = driftX + repulsionX;
+        const targetY = driftY + repulsionY;
+        const targetRotY = mouseX * item.tiltAmp;
+        const targetRotX = -mouseY * item.tiltAmp;
+
+        // Apply smooth lerp
+        item.curX += (targetX - item.curX) * 0.08;
+        item.curY += (targetY - item.curY) * 0.08;
+        item.curRotX += (targetRotX - item.curRotX) * 0.08;
+        item.curRotY += (targetRotY - item.curRotY) * 0.08;
+
+        item.el.style.transform = `translate3d(${item.curX.toFixed(2)}px, ${item.curY.toFixed(2)}px, 0) rotateX(${item.curRotX.toFixed(2)}deg) rotateY(${item.curRotY.toFixed(2)}deg)`;
+      });
+
+      animationId = requestAnimationFrame(render);
+    }
+
+    // Only run loop when section is in viewport (IntersectionObserver optimization)
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animationId) {
+            startTime = performance.now();
+            animationId = requestAnimationFrame(render);
+          }
+        } else {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(sectionEl);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bizi Zero-Gravity Hub",
+  "tag": "section",
+  "class": "bizi-section-zg",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Pill",
+      "default": "Curated with Care in Utah"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Bizi Bees Curiosity Hub"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Hand-inspected pre-loved paperbacks, nostalgic vintage treasures, and cozy stocking stuffers ready for holiday gifting."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF7F2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Espresso Text Color",
+      "default": "#2A241F"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Honey Gold Accent",
+      "default": "#D9822B"
+    },
+    {
+      "type": "color",
+      "id": "secondary_accent",
+      "label": "Bookleaf Olive Accent",
+      "default": "#4B5842"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar_card",
+      "name": "Curiosity Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Emoji Icon",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge Text",
+          "default": "Provo Workshop"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg",
+          "label": "Badge Background",
+          "default": "rgba(217, 130, 43, 0.12)"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Badge Text Color",
+          "default": "#D9822B"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "100% Cleaned & Inspected in Provo"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Every vintage volume and retro find is sanitized, spine-checked, and packaged with archival reverence."
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Read our standard"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bizi Zero-Gravity Hub",
+      "blocks": [
+        {
+          "type": "pillar_card",
+          "settings": {
+            "icon": "🔍",
+            "badge": "Hand-Verified",
+            "title": "100% Cleaned & Inspected in Provo",
+            "text": "Every vintage volume is UV-sanitized, spine-tested, and certified complete right in our Utah workshop.",
+            "link_text": "Our 4-Point Promise"
+          }
+        },
+        {
+          "type": "pillar_card",
+          "settings": {
+            "icon": "🌿",
+            "badge": "Sustainable Gifting",
+            "title": "Eco-Conscious Pre-Loved Finds",
+            "text": "Give storied literature and vintage heirlooms a second life in biodegradable kraft packaging.",
+            "link_text": "Explore Vintage"
+          }
+        },
+        {
+          "type": "pillar_card",
+          "settings": {
+            "icon": "📦",
+            "badge": "Holiday Special",
+            "title": "Free Shipping on $35+",
+            "text": "Stock up on book bundles, stationery, and stocking fillers with fast, tracked doorstep delivery.",
+            "link_text": "Shop Stocking Stuffers"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

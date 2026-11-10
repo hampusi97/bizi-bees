@@ -1,0 +1,102 @@
+[
+  {
+    "handle": "lumaglow-4-in-1-facial-wand",
+    "title": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
+    "productType": "Skin Care Tools",
+    "vendor": "Luma Clinical",
+    "tags": ["facial-wand", "red-light", "bestseller", "channel:tiktok", "channel:meta", "clinical-beauty"],
+    "descriptionHtml": "<h3>Targeted Phototherapy & Microcurrent Sculpting</h3><p>Engineered with the <strong>QuadWave™ Protocol</strong> to visibly lift, contour, and depuff in 3 minutes daily.</p><ul><li><strong>630nm Deep Red Light:</strong> Rejuvenates skin vitality and visibly smooths fine lines.</li><li><strong>Galvanic Microcurrent:</strong> Gently tones facial contours and jawline.</li><li><strong>Therapeutic Warmth (107°F):</strong> Enhances skin absorption of serums and moisturizers.</li><li><strong>Gentle Facial Massage:</strong> Promotes circulation and visible depuffing.</li></ul><p><em>Includes 60-Day Satisfaction Guarantee • Dispatches within 24h from Utah, USA.</em></p>",
+    "options": ["Bundle Option"],
+    "variants": [
+      {
+        "title": "Solo Wand (Rose Gold)",
+        "price": "39.99",
+        "compareAtPrice": "79.99",
+        "sku": "LUMA-WAND-ROSE",
+        "inventoryQuantity": 150,
+        "requiresShipping": true
+      },
+      {
+        "title": "The Complete 30-Day Glow Kit (Wand + Activating Serum + Case)",
+        "price": "59.99",
+        "compareAtPrice": "119.99",
+        "sku": "LUMA-WAND-KIT",
+        "inventoryQuantity": 100,
+        "requiresShipping": true
+      }
+    ]
+  },
+  {
+    "handle": "lumarelief-compression-migraine-cap",
+    "title": "LumaRelief™ 360° Cold & Thermal Compression Relief Cap",
+    "productType": "Therapeutic Wellness",
+    "vendor": "Luma Clinical",
+    "tags": ["migraine-cap", "cold-therapy", "bestseller", "channel:tiktok", "channel:meta", "recovery"],
+    "descriptionHtml": "<h3>360° Light-Blocking Cranial & Sinus Compression</h3><p>Medical-grade hydro-gel cap engineered for natural, pill-free head tension relief.</p><ul><li><strong>Dual Cold & Heat Retention:</strong> Remains therapeutically cold for 45+ minutes.</li><li><strong>Total Blackout Fit:</strong> Ergonomic nose contour blocks 100% of intrusive light.</li><li><strong>Flexible CloudGel™:</strong> Conforms smoothly to face, temples, and neck even when frozen.</li></ul><p><em>Safe, non-invasive, drug-free comfort.</em></p>",
+    "options": ["Pack Size"],
+    "variants": [
+      {
+        "title": "Single Relief Cap",
+        "price": "24.99",
+        "compareAtPrice": "49.99",
+        "sku": "LUMA-CAP-1PK",
+        "inventoryQuantity": 200,
+        "requiresShipping": true
+      },
+      {
+        "title": "2-Cap Continuous Rotation Pack (Always Have One Frozen)",
+        "price": "34.99",
+        "compareAtPrice": "69.99",
+        "sku": "LUMA-CAP-2PK",
+        "inventoryQuantity": 120,
+        "requiresShipping": true
+      }
+    ]
+  },
+  {
+    "handle": "lumamask-7-color-led-shield",
+    "title": "LumaMask™ 7-Color LED Phototherapy Shield",
+    "productType": "Skin Care Tools",
+    "vendor": "Luma Clinical",
+    "tags": ["led-mask", "phototherapy", "high-ticket", "channel:all"],
+    "descriptionHtml": "<h3>Full-Spectrum At-Home Phototherapy Shield</h3><p>Ergonomic hands-free LED shield engineered with 7 targeted light spectrums for complete skin rejuvenation.</p><ul><li>Hands-free ergonomic face and neck contouring.</li><li>Eye-safe silicone comfort goggles integrated.</li><li>100% UV-Free light emission.</li><li>Automatic 15-minute treatment timer.</li></ul>",
+    "options": ["Edition"],
+    "variants": [
+      {
+        "title": "Standard Clinical Edition",
+        "price": "89.00",
+        "compareAtPrice": "199.00",
+        "sku": "LUMA-MASK-STD",
+        "inventoryQuantity": 85,
+        "requiresShipping": true
+      },
+      {
+        "title": "Pro Clinical Suite (+ Collagen Serum & Travel Case)",
+        "price": "119.00",
+        "compareAtPrice": "249.00",
+        "sku": "LUMA-MASK-PRO",
+        "inventoryQuantity": 60,
+        "requiresShipping": true
+      }
+    ]
+  },
+  {
+    "handle": "lumalift-microcurrent-v-face-sculptor",
+    "title": "LumaLift™ V-Face Microcurrent Sculptor",
+    "productType": "Skin Care Tools",
+    "vendor": "Luma Clinical",
+    "tags": ["microcurrent", "contouring", "channel:tiktok", "channel:meta"],
+    "descriptionHtml": "<h3>Sculpted Cheekbones & Defined Jawline</h3><p>Ergonomic dual-roller microcurrent tool delivering gentle electrical waveforms that activate facial muscles.</p><ul><li>5 microcurrent intensity levels.</li><li>Ergonomic 3D rollers glide seamlessly over jawline and neck.</li><li>Dispatches in 24 hours from Utah.</li></ul>",
+    "options": ["Color"],
+    "variants": [
+      {
+        "title": "Pearl White",
+        "price": "42.24",
+        "compareAtPrice": "89.00",
+        "sku": "LUMA-LIFT-WHT",
+        "inventoryQuantity": 90,
+        "requiresShipping": true
+      }
+    ]
+  }
+]

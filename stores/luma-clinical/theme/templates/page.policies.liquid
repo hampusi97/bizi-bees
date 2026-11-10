@@ -1,0 +1,162 @@
+{% comment %}
+  Modular Page Template for Store Policies, Guarantees & Compliance
+  Repo: bizi-bees /templates/page.policies.liquid
+{% endcomment %}
+
+<div class="page-policies-container">
+  <div class="page-policies-hero">
+    <div class="wrap">
+      <nav class="policies-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <span aria-current="page">{{ page.title | default: 'Store Policies & Compliance' }}</span>
+      </nav>
+      <div class="hero-badge">
+        <span class="dot-live"></span> OFFICIAL SHOP STANDARDS · PROVO &amp; DOMESTIC HUBS
+      </div>
+      <h1 class="page-title">{{ page.title | default: 'Universal Store Policies & Guarantees' }}</h1>
+      <p class="hero-desc">
+        Comprehensive 60-day customer protection, verified shipping SLAs, and regulatory compliance standards for <strong>{{ shop.name }}</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap page-policies-content">
+    {% if page.content != blank %}
+      <div class="prose page-body-custom">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+    <!-- Modular Universal Policies Engine -->
+    {% render 'universal-policies' %}
+  </div>
+</div>
+
+<!-- Structured Data for Merchant Policies & FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ canonical_url }}#webpage",
+      "url": "{{ canonical_url }}",
+      "name": "{{ page.title | default: 'Store Policies & Compliance' | escape }}",
+      "description": "60-Day Money-Back Guarantee, Fast Domestic Shipping SLAs, and FDA Cosmetic Device Disclaimers for {{ shop.name }}."
+    },
+    {
+      "@type": "MerchantReturnPolicy",
+      "@id": "{{ canonical_url }}#returnpolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 60,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn",
+      "refundType": "https://schema.org/FullRefund"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ canonical_url }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the 60-Day Guarantee on {{ shop.name }}?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every customer has 60 full calendar days from the date of carrier delivery to test their device or curated find. If not completely satisfied, email {{ shop.email }} for a 100% full refund with zero restocking fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do orders ship from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Orders dispatch either directly from our Provo, Utah domestic studio or our certified clinical logistics facility. Dispatch occurs within 24 to 48 business hours via tracked USPS with typical delivery in 2-4 business days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Luma Wellness devices FDA approved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The LumaGlow 4-in-1 Facial Wand and clinical wellness devices are Class I aesthetic cosmetic wellness devices manufactured pursuant to FDA General Wellness Guidance. They are intended for topical cosmetic skin stimulation and appearance enhancement, and are not intended to diagnose, treat, cure, or prevent any disease."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  .page-policies-container {
+    background: #FFFFFF;
+    min-height: 80vh;
+  }
+  .page-policies-hero {
+    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+    border-bottom: 1px solid #E2E8F0;
+    padding: 48px 0 36px;
+    text-align: center;
+  }
+  .policies-breadcrumbs {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748B;
+    margin-bottom: 16px;
+  }
+  .policies-breadcrumbs a {
+    color: #0D9488;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .policies-breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F0FDFA;
+    color: #0D9488;
+    border: 1px solid #99F6E4;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    margin-bottom: 14px;
+  }
+  .dot-live {
+    width: 8px;
+    height: 8px;
+    background: #0D9488;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+  }
+  .page-title {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 900;
+    color: #0F172A;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+  }
+  .hero-desc {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #475569;
+  }
+  .page-policies-content {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+  .page-body-custom {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+</style>

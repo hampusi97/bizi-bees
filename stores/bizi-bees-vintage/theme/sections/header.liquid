@@ -1,0 +1,99 @@
+{% assign hive_offer = shop.metaobjects.bizi_bees_offer.first15 %}
+<div class="brand-masthead">
+  <a class="logo" href="{{ routes.root_url }}" aria-label="bizi bees home">
+    <span class="bee">{% render 'bee' %}</span>bizi bees
+  </a>
+  <p>Little prices. Lovely finds.</p>
+</div>
+
+<div class="announcement" style="background:#b91c1c;color:#fff;padding:10px 14px;text-align:center;">
+  <a href="/discount/PROVOTODAY?redirect=%2Fcollections%2Fall" style="color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;font-size:13px;font-weight:700;flex-wrap:wrap;">
+    <span>⚡ <strong>NATIONWIDE FLASH SALE: 35% OFF EVERYTHING</strong></span>
+    <span style="display:inline-flex;align-items:center;gap:6px;">ENDS IN: <strong id="sale-clock" style="background:#7f1d1d;color:#fde047;padding:3px 8px;border-radius:4px;font-family:monospace;letter-spacing:0.05em;font-size:14px;">06h : 42m : 18s</strong></span>
+    <span style="background:#fde047;color:#18181b;padding:4px 12px;border-radius:4px;font-weight:900;font-size:12px;letter-spacing:0.02em;">CLAIM 35% OFF ↗</span>
+  </a>
+</div>
+
+<script>
+  (function() {
+    function updateClock() {
+      var now = new Date();
+      var midnight = new Date(now);
+      midnight.setHours(23, 59, 59, 999);
+      var diff = midnight - now;
+      if (diff <= 0) diff = 86400000;
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      var clock = document.getElementById("sale-clock");
+      if (clock) {
+        clock.textContent = (h < 10 ? "0" + h : h) + "h : " + (m < 10 ? "0" + m : m) + "m : " + (s < 10 ? "0" + s : s) + "s";
+      }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  })();
+</script>
+
+<header class="header">
+  <div class="wrap head">
+    <nav aria-label="Main navigation">
+      <a href="{{ routes.root_url }}#gift-picks">Gift picks</a>
+      <a href="/collections/luma-wellness" style="color:#d97706;font-weight:800;">✨ Luma Wellness</a>
+      <a href="/pages/win-a-glow-kit" style="color:#dc2626;font-weight:700;">🎁 Win a Glow Kit</a>
+      <a href="/pages/skincare-routine-quiz" style="color:#2563eb;font-weight:700;">🔬 Routine Quiz</a>
+      <a href="{{ routes.all_products_collection_url }}">Shop all</a>
+      {% assign primary_handles = 'christmas-gifts,books,clothing,electronics,games,toys,home-decor,beauty-products,more-finds' | split: ',' %}
+      {% for handle in primary_handles %}
+        {% assign nav_collection = collections[handle] %}
+        {% if nav_collection != blank and nav_collection.products_count > 0 %}
+          <a href="{{ nav_collection.url }}">{{ nav_collection.title | escape }}</a>
+        {% endif %}
+      {% endfor %}
+      <a href="{{ routes.collections_url }}">All categories</a>
+    </nav>
+    <form class="search" action="{{ routes.search_url }}" role="search">
+      <input name="q" type="search" placeholder="Find a treasure" aria-label="Search products">
+      <input type="hidden" name="type" value="product">
+      <button aria-label="Search">⌕</button>
+    </form>
+    <a href="{{ routes.cart_url }}">Bag ({{ cart.item_count }})</a>
+  </div>
+</header>
+
+<style>
+  .brand-masthead{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 16px 14px;background:#fff9e9;border-top:5px solid #e9b83f}
+  .brand-masthead .logo{font-size:clamp(32px,5vw,46px);line-height:1.1;display:flex;align-items:center;gap:12px}
+  .brand-masthead p{margin:6px 0 0;font-size:13px;letter-spacing:.08em;color:#59492b}
+  .announcement small{font-size:11px;line-height:1.5}
+  .head nav{flex:1}
+  nav a{white-space:nowrap}
+  @media(max-width:600px){
+    .head .search{display:flex;order:4;width:100%;margin-left:0}
+    .head .search input{flex:1;min-width:0;max-width:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .category{transition:none}
+    .category:hover{transform:none}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Good finds. Fresh beginnings."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

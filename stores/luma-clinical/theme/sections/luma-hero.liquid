@@ -1,0 +1,677 @@
+{% comment %}
+  Luma Clinical Wellness - Hero Section
+  File: sections/luma-hero.liquid
+{% endcomment %}
+
+{{ 'luma-design-tokens.liquid' | asset_url | stylesheet_tag }}
+
+<section class="luma-hero" id="luma-hero-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="luma-hero__container">
+    <div class="luma-hero__grid">
+      
+      <!-- Left Content Column -->
+      <div class="luma-hero__content">
+        <!-- Medical Pill Badge -->
+        <div class="luma-hero__badge-wrap">
+          <span class="luma-badge-pill luma-badge-teal">
+            <svg class="luma-badge-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            {{ section.settings.badge_text | default: "Dermatologist Approved • 630nm Phototherapy" }}
+          </span>
+          <span class="luma-hero__dispatch-chip">
+            <span class="luma-pulse-dot"></span>
+            {{ section.settings.dispatch_text | default: "In Stock in Utah — Dispatches in 24h" }}
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="luma-hero__heading">
+          {{ section.settings.heading | default: "Medical-Grade 630nm Phototherapy & Microcurrent Sculpting." }}
+        </h1>
+
+        <!-- Subheading -->
+        <p class="luma-hero__subhead">
+          {{ section.settings.subheading | default: "Experience clinical-grade cellular rejuvenation, lymphatic drainage, and wrinkle reduction for 75% less. Shipped fast with tracked dispatch from Utah." }}
+        </p>
+
+        <!-- Clinical Feature Checklist -->
+        <ul class="luma-hero__clinical-bullets">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>Targeted 630nm Red Light + Galvanic Microcurrent</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>Therapeutic Warmth (107°F) for accelerated serum absorption</span>
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>60-Day Risk-Free Clinical Glow Guarantee</span>
+          </li>
+        </ul>
+
+        <!-- Dual Call-to-Action Buttons -->
+        <div class="luma-hero__actions">
+          <a href="{{ section.settings.primary_cta_url | default: '/products/lumaglow-4-in-1-facial-wand' }}" class="luma-btn-primary luma-hero__btn-main">
+            <span>{{ section.settings.primary_cta_text | default: "Shop the LumaGlow Wand ($38.99)" }}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="{{ section.settings.secondary_cta_url | default: '#skin-quiz' }}" class="luma-btn-secondary luma-hero__btn-quiz">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="12 6 12 12 16 14"></polygon>
+            </svg>
+            <span>{{ section.settings.secondary_cta_text | default: "Take the 30-Sec Skin Quiz" }}</span>
+          </a>
+        </div>
+
+        <!-- Micro-Trust Guarantee Note -->
+        <div class="luma-hero__guarantee-strip">
+          <div class="luma-rating">
+            <div class="luma-stars">★★★★★</div>
+            <span class="luma-rating__text"><strong>4.9/5</strong> (3,420+ Verified Patients & Users)</span>
+          </div>
+          <div class="luma-hero__divider">•</div>
+          <span class="luma-hero__guarantee-text">Free USPS Tracked Shipping Over $50</span>
+        </div>
+      </div>
+
+      <!-- Right Visual Column: Device Showcase & Floating Clinical Chips -->
+      <div class="luma-hero__visual">
+        <div class="luma-hero__media-card">
+          <div class="luma-hero__glow-aura"></div>
+          
+          {% if section.settings.hero_image != blank %}
+            <img 
+              src="{{ section.settings.hero_image | image_url: width: 1000 }}" 
+              alt="{{ section.settings.heading | escape }}"
+              class="luma-hero__img"
+              loading="eager"
+              width="540"
+              height="580"
+            >
+          {% else %}
+            <!-- SVG Medical Device Render Fallback (Solawave/NuFace grade aesthetic) -->
+            <div class="luma-hero__device-mockup">
+              <svg viewBox="0 0 440 500" class="luma-device-vector" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="wandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="35%" stop-color="#F3F4F6" />
+                    <stop offset="70%" stop-color="#E5E7EB" />
+                    <stop offset="100%" stop-color="#D1D5DB" />
+                  </linearGradient>
+                  <linearGradient id="wandAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0D9488" />
+                    <stop offset="100%" stop-color="#14B8A6" />
+                  </linearGradient>
+                  <linearGradient id="redLightGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#EF4444" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#DC2626" stop-opacity="0.2" />
+                  </linearGradient>
+                  <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="14" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                
+                <!-- Background Subtle Tech Grid -->
+                <circle cx="220" cy="240" r="180" fill="rgba(13, 148, 136, 0.04)" stroke="rgba(13, 148, 136, 0.12)" stroke-dasharray="4 4" />
+                <circle cx="220" cy="240" r="120" fill="none" stroke="rgba(192, 132, 121, 0.15)" stroke-width="1.5" />
+                
+                <!-- Red Light Emitting Aura -->
+                <ellipse cx="220" cy="95" rx="85" ry="30" fill="url(#redLightGlow)" filter="url(#softGlow)" opacity="0.75" />
+                
+                <!-- Rotating Wand Head -->
+                <rect x="150" y="80" width="140" height="32" rx="16" fill="url(#wandAccent)" filter="drop-shadow(0 4px 8px rgba(13, 148, 136, 0.3))" />
+                <rect x="165" y="86" width="110" height="20" rx="10" fill="#EF4444" opacity="0.95" />
+                <circle cx="180" cy="96" r="3.5" fill="#FFF" />
+                <circle cx="196" cy="96" r="3.5" fill="#FFF" />
+                <circle cx="212" cy="96" r="3.5" fill="#FFF" />
+                <circle cx="228" cy="96" r="3.5" fill="#FFF" />
+                <circle cx="244" cy="96" r="3.5" fill="#FFF" />
+                <circle cx="260" cy="96" r="3.5" fill="#FFF" />
+
+                <!-- Wand Swivel Neck -->
+                <path d="M205 112 H235 V145 H205 Z" fill="#9CA3AF" />
+                <ellipse cx="220" cy="120" rx="12" ry="5" fill="#4B5563" />
+
+                <!-- Wand Sleek Body Handle -->
+                <path d="M200 145 C200 145, 196 280, 198 380 C199 410, 208 430, 220 430 C232 430, 241 410, 242 380 C244 280, 240 145, 240 145 Z" fill="url(#wandGradient)" stroke="#E5E7EB" stroke-width="1.5" filter="drop-shadow(0 15px 25px rgba(0,0,0,0.12))" />
+                
+                <!-- Power Sensor Strip -->
+                <rect x="217" y="220" width="6" height="40" rx="3" fill="#0D9488" />
+                <circle cx="220" cy="300" r="4.5" fill="#10B981" />
+                <text x="220" y="360" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#6B7280" letter-spacing="2" text-anchor="middle">LUMA GLOW</text>
+              </svg>
+            </div>
+          {% endif %}
+
+          <!-- Floating Clinical Metric Chips -->
+          <div class="luma-chip luma-chip--top-right">
+            <div class="luma-chip__icon luma-chip__icon--red">⚡</div>
+            <div class="luma-chip__content">
+              <span class="luma-chip__title">630nm Deep Red Photons</span>
+              <span class="luma-chip__desc">FDA Class II Technology</span>
+            </div>
+          </div>
+
+          <div class="luma-chip luma-chip--bottom-left">
+            <div class="luma-chip__icon luma-chip__icon--teal">✦</div>
+            <div class="luma-chip__content">
+              <span class="luma-chip__title">Low-Voltage Microcurrent</span>
+              <span class="luma-chip__desc">Sculpts Jawline & Cheeks</span>
+            </div>
+          </div>
+
+          <div class="luma-chip luma-chip--bottom-right">
+            <div class="luma-chip__icon luma-chip__icon--warm">🌡</div>
+            <div class="luma-chip__content">
+              <span class="luma-chip__title">107°F Thermal Therapy</span>
+              <span class="luma-chip__desc">Deep Lymphatic De-puff</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clean SVG Press Mentions Bar -->
+    <div class="luma-hero__press-bar">
+      <span class="luma-hero__press-label">AS FEATURED IN TOP DERM JOURNALS & BEAUTY PRESS</span>
+      <div class="luma-hero__press-logos">
+        
+        <!-- VOGUE -->
+        <div class="luma-press-item" title="VOGUE">
+          <svg viewBox="0 0 140 32" fill="currentColor">
+            <text x="0" y="24" font-family="'Didot', 'Bodoni MT', 'Times New Roman', serif" font-size="28" font-weight="900" letter-spacing="4">VOGUE</text>
+          </svg>
+        </div>
+
+        <!-- ELLE -->
+        <div class="luma-press-item" title="ELLE">
+          <svg viewBox="0 0 100 32" fill="currentColor">
+            <text x="0" y="24" font-family="'Didot', 'Bodoni MT', 'Times New Roman', serif" font-size="28" font-weight="900" letter-spacing="6">ELLE</text>
+          </svg>
+        </div>
+
+        <!-- ALLURE -->
+        <div class="luma-press-item" title="ALLURE">
+          <svg viewBox="0 0 130 32" fill="currentColor">
+            <text x="0" y="24" font-family="'Inter', 'Helvetica Neue', sans-serif" font-size="24" font-weight="800" letter-spacing="3">ALLURE</text>
+          </svg>
+        </div>
+
+        <!-- BYRDIE -->
+        <div class="luma-press-item" title="BYRDIE">
+          <svg viewBox="0 0 130 32" fill="currentColor">
+            <text x="0" y="24" font-family="'Bodoni MT', serif" font-size="24" font-style="italic" font-weight="700" letter-spacing="2">BYRDIE</text>
+          </svg>
+        </div>
+
+        <!-- GLAMOUR -->
+        <div class="luma-press-item" title="GLAMOUR">
+          <svg viewBox="0 0 150 32" fill="currentColor">
+            <text x="0" y="24" font-family="'Inter', sans-serif" font-size="22" font-weight="800" letter-spacing="4">GLAMOUR</text>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #luma-hero-{{ section.id }} {
+    background-color: {{ section.settings.bg_color | default: "#FAFAFC" }};
+    padding: 64px 0 40px;
+    position: relative;
+    overflow: hidden;
+    color: var(--luma-text-heading);
+    font-family: var(--luma-font-body);
+  }
+
+  .luma-hero__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .luma-hero__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .luma-hero__badge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .luma-hero__dispatch-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--luma-trust-green);
+    font-weight: 600;
+  }
+
+  .luma-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--luma-trust-green);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+    animation: lumaPulse 2s infinite;
+  }
+
+  @keyframes lumaPulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(5, 150, 105, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+    }
+  }
+
+  .luma-hero__heading {
+    font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--luma-text-heading);
+    margin: 0 0 18px;
+  }
+
+  .luma-hero__subhead {
+    font-size: clamp(1rem, 1.25vw, 1.18rem);
+    line-height: 1.6;
+    color: var(--luma-text-body);
+    margin: 0 0 24px;
+    max-width: 580px;
+  }
+
+  .luma-hero__clinical-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .luma-hero__clinical-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--luma-text-body);
+  }
+
+  .luma-hero__clinical-bullets svg {
+    color: var(--luma-accent-teal);
+    flex-shrink: 0;
+  }
+
+  .luma-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .luma-hero__btn-main {
+    padding: 16px 32px;
+    font-size: 1.05rem;
+  }
+
+  .luma-hero__guarantee-strip {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--luma-text-muted);
+  }
+
+  .luma-stars {
+    color: #F59E0B;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+  }
+
+  .luma-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Right Visual Card */
+  .luma-hero__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .luma-hero__media-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(145deg, #FFFFFF, #F8FAFC);
+    border: 1px solid var(--luma-border-card);
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: var(--luma-shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+  }
+
+  .luma-hero__glow-aura {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, rgba(239, 68, 68, 0.08) 60%, transparent 80%);
+    filter: blur(28px);
+    z-index: 1;
+  }
+
+  .luma-hero__device-mockup {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .luma-device-vector {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  /* Floating Metric Chips */
+  .luma-chip {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--luma-border-light);
+    border-radius: var(--luma-radius-lg);
+    padding: 10px 14px;
+    box-shadow: var(--luma-shadow-md);
+    transition: transform 0.3s ease;
+  }
+
+  .luma-chip:hover {
+    transform: translateY(-2px);
+  }
+
+  .luma-chip--top-right {
+    top: 24px;
+    right: -16px;
+  }
+
+  .luma-chip--bottom-left {
+    bottom: 40px;
+    left: -20px;
+  }
+
+  .luma-chip--bottom-right {
+    bottom: -16px;
+    right: 12px;
+  }
+
+  .luma-chip__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .luma-chip__icon--red {
+    background: #FEE2E2;
+    color: #DC2626;
+  }
+
+  .luma-chip__icon--teal {
+    background: #CCFBF1;
+    color: #0D9488;
+  }
+
+  .luma-chip__icon--warm {
+    background: #FFEDD5;
+    color: #EA580C;
+  }
+
+  .luma-chip__title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--luma-text-heading);
+  }
+
+  .luma-chip__desc {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--luma-text-muted);
+  }
+
+  /* Press Bar */
+  .luma-hero__press-bar {
+    margin-top: 64px;
+    padding-top: 36px;
+    border-top: 1px solid var(--luma-border-light);
+    text-align: center;
+  }
+
+  .luma-hero__press-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #9CA3AF;
+    margin-bottom: 24px;
+  }
+
+  .luma-hero__press-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 32px;
+    opacity: 0.65;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease;
+  }
+
+  .luma-hero__press-logos:hover {
+    opacity: 0.9;
+  }
+
+  .luma-press-item {
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  .luma-press-item svg {
+    height: 100%;
+    width: auto;
+    max-height: 24px;
+    fill: #4B5563;
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 991px) {
+    .luma-hero__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .luma-hero__visual {
+      order: 2;
+    }
+
+    .luma-hero__content {
+      order: 1;
+    }
+
+    .luma-chip--top-right {
+      right: 0;
+    }
+
+    .luma-chip--bottom-left {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #luma-hero-{{ section.id }} {
+      padding: 36px 0 28px;
+    }
+
+    .luma-hero__media-card {
+      min-height: 380px;
+      padding: 24px 16px;
+    }
+
+    .luma-chip {
+      padding: 6px 10px;
+    }
+
+    .luma-chip__title {
+      font-size: 0.72rem;
+    }
+
+    .luma-chip__desc {
+      font-size: 0.65rem;
+    }
+
+    .luma-hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .luma-hero__btn-main,
+    .luma-hero__btn-quiz {
+      width: 100%;
+    }
+
+    .luma-hero__press-logos {
+      gap: 20px;
+    }
+
+    .luma-press-item {
+      height: 18px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Luma Hero (Clinical)",
+  "tag": "section",
+  "class": "luma-hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Medical Badge Pill Text",
+      "default": "Dermatologist Approved • 630nm Phototherapy"
+    },
+    {
+      "type": "text",
+      "id": "dispatch_text",
+      "label": "Dispatch Notification Pill",
+      "default": "In Stock in Utah — Dispatches in 24h"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Main Headline",
+      "default": "Medical-Grade 630nm Phototherapy & Microcurrent Sculpting."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheadline",
+      "default": "Experience clinical-grade cellular rejuvenation, lymphatic drainage, and wrinkle reduction for 75% less. Shipped fast with tracked dispatch from Utah."
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_text",
+      "label": "Primary CTA Label",
+      "default": "Shop the LumaGlow Wand ($38.99)"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_url",
+      "label": "Primary CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "label": "Secondary CTA Label",
+      "default": "Take the 30-Sec Skin Quiz"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_url",
+      "label": "Secondary CTA Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Wand Image (Optional Fallback to Vector)"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAFAFC"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luma Hero (Clinical)"
+    }
+  ]
+}
+{% endschema %}
