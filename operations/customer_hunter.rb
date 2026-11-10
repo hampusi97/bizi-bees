@@ -19,6 +19,9 @@ require "json"
 require "time"
 require "fileutils"
 
+Encoding.default_external = Encoding::UTF_8 if defined?(Encoding)
+Encoding.default_internal = Encoding::UTF_8 if defined?(Encoding)
+
 $stdout.sync = true
 $stderr.sync = true
 
