@@ -2823,3 +2823,24 @@
 - **1-Click Link:** https://bizibees-store.myshopify.com/caps
 
 ---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 17:34 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
