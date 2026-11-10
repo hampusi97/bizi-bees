@@ -19,7 +19,8 @@
           <g:availability>in_stock</g:availability>
           <g:brand>{{ product.vendor | default: shop.name | escape }}</g:brand>
           <g:condition>new</g:condition>
-          <g:identifier_exists>no</g:identifier_exists>
+          <g:google_product_category>5499</g:google_product_category>
+          <g:identifier_exists>false</g:identifier_exists>
         </item>
       {% endif %}
     {% endfor %}
@@ -40,7 +41,8 @@
               <g:availability>in_stock</g:availability>
               <g:brand>{{ product.vendor | default: shop.name | escape }}</g:brand>
               <g:condition>used</g:condition>
-              <g:identifier_exists>no</g:identifier_exists>
+              <g:google_product_category>{% if product.type == 'Book' or product.tags contains 'Books' or product.tags contains 'book' %}784{% else %}536{% endif %}</g:google_product_category>
+              <g:identifier_exists>false</g:identifier_exists>
             </item>
           {% endif %}
         {% endunless %}

@@ -1,0 +1,46 @@
+{% layout none %}<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>{{ shop.name | escape }} — TikTok Shop Catalog Feed</title>
+    <link>{{ shop.url }}</link>
+    <description>TikTok Shop US Compliant Cosmetic Skincare &amp; New Lifestyle Catalog. Excludes used books and pre-owned items.</description>
+    
+    {% paginate collections.all.products by 250 %}
+      {% for product in collections.all.products %}
+        {%- comment -%} Exclude secondhand books and used finds from TikTok Shop {%- endcomment -%}
+        {%- assign is_used = false -%}
+        {%- if product.tags contains 'channel:ebay-only' or product.tags contains 'Used' or product.tags contains 'vintage' -%}
+          {%- assign is_used = true -%}
+        {%- elsif product.type == 'Book' and product.vendor == 'Bizi Bees' -%}
+          {%- assign is_used = true -%}
+        {%- endif -%}
+
+        {%- unless is_used -%}
+          {%- if product.available -%}
+            <item>
+              <g:id>{{ product.selected_or_first_available_variant.sku | default: product.id }}</g:id>
+              <g:title>{{ product.title | strip_html | replace: 'Medical-grade 630nm', 'Targeted 630nm dual-spectrum light' | replace: 'migraine treatment', 'soothing thermal tension relief' | replace: 'cellular repair', 'revitalizing skin tone' | truncate: 150 | escape }}</g:title>
+              <g:description>{{ product.description | strip_html | replace: 'Medical-grade 630nm', 'Targeted 630nm dual-spectrum light' | replace: 'migraine treatment', 'soothing thermal tension relief' | replace: 'cellular repair', 'revitalizing skin tone' | truncate: 5000 | escape }}</g:description>
+              <g:link>{{ shop.url }}{{ product.url }}</g:link>
+              {% if product.featured_image %}
+                <g:image_link>https:{{ product.featured_image | image_url: width: 1200 }}</g:image_link>
+              {% endif %}
+              <g:price>{{ product.selected_or_first_available_variant.price | money_without_currency | remove: "," }} USD</g:price>
+              <g:availability>in_stock</g:availability>
+              <g:brand>{% if product.vendor contains 'Luma' %}Luma{% else %}{{ product.vendor | default: shop.name | escape }}{% endif %}</g:brand>
+              <g:condition>new</g:condition>
+              <g:google_product_category>{% if product.vendor contains 'Luma' or product.type contains 'Skin' %}5499{% else %}1239{% endif %}</g:google_product_category>
+              <g:identifier_exists>false</g:identifier_exists>
+              <g:custom_label_0>channel:tiktok-ready</g:custom_label_0>
+              <g:shipping>
+                <g:country>US</g:country>
+                <g:service>Standard</g:service>
+                <g:price>0.00 USD</g:price>
+              </g:shipping>
+            </item>
+          {%- endif -%}
+        {%- endunless -%}
+      {% endfor %}
+    {% endpaginate %}
+  </channel>
+</rss>
