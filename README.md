@@ -17,6 +17,16 @@
 
 ---
 
+<!-- DAILY_STORE_SNAPSHOT_START -->
+### 📊 24-Hour Network Operations Digest (2026-11-10)
+* **Total Network Sales:** **$0.00** | **Orders:** **0** | **AOV:** **$0.00**
+* **Pending Fulfillment:** **0 orders** ready for dispatch
+* **Active Stores Monitored:** **2 storefronts** operational
+* 👉 [Read the full executive briefing](reports/LATEST.md)
+<!-- DAILY_STORE_SNAPSHOT_END -->
+
+---
+
 ## 🌟 Brand Overview
 
 **Bizi Bees** was founded in Provo, Utah by Kimberly Harter with a dual mission:
