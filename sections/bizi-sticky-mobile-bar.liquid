@@ -1,0 +1,398 @@
+{% comment %}
+  Section: Bizi Bees Sticky Mobile Fast-Checkout Bar
+  File: sections/bizi-sticky-mobile-bar.liquid
+  Purpose: Ultra high-converting sticky bottom bar for TikTok/IG mobile traffic.
+  Features: Live pulsating social proof, scroll-triggered slide-up, direct-to-checkout 1-click bypass.
+{% endcomment %}
+
+{% assign target_product = section.settings.product %}
+{% if template.name == 'product' and product != blank %}
+  {% assign target_product = product %}
+{% endif %}
+
+{% assign current_variant = target_product.selected_or_first_available_variant %}
+
+<aside 
+  id="BiziStickyBar-{{ section.id }}" 
+  class="bizi-sticky-mobile-bar"
+  aria-label="Quick Checkout Bar"
+  style="
+    --bizi-bg: {{ section.settings.bg_color | default: '#FAF7F2' }};
+    --bizi-espresso: {{ section.settings.text_color | default: '#2A241F' }};
+    --bizi-honey: {{ section.settings.accent_color | default: '#D9822B' }};
+    --bizi-border: #EBD9C5;
+  "
+>
+  <div class="bizi-sticky-container">
+    <!-- Live Demand Pulsing Pill -->
+    <div class="bizi-sticky-proof-row">
+      <div class="bizi-sticky-live-pulse">
+        <span class="bizi-pulse-dot"></span>
+        <span class="bizi-pulse-ring"></span>
+      </div>
+      <span class="bizi-sticky-proof-text">{{ section.settings.demand_text | default: '🔥 High Demand — 4 left in Provo store' }}</span>
+      <span class="bizi-sticky-ship-tag">Ships Today</span>
+    </div>
+
+    <!-- Product & Fast Checkout Action Row -->
+    <div class="bizi-sticky-action-row">
+      <div class="bizi-sticky-meta">
+        <div class="bizi-sticky-thumb">
+          {% if target_product != blank and target_product.featured_image != blank %}
+            <img 
+              src="{{ target_product.featured_image | image_url: width: 120 }}" 
+              alt="{{ target_product.title | escape }}"
+              width="44" 
+              height="44"
+              loading="lazy"
+            >
+          {% else %}
+            <span class="bizi-sticky-thumb-fallback">🐝</span>
+          {% endif %}
+        </div>
+        <div class="bizi-sticky-details">
+          <span class="bizi-sticky-item-name">
+            {% if target_product != blank %}
+              {{ target_product.title | truncate: 26 }}
+            {% else %}
+              {{ section.settings.fallback_title | default: 'Blind Date Book Gift Set' }}
+            {% endif %}
+          </span>
+          <span class="bizi-sticky-item-price">
+            {% if target_product != blank %}
+              {{ current_variant.price | money }}
+            {% else %}
+              {{ section.settings.fallback_price | default: '$14.99' }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+
+      <!-- Direct to Checkout Fast Button -->
+      <div class="bizi-sticky-btn-wrap">
+        <a 
+          id="BiziFastCheckoutLink-{{ section.id }}"
+          href="{% if current_variant != blank %}/cart/{{ current_variant.id }}:1?checkout{% elsif section.settings.fallback_variant_id != blank %}/cart/{{ section.settings.fallback_variant_id }}:1?checkout{% else %}/checkout{% endif %}"
+          class="bizi-sticky-fast-btn"
+        >
+          <span class="bizi-fast-icon">⚡</span>
+          <span class="bizi-fast-text">{{ section.settings.button_text | default: 'Direct Checkout' }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<style>
+  #BiziStickyBar-{{ section.id }} {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--bizi-border);
+    padding: 0.65rem 1rem max(0.65rem, env(safe-area-inset-bottom, 14px));
+    box-shadow: 0 -8px 24px rgba(42, 36, 31, 0.12);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    transform: translateY(115%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #BiziStickyBar-{{ section.id }}.is-visible {
+    transform: translateY(0);
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-container {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  /* Demand Row */
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-proof-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.725rem;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-live-pulse {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: #e67e22;
+    border-radius: 50%;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-pulse-ring {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #e67e22;
+    animation: biziPulse 1.6s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  }
+
+  @keyframes biziPulse {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-proof-text {
+    font-weight: 700;
+    color: var(--bizi-espresso);
+    flex-grow: 1;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-ship-tag {
+    font-size: 0.675rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+  }
+
+  /* Action Row */
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-action-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--bizi-border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-thumb-fallback {
+    font-size: 1.3rem;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-item-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--bizi-espresso);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-item-price {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--bizi-honey);
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-btn-wrap {
+    flex-shrink: 0;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-fast-btn {
+    appearance: none;
+    background: var(--bizi-honey);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.925rem;
+    font-weight: 800;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 14px rgba(217, 130, 43, 0.45);
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-fast-btn:hover,
+  #BiziStickyBar-{{ section.id }} .bizi-sticky-fast-btn:active {
+    background: #c37222;
+    transform: scale(0.98);
+  }
+
+  #BiziStickyBar-{{ section.id }} .bizi-fast-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  /* Device Display Rules */
+  {% if section.settings.mobile_only %}
+    @media (min-width: 991px) {
+      #BiziStickyBar-{{ section.id }} {
+        display: none !important;
+      }
+    }
+  {% endif %}
+</style>
+
+<script>
+  (function() {
+    const barEl = document.getElementById('BiziStickyBar-{{ section.id }}');
+    if (!barEl) return;
+
+    const scrollThreshold = {{ section.settings.scroll_trigger | default: 180 }};
+    let ticking = false;
+
+    function handleScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (window.scrollY > scrollThreshold) {
+            barEl.classList.add('is-visible');
+          } else {
+            barEl.classList.remove('is-visible');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Check initial position
+    handleScroll();
+
+    // Listen for Shopify variant change if on product page
+    document.addEventListener('variant:change', function(e) {
+      if (e.detail && e.detail.variant) {
+        const v = e.detail.variant;
+        const linkEl = barEl.querySelector('#BiziFastCheckoutLink-{{ section.id }}');
+        const priceEl = barEl.querySelector('.bizi-sticky-item-price');
+        if (linkEl) {
+          linkEl.href = `/cart/${v.id}:1?checkout`;
+        }
+        if (priceEl && v.price) {
+          // Format price roughly or let theme format
+          priceEl.textContent = '$' + (v.price / 100).toFixed(2);
+        }
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Bizi Sticky Mobile Bar",
+  "tag": "aside",
+  "class": "bizi-sticky-bar-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "mobile_only",
+      "label": "Show on Mobile & Tablet Only (< 990px)",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "scroll_trigger",
+      "label": "Scroll Trigger Distance (px)",
+      "min": 50,
+      "max": 600,
+      "step": 25,
+      "default": 175
+    },
+    {
+      "type": "text",
+      "id": "demand_text",
+      "label": "Demand Urgency Text",
+      "default": "🔥 High Demand — 4 left in Provo store"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured Product for Quick Checkout (Overrides fallback)"
+    },
+    {
+      "type": "text",
+      "id": "fallback_title",
+      "label": "Fallback Product Title",
+      "default": "Blind Date Book & Holiday Box"
+    },
+    {
+      "type": "text",
+      "id": "fallback_price",
+      "label": "Fallback Display Price",
+      "default": "$14.99"
+    },
+    {
+      "type": "text",
+      "id": "fallback_variant_id",
+      "label": "Direct Variant ID for Fast Checkout (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Checkout Button Text",
+      "default": "1-Click Checkout"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Bar Background",
+      "default": "#FAF7F2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Espresso Text Color",
+      "default": "#2A241F"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Honey Gold Button Color",
+      "default": "#D9822B"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bizi Sticky Mobile Bar"
+    }
+  ]
+}
+{% endschema %}

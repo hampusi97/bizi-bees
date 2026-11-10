@@ -2,9 +2,33 @@
   "sections": {
     "main": {
       "type": "home"
+    },
+    "curiosity_hub": {
+      "type": "bizi-zero-gravity-hub"
+    },
+    "vibe_selector": {
+      "type": "bizi-blind-date-book"
+    },
+    "bundle_builder": {
+      "type": "bizi-holiday-bundle-builder"
+    },
+    "inspection_matrix": {
+      "type": "bizi-inspection-matrix"
+    },
+    "vault": {
+      "type": "bizi-bees-vault"
+    },
+    "sticky_mobile_bar": {
+      "type": "bizi-sticky-mobile-bar"
     }
   },
   "order": [
-    "main"
+    "main",
+    "curiosity_hub",
+    "vibe_selector",
+    "bundle_builder",
+    "inspection_matrix",
+    "vault",
+    "sticky_mobile_bar"
   ]
 }

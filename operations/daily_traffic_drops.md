@@ -2844,3 +2844,570 @@
 - **1-Click Link:** https://bizibees-store.myshopify.com/caps
 
 ---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 18:00 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 18:34 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 19:00 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 21:10 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 21:10 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 22:01 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 22:48 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-09 23:35 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 01:15 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 02:08 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 03:49 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 03:50 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 06:07 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 06:07 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 06:07 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 07:11 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 08:01 MST [Campaign: Red Light Wand vs Solawave Teardown & Migraine Relief]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** The Dermatologist-Approved 4-in-1 Red Light Wand Dupe ($38.99 vs $169)
+- **Description:** Clinical-grade 630nm red light, 330µA microcurrent, 107°F warmth, and sonic depuffing for 77% less than Solawave. 35% OFF launch deal with code PROVOTODAY + free US shipping.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+- **Tags:** #redlighttherapy #solawavedupe #skincareroutine #antiaging #glowingskin
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Stop paying $169 for celebrity skincare wands when the exact same 630nm clinical red light + microcurrent hardware is $38.99 shipped from Utah."
+- **Visual:** Side-by-side spec sheet of 630nm wavelength and 107°F thermal head gliding over peptide serum.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+### 💬 Reddit Deal Post (r/BudgetBeauty & r/30PlusSkinCare)
+- **Title:** [Deal] LumaGlow 4-in-1 630nm Red Light & Microcurrent Wand $38.99 shipped with code PROVOTODAY (Reg $89.99 / Solawave spec)
+- **Body:** Calibrated 630nm red LED + 330µA microcurrent + 107°F depuffing warmth + sonic massage. Ships free from Provo, UT with a 60-day trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 09:29 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 09:49 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 10:00 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 10:34 MST [Campaign: 7-Color Medical LED Face & Neck Phototherapy Shield]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** Clear Hormonal Acne & Boost Collagen Hands-Free: 7-Color LED Face + Neck Mask
+- **Description:** Why pay $395 for a single-color mask? Get 630nm Red, 415nm Blue acne-clearing light, and full neck coverage for $84.49 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+- **Tags:** #ledfacemask #phototherapy #adultacne #collagenboost #antiagingskincare
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "My aesthetician charged $120 per LED add-on session until I got this 7-color face and neck shield for $84."
+- **Visual:** Cycling through Red (630nm), Blue (415nm), and Amber wavelengths with detachable neck module.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+### 💬 Reddit Deal Post (r/SkincareAddiction & r/BudgetBeauty)
+- **Title:** [Deal] 7-Color Medical-Grade LED Phototherapy Face & Neck Shield — $84.49 shipped (vs $199+ retail) w/ code PROVOTODAY
+- **Body:** Includes dedicated neck phototherapy attachment + 7 wavelengths (415nm blue for C. acnes to 630nm red for collagen). Free US shipping + 60-day guarantee.
+- **1-Click Link:** https://bizibees-store.myshopify.com/mask
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 11:00 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 11:35 MST [Campaign: Tech-Neck & Jawline Microcurrent Sculpting + Ultrasonic Pore Extraction]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** How to Lift Jowls & Erase Horizontal Tech-Neck Lines in 5 Minutes a Day
+- **Description:** 350µA dual-sphere microcurrent tones the platysma muscle and flushes submental lymph for a sharper jawline. 35% off today with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/lift
+- **Tags:** #microcurrent #jawlinesculpting #techneck #lymphaticdrainage #guasha
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Pore strips rip your skin barrier—watch what 24,000 Hz ultrasonic water cavitation pulls out of nose pores in 60 seconds."
+- **Visual:** Atomized water mist lifting sebaceous filaments painlessly with the SonicGlow 24kHz spatula.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+### 💬 Reddit Deal Post (r/30PlusSkinCare & r/deals)
+- **Title:** [Deal] SonicGlow 24kHz Ultrasonic Pore Extractor ($22.74) & LumaLift Microcurrent Sculptor ($38.99) — 35% Off Code PROVOTODAY
+- **Body:** Direct-to-consumer clinical skincare tools dispatched from Utah with free US shipping and a 60-day money-back trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/clean
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 12:00 MST [Campaign: Red Light Wand vs Solawave Teardown & Migraine Relief]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** The Dermatologist-Approved 4-in-1 Red Light Wand Dupe ($38.99 vs $169)
+- **Description:** Clinical-grade 630nm red light, 330µA microcurrent, 107°F warmth, and sonic depuffing for 77% less than Solawave. 35% OFF launch deal with code PROVOTODAY + free US shipping.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+- **Tags:** #redlighttherapy #solawavedupe #skincareroutine #antiaging #glowingskin
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Stop paying $169 for celebrity skincare wands when the exact same 630nm clinical red light + microcurrent hardware is $38.99 shipped from Utah."
+- **Visual:** Side-by-side spec sheet of 630nm wavelength and 107°F thermal head gliding over peptide serum.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+### 💬 Reddit Deal Post (r/BudgetBeauty & r/30PlusSkinCare)
+- **Title:** [Deal] LumaGlow 4-in-1 630nm Red Light & Microcurrent Wand $38.99 shipped with code PROVOTODAY (Reg $89.99 / Solawave spec)
+- **Body:** Calibrated 630nm red LED + 330µA microcurrent + 107°F depuffing warmth + sonic massage. Ships free from Provo, UT with a 60-day trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 12:35 MST [Campaign: Red Light Wand vs Solawave Teardown & Migraine Relief]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** The Dermatologist-Approved 4-in-1 Red Light Wand Dupe ($38.99 vs $169)
+- **Description:** Clinical-grade 630nm red light, 330µA microcurrent, 107°F warmth, and sonic depuffing for 77% less than Solawave. 35% OFF launch deal with code PROVOTODAY + free US shipping.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+- **Tags:** #redlighttherapy #solawavedupe #skincareroutine #antiaging #glowingskin
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Stop paying $169 for celebrity skincare wands when the exact same 630nm clinical red light + microcurrent hardware is $38.99 shipped from Utah."
+- **Visual:** Side-by-side spec sheet of 630nm wavelength and 107°F thermal head gliding over peptide serum.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+### 💬 Reddit Deal Post (r/BudgetBeauty & r/30PlusSkinCare)
+- **Title:** [Deal] LumaGlow 4-in-1 630nm Red Light & Microcurrent Wand $38.99 shipped with code PROVOTODAY (Reg $89.99 / Solawave spec)
+- **Body:** Calibrated 630nm red LED + 330µA microcurrent + 107°F depuffing warmth + sonic massage. Ships free from Provo, UT with a 60-day trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 13:00 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 13:36 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---

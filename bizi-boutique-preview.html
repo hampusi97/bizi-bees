@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bizi Bees Boutique — Interactive OS 2.0 Live Showcase</title>
+  <link rel="stylesheet" href="assets/bizi-boutique-theme.css">
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: #FAF7F2;
+      color: #2A241F;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Top Boutique Nav Preview */
+    .bizi-demo-nav {
+      background: #FFFFFF;
+      border-bottom: 1px solid #EBD9C5;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .bizi-demo-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #2A241F;
+    }
+    .bizi-demo-tag {
+      font-size: 0.725rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4B5842;
+      background: rgba(75, 88, 66, 0.08);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    /* Hero Banner */
+    .bizi-demo-hero {
+      text-align: center;
+      padding: 4.5rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .bizi-hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #D9822B;
+      margin-bottom: 0.85rem;
+      display: inline-block;
+    }
+    .bizi-demo-hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin: 0 0 1rem 0;
+    }
+    .bizi-demo-hero p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(42, 36, 31, 0.8);
+      margin: 0 0 1.75rem 0;
+    }
+
+    /* Section Separators */
+    .bizi-preview-label {
+      text-align: center;
+      padding: 0.75rem;
+      background: #EBD9C5;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #2A241F;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Header -->
+  <header class="bizi-demo-nav">
+    <a href="#" class="bizi-demo-brand">
+      <span>🐝</span>
+      <span>Bizi Bees Boutique</span>
+    </a>
+    <span class="bizi-demo-tag">Shopify OS 2.0 Live Preview</span>
+  </header>
+
+  <!-- Hero Intro -->
+  <div class="bizi-demo-hero">
+    <span class="bizi-hero-eyebrow">Provo, Utah • Curated Pre-Loved</span>
+    <h1>Books, Vintage Treasures & Stocking Stuffers</h1>
+    <p>Experience the warm tactile boutique aesthetic, interactive zero-gravity curiosity physics, and 1-click mobile checkout built for high conversion.</p>
+  </div>
+
+  <div class="bizi-preview-label">Component 1: Zero-Gravity Curiosity Hub</div>
+  <!-- SECTION 1: Zero Gravity Hub -->
+  <div id="section-zero-gravity">
+    <!-- Rendered Zero-Gravity Container -->
+    <section class="bizi-zg-section" id="BiziZeroGravity-preview" style="--bizi-bg:#FAF7F2; --bizi-espresso:#2A241F; --bizi-honey:#D9822B; --bizi-olive:#4B5842; --bizi-border:#EBD9C5; padding: 4rem 1.25rem;">
+      <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <span style="display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#4B5842; background:rgba(75,88,66,0.08); padding:0.35rem 0.85rem; border-radius:999px; margin-bottom:0.75rem;">Curated with Care in Utah</span>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,4vw,3.25rem); font-weight:700; line-height:1.15; color:#2A241F; margin:0 0 0.75rem 0;">The Bizi Bees Curiosity Hub</h2>
+        <p style="font-size:1.1rem; line-height:1.6; color:rgba(42,36,31,0.75); max-width:680px; margin:0 auto 2.5rem;">Ambient floating physics cards interacting with your mouse movements. Move your cursor over the cards below:</p>
+
+        <div id="zgStage-preview" style="position:relative; min-height:360px; perspective:1000px;">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+            
+            <div class="bizi-zg-card" style="will-change:transform; transition:box-shadow 0.3s ease; border-radius:18px;">
+              <div style="background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border:1px solid #EBD9C5; border-radius:18px; padding:2rem 1.75rem; text-align:left; box-shadow:0 10px 25px rgba(42,36,31,0.05);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+                  <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; background:rgba(217,130,43,0.12); color:#D9822B; padding:0.25rem 0.65rem; border-radius:6px;">Hand-Verified</span>
+                  <span style="font-size:1.75rem;">🔍</span>
+                </div>
+                <h3 style="font-family:'Playfair Display',Georgia,serif; font-size:1.35rem; font-weight:700; margin:0 0 0.5rem 0;">100% Cleaned & Inspected</h3>
+                <p style="font-size:0.925rem; line-height:1.55; color:rgba(42,36,31,0.78); margin:0 0 1.25rem 0;">Every vintage volume is UV-sanitized, spine-tested, and certified complete right in our Provo workshop.</p>
+                <a href="#section-matrix" style="color:#D9822B; font-weight:600; text-decoration:none; font-size:0.85rem;">Our 4-Point Promise →</a>
+              </div>
+            </div>
+
+            <div class="bizi-zg-card" style="will-change:transform; transition:box-shadow 0.3s ease; border-radius:18px;">
+              <div style="background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border:1px solid #EBD9C5; border-radius:18px; padding:2rem 1.75rem; text-align:left; box-shadow:0 10px 25px rgba(42,36,31,0.05);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+                  <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; background:rgba(75,88,66,0.12); color:#4B5842; padding:0.25rem 0.65rem; border-radius:6px;">Sustainable Gifting</span>
+                  <span style="font-size:1.75rem;">🌿</span>
+                </div>
+                <h3 style="font-family:'Playfair Display',Georgia,serif; font-size:1.35rem; font-weight:700; margin:0 0 0.5rem 0;">Eco Pre-Loved Finds</h3>
+                <p style="font-size:0.925rem; line-height:1.55; color:rgba(42,36,31,0.78); margin:0 0 1.25rem 0;">Give storied literature and vintage heirlooms a second life in biodegradable kraft paper packaging.</p>
+                <a href="#section-vibe" style="color:#D9822B; font-weight:600; text-decoration:none; font-size:0.85rem;">Explore Blind Dates →</a>
+              </div>
+            </div>
+
+            <div class="bizi-zg-card" style="will-change:transform; transition:box-shadow 0.3s ease; border-radius:18px;">
+              <div style="background:rgba(255,255,255,0.88); backdrop-filter:blur(12px); border:1px solid #EBD9C5; border-radius:18px; padding:2rem 1.75rem; text-align:left; box-shadow:0 10px 25px rgba(42,36,31,0.05);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+                  <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; background:rgba(217,130,43,0.12); color:#D9822B; padding:0.25rem 0.65rem; border-radius:6px;">Holiday Special</span>
+                  <span style="font-size:1.75rem;">📦</span>
+                </div>
+                <h3 style="font-family:'Playfair Display',Georgia,serif; font-size:1.35rem; font-weight:700; margin:0 0 0.5rem 0;">Free Shipping on $35+</h3>
+                <p style="font-size:0.925rem; line-height:1.55; color:rgba(42,36,31,0.78); margin:0 0 1.25rem 0;">Stock up on curated book bundles, stationery, and stocking stuffers with fast, tracked doorstep delivery.</p>
+                <a href="#section-bundle" style="color:#D9822B; font-weight:600; text-decoration:none; font-size:0.85rem;">Shop Holiday Bundles →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="bizi-preview-label" id="section-vibe">Component 2: Blind Date with a Book / Holiday Vibe Selector</div>
+  <!-- SECTION 2: Blind Date with a Book -->
+  <section style="background:#FAF7F2; padding:4rem 1.25rem;">
+    <div style="max-width:1080px; margin:0 auto;">
+      <div style="text-align:center; max-width:650px; margin:0 auto 2.5rem;">
+        <span style="display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#D9822B; background:rgba(217,130,43,0.1); padding:0.35rem 0.9rem; border-radius:999px; margin-bottom:0.75rem;">Mystery Book Program</span>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,4vw,3.25rem); font-weight:700; margin:0 0 0.75rem 0;">Blind Date with a Pre-Loved Book</h2>
+        <p style="color:rgba(42,36,31,0.76); line-height:1.6; margin:0;">Pick your reading vibe. Each book arrives hand-wrapped in recycled brown kraft paper, wax-sealed with handwritten clues.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.25rem;">
+        <button class="demo-vibe-tab active" onclick="switchVibe(0)" style="background:#2A241F; color:#FAF7F2; border:1px solid #2A241F; border-radius:999px; padding:0.65rem 1.25rem; font-weight:600; cursor:pointer;">🌧️ Rainy Day Mystery</button>
+        <button class="demo-vibe-tab" onclick="switchVibe(1)" style="background:#FFF; color:#2A241F; border:1px solid #EBD9C5; border-radius:999px; padding:0.65rem 1.25rem; font-weight:600; cursor:pointer;">☕ Warm Hearth & Home</button>
+        <button class="demo-vibe-tab" onclick="switchVibe(2)" style="background:#FFF; color:#2A241F; border:1px solid #EBD9C5; border-radius:999px; padding:0.65rem 1.25rem; font-weight:600; cursor:pointer;">🕰️ 1970s Sci-Fi</button>
+        <button class="demo-vibe-tab" onclick="switchVibe(3)" style="background:#FFF; color:#2A241F; border:1px solid #EBD9C5; border-radius:999px; padding:0.65rem 1.25rem; font-weight:600; cursor:pointer;">⚡ Page-Turner Thriller</button>
+      </div>
+
+      <!-- Card Display -->
+      <div id="vibe-card-container" style="background:#FFFFFF; border:1px solid #EBD9C5; border-radius:22px; padding:clamp(1.75rem,3.5vw,3rem); display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2.5rem; align-items:center; box-shadow:0 20px 40px rgba(42,36,31,0.08);">
+        <!-- Kraft Visual -->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+          <div style="width:260px; height:340px; background:linear-gradient(135deg, #d2b48c 0%, #c49d68 100%); border-radius:12px; position:relative; box-shadow:0 15px 35px rgba(110,75,40,0.35); border:2px solid rgba(138,98,51,0.25); display:flex; align-items:center; justify-content:center;">
+            <div style="position:absolute; top:50%; left:0; right:0; height:6px; background:repeating-linear-gradient(45deg,#e6d3b3,#e6d3b3 8px,#bfa073 8px,#bfa073 16px); transform:translateY(-50%);"></div>
+            <div id="demo-seal" style="position:absolute; width:48px; height:48px; background:radial-gradient(circle at 35% 35%, #9e2a2b, #671516); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.35rem; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:2;">🗝️</div>
+            <div style="position:absolute; bottom:25px; background:#FAF7F2; padding:0.75rem 1rem; border-radius:8px; border:1px dashed #b58d60; text-align:center; transform:rotate(-3deg); z-index:1; width:78%;">
+              <span style="font-size:0.65rem; letter-spacing:0.1em; color:#4B5842; font-weight:700; display:block;">PROVO VAULT SELECTION</span>
+              <strong id="demo-vibe-tag" style="font-size:0.95rem; color:#2A241F; display:block;">Rainy Day Mystery</strong>
+              <span style="font-size:0.7rem; color:rgba(42,36,31,0.65); font-style:italic;">Inspected & Hand-Wrapped</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <span style="font-size:0.75rem; font-weight:600; color:#4B5842; background:rgba(75,88,66,0.08); padding:0.3rem 0.65rem; border-radius:999px;">🔖 Free Botanical Bookmark</span>
+            <span style="font-size:0.75rem; font-weight:600; color:#4B5842; background:rgba(75,88,66,0.08); padding:0.3rem 0.65rem; border-radius:999px;">✨ UV Sanitized</span>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div>
+          <span style="font-size:0.775rem; font-weight:700; text-transform:uppercase; color:#4B5842; display:block; margin-bottom:0.5rem;">● Only 3 Copies in Provo Vault</span>
+          <h3 id="demo-vibe-headline" style="font-family:'Playfair Display',Georgia,serif; font-size:1.85rem; font-weight:700; margin:0 0 0.75rem 0;">Foggy Manor, Hidden Wills & Suspicious Tea</h3>
+          <p id="demo-vibe-desc" style="color:rgba(42,36,31,0.8); line-height:1.6; margin:0 0 1.25rem 0;">A classic golden-age locked-room puzzle from the late 1960s. Crisp yellowed pages, vintage dust jacket charm, and suspense that keeps you guessing past 2:00 AM.</p>
+
+          <div style="background:#FAF7F2; border-radius:14px; padding:1.25rem; border:1px solid #EBD9C5; margin-bottom:1.5rem;">
+            <h4 style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 0.5rem 0;">Three Clues to Your Next Obsession:</h4>
+            <ul id="demo-clues-list" style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.4rem; font-size:0.925rem;">
+              <li>✦ Remote English countryside manor cut off by floodwaters</li>
+              <li>✦ Amateur detective with a sharp tongue and an eye for details</li>
+              <li>✦ Hand-inspected vintage paperback with tight original spine</li>
+            </ul>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <span style="display:block; font-size:0.75rem; text-transform:uppercase; color:rgba(42,36,31,0.65);">Mystery Gift Price</span>
+              <span id="demo-vibe-price" style="font-size:1.65rem; font-weight:800;">$14.99</span>
+              <span style="display:block; font-size:0.75rem; color:#4B5842; font-weight:600;">Ships from Provo, UT</span>
+            </div>
+            <a href="https://bizibees-store.myshopify.com/collections/all" target="_blank" style="background:#D9822B; color:#FFFFFF; font-weight:700; padding:0.95rem 1.85rem; border-radius:999px; text-decoration:none; box-shadow:0 8px 20px rgba(217,130,43,0.4); display:inline-block;">Adopt This Mystery Book →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bizi-preview-label" id="section-bundle">Component 3: Holiday Bundle Builder</div>
+  <!-- SECTION 3: Bundle Builder -->
+  <section style="background:#FAF7F2; padding:4rem 1.25rem;">
+    <div style="max-width:1160px; margin:0 auto;">
+      <div style="text-align:center; max-width:680px; margin:0 auto 2.5rem;">
+        <span style="display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#D9822B; background:rgba(217,130,43,0.12); padding:0.35rem 0.9rem; border-radius:999px; margin-bottom:0.75rem;">Limited Holiday Edition</span>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,4vw,3.25rem); font-weight:700; margin:0 0 0.75rem 0;">The Holiday Bundle Builder</h2>
+        <p style="color:rgba(42,36,31,0.75); line-height:1.6; margin:0;">Curated stocking-stuffer bundles with instant 1-click cart addition. Hand-wrapped together in Provo, Utah.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2.5rem; align-items:start;">
+        <!-- Left 3 Items -->
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.25rem; display:flex; align-items:center; gap:1rem; box-shadow:0 6px 18px rgba(42,36,31,0.04);">
+            <span style="font-family:'Playfair Display',serif; font-weight:700; color:#D9822B;">01</span>
+            <div style="width:60px; height:60px; border-radius:12px; background:#FAF7F2; border:1px solid #EBD9C5; display:flex; align-items:center; justify-content:center; font-size:1.75rem;">📖</div>
+            <div style="flex-grow:1;">
+              <span style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#4B5842;">Item 01 • Curated Reading</span>
+              <strong style="display:block; font-family:'Playfair Display',serif; font-size:1.05rem;">Curated Vintage Mystery Paperback</strong>
+              <span style="font-size:0.8rem; color:rgba(42,36,31,0.65);">Inspected & spine-tested in Provo workshop</span>
+            </div>
+            <div style="text-align:right;">
+              <span style="display:block; font-weight:700;">$15.00</span>
+              <span style="font-size:0.7rem; color:#4B5842; font-weight:600;">✓ Included</span>
+            </div>
+          </div>
+          <div style="text-align:center; color:#D9822B; font-weight:700;">+</div>
+
+          <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.25rem; display:flex; align-items:center; gap:1rem; box-shadow:0 6px 18px rgba(42,36,31,0.04);">
+            <span style="font-family:'Playfair Display',serif; font-weight:700; color:#D9822B;">02</span>
+            <div style="width:60px; height:60px; border-radius:12px; background:#FAF7F2; border:1px solid #EBD9C5; display:flex; align-items:center; justify-content:center; font-size:1.75rem;">✒️</div>
+            <div style="flex-grow:1;">
+              <span style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#4B5842;">Item 02 • Writing Instrument</span>
+              <strong style="display:block; font-family:'Playfair Display',serif; font-size:1.05rem;">Strawberry Fields Brass Pen</strong>
+              <span style="font-size:0.8rem; color:rgba(42,36,31,0.65);">Weighted solid brass with smooth 0.5mm archival ink</span>
+            </div>
+            <div style="text-align:right;">
+              <span style="display:block; font-weight:700;">$11.00</span>
+              <span style="font-size:0.7rem; color:#4B5842; font-weight:600;">✓ Included</span>
+            </div>
+          </div>
+          <div style="text-align:center; color:#D9822B; font-weight:700;">+</div>
+
+          <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.25rem; display:flex; align-items:center; gap:1rem; box-shadow:0 6px 18px rgba(42,36,31,0.04);">
+            <span style="font-family:'Playfair Display',serif; font-weight:700; color:#D9822B;">03</span>
+            <div style="width:60px; height:60px; border-radius:12px; background:#FAF7F2; border:1px solid #EBD9C5; display:flex; align-items:center; justify-content:center; font-size:1.75rem;">🍯</div>
+            <div style="flex-grow:1;">
+              <span style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#4B5842;">Item 03 • Daily Note-Taking</span>
+              <strong style="display:block; font-family:'Playfair Display',serif; font-size:1.05rem;">Botanical Floral Pocket Notepad</strong>
+              <span style="font-size:0.8rem; color:rgba(42,36,31,0.65);">70lb acid-free linen paper with gold foil bee accent</span>
+            </div>
+            <div style="text-align:right;">
+              <span style="display:block; font-weight:700;">$12.00</span>
+              <span style="font-size:0.7rem; color:#4B5842; font-weight:600;">✓ Included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Summary Card -->
+        <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:22px; padding:2rem; box-shadow:0 16px 36px rgba(42,36,31,0.08);">
+          <span style="background:#D9822B; color:#FFF; font-size:0.725rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:0.35rem 0.85rem; border-radius:6px; display:inline-block; margin-bottom:0.75rem;">Holiday Gift Set Special</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.65rem; margin:0 0 0.5rem 0;">The Fireside Reader Trio</h3>
+          <p style="font-size:0.925rem; line-height:1.55; color:rgba(42,36,31,0.75); margin:0 0 1.25rem 0;">Everything needed for fireside reading evenings. Packaged together in our custom Bizi Bees holiday gift box.</p>
+
+          <div style="background:#FAF7F2; border-radius:14px; padding:1.25rem; border:1px solid #EBD9C5; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem; color:rgba(42,36,31,0.7);">
+              <span>Combined Value:</span>
+              <span style="text-decoration:line-through;">$38.00</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem;">
+              <span style="font-size:0.9rem;">Bundle Savings:</span>
+              <span style="background:rgba(39,174,96,0.12); color:#1e824c; font-weight:700; font-size:0.8rem; padding:0.2rem 0.55rem; border-radius:4px;">Save 34% ($13.01 Off)</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid #EBD9C5; padding-top:0.75rem;">
+              <span style="font-weight:700; font-size:1.05rem;">Special Bundle Price:</span>
+              <span style="font-size:1.85rem; font-weight:800;">$24.99</span>
+            </div>
+          </div>
+
+          <button id="demo-add-bundle" onclick="simulateBundleAdd()" style="width:100%; background:#D9822B; color:#FFFFFF; font-size:1.05rem; font-weight:700; padding:1.05rem; border-radius:999px; border:none; cursor:pointer; box-shadow:0 10px 24px rgba(217,130,43,0.45); transition:transform 0.2s ease;">
+            <span>🛍️ Add Complete Bundle to Cart ($24.99)</span>
+          </button>
+          <div id="demo-bundle-feedback" style="display:none; margin-top:0.85rem; padding:0.75rem; border-radius:10px; font-size:0.875rem; text-align:center; font-weight:600; background:rgba(39,174,96,0.12); color:#1e824c;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bizi-preview-label" id="section-matrix">Component 4: 4-Point Pre-Loved Inspection & Trust Matrix</div>
+  <!-- SECTION 4: Inspection Matrix -->
+  <section style="background:#FAF7F2; padding:4rem 1.25rem;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="text-align:center; max-width:720px; margin:0 auto 2.5rem;">
+        <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#4B5842; display:block; margin-bottom:0.5rem;">The Provo Quality Standard</span>
+        <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(2rem,4vw,3.25rem); font-weight:700; margin:0 0 0.85rem 0;">Our 4-Point Pre-Loved Promise</h2>
+        <p style="color:rgba(42,36,31,0.75); line-height:1.6; margin:0;">Every pre-owned volume, vintage heirloom, and treasure passes our hands-on restoration protocol before leaving Utah.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem; margin-bottom:2.5rem;">
+        <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.75rem 1.4rem; box-shadow:0 8px 20px rgba(42,36,31,0.04);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#D9822B;">01</span>
+            <span style="font-size:1.5rem;">🧼</span>
+          </div>
+          <span style="font-size:0.725rem; font-weight:700; text-transform:uppercase; color:#1e824c; background:rgba(39,174,96,0.1); padding:0.25rem 0.6rem; border-radius:6px; display:inline-block; margin-bottom:0.75rem;">✓ Sanitized & Cleaned</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0 0 0.5rem 0;">UV & Botanical Treatment</h3>
+          <p style="font-size:0.885rem; line-height:1.55; color:rgba(42,36,31,0.75); margin:0 0 1rem 0;">Gently UV-sterilized and treated with archival ozone to banish odors, dust, and allergens with zero chemical residue.</p>
+          <span style="font-size:0.75rem; font-weight:600; color:#4B5842;">Protocol: 48-Hr Controlled Deodorize</span>
+        </div>
+
+        <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.75rem 1.4rem; box-shadow:0 8px 20px rgba(42,36,31,0.04);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#D9822B;">02</span>
+            <span style="font-size:1.5rem;">📖</span>
+          </div>
+          <span style="font-size:0.725rem; font-weight:700; text-transform:uppercase; color:#1e824c; background:rgba(39,174,96,0.1); padding:0.25rem 0.6rem; border-radius:6px; display:inline-block; margin-bottom:0.75rem;">✓ Binding Verified</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0 0 0.5rem 0;">Spine & Page Stress-Test</h3>
+          <p style="font-size:0.885rem; line-height:1.55; color:rgba(42,36,31,0.75); margin:0 0 1rem 0;">Manual page-by-page spine flex check ensures no detached leaves, split hinges, or crumbling glue.</p>
+          <span style="font-size:0.75rem; font-weight:600; color:#4B5842;">Standard: 100% Intact Leaf Verification</span>
+        </div>
+
+        <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.75rem 1.4rem; box-shadow:0 8px 20px rgba(42,36,31,0.04);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#D9822B;">03</span>
+            <span style="font-size:1.5rem;">🎲</span>
+          </div>
+          <span style="font-size:0.725rem; font-weight:700; text-transform:uppercase; color:#1e824c; background:rgba(39,174,96,0.1); padding:0.25rem 0.6rem; border-radius:6px; display:inline-block; margin-bottom:0.75rem;">✓ 100% Complete</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0 0 0.5rem 0;">Inserts & Pieces Counted</h3>
+          <p style="font-size:0.885rem; line-height:1.55; color:rgba(42,36,31,0.75); margin:0 0 1rem 0;">Vintage box sets, maps, inserts, and game pieces are inventoried piece-by-piece to guarantee zero missing items.</p>
+          <span style="font-size:0.75rem; font-weight:600; color:#4B5842;">Guarantee: Piece-by-Piece Verification Log</span>
+        </div>
+
+        <div style="background:#FFF; border:1px solid #EBD9C5; border-radius:18px; padding:1.75rem 1.4rem; box-shadow:0 8px 20px rgba(42,36,31,0.04);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+            <span style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#D9822B;">04</span>
+            <span style="font-size:1.5rem;">🎁</span>
+          </div>
+          <span style="font-size:0.725rem; font-weight:700; text-transform:uppercase; color:#1e824c; background:rgba(39,174,96,0.1); padding:0.25rem 0.6rem; border-radius:6px; display:inline-block; margin-bottom:0.75rem;">✓ Eco Packaging</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0 0 0.5rem 0;">Recycled Kraft & Wax Seal</h3>
+          <p style="font-size:0.885rem; line-height:1.55; color:rgba(42,36,31,0.75); margin:0 0 1rem 0;">Shipped in 100% post-consumer recycled mailers with water-activated tape, tied with twine and beeswax seal.</p>
+          <span style="font-size:0.75rem; font-weight:600; color:#4B5842;">Ready to Gift: Plastic-Free Standard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Component 5: Sticky Mobile Bar -->
+  <aside id="bizi-demo-sticky" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:rgba(250,247,242,0.96); backdrop-filter:blur(14px); border-top:1px solid #EBD9C5; padding:0.65rem 1rem max(0.65rem, env(safe-area-inset-bottom, 14px)); box-shadow:0 -8px 24px rgba(42,36,31,0.12);">
+    <div style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:0.4rem;">
+      <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.725rem;">
+        <span style="display:inline-block; width:7px; height:7px; background:#e67e22; border-radius:50%; box-shadow:0 0 0 3px rgba(230,126,34,0.3);"></span>
+        <strong style="color:#2A241F; flex-grow:1;">🔥 High Demand — 4 left in Provo store</strong>
+        <span style="font-size:0.65rem; font-weight:700; text-transform:uppercase; color:#27ae60; background:rgba(39,174,96,0.1); padding:0.15rem 0.45rem; border-radius:4px;">Ships Today</span>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <div style="width:40px; height:40px; border-radius:8px; background:#FFF; border:1px solid #EBD9C5; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">🐝</div>
+          <div>
+            <strong style="display:block; font-size:0.85rem; color:#2A241F;">Blind Date Holiday Box</strong>
+            <span style="font-weight:800; font-size:0.9rem; color:#D9822B;">$14.99</span>
+          </div>
+        </div>
+        <a href="https://bizibees-store.myshopify.com/checkout" target="_blank" style="background:#D9822B; color:#FFFFFF; font-weight:800; font-size:0.9rem; padding:0.75rem 1.25rem; border-radius:999px; text-decoration:none; display:inline-flex; align-items:center; gap:0.35rem; box-shadow:0 4px 14px rgba(217,130,43,0.45);">
+          <span>⚡ Fast Checkout</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 1. Zero Gravity Card Drift Math
+    (function() {
+      const stage = document.getElementById('zgStage-preview');
+      const cards = Array.from(stage.querySelectorAll('.bizi-zg-card'));
+      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+
+      stage.addEventListener('mousemove', e => {
+        const rect = stage.getBoundingClientRect();
+        targetX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+        targetY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+      });
+      stage.addEventListener('mouseleave', () => { targetX = 0; targetY = 0; });
+
+      const physics = cards.map((el, i) => ({
+        el,
+        freqX: 0.0008 + i * 0.0003,
+        freqY: 0.0011 + i * 0.0002,
+        phase: i * 1.35,
+        curX: 0, curY: 0, rotX: 0, rotY: 0
+      }));
+
+      let start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        mouseX += (targetX - mouseX) * 0.05;
+        mouseY += (targetY - mouseY) * 0.05;
+
+        physics.forEach(p => {
+          const driftX = Math.sin(elapsed * p.freqX + p.phase) * 8 - mouseX * 12;
+          const driftY = Math.cos(elapsed * p.freqY + p.phase) * 11 - mouseY * 12;
+          p.curX += (driftX - p.curX) * 0.08;
+          p.curY += (driftY - p.curY) * 0.08;
+          p.rotX += (-mouseY * 6 - p.rotX) * 0.08;
+          p.rotY += (mouseX * 6 - p.rotY) * 0.08;
+          p.el.style.transform = `translate3d(${p.curX.toFixed(2)}px, ${p.curY.toFixed(2)}px, 0) rotateX(${p.rotX.toFixed(2)}deg) rotateY(${p.rotY.toFixed(2)}deg)`;
+        });
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+
+    // 2. Vibe Switcher
+    const vibes = [
+      {
+        emoji: '🌧️',
+        title: 'Rainy Day Mystery',
+        seal: '🗝️',
+        headline: 'Foggy Manor, Hidden Wills & Suspicious Tea',
+        desc: 'A classic golden-age locked-room puzzle from the late 1960s. Crisp yellowed pages, vintage dust jacket charm, and suspense that keeps you guessing past 2:00 AM.',
+        clues: [
+          'Remote English countryside manor cut off by floodwaters',
+          'Amateur detective with a sharp tongue and an eye for details',
+          'Hand-inspected vintage paperback with tight original spine'
+        ],
+        price: '$14.99'
+      },
+      {
+        emoji: '☕',
+        title: 'Warm Hearth & Home',
+        seal: '🕯️',
+        headline: 'Cottage Recipes, Second Chances & Starlight',
+        desc: 'A heartwarming mid-century pastoral novel about belonging, hearth-baked bread, and finding peace in quiet towns.',
+        clues: [
+          'Set in a windswept coastal harbor town with a cozy bakery',
+          'Found-family warmth, soothing pacing, zero modern cynicism',
+          'Original cloth-bound hardcover edition with gilded embossing'
+        ],
+        price: '$16.99'
+      },
+      {
+        emoji: '🕰️',
+        title: '1970s Sci-Fi',
+        seal: '🪐',
+        headline: 'Analog Synthesizers, Deep Orbit & Speculative Futures',
+        desc: 'Vintage speculative fiction from the golden paperback era. Featuring retro-futuristic cover art and philosophical explorations.',
+        clues: [
+          'First-contact intrigue aboard a generation starship',
+          'Thought-provoking mind-bending paradoxes',
+          'Collectible vintage DAW/Ballantine print in great condition'
+        ],
+        price: '$15.50'
+      },
+      {
+        emoji: '⚡',
+        title: 'Page-Turner Thriller',
+        seal: '⚡',
+        headline: 'High-Stakes Heists, Cold War Espionage & Twists',
+        desc: 'Fast-paced tension that burns through 300 pages in one sitting. Perfect for holiday travel and long cozy evenings.',
+        clues: [
+          'Double agents, sleeper codes, and midnight border crossings',
+          'Short chapters with unrelenting cliffhangers',
+          'Pristine tight spine with zero dog-eared pages'
+        ],
+        price: '$13.99'
+      }
+    ];
+
+    function switchVibe(index) {
+      const v = vibes[index];
+      const tabs = document.querySelectorAll('.demo-vibe-tab');
+      tabs.forEach((t, i) => {
+        if (i === index) {
+          t.style.background = '#2A241F';
+          t.style.color = '#FAF7F2';
+          t.style.borderColor = '#2A241F';
+        } else {
+          t.style.background = '#FFF';
+          t.style.color = '#2A241F';
+          t.style.borderColor = '#EBD9C5';
+        }
+      });
+
+      document.getElementById('demo-seal').textContent = v.seal;
+      document.getElementById('demo-vibe-tag').textContent = v.title;
+      document.getElementById('demo-vibe-headline').textContent = v.headline;
+      document.getElementById('demo-vibe-desc').textContent = v.desc;
+      document.getElementById('demo-vibe-price').textContent = v.price;
+      
+      const list = document.getElementById('demo-clues-list');
+      list.innerHTML = v.clues.map(c => `<li>✦ ${c}</li>`).join('');
+    }
+
+    // 3. Bundle Add Simulation
+    function simulateBundleAdd() {
+      const btn = document.getElementById('demo-add-bundle');
+      const feedback = document.getElementById('demo-bundle-feedback');
+      btn.innerHTML = '<span>⏳ Adding 3 Items via Shopify AJAX API...</span>';
+      btn.style.opacity = '0.75';
+
+      setTimeout(() => {
+        btn.innerHTML = '<span>✓ Complete Bundle Added!</span>';
+        btn.style.opacity = '1';
+        btn.style.background = '#27ae60';
+        feedback.style.display = 'block';
+        feedback.innerHTML = '🎉 3 Items added to bag: Book + Brass Pen + Botanical Notepad ($24.99 total)!';
+        setTimeout(() => {
+          btn.innerHTML = '<span>🛍️ Add Complete Bundle to Cart ($24.99)</span>';
+          btn.style.background = '#D9822B';
+        }, 3000);
+      }, 700);
+    }
+  </script>
+</body>
+</html>

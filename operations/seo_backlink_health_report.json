@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-09T17:34:12-07:00",
-  "total_urls": 663,
+  "timestamp": "2026-11-10T13:35:21-07:00",
+  "total_urls": 744,
   "curated_winners_active": 14,
   "pruned_items_archived": 4,
   "checks": {
@@ -62,14 +62,14 @@
     },
     "google_shopping_feed": {
       "ok": true,
-      "items": 224
+      "items": 219
     },
     "robots_txt": {
       "ok": true
     }
   },
   "indexing": {
-    "indexnow_pushed": 663,
+    "indexnow_pushed": 744,
     "websub_accepted": 9,
     "xml_rpc_broadcast": 3
   }

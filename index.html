@@ -124,13 +124,41 @@
     .section-title p { color: #6b7280; font-size: 15px; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; margin-bottom: 56px; }
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; box-shadow: 0 4px 14px rgba(0,0,0,0.03); transition: 0.2s; position: relative; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+    /* Warm boutique product cards */
+    .card,
+    .card-wrapper {
+      background: #ffffff !important;
+      border-radius: 16px !important;
+      border: 1px solid #ebd9c5 !important;
+      box-shadow: 0 8px 24px rgba(184, 150, 110, 0.08) !important;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease !important;
+      overflow: hidden !important;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card:hover,
+    .card-wrapper:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 16px 36px rgba(184, 150, 110, 0.18) !important;
+    }
+
+    .card h3,
+    .card h3 a,
+    .card__heading a {
+      font-family: Georgia, "Times New Roman", serif !important;
+      color: #2a241f !important;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
     .badge { position: absolute; top: 14px; left: 14px; background: var(--primary); color: #fff; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 999px; z-index: 2; }
     .card-img { height: 210px; border-radius: 12px; overflow: hidden; margin-bottom: 14px; background: #f3f4f6; }
     .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .rating { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
-    .card h3 { font-size: 16px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
     .card p { font-size: 13px; color: #6b7280; margin-bottom: 14px; flex: 1; }
     .price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; }
     .sale-price { font-size: 21px; font-weight: 900; color: var(--primary); }
@@ -149,6 +177,138 @@
 
     footer { background: var(--dark); color: #fff; padding: 40px 0 24px; margin-top: 60px; font-size: 14px; text-align: center; }
     footer a { color: #fde047; }
+
+    /* Bizi Bees Zero-Gravity Interactive Showcase Styles */
+    .bb-gravity-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 480px;
+      padding: 50px 20px;
+      background: radial-gradient(circle at 50% 30%, #fffdfa 0%, #f7f2e9 100%);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      margin: 40px auto;
+      max-width: 1200px;
+      border: 1px solid #ebd9c5;
+      box-shadow: 0 10px 30px rgba(184, 150, 110, 0.08);
+    }
+
+    .bb-gravity-header {
+      text-align: center;
+      max-width: 650px;
+      z-index: 5;
+      pointer-events: none;
+      margin-bottom: 24px;
+    }
+
+    .bb-gravity-pill {
+      display: inline-block;
+      background: #ffecb3;
+      color: #8c5b00;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .bb-gravity-header h2 {
+      font-size: clamp(26px, 3.5vw, 38px);
+      color: #2b2520;
+      margin: 0 0 10px 0;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      font-family: Georgia, serif;
+    }
+
+    .bb-gravity-header p {
+      font-size: 15px;
+      color: #6d635b;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .bb-gravity-arena {
+      position: relative;
+      width: 100%;
+      max-width: 1050px;
+      height: 320px;
+    }
+
+    .float-item {
+      position: absolute;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      z-index: 2;
+      will-change: transform;
+    }
+
+    .float-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 14px 30px rgba(184, 150, 110, 0.16), 0 2px 6px rgba(0,0,0,0.04);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .float-item:hover {
+      z-index: 10;
+    }
+
+    .float-item:hover .float-content {
+      transform: scale(1.08) translateY(-4px);
+      box-shadow: 0 20px 42px rgba(184, 150, 110, 0.28);
+      background: #ffffff;
+    }
+
+    .float-item .emoji {
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .float-item strong {
+      display: block;
+      font-size: 14px;
+      color: #2c2520;
+      font-weight: 700;
+    }
+
+    .float-item small {
+      display: block;
+      font-size: 11px;
+      color: #8c7f74;
+      font-weight: 500;
+    }
+
+    .badge-pos-1 { top: 8%;  left: 6%; }
+    .badge-pos-2 { top: 62%; left: 10%; }
+    .badge-pos-3 { top: 16%; right: 8%; }
+    .badge-pos-4 { top: 64%; right: 12%; }
+    .badge-pos-5 { top: 4%;  left: 44%; }
+    .badge-pos-6 { top: 68%; left: 40%; }
+
+    @media (max-width: 768px) {
+      .bb-gravity-arena { height: 380px; }
+      .badge-pos-1 { top: 5%;  left: 4%; }
+      .badge-pos-2 { top: 34%; left: 6%; }
+      .badge-pos-3 { top: 16%; right: 4%; }
+      .badge-pos-4 { top: 56%; right: 4%; }
+      .badge-pos-5 { top: 76%; left: 8%; }
+      .badge-pos-6 { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -192,6 +352,77 @@
           Read Clinical Brand Teardowns 🔬
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- BIZI BEES ZERO-GRAVITY INTERACTIVE SHOWCASE -->
+  <section class="bb-gravity-wrapper">
+    <div class="bb-gravity-header">
+      <span class="bb-gravity-pill">✨ The Bizi Bees Curiosity Vault</span>
+      <h2>Treasures Floating into New Hands</h2>
+      <p>Hand-picked vintage books, retro games, and curated finds from Provo, Utah. Catch a treasure below:</p>
+    </div>
+
+    <div class="bb-gravity-arena" id="gravityArena">
+      <a href="https://bizibees-store.myshopify.com/collections/all" class="float-item badge-pos-1" data-speed="2.2" data-offset="15">
+        <div class="float-content">
+          <span class="emoji">📖</span>
+          <div class="float-text">
+            <strong>Pre-Loved Novels</strong>
+            <small>Inspected &amp; read-ready</small>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://bizibees-store.myshopify.com/collections/board-games-toys-collectibles" class="float-item badge-pos-2" data-speed="1.8" data-offset="-20">
+        <div class="float-content">
+          <span class="emoji">🎲</span>
+          <div class="float-text">
+            <strong>Family Game Nights</strong>
+            <small>Board games &amp; puzzles</small>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://bizibees-store.myshopify.com/collections/all" class="float-item badge-pos-3" data-speed="2.5" data-offset="25">
+        <div class="float-content">
+          <span class="emoji">🐝</span>
+          <div class="float-text">
+            <strong>Curated in Provo</strong>
+            <small>Shipped with love by Kimberly</small>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://bizibees-store.myshopify.com/discount/PROVOTODAY?redirect=/collections/all" class="float-item badge-pos-4" data-speed="1.5" data-offset="-10">
+        <div class="float-content">
+          <span class="emoji">🎁</span>
+          <div class="float-text">
+            <strong>Gifts Under $20</strong>
+            <small>Unique &amp; sustainable</small>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://bizibees-store.myshopify.com/collections/all" class="float-item badge-pos-5" data-speed="2.8" data-offset="30">
+        <div class="float-content">
+          <span class="emoji">📦</span>
+          <div class="float-text">
+            <strong>Free Tracked Shipping</strong>
+            <small>On all orders over $35</small>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://bizibees-store.myshopify.com/collections/all" class="float-item badge-pos-6" data-speed="2.0" data-offset="-15">
+        <div class="float-content">
+          <span class="emoji">🌿</span>
+          <div class="float-text">
+            <strong>100% Eco-Boutique</strong>
+            <small>Giving good things a 2nd life</small>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -528,5 +759,70 @@
     </div>
   </footer>
 
+  <script>
+    (function() {
+      const arena = document.getElementById('gravityArena');
+      if (!arena) return;
+
+      const items = arena.querySelectorAll('.float-item');
+      let mouseX = 0, mouseY = 0;
+      let targetX = 0, targetY = 0;
+      let time = 0;
+      let isVisible = true;
+      let animationFrameId = null;
+
+      function animate() {
+        if (!isVisible) return;
+        time += 0.02;
+
+        targetX += (mouseX - targetX) * 0.05;
+        targetY += (mouseY - targetY) * 0.05;
+
+        items.forEach((item, index) => {
+          const speed = parseFloat(item.dataset.speed) || 1.8;
+          const floatY = Math.sin(time * speed + index) * 12;
+          const floatX = Math.cos(time * (speed * 0.8) + index) * 9;
+          const shiftX = targetX * speed * 8;
+          const shiftY = targetY * speed * 8;
+
+          item.style.transform = `translate3d(${floatX + shiftX}px, ${floatY + shiftY}px, 0px) rotate(${floatX * 0.2}deg)`;
+        });
+
+        animationFrameId = requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        const rect = arena.getBoundingClientRect();
+        const arenaCenterX = rect.left + rect.width / 2;
+        const arenaCenterY = rect.top + rect.height / 2;
+        mouseX = (e.clientX - arenaCenterX) / (window.innerWidth / 2);
+        mouseY = (e.clientY - arenaCenterY) / (window.innerHeight / 2);
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          const touch = e.touches[0];
+          const rect = arena.getBoundingClientRect();
+          mouseX = (touch.clientX - (rect.left + rect.width / 2)) / (window.innerWidth / 2);
+          mouseY = (touch.clientY - (rect.top + rect.height / 2)) / (window.innerHeight / 2);
+        }
+      }, { passive: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !animationFrameId) {
+            animate();
+          } else if (!isVisible && animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(arena);
+      animate();
+    })();
+  </script>
 </body>
 </html>

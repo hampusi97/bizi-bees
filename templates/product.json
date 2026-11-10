@@ -2,9 +2,17 @@
   "sections": {
     "main": {
       "type": "main-product"
+    },
+    "inspection_matrix": {
+      "type": "bizi-inspection-matrix"
+    },
+    "sticky_mobile_bar": {
+      "type": "bizi-sticky-mobile-bar"
     }
   },
   "order": [
-    "main"
+    "main",
+    "inspection_matrix",
+    "sticky_mobile_bar"
   ]
 }

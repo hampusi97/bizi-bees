@@ -87,8 +87,33 @@ svg{max-width:100%;height:auto}.object svg,.hero-art svg{width:80px!important;he
   }
 }
 
+/* Warm boutique product cards */
+.card-wrapper,
+.card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  border: 1px solid #ebd9c5 !important;
+  box-shadow: 0 8px 24px rgba(184, 150, 110, 0.08) !important;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+.card-wrapper:hover,
+.card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(184, 150, 110, 0.18) !important;
+}
+
+.card__heading a,
+.card h3,
+.card h3 a {
+  font-family: Georgia, "Times New Roman", serif !important;
+  color: #2a241f !important;
+}
+
 </style>
 {{ 'theme.css' | asset_url | stylesheet_tag }}
+{{ 'bizi-boutique-theme.css' | asset_url | stylesheet_tag }}
     <style>
       .collection-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin:4px 0 22px}
       .collection-links a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}

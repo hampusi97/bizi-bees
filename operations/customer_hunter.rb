@@ -169,10 +169,11 @@ all_urls.each_slice(100).with_index do |slice, idx|
     http.read_timeout = 30
     idx_res = http.request(idx_req)
     puts "  Batch #{idx + 1} (#{slice.length} URLs): IndexNow #{idx_res.code} #{idx_res.message}"
-  rescue Net::ReadTimeout, Net::OpenTimeout, SocketError => e
+    sleep 0.5
+  rescue => e
     retries -= 1
     if retries > 0
-      puts "  ⚠️ Timeout on Batch #{idx + 1} (#{e.message}). Retrying in 3s (#{retries} attempts left)..."
+      puts "  ⚠️ Connection issue on Batch #{idx + 1} (#{e.message}). Retrying in 3s (#{retries} attempts left)..."
       sleep 3
       retry
     else
