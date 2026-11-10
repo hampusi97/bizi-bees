@@ -4,7 +4,7 @@ handle: "clinical-buyer-guide-red-light-and-cryo-recovery-2026-11-10-13"
 author: "Kimberly Harter"
 tags: "Red Light Therapy, Migraine Cap, Microcurrent, Solawave Alternative, Luma Wellness"
 summary: "Updated November 2026 clinical teardown of 630nm red light wands, 7-color LED masks, and 360° cryo-compression caps shipped free from Utah."
-published_at: "2026-11-10T13:35:21-07:00"
+published_at: "2026-11-10T13:52:53+00:00"
 ---
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Clinical Skincare & Migraine Recovery Guide (November 2026 Edition): Spec Comparison","description":"Updated November 2026 clinical teardown of 630nm red light wands, 7-color LED masks, and 360° cryo-compression caps shipped free from Utah.","author":{"@type":"Person","name":"Kimberly Harter"},"publisher":{"@type":"Organization","name":"Bizi Bees & Luma Wellness"},"mainEntityOfPage":"https://bizibees-store.myshopify.com/blogs/news/clinical-buyer-guide-red-light-and-cryo-recovery-2026-11-10-13"}</script>
