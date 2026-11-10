@@ -1,63 +1,146 @@
 /**
  * Bizi Bees Boutique Design System - Global Variables & Utilities
  * File: assets/bizi-boutique-theme.css
- * Palette: Warm Linen, Deep Espresso, Honey Gold, Bookleaf Olive
+ * Palette: Natural Warm Linen (#FAF7F2), Primary Cards (#FFFFFF), Deep Charcoal/Espresso (#1C1917),
+ *          Muted Stone (#78716C), Subtle Warm Gray Borders (#E7E5E4), Deep Rich Olive (#2D3B2D)
+ * Typography: Playfair Display / Cormorant Garamond / Georgia (Serif), Inter / System Sans
  */
 
 :root {
-  --bizi-bg-linen: #FAF7F2;
-  --bizi-text-espresso: #2A241F;
-  --bizi-accent-honey: #D9822B;
-  --bizi-accent-olive: #4B5842;
-  --bizi-card-border: #EBD9C5;
-  --bizi-font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --bizi-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Assistant", Roboto, sans-serif;
-  --bizi-radius-card: 18px;
-  --bizi-radius-pill: 999px;
-  --bizi-shadow-soft: 0 10px 30px rgba(42, 36, 31, 0.06);
-  --bizi-shadow-hover: 0 18px 38px rgba(217, 130, 43, 0.14);
+  --bizi-bg: #FAF7F2;
+  --bizi-surface: #FFFFFF;
+  --bizi-text-primary: #1C1917;
+  --bizi-text-secondary: #78716C;
+  --bizi-border: #E7E5E4;
+  --bizi-accent-olive: #2D3B2D;
+  --bizi-accent-olive-hover: #1F291F;
+  --bizi-accent-terracotta: #9A4C2E;
+  --bizi-accent-amber: #D9822B;
+  
+  --bizi-font-serif: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --bizi-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  
+  --bizi-radius-sm: 6px;
+  --bizi-radius-md: 10px;
+  --bizi-radius-lg: 16px;
+  --bizi-radius-pill: 9999px;
+  
+  --bizi-shadow-card: 0 4px 20px rgba(28, 25, 23, 0.05);
+  --bizi-shadow-hover: 0 12px 32px rgba(28, 25, 23, 0.10);
 }
 
-/* Base Body Styling */
-body.bizi-store-active {
-  background-color: var(--bizi-bg-linen);
-  color: var(--bizi-text-espresso);
-  font-family: var(--bizi-font-sans);
+/* Global Reset & Body */
+body {
+  background-color: var(--bizi-bg) !important;
+  color: var(--bizi-text-primary) !important;
+  font-family: var(--bizi-font-sans) !important;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Warm Boutique Button */
-.bizi-btn-primary {
+h1, h2, h3, h4, .serif-heading {
+  font-family: var(--bizi-font-serif) !important;
+  color: var(--bizi-text-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Primary Boutique Buttons */
+.boutique-btn-primary,
+button.bizi-btn-primary,
+.button:not(.secondary) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--bizi-accent-honey);
-  color: #FFFFFF;
+  gap: 8px;
+  background-color: var(--bizi-accent-olive) !important;
+  color: #FFFFFF !important;
   font-family: var(--bizi-font-sans);
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.9rem 1.8rem;
-  border-radius: var(--bizi-radius-pill);
-  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: var(--bizi-radius-sm);
+  border: 1px solid var(--bizi-accent-olive);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 8px 20px -4px rgba(217, 130, 43, 0.4);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(45, 59, 45, 0.15);
 }
 
-.bizi-btn-primary:hover {
-  background-color: #c27021;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px -4px rgba(217, 130, 43, 0.5);
+.boutique-btn-primary:hover,
+button.bizi-btn-primary:hover,
+.button:not(.secondary):hover {
+  background-color: var(--bizi-accent-olive-hover) !important;
+  border-color: var(--bizi-accent-olive-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(45, 59, 45, 0.22);
 }
 
-/* Frosted Boutique Card */
-.bizi-card-frosted {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bizi-card-border);
-  border-radius: var(--bizi-radius-card);
-  box-shadow: var(--bizi-shadow-soft);
+/* Secondary Boutique Buttons */
+.boutique-btn-secondary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent !important;
+  color: var(--bizi-text-primary) !important;
+  font-family: var(--bizi-font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 24px;
+  border-radius: var(--bizi-radius-sm);
+  border: 1px solid var(--bizi-border) !important;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.boutique-btn-secondary:hover,
+.secondary:hover {
+  background-color: #FFFFFF !important;
+  border-color: var(--bizi-accent-olive) !important;
+  color: var(--bizi-accent-olive) !important;
+}
+
+/* Boutique Card Styling */
+.card,
+.card-wrapper,
+.boutique-card {
+  background: var(--bizi-surface) !important;
+  border: 1px solid var(--bizi-border) !important;
+  border-radius: var(--bizi-radius-md) !important;
+  box-shadow: var(--bizi-shadow-card) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+}
+
+.card:hover,
+.card-wrapper:hover,
+.boutique-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--bizi-shadow-hover) !important;
+}
+
+/* Badges & Pills */
+.badge-condition {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bizi-accent-olive);
+  background: #EEF2ED;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+.badge-discount {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bizi-accent-terracotta);
+  background: #FAF0E8;
+  padding: 2px 7px;
+  border-radius: 4px;
 }

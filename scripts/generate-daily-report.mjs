@@ -71,12 +71,25 @@ async function checkUptime(url) {
   }
 }
 
+// Parse bundled SHOPIFY_API_TOKENS if provided
+let bundledTokens = {};
+if (process.env.SHOPIFY_API_TOKENS) {
+  try {
+    bundledTokens = JSON.parse(process.env.SHOPIFY_API_TOKENS);
+  } catch (e) {
+    // If not valid JSON, ignore or treat as single token
+  }
+}
+
 // Resolve Token & Store URL
 function resolveCredentials(store) {
   const envKey = (store.envKey || store.id.replace(/-/g, '_')).toUpperCase();
   const token = (
     process.env[`SHOPIFY_ADMIN_ACCESS_TOKEN_${envKey}`] ||
     process.env[`SHOPIFY_ADMIN_ACCESS_TOKEN_${store.id.replace(/-/g, '_').toUpperCase()}`] ||
+    bundledTokens[store.id] ||
+    bundledTokens[store.envKey] ||
+    bundledTokens[envKey] ||
     process.env.SHOPIFY_ADMIN_ACCESS_TOKEN ||
     ''
   ).trim();

@@ -1,67 +1,229 @@
-<div class="wrap block">
-  {% if collection.handle == 'luma-wellness' %}
-    <div style="background:linear-gradient(180deg, #fffcf5 0%, #ffffff 100%);border:2px solid #fde047;border-radius:16px;padding:28px 24px;margin-bottom:28px;box-shadow:0 10px 30px rgba(217,119,6,0.06);">
-      <div style="max-width:750px;">
-        <p style="color:#b45309;font-weight:800;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 6px;">✨ CLINICAL AT-HOME LONGEVITY TECH</p>
-        <h1 style="font-size:32px;font-weight:900;color:#111827;margin:0 0 10px;line-height:1.2;">Luma Wellness At-Home Clinic</h1>
-        <p style="font-size:15px;color:#4b5563;line-height:1.6;margin:0 0 16px;">Medical-grade 630nm red light phototherapy, microcurrent facial sculpting, targeted décolletage collagen restoration, and cellular rejuvenation tools. Backed by our 60-day risk-free guarantee and fast US dispatch.</p>
-        
-        <!-- As Seen In Media -->
-        <div style="display:flex;align-items:center;gap:18px;font-family:serif;font-weight:700;letter-spacing:0.1em;color:#6b7280;font-size:12px;margin-bottom:18px;flex-wrap:wrap;">
-          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#9ca3af;font-family:sans-serif;font-weight:700;">FEATURED IN:</span>
-          <span>VOGUE</span><span>ELLE</span><span>ALLURE</span><span>BYRDIE</span><span>GLAMOUR</span>
-        </div>
+{% comment %}
+  Bizi Bees - Editorial Boutique Collection Template
+  Repo: bizi-bees /sections/main-collection.liquid
+  Design System: Kinfolk / Toast / Aesop inspired warm tactile lifestyle boutique.
+{% endcomment %}
 
-        <!-- Trust Pillars -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:10px;margin-bottom:18px;font-size:13px;color:#374151;">
-          <div style="display:flex;align-items:center;gap:6px;">🛡️ <strong>60-Day Glow Guarantee</strong></div>
-          <div style="display:flex;align-items:center;gap:6px;">📦 <strong>Ships within 24 Hours</strong> (USPS)</div>
-          <div style="display:flex;align-items:center;gap:6px;">🔬 <strong>Dual 630nm / 850nm</strong> Wavelengths</div>
-          <div style="display:flex;align-items:center;gap:6px;">⚡ <strong>35% Off Code:</strong> PROVOTODAY</div>
-        </div>
-
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="/pages/skincare-routine-quiz" style="background:#111827;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;">Take 30-Sec Routine Quiz →</a>
-          <a href="/pages/win-a-glow-kit" style="background:#dc2626;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:8px;text-decoration:none;">🎁 Win a Free Glow Kit ($179 Value)</a>
-        </div>
-      </div>
+<div class="wrap boutique-collection-wrap">
+  <!-- Minimal Header / Curation Banner -->
+  <header class="collection-editorial-header">
+    <div class="collection-header-meta">
+      <span class="collection-eyebrow">Curated Collection · Hand-Inspected in Utah</span>
+      <h1 class="collection-title-serif">{{ collection.title | escape }}</h1>
+      {% if collection.description != blank %}
+        <div class="collection-desc-prose">{{ collection.description }}</div>
+      {% else %}
+        <p class="collection-desc-prose">
+          A thoughtful, hand-picked selection of pre-loved items, vintage volumes, and everyday treasures. Cleaned, graded, and carefully packaged in Provo, Utah.
+        </p>
+      {% endif %}
     </div>
-  {% else %}
-    <p class="eyebrow">The good-find department</p>
-    <h1>{{ collection.title | escape }}</h1>
-    <div>{{ collection.description }}</div>
-    {% if collection.handle == 'christmas-gifts' %}
-      <p class="notice">Code <a href="/discount/GIFT15?redirect=%2Fcollections%2Fchristmas-gifts">GIFT15</a> takes 15% off this collection through Sunday, November 1. It does not stack with FIRST15. Shipping and taxes are extra.</p>
-    {% endif %}
-    {% if collection.description == blank %}
-      <p>Shop {{ collection.title | downcase | escape }} at bizi bees — a hand-picked selection of quality-checked secondhand finds, honest condition details, and everyday value.</p>
-    {% endif %}
-    <nav class="collection-links" aria-label="Related shopping links">
-      <a href="/collections/all">Shop all finds</a>
-      <a href="/collections/books">Used books</a>
-      <a href="/collections/electronics">Used electronics</a>
-      <a href="/collections/clothing">Secondhand clothing</a>
-      <a href="/collections/toys">Pre-owned toys</a>
-      <a href="/collections/more-finds">More finds</a>
-      <a href="/pages/condition-guide">Condition guide</a>
-      <a href="/pages/shipping">Shipping</a>
-      <a href="/pages/returns">Returns</a>
-    </nav>
-  {% endif %}
 
-  <p class="muted">{{ collection.products_count }} finds</p>
-  {% render 'filters', results: collection %}
-  {% paginate collection.products by 48 %}
-    <div class="grid">
+    <!-- Category Filter Navigation Pills -->
+    <nav class="collection-quick-nav" aria-label="Department Links">
+      <a href="/collections/all" class="quick-nav-pill{% if collection.handle == 'all' %} active{% endif %}">All Finds</a>
+      <a href="/collections/books" class="quick-nav-pill{% if collection.handle == 'books' %} active{% endif %}">Books</a>
+      <a href="/collections/games-puzzles" class="quick-nav-pill{% if collection.handle == 'games-puzzles' %} active{% endif %}">Games &amp; Puzzles</a>
+      <a href="/collections/stationery" class="quick-nav-pill{% if collection.handle == 'stationery' %} active{% endif %}">Stationery</a>
+      <a href="/collections/everyday-finds" class="quick-nav-pill{% if collection.handle == 'everyday-finds' %} active{% endif %}">Everyday Finds</a>
+      <a href="/pages/condition-guide" class="quick-nav-pill secondary">Condition Guide</a>
+    </nav>
+  </header>
+
+  <!-- Collection Stats & Filter Bar -->
+  <div class="collection-toolbar">
+    <div class="collection-count">
+      <span>{{ collection.products_count }}</span> finds in this collection
+    </div>
+    {% render 'filters', results: collection %}
+  </div>
+
+  <!-- Product Grid -->
+  {% paginate collection.products by 36 %}
+    <div class="boutique-collection-grid">
       {% for product in collection.products %}
         {% render 'product-card', product: product %}
       {% else %}
-        <p class="empty">No finds match yet. Try clearing your filters or <a href="/collections/all">browse all finds</a>.</p>
+        <div class="empty-collection-state">
+          <p class="empty-title">No finds match your filter criteria.</p>
+          <p class="empty-sub">Try resetting your filters or exploring our entire catalog.</p>
+          <a href="/collections/all" class="boutique-btn-primary">Browse All Finds</a>
+        </div>
       {% endfor %}
     </div>
-    <div class="pagination">{{ paginate | default_pagination }}</div>
+
+    {% if paginate.pages > 1 %}
+      <div class="boutique-pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
   {% endpaginate %}
 </div>
+
+<style>
+  .boutique-collection-wrap {
+    padding-top: 36px;
+    padding-bottom: 80px;
+  }
+
+  .collection-editorial-header {
+    margin-bottom: 36px;
+    border-bottom: 1px solid #E7E5E4;
+    padding-bottom: 28px;
+  }
+  .collection-header-meta {
+    max-width: 720px;
+    margin-bottom: 24px;
+  }
+  .collection-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2D3B2D;
+    margin-bottom: 8px;
+  }
+  .collection-title-serif {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 600;
+    color: #1C1917;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+  .collection-desc-prose {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #57534E;
+    margin: 0;
+  }
+
+  /* Quick Nav Pills */
+  .collection-quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  .quick-nav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #44403C;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .quick-nav-pill:hover {
+    border-color: #2D3B2D;
+    color: #1C1917;
+  }
+  .quick-nav-pill.active {
+    background: #2D3B2D;
+    color: #FFFFFF;
+    border-color: #2D3B2D;
+    font-weight: 600;
+  }
+  .quick-nav-pill.secondary {
+    border-style: dashed;
+    color: #78716C;
+  }
+
+  /* Toolbar */
+  .collection-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .collection-count {
+    font-size: 13px;
+    color: #78716C;
+  }
+  .collection-count span {
+    font-weight: 600;
+    color: #1C1917;
+  }
+
+  /* Grid layout matching 4-column desktop */
+  .boutique-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .boutique-collection-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .boutique-collection-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .boutique-collection-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .empty-collection-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 12px;
+  }
+  .empty-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1C1917;
+    margin-bottom: 6px;
+  }
+  .empty-sub {
+    font-size: 14px;
+    color: #78716C;
+    margin-bottom: 20px;
+  }
+
+  .boutique-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    gap: 8px;
+  }
+  .boutique-pagination span,
+  .boutique-pagination a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #E7E5E4;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #44403C;
+  }
+  .boutique-pagination .current {
+    background: #2D3B2D;
+    color: #FFFFFF;
+    border-color: #2D3B2D;
+    font-weight: 600;
+  }
+</style>
 
 {% schema %}
 {

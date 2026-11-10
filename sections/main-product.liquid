@@ -1,270 +1,646 @@
-<div class="wrap block">
-  <p class="muted"><a href="/collections/all">All finds</a> / {{ product.title | escape }}</p>
-  <div class="product">
-    <div class="gallery">
-      {% for image in product.images %}
-        {{ image | image_url: width: 1200 | image_tag: loading: "lazy", widths: "400,800,1200", sizes: "(max-width:600px) 90vw, 50vw" }}
-      {% else %}
-        {{ "product-1" | placeholder_svg_tag }}
-      {% endfor %}
-    </div>
+{% comment %}
+  Bizi Bees - Editorial Boutique Product Details
+  Repo: bizi-bees /sections/main-product.liquid
+  Design System: Kinfolk / Toast / Aesop inspired warm tactile lifestyle boutique.
+{% endcomment %}
 
-    <div>
-      {% if product.vendor == "Luma Wellness" %}
-        <p class="eyebrow" style="color:#b45309;font-weight:800;letter-spacing:0.06em;margin-bottom:4px;">✨ CLINICAL AT-HOME LONGEVITY TECH</p>
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:13px;color:#4b5563;">
-          <span style="color:#f59e0b;font-size:16px;">★★★★★</span>
-          <strong style="color:#111827;">4.9 / 5.0</strong>
-          <span>(184 Verified Customer Reviews)</span>
-        </div>
-        <h1 style="font-size:28px;font-weight:900;color:#111827;line-height:1.2;margin:0 0 10px;">{{ product.title | escape }}</h1>
+<div class="wrap boutique-pdp-wrap">
+  <!-- Minimal Editorial Breadcrumbs -->
+  <nav class="boutique-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/collections/all">Catalog</a>
+    <span class="sep">/</span>
+    {% if product.collections.first %}
+      <a href="{{ product.collections.first.url }}">{{ product.collections.first.title | escape }}</a>
+      <span class="sep">/</span>
+    {% endif %}
+    <span class="current">{{ product.title | escape }}</span>
+  </nav>
 
-        <!-- As Seen In Media Bar -->
-        <div style="margin:12px 0 16px;border-top:1px solid #f3f4f6;border-bottom:1px solid #f3f4f6;padding:8px 0;text-align:center;">
-          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:#9ca3af;font-weight:700;margin-bottom:4px;">FEATURED IN BEAUTY &amp; LONGEVITY MEDIA</div>
-          <div style="display:flex;justify-content:center;align-items:center;gap:18px;font-family:serif;font-weight:700;letter-spacing:0.1em;color:#4b5563;font-size:12px;opacity:0.85;">
-            <span>VOGUE</span><span>ELLE</span><span>ALLURE</span><span>BYRDIE</span><span>GLAMOUR</span>
+  <div class="boutique-product-layout">
+    <!-- Gallery Column (Sticky on Desktop) -->
+    <div class="boutique-product-gallery">
+      <div class="gallery-main-frame">
+        {% if product.featured_image %}
+          <div class="gallery-primary-img-wrap">
+            {{ product.featured_image | image_url: width: 1000 | image_tag: 
+              id: 'ProductMainImage',
+              loading: 'eager', 
+              widths: '400, 600, 800, 1000', 
+              sizes: '(max-width: 900px) 92vw, 48vw',
+              alt: product.title | escape,
+              class: 'gallery-primary-img'
+            }}
           </div>
-        </div>
-
-        {% assign sale_price = product.price | times: 0.65 %}
-        <div class="product-price-box" style="background:#fffcf2;border:2px solid #fde047;padding:14px 18px;border-radius:12px;margin:14px 0;">
-          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-            <span style="font-size:32px;font-weight:900;color:#dc2626;">{{ sale_price | money }}</span>
-            <span style="font-size:18px;text-decoration:line-through;color:#71717a;">{{ product.price | money }}</span>
-            <span style="background:#dc2626;color:#fff;font-size:11px;font-weight:900;padding:3px 8px;border-radius:6px;letter-spacing:0.05em;">SAVE 35% TODAY</span>
-          </div>
-          <p style="margin:6px 0 0;font-size:12px;color:#047857;font-weight:700;">⚡ Sitewide Launch Code <strong>PROVOTODAY</strong> auto-applied at checkout!</p>
-        </div>
-
-        <!-- Fast US Dispatch Pill -->
-        <div style="font-size:12px;color:#15803d;background:#dcfce7;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin:12px 0;display:flex;align-items:center;gap:8px;">
-          <span>📦</span>
-          <span><strong>FAST US DISPATCH:</strong> In stock in Utah warehouse. Orders placed before 5 PM MST dispatch today via USPS Priority (Delivers in 2-4 business days).</span>
-        </div>
-
-        <!-- Grand Slam Offer Stack Box -->
-        <div style="background:#fffdf7;border:2px solid #fbbf24;border-radius:12px;padding:16px;margin:16px 0;box-shadow:0 4px 16px rgba(251,191,36,0.12);">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px dashed #fcd34d;padding-bottom:8px;">
-            <strong style="color:#92400e;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;">🎁 INCLUDED IN TODAY'S GLOW TRANSFORMATION KIT:</strong>
-            <span style="background:#d97706;color:#fff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:999px;">$179 VALUE</span>
-          </div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:1.75;color:#374151;">
-            <li style="display:flex;justify-content:space-between;"><span>✅ <strong>{{ product.title }}</strong></span> <span style="text-decoration:line-through;color:#9ca3af;">$89.99</span></li>
-            <li style="display:flex;justify-content:space-between;"><span>✅ <strong>FREE</strong> Clinical Activating Peptide Serum</span> <span style="color:#059669;font-weight:700;">FREE <span style="text-decoration:line-through;color:#9ca3af;font-weight:normal;">($28.00)</span></span></li>
-            <li style="display:flex;justify-content:space-between;"><span>✅ <strong>FREE</strong> Velvet Luxe Travel Pouch &amp; USB-C Cable</span> <span style="color:#059669;font-weight:700;">FREE <span style="text-decoration:line-through;color:#9ca3af;font-weight:normal;">($15.00)</span></span></li>
-            <li style="display:flex;justify-content:space-between;"><span>✅ <strong>FREE</strong> <a href="/pages/30-day-glow-protocol" target="_blank" style="color:#b45309;text-decoration:underline;">30-Day Anti-Aging Masterclass Protocol</a></span> <span style="color:#059669;font-weight:700;">FREE <span style="text-decoration:line-through;color:#9ca3af;font-weight:normal;">($27.00)</span></span></li>
-            <li style="display:flex;justify-content:space-between;"><span>✅ <strong>FREE</strong> 2-4 Day US Priority Insured Shipping</span> <span style="color:#059669;font-weight:700;">FREE <span style="text-decoration:line-through;color:#9ca3af;font-weight:normal;">($9.95)</span></span></li>
-          </ul>
-        </div>
-
-        <!-- Clinical 14-Day Results Bar -->
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px;margin:14px 0;">
-          <div style="font-size:11px;font-weight:800;color:#166534;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;text-align:center;">CLINICAL RESULTS (14 DAYS OF DAILY 5-MIN USE)</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;text-align:center;">
-            <div style="background:#fff;border-radius:8px;padding:8px 4px;border:1px solid #dcfce7;">
-              <div style="font-size:20px;font-weight:900;color:#15803d;">94%</div>
-              <div style="font-size:10px;color:#4b5563;line-height:1.2;">Firmer, Tighter Complexion</div>
-            </div>
-            <div style="background:#fff;border-radius:8px;padding:8px 4px;border:1px solid #dcfce7;">
-              <div style="font-size:20px;font-weight:900;color:#15803d;">89%</div>
-              <div style="font-size:10px;color:#4b5563;line-height:1.2;">Reduction in Wrinkles &amp; Bags</div>
-            </div>
-            <div style="background:#fff;border-radius:8px;padding:8px 4px;border:1px solid #dcfce7;">
-              <div style="font-size:20px;font-weight:900;color:#15803d;">97%</div>
-              <div style="font-size:10px;color:#4b5563;line-height:1.2;">Radiant Glow &amp; Depuffed Skin</div>
-            </div>
-          </div>
-        </div>
-      {% else %}
-        <p class="eyebrow">A bizi bees find</p>
-        <h1>{{ product.title | escape }}</h1>
-        {% assign sale_price = product.price | times: 0.65 %}
-        <p class="price" style="display:flex;align-items:baseline;gap:8px;">
-          <span style="color:#d90429;font-weight:800;font-size:22px;">{{ sale_price | money }}</span>
-          <span style="text-decoration:line-through;color:#71717a;font-size:15px;">{{ product.price | money }}</span>
-          <span style="color:#047857;font-size:12px;font-weight:700;">(Code: PROVOTODAY)</span>
-        </p>
-      {% endif %}
-
-      <!-- Buy Form with Tiered Bundle Selector & 1-Click Upsell -->
-      {% form "product", product, id: "main-product-form" %}
-        {% if product.vendor == "Luma Wellness" %}
-          <!-- Tiered Bundle Quantity Selector -->
-          <div style="margin:16px 0;border:1px solid #e5e7eb;border-radius:12px;padding:14px;background:#ffffff;">
-            <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;color:#374151;margin-bottom:10px;">Select Your Glow Package:</div>
-            
-            <div style="display:flex;flex-direction:column;gap:10px;">
-              <!-- Tier 1 -->
-              <label style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border:2px solid #e5e7eb;border-radius:8px;cursor:pointer;background:#fafafa;" id="tier-label-1">
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <input type="radio" name="bundle_tier" value="1" checked onchange="updateBundleTier(1)" style="accent-color:#dc2626;">
-                  <div>
-                    <strong style="font-size:14px;color:#111827;">1x Solo Transformation Kit</strong>
-                    <div style="font-size:11px;color:#6b7280;">Includes 1x Device + Free Serum + Guide</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <strong style="font-size:14px;color:#dc2626;">{{ sale_price | money }}</strong>
-                </div>
-              </label>
-
-              <!-- Tier 2 -->
-              {% assign duo_price = sale_price | times: 1.8 %}
-              <label style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border:2px solid #dc2626;border-radius:8px;cursor:pointer;background:#fef2f2;position:relative;" id="tier-label-2">
-                <span style="position:absolute;top:-9px;right:12px;background:#dc2626;color:#ffffff;font-size:10px;font-weight:900;padding:2px 8px;border-radius:999px;letter-spacing:0.04em;">⭐ MOST POPULAR · SAVE EXTRA 10%</span>
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <input type="radio" name="bundle_tier" value="2" onchange="updateBundleTier(2)" style="accent-color:#dc2626;">
-                  <div>
-                    <strong style="font-size:14px;color:#111827;">2x His &amp; Hers / Gift Duo Pack</strong>
-                    <div style="font-size:11px;color:#059669;font-weight:600;">Includes 2x Full Kits + Free Priority Shipping</div>
-                  </div>
-                </div>
-                <div style="text-align:right;">
-                  <strong style="font-size:14px;color:#dc2626;">{{ duo_price | money }}</strong>
-                  <div style="font-size:10px;text-decoration:line-through;color:#9ca3af;">{{ product.price | times: 2 | money }}</div>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Frequently Bought Together 1-Click Upsell Box -->
-          <div id="frequently-bought-together" style="background:#fffdfa;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;margin:12px 0;">
-            <div style="font-size:11px;font-weight:800;color:#92400e;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
-              <span>⚡</span> <span>RECOMMENDED CLINICAL PAIRING (SAVE EXTRA 35%):</span>
-            </div>
-            <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:13px;color:#1f2937;">
-              <input type="checkbox" id="luma-addon-checkbox" style="width:18px;height:18px;accent-color:#dc2626;cursor:pointer;">
-              <div style="flex:1;">
-                {% if product.id == 11279975415975 %}
-                  <strong>Add Cryo-Glow Ice Sculpting Roller</strong> for only <span style="color:#dc2626;font-weight:800;">+$12.99</span> <span style="text-decoration:line-through;color:#9ca3af;font-size:11px;">$19.99</span>
-                  <div style="font-size:11px;color:#6b7280;">Wake up tired eyes and seal in serums after your red light session.</div>
-                  <input type="hidden" id="luma-addon-variant" value="51759714533543">
-                {% else %}
-                  <strong>Add Activating Copper Peptide Serum</strong> for only <span style="color:#dc2626;font-weight:800;">+$18.20</span> <span style="text-decoration:line-through;color:#9ca3af;font-size:11px;">$28.00</span>
-                  <div style="font-size:11px;color:#6b7280;">Maximizes conductivity and cellular hydration for 3x deeper absorption.</div>
-                  <input type="hidden" id="luma-addon-variant" value="51759698673831">
-                {% endif %}
-              </div>
-            </label>
+        {% else %}
+          <div class="gallery-placeholder">
+            {{ 'product-1' | placeholder_svg_tag }}
           </div>
         {% endif %}
+      </div>
 
-        <label for="Variant-{{ section.id }}" style="display:none;">Choose an option</label>
-        <select name="id" id="Variant-{{ section.id }}" style="display:none;">
-          {% for variant in product.variants %}
-            <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %} {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
-              {{ variant.title | escape }}
-            </option>
+      {% if product.images.size > 1 %}
+        <div class="gallery-thumbnails">
+          {% for image in product.images %}
+            <button 
+              type="button" 
+              class="gallery-thumb-btn{% if forloop.first %} active{% endif %}" 
+              onclick="selectProductImage('{{ image | image_url: width: 1000 }}', this)"
+              aria-label="View product image {{ forloop.index }}"
+            >
+              {{ image | image_url: width: 160 | image_tag: loading: 'lazy', alt: product.title | escape, class: 'gallery-thumb-img' }}
+            </button>
           {% endfor %}
-        </select>
-        <input type="hidden" name="quantity" id="product-quantity-input" value="1">
-
-        <button type="submit" style="background:#dc2626;color:#ffffff;font-weight:900;font-size:17px;padding:16px 24px;border-radius:10px;border:none;cursor:pointer;width:100%;letter-spacing:0.04em;box-shadow:0 6px 20px rgba(220,38,38,0.35);margin:14px 0;transition:transform 0.15s ease;" {% unless product.available %}disabled{% endunless %}>
-          {% if product.available %}
-            CLAIM 35% OFF — ADD TO BAG 🔒
-          {% else %}
-            Sold out
-          {% endif %}
-        </button>
-
-        <div style="text-align:center;font-size:12px;color:#6b7280;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:6px;">
-          <span>🔒 256-Bit SSL Encrypted Checkout</span>
-          <span>·</span>
-          <span>⚖️ Protected Trademark</span>
-          <span>·</span>
-          <span>Apple Pay / Shop Pay / Cards</span>
         </div>
+      {% endif %}
+    </div>
+
+    <!-- Product Summary & Action Column -->
+    <div class="boutique-product-summary">
+      {% comment %} Subtle condition / category eyebrow {% endcomment %}
+      {% assign condition_val = product.metafields.custom.condition.value %}
+      {% if condition_val == blank %}
+        {% if product.tags contains 'vintage' or product.tags contains 'Vintage' %}
+          {% assign condition_val = 'Vintage Find' %}
+        {% elsif product.tags contains 'rare' or product.tags contains 'Rare' %}
+          {% assign condition_val = "Collector's Edition" %}
+        {% elsif product.tags contains 'Shopify Collective' or product.vendor == 'Luma Wellness' %}
+          {% assign condition_val = 'Curated Edition' %}
+        {% else %}
+          {% assign condition_val = 'Pre-Loved & Graded' %}
+        {% endif %}
+      {% endif %}
+
+      <div class="product-eyebrow-row">
+        <span class="product-condition-tag">{{ condition_val }}</span>
+        {% if product.vendor and product.vendor != shop.name %}
+          <span class="product-vendor">{{ product.vendor }}</span>
+        {% endif %}
+      </div>
+
+      <h1 class="boutique-product-title">{{ product.title | escape }}</h1>
+
+      <!-- Pricing Row -->
+      <div class="boutique-pricing-row">
+        <span class="current-price" id="ProductCurrentPrice">{{ product.price | money }}</span>
+        {% if product.compare_at_price > product.price %}
+          <span class="compare-price" id="ProductComparePrice">{{ product.compare_at_price | money }}</span>
+          {% assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price %}
+          <span class="savings-tag">-{{ savings }}%</span>
+        {% endif %}
+      </div>
+
+      <!-- Provenance / Sourcing Note -->
+      <div class="product-provenance-bar">
+        <span class="prov-dot"></span>
+        <span class="prov-text">Hand-inspected, cleaned, and dispatched from our Provo, Utah studio.</span>
+      </div>
+
+      <!-- Product Form -->
+      {% form 'product', product, id: 'main-product-form', class: 'boutique-form' %}
+        {% if product.variants.size > 1 %}
+          <div class="variant-selection-group">
+            <label for="VariantSelect" class="form-label">Select Option</label>
+            <select name="id" id="VariantSelect" class="boutique-select" onchange="updateVariantSelection(this)">
+              {% for variant in product.variants %}
+                <option 
+                  value="{{ variant.id }}" 
+                  data-price="{{ variant.price | money }}"
+                  data-compare="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money }}{% endif %}"
+                  data-available="{{ variant.available }}"
+                  {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                  {% unless variant.available %}disabled{% endunless %}
+                >
+                  {{ variant.title | escape }} — {{ variant.price | money }} {% unless variant.available %}(Sold out){% endunless %}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        {% else %}
+          <input type="hidden" name="id" id="VariantSelect" value="{{ product.selected_or_first_available_variant.id }}">
+        {% endif %}
+
+        <!-- Quantity Stepper & Add to Bag Action -->
+        <div class="purchase-actions-grid">
+          <div class="quantity-stepper">
+            <label for="QuantityInput" class="visually-hidden">Quantity</label>
+            <button type="button" class="stepper-btn minus" onclick="adjustQty(-1)" aria-label="Decrease quantity">&minus;</button>
+            <input type="number" id="QuantityInput" name="quantity" value="1" min="1" max="99" class="stepper-input">
+            <button type="button" class="stepper-btn plus" onclick="adjustQty(1)" aria-label="Increase quantity">&plus;</button>
+          </div>
+
+          <button 
+            type="submit" 
+            id="ProductAddToCartBtn"
+            class="boutique-add-btn" 
+            {% unless product.available %}disabled{% endunless %}
+          >
+            {% if product.available %}
+              Add to Bag
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+        </div>
+
         {{ form.errors | default_errors }}
       {% endform %}
 
-      <!-- 60-Day Guarantee Callout -->
-      <div style="display:flex;align-items:flex-start;gap:12px;background:#fef2f2;border:1px solid #fecaca;padding:14px 16px;border-radius:12px;margin:16px 0;">
-        <div style="font-size:28px;line-height:1;">🛡️</div>
-        <div style="font-size:12px;color:#450a0a;line-height:1.5;">
-          <strong>60-Day 100% Risk-Free Glow Guarantee:</strong>
-          Try Luma in the comfort of your home for 60 days. If your skin doesn’t look noticeably firmer, younger, and more luminous, send it back for a full 100% refund—no questions asked.
+      <!-- Minimal Trust Pillars -->
+      <div class="boutique-trust-checklist">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D3B2D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+          <span>Curated &amp; spine-inspected for authentic quality</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D3B2D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+          <span>Plastic-conscious, recyclable unbleached packaging</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D3B2D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+          <span>30-day quiet returns if not completely satisfied</span>
         </div>
       </div>
 
-      <!-- Brand Legal Notice -->
-      <div style="font-size:11px;color:#71717a;border-left:2px solid #ef4444;padding-left:10px;margin:12px 0;line-height:1.4;">
-        ⚖️ <strong>Proprietary Brand &amp; Design Protection:</strong> Luma Wellness&trade; and Bizi Bees&trade; are protected trademarks. All unauthorized use of brand name, logos, product copy, or media is strictly prohibited and subject to legal action under 15 U.S.C. &sect; 1114/1125. <a href="/pages/brand-protection-legal-notice" style="color:#b91c1c;text-decoration:underline;">Learn more</a>.
-      </div>
-
-      <details open style="margin-top:20px;">
-        <summary style="font-weight:700;cursor:pointer;padding:8px 0;">About this product</summary>
-        <div style="margin-top:10px;font-size:14px;line-height:1.7;">{{ product.description }}</div>
-      </details>
-
-      <!-- Verified Customer Reviews Section -->
-      {% if product.vendor == "Luma Wellness" %}
-        <div style="margin-top:30px;border-top:2px solid #f3f4f6;padding-top:24px;">
-          <h3 style="font-size:18px;font-weight:900;color:#111827;margin-bottom:16px;">Real Customer Results (Verified Buyers)</h3>
-          
-          <div style="display:flex;flex-direction:column;gap:14px;">
-            <div style="background:#f9fafb;border-radius:10px;padding:14px 16px;border:1px solid #e5e7eb;">
-              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                <strong style="font-size:13px;color:#111827;">Sarah M. — Scottsdale, AZ</strong>
-                <span style="color:#059669;font-size:11px;font-weight:700;">✓ Verified 60-Day Trial Buyer</span>
-              </div>
-              <div style="color:#f59e0b;font-size:13px;margin-bottom:6px;">★★★★★</div>
-              <p style="font-size:13px;color:#374151;margin:0;line-height:1.5;">"I was skeptical about buying a red light wand for $59 when Solawave was $169. Within 10 days of doing 5 minutes every night with the activating serum, my smile lines and morning eye puffiness are visibly smoothed out. Highly recommend!"</p>
-            </div>
-
-            <div style="background:#f9fafb;border-radius:10px;padding:14px 16px;border:1px solid #e5e7eb;">
-              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-                <strong style="font-size:13px;color:#111827;">Chloe T. — Austin, TX</strong>
-                <span style="color:#059669;font-size:11px;font-weight:700;">✓ Verified Buyer</span>
-              </div>
-              <div style="color:#f59e0b;font-size:13px;margin-bottom:6px;">★★★★★</div>
-              <p style="font-size:13px;color:#374151;margin:0;line-height:1.5;">"The warmth and microcurrent feel amazing after a long day at the computer. My skin feels plumper and my cheekbones look much more contoured. Shipped super fast from Utah too!"</p>
-            </div>
+      <!-- Collapsible Accordion Details -->
+      <div class="boutique-accordion">
+        <details class="accordion-item" open>
+          <summary class="accordion-title">
+            <span>Description &amp; Story</span>
+            <span class="accordion-arrow">&plus;</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="prose-description">{{ product.description }}</div>
           </div>
-        </div>
-      {% endif %}
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-title">
+            <span>Inspection &amp; Grading Standards</span>
+            <span class="accordion-arrow">&plus;</span>
+          </summary>
+          <div class="accordion-content">
+            <p>Every piece in our shop is personally evaluated in Provo, Utah:</p>
+            <ul>
+              <li><strong>Books:</strong> Clean pages, verified bindings, covers sanitized and jacket flaws honestly noted.</li>
+              <li><strong>Games &amp; Puzzles:</strong> Piece count verified complete, boards cleaned, box wear documented.</li>
+              <li><strong>Finds &amp; Stationery:</strong> Functional, authentic, and safely prepped for immediate use.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-title">
+            <span>Shipping &amp; Delivery</span>
+            <span class="accordion-arrow">&plus;</span>
+          </summary>
+          <div class="accordion-content">
+            <p>We hand-pack and dispatch all orders within 1–2 business days via USPS. Standard delivery arrives within 2–4 business days. Free standard shipping applies to all US orders over $35.</p>
+          </div>
+        </details>
+      </div>
+
     </div>
   </div>
 </div>
 
-<script>
-  (function() {
-    var mainForm = document.getElementById("main-product-form");
-    if (mainForm) {
-      mainForm.addEventListener("submit", function(e) {
-        var addonCheck = document.getElementById("luma-addon-checkbox");
-        var addonVariant = document.getElementById("luma-addon-variant");
-        if (addonCheck && addonCheck.checked && addonVariant) {
-          e.preventDefault();
-          var qtyInput = document.getElementById("product-quantity-input");
-          var mainQty = qtyInput ? parseInt(qtyInput.value, 10) : 1;
-          var mainVariantSelect = document.getElementById("Variant-{{ section.id }}");
-          var mainVariantId = mainVariantSelect ? mainVariantSelect.value : "{{ product.selected_or_first_available_variant.id }}";
-          
-          var payload = {
-            items: [
-              { id: parseInt(mainVariantId, 10), quantity: mainQty },
-              { id: parseInt(addonVariant.value, 10), quantity: 1 }
-            ]
-          };
-          
-          fetch("/cart/add.js", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          }).then(function() {
-            window.location.href = "/cart";
-          }).catch(function() {
-            mainForm.submit();
-          });
-        }
-      });
-    }
-  })();
+<style>
+  .boutique-pdp-wrap {
+    padding-top: 24px;
+    padding-bottom: 72px;
+  }
 
-  function updateBundleTier(qty) {
-    var input = document.getElementById("product-quantity-input");
-    if (input) input.value = qty;
+  .boutique-breadcrumb {
+    font-size: 13px;
+    color: #78716C;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .boutique-breadcrumb a {
+    color: #78716C;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .boutique-breadcrumb a:hover {
+    color: #1C1917;
+    text-decoration: underline;
+  }
+  .boutique-breadcrumb .sep {
+    color: #D6D3D1;
+  }
+  .boutique-breadcrumb .current {
+    color: #1C1917;
+    font-weight: 500;
+  }
+
+  .boutique-product-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  @media (min-width: 900px) {
+    .boutique-product-layout {
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .boutique-product-gallery {
+      position: sticky;
+      top: 32px;
+    }
+  }
+
+  /* Gallery Styling */
+  .gallery-main-frame {
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(28, 25, 23, 0.04);
+  }
+  .gallery-primary-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: #FAF7F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-primary-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.25s ease;
+  }
+  .gallery-placeholder {
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAF7F2;
+  }
+
+  .gallery-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .gallery-thumb-btn {
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    padding: 0;
+    background: #FFFFFF;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+  }
+  .gallery-thumb-btn.active {
+    border-color: #2D3B2D;
+    outline: 2px solid #2D3B2D;
+  }
+  .gallery-thumb-btn:hover {
+    transform: translateY(-2px);
+  }
+  .gallery-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Product Summary */
+  .product-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .product-condition-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2D3B2D;
+    background: #EEF2ED;
+    padding: 3px 9px;
+    border-radius: 4px;
+  }
+  .product-vendor {
+    font-size: 12px;
+    color: #78716C;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .boutique-product-title {
+    font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 600;
+    color: #1C1917;
+    line-height: 1.25;
+    margin: 0 0 16px;
+  }
+
+  .boutique-pricing-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .current-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1C1917;
+  }
+  .compare-price {
+    font-size: 16px;
+    color: #78716C;
+    text-decoration: line-through;
+  }
+  .savings-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9A4C2E;
+    background: #FAF0E8;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .product-provenance-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #FAF7F2;
+    border: 1px solid #E7E5E4;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 24px;
+  }
+  .prov-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2D3B2D;
+    flex-shrink: 0;
+  }
+  .prov-text {
+    font-size: 12px;
+    color: #57534E;
+    line-height: 1.4;
+  }
+
+  /* Form & Actions */
+  .boutique-form {
+    margin-bottom: 28px;
+  }
+  .variant-selection-group {
+    margin-bottom: 18px;
+  }
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #44403C;
+    margin-bottom: 6px;
+  }
+  .boutique-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #1C1917;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .purchase-actions-grid {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .quantity-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  .stepper-btn {
+    background: transparent;
+    border: none;
+    padding: 0 14px;
+    font-size: 18px;
+    color: #44403C;
+    cursor: pointer;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+  }
+  .stepper-btn:hover {
+    background: #F5F5F4;
+  }
+  .stepper-input {
+    width: 44px;
+    text-align: center;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1C1917;
+    -moz-appearance: textfield;
+  }
+  .stepper-input::-webkit-outer-spin-button,
+  .stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .boutique-add-btn {
+    flex: 1;
+    background: #2D3B2D;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .boutique-add-btn:hover:not(:disabled) {
+    background: #1F291F;
+    transform: translateY(-1px);
+  }
+  .boutique-add-btn:disabled {
+    background: #A8A29E;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Trust checklist */
+  .boutique-trust-checklist {
+    border-top: 1px solid #E7E5E4;
+    border-bottom: 1px solid #E7E5E4;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #44403C;
+  }
+
+  /* Accordion */
+  .boutique-accordion {
+    display: flex;
+    flex-direction: column;
+  }
+  .accordion-item {
+    border-bottom: 1px solid #E7E5E4;
+  }
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1C1917;
+    cursor: pointer;
+    list-style: none;
+  }
+  .accordion-title::-webkit-details-marker {
+    display: none;
+  }
+  .accordion-arrow {
+    font-size: 16px;
+    color: #78716C;
+    transition: transform 0.2s ease;
+  }
+  details[open] .accordion-arrow {
+    transform: rotate(45deg);
+  }
+  .accordion-content {
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #57534E;
+  }
+  .accordion-content p {
+    margin-bottom: 10px;
+  }
+  .accordion-content ul {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  .accordion-content li {
+    margin-bottom: 6px;
+  }
+  .prose-description {
+    line-height: 1.7;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+
+<script>
+  function selectProductImage(src, btn) {
+    var mainImg = document.getElementById('ProductMainImage');
+    if (mainImg) {
+      mainImg.style.opacity = '0.5';
+      mainImg.src = src;
+      setTimeout(function() { mainImg.style.opacity = '1'; }, 150);
+    }
+    var buttons = document.querySelectorAll('.gallery-thumb-btn');
+    buttons.forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+  }
+
+  function adjustQty(amount) {
+    var input = document.getElementById('QuantityInput');
+    if (!input) return;
+    var current = parseInt(input.value, 10) || 1;
+    var next = current + amount;
+    if (next < 1) next = 1;
+    if (next > 99) next = 99;
+    input.value = next;
+  }
+
+  function updateVariantSelection(select) {
+    var option = select.options[select.selectedIndex];
+    if (!option) return;
+    var price = option.getAttribute('data-price');
+    var compare = option.getAttribute('data-compare');
+    var available = option.getAttribute('data-available') === 'true';
+
+    var priceEl = document.getElementById('ProductCurrentPrice');
+    if (priceEl && price) priceEl.textContent = price;
+
+    var compareEl = document.getElementById('ProductComparePrice');
+    if (compareEl) {
+      if (compare) {
+        compareEl.textContent = compare;
+        compareEl.style.display = 'inline';
+      } else {
+        compareEl.style.display = 'none';
+      }
+    }
+
+    var atcBtn = document.getElementById('ProductAddToCartBtn');
+    if (atcBtn) {
+      if (available) {
+        atcBtn.removeAttribute('disabled');
+        atcBtn.textContent = 'Add to Bag';
+      } else {
+        atcBtn.setAttribute('disabled', 'disabled');
+        atcBtn.textContent = 'Sold Out';
+      }
+    }
   }
 </script>
 

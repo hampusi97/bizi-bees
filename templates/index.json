@@ -1,142 +1,16 @@
 {
   "sections": {
-    "luma_clinical_hero": {
-      "type": "luma-clinical-hero",
-      "settings": {
-        "pill_text": "CLINICAL GRADE PHOTOTHERAPY • DERM-TESTED",
-        "headline": "Clinical Skin Sculpting & At-Home Phototherapy.",
-        "subhead": "Medical-grade 630nm red light, microcurrent contouring, and therapeutic warmth for 75% less. Shipped fast with tracked dispatch from Utah.",
-        "primary_cta_text": "Get LumaGlow 4-in-1 ($38.99)",
-        "primary_cta_url": "/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand",
-        "secondary_cta_text": "Take 30-Sec Skin Quiz",
-        "secondary_cta_url": "/pages/skincare-routine-quiz"
-      }
-    },
-    "luma_comparison_matrix": {
-      "type": "luma-comparison-matrix",
-      "settings": {
-        "title": "The Smarter Way to Rejuvenate",
-        "subtitle": "See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs.",
-        "buy_url": "/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
-      }
-    },
-    "luma_before_after": {
-      "type": "luma-before-after",
-      "settings": {
-        "heading": "See the Clinical Difference",
-        "text": "<p>Compare visible skin contouring, tone revitalization, and radiance after 28 days of 3-minute daily sessions.</p>",
-        "before_label": "Day 1",
-        "after_label": "Day 28",
-        "aspect_ratio": "3 / 2",
-        "start_position": 50,
-        "disclaimer": "Individual results vary. Results shown are from real customers after 28 days of daily 3-minute phototherapy sessions.",
-        "background": "#ffffff",
-        "accent": "#0d9488"
-      },
-      "blocks": {
-        "metric_1": {
-          "type": "metric",
-          "settings": {
-            "value": "630nm",
-            "label": "Dual-Spectrum Phototherapy"
-          }
-        },
-        "metric_2": {
-          "type": "metric",
-          "settings": {
-            "value": "3 min",
-            "label": "Daily Treatment Protocol"
-          }
-        },
-        "metric_3": {
-          "type": "metric",
-          "settings": {
-            "value": "4-in-1",
-            "label": "Clinical Toning Modes"
-          }
-        }
-      },
-      "block_order": [
-        "metric_1",
-        "metric_2",
-        "metric_3"
-      ]
-    },
-    "shoppable_instagram_feed": {
-      "type": "shoppable-instagram-feed",
-      "settings": {
-        "title": "Real Results from Real Routines"
-      }
-    },
-    "curiosity_hub": {
-      "type": "bizi-zero-gravity-hub"
-    },
-    "vibe_selector": {
-      "type": "bizi-blind-date-book"
-    },
-    "bundle_builder": {
-      "type": "bizi-holiday-bundle-builder"
+    "editorial_home": {
+      "type": "home",
+      "settings": {}
     },
     "inspection_matrix": {
-      "type": "bizi-inspection-matrix"
-    },
-    "luma_faq": {
-      "type": "luma-faq",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "text": "<p>Everything you need to know about Luma phototherapy, orders, and our 60-day guarantee.</p>",
-        "open_first": true,
-        "enable_schema": true,
-        "background": "#fafafc",
-        "accent": "#0d9488"
-      },
-      "blocks": {
-        "faq_1": {
-          "type": "question",
-          "settings": {
-            "question": "How does at-home phototherapy compare to in-office treatments?",
-            "answer": "<p>The LumaGlow 4-in-1 combines targeted 630nm light, microcurrent contouring, and 107°F thermal warmth in a handheld device designed for 3-minute daily sessions at home. It delivers gentle, daily cumulative toning for 75% less than clinic appointments. If you have a preexisting skin condition, consult your dermatologist before use.</p>"
-          }
-        },
-        "faq_2": {
-          "type": "question",
-          "settings": {
-            "question": "How does the 60-Day Risk-Free Glow Guarantee work?",
-            "answer": "<p>Try LumaGlow in your daily skincare routine for a full 60 days. If you don't experience visible facial contouring and a radiant skin glow, email us at support for a hassle-free return and 100% full refund.</p>"
-          }
-        },
-        "faq_3": {
-          "type": "question",
-          "settings": {
-            "question": "How fast does my order ship from Utah?",
-            "answer": "<p>All in-stock orders dispatch within 24 hours from our Provo, Utah hub via USPS Tracked Priority shipping (typical delivery in 2–4 business days).</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3"
-      ]
-    },
-    "vault": {
-      "type": "bizi-bees-vault"
-    },
-    "luma_trust_footer": {
-      "type": "luma-trust-footer"
+      "type": "bizi-inspection-matrix",
+      "settings": {}
     }
   },
   "order": [
-    "luma_clinical_hero",
-    "luma_comparison_matrix",
-    "luma_before_after",
-    "shoppable_instagram_feed",
-    "curiosity_hub",
-    "vibe_selector",
-    "bundle_builder",
-    "inspection_matrix",
-    "luma_faq",
-    "vault",
-    "luma_trust_footer"
+    "editorial_home",
+    "inspection_matrix"
   ]
 }

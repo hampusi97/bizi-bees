@@ -3,24 +3,12 @@
     "main": {
       "type": "main-product"
     },
-    "bundle_builder": {
-      "type": "luma-bundle-builder"
-    },
-    "comparison_matrix": {
-      "type": "luma-comparison-matrix"
-    },
     "inspection_matrix": {
       "type": "bizi-inspection-matrix"
-    },
-    "sticky_mobile_bar": {
-      "type": "bizi-sticky-mobile-bar"
     }
   },
   "order": [
     "main",
-    "bundle_builder",
-    "comparison_matrix",
-    "inspection_matrix",
-    "sticky_mobile_bar"
+    "inspection_matrix"
   ]
 }
