@@ -1,0 +1,20 @@
+[
+  {
+    "id": "bizi-bees",
+    "name": "Bizi Bees Boutique",
+    "domain": "bizibees-store.myshopify.com",
+    "customDomain": "https://shopbizibees.com",
+    "niche": "Curated Used Books, Puzzles & Thoughtful Gifts",
+    "envKey": "BIZI_BEES",
+    "fulfillmentLocation": "Utah, USA"
+  },
+  {
+    "id": "luma-clinical",
+    "name": "Luma Clinical Wellness",
+    "domain": "luma-clinical.myshopify.com",
+    "customDomain": "https://lumaclinical.com",
+    "niche": "Clinical Beauty, Phototherapy & At-Home Recovery",
+    "envKey": "LUMA_CLINICAL",
+    "fulfillmentLocation": "Utah, USA"
+  }
+]
