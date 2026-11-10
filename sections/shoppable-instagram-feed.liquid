@@ -1,0 +1,721 @@
+{% comment %}
+  Shoppable Instagram & TikTok UGC Feed - Shopify OS 2.0
+  Mobile-responsive UGC gallery grid (4-col desktop, 2-col mobile)
+  Features:
+    - Card overlay with Instagram icon & handle tag (@shoplumawellness / @bizibees)
+    - "Shop This Look" popup modal with 1-click Add to Cart
+    - Banner hook: "As Seen on Instagram & TikTok | Tag @shoplumawellness to be featured"
+    - Integrated VIP CTA banner: "Want 15% off? Comment 'GLOW' on our latest Instagram Reel to receive your instant VIP checkout link via DM."
+{% endcomment %}
+
+<section class="shoppable-insta-section" id="shoppable-insta-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="insta-section-inner">
+    
+    <!-- Top Banner Hook -->
+    <div class="insta-banner-hook">
+      <div class="hook-badge">
+        <svg class="hook-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        <span>AS SEEN ON INSTAGRAM &amp; TIKTOK</span>
+      </div>
+      <h2 class="hook-headline">{{ section.settings.title | default: 'Real Results from Real Routines' }}</h2>
+      <p class="hook-subhead">
+        Tag <a href="https://instagram.com/shoplumawellness" target="_blank" rel="noopener">@shoplumawellness</a> or <a href="https://instagram.com/bizibees" target="_blank" rel="noopener">@bizibees</a> to be featured in our community feed.
+      </p>
+    </div>
+
+    <!-- VIP Comment Automation Hook Banner -->
+    <div class="insta-vip-banner">
+      <div class="vip-banner-content">
+        <div class="vip-icon-wrap">💬</div>
+        <div class="vip-text-wrap">
+          <strong>Want 15% off?</strong>
+          <span>Comment <mark class="vip-highlight">&quot;GLOW&quot;</mark> on our latest Instagram Reel to receive your instant VIP checkout link via DM.</span>
+        </div>
+      </div>
+      <a href="https://instagram.com/shoplumawellness" target="_blank" rel="noopener" class="vip-action-btn">
+        <span>Open Reel &rarr;</span>
+      </a>
+    </div>
+
+    <!-- UGC Gallery Grid (4 columns desktop, 2 columns mobile) -->
+    <div class="insta-grid">
+      
+      <!-- Card 1 -->
+      <div class="insta-card" 
+           data-ugc-id="1"
+           data-handle="@shoplumawellness"
+           data-image="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113"
+           data-title="LumaGlow 4-in-1 Facial Wand"
+           data-price="$38.99"
+           data-compare="$89.99"
+           data-prod-url="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+           data-quote="The microcurrent contouring paired with the 630nm light completely transformed my morning jawline depuffing routine! ✨"
+           onclick="openUgcModal(this)">
+        <div class="insta-media-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113" alt="UGC Skincare Routine" loading="lazy" width="300" height="300">
+          <div class="insta-overlay">
+            <div class="overlay-top">
+              <span class="ig-icon">📸</span>
+              <span class="ig-user">@shoplumawellness</span>
+            </div>
+            <div class="overlay-cta">
+              <span class="shop-look-pill">🛍️ Shop This Look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="insta-card"
+           data-ugc-id="2"
+           data-handle="@chloe_aesthetic"
+           data-image="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1570172619644-dfd03ed5d881.jpg?v=1793651117"
+           data-title="LumaGlow 4-in-1 Facial Wand"
+           data-price="$38.99"
+           data-compare="$89.99"
+           data-prod-url="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+           data-quote="Why spent $1,500 at the aesthetic clinic when 5 minutes with LumaGlow every evening gives this glass-skin glow?"
+           onclick="openUgcModal(this)">
+        <div class="insta-media-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1570172619644-dfd03ed5d881.jpg?v=1793651117" alt="UGC Glowing Skin Review" loading="lazy" width="300" height="300">
+          <div class="insta-overlay">
+            <div class="overlay-top">
+              <span class="ig-icon">📸</span>
+              <span class="ig-user">@chloe_aesthetic</span>
+            </div>
+            <div class="overlay-cta">
+              <span class="shop-look-pill">🛍️ Shop This Look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="insta-card"
+           data-ugc-id="3"
+           data-handle="@bizibees"
+           data-image="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1512496015851-a90fb38ba796.jpg?v=1793651115"
+           data-title="LumaGlow 4-in-1 Facial Wand + Serum"
+           data-price="$38.99"
+           data-compare="$89.99"
+           data-prod-url="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+           data-quote="Dispatched from Utah in under 24 hours. The packaging, build quality, and therapeutic warmth exceeded all expectations!"
+           onclick="openUgcModal(this)">
+        <div class="insta-media-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1512496015851-a90fb38ba796.jpg?v=1793651115" alt="UGC Unboxing Review" loading="lazy" width="300" height="300">
+          <div class="insta-overlay">
+            <div class="overlay-top">
+              <span class="ig-icon">📸</span>
+              <span class="ig-user">@bizibees</span>
+            </div>
+            <div class="overlay-cta">
+              <span class="shop-look-pill">🛍️ Shop This Look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="insta-card"
+           data-ugc-id="4"
+           data-handle="@derm_daily_glow"
+           data-image="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1544005313-94ddf0286df2.jpg?v=1793651119"
+           data-title="LumaGlow 4-in-1 Facial Wand"
+           data-price="$38.99"
+           data-compare="$89.99"
+           data-prod-url="/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+           data-quote="Targeted 630nm dual-spectrum phototherapy at 107°F helps activate peptide serums and relaxes facial tension."
+           onclick="openUgcModal(this)">
+        <div class="insta-media-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1544005313-94ddf0286df2.jpg?v=1793651119" alt="UGC Aesthetic Contouring" loading="lazy" width="300" height="300">
+          <div class="insta-overlay">
+            <div class="overlay-top">
+              <span class="ig-icon">📸</span>
+              <span class="ig-user">@derm_daily_glow</span>
+            </div>
+            <div class="overlay-cta">
+              <span class="shop-look-pill">🛍️ Shop This Look</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Shop This Look Interactive Popup Modal -->
+  <div class="ugc-modal-backdrop" id="ugcModal" onclick="closeUgcModalBackdrop(event)" role="dialog" aria-modal="true" aria-labelledby="ugcModalTitle">
+    <div class="ugc-modal-dialog">
+      <button type="button" class="ugc-modal-close" onclick="closeUgcModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="ugc-modal-body">
+        <div class="ugc-modal-image-col">
+          <img src="" id="ugcModalImg" alt="UGC Preview" class="ugc-modal-img">
+          <div class="ugc-modal-handle-badge" id="ugcModalHandle">@shoplumawellness</div>
+        </div>
+
+        <div class="ugc-modal-details-col">
+          <span class="ugc-tagged-pill">TAGGED IN POST</span>
+          <h3 id="ugcModalTitle" class="ugc-prod-title">LumaGlow 4-in-1 Facial Wand</h3>
+          
+          <div class="ugc-quote-box">
+            <p id="ugcModalQuote" class="ugc-quote-text">&ldquo;&rdquo;</p>
+          </div>
+
+          <div class="ugc-price-row">
+            <span class="ugc-price-current" id="ugcModalPrice">$38.99</span>
+            <span class="ugc-price-compare" id="ugcModalCompare">$89.99</span>
+            <span class="ugc-save-tag">SAVE 57%</span>
+          </div>
+
+          <div class="ugc-perks-list">
+            <div>✓ Precision 630nm Light &amp; Microcurrent</div>
+            <div>✓ Fast USPS Dispatch from Utah</div>
+            <div>✓ 60-Day Risk-Free Glow Guarantee</div>
+          </div>
+
+          <a href="#" id="ugcModalBuyBtn" class="ugc-buy-now-btn" onclick="handleUgcBuyClick(event)">
+            <span>Add to Cart &amp; Claim Deal →</span>
+          </a>
+
+          <a href="#" id="ugcModalProdLink" class="ugc-view-details-link">
+            View Full Product Details
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #shoppable-insta-{{ section.id }} {
+    background: #FFFFFF;
+    padding: 64px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .insta-section-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .insta-banner-hook {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+  }
+
+  .hook-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FDF2F8;
+    color: #BE185D;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  .hook-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hook-headline {
+    font-size: clamp(26px, 3.6vw, 38px);
+    font-weight: 900;
+    color: #111827;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .hook-subhead {
+    font-size: 15px;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  .hook-subhead a {
+    color: #111827;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* VIP Comment Banner */
+  .insta-vip-banner {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border: 1.5px dashed #F59E0B;
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin: 0 auto 36px auto;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+  }
+
+  .vip-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .vip-icon-wrap {
+    font-size: 26px;
+  }
+
+  .vip-text-wrap strong {
+    display: block;
+    font-size: 14.5px;
+    color: #92400E;
+    margin-bottom: 2px;
+  }
+
+  .vip-text-wrap span {
+    font-size: 13.5px;
+    color: #78350F;
+  }
+
+  .vip-highlight {
+    background: #FDE047;
+    color: #713F12;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-family: monospace;
+    font-size: 14px;
+  }
+
+  .vip-action-btn {
+    background: #92400E;
+    color: #FFFFFF !important;
+    font-size: 13.5px;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .vip-action-btn:hover {
+    transform: translateY(-1px);
+    background: #78350F;
+  }
+
+  /* 4-column desktop, 2-column mobile UGC Grid */
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .insta-card {
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #F3F4F6;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  }
+
+  .insta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .insta-media-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .insta-media-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .insta-card:hover .insta-media-wrap img {
+    transform: scale(1.05);
+  }
+
+  .insta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+
+  .insta-card:hover .insta-overlay {
+    opacity: 1;
+  }
+
+  .overlay-top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .ig-user {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .overlay-cta {
+    text-align: center;
+  }
+
+  .shop-look-pill {
+    background: rgba(255, 255, 255, 0.95);
+    color: #111827;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+  }
+
+  /* Modal Dialog */
+  .ugc-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeInModal 0.2s ease;
+  }
+
+  .ugc-modal-backdrop.is-active {
+    display: flex;
+  }
+
+  .ugc-modal-dialog {
+    background: #FFFFFF;
+    border-radius: 24px;
+    max-width: 740px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  }
+
+  .ugc-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.06);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #4B5563;
+    z-index: 10;
+  }
+
+  .ugc-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ugc-modal-image-col {
+    position: relative;
+    background: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ugc-modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 480px;
+  }
+
+  .ugc-modal-handle-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  .ugc-modal-details-col {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ugc-tagged-pill {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #0D9488;
+    background: rgba(13, 148, 136, 0.1);
+    padding: 4px 10px;
+    border-radius: 999px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .ugc-prod-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #111827;
+    margin: 0 0 12px 0;
+    line-height: 1.25;
+  }
+
+  .ugc-quote-box {
+    background: #F9FAFB;
+    border-left: 3px solid #0D9488;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 16px;
+  }
+
+  .ugc-quote-text {
+    font-size: 13px;
+    color: #4B5563;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .ugc-price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .ugc-price-current {
+    font-size: 24px;
+    font-weight: 900;
+    color: #DC2626;
+  }
+
+  .ugc-price-compare {
+    font-size: 15px;
+    color: #9CA3AF;
+    text-decoration: line-through;
+  }
+
+  .ugc-save-tag {
+    background: #FEF2F2;
+    color: #DC2626;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .ugc-perks-list {
+    font-size: 12px;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ugc-buy-now-btn {
+    background: #111827;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 14px 20px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.25);
+    margin-bottom: 10px;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .ugc-buy-now-btn:hover {
+    background: #030712;
+    transform: translateY(-1px);
+  }
+
+  .ugc-view-details-link {
+    text-align: center;
+    font-size: 12px;
+    color: #6B7280;
+    text-decoration: underline;
+  }
+
+  @keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media (max-width: 900px) {
+    .insta-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .insta-vip-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .ugc-modal-body {
+      grid-template-columns: 1fr;
+    }
+    .ugc-modal-img {
+      max-height: 260px;
+    }
+    .ugc-modal-details-col {
+      padding: 22px 20px;
+    }
+  }
+</style>
+
+<script>
+  let activeUgcProductUrl = '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand';
+
+  function openUgcModal(card) {
+    const handle = card.getAttribute('data-handle');
+    const image = card.getAttribute('data-image');
+    const title = card.getAttribute('data-title');
+    const price = card.getAttribute('data-price');
+    const compare = card.getAttribute('data-compare');
+    const url = card.getAttribute('data-prod-url');
+    const quote = card.getAttribute('data-quote');
+
+    activeUgcProductUrl = url;
+
+    document.getElementById('ugcModalImg').src = image;
+    document.getElementById('ugcModalHandle').innerText = handle;
+    document.getElementById('ugcModalTitle').innerText = title;
+    document.getElementById('ugcModalPrice').innerText = price;
+    document.getElementById('ugcModalCompare').innerText = compare;
+    document.getElementById('ugcModalQuote').innerText = '“' + quote + '”';
+    document.getElementById('ugcModalBuyBtn').href = url;
+    document.getElementById('ugcModalProdLink').href = url;
+
+    document.getElementById('ugcModal').classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+
+    // Meta & TikTok ViewContent tracking for tagged look
+    if (window.fbq) {
+      fbq('track', 'ViewContent', {
+        content_name: title,
+        content_category: 'Skin Care Tools',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+    if (window.ttq) {
+      ttq.track('ViewContent', {
+        content_name: title,
+        content_type: 'product',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+  }
+
+  function closeUgcModal() {
+    document.getElementById('ugcModal').classList.remove('is-active');
+    document.body.style.overflow = '';
+  }
+
+  function closeUgcModalBackdrop(event) {
+    if (event.target === document.getElementById('ugcModal')) {
+      closeUgcModal();
+    }
+  }
+
+  function handleUgcBuyClick(event) {
+    if (window.fbq) {
+      fbq('track', 'AddToCart', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        content_type: 'product',
+        value: 38.99,
+        currency: 'USD'
+      });
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+    if (window.ttq) {
+      ttq.track('AddToCart', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        content_type: 'product',
+        value: 38.99,
+        currency: 'USD'
+      });
+      ttq.track('InitiateCheckout', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeUgcModal();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shoppable Instagram Feed",
+  "tag": "section",
+  "class": "section-shoppable-instagram",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Real Results from Real Routines"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shoppable Instagram Feed"
+    }
+  ]
+}
+{% endschema %}

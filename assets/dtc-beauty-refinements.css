@@ -1,0 +1,226 @@
+/**
+ * Bizi Bees & Luma Wellness - Modern DTC Beauty Design System
+ * File: assets/dtc-beauty-refinements.css
+ * Core Palette:
+ *   Backgrounds: #FFFFFF & #F8FAFC
+ *   Text: #0F172A (Deep Slate)
+ *   Accents: #0D9488 (Clinical Teal) & #D97706 (Amber Glow)
+ * Micro-Animation: Spring Scale (1.02) on Hover
+ */
+
+:root {
+  --dtc-bg-primary: #FFFFFF;
+  --dtc-bg-secondary: #F8FAFC;
+  --dtc-text-deep: #0F172A;
+  --dtc-text-body: #334155;
+  --dtc-text-muted: #64748B;
+  --dtc-accent-teal: #0D9488;
+  --dtc-accent-teal-dark: #0F766E;
+  --dtc-accent-teal-bg: #F0FDFA;
+  --dtc-accent-teal-border: #99F6E4;
+  --dtc-accent-amber: #D97706;
+  --dtc-accent-amber-dark: #B45309;
+  --dtc-accent-amber-bg: #FFFBEB;
+  --dtc-accent-amber-border: #FDE68A;
+  --dtc-border-subtle: #E2E8F0;
+  --dtc-border-strong: #CBD5E1;
+  --dtc-radius-sm: 8px;
+  --dtc-radius-md: 14px;
+  --dtc-radius-lg: 20px;
+  --dtc-radius-pill: 9999px;
+  --dtc-spring-curve: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dtc-spring-transition: transform 0.28s var(--dtc-spring-curve), box-shadow 0.28s ease, background-color 0.2s ease, border-color 0.2s ease;
+  --dtc-shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --dtc-shadow-hover: 0 20px 30px -10px rgba(13, 148, 136, 0.15), 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+}
+
+/* Global Reset & Body Refinements */
+body {
+  background-color: var(--dtc-bg-primary);
+  color: var(--dtc-text-deep);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Micro-Animations on ALL CTA Buttons (Spring Scale 1.02 on Hover) */
+button,
+.button,
+a.button,
+input[type="submit"],
+input[type="button"],
+.luma-btn-primary,
+.luma-buy-now-btn,
+.bizi-btn-primary,
+.bundle-add-btn,
+.dtc-cta-btn,
+.dtc-btn-teal,
+.dtc-btn-amber {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: var(--dtc-radius-pill);
+  transition: var(--dtc-spring-transition) !important;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+button:hover,
+.button:hover,
+a.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.luma-btn-primary:hover,
+.luma-buy-now-btn:hover,
+.bizi-btn-primary:hover,
+.bundle-add-btn:hover,
+.dtc-cta-btn:hover,
+.dtc-btn-teal:hover,
+.dtc-btn-amber:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+button:active,
+.button:active,
+a.button:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.luma-btn-primary:active,
+.luma-buy-now-btn:active,
+.bizi-btn-primary:active,
+.bundle-add-btn:active,
+.dtc-cta-btn:active,
+.dtc-btn-teal:active,
+.dtc-btn-amber:active {
+  transform: translateY(0) scale(0.98) !important;
+  transition-duration: 0.12s !important;
+}
+
+/* Primary Amber Glow CTA Class */
+.dtc-btn-amber {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.28) !important;
+  text-decoration: none !important;
+}
+
+.dtc-btn-amber:hover {
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4) !important;
+}
+
+/* Clinical Teal CTA Class */
+.dtc-btn-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.28) !important;
+  text-decoration: none !important;
+}
+
+.dtc-btn-teal:hover {
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.4) !important;
+}
+
+/* Elevated Modern DTC Cards */
+.dtc-card {
+  background: var(--dtc-bg-primary);
+  border: 1px solid var(--dtc-border-subtle);
+  border-radius: var(--dtc-radius-md);
+  box-shadow: var(--dtc-shadow-card);
+  transition: transform 0.3s var(--dtc-spring-curve), box-shadow 0.3s ease;
+}
+
+.dtc-card:hover {
+  box-shadow: var(--dtc-shadow-hover);
+  border-color: var(--dtc-accent-teal-border);
+}
+
+/* Section Background Alternation */
+.dtc-section-alt {
+  background-color: var(--dtc-bg-secondary);
+  border-top: 1px solid var(--dtc-border-subtle);
+  border-bottom: 1px solid var(--dtc-border-subtle);
+}
+
+/* Trust Badges & Micro-Pills */
+.dtc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--dtc-radius-pill);
+}
+
+.dtc-badge-teal {
+  background: var(--dtc-accent-teal-bg);
+  color: var(--dtc-accent-teal);
+  border: 1px solid var(--dtc-accent-teal-border);
+}
+
+.dtc-badge-amber {
+  background: var(--dtc-accent-amber-bg);
+  color: var(--dtc-accent-amber);
+  border: 1px solid var(--dtc-accent-amber-border);
+}
+
+/* Global Free Shipping Progress Banner */
+.free-shipping-trigger-banner {
+  background: linear-gradient(90deg, #F0FDFA 0%, #FFFBEB 100%);
+  border-bottom: 1px solid #99F6E4;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+  position: relative;
+  overflow: hidden;
+}
+
+.free-shipping-trigger-banner strong {
+  color: #0D9488;
+}
+
+.free-shipping-progress-track {
+  max-width: 320px;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 9999px;
+  margin: 6px auto 0;
+  overflow: hidden;
+}
+
+.free-shipping-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0D9488, #D97706);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+/* Subtle Shimmer for High-Priority Buttons */
+@keyframes dtcShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.btn-shimmer {
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: dtcShimmer 4s infinite linear;
+}

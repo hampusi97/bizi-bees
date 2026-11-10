@@ -62,12 +62,13 @@ def sanitize_luma_copy(text)
   return "" if text.nil?
   t = text.dup
   
-  # Rule 2 explicit replacements:
+  # Rule 2 explicit compliance replacements:
   t.gsub!(/medical-grade 630nm/i, "targeted 630nm dual-spectrum light")
-  t.gsub!(/migraine & tension headache treatment/i, "soothing hot/cold compression & relaxation")
-  t.gsub!(/cellular rejuvenation\/repair/i, "deep skin revitalizing glow")
-  t.gsub!(/cellular rejuvenation/i, "deep skin revitalizing glow")
-  t.gsub!(/cellular repair/i, "deep skin revitalizing glow")
+  t.gsub!(/migraine & tension headache treatment/i, "soothing thermal tension relief")
+  t.gsub!(/migraine treatment/i, "soothing thermal tension relief")
+  t.gsub!(/cellular rejuvenation\/repair/i, "revitalizing skin tone")
+  t.gsub!(/cellular repair/i, "revitalizing skin tone")
+  t.gsub!(/cellular rejuvenation/i, "revitalizing skin tone")
   t.gsub!(/clinical microcurrent/i, "toning facial micro-vibrations")
   
   # Supplementary sanitization to protect against automated medical flagging:
@@ -89,6 +90,16 @@ def sanitize_luma_copy(text)
   t.gsub!(/cellulite treatment/i, "skin smoothing & contouring")
   t.gsub!(/laser regrowth therapy/i, "follicle-stimulating scalp care")
   t
+end
+
+def clean_handle(handle)
+  h = handle.to_s
+  h.gsub(/medical-grade-?/i, "")
+   .gsub(/migraine-headache-?/i, "comfort-")
+   .gsub(/migraine-?/i, "comfort-")
+   .gsub(/cavitation-lymphatic-drainage-?/i, "")
+   .gsub(/--+/, "-")
+   .gsub(/-$/, "")
 end
 
 def determine_author(title, vendor)
@@ -138,7 +149,7 @@ products.each do |p|
   body = p["body_html"].to_s
   tags = (p["tags"] || []).map(&:to_s)
   pid = p["id"].to_s
-  handle = p["handle"].to_s
+  handle = clean_handle(p["handle"].to_s)
 
   is_luma = (vendor == "Luma Wellness" || title =~ /luma/i || handle =~ /luma/i)
   
@@ -204,6 +215,22 @@ products.each do |p|
     clean_tags << "channel:tiktok-ready"
     stats[:brand_new_count] += 1
     stats[:tiktok_eligible_count] += 1
+  end
+
+  # Auto-fulfillment flags based on product vendor (Provo vs. Supplier Facility)
+  if is_luma || vendor =~ /luma/i
+    clean_tags << "fulfillment:supplier"
+    clean_tags << "facility:specialized-logistics"
+    clean_tags << "SUPPLIER-FACILITY-FULFILLMENT"
+    clean_tags << "LUMA-UTAH-HUB"
+    fulfillment_flag = "SUPPLIER-FACILITY-FULFILLMENT"
+    fulfillment_hub = "Specialized Logistics Facility / Utah Hub"
+  else
+    clean_tags << "fulfillment:provo"
+    clean_tags << "facility:provo-studio"
+    clean_tags << "PROVO-DOMESTIC-FULFILLMENT"
+    fulfillment_flag = "PROVO-DOMESTIC-FULFILLMENT"
+    fulfillment_hub = "Provo Domestic Studio (Kimberly Harter)"
   end
   clean_tags.uniq!
 
@@ -314,7 +341,8 @@ products.each do |p|
   if is_book
     ebay_specifics = {
       "eBay Category ID" => "267",
-      "Condition" => is_used ? "Good" : "Very Good",
+      "Condition" => "Very Good",
+      "Condition ID" => "4000",
       "Language" => "English",
       "Format" => determine_book_format(title),
       "Author" => determine_author(title, vendor),
@@ -325,9 +353,9 @@ products.each do |p|
     ebay_specifics = {
       "eBay Category ID" => "177754",
       "Brand" => "Luma",
-      "Condition" => "New",
+      "Condition" => "Brand New",
       "Condition ID" => "1000",
-      "Power Source" => "USB Charging",
+      "Power Source" => "USB",
       "Type" => "Facial Sculpting & Skincare Tool",
       "Department" => "Unisex",
       "Features" => "Rechargeable, Portable, Ergonomic"
@@ -361,6 +389,8 @@ products.each do |p|
     ebay_cat_id: ebay_cat_id,
     ebay_cat_name: ebay_cat_name,
     ebay_specifics: ebay_specifics,
+    fulfillment_flag: fulfillment_flag,
+    fulfillment_hub: fulfillment_hub,
     images: p["images"] || [],
     variants: processed_variants
   }
@@ -447,7 +477,7 @@ CSV.open(shopify_csv_path, "w") do |csv|
         p[:is_luma] ? "luma-wellness" : "curated-goods",
         p[:gpc_code],
         p[:ebay_cat_id],
-        "free-us-shipping",
+        p[:fulfillment_flag],
         "",
         v[:weight_unit],
         "",

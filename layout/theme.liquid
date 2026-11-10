@@ -114,6 +114,7 @@ svg{max-width:100%;height:auto}.object svg,.hero-art svg{width:80px!important;he
 </style>
 {{ 'theme.css' | asset_url | stylesheet_tag }}
 {{ 'bizi-boutique-theme.css' | asset_url | stylesheet_tag }}
+{{ 'dtc-beauty-refinements.css' | asset_url | stylesheet_tag }}
     <style>
       .collection-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin:4px 0 22px}
       .collection-links a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
@@ -123,6 +124,8 @@ svg{max-width:100%;height:auto}.object svg,.hero-art svg{width:80px!important;he
     </style>
     {{ content_for_header }}
       {% render 'bizi-bees-schema' %}
+      {% render 'fulfillment-automation-tags' %}
+      {% render 'luma-meta-tiktok-tracking' %}
   </head>
 
   <body>

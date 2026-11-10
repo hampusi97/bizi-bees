@@ -1,173 +1,588 @@
 {% comment %}
-  Luma Clinical Comparison Matrix
-  Repo: bizi-bees /sections/luma-comparison-matrix.liquid
+  Luma Clinical Comparison Matrix - Shopify OS 2.0
+  Interactive 4-Column Clinical Value Comparison Table
+  Columns:
+    1. In-Office Dermatologist ($1,500+)
+    2. Leading Brand Wand ($169.00)
+    3. Cheap Knockoffs ($15.00, no microcurrent, long overseas shipping)
+    4. LumaGlow 4-in-1 ($38.99, 630nm light, microcurrent, 107°F warmth, 60-day guarantee, Utah dispatch)
 {% endcomment %}
 
-<div class="luma-matrix-wrapper">
-  <div class="luma-matrix-container">
+<section class="luma-matrix-section" id="luma-matrix-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="luma-matrix-inner">
+    
     <div class="luma-matrix-header">
-      <span class="luma-badge">CLINICAL VALUE COMPARISON</span>
-      <h2>The Smarter Way to Rejuvenate</h2>
-      <p>Why pay 4x more for a brand name? See how LumaGlow compares to clinical visits and the leading $169 wand.</p>
+      <span class="luma-matrix-eyebrow">CLINICAL VALUE MATRIX</span>
+      <h2 class="luma-matrix-title">{{ section.settings.title | default: 'The Smarter Way to Rejuvenate' }}</h2>
+      <p class="luma-matrix-subtitle">
+        {{ section.settings.subtitle | default: 'See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs.' }}
+      </p>
     </div>
 
-    <div class="luma-table-wrapper">
-      <table class="luma-table">
+    <!-- Interactive Table Container -->
+    <div class="luma-table-container">
+      <table class="luma-matrix-table" aria-label="Comparison of facial rejuvenation methods">
         <thead>
           <tr>
-            <th>Features & Results</th>
-            <th class="col-dim">In-Office Clinic</th>
-            <th class="col-dim">Famous Wand ($169)</th>
-            <th class="col-highlight">LumaGlow 4-in-1</th>
+            <th class="th-features">Key Clinical Capabilities</th>
+            <th class="th-competitor th-clinic">
+              <div class="col-head-title">In-Office Dermatologist</div>
+              <div class="col-head-price">$1,500+ / yr</div>
+              <div class="col-head-sub">Recurring Appointments</div>
+            </th>
+            <th class="th-competitor th-brand">
+              <div class="col-head-title">Leading Brand Wand</div>
+              <div class="col-head-price">$169.00</div>
+              <div class="col-head-sub">Overpriced Name-Brand</div>
+            </th>
+            <th class="th-competitor th-knockoff">
+              <div class="col-head-title">Cheap Knockoffs</div>
+              <div class="col-head-price">$15.00</div>
+              <div class="col-head-sub">Unverified Overseas Clones</div>
+            </th>
+            <th class="th-highlight th-luma">
+              <div class="luma-col-badge">MOST POPULAR</div>
+              <div class="col-head-title lumaglow-title">LumaGlow 4-in-1</div>
+              <div class="col-head-price price-glow">$38.99</div>
+              <div class="col-head-sub">Today's Special Deal</div>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Medical-Grade 630nm Red Light</strong></td>
-            <td><span class="check">✓</span></td>
-            <td><span class="check">✓</span></td>
-            <td class="col-highlight"><span class="check-gold">✓</span></td>
+            <td class="td-feature-title">
+              <strong>Targeted 630nm Phototherapy</strong>
+              <span>Penetrates deep into dermis to boost natural cellular glow</span>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>Effective</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>630nm LEDs</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small class="text-danger">Fake/Weak Tinted LEDs</small>
+            </td>
+            <td class="td-col td-highlight">
+              <span class="luma-check-gold">✓</span>
+              <strong>Precision 630nm Dual-Spectrum</strong>
+            </td>
           </tr>
+
           <tr>
-            <td><strong>Microcurrent Jawline Sculpting</strong></td>
-            <td><span class="check">✓</span></td>
-            <td><span class="check">✓</span></td>
-            <td class="col-highlight"><span class="check-gold">✓</span></td>
+            <td class="td-feature-title">
+              <strong>Microcurrent Facial Contouring</strong>
+              <span>Tones and lifts facial contours, jawline, and cheekbones</span>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>Clinical grade</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>Standard level</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small class="text-danger">No microcurrent circuitry</small>
+            </td>
+            <td class="td-col td-highlight">
+              <span class="luma-check-gold">✓</span>
+              <strong>True Wave Microcurrent</strong>
+            </td>
           </tr>
+
           <tr>
-            <td><strong>Therapeutic 107°F Warmth</strong></td>
-            <td><span class="check">✓</span></td>
-            <td><span class="check">✓</span></td>
-            <td class="col-highlight"><span class="check-gold">✓</span></td>
+            <td class="td-feature-title">
+              <strong>Therapeutic 107°F Warmth</strong>
+              <span>Opens pores to accelerate active serum absorption</span>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>Available in facials</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-check">✓</span>
+              <small>100°F - 104°F</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small class="text-danger">Prone to overheating</small>
+            </td>
+            <td class="td-col td-highlight">
+              <span class="luma-check-gold">✓</span>
+              <strong>Smart Sensor 107°F Warmth</strong>
+            </td>
           </tr>
+
           <tr>
-            <td><strong>Fast Dispatch from Utah, USA</strong></td>
-            <td><span class="cross">✕</span></td>
-            <td><span class="cross">✕</span> (Standard)</td>
-            <td class="col-highlight"><span class="check-gold">✓ (24-48h)</span></td>
+            <td class="td-feature-title">
+              <strong>Fast Dispatch from Utah, USA</strong>
+              <span>Tracked 24-48h USPS Priority Delivery from Provo, UT</span>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small>Must book weeks ahead</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small>Standard 7-10 days</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small class="text-danger">3-6 Weeks from Overseas</small>
+            </td>
+            <td class="td-col td-highlight">
+              <span class="luma-check-gold">✓</span>
+              <strong>24h Fast Utah Dispatch</strong>
+            </td>
           </tr>
+
           <tr>
-            <td><strong>60-Day Risk-Free Guarantee</strong></td>
-            <td><span class="cross">✕</span></td>
-            <td><span class="cross">✕</span> (30 Days)</td>
-            <td class="col-highlight"><span class="check-gold">✓ (60 Days)</span></td>
+            <td class="td-feature-title">
+              <strong>60-Day Risk-Free Guarantee</strong>
+              <span>Try it completely risk-free with full 100% money back</span>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small>Zero refunds on service</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small>Strict 30 days only</small>
+            </td>
+            <td class="td-col">
+              <span class="luma-cross">✕</span>
+              <small class="text-danger">No warranty / No returns</small>
+            </td>
+            <td class="td-col td-highlight">
+              <span class="luma-check-gold">✓</span>
+              <strong>60-Day Glow Guarantee</strong>
+            </td>
           </tr>
-          <tr class="price-row">
-            <td><strong>Total Investment</strong></td>
-            <td class="col-dim price-clinic">$1,500+ / yr</td>
-            <td class="col-dim price-competitor">$169.00</td>
-            <td class="col-highlight price-luma">
-              <span class="deal-tag">TODAY ONLY</span>
-              <div class="price-now">$38.99</div>
+
+          <tr class="luma-row-investment">
+            <td class="td-feature-title">
+              <strong>Total Investment</strong>
+              <span>Upfront cost for complete regimen</span>
+            </td>
+            <td class="td-col td-price-dim">
+              <div class="crossed-price">$1,500+</div>
+              <small>Ongoing clinic fees</small>
+            </td>
+            <td class="td-col td-price-dim">
+              <div class="high-price">$169.00</div>
+              <small>Pricey hardware</small>
+            </td>
+            <td class="td-col td-price-dim">
+              <div class="cheap-price">$15.00</div>
+              <small>Cheap, breaks easily</small>
+            </td>
+            <td class="td-col td-highlight td-final-luma">
+              <div class="deal-pill">SAVE $130 TODAY</div>
+              <div class="hero-price-now">$38.99</div>
+              <small class="one-time-text">One-time payment • Lifetime use</small>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="luma-matrix-cta">
-      <a href="/products/lumaglow-4-in-1-facial-wand" class="luma-btn-primary">
-        Get LumaGlow for $38.99 — Save $130 Today →
+    <!-- 1-Click Buy Action Block -->
+    <div class="luma-matrix-action-block">
+      <a href="{{ section.settings.buy_url | default: '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand' }}" 
+         class="luma-matrix-1click-btn"
+         id="luma-matrix-buy-btn"
+         onclick="handleMatrixBuyClick(event, '{{ section.settings.buy_url | default: '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand' }}')">
+        <span class="btn-main-text">Get LumaGlow 4-in-1 For $38.99 (Save $130) →</span>
+        <span class="btn-sub-text">⚡ 1-Click Fast Checkout • Free US Shipping from Utah</span>
       </a>
-      <span class="luma-subtext">🔒 Fast 1-Click Checkout | 60-Day Money-Back Guarantee</span>
+      
+      <div class="luma-matrix-assurances">
+        <span>🔒 256-Bit SSL Encrypted Checkout</span>
+        <span>•</span>
+        <span>📦 Dispatches in 24h via USPS</span>
+        <span>•</span>
+        <span>🛡️ 60-Day 100% Money-Back Guarantee</span>
+      </div>
     </div>
+
   </div>
-</div>
+</section>
 
 <style>
-  .luma-matrix-wrapper {
-    background: #fafafc;
-    padding: 70px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  #luma-matrix-{{ section.id }} {
+    background: #FAFAFC;
+    padding: 64px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  .luma-matrix-container {
-    max-width: 950px;
+
+  .luma-matrix-inner {
+    max-width: 1140px;
     margin: 0 auto;
-    text-align: center;
   }
-  .luma-badge {
-    background: #e0f2fe;
-    color: #0369a1;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 6px 14px;
-    border-radius: 50px;
+
+  .luma-matrix-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 36px auto;
+  }
+
+  .luma-matrix-eyebrow {
     display: inline-block;
+    background: rgba(13, 148, 136, 0.1);
+    color: #0D9488;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
     margin-bottom: 12px;
   }
-  .luma-matrix-header h2 {
-    font-size: clamp(26px, 3.5vw, 38px);
-    color: #0f172a;
-    font-weight: 800;
-    margin: 0 0 10px;
+
+  .luma-matrix-title {
+    font-size: clamp(28px, 3.8vw, 42px);
+    font-weight: 900;
+    color: #111827;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 12px 0;
   }
-  .luma-matrix-header p {
-    color: #64748b;
-    font-size: 15px;
-    margin-bottom: 35px;
+
+  .luma-matrix-subtitle {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: #4B5563;
+    margin: 0;
   }
-  .luma-table-wrapper {
+
+  .luma-table-container {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
     overflow-x: auto;
-    border-radius: 18px;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 12px 36px -8px rgba(17, 24, 39, 0.07);
+    -webkit-overflow-scrolling: touch;
   }
-  .luma-table {
+
+  .luma-matrix-table {
     width: 100%;
+    min-width: 780px;
     border-collapse: collapse;
     text-align: left;
   }
-  .luma-table th, .luma-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #f1f5f9;
-    font-size: 14px;
+
+  .luma-matrix-table th,
+  .luma-matrix-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #F3F4F6;
+    vertical-align: middle;
   }
-  .luma-table th {
-    background: #f8fafc;
-    color: #334155;
+
+  .luma-matrix-table thead th {
+    background: #F9FAFB;
     font-weight: 700;
+    color: #374151;
   }
-  .col-highlight {
-    background: #fffdf5;
+
+  .th-features {
+    width: 28%;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6B7280;
+  }
+
+  .th-competitor {
+    width: 18%;
     text-align: center;
-    border-left: 2px solid #f59e0b;
-    border-right: 2px solid #f59e0b;
+    border-left: 1px solid #E5E7EB;
   }
-  .col-dim {
-    text-align: center;
-    color: #64748b;
-  }
-  .check-gold { color: #d97706; font-weight: 900; font-size: 18px; }
-  .check { color: #10b981; font-weight: 900; font-size: 18px; }
-  .cross { color: #94a3b8; font-weight: 900; font-size: 16px; }
-  .price-row td { padding: 22px 20px; }
-  .price-clinic { font-weight: 600; text-decoration: line-through; }
-  .price-competitor { font-weight: 700; color: #ef4444; }
-  .price-luma .price-now { font-size: 24px; font-weight: 900; color: #b45309; }
-  .deal-tag { font-size: 10px; background: #fef3c7; color: #92400e; padding: 3px 8px; border-radius: 4px; font-weight: 800; display: inline-block; }
-  .luma-matrix-cta { margin-top: 35px; }
-  .luma-btn-primary {
-    background: #d97706;
-    color: #ffffff !important;
-    text-decoration: none;
+
+  .col-head-title {
+    font-size: 14px;
     font-weight: 800;
-    font-size: 16px;
-    padding: 16px 36px;
-    border-radius: 50px;
-    display: inline-block;
-    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.35);
-    transition: transform 0.15s ease;
+    color: #111827;
   }
-  .luma-btn-primary:hover { transform: scale(1.03); }
-  .luma-subtext { display: block; margin-top: 10px; font-size: 12px; color: #64748b; font-weight: 500; }
+
+  .col-head-price {
+    font-size: 17px;
+    font-weight: 900;
+    margin-top: 4px;
+    color: #4B5563;
+  }
+
+  .col-head-sub {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .th-highlight {
+    width: 22%;
+    text-align: center;
+    background: #FEFCE8 !important;
+    border-left: 2px solid #EAB308;
+    border-right: 2px solid #EAB308;
+    position: relative;
+    padding-top: 24px;
+  }
+
+  .luma-col-badge {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #DC2626;
+    color: #FFFFFF;
+    font-size: 9.5px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .lumaglow-title {
+    color: #92400E;
+    font-size: 15px;
+  }
+
+  .price-glow {
+    color: #DC2626 !important;
+    font-size: 22px !important;
+  }
+
+  .td-feature-title {
+    padding-right: 12px;
+  }
+
+  .td-feature-title strong {
+    display: block;
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 2px;
+  }
+
+  .td-feature-title span {
+    display: block;
+    font-size: 11.5px;
+    color: #6B7280;
+    line-height: 1.35;
+  }
+
+  .td-col {
+    text-align: center;
+    border-left: 1px solid #F3F4F6;
+    font-size: 13px;
+  }
+
+  .td-col small {
+    display: block;
+    font-size: 10.5px;
+    color: #6B7280;
+    margin-top: 2px;
+  }
+
+  .text-danger {
+    color: #DC2626 !important;
+    font-weight: 600;
+  }
+
+  .td-highlight {
+    background: #FFFDF5;
+    border-left: 2px solid #EAB308;
+    border-right: 2px solid #EAB308;
+    color: #111827;
+    font-size: 13.5px;
+  }
+
+  .luma-check {
+    color: #10B981;
+    font-weight: 900;
+    font-size: 17px;
+  }
+
+  .luma-check-gold {
+    color: #D97706;
+    font-weight: 900;
+    font-size: 19px;
+    display: inline-block;
+  }
+
+  .luma-cross {
+    color: #9CA3AF;
+    font-weight: 900;
+    font-size: 15px;
+  }
+
+  .luma-row-investment td {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    background: #FAFAFA;
+  }
+
+  .td-price-dim .crossed-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #9CA3AF;
+    text-decoration: line-through;
+  }
+
+  .td-price-dim .high-price {
+    font-size: 17px;
+    font-weight: 800;
+    color: #EF4444;
+  }
+
+  .td-price-dim .cheap-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6B7280;
+  }
+
+  .td-final-luma {
+    background: #FEF9C3 !important;
+  }
+
+  .deal-pill {
+    display: inline-block;
+    background: #FEF08A;
+    color: #854D0E;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+
+  .hero-price-now {
+    font-size: 26px;
+    font-weight: 900;
+    color: #B45309;
+    line-height: 1;
+  }
+
+  .one-time-text {
+    font-size: 10px;
+    color: #78350F;
+    font-weight: 700;
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* 1-Click Action Block */
+  .luma-matrix-action-block {
+    text-align: center;
+    margin-top: 36px;
+  }
+
+  .luma-matrix-1click-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+    color: #FFFFFF !important;
+    text-decoration: none;
+    padding: 18px 42px;
+    border-radius: 999px;
+    box-shadow: 0 10px 28px -4px rgba(17, 24, 39, 0.35);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .luma-matrix-1click-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #030712 0%, #111827 100%);
+    box-shadow: 0 16px 36px -4px rgba(17, 24, 39, 0.45);
+  }
+
+  .btn-main-text {
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-sub-text {
+    font-size: 11.5px;
+    color: #D1D5DB;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  .luma-matrix-assurances {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #6B7280;
+    font-weight: 600;
+    margin-top: 14px;
+  }
 </style>
+
+<script>
+  function handleMatrixBuyClick(event, url) {
+    if (window.fbq) {
+      fbq('track', 'AddToCart', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        content_type: 'product',
+        value: 38.99,
+        currency: 'USD'
+      });
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+    if (window.ttq) {
+      ttq.track('AddToCart', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        content_type: 'product',
+        value: 38.99,
+        currency: 'USD'
+      });
+      ttq.track('InitiateCheckout', {
+        content_name: 'LumaGlow 4-in-1 Facial Wand',
+        value: 38.99,
+        currency: 'USD'
+      });
+    }
+  }
+</script>
 
 {% schema %}
 {
   "name": "Luma Comparison Matrix",
-  "settings": [],
+  "tag": "section",
+  "class": "section-luma-matrix",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "The Smarter Way to Rejuvenate"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs."
+    },
+    {
+      "type": "url",
+      "id": "buy_url",
+      "label": "Buy Now URL"
+    }
+  ],
   "presets": [
     {
       "name": "Luma Comparison Matrix"

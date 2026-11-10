@@ -1,7 +1,30 @@
 {
   "sections": {
-    "main": {
-      "type": "home"
+    "luma_clinical_hero": {
+      "type": "luma-clinical-hero",
+      "settings": {
+        "pill_text": "CLINICAL GRADE PHOTOTHERAPY • DERM-TESTED",
+        "headline": "Clinical Skin Sculpting & At-Home Phototherapy.",
+        "subhead": "Medical-grade 630nm red light, microcurrent contouring, and therapeutic warmth for 75% less. Shipped fast with tracked dispatch from Utah.",
+        "primary_cta_text": "Get LumaGlow 4-in-1 ($38.99)",
+        "primary_cta_url": "/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand",
+        "secondary_cta_text": "Take 30-Sec Skin Quiz",
+        "secondary_cta_url": "/pages/skincare-routine-quiz"
+      }
+    },
+    "luma_comparison_matrix": {
+      "type": "luma-comparison-matrix",
+      "settings": {
+        "title": "The Smarter Way to Rejuvenate",
+        "subtitle": "See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs.",
+        "buy_url": "/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand"
+      }
+    },
+    "shoppable_instagram_feed": {
+      "type": "shoppable-instagram-feed",
+      "settings": {
+        "title": "Real Results from Real Routines"
+      }
     },
     "curiosity_hub": {
       "type": "bizi-zero-gravity-hub"
@@ -18,17 +41,19 @@
     "vault": {
       "type": "bizi-bees-vault"
     },
-    "sticky_mobile_bar": {
-      "type": "bizi-sticky-mobile-bar"
+    "luma_trust_footer": {
+      "type": "luma-trust-footer"
     }
   },
   "order": [
-    "main",
+    "luma_clinical_hero",
+    "luma_comparison_matrix",
+    "shoppable_instagram_feed",
     "curiosity_hub",
     "vibe_selector",
     "bundle_builder",
     "inspection_matrix",
     "vault",
-    "sticky_mobile_bar"
+    "luma_trust_footer"
   ]
 }

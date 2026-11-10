@@ -1,0 +1,139 @@
+{% comment %}
+  Luma Meta Conversions API (CAPI) & TikTok Pixel Tracking Engine - Shopify OS 2.0
+  Tracks:
+    - ViewContent (Product view)
+    - AddToCart (Ajax & standard cart drawer triggers)
+    - InitiateCheckout (1-Click Sticky Buy & Express Checkout buttons)
+    - CompletePayment (Order status / Confirmation)
+{% endcomment %}
+
+<!-- Meta Pixel Base Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  
+  // Safe Pixel Init (uses merchant ID or sandbox fallback)
+  fbq('init', '{{ settings.meta_pixel_id | default: "984712049182312" }}');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" 
+       src="https://www.facebook.com/tr?id={{ settings.meta_pixel_id | default: '984712049182312' }}&ev=PageView&noscript=1"/>
+</noscript>
+
+<!-- TikTok Pixel Base Code -->
+<script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+    
+    // Initialize TikTok Pixel for TikTok Ad Credit Match Campaign
+    ttq.load('{{ settings.tiktok_pixel_id | default: "C1234567890TIKTOK" }}');
+    ttq.page();
+  }(window, document, 'ttq');
+</script>
+
+<!-- Server-Side Conversions API (CAPI) Dispatch & Universal Event Listeners -->
+<script>
+  (function() {
+    // 1. Meta CAPI Dispatch Helper (dispatches via Beacon or Fetch)
+    window.dispatchLumaCAPI = function(eventName, eventData) {
+      const payload = {
+        event_name: eventName,
+        event_time: Math.floor(Date.now() / 1000),
+        event_source_url: window.location.href,
+        action_source: "website",
+        user_data: {
+          client_user_agent: navigator.userAgent
+        },
+        custom_data: eventData || {}
+      };
+
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/apps/luma-capi-proxy', JSON.stringify(payload));
+      }
+    };
+
+    // 2. Automated ViewContent tracking on Product Pages
+    {% if template contains 'product' %}
+      const currentProductData = {
+        content_name: {{ product.title | json }},
+        content_category: 'Skin Care Tools',
+        content_ids: [{{ product.selected_or_first_available_variant.id | default: product.id | json }}],
+        content_type: 'product',
+        value: {{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' | strip | default: 38.99 }},
+        currency: 'USD'
+      };
+
+      if (window.fbq) {
+        fbq('track', 'ViewContent', currentProductData);
+        window.dispatchLumaCAPI('ViewContent', currentProductData);
+      }
+      if (window.ttq) {
+        ttq.track('ViewContent', currentProductData);
+      }
+    {% endif %}
+
+    // 3. Automated CompletePayment tracking on Order Confirmation
+    {% if first_time_accessed %}
+      const orderData = {
+        content_type: 'product',
+        value: {{ checkout.total_price | money_without_currency | remove: ',' | strip }},
+        currency: 'USD'
+      };
+      if (window.fbq) {
+        fbq('track', 'Purchase', orderData);
+        window.dispatchLumaCAPI('Purchase', orderData);
+      }
+      if (window.ttq) {
+        ttq.track('CompletePayment', orderData);
+      }
+    {% endif %}
+
+    // 4. Delegated Button Click Event Listeners (AddToCart & InitiateCheckout)
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('button, a, input[type="submit"]');
+      if (!target) return;
+
+      const isAddToCart = target.matches('form[action*="/cart/add"] [type="submit"], [name="add"], .btn-add-to-cart, [data-action="add-to-cart"]');
+      const isOneClickCheckout = target.matches('.luma-buy-now-btn, .luma-sticky-btn, .luma-matrix-1click-btn, #luma-hero-buy-cta, [data-action="fast-checkout"]');
+
+      if (isAddToCart) {
+        const atcData = {
+          content_name: 'LumaGlow 4-in-1 Facial Wand',
+          content_type: 'product',
+          value: 38.99,
+          currency: 'USD'
+        };
+        if (window.fbq) {
+          fbq('track', 'AddToCart', atcData);
+          window.dispatchLumaCAPI('AddToCart', atcData);
+        }
+        if (window.ttq) {
+          ttq.track('AddToCart', atcData);
+        }
+      }
+
+      if (isOneClickCheckout) {
+        const checkoutData = {
+          content_name: 'LumaGlow 4-in-1 Facial Wand',
+          content_type: 'product',
+          value: 38.99,
+          currency: 'USD'
+        };
+        if (window.fbq) {
+          fbq('track', 'InitiateCheckout', checkoutData);
+          window.dispatchLumaCAPI('InitiateCheckout', checkoutData);
+        }
+        if (window.ttq) {
+          ttq.track('InitiateCheckout', checkoutData);
+        }
+      }
+    });
+  })();
+</script>
