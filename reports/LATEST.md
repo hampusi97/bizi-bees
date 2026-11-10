@@ -12,7 +12,7 @@
 ## 🏬 Store Breakdowns
 
 ### 1. Bizi Bees Boutique (`bizibees-store.myshopify.com`)
-- **Status:** 🟢 Operational (Latency: 580ms)
+- **Status:** 🟢 Operational (Latency: 444ms)
 - **Gross Sales:** $0.00 | **Orders:** 0 | **AOV:** $0.00
 - **Top 3 Items Sold:** *No orders recorded in the past 24 hours.*
 - **⚠️ Low Stock Watchlist:** All catalog items healthy (> 5 units in reserve).
@@ -21,7 +21,7 @@
 ---
 
 ### 2. Luma Clinical Wellness (`luma-clinical.myshopify.com`)
-- **Status:** 🔴 Warning HTTP 404 (171ms)
+- **Status:** 🔴 Warning HTTP 404 (262ms)
 - **Gross Sales:** $0.00 | **Orders:** 0 | **AOV:** $0.00
 - **Top 3 Items Sold:** *No orders recorded in the past 24 hours.*
 - **⚠️ Low Stock Watchlist:** All catalog items healthy (> 5 units in reserve).
