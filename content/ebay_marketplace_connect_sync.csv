@@ -1,8 +1,8 @@
 SKU,Title,eBay Category ID,eBay Category Name,Brand,MPN,Condition,Condition ID,Price,Quantity,Language,Format,Author,Power Source,Custom Label,Channel Status
 NDC-CTF-TIN-4OZ,Christmas Tree Farm Travel Tin Candle,11700,Home & Garden,Bizi Bees,NDC-CTF-TIN-4OZ,New,1000,14.00,10,English,"","","",channel:all,SYNC_ACTIVE
-9781604689471,Sleigh Bells: Stitch a Folk-Art Quilt Full of Winter Fun,267,Books & Magazines > Books,Bizi Bees,9781604689471,Very Good,1000,18.99,10,English,Paperback,Book Outpost,"",channel:all,SYNC_ACTIVE
-9781503773721,Skydance Animation - Spellbound Sing-Along Music Sound Book - PI Kids,267,Books & Magazines > Books,Bizi Bees,9781503773721,Very Good,1000,15.99,10,English,Hardcover,PI Kids,"",channel:all,SYNC_ACTIVE
-9798886631364,"Harry Potter: Spells and Potions 12-Month Undated Planner: (Harry Potter School Planner School, Harry Potter Gift, Harry Potter Stationery, Undated Planner)",267,Books & Magazines > Books,Bizi Bees,9798886631364,Very Good,1000,24.99,10,English,Paperback,Book Outpost,"",channel:all,SYNC_ACTIVE
+9781604689471,Sleigh Bells: Stitch a Folk-Art Quilt Full of Winter Fun,267,Books & Magazines > Books,Bizi Bees,9781604689471,Very Good,4000,18.99,10,English,Paperback,Book Outpost,"",channel:all,SYNC_ACTIVE
+9781503773721,Skydance Animation - Spellbound Sing-Along Music Sound Book - PI Kids,267,Books & Magazines > Books,Bizi Bees,9781503773721,Very Good,4000,15.99,10,English,Hardcover,PI Kids,"",channel:all,SYNC_ACTIVE
+9798886631364,"Harry Potter: Spells and Potions 12-Month Undated Planner: (Harry Potter School Planner School, Harry Potter Gift, Harry Potter Stationery, Undated Planner)",267,Books & Magazines > Books,Bizi Bees,9798886631364,Very Good,4000,24.99,10,English,Paperback,Book Outpost,"",channel:all,SYNC_ACTIVE
 FW6065,"Fresh Woods Soy Blend Candle — Pine, Balsam, Fir & Cedar",11700,Home & Garden,Bizi Bees,FW6065,New,1000,37.00,10,English,"","","",channel:all,SYNC_ACTIVE
 FW6015,"Fresh Woods Soy Blend Candle — Pine, Balsam, Fir & Cedar",11700,Home & Garden,Bizi Bees,FW6015,New,1000,53.00,10,English,"","","",channel:all,SYNC_ACTIVE
 fw6032,"Fresh Woods Soy Blend Candle — Pine, Balsam, Fir & Cedar",11700,Home & Garden,Bizi Bees,fw6032,New,1000,19.00,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -60,7 +60,7 @@ BB-GENERAL-11304941027495,Stocking Stuffer Trio,11700,Home & Garden,Bizi Bees,BB
 BB-GENERAL-11304937095335,Screen-Free Kids Pack,11700,Home & Garden,Bizi Bees,BB-GENERAL-11304937095335,New,1000,29.85,10,English,"","","",channel:all,SYNC_ACTIVE
 BB-GENERAL-11304930377895,Planner Pal Gift Set,183060,Business & Industrial > Office > Office Supplies > Calendars & Planners,Bizi Bees,BB-GENERAL-11304930377895,New,1000,22.90,10,English,"","","",channel:all,SYNC_ACTIVE
 160578,Strawberry Squeaker Dog Toy,220,Toys & Hobbies,Bizi Bees,160578,New,1000,10.99,10,English,"","","",channel:all,SYNC_ACTIVE
-10050,Tarot Spreads for All Occasions,267,Books & Magazines > Books,Bizi Bees,10050,Very Good,1000,16.00,10,English,Paperback,Writual Planner,"",channel:all,SYNC_ACTIVE
+10050,Tarot Spreads for All Occasions,267,Books & Magazines > Books,Bizi Bees,10050,Very Good,4000,16.00,10,English,Paperback,Writual Planner,"",channel:all,SYNC_ACTIVE
 B7B575E1137,Nutcracker & Sugar Plum Fairy Amigurumi Kit,11700,Home & Garden,Bizi Bees,B7B575E1137,New,1000,50.00,10,English,"","","",channel:all,SYNC_ACTIVE
 B7B575E1626,Nutcracker & Sugar Plum Fairy Amigurumi Kit,11700,Home & Garden,Bizi Bees,B7B575E1626,New,1000,50.00,10,English,"","","",channel:all,SYNC_ACTIVE
 B7B575E1625,Nutcracker & Sugar Plum Fairy Amigurumi Kit,11700,Home & Garden,Bizi Bees,B7B575E1625,New,1000,50.00,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -87,20 +87,20 @@ BNDCHPFISHOLSNK12,Snack Stuffers | Holiday Dog Stocking Stuffers,11700,Home & Ga
 BNDCHPALLHOLSNK24,Snack Stuffers | Holiday Dog Stocking Stuffers,11700,Home & Garden,Bizi Bees,BNDCHPALLHOLSNK24,New,1000,36.95,10,English,"","","",channel:all,SYNC_ACTIVE
 ELFG,Eucalyptus + Lavender - Signature Soy Candle,11700,Home & Garden,Bizi Bees,ELFG,New,1000,36.00,10,English,"","","",channel:all,SYNC_ACTIVE
 TFG-SQUISHIES,Mystery Squishies,220,Toys & Hobbies,Bizi Bees,TFG-SQUISHIES,New,1000,19.99,10,English,"","","",channel:all,SYNC_ACTIVE
-LUMA-RELIEF-2PACK,LumaRelief™ 360° Comfort Cap — 2-Cap Rotation Bundle,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-RELIEF-2PACK,New,1000,49.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-BRUSH-CLEAN,LumaClean™ Automatic Electric Makeup Brush Cleaner & Rapid Dryer,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-BRUSH-CLEAN,New,1000,29.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-SCULPT-BODY,LumaSculpt™ Ultrasonic Body Sculpting Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-SCULPT-BODY,New,1000,89.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-RELIEF-CAP,LumaRelief™ 360° Cold & Warm Comfort Cap — Light-Blocking Gel Cap,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-RELIEF-CAP,New,1000,34.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-MASK-7C,"LumaMask™ LED Light Therapy Mask — 7-Color Face & Neck Shield | At-Home Facial, Wireless with Eye Protection",177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-MASK-7C,New,1000,129.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-CLEAR-V1,LumaClear™ Ultrasonic Pore Spatula & Deep Skin Scrubber,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-CLEAR-V1,New,1000,44.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-LIFT-V1,LumaLift™ Microcurrent V-Face Chin & Jawline Sculptor,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-LIFT-V1,New,1000,64.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-BODY-SHAPER,LumaBody Sonic Body Sculpting & Massage Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-BODY-SHAPER,New,1000,84.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-EYE-MASSAGER,LumaSleep Smart Thermal Air-Compression Eye Massager,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-EYE-MASSAGER,New,1000,69.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-HAIR-COMB,LumaCrown 650nm Red Light Scalp & Hair Care Comb,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-HAIR-COMB,New,1000,79.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-ICE-ROLLER,Cryo-Glow Stainless Steel Facial Ice Sculpting Roller,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-ICE-ROLLER,New,1000,19.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-NECK-WRAP,LumaNeck LED Red Light Wrap — Neck & Décolletage Skincare Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-NECK-WRAP,New,1000,89.00,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-SERUM-30ML,Activating Copper Peptide Conductive Serum (30ml),177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-SERUM-30ML,New,1000,28.00,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
-LUMA-WAND-GLD,LumaGlow Wand — 4-in-1 Red Light & Microcurrent Facial Wand | 5-Minute At-Home Skincare Ritual,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-WAND-GLD,New,1000,59.99,10,English,"","",USB Charging,channel:all,SYNC_ACTIVE
+LUMA-RELIEF-2PACK,LumaRelief™ 360° Comfort Cap — 2-Cap Rotation Bundle,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-RELIEF-2PACK,Brand New,1000,49.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-BRUSH-CLEAN,LumaClean™ Automatic Electric Makeup Brush Cleaner & Rapid Dryer,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-BRUSH-CLEAN,Brand New,1000,29.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-SCULPT-BODY,LumaSculpt™ Ultrasonic Body Sculpting Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-SCULPT-BODY,Brand New,1000,89.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-RELIEF-CAP,LumaRelief™ 360° Cold & Warm Comfort Cap — Light-Blocking Gel Cap,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-RELIEF-CAP,Brand New,1000,34.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-MASK-7C,"LumaMask™ LED Light Therapy Mask — 7-Color Face & Neck Shield | At-Home Facial, Wireless with Eye Protection",177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-MASK-7C,Brand New,1000,129.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-CLEAR-V1,LumaClear™ Ultrasonic Pore Spatula & Deep Skin Scrubber,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-CLEAR-V1,Brand New,1000,44.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-LIFT-V1,LumaLift™ Microcurrent V-Face Chin & Jawline Sculptor,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-LIFT-V1,Brand New,1000,64.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-BODY-SHAPER,LumaBody Sonic Body Sculpting & Massage Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-BODY-SHAPER,Brand New,1000,84.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-EYE-MASSAGER,LumaSleep Smart Thermal Air-Compression Eye Massager,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-EYE-MASSAGER,Brand New,1000,69.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-HAIR-COMB,LumaCrown 650nm Red Light Scalp & Hair Care Comb,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-HAIR-COMB,Brand New,1000,79.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-ICE-ROLLER,Cryo-Glow Stainless Steel Facial Ice Sculpting Roller,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-ICE-ROLLER,Brand New,1000,19.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-NECK-WRAP,LumaNeck LED Red Light Wrap — Neck & Décolletage Skincare Device,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-NECK-WRAP,Brand New,1000,89.00,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-SERUM-30ML,Activating Copper Peptide Conductive Serum (30ml),177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-SERUM-30ML,Brand New,1000,28.00,10,English,"","",USB,channel:all,SYNC_ACTIVE
+LUMA-WAND-GLD,LumaGlow Wand — 4-in-1 Red Light & Microcurrent Facial Wand | 5-Minute At-Home Skincare Ritual,177754,Health & Beauty > Skin Care > Facial Tools,Luma,LUMA-WAND-GLD,Brand New,1000,59.99,10,English,"","",USB,channel:all,SYNC_ACTIVE
 PA-PR-0054,Steamy Windows Pattern 186,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0054,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0006,"Katie 10"" Square Pattern 174",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0006,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0025,Strip Cocoon Pattern 163,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0025,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -109,7 +109,7 @@ PA-PR-0073,Nina - pattern 167,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0
 PA-PR-0053,Slivers Table Runner Pattern 154,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0053,New,1000,7.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0056,"Lexie 10"" Square Pattern 185",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0056,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0064,"Emma - 10"" Square Pattern 188",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0064,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0013,Stripology Mixology 3 book GE-516,267,Books & Magazines > Books,Bizi Bees,BO-PR-0013,Very Good,1000,29.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0013,Stripology Mixology 3 book GE-516,267,Books & Magazines > Books,Bizi Bees,BO-PR-0013,Very Good,4000,29.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 PA-PR-0078,Lil' Roxy - Table Runner Pattern 213,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0078,New,1000,7.95,10,English,"","","",channel:all,SYNC_ACTIVE
 QC-KI-0003,Quilt-As-You-Go Batting Kit - Braid Runner Midi,11700,Home & Garden,Bizi Bees,QC-KI-0003,New,1000,29.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0074,Cuppa Joe Placemat Pattern 197,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0074,New,1000,7.95,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -119,11 +119,11 @@ TO-GE-0026,GEasy Organizing Clips - Small,11700,Home & Garden,Bizi Bees,TO-GE-00
 QC-KI-0002,Quilt-As-You-Go Batting Kit - Take It Easy Runner,11700,Home & Garden,Bizi Bees,QC-KI-0002,New,1000,29.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0075,"Clarissa - 10"" Square Pattern 198",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0075,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0072,Lil' Stella - Table Runner Pattern 196,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0072,New,1000,7.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0030,Panel Mash-Up Book GE-525,267,Books & Magazines > Books,Bizi Bees,BO-PR-0030,Very Good,1000,30.00,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0030,Panel Mash-Up Book GE-525,267,Books & Magazines > Books,Bizi Bees,BO-PR-0030,Very Good,4000,30.00,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 TO-GE-0002,GEasy Point Trimmers GE-1200,11700,Home & Garden,Bizi Bees,TO-GE-0002,New,1000,18.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0019,Master Your Stripology Rulers Book GE-517,267,Books & Magazines > Books,Bizi Bees,BO-PR-0019,Very Good,1000,22.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0019,Master Your Stripology Rulers Book GE-517,267,Books & Magazines > Books,Bizi Bees,BO-PR-0019,Very Good,4000,22.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 TO-GE-0013,GEasy Organizing Stickers GE-1102,11700,Home & Garden,Bizi Bees,TO-GE-0013,New,1000,9.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0023,Stripology Quickies Book- 518,267,Books & Magazines > Books,Bizi Bees,BO-PR-0023,Very Good,1000,29.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0023,Stripology Quickies Book- 518,267,Books & Magazines > Books,Bizi Bees,BO-PR-0023,Very Good,4000,29.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 TO-GE-0003,GEasy Ruler Stickers - Fruity Fiesta palette GE-1101,11700,Home & Garden,Bizi Bees,TO-GE-0003,New,1000,9.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0044,O-Strip Pattern 169,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0044,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0050,M & W Strip Pattern 170,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0050,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -133,7 +133,7 @@ PA-PR-0034,Which Way Table Topper Pattern 156,41228,Crafts > Sewing > Patterns,B
 PA-PR-0058,"Valerie 10"" Square Pattern 175",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0058,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0055,Teen Spirit Pattern 187,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0055,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0004,Strip Stacks Pattern 141,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0004,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0005,Quilts Of Iceland Book 513,267,Books & Magazines > Books,Bizi Bees,BO-PR-0005,Very Good,1000,34.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0005,Quilts Of Iceland Book 513,267,Books & Magazines > Books,Bizi Bees,BO-PR-0005,Very Good,4000,34.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 PA-PR-0011,Strip Joints Pattern 134,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0011,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0019,Strip To Shore Pattern 161,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0019,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0009,Strip Maze Pattern 143,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0009,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -193,7 +193,7 @@ PA-PR-0082,Gina - Stripology Mixer Pattern 215,41228,Crafts > Sewing > Patterns,
 PA-PR-0076,"Roxanne - 10"" Square Pattern 199",41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0076,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0036,Strip Plus Pattern 168,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0036,New,1000,11.95,10,English,"","","",channel:all,SYNC_ACTIVE
 PA-PR-0070,Lil' Kira - Table Runner Pattern 194,41228,Crafts > Sewing > Patterns,Bizi Bees,PA-PR-0070,New,1000,7.95,10,English,"","","",channel:all,SYNC_ACTIVE
-BO-PR-0024,Christmas in Europe Book,267,Books & Magazines > Books,Bizi Bees,BO-PR-0024,Very Good,1000,37.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
+BO-PR-0024,Christmas in Europe Book,267,Books & Magazines > Books,Bizi Bees,BO-PR-0024,Very Good,4000,37.95,10,English,Paperback,Gudrun Erla,"",channel:all,SYNC_ACTIVE
 TFG-SHAPELAB,Shape Lab Mystery,220,Toys & Hobbies,Bizi Bees,TFG-SHAPELAB,New,1000,29.99,10,English,"","","",channel:all,SYNC_ACTIVE
 TFG-POPPLERS-1-2-US,Popplers 1 + 2 Bundle,220,Toys & Hobbies,Bizi Bees,TFG-POPPLERS-1-2-US,New,1000,52.48,10,English,"","","",channel:all,SYNC_ACTIVE
 TFG-GRAPH,Graph the Wild,220,Toys & Hobbies,Bizi Bees,TFG-GRAPH,New,1000,29.99,10,English,"","","",channel:all,SYNC_ACTIVE
@@ -1690,13 +1690,13 @@ SPM,Magnetic Page Marker,183060,Business & Industrial > Office > Office Supplies
 sku-46809198002397,Magnetic Page Marker,183060,Business & Industrial > Office > Office Supplies > Calendars & Planners,Bizi Bees,sku-46809198002397,New,1000,6.00,10,English,"","","",channel:all,SYNC_ACTIVE
 sku-46809198035165,Magnetic Page Marker,183060,Business & Industrial > Office > Office Supplies > Calendars & Planners,Bizi Bees,sku-46809198035165,New,1000,6.00,10,English,"","","",channel:all,SYNC_ACTIVE
 sku-46809198067933,Magnetic Page Marker,183060,Business & Industrial > Office > Office Supplies > Calendars & Planners,Bizi Bees,sku-46809198067933,New,1000,6.00,10,English,"","","",channel:all,SYNC_ACTIVE
-BB-GENERAL-11251623264423,Bernedoodles: A Head to Tail Guide,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11251623264423,Good,3000,5.00,10,English,Paperback,Bizi Bees Curated,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11251623264423,Bernedoodles: A Head to Tail Guide,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11251623264423,Very Good,4000,5.00,10,English,Paperback,Bizi Bees Curated,"",channel:ebay-only,SYNC_ACTIVE
 BB-GENERAL-11251482951847,"Classic N64 USB Controller, Green",11700,Home & Garden,Bizi Bees,BB-GENERAL-11251482951847,Used,3000,19.00,10,English,"","","",channel:ebay-only,SYNC_ACTIVE
-BB-GENERAL-11250093654183,Markets Never Forget (But People Do),267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11250093654183,Good,3000,4.75,10,English,Paperback,Ken Fisher,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11250093654183,Markets Never Forget (But People Do),267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11250093654183,Very Good,4000,4.75,10,English,Paperback,Ken Fisher,"",channel:ebay-only,SYNC_ACTIVE
 BB-GENERAL-11250952143015,"RMS Mystery Squishy Dumpling — Snowflake Edition | Sealed Mystery Squeeze Toy, Stocking Stuffer",11700,Home & Garden,Bizi Bees,BB-GENERAL-11250952143015,New,1000,15.00,10,English,"","","",channel:all,SYNC_ACTIVE
-BB-GENERAL-11249828692135,"Holy Bible, King James Version",267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249828692135,Good,3000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
-BB-GENERAL-11249806835879,The Story of God,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249806835879,Good,3000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
-BB-GENERAL-11249783439527,"Hope, New Testament",267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249783439527,Good,3000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
-BB-GENERAL-11249768136871,The Year of the Frog,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249768136871,Good,3000,4.00,10,English,Paperback,Joyce A. Stengel,"",channel:ebay-only,SYNC_ACTIVE
-BB-GENERAL-11249739006119,Shape's Siege,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249739006119,Good,3000,4.00,10,English,Paperback,Bizi Bees Curated,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11249828692135,"Holy Bible, King James Version",267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249828692135,Very Good,4000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11249806835879,The Story of God,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249806835879,Very Good,4000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11249783439527,"Hope, New Testament",267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249783439527,Very Good,4000,5.00,10,English,Paperback,Traditional Biblical Texts,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11249768136871,The Year of the Frog,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249768136871,Very Good,4000,4.00,10,English,Paperback,Joyce A. Stengel,"",channel:ebay-only,SYNC_ACTIVE
+BB-GENERAL-11249739006119,Shape's Siege,267,Books & Magazines > Books,Bizi Bees,BB-GENERAL-11249739006119,Very Good,4000,4.00,10,English,Paperback,Bizi Bees Curated,"",channel:ebay-only,SYNC_ACTIVE
 BB-GENERAL-11249660493991,Newair Countertop Whiskey Ice Ball Maker,11700,Home & Garden,Bizi Bees,BB-GENERAL-11249660493991,Used,3000,399.00,10,English,"","","",channel:ebay-only,SYNC_ACTIVE
