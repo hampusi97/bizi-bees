@@ -309,8 +309,54 @@
   }
 
   function checkoutCrate() {
-    const summary = Object.values(crateSelections).map(i => i.title).join(' + ');
-    window.location.href = `/collections/all?crate_bundle=${encodeURIComponent(summary)}`;
+    const btn = document.getElementById('crateCheckoutBtn');
+    if (btn) {
+      btn.innerText = 'Hand-Packing Your Cozy Crate... 🎁';
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+    }
+
+    const payload = {
+      items: [{
+        id: 51838152343719,
+        quantity: 1,
+        properties: {
+          'Crate Curation': 'Custom Cozy Evening Crate ($38 Bundle)',
+          '1. Selected Book': crateSelections[1] ? crateSelections[1].title : 'Vintage Mystery Novel',
+          '2. Artisan Tea': crateSelections[2] ? crateSelections[2].title : 'Lavender Chamomile Herbal Blend',
+          '3. Reading Candle': crateSelections[3] ? crateSelections[3].title : 'Cedar & Hearth 100% Soy Candle',
+          '4. Keepsake': crateSelections[4] ? crateSelections[4].title : 'Solid Brass Honeybee Bookmark',
+          'Packaging': 'Signature Kraft Crate with Wood Wool, Butcher Twine & Beeswax Stamp'
+        }
+      }]
+    };
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(cart => {
+      if (window.DropperCart && typeof window.DropperCart.refreshCart === 'function') {
+        window.DropperCart.refreshCart(true);
+      } else {
+        window.location.href = '/cart';
+      }
+    })
+    .catch(() => {
+      window.location.href = '/cart';
+    })
+    .finally(() => {
+      if (btn) {
+        btn.innerText = 'Add Custom Crate to Bag ($38.00) →';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }
+    });
   }
 </script>
 

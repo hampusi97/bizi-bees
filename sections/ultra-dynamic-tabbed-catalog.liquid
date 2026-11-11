@@ -582,22 +582,27 @@
       btn.innerText = '✓ Added to Bag!';
       btn.style.background = '#10B981';
 
-      // Update cart count
-      fetch('/cart.js')
-        .then(r => r.json())
-        .then(cart => {
-          const counts = document.querySelectorAll('#HeaderCartCount, .editorial-cart-count');
-          counts.forEach(c => { c.innerText = cart.item_count; });
-          
-          // Trigger dynamic island if present
-          const island = document.getElementById('roDynamicIsland');
-          if (island) {
-            const msg = document.getElementById('roIslandMsg');
-            if (msg) msg.innerText = '✓ ' + title + ' Added to Bag!';
-            island.classList.add('active');
-            setTimeout(() => island.classList.remove('active'), 4500);
-          }
-        });
+      // Refresh DropperCart slide-out drawer
+      if (window.DropperCart && typeof window.DropperCart.refreshCart === 'function') {
+        window.DropperCart.refreshCart(true);
+      } else {
+        // Update cart count
+        fetch('/cart.js')
+          .then(r => r.json())
+          .then(cart => {
+            const counts = document.querySelectorAll('#HeaderCartCount, .editorial-cart-count, #DropperCartCount');
+            counts.forEach(c => { c.innerText = cart.item_count; });
+            
+            // Trigger dynamic island if present
+            const island = document.getElementById('roDynamicIsland');
+            if (island) {
+              const msg = document.getElementById('roIslandMsg');
+              if (msg) msg.innerText = '✓ ' + title + ' Added to Bag!';
+              island.classList.add('active');
+              setTimeout(() => island.classList.remove('active'), 4500);
+            }
+          });
+      }
 
       setTimeout(() => {
         btn.innerText = orig;

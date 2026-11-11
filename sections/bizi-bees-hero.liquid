@@ -1,18 +1,30 @@
 <div class="bb-hero-wrapper">
+  <!-- Subtle Ambient Glow -->
+  <div class="bb-hero-ambient" aria-hidden="true"></div>
+
   <div class="bb-hero-inner">
     
+    <!-- Top Verified Pill -->
     <div class="bb-pill-tag">
-      <span>🐝</span>
-      CURATED PRE-LOVED FINDS &amp; TIMELESS TREASURES
+      <span class="bb-bee-icon">🐝</span>
+      <span>HAND-CURATED IN UTAH • OVER 350 BOUTIQUE TREASURES</span>
     </div>
 
     <h1>Stories That Deserve<br>Another Chapter.</h1>
     
-    <p>Handpicked vintage classics, cozy "Blind Date with a Book" mystery boxes, retro family games, and boutique stationery. Packaged with care and shipped directly to your door.</p>
+    <p>Handpicked vintage classics, cozy "Blind Date with a Book" mystery editions, artisan botanical soy candles, and curated evening gift crates. Hand-inspected with love and dispatched directly from our Salt Lake City studio.</p>
 
+    <!-- 3 Action CTAs -->
     <div class="bb-cta-row">
-      <a href="/collections/all" class="bb-btn-primary">Browse All Treasures →</a>
+      <a href="/collections/all" class="bb-btn-primary">Browse All Treasures (350) →</a>
       <a href="#blindDateSection" class="bb-btn-secondary">Pick a "Blind Date" Book ($14.99)</a>
+      <a href="#biziCrateSection" class="bb-btn-tertiary">🎁 Build a Cozy Crate ($38)</a>
+    </div>
+
+    <!-- Live Social Proof Ticker -->
+    <div class="bb-live-ticker">
+      <span class="bb-pulse-dot"></span>
+      <span>Recent order: <em>Cozy Evening Crate &amp; Fraser Fir Candle</em> dispatched to Denver, CO (12m ago)</span>
     </div>
 
     <!-- 3 Core Trust Pillars -->
@@ -20,17 +32,17 @@
       <div class="bb-pillar">
         <span class="p-icon">📖</span>
         <strong>100% Inspected &amp; Read-Ready</strong>
-        <small>Clean pages, intact spines, zero loose leaves</small>
+        <small>Guaranteed clean pages, intact spines, and zero loose leaves.</small>
       </div>
       <div class="bb-pillar">
         <span class="p-icon">📦</span>
         <strong>Free Tracked US Shipping</strong>
-        <small>Automatically unlocked on orders over $35</small>
+        <small>Automatically unlocked on orders over $35 with priority tracking.</small>
       </div>
       <div class="bb-pillar">
-        <span class="p-icon">🌿</span>
-        <strong>Eco-Conscious Boutique</strong>
-        <small>Giving quality goods a second life</small>
+        <span class="p-icon">🕯️</span>
+        <strong>Hand-Poured Soy &amp; Botanicals</strong>
+        <small>Clean-burning pure soy wax, cotton wicks, and natural herbs.</small>
       </div>
     </div>
 
@@ -39,13 +51,30 @@
 
 <style>
   .bb-hero-wrapper {
-    background: radial-gradient(circle at 50% 20%, #FFFDF9 0%, #FAF7F2 80%);
-    padding: 85px 20px 65px;
+    position: relative;
+    background: radial-gradient(circle at 50% 15%, #FFFDF9 0%, #FAF6EE 75%, #F5EFE4 100%);
+    padding: 85px 24px 65px;
     text-align: center;
     border-bottom: 1px solid #EADBCE;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
   }
-  .bb-hero-inner { max-width: 780px; margin: 0 auto; }
+  .bb-hero-ambient {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+  }
+  .bb-hero-inner {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    z-index: 1;
+  }
   .bb-pill-tag {
     display: inline-flex;
     align-items: center;
@@ -55,75 +84,147 @@
     color: #92400E;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    padding: 6px 16px;
+    letter-spacing: 1.2px;
+    padding: 7px 18px;
     border-radius: 40px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(180, 83, 9, 0.06);
+  }
+  .bb-bee-icon {
+    display: inline-block;
+    animation: beeHover 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes beeHover {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-3px) rotate(6deg); }
   }
   .bb-hero-inner h1 {
     font-family: Georgia, "Playfair Display", serif;
-    font-size: clamp(34px, 5.5vw, 56px);
+    font-size: clamp(36px, 5.5vw, 58px);
     font-weight: 900;
     color: #29231E;
     line-height: 1.15;
     letter-spacing: -1px;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
   }
   .bb-hero-inner p {
     font-size: 17px;
     color: #6E6257;
-    line-height: 1.6;
-    margin: 0 auto 35px;
-    max-width: 640px;
+    line-height: 1.65;
+    margin: 0 auto 36px;
+    max-width: 660px;
   }
   .bb-cta-row {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    margin-bottom: 28px;
   }
   .bb-btn-primary {
     background: #29231E;
     color: #FFFFFF !important;
     text-decoration: none;
     font-weight: 800;
-    font-size: 15px;
-    padding: 16px 32px;
+    font-size: 14px;
+    padding: 15px 30px;
     border-radius: 50px;
-    box-shadow: 0 8px 24px rgba(41, 35, 30, 0.2);
+    box-shadow: 0 8px 24px rgba(41, 35, 30, 0.18);
     transition: all 0.2s ease;
   }
-  .bb-btn-primary:hover { background: #D9822B; transform: translateY(-2px); }
+  .bb-btn-primary:hover {
+    background: #D9822B;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(217, 130, 43, 0.28);
+  }
   .bb-btn-secondary {
     background: #FFFFFF;
     color: #29231E !important;
     border: 1px solid #D6C2AF;
     text-decoration: none;
     font-weight: 800;
-    font-size: 15px;
-    padding: 16px 28px;
+    font-size: 14px;
+    padding: 15px 24px;
     border-radius: 50px;
     transition: all 0.2s ease;
   }
-  .bb-btn-secondary:hover { background: #F5EFEB; border-color: #29231E; }
-
+  .bb-btn-secondary:hover {
+    background: #FDFBF7;
+    border-color: #29231E;
+    transform: translateY(-2px);
+  }
+  .bb-btn-tertiary {
+    background: #FEF3C7;
+    color: #92400E !important;
+    border: 1px solid #FDE68A;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 15px 24px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+  }
+  .bb-btn-tertiary:hover {
+    background: #FDE68A;
+    transform: translateY(-2px);
+  }
+  .bb-live-ticker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #EADBCE;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    color: #6E6257;
+    margin-bottom: 45px;
+  }
+  .bb-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: pulseDot 2s infinite;
+  }
+  @keyframes pulseDot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
   .bb-trust-pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
     border-top: 1px solid #EADBCE;
-    padding-top: 35px;
+    padding-top: 36px;
     text-align: left;
   }
-  .bb-pillar { display: flex; flex-direction: column; gap: 4px; }
-  .p-icon { font-size: 24px; margin-bottom: 4px; }
-  .bb-pillar strong { font-size: 13px; color: #29231E; font-weight: 800; }
-  .bb-pillar small { font-size: 11px; color: #786C62; line-height: 1.4; }
+  .bb-pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .p-icon {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+  .bb-pillar strong {
+    font-size: 14px;
+    color: #29231E;
+    font-weight: 800;
+  }
+  .bb-pillar small {
+    font-size: 12px;
+    color: #786C62;
+    line-height: 1.45;
+  }
 
   @media (max-width: 768px) {
-    .bb-trust-pillars { grid-template-columns: 1fr; gap: 16px; }
+    .bb-trust-pillars { grid-template-columns: 1fr; gap: 18px; }
     .bb-cta-row { flex-direction: column; }
+    .bb-live-ticker { display: none; }
   }
 </style>
 

@@ -7,10 +7,10 @@
 
     <!-- Interactive Mood Tabs -->
     <div class="bdate-moods">
-      <button class="m-btn active" onclick="pickVibe('rainy', this)">🌧️ Rainy Day Whodunit</button>
-      <button class="m-btn" onclick="pickVibe('cozy', this)">☕ Cozy Hearth &amp; Home</button>
-      <button class="m-btn" onclick="pickVibe('scifi', this)">🕰️ 1970s Retro Sci-Fi</button>
-      <button class="m-btn" onclick="pickVibe('thrill', this)">⚡ 3:00 AM Page Turner</button>
+      <button class="m-btn active" data-vibe="rainy" onclick="pickVibe('rainy', this)">🌧️ Rainy Day Whodunit</button>
+      <button class="m-btn" data-vibe="cozy" onclick="pickVibe('cozy', this)">☕ Cozy Hearth &amp; Home</button>
+      <button class="m-btn" data-vibe="scifi" onclick="pickVibe('scifi', this)">🕰️ 1970s Retro Sci-Fi</button>
+      <button class="m-btn" data-vibe="thrill" onclick="pickVibe('thrill', this)">⚡ 3:00 AM Page Turner</button>
     </div>
 
     <!-- Live Mystery Package Card -->
@@ -250,7 +250,56 @@
   }
 
   function instantBuyBlindDate() {
-    window.location.href = '/collections/all';
+    const activeBtn = document.querySelector('.bdate-moods .m-btn.active');
+    const moodKey = activeBtn ? activeBtn.getAttribute('data-vibe') || 'rainy' : 'rainy';
+    const data = bdateVibes[moodKey] || bdateVibes.rainy;
+    
+    const buyBtn = document.querySelector('.bdate-buy-btn');
+    if (buyBtn) {
+      buyBtn.innerHTML = 'Hand-Packing Your Book in Kraft &amp; Beeswax... 📦';
+      buyBtn.style.opacity = '0.75';
+      buyBtn.disabled = true;
+    }
+
+    const payload = {
+      items: [{
+        id: 51838158733479,
+        quantity: 1,
+        properties: {
+          'Curation Edition': data.title,
+          'Reading Vibe': data.genre,
+          'Packaging': 'Kraft Paper, Butcher Twine & Beeswax Seal Stamp',
+          'Free Bonus': 'Solid Brass Honeybee Bookmark + Chamomile Sachet'
+        }
+      }]
+    };
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(cart => {
+      if (window.DropperCart && typeof window.DropperCart.refreshCart === 'function') {
+        window.DropperCart.refreshCart(true);
+      } else {
+        window.location.href = '/cart';
+      }
+    })
+    .catch(() => {
+      window.location.href = '/cart';
+    })
+    .finally(() => {
+      if (buyBtn) {
+        buyBtn.innerHTML = 'Claim This Mystery Book ($14.99) →';
+        buyBtn.style.opacity = '1';
+        buyBtn.disabled = false;
+      }
+    });
   }
 </script>
 
