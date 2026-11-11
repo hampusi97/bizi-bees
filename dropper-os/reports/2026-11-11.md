@@ -1,5 +1,5 @@
 # Dropper OS™ Fleet Intelligence Digest
-**Report Date:** `2026-11-11` | **Generated At:** `19:35:26 UTC` | **Fleet Engine v1.0**
+**Report Date:** `2026-11-11` | **Generated At:** `19:55:31 UTC` | **Fleet Engine v1.0**
 
 ---
 
@@ -9,14 +9,14 @@
 ![Fleet Orders](https://img.shields.io/badge/24h_Orders-28-3B82F6?style=flat-square)
 ![Fleet AOV](https://img.shields.io/badge/Blended_AOV-$65.73-8B5CF6?style=flat-square)
 ![Fulfillment Backlog](https://img.shields.io/badge/Pending_Orders-4-F59E0B?style=flat-square)
-![Avg Latency](https://img.shields.io/badge/Avg_Latency-449ms-06B6D4?style=flat-square)
+![Avg Latency](https://img.shields.io/badge/Avg_Latency-1326ms-06B6D4?style=flat-square)
 
 ---
 
 ### 1. Storefront Performance & Live Telemetry
 | Store Name | Domain | HTTP | Status | Latency | SSL |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Bizi Bees Boutique** | `bizibees-store.myshopify.com` | `200` | **ONLINE** | `449ms` | ✓ Valid |
+| **Bizi Bees Boutique** | `bizibees-store.myshopify.com` | `200` | **DEGRADED** | `1326ms` | ✓ Valid |
 
 ---
 

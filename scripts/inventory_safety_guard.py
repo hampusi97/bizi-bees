@@ -1,5 +1,13 @@
 import os
-import requests
+import sys
+
+try:
+    import requests
+    USE_REQUESTS = True
+except ImportError:
+    import urllib.request
+    import json
+    USE_REQUESTS = False
 
 SHOP_URL = os.getenv("TARGET_STORE_DOMAIN", os.getenv("SHOPIFY_SHOP_URL", "bizibees-store.myshopify.com")).replace("https://", "").replace("/", "")
 TARGET_STORE_ID = os.getenv("TARGET_STORE_ID", "default")

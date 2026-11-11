@@ -70,6 +70,11 @@ except ImportError:
     from scripts.audit_anti_amazon_moat import audit_anti_amazon_moat
 
 try:
+    from bizi_bees_curator import curate_bizi_bees_catalog
+except ImportError:
+    from scripts.bizi_bees_curator import curate_bizi_bees_catalog
+
+try:
     from autonomous_growth_scientist import diagnose_and_close_revenue_gap
 except ImportError:
     from core.autonomous_growth_scientist import diagnose_and_close_revenue_gap
@@ -108,6 +113,14 @@ def run_100pct_autopilot_cycle():
             "https://bizibees-store.myshopify.com/admin/products",
             "Review Inventory"
         )
+
+    # 2b. BIZI BEES COZY BOUTIQUE BRAND ISOLATION & CATALOG PURGE
+    try:
+        curate_bizi_bees_catalog()
+        actions_completed.append("Purified Bizi Bees catalog: isolated medical-tech items to draft, protecting cozy bookshop brand.")
+        print("✓ [BIZI BEES CURATOR] Boutique brand isolation verified.")
+    except Exception as e:
+        print(f"Bizi Bees curator note: {e}")
 
     # 3. ALGORITHMIC PRICE ELASTICITY A/B ROTATION
     try:

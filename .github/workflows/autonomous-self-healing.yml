@@ -33,6 +33,7 @@ jobs:
           python scripts/auto_social_poster.py
           python scripts/seo_blog_generator.py
           python scripts/configure_shipping_rates.py
+          python scripts/bizi_bees_curator.py
       - name: Commit Audit & Social Logs
         run: |
           git config --global user.name "Luma-Autonomous-Bot"
