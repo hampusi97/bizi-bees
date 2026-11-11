@@ -1,86 +1,110 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VerdeHydro — 4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass</title>
-<meta name="description" content="4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass — 12 products, free shipping over $45. Code GROW15.">
+<meta name="description" content="4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass. 12 products, free shipping over $45, code GROW15.">
+<meta property="og:title" content="VerdeHydro — VerdeHydro Brass Halo Grow Light &amp; Planter">
+<meta property="og:description" content="4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass">
 <style>
-:root{--bg:#08120E;--surface:#11221B;--accent:#34D399;--accent2:#059669}
+:root{--bg:#08120E;--sf:#11221B;--ac:#34D399;--ac2:#059669}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:#fafafa;font-family:system-ui,-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fafafa;font-family:'Inter',system-ui,-apple-system,sans-serif;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.bar{background:var(--accent);color:#000;text-align:center;padding:8px;font-weight:800;font-size:.78rem;letter-spacing:.03em}
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid #ffffff1f;position:sticky;top:0;background:var(--bg);z-index:50}
-.brand{font-weight:800;letter-spacing:.06em}
-.bag{background:var(--accent);color:#000;border:none;font-weight:800;padding:9px 16px;border-radius:999px;cursor:pointer;font-size:.8rem}
-main{max-width:820px;margin:0 auto;padding:30px 20px 80px}
-.k{color:var(--accent);font-family:ui-monospace,monospace;letter-spacing:.12em;font-size:.72rem}
-h1{font-size:2rem;line-height:1.15;margin:.35em 0}
-h2{font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:#9ca3af;margin:28px 0 10px}
-.card{display:flex;justify-content:space-between;gap:14px;align-items:center;background:var(--surface);border:1px solid #ffffff14;border-radius:12px;padding:12px 14px;margin-bottom:8px}
-.muted{color:#9ca3af;font-size:.78rem}
-.right{text-align:right;display:flex;flex-direction:column;gap:6px;align-items:flex-end;white-space:nowrap}
-.price{color:var(--accent);font-size:1.05rem}
-.add{background:transparent;border:1px solid var(--accent);color:var(--accent);font-weight:700;padding:6px 12px;border-radius:999px;cursor:pointer;font-size:.76rem}
-.add:hover{background:var(--accent);color:#000}
-#drawer{position:fixed;inset:0;display:none;z-index:200}
-#drawer.on{display:block}
-#drawer .scrim{position:absolute;inset:0;background:#000000b3}
-#drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(400px,100vw);background:var(--surface);padding:20px;display:flex;flex-direction:column;justify-content:space-between}
-.line{display:flex;justify-content:space-between;font-size:.84rem;padding:7px 0;border-bottom:1px solid #ffffff12}
-.total{display:flex;justify-content:space-between;font-weight:800;padding-top:10px}
-.pay{background:var(--accent);color:#000;border:none;font-weight:800;padding:14px;border-radius:999px;cursor:pointer;width:100%;font-size:.9rem}
-input{width:100%;padding:10px;border-radius:8px;border:1px solid #ffffff22;background:#0000004d;color:#fff;margin-bottom:7px;font-size:.85rem}
-.ok{background:#16a34a;color:#fff;padding:10px;border-radius:8px;font-size:.82rem;margin-top:8px}
-footer{border-top:1px solid #ffffff14;padding:26px 20px;text-align:center;color:#9ca3af;font-size:.78rem}
+.bar{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#000;text-align:center;padding:9px;font-weight:800;font-size:.75rem;letter-spacing:.06em}
+header{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:15px 22px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid #ffffff14}
+.brand{font-weight:900;letter-spacing:.1em;font-size:.95rem}
+nav{display:flex;gap:18px;font-size:.78rem;opacity:.8}
+nav a:hover{color:var(--ac)}
+.bag{background:var(--ac);color:#000;border:none;font-weight:900;padding:9px 16px;border-radius:999px;cursor:pointer;font-size:.76rem;transition:transform .18s}
+.bag:hover{transform:scale(1.06)}
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 20px;overflow:hidden}
+.glow{position:absolute;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,var(--ac) 0%,transparent 62%);opacity:.22;filter:blur(70px);animation:float 13s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(-6%,-8%) scale(1)}50%{transform:translate(8%,6%) scale(1.15)}}
+.k{position:relative;color:var(--ac);font-family:ui-monospace,monospace;letter-spacing:.3em;font-size:.7rem;animation:fade 1s .1s both}
+h1{position:relative;font-size:clamp(2.1rem,6vw,3.9rem);line-height:1.03;letter-spacing:-.03em;margin:.35em 0 .3em;max-width:15ch;animation:fade 1s .25s both}
+.sub{position:relative;opacity:.72;max-width:52ch;font-size:.95rem;animation:fade 1s .4s both}
+.cta{position:relative;margin-top:26px;background:var(--ac);color:#000;font-weight:900;padding:15px 32px;border-radius:999px;display:inline-block;transition:transform .2s,box-shadow .2s;animation:fade 1s .55s both}
+.cta:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 14px 34px color-mix(in srgb,var(--ac) 45%,transparent)}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.stack{max-width:640px;margin:0 auto;padding:0 20px 70px}
+.layer{background:var(--sf);border:1px solid #ffffff16;border-left:3px solid var(--ac);border-radius:12px;padding:14px 16px;margin-bottom:9px;transition:transform .28s,box-shadow .28s}
+.layer:hover{transform:translateX(7px) scale(1.015);box-shadow:-6px 8px 28px #00000059}
+.ln{display:block;color:var(--ac);font-family:ui-monospace,monospace;font-size:.7rem;letter-spacing:.13em}
+.ld{font-size:.82rem;opacity:.76}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:#9ca3af;margin:34px 0 12px}
+.grid{display:grid;gap:9px}
+.card{display:flex;justify-content:space-between;gap:14px;align-items:center;background:var(--sf);border:1px solid #ffffff12;border-radius:14px;padding:14px 16px;transition:transform .22s,border-color .22s}
+.card:hover{transform:translateY(-3px);border-color:var(--ac)}
+.muted{color:#9ca3af;font-size:.77rem;margin-top:3px}
+.sku{font-family:ui-monospace,monospace;font-size:.65rem;opacity:.4}
+.cr{text-align:right;display:flex;flex-direction:column;gap:7px;align-items:flex-end;white-space:nowrap}
+.pr b{color:var(--ac);font-size:1.05rem}.pr s{opacity:.4;font-size:.75rem;margin-left:4px}
+.add{background:transparent;border:1px solid var(--ac);color:var(--ac);font-weight:800;padding:7px 14px;border-radius:999px;cursor:pointer;font-size:.74rem;transition:.18s}
+.add:hover{background:var(--ac);color:#000}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s,transform .55s}
+.reveal.in{opacity:1;transform:none}
+#dw{position:fixed;inset:0;display:none;z-index:200}#dw.on{display:block}
+#dw .sc{position:absolute;inset:0;background:#000000c4;backdrop-filter:blur(4px)}
+#dw .pn{position:absolute;top:0;right:0;bottom:0;width:min(410px,100vw);background:var(--sf);padding:20px;display:flex;flex-direction:column;justify-content:space-between;animation:slide .3s ease}
+@keyframes slide{from{transform:translateX(100%)}to{transform:none}}
+.line{display:flex;justify-content:space-between;font-size:.83rem;padding:8px 0;border-bottom:1px solid #ffffff12}
+.tot{display:flex;justify-content:space-between;font-weight:900;padding-top:11px;font-size:1.05rem}
+.pay{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#000;border:none;font-weight:900;padding:15px;border-radius:999px;cursor:pointer;width:100%;font-size:.9rem;transition:transform .18s}
+.pay:hover{transform:scale(1.02)}
+input{width:100%;padding:11px;border-radius:9px;border:1px solid #ffffff22;background:#0000004d;color:#fff;margin-bottom:7px;font-size:.85rem}
+.ok{background:#16a34a;color:#fff;padding:11px;border-radius:9px;font-size:.81rem;margin-top:9px}
+footer{border-top:1px solid #ffffff12;padding:30px 20px;text-align:center;color:#9ca3af;font-size:.76rem;line-height:1.7}
 </style></head><body>
-<div class="bar">FREE SHIPPING OVER $45 • Free Solid Brass Botanical Mister ($24 Value) OVER $115 • CODE GROW15</div>
-<header><span class="brand">VERDEHYDRO</span><button class="bag" onclick="openBag()">BAG (<span id="cnt">0</span>)</button></header>
-<main>
-<p class="k">INDOOR SUNLIGHT.</p>
-<h1>VerdeHydro Brass Halo Grow Light &amp; Planter</h1>
-<p class="muted">4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass • verdehydro.com</p>
-<p style="margin-top:12px"><b class="price" style="font-size:1.4rem">$49.00</b> <s class="muted">$76.00</s></p>
-<h2>All 12 products</h2>
-<div class="card"><div><b>VerdeHydro 4000K Brass Halo Grow Light &amp; Planter</b><div class="muted">A 4000K full-spectrum halo grow light in a solid brass ring, set into a self-wat • DROP-VERDE-001</div></div>
-<div class="right"><div><b class="price">$49</b> <s class="muted">$69</s></div>
-<button class="add" data-sku="DROP-VERDE-001" data-title="VerdeHydro 4000K Brass Halo Grow Light &amp; Planter" data-price="49">Add to bag</button></div></div><div class="card"><div><b>Organic Liquid Plant Food (8 oz)</b><div class="muted">Balanced organic feed. • DROP-VERDE-002</div></div>
-<div class="right"><div><b class="price">$19</b> <s class="muted">$24</s></div>
-<button class="add" data-sku="DROP-VERDE-002" data-title="Organic Liquid Plant Food (8 oz)" data-price="19">Add to bag</button></div></div><div class="card"><div><b>Hydro-Wick Refill Pack (10)</b><div class="muted">Ten replacement wicks. • DROP-VERDE-003</div></div>
-<div class="right"><div><b class="price">$14</b> <s class="muted">$24</s></div>
-<button class="add" data-sku="DROP-VERDE-003" data-title="Hydro-Wick Refill Pack (10)" data-price="14">Add to bag</button></div></div><div class="card"><div><b>Propagation Station (6 Tubes)</b><div class="muted">Glass tubes on a brass stand. • DROP-VERDE-004</div></div>
-<div class="right"><div><b class="price">$34</b> <s class="muted">$49</s></div>
-<button class="add" data-sku="DROP-VERDE-004" data-title="Propagation Station (6 Tubes)" data-price="34">Add to bag</button></div></div><div class="card"><div><b>Aroid Soil Mix (4 qt)</b><div class="muted">Chunky aroid mix. • DROP-VERDE-005</div></div>
-<div class="right"><div><b class="price">$24</b> <s class="muted">$34</s></div>
-<button class="add" data-sku="DROP-VERDE-005" data-title="Aroid Soil Mix (4 qt)" data-price="24">Add to bag</button></div></div><div class="card"><div><b>Plant Mister (Brass)</b><div class="muted">Brass-bodied fine mister. • DROP-VERDE-006</div></div>
-<div class="right"><div><b class="price">$29</b> <s class="muted">$39</s></div>
-<button class="add" data-sku="DROP-VERDE-006" data-title="Plant Mister (Brass)" data-price="29">Add to bag</button></div></div><div class="card"><div><b>Clip-On Grow Light</b><div class="muted">Clip light with a timer. • DROP-VERDE-007</div></div>
-<div class="right"><div><b class="price">$39</b> <s class="muted">$59</s></div>
-<button class="add" data-sku="DROP-VERDE-007" data-title="Clip-On Grow Light" data-price="39">Add to bag</button></div></div><div class="card"><div><b>Self-Watering Planter (Medium)</b><div class="muted">Ceramic with a reservoir. • DROP-VERDE-008</div></div>
-<div class="right"><div><b class="price">$49</b> <s class="muted">$74</s></div>
-<button class="add" data-sku="DROP-VERDE-008" data-title="Self-Watering Planter (Medium)" data-price="49">Add to bag</button></div></div><div class="card"><div><b>Propagation Heat Mat</b><div class="muted">10x20 in heat mat. • DROP-VERDE-009</div></div>
-<div class="right"><div><b class="price">$39</b> <s class="muted">$54</s></div>
-<button class="add" data-sku="DROP-VERDE-009" data-title="Propagation Heat Mat" data-price="39">Add to bag</button></div></div><div class="card"><div><b>Pruning Shears (Brass)</b><div class="muted">Bypass shears, brass handles. • DROP-VERDE-010</div></div>
-<div class="right"><div><b class="price">$29</b> <s class="muted">$44</s></div>
-<button class="add" data-sku="DROP-VERDE-010" data-title="Pruning Shears (Brass)" data-price="29">Add to bag</button></div></div><div class="card"><div><b>Rare Aroid Cutting Pack</b><div class="muted">Three rooted cuttings. • DROP-VERDE-011</div></div>
-<div class="right"><div><b class="price">$64</b> <s class="muted">$89</s></div>
-<button class="add" data-sku="DROP-VERDE-011" data-title="Rare Aroid Cutting Pack" data-price="64">Add to bag</button></div></div><div class="card"><div><b>Moisture Meter</b><div class="muted">Soil moisture and pH meter. • DROP-VERDE-012</div></div>
-<div class="right"><div><b class="price">$24</b> <s class="muted">$29</s></div>
-<button class="add" data-sku="DROP-VERDE-012" data-title="Moisture Meter" data-price="24">Add to bag</button></div></div>
-<h2>⭐ Verde Botanical Society</h2>
-<div class="card"><div><b>Subscribe &amp; save 20% monthly</b><div class="muted">Monthly refill club</div></div><div class="right"><b class="price">VIP</b></div></div>
-<div class="card"><div><b>B2B bulk — 30% off 10+, 35% off 25+</b><div class="muted">Schools, clinics, studios, offices. Code B2B35</div></div><div class="right"><b class="price">B2B</b></div></div>
-<p style="margin-top:24px"><a href="../index.html" style="color:var(--accent)">← All 17 stores</a></p>
-</main>
-<footer>VerdeHydro • verdehydro.com • Branch store-15-verde-hydro • 60-day guarantee</footer>
-<div id="drawer"><div class="scrim" onclick="closeBag()"></div><div class="panel">
-<div><div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #ffffff14"><b>YOUR BAG</b><button onclick="closeBag()" style="background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer">&times;</button></div>
-<div id="lines" style="margin:12px 0"></div><div class="total"><span>Total</span><span id="tot">$0.00</span></div>
-<div style="margin-top:14px"><input id="nm" placeholder="Full name"><input id="em" type="email" placeholder="Email"><input id="ad" placeholder="Shipping address"></div>
-<div id="msg"></div></div>
+<div class="bar">FREE SHIP OVER $45 • FREE SOLID BRASS BOTANICAL MISTER ($24 VALUE) OVER $115 • CODE GROW15</div>
+<header><span class="brand">VERDEHYDRO</span>
+<nav><a href="#anatomy">Anatomy</a><a href="#shop">Shop</a><a href="#club">Club</a></nav>
+<button class="bag" onclick="openBag()">BAG (<span id="cnt">0</span>)</button></header>
+<section class="hero"><div class="glow"></div>
+<p class="k">INDOOR SUNLIGHT.</p><h1>VerdeHydro Brass Halo Grow Light &amp; Planter</h1>
+<p class="sub">4000K Full-Spectrum Brass Halo Grow Lights &amp; Self-Watering Glass — 12 products, built and shipped with a 60-day guarantee.</p>
+<a href="#shop" class="cta">Shop 12 products →</a></section>
+<div class="stack"><h2 id="anatomy">Inside the build</h2><div class='layer' style='--i:0'><span class='ln'>01 / 4000K SUNLIGHT HALO RING</span><span class='ld'>Full-spectrum growth without purple glare</span></div><div class='layer' style='--i:1'><span class='ln'>02 / 60in TELESCOPIC BRASS ROD</span><span class='ld'>Height-adjustable as your plants grow</span></div><div class='layer' style='--i:2'><span class='ln'>03 / AUTO-CYCLE 8H/12H/16H TIMER</span><span class='ld'>Wakes and sleeps automatically daily</span></div><div class='layer' style='--i:3'><span class='ln'>04 / SELF-WATERING GLASS VESSEL</span><span class='ld'>Cotton wick hydrates roots for 14 days</span></div>
+<h2 id="shop">All 12 products</h2><div class="grid"><article class="card reveal"><div class="ci"><b>VerdeHydro 4000K Brass Halo Grow Light &amp; Planter</b><p class="muted">A 4000K full-spectrum halo grow light in a solid brass ring, set into a self-watering ce</p><span class="sku">DROP-VERDE-001</span></div>
+<div class="cr"><div class="pr"><b>$49</b><s>$69</s></div>
+<button class="add" data-sku="DROP-VERDE-001" data-title="VerdeHydro 4000K Brass Halo Grow Light &amp; Planter" data-price="49">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Organic Liquid Plant Food (8 oz)</b><p class="muted">Balanced organic feed.</p><span class="sku">DROP-VERDE-002</span></div>
+<div class="cr"><div class="pr"><b>$19</b><s>$24</s></div>
+<button class="add" data-sku="DROP-VERDE-002" data-title="Organic Liquid Plant Food (8 oz)" data-price="19">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Hydro-Wick Refill Pack (10)</b><p class="muted">Ten replacement wicks.</p><span class="sku">DROP-VERDE-003</span></div>
+<div class="cr"><div class="pr"><b>$14</b><s>$24</s></div>
+<button class="add" data-sku="DROP-VERDE-003" data-title="Hydro-Wick Refill Pack (10)" data-price="14">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Propagation Station (6 Tubes)</b><p class="muted">Glass tubes on a brass stand.</p><span class="sku">DROP-VERDE-004</span></div>
+<div class="cr"><div class="pr"><b>$34</b><s>$49</s></div>
+<button class="add" data-sku="DROP-VERDE-004" data-title="Propagation Station (6 Tubes)" data-price="34">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Aroid Soil Mix (4 qt)</b><p class="muted">Chunky aroid mix.</p><span class="sku">DROP-VERDE-005</span></div>
+<div class="cr"><div class="pr"><b>$24</b><s>$34</s></div>
+<button class="add" data-sku="DROP-VERDE-005" data-title="Aroid Soil Mix (4 qt)" data-price="24">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Plant Mister (Brass)</b><p class="muted">Brass-bodied fine mister.</p><span class="sku">DROP-VERDE-006</span></div>
+<div class="cr"><div class="pr"><b>$29</b><s>$39</s></div>
+<button class="add" data-sku="DROP-VERDE-006" data-title="Plant Mister (Brass)" data-price="29">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Clip-On Grow Light</b><p class="muted">Clip light with a timer.</p><span class="sku">DROP-VERDE-007</span></div>
+<div class="cr"><div class="pr"><b>$39</b><s>$59</s></div>
+<button class="add" data-sku="DROP-VERDE-007" data-title="Clip-On Grow Light" data-price="39">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Self-Watering Planter (Medium)</b><p class="muted">Ceramic with a reservoir.</p><span class="sku">DROP-VERDE-008</span></div>
+<div class="cr"><div class="pr"><b>$49</b><s>$74</s></div>
+<button class="add" data-sku="DROP-VERDE-008" data-title="Self-Watering Planter (Medium)" data-price="49">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Propagation Heat Mat</b><p class="muted">10x20 in heat mat.</p><span class="sku">DROP-VERDE-009</span></div>
+<div class="cr"><div class="pr"><b>$39</b><s>$54</s></div>
+<button class="add" data-sku="DROP-VERDE-009" data-title="Propagation Heat Mat" data-price="39">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Pruning Shears (Brass)</b><p class="muted">Bypass shears, brass handles.</p><span class="sku">DROP-VERDE-010</span></div>
+<div class="cr"><div class="pr"><b>$29</b><s>$44</s></div>
+<button class="add" data-sku="DROP-VERDE-010" data-title="Pruning Shears (Brass)" data-price="29">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Rare Aroid Cutting Pack</b><p class="muted">Three rooted cuttings.</p><span class="sku">DROP-VERDE-011</span></div>
+<div class="cr"><div class="pr"><b>$64</b><s>$89</s></div>
+<button class="add" data-sku="DROP-VERDE-011" data-title="Rare Aroid Cutting Pack" data-price="64">Add +</button></div></article><article class="card reveal"><div class="ci"><b>Moisture Meter</b><p class="muted">Soil moisture and pH meter.</p><span class="sku">DROP-VERDE-012</span></div>
+<div class="cr"><div class="pr"><b>$24</b><s>$29</s></div>
+<button class="add" data-sku="DROP-VERDE-012" data-title="Moisture Meter" data-price="24">Add +</button></div></article></div>
+<h2 id="club">⭐ Verde Botanical Society</h2>
+<div class="card"><div><b>Subscribe &amp; save 20% monthly</b><p class="muted">Monthly club drop, cancel anytime.</p></div><div class="cr"><b style="color:var(--ac)">VIP</b></div></div>
+<div class="card"><div><b>B2B bulk — 30% off 10+, 35% off 25+</b><p class="muted">Schools, clinics, studios, offices. Code B2B35</p></div><div class="cr"><b style="color:var(--ac)">B2B</b></div></div>
+<p style="margin-top:26px"><a href="../index.html" style="color:var(--ac)">← All 17 stores</a></p></div>
+<footer>VerdeHydro • verdehydro.com • Branch store-15-verde-hydro<br>60-day guarantee • Free returns • Secure checkout</footer>
+<div id="dw"><div class="sc" onclick="closeBag()"></div><div class="pn">
+<div><div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #ffffff14"><b>YOUR BAG</b><button onclick="closeBag()" style="background:none;border:none;color:#fff;font-size:1.35rem;cursor:pointer">&times;</button></div>
+<div id="lines" style="margin:12px 0"></div><div class="tot"><span>Total</span><span id="tot">$0.00</span></div>
+<div style="margin-top:14px"><input id="nm" placeholder="Full name"><input id="em" type="email" placeholder="Email"><input id="ad" placeholder="Shipping address"></div><div id="msg"></div></div>
 <button class="pay" onclick="pay()">PAY NOW — GROW15</button></div></div>
 <script>
 var CART=[];
-function openBag(){document.getElementById('drawer').classList.add('on');render()}
-function closeBag(){document.getElementById('drawer').classList.remove('on')}
-function add(sku,title,price){var f=CART.find(function(c){return c.sku===sku});if(f){f.qty++}else{CART.push({sku:sku,title:title,priceUsd:price,qty:1})}render();openBag()}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%6*40)+'ms';io.observe(el)});
+function openBag(){document.getElementById('dw').classList.add('on');render()}
+function closeBag(){document.getElementById('dw').classList.remove('on')}
+function add(sku,title,price){var f=CART.find(function(c){return c.sku===sku});if(f)f.qty++;else CART.push({sku:sku,title:title,priceUsd:price,qty:1});render();openBag()}
 document.querySelectorAll('.add').forEach(function(b){b.addEventListener('click',function(){add(b.dataset.sku,b.dataset.title,parseFloat(b.dataset.price))})});
 function render(){var n=CART.reduce(function(s,c){return s+c.qty},0);document.getElementById('cnt').textContent=n;
 var t=CART.reduce(function(s,c){return s+c.priceUsd*c.qty},0);
@@ -90,7 +114,7 @@ function pay(){if(!CART.length){document.getElementById('msg').innerHTML='<div c
 var tot=CART.reduce(function(s,c){return s+c.priceUsd*c.qty},0);
 var oid='ORD-'+Date.now().toString(36).toUpperCase();
 var ord={id:oid,store:'store-15-verde-hydro',items:CART,total:Math.round(tot*100)/100,customer:{name:document.getElementById('nm').value,email:document.getElementById('em').value,address:document.getElementById('ad').value},createdAt:new Date().toISOString(),status:'paid_pending_fulfillment'};
-try{var all=JSON.parse(localStorage.getItem('dropper_orders')||'[]');all.push(ord);localStorage.setItem('dropper_orders',JSON.stringify(all))}catch(e){}
+try{var a=JSON.parse(localStorage.getItem('dropper_orders')||'[]');a.push(ord);localStorage.setItem('dropper_orders',JSON.stringify(a))}catch(e){}
 fetch('/api/orders',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(ord)}).catch(function(){});
 document.getElementById('msg').innerHTML='<div class="ok">Order '+oid+' confirmed — $'+ord.total.toFixed(2)+'. Thank you'+(ord.customer.name?', '+ord.customer.name:'')+'!</div>';
 CART=[];render()}
