@@ -6,6 +6,7 @@ import type { StoreTelemetry, FleetState } from "./api/fleet/route";
 import storeMatrix from "@/config/store_matrix.json";
 import LiveStoresFleetSection from "@/components/LiveStoresFleetSection";
 import WorkspaceAndExecutionHub from "@/components/WorkspaceAndExecutionHub";
+import DropperOsV2CommandPanel from "@/components/DropperOsV2CommandPanel";
 
 const STORE_PRESETS: Record<string, { label: string; query: string }[]> = {
   "ember-oak": [
@@ -492,6 +493,13 @@ export default function MissionControlDashboard() {
               <span>All {fleet?.stores.length || 15} Stores →</span>
             </Link>
 
+            <Link
+              href="/account/orders"
+              className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] border border-[#334155] text-xs font-semibold text-[#F8FAFC] transition-all whitespace-nowrap shrink-0"
+            >
+              <span>Order History</span>
+            </Link>
+
             {/* Quick jump to AI Studio */}
             <a
               href="#google-ai-design-studio"
@@ -664,6 +672,9 @@ export default function MissionControlDashboard() {
           onCreateStore={handleCreateNewStore}
           isProvisioning={isProvisioningAll}
         />
+
+        {/* Dropper OS V2.0.0 Master Architectural Blueprint Subsystems */}
+        <DropperOsV2CommandPanel />
 
         {/* Master Execution Engine, 15-Store Deep Audit & 8 Google Workspace Integrations */}
         <WorkspaceAndExecutionHub

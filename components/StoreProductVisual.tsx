@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+
+export type StudioViewMode = "studio" | "anatomy" | "unboxing" | "ritual";
 
 interface StoreProductVisualProps {
   storeId: string;
@@ -10,7 +12,108 @@ interface StoreProductVisualProps {
   title: string;
   category?: string;
   aspectRatio?: "16:9" | "4:3";
+  interactive?: boolean;
+  freeGift?: string;
+  heroSpecs?: string[];
+  activeEdition?: string;
 }
+
+const STORE_HOTSPOTS: Record<
+  string,
+  Array<{ x: number; y: number; label: string; detail: string }>
+> = {
+  "bizi-bees": [
+    {
+      x: 34,
+      y: 36,
+      label: "80lb Archival Kraft Wrap",
+      detail: "Hand-pleated vintage kraft jacket with pressed wild lavender & eucalyptus stems.",
+    },
+    {
+      x: 50,
+      y: 50,
+      label: "24k Gold-Toned Beeswax Seal",
+      detail: "Stamped in small batches at our Salt Lake City studio with 4 handwritten genre clues.",
+    },
+    {
+      x: 68,
+      y: 66,
+      label: "Solid Brass Honeybee Bookmark",
+      detail: "Precision-cast heirloom brass page clip unlocked free on all VIP & Master bundles.",
+    },
+  ],
+  "ember-oak": [
+    {
+      x: 32,
+      y: 42,
+      label: "Kiln-Dried Spanish Cedar",
+      detail: "100% aromatic Spanish cedar interior lining engineered to lock in 68%–72% RH.",
+    },
+    {
+      x: 50,
+      y: 62,
+      label: " Brass Analog Hair Hygrometer",
+      detail: "Flush-mounted precision calibration dial with magnetic humidifier bar.",
+    },
+    {
+      x: 70,
+      y: 38,
+      label: "Quad-Jet Windproof Butane Torch",
+      detail: "Machined gunmetal body with fold-out stainless V-cutter & crystal cigar rest.",
+    },
+  ],
+  "luma-clinical": [
+    {
+      x: 50,
+      y: 32,
+      label: "660nm Red + 415nm Blue Array",
+      detail: "18 medical-grade LEDs delivering 45mW/cm² irradiance for dermal collagen synthesis.",
+    },
+    {
+      x: 50,
+      y: 55,
+      label: "300uA Microcurrent Sculpting Head",
+      detail: "90° rotating titanium head contours cheekbones, jawline, and orbital skin.",
+    },
+    {
+      x: 68,
+      y: 72,
+      label: "42°C Thermal & Sonic Infusion",
+      detail: "Multiplies absorption of the included Hyaluronic + Tri-Peptide Conductive Serum.",
+    },
+  ],
+};
+
+const getHotspotsForStore = (
+  storeId: string,
+  title: string,
+  freeGift?: string,
+  heroSpecs?: string[]
+) => {
+  if (STORE_HOTSPOTS[storeId]) return STORE_HOTSPOTS[storeId];
+  return [
+    {
+      x: 34,
+      y: 38,
+      label: "Core Studio Architecture",
+      detail: heroSpecs?.[0] || `Precision-engineered ${title} primary chassis.`,
+    },
+    {
+      x: 52,
+      y: 54,
+      label: "Calibrated Performance Spec",
+      detail: heroSpecs?.[1] || "Tested for daily high-output durability and tactile comfort.",
+    },
+    {
+      x: 68,
+      y: 66,
+      label: "Unlocked VIP Gift Suite",
+      detail: freeGift
+        ? `Includes complimentary ${freeGift} on VIP & Master tiers.`
+        : heroSpecs?.[2] || "Dispatched within 24 hours from our Salt Lake City, UT hub.",
+    },
+  ];
+};
 
 export default function StoreProductVisual({
   storeId,
@@ -20,236 +123,260 @@ export default function StoreProductVisual({
   title,
   category = "Flagship Edition",
   aspectRatio = "4:3",
+  interactive = false,
+  freeGift,
+  heroSpecs,
+  activeEdition,
 }: StoreProductVisualProps) {
+  const [viewMode, setViewMode] = useState<StudioViewMode>("studio");
+  const [activeHotspot, setActiveHotspot] = useState<number | null>(interactive ? 1 : null);
+
+  const hotspots = getHotspotsForStore(storeId, title, freeGift, heroSpecs);
+
   const renderDomainIllustration = () => {
+    const uid = `${storeId}-${productIndex}-${viewMode}`;
+
     switch (storeId) {
       case "bizi-bees":
         return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
+          <svg viewBox="0 0 360 230" className="w-full h-full" aria-hidden="true">
             <defs>
-              <linearGradient id={`kraft-${productIndex}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#D6B588" />
-                <stop offset="100%" stopColor="#B0895A" />
+              <radialGradient id={`glow-${uid}`} cx="50%" cy="50%" r="55%">
+                <stop offset="0%" stopColor={accentColor} stopOpacity="0.28" />
+                <stop offset="100%" stopColor="#090D16" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id={`kraft-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#E5C69B" />
+                <stop offset="55%" stopColor="#C89E68" />
+                <stop offset="100%" stopColor="#9B7240" />
+              </linearGradient>
+              <linearGradient id={`gold-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FEF08A" />
+                <stop offset="50%" stopColor="#F59E0B" />
+                <stop offset="100%" stopColor="#B45309" />
               </linearGradient>
             </defs>
-            <rect x="75" y="32" width="170" height="154" rx="6" fill="#8C673E" opacity="0.45" transform="rotate(-4 160 110)" />
-            <rect x="80" y="28" width="160" height="156" rx="5" fill={`url(#kraft-${productIndex})`} stroke="#78552B" strokeWidth="1.5" />
-            <line x1="80" y1="106" x2="240" y2="106" stroke="#5C4022" strokeWidth="3.5" strokeDasharray="6 2" />
-            <line x1="160" y1="28" x2="160" y2="184" stroke="#5C4022" strokeWidth="3.5" strokeDasharray="6 2" />
-            <path d="M135 72 Q155 90 175 138" stroke="#3F6212" strokeWidth="2" fill="none" />
-            <ellipse cx="142" cy="78" rx="6" ry="3" transform="rotate(-30 142 78)" fill="#65A30D" />
-            <ellipse cx="148" cy="88" rx="6" ry="3" transform="rotate(25 148 88)" fill="#65A30D" />
-            <ellipse cx="152" cy="96" rx="6" ry="3" transform="rotate(-25 152 96)" fill="#84CC16" />
-            <circle cx="160" cy="106" r="22" fill="#D97706" stroke="#FDE68A" strokeWidth="2" />
-            <circle cx="160" cy="106" r="16" fill="#B45309" stroke="#FCD34D" strokeWidth="1" />
-            <ellipse cx="160" cy="107" rx="5" ry="7" fill="#FDE68A" />
-            <ellipse cx="152" cy="104" rx="6" ry="3.5" transform="rotate(-20 152 104)" fill="#FEF3C7" opacity="0.85" />
-            <ellipse cx="168" cy="104" rx="6" ry="3.5" transform="rotate(20 168 104)" fill="#FEF3C7" opacity="0.85" />
-            <rect x="104" y="138" width="112" height="30" rx="3" fill="#FAF7F2" stroke="#D6B588" strokeWidth="1" />
-            <line x1="116" y1="149" x2="204" y2="149" stroke="#78552B" strokeWidth="1.5" />
-            <line x1="126" y1="158" x2="194" y2="158" stroke="#A1805B" strokeWidth="1.5" />
+
+            {/* Studio Spotlight & Pedestal Shadow */}
+            <circle cx="180" cy="112" r="98" fill={`url(#glow-${uid})`} />
+            <ellipse cx="180" cy="198" rx="96" ry="12" fill="#020617" opacity="0.7" />
+
+            {/* Secondary Stacked Book in VIP/Unboxing Mode */}
+            <rect
+              x="92"
+              y="30"
+              width="172"
+              height="156"
+              rx="6"
+              fill="#78552B"
+              opacity="0.55"
+              transform="rotate(-5 180 110)"
+            />
+
+            {/* Main Hand-Wrapped Archival Book Parcel */}
+            <rect
+              x="100"
+              y="26"
+              width="160"
+              height="160"
+              rx="6"
+              fill={`url(#kraft-${uid})`}
+              stroke="#5C4022"
+              strokeWidth="1.5"
+            />
+            {/* Paper Fold Crease Lines */}
+            <line x1="100" y1="26" x2="128" y2="54" stroke="#8C673E" strokeWidth="1" opacity="0.6" />
+            <line x1="260" y1="26" x2="232" y2="54" stroke="#8C673E" strokeWidth="1" opacity="0.6" />
+
+            {/* Braided Jute Twine Cross */}
+            <line x1="100" y1="106" x2="260" y2="106" stroke="#4A3219" strokeWidth="4" strokeDasharray="7 2" />
+            <line x1="180" y1="26" x2="180" y2="186" stroke="#4A3219" strokeWidth="4" strokeDasharray="7 2" />
+
+            {/* Pressed Botanical Sprig */}
+            <path d="M150 62 Q174 86 196 140" stroke="#365314" strokeWidth="2.2" fill="none" />
+            <ellipse cx="158" cy="70" rx="7" ry="3.2" transform="rotate(-32 158 70)" fill="#65A30D" />
+            <ellipse cx="166" cy="82" rx="7" ry="3.2" transform="rotate(24 166 82)" fill="#65A30D" />
+            <ellipse cx="171" cy="92" rx="7" ry="3.2" transform="rotate(-24 171 92)" fill="#84CC16" />
+
+            {/* 24k Gold Beeswax Seal */}
+            <circle cx="180" cy="106" r="24" fill={`url(#gold-${uid})`} stroke="#FEF3C7" strokeWidth="1.5" />
+            <circle cx="180" cy="106" r="17" fill="#92400E" stroke="#FDE68A" strokeWidth="1" />
+            <ellipse cx="180" cy="107" rx="5.5" ry="7.5" fill="#FDE68A" />
+            <ellipse cx="171" cy="104" rx="6.5" ry="3.5" transform="rotate(-22 171 104)" fill="#FFFBEB" opacity="0.9" />
+            <ellipse cx="189" cy="104" rx="6.5" ry="3.5" transform="rotate(22 189 104)" fill="#FFFBEB" opacity="0.9" />
+
+            {/* Deckle-Edge Typewriter Clue Card */}
+            <rect x="120" y="140" width="120" height="34" rx="3" fill="#FAF7F2" stroke="#D6B588" strokeWidth="1" />
+            <line x1="132" y1="152" x2="228" y2="152" stroke="#5C4022" strokeWidth="1.8" />
+            <line x1="142" y1="162" x2="218" y2="162" stroke="#A1805B" strokeWidth="1.4" />
+
+            {/* View-Specific Overlays */}
+            {viewMode === "unboxing" && (
+              <g>
+                <rect x="268" y="64" width="66" height="114" rx="8" fill="#1E293B" stroke="#F59E0B" strokeWidth="1.5" />
+                <circle cx="301" cy="104" r="14" fill={`url(#gold-${uid})`} />
+                <text x="301" y="144" textAnchor="middle" fill="#FDE68A" fontSize="8" fontFamily="monospace">
+                  FREE VIP GIFT
+                </text>
+                <text x="301" y="156" textAnchor="middle" fill="#F8FAFC" fontSize="7" fontFamily="sans-serif">
+                  Brass Clip
+                </text>
+              </g>
+            )}
+            {viewMode === "anatomy" && (
+              <g stroke="#FDE68A" strokeWidth="1" strokeDasharray="3 3">
+                <line x1="56" y1="56" x2="108" y2="56" />
+                <text x="52" y="53" textAnchor="end" fill="#FDE68A" fontSize="8" fontFamily="monospace">
+                  80LB KRAFT
+                </text>
+                <line x1="252" y1="106" x2="306" y2="106" />
+                <text x="310" y="109" fill="#FDE68A" fontSize="8" fontFamily="monospace">
+                  WAX SEAL
+                </text>
+              </g>
+            )}
+            {viewMode === "ritual" && (
+              <g>
+                <path d="M58 140 Q52 118 62 102 Q70 86 60 68" stroke="#FDE68A" strokeWidth="1.8" fill="none" opacity="0.65" />
+                <rect x="42" y="144" width="36" height="38" rx="6" fill="#B45309" stroke="#FDE68A" strokeWidth="1.2" />
+                <text x="60" y="167" textAnchor="middle" fill="#FEF3C7" fontSize="7" fontFamily="monospace">
+                  SOY 4OZ
+                </text>
+              </g>
+            )}
           </svg>
         );
 
       case "ember-oak":
         return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            <rect x="64" y="62" width="192" height="114" rx="8" fill="#5C2D0C" stroke="#B45309" strokeWidth="2" />
-            <rect x="72" y="70" width="176" height="98" rx="4" fill="#431E05" stroke="#92400E" strokeWidth="1.2" />
-            <line x1="64" y1="106" x2="256" y2="106" stroke="#F59E0B" strokeWidth="2" />
-            <circle cx="160" cy="138" r="22" fill="#1C1917" stroke="#F59E0B" strokeWidth="3" />
-            <circle cx="160" cy="138" r="17" fill="none" stroke="#FDE68A" strokeWidth="0.75" strokeDasharray="3 3" />
-            <line x1="160" y1="138" x2="171" y2="127" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="160" cy="138" r="3" fill="#FDE68A" />
-            <rect x="64" y="100" width="14" height="12" fill="#D97706" />
-            <rect x="242" y="100" width="14" height="12" fill="#D97706" />
+          <svg viewBox="0 0 360 230" className="w-full h-full" aria-hidden="true">
+            <defs>
+              <radialGradient id={`glow-${uid}`} cx="50%" cy="50%" r="55%">
+                <stop offset="0%" stopColor="#D97706" stopOpacity="0.28" />
+                <stop offset="100%" stopColor="#090D16" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id={`burl-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#7C2D12" />
+                <stop offset="50%" stopColor="#431407" />
+                <stop offset="100%" stopColor="#1C1917" />
+              </linearGradient>
+            </defs>
+            <circle cx="180" cy="115" r="102" fill={`url(#glow-${uid})`} />
+            <ellipse cx="180" cy="198" rx="108" ry="12" fill="#020617" opacity="0.75" />
+
+            {/* Burl Walnut & Spanish Cedar Humidor Chest */}
+            <rect x="74" y="56" width="212" height="122" rx="8" fill={`url(#burl-${uid})`} stroke="#D97706" strokeWidth="2" />
+            <rect x="84" y="66" width="192" height="102" rx="4" fill="#291206" stroke="#92400E" strokeWidth="1.2" />
+            {/* Brass Quadrant Hinges & Lid Seam */}
+            <line x1="74" y1="104" x2="286" y2="104" stroke="#F59E0B" strokeWidth="2.2" />
+            <rect x="74" y="97" width="16" height="14" rx="2" fill="#F59E0B" />
+            <rect x="270" y="97" width="16" height="14" rx="2" fill="#F59E0B" />
+
+            {/* Precision Brass Hygrometer Dial */}
+            <circle cx="180" cy="138" r="24" fill="#0C0A09" stroke="#F59E0B" strokeWidth="3" />
+            <circle cx="180" cy="138" r="18" fill="none" stroke="#FDE68A" strokeWidth="0.9" strokeDasharray="3 3" />
+            <line x1="180" y1="138" x2="192" y2="124" stroke="#10B981" strokeWidth="2.2" strokeLinecap="round" />
+            <circle cx="180" cy="138" r="3.5" fill="#FDE68A" />
+            <text x="180" y="152" textAnchor="middle" fill="#FDE68A" fontSize="7.5" fontFamily="monospace">
+              70% RH
+            </text>
+
+            {viewMode === "unboxing" && (
+              <g>
+                <rect x="294" y="74" width="48" height="96" rx="6" fill="#18181B" stroke="#F59E0B" strokeWidth="1.5" />
+                <text x="318" y="118" textAnchor="middle" fill="#FDE68A" fontSize="7" fontFamily="monospace">
+                  CRYSTAL
+                </text>
+                <text x="318" y="130" textAnchor="middle" fill="#F8FAFC" fontSize="7" fontFamily="monospace">
+                  REST FREE
+                </text>
+              </g>
+            )}
+            {viewMode === "ritual" && (
+              <g>
+                <path d="M180 52 Q170 32 184 18" stroke="#38BDF8" strokeWidth="2.5" fill="none" />
+                <text x="180" y="46" textAnchor="middle" fill="#38BDF8" fontSize="8" fontFamily="monospace">
+                  QUAD-JET 1300°C
+                </text>
+              </g>
+            )}
           </svg>
         );
 
       case "luma-clinical":
       case "dermasonic":
         return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            <circle cx="160" cy="78" r="46" fill={accentColor} opacity="0.18" />
-            <circle cx="160" cy="78" r="30" fill="#EF4444" opacity="0.22" />
-            <rect x="112" y="54" width="96" height="26" rx="13" fill="#E2E8F0" stroke={accentColor} strokeWidth="2" />
-            {[128, 144, 160, 176, 192].map((cx) => (
-              <circle key={cx} cx={cx} cy="67" r="4" fill="#F43F5E" />
+          <svg viewBox="0 0 360 230" className="w-full h-full" aria-hidden="true">
+            <defs>
+              <radialGradient id={`glow-${uid}`} cx="50%" cy="42%" r="52%">
+                <stop offset="0%" stopColor="#F43F5E" stopOpacity="0.34" />
+                <stop offset="55%" stopColor={accentColor} stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#090D16" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id={`wand-${uid}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#F8FAFC" />
+                <stop offset="50%" stopColor="#CBD5E1" />
+                <stop offset="100%" stopColor="#94A3B8" />
+              </linearGradient>
+            </defs>
+            <circle cx="180" cy="86" r="78" fill={`url(#glow-${uid})`} />
+            <circle cx="180" cy="82" r="46" fill="none" stroke="#F43F5E" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.7" />
+            <circle cx="180" cy="82" r="62" fill="none" stroke={accentColor} strokeWidth="1" strokeDasharray="3 5" opacity="0.5" />
+            <ellipse cx="180" cy="202" rx="76" ry="10" fill="#020617" opacity="0.75" />
+
+            {/* 90-Degree Rotating Phototherapy LED Bar */}
+            <rect x="122" y="52" width="116" height="30" rx="15" fill={`url(#wand-${uid})`} stroke={accentColor} strokeWidth="2.2" />
+            {[138, 155, 172, 188, 205, 222].map((cx, i) => (
+              <circle key={cx} cx={cx} cy="67" r="4.5" fill={i % 2 === 0 ? "#F43F5E" : "#38BDF8"} />
             ))}
-            <rect x="149" y="80" width="22" height="108" rx="11" fill="#CBD5E1" stroke="#64748B" strokeWidth="1.5" />
-            <rect x="154" y="114" width="12" height="28" rx="6" fill="#0F172A" />
-            <circle cx="160" cy="122" r="3" fill={accentColor} />
-          </svg>
-        );
 
-      case "luma-relief":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            <circle cx="160" cy="110" r="64" fill="#8B5CF6" opacity="0.14" />
-            {/* 360 Cold Compression Hydrogel Cap */}
-            <path d="M96 135 C96 72 224 72 224 135 L212 152 Q160 132 108 152 Z" fill="#2E1065" stroke="#8B5CF6" strokeWidth="2.5" />
-            <path d="M104 114 Q160 98 216 114" stroke="#A78BFA" strokeWidth="1.5" fill="none" strokeDasharray="5 3" />
-            <path d="M144 143 Q160 126 176 143" stroke="#C4B5FD" strokeWidth="2" fill="none" />
-          </svg>
-        );
+            {/* Brushed Aluminum Ergonomic Stem */}
+            <rect x="167" y="82" width="26" height="114" rx="13" fill={`url(#wand-${uid})`} stroke="#64748B" strokeWidth="1.5" />
+            <rect x="173" y="114" width="14" height="36" rx="7" fill="#0F172A" />
+            <circle cx="180" cy="124" r="3.5" fill={accentColor} />
+            <text x="180" y="142" textAnchor="middle" fill="#F8FAFC" fontSize="6.5" fontFamily="monospace">
+              660nm
+            </text>
 
-      case "fizz-lab":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {[104, 160, 216].map((x, idx) => (
-              <g key={x}>
-                <rect x={x - 3} y="32" width="6" height="22" fill="#F59E0B" />
-                <path d={`M${x - 8} 32 L${x + 14} 32 L${x + 18} 38`} stroke="#FDE68A" strokeWidth="3" fill="none" strokeLinecap="round" />
-                <rect x={x - 8} y="54" width="16" height="22" rx="3" fill="#334155" />
-                <rect
-                  x={x - 20}
-                  y="74"
-                  width="40"
-                  height="112"
-                  rx="8"
-                  fill={idx === 0 ? "#F43F5E" : idx === 1 ? "#F59E0B" : "#06B6D4"}
-                  opacity="0.88"
-                  stroke="#F8FAFC"
-                  strokeWidth="1.2"
-                />
-                <rect x={x - 15} y="102" width="30" height="52" rx="3" fill="#FAF7F2" />
-                <line x1={x - 10} y1="118" x2={x + 10} y2="118" stroke="#0F172A" strokeWidth="2" />
-                <line x1={x - 8} y1="130" x2={x + 8} y2="130" stroke="#64748B" strokeWidth="1.5" />
-              </g>
-            ))}
-          </svg>
-        );
-
-      case "crave-lab":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            <rect x="66" y="38" width="188" height="144" rx="10" fill="#27170E" stroke="#D97706" strokeWidth="2" />
-            {[80, 124, 168, 212].map((x, idx) => (
-              <g key={x}>
-                <rect
-                  x={x - 2}
-                  y="52"
-                  width="34"
-                  height="116"
-                  rx="4"
-                  fill={idx % 2 === 0 ? "#3E2112" : "#5A321C"}
-                  stroke="#92400E"
-                  strokeWidth="1"
-                />
-                <rect x={x - 2} y="114" width="34" height="54" rx="3" fill="#D97706" />
-                <line x1={x + 4} y1="68" x2={x + 26} y2="68" stroke="#78350F" strokeWidth="2" />
-                <line x1={x + 4} y1="86" x2={x + 26} y2="86" stroke="#78350F" strokeWidth="2" />
-              </g>
-            ))}
-          </svg>
-        );
-
-      case "aura-sculpt":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Seamless Studio Top + High-Waist Legging Silhouette */}
-            <path d="M126 36 L142 36 L146 58 L174 58 L178 36 L194 36 L198 84 L122 84 Z" fill="#065F46" stroke="#10B981" strokeWidth="2" />
-            <path d="M126 94 L194 94 L204 186 L172 186 L160 128 L148 186 L116 186 Z" fill="#047857" stroke="#34D399" strokeWidth="2" />
-            <line x1="127" y1="108" x2="193" y2="108" stroke="#6EE7B7" strokeWidth="1.5" strokeDasharray="4 2" />
-          </svg>
-        );
-
-      case "pawglow":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Ultrasonic Cool Mist Cloud + Brush Head */}
-            <circle cx="160" cy="60" r="24" fill="#A855F7" opacity="0.2" />
-            <circle cx="140" cy="52" r="14" fill="#D8B4FE" opacity="0.25" />
-            <circle cx="180" cy="52" r="14" fill="#D8B4FE" opacity="0.25" />
-            <ellipse cx="160" cy="96" rx="54" ry="30" fill="#1E1B4B" stroke="#A855F7" strokeWidth="2.5" />
-            <circle cx="160" cy="96" r="10" fill="#C084FC" />
-            <rect x="148" y="126" width="24" height="62" rx="12" fill="#312E81" stroke="#A855F7" strokeWidth="2" />
-          </svg>
-        );
-
-      case "zenith-sleep":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* 3D Contoured Bluetooth Blackout Sleep Mask */}
-            <path d="M74 108 C74 74 134 74 160 92 C186 74 246 74 246 108 C246 142 192 146 160 124 C128 146 74 142 74 108 Z" fill="#1E1B4B" stroke="#6366F1" strokeWidth="2.5" />
-            <ellipse cx="118" cy="108" rx="26" ry="16" fill="#0F172A" stroke="#818CF8" strokeWidth="1.5" />
-            <ellipse cx="202" cy="108" rx="26" ry="16" fill="#0F172A" stroke="#818CF8" strokeWidth="1.5" />
-            <circle cx="86" cy="108" r="5" fill="#A5B4FC" />
-            <circle cx="234" cy="108" r="5" fill="#A5B4FC" />
-          </svg>
-        );
-
-      case "aura-posture":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Figure-8 Smart Haptic Posture Sensor */}
-            <path d="M116 54 C84 54 84 136 132 126 M204 54 C236 54 236 136 188 126" stroke="#334155" strokeWidth="12" fill="none" strokeLinecap="round" />
-            <rect x="134" y="82" width="52" height="64" rx="16" fill="#0F172A" stroke="#14B8A6" strokeWidth="2.5" />
-            <circle cx="160" cy="106" r="12" fill="#134E4A" stroke="#2DD4BF" strokeWidth="2" />
-            <circle cx="160" cy="106" r="4" fill="#5EEAD4" />
-          </svg>
-        );
-
-      case "lumicarve":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Precision CNC Cordless Micro-Engraving Pen */}
-            <g transform="rotate(-28 160 110)">
-              <rect x="148" y="34" width="24" height="126" rx="6" fill="#334155" stroke="#EAB308" strokeWidth="2" />
-              <rect x="152" y="64" width="16" height="32" rx="3" fill="#0F172A" />
-              <line x1="148" y1="120" x2="172" y2="120" stroke="#FDE047" strokeWidth="2" />
-              <polygon points="152,160 168,160 163,182 157,182" fill="#94A3B8" />
-              <line x1="160" y1="182" x2="160" y2="202" stroke="#FDE047" strokeWidth="2.5" />
-              <circle cx="160" cy="202" r="5" fill="#FEF08A" />
+            {/* Included Conductive Peptide Serum Bottle */}
+            <g transform="translate(238, 108)">
+              <rect x="10" y="0" width="12" height="14" rx="2" fill="#E2E8F0" />
+              <rect x="4" y="14" width="24" height="62" rx="6" fill="#0EA5E9" opacity="0.85" stroke="#BAE6FD" strokeWidth="1.2" />
+              <text x="16" y="48" textAnchor="middle" fill="#F8FAFC" fontSize="6.5" fontFamily="monospace">
+                PEPTIDE
+              </text>
             </g>
-          </svg>
-        );
-
-      case "calmcore":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Weighted 12-Channel Quilted Herbal Shoulder & Neck Wrap */}
-            <path d="M82 128 C82 64 238 64 238 128 C238 158 202 168 190 144 C180 122 140 122 130 144 C118 168 82 158 82 128 Z" fill="#164E63" stroke="#06B6D4" strokeWidth="2.5" />
-            <line x1="122" y1="78" x2="132" y2="138" stroke="#67E8F9" strokeWidth="1.2" strokeDasharray="3 3" />
-            <line x1="160" y1="70" x2="160" y2="126" stroke="#67E8F9" strokeWidth="1.2" strokeDasharray="3 3" />
-            <line x1="198" y1="78" x2="188" y2="138" stroke="#67E8F9" strokeWidth="1.2" strokeDasharray="3 3" />
-          </svg>
-        );
-
-      case "floraspring":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Set of 4 Olla Terracotta Self-Watering Spikes */}
-            {[96, 138, 182, 224].map((x) => (
-              <g key={x}>
-                <ellipse cx={x} cy="68" rx="15" ry="7" fill="#9A3412" stroke="#F97316" strokeWidth="1.5" />
-                <polygon points={`${x - 14},70 ${x + 14},70 ${x + 3},174 ${x - 3},174`} fill="#C2410C" stroke="#EA580C" strokeWidth="1.2" />
-                <path d={`M${x} 58 Q${x - 10} 40 ${x - 22} 46`} stroke="#22C55E" strokeWidth="2" fill="none" />
-                <ellipse cx={x - 16} cy="45" rx="7" ry="3.5" fill="#22C55E" />
-              </g>
-            ))}
-          </svg>
-        );
-
-      case "velobrew":
-        return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            {/* Cordless 20-Bar Portable Espresso Maker */}
-            <rect x="122" y="34" width="76" height="148" rx="16" fill="#1C1917" stroke="#F97316" strokeWidth="2.5" />
-            <line x1="122" y1="74" x2="198" y2="74" stroke="#EA580C" strokeWidth="2" />
-            <line x1="122" y1="142" x2="198" y2="142" stroke="#44403C" strokeWidth="2" />
-            <circle cx="160" cy="108" r="14" fill="#0C0A09" stroke="#F97316" strokeWidth="2" />
-            <text x="160" y="112" textAnchor="middle" fill="#FDBA74" fontSize="10" fontFamily="monospace">93°C</text>
           </svg>
         );
 
       default:
         return (
-          <svg viewBox="0 0 320 220" className="w-full h-full" aria-hidden="true">
-            <circle cx="160" cy="108" r="72" fill={accentColor} opacity="0.16" />
-            <rect x="114" y="52" width="92" height="108" rx="22" fill="#0F172A" stroke={accentColor} strokeWidth="2.2" />
-            <circle cx="160" cy="96" r="22" fill="none" stroke={secondaryColor} strokeWidth="2" />
-            <circle cx="160" cy="96" r="8" fill={accentColor} />
+          <svg viewBox="0 0 360 230" className="w-full h-full" aria-hidden="true">
+            <defs>
+              <radialGradient id={`glow-${uid}`} cx="50%" cy="50%" r="55%">
+                <stop offset="0%" stopColor={accentColor} stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#090D16" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id={`body-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#1E293B" />
+                <stop offset="100%" stopColor="#0F172A" />
+              </linearGradient>
+            </defs>
+            <circle cx="180" cy="112" r="88" fill={`url(#glow-${uid})`} />
+            <ellipse cx="180" cy="198" rx="86" ry="11" fill="#020617" opacity="0.7" />
+            <rect
+              x="116"
+              y="44"
+              width="128"
+              height="132"
+              rx="24"
+              fill={`url(#body-${uid})`}
+              stroke={accentColor}
+              strokeWidth="2.2"
+            />
+            <circle cx="180" cy="102" r="28" fill="#090D16" stroke={secondaryColor} strokeWidth="1.8" />
+            <circle cx="180" cy="102" r="10" fill={accentColor} />
+            <line x1="142" y1="150" x2="218" y2="150" stroke={accentColor} strokeWidth="2" strokeLinecap="round" />
           </svg>
         );
     }
@@ -257,21 +384,130 @@ export default function StoreProductVisual({
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-[#0D1322] border-b border-slate-800/80 flex flex-col justify-between p-4 select-none ${
-        aspectRatio === "16:9" ? "aspect-video" : "aspect-[4/3]"
+      className={`relative w-full overflow-hidden bg-gradient-to-b from-[#0E1526] via-[#0B101D] to-[#080B14] border-b border-slate-800/80 flex flex-col justify-between p-5 select-none group ${
+        interactive ? "min-h-[390px]" : aspectRatio === "16:9" ? "aspect-video" : "aspect-[4/3]"
       }`}
     >
-      <div className="flex items-center justify-between text-[11px] text-slate-400 z-10">
-        <span className="uppercase tracking-wider font-medium truncate">{category}</span>
-        <span className="font-mono text-slate-500">24h Utah Hub</span>
+      {/* Top Studio Header Bar — Clean Unboxed Metadata with Middot Separators */}
+      <div className="flex items-center justify-between gap-2 text-xs text-slate-400 z-10 shrink-0">
+        <div className="flex items-center gap-2 truncate">
+          <span className="font-medium text-slate-300 truncate">{category}</span>
+          {activeEdition && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span style={{ color: accentColor }} className="font-medium truncate">
+                {activeEdition}
+              </span>
+            </>
+          )}
+        </div>
+        <span className="font-mono text-[11px] text-slate-400 shrink-0 tabular-nums">
+          24h Utah Dispatch
+        </span>
       </div>
 
-      <div className="flex-1 flex items-center justify-center my-1">{renderDomainIllustration()}</div>
+      {/* Central Vector Studio Canvas + Optional Interactive Hotspot Pins */}
+      <div className="relative flex-1 flex items-center justify-center my-2 min-h-[220px]">
+        <div
+          className={`w-full flex items-center justify-center transition-transform duration-200 ease-out group-hover:scale-[1.02] ${
+            interactive ? "h-56" : "h-full"
+          }`}
+        >
+          {renderDomainIllustration()}
+        </div>
 
-      <div className="flex items-center justify-between text-[11px] text-slate-400 z-10 pt-1 border-t border-slate-800/60">
-        <span className="truncate font-medium text-slate-300">{title}</span>
-        <span style={{ color: accentColor }} className="font-mono font-semibold shrink-0 ml-2">
-          Verified
+        {/* Interactive Engineering & Craftsmanship Hotspots (Hero Mode) */}
+        {interactive && (
+          <div className="absolute inset-0 pointer-events-none">
+            {hotspots.map((spot, idx) => {
+              const isSelected = activeHotspot === idx;
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setActiveHotspot(isSelected ? null : idx)}
+                  style={{
+                    left: `${spot.x}%`,
+                    top: `${spot.y}%`,
+                    borderColor: isSelected ? "#FFFFFF" : accentColor,
+                    backgroundColor: isSelected ? accentColor : "#090D16",
+                    color: isSelected ? "#090D16" : "#FFFFFF",
+                  }}
+                  aria-label={`Inspect specification ${idx + 1}: ${spot.label}`}
+                  className="pointer-events-auto absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full border-2 text-[11px] font-mono font-bold flex items-center justify-center shadow-lg transition-transform duration-150 hover:scale-110"
+                >
+                  0{idx + 1}
+                </button>
+              );
+            })}
+
+            {activeHotspot !== null && hotspots[activeHotspot] && (
+              <div className="pointer-events-auto absolute bottom-1 right-1 w-72 max-w-[90%] p-3 rounded-lg bg-[#090D16]/95 border border-slate-700 shadow-2xl text-xs space-y-1 backdrop-blur-md z-20">
+                <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                  <span style={{ color: accentColor }}>
+                    SPECIFICATION 0{activeHotspot + 1}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveHotspot(null)}
+                    className="text-slate-400 hover:text-white"
+                  >
+                    Close
+                  </button>
+                </div>
+                <div className="font-semibold text-white">
+                  {hotspots[activeHotspot].label}
+                </div>
+                <p className="text-slate-300 text-[11px] leading-snug">
+                  {hotspots[activeHotspot].detail}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Studio Control / Caption Strip */}
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-slate-800/70 z-10 text-xs shrink-0">
+        {interactive ? (
+          <div
+            role="tablist"
+            aria-label="Product studio camera angles"
+            className="flex items-center gap-1 bg-[#090D16] p-1 rounded-lg border border-slate-800 overflow-x-auto"
+          >
+            {(
+              [
+                { id: "studio", label: "01. Studio" },
+                { id: "anatomy", label: "02. Blueprint" },
+                { id: "unboxing", label: "03. VIP Gift" },
+                { id: "ritual", label: "04. In Ritual" },
+              ] as const
+            ).map((mode) => (
+              <button
+                key={mode.id}
+                type="button"
+                role="tab"
+                aria-selected={viewMode === mode.id}
+                onClick={() => setViewMode(mode.id)}
+                className={`px-2.5 py-1 rounded text-[11px] font-medium transition-colors whitespace-nowrap shrink-0 ${
+                  viewMode === mode.id
+                    ? "bg-slate-800 text-white font-semibold"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                {mode.label}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <span className="truncate font-medium text-slate-300">{title}</span>
+        )}
+
+        <span
+          style={{ color: accentColor }}
+          className="font-mono text-[11px] font-semibold shrink-0 ml-auto"
+        >
+          {interactive ? "Click 01–03 Pins to Inspect" : "In Stock"}
         </span>
       </div>
     </div>

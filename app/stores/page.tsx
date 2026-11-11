@@ -2,11 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { INITIAL_STORES, calculateBundleSavings } from "@/lib/stores-catalog";
+import {
+  INITIAL_STORES,
+  calculateBundleSavings,
+  type StoreDefinition,
+} from "@/lib/stores-catalog";
 import StoreProductVisual from "@/components/StoreProductVisual";
 
 const CATEGORIES = [
-  { id: "all", label: "All 15 Stores" },
+  { id: "all", label: "All 15 Stores (90 SKUs)" },
   { id: "warm-editorial", label: "Craft & Beverage" },
   { id: "clinical-precision", label: "Clinical & Wellness Tech" },
   { id: "obsidian-luxury", label: "Reserve & Hardware" },
@@ -17,6 +21,7 @@ const CATEGORIES = [
 export default function AllStoresDirectoryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [previewStore, setPreviewStore] = useState<StoreDefinition | null>(null);
 
   const filteredStores = INITIAL_STORES.filter((store) => {
     const matchesCategory =
@@ -27,13 +32,14 @@ export default function AllStoresDirectoryPage() {
       store.name.toLowerCase().includes(q) ||
       store.niche.toLowerCase().includes(q) ||
       store.hero.toLowerCase().includes(q) ||
-      store.freeGift.toLowerCase().includes(q);
+      store.freeGift.toLowerCase().includes(q) ||
+      store.products.some((p) => p.title.toLowerCase().includes(q));
     return matchesCategory && matchesSearch;
   });
 
   return (
     <div className="min-h-screen bg-[#090D16] text-[#F8FAFC] flex flex-col">
-      {/* Top Bar Contract: 3 Zones */}
+      {/* Strict 3-Zone Top Bar Contract */}
       <header className="sticky top-0 z-40 border-b border-slate-800 bg-[#090D16]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
           <Link
@@ -71,6 +77,12 @@ export default function AllStoresDirectoryPage() {
             >
               Ember &amp; Oak
             </Link>
+            <Link
+              href="/account/orders"
+              className="hover:text-white transition-colors whitespace-nowrap shrink-0"
+            >
+              Order History
+            </Link>
           </nav>
 
           <div className="flex items-center shrink-0">
@@ -91,18 +103,18 @@ export default function AllStoresDirectoryPage() {
             <p className="text-xs font-medium text-emerald-400">
               15 Active Direct-to-Consumer Storefronts · 90 Categorized Products · 100% Audit Verified
             </p>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Multi-Store E-Commerce Fleet
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white font-[family-name:var(--font-serif)]">
+              Multi-Store Luxury &amp; Clinical Fleet
             </h1>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Every brand below is fully provisioned with its own flagship 3-tier VIP &amp; Master bundle selector, automatic complimentary gift unlocks, 6 categorized products across 5 departments, Schema.org JSON-LD metadata, and live Utah fulfillment checkout.
+              Every brand below features an interactive 4-angle product studio, bespoke edition &amp; gift-note personalization, a 3-piece custom bundle architect, 6 categorized products, and 24-hour Utah fulfillment.
             </p>
           </div>
 
           {/* Search Input */}
           <div className="w-full lg:w-80">
             <label htmlFor="directory-search" className="sr-only">
-              Search 15 storefronts
+              Search 15 storefronts and 90 products
             </label>
             <input
               id="directory-search"
@@ -139,7 +151,7 @@ export default function AllStoresDirectoryPage() {
             ))}
           </div>
 
-          <div className="text-xs text-slate-400 tabular-nums">
+          <div className="text-xs text-slate-400 font-mono tabular-nums">
             Showing {filteredStores.length} of {INITIAL_STORES.length} live storefronts
           </div>
         </section>
@@ -169,10 +181,11 @@ export default function AllStoresDirectoryPage() {
                   />
 
                   <div className="p-6 space-y-3">
+                    {/* Unboxed Metadata with Middot Separators */}
                     <div className="flex items-center justify-between text-xs text-slate-400">
-                      <span>{store.niche}</span>
-                      <span className="font-mono tabular-nums">
-                        {store.products.length} Products
+                      <span className="truncate">{store.niche}</span>
+                      <span className="font-mono tabular-nums shrink-0 ml-2 text-emerald-400">
+                        {store.products.length} SKUs · 4.9★
                       </span>
                     </div>
 
@@ -184,23 +197,24 @@ export default function AllStoresDirectoryPage() {
                       {store.tagline}
                     </p>
 
-                    <div className="pt-2 border-t border-slate-800/80 space-y-1.5 text-xs">
-                      <div className="flex items-center justify-between">
+                    <div className="pt-2 border-t border-slate-800/80 space-y-1.5 text-xs font-mono tabular-nums">
+                      <div className="flex items-center justify-between font-sans">
                         <span className="text-slate-400">Flagship Hero</span>
                         <span className="text-slate-200 font-medium truncate max-w-[190px]">
                           {store.hero}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between tabular-nums">
-                        <span className="text-slate-400">Solo / VIP Bundle</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-400 font-sans">Solo / VIP / Master</span>
                         <span className="text-white font-semibold">
-                          ${store.soloPrice.toFixed(2)} ·{" "}
+                          ${store.soloPrice.toFixed(0)} ·{" "}
                           <span style={{ color: store.accentColor }}>
-                            VIP ${store.bundlePrice.toFixed(2)} (Save {savings.savingsPercent}%)
-                          </span>
+                            ${store.bundlePrice.toFixed(0)} (-{savings.savingsPercent}%)
+                          </span>{" "}
+                          · ${(store.masterPrice || store.bundlePrice * 1.65).toFixed(0)}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between font-sans">
                         <span className="text-slate-400">Unlocked VIP Gift</span>
                         <span className="text-amber-300 truncate max-w-[195px]">
                           {store.freeGift}
@@ -210,13 +224,20 @@ export default function AllStoresDirectoryPage() {
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2 flex items-center gap-3">
+                <div className="px-6 pb-6 pt-2 flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setPreviewStore(store)}
+                    className="px-3.5 py-2.5 rounded-lg bg-[#090D16] hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200 transition-colors whitespace-nowrap shrink-0"
+                  >
+                    Preview 6 SKUs
+                  </button>
                   <Link
                     href={`/stores/${store.id}`}
-                    className="w-full py-2.5 px-4 rounded-lg text-xs font-bold text-center text-slate-950 transition-opacity hover:opacity-90 whitespace-nowrap"
+                    className="flex-1 py-2.5 px-4 rounded-lg text-xs font-bold text-center text-slate-950 transition-opacity hover:opacity-90 whitespace-nowrap"
                     style={{ backgroundColor: store.accentColor }}
                   >
-                    Visit {store.name} Storefront →
+                    Enter {store.name} →
                   </Link>
                 </div>
               </article>
@@ -224,6 +245,102 @@ export default function AllStoresDirectoryPage() {
           })}
         </section>
       </main>
+
+      {/* Slide-Over 6-Product Storefront Lookbook & Quick-Preview Drawer */}
+      {previewStore && (
+        <div
+          className="fixed inset-0 z-50 flex justify-end bg-black/75 backdrop-blur-xs"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${previewStore.name} 6-Product Lookbook`}
+        >
+          <div className="w-full max-w-xl bg-[#0F172A] border-l border-slate-800 h-full overflow-y-auto p-6 space-y-6">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+              <div>
+                <div className="text-xs text-slate-400">{previewStore.niche}</div>
+                <h2 className="text-xl font-bold text-white">{previewStore.name}</h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setPreviewStore(null)}
+                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200"
+              >
+                Close Lookbook
+              </button>
+            </div>
+
+            <StoreProductVisual
+              storeId={previewStore.id}
+              productIndex={0}
+              accentColor={previewStore.accentColor}
+              secondaryColor={previewStore.secondaryColor}
+              title={previewStore.hero}
+              category={previewStore.niche}
+              aspectRatio="16:9"
+              interactive={true}
+              freeGift={previewStore.freeGift}
+              heroSpecs={previewStore.heroSpecs}
+            />
+
+            <div className="p-4 rounded-xl bg-[#090D16] border border-slate-800 space-y-2 text-xs">
+              <div className="font-semibold text-white">
+                3-Tier Value Architecture · {previewStore.shippingHub}
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-2 font-mono tabular-nums text-slate-300">
+                <span>Solo: ${previewStore.soloPrice.toFixed(2)}</span>
+                <span className="text-emerald-400 font-bold">
+                  VIP Bundle: ${previewStore.bundlePrice.toFixed(2)} (+ Free Gift)
+                </span>
+                <span className="text-amber-300">
+                  Master Suite: ${(previewStore.masterPrice || previewStore.bundlePrice * 1.65).toFixed(2)}
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-sm font-bold text-white">
+                All 6 Categorized Products in {previewStore.name}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {previewStore.products.map((prod) => (
+                  <div
+                    key={prod.id}
+                    className="p-3.5 rounded-xl bg-[#090D16] border border-slate-800 flex flex-col justify-between gap-2 text-xs"
+                  >
+                    <div>
+                      <div className="text-[11px] text-slate-400">
+                        {prod.department || prod.category} · {prod.rating || 4.9}★
+                      </div>
+                      <div className="font-semibold text-white mt-0.5">
+                        {prod.title}
+                      </div>
+                      <p className="text-[11px] text-slate-400 mt-1 line-clamp-2">
+                        {prod.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-800 font-mono tabular-nums">
+                      <span className="text-white font-bold">${prod.price.toFixed(2)}</span>
+                      <span className="text-emerald-400 text-[11px]">
+                        {prod.inStockCount || 18} in stock
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href={`/stores/${previewStore.id}`}
+                className="block w-full py-3 px-4 rounded-xl text-center text-xs font-bold text-slate-950 transition-opacity hover:opacity-90"
+                style={{ backgroundColor: previewStore.accentColor }}
+              >
+                Open Full {previewStore.name} Storefront &amp; Custom Bundle Builder →
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,31 @@
 import type { Metadata, Viewport } from "next";
+import {
+  Cormorant_Garamond,
+  Plus_Jakarta_Sans,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Bizi Bees OS-X Fleet Command | 15-Store Autonomous Engine",
@@ -68,14 +94,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html
+      lang="en"
+      className={`dark ${cormorant.variable} ${jakarta.variable} ${jetbrains.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(fleetSchemaJsonLd) }}
         />
       </head>
-      <body className="bg-[#090D16] text-[#F8FAFC] antialiased selection:bg-[#10B981] selection:text-[#090D16]">
+      <body className="bg-[#090D16] text-[#F8FAFC] font-sans antialiased selection:bg-[#10B981] selection:text-[#090D16]">
         {children}
       </body>
     </html>
