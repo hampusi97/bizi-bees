@@ -1,0 +1,73 @@
+<section class="lumicarve-hero-section" style="background: #FAFAFA; color: #18181B; font-family: -apple-system, sans-serif; padding: 40px 20px;">
+  <div class="lc-container" style="max-width: 1000px; margin: 0 auto;">
+    
+    <!-- Sticky Notification -->
+    <div class="lc-banner" style="background: #EA580C; color: white; text-align: center; padding: 8px; font-size: 0.85rem; font-weight: 600; border-radius: 6px; margin-bottom: 20px;">
+      ⚡ DISPATCHING FROM UTAH TODAY — FREE US SHIPPING
+    </div>
+
+    <div class="lc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <!-- Hero Content -->
+      <div class="lc-content">
+        <h1 style="font-size: 2.8rem; line-height: 1.1; margin-bottom: 16px;">Precision at Your Fingertips.</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 24px; opacity: 0.8;">The LumiCarve™ Cordless Micro Engraving Pen brings professional-grade detailing to your DIY projects.</p>
+        <div class="lc-rating" style="margin-bottom: 24px; color: #EA580C; font-weight: bold;">★★★★★ 4.9/5 (1,240+ Reviews)</div>
+
+        <!-- Offer Selector -->
+        <div class="lc-offers" style="display: flex; flex-direction: column; gap: 12px;">
+          <label class="lc-card" data-price="4200" style="border: 2px solid #e5e5e5; padding: 16px; border-radius: 12px; cursor: pointer; transition: 0.3s;">
+            <input type="radio" name="lc-offer" value="solo" checked style="accent-color: #EA580C;">
+            <strong>Solo Pack</strong> - $42.00
+          </label>
+          <label class="lc-card vip-active" data-price="5800" style="border: 2px solid #EA580C; padding: 16px; border-radius: 12px; cursor: pointer; background: #fff7ed;">
+            <input type="radio" name="lc-offer" value="bundle" style="accent-color: #EA580C;">
+            <strong>VIP Bundle</strong> - $58.00 <span style="color: #EA580C; font-weight: bold;">(+ Free 30-Piece Kit)</span>
+          </label>
+        </div>
+
+        <div id="gift-notice" style="margin-top: 16px; padding: 10px; background: #dcfce7; color: #166534; border-radius: 6px; font-size: 0.9rem; font-weight: 600;">
+          🎁 30-Piece Diamond Burr Bit Kit ($22 Value) Unlocked!
+        </div>
+
+        <button onclick="window.location.href='/collections/all'" style="width: 100%; background: #EA580C; color: white; border: none; padding: 20px; font-size: 1.2rem; font-weight: bold; border-radius: 12px; margin-top: 20px; cursor: pointer; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);">
+          GET LUMICARVE™ NOW
+        </button>
+      </div>
+
+      <!-- Placeholder for Product Image -->
+      <div class="lc-visual" style="background: #eee; height: 450px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+        [LumiCarve™ Product Image]
+      </div>
+    </div>
+
+    <!-- Guarantee Strip -->
+    <div class="lc-guarantee" style="display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e5e5; text-align: center;">
+      <div>✅ Utah Dispatch</div>
+      <div>🔄 60-Day Trial</div>
+      <div>🚚 Free US Delivery</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.lc-card').forEach(card => {
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.lc-card').forEach(c => c.style.borderColor = '#e5e5e5');
+      this.style.borderColor = '#EA580C';
+      const isBundle = this.querySelector('input').value === 'bundle';
+      document.getElementById('gift-notice').style.display = isBundle ? 'block' : 'none';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "LumiCarve Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "LumiCarve Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+<section class="dermasonic-hero-section" style="background-color: #FFFFFF; color: #0F172A; font-family: -apple-system, sans-serif; padding: 40px 20px; overflow: hidden;">
+  <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    
+    <!-- Sticky Banner -->
+    <div class="shipping-banner" style="background: #14B8A6; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px;">
+      🚀 FAST DISPATCH FROM UTAH: Order now for free US delivery.
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;" class="responsive-grid">
+      <!-- Hero Content -->
+      <div>
+        <h1 style="font-size: 3rem; line-height: 1.1; margin-bottom: 20px;">Professional Pore Care at Home.</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 25px; opacity: 0.8;">The Ultrasonic Water-Ion Scrubber lifts stubborn blackheads and refines skin texture in seconds.</p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 30px;">
+          <span style="color: #14B8A6; font-weight: bold;">★★★★★ 4.9/5</span>
+          <span>from 12,000+ happy customers</span>
+        </div>
+      </div>
+
+      <!-- Conversion Card -->
+      <div style="border: 2px solid #E2E8F0; padding: 24px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+        <div class="tier-selector">
+          <!-- Solo Option -->
+          <div class="option-card" onclick="selectTier('solo')" id="solo-card" style="border: 2px solid #14B8A6; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold;">
+              <span>Solo Device</span>
+              <span>$29.99</span>
+            </div>
+          </div>
+          
+          <!-- Bundle Option -->
+          <div class="option-card" onclick="selectTier('bundle')" id="bundle-card" style="border: 2px solid #E2E8F0; padding: 15px; border-radius: 8px; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold;">
+              <span>VIP Bundle</span>
+              <span>$44.99</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #14B8A6; margin-top: 5px;">+ FREE Pore-Melting Botanical Toner ($19 Value)</div>
+          </div>
+        </div>
+
+        <button onclick="window.location.href='/collections/all'" style="width: 100%; background: #14B8A6; color: white; border: none; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 1.1rem; margin-top: 20px; cursor: pointer; transition: transform 0.2s;">
+          Add to Cart & Claim Offer
+        </button>
+      </div>
+    </div>
+
+    <!-- Guarantees -->
+    <div style="display: flex; justify-content: space-around; margin-top: 50px; border-top: 1px solid #E2E8F0; padding-top: 30px; text-align: center;">
+      <div>📦 Utah Dispatch</div>
+      <div>🛡️ 60-Day Trial</div>
+      <div>🚚 Free US Delivery</div>
+    </div>
+  </div>
+
+  <script>
+    function selectTier(type) {
+      const solo = document.getElementById('solo-card');
+      const bundle = document.getElementById('bundle-card');
+      if(type === 'solo') {
+        solo.style.borderColor = '#14B8A6';
+        bundle.style.borderColor = '#E2E8F0';
+      } else {
+        bundle.style.borderColor = '#14B8A6';
+        solo.style.borderColor = '#E2E8F0';
+      }
+    }
+  </script>
+
+  <style>
+    @media (max-width: 768px) {
+      .responsive-grid { grid-template-columns: 1fr !important; }
+      h1 { font-size: 2rem !important; }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Dermasonic Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Dermasonic Hero Section"
+    }
+  ]
+}
+{% endschema %}

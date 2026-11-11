@@ -1,0 +1,73 @@
+<section class="crave-lab-section" id="crave-lab-hero">
+  <style>
+    .crave-lab-section { background-color: #FAF6F0; color: #2B1810; font-family: Georgia, serif; padding: 40px 20px; overflow: hidden; }
+    .crave-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .sticky-banner { position: sticky; top: 0; background: #8D5B4C; color: #FFF; padding: 10px; text-align: center; font-size: 0.8rem; letter-spacing: 1px; z-index: 100; margin-bottom: 20px; }
+    .hero-content h1 { font-size: 3rem; margin: 0 0 15px; line-height: 1.1; }
+    .rating { color: #8D5B4C; font-weight: bold; margin-bottom: 20px; }
+    .tier-selector { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
+    .tier-option { border: 2px solid #8D5B4C; padding: 20px; cursor: pointer; transition: 0.3s; border-radius: 4px; position: relative; }
+    .tier-option.active { background: #EBDCCF; }
+    .tier-option.vip { border-color: #2B1810; }
+    .free-gift-badge { background: #2B1810; color: #FAF6F0; padding: 4px 8px; font-size: 0.7rem; position: absolute; top: -10px; right: 10px; }
+    .btn-buy { background: #8D5B4C; color: #FFF; border: none; padding: 20px; width: 100%; font-size: 1.2rem; cursor: pointer; margin-top: 10px; }
+    .guarantee-strip { display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.85rem; border-top: 1px solid #DED7CF; padding-top: 20px; }
+    @media (max-width: 768px) { .crave-container { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="sticky-banner">🚚 FAST DISPATCH FROM UTAH | FREE US DELIVERY ON ALL ORDERS</div>
+
+  <div class="crave-container">
+    <div class="hero-visual">
+      <img src="https://via.placeholder.com/500x500/FAF6F0/8D5B4C?text=4-Bar+Bento+Box" alt="Custom 4-Bar Chocolate Bento Box" style="width:100%; border-radius:8px;">
+    </div>
+
+    <div class="hero-content">
+      <div class="rating">★★★★★ 4.9/5 (1,240 Reviews)</div>
+      <h1>The Custom 4-Bar Bento Box</h1>
+      <p>Artisanal Belgian confections, curated by you. Experience the perfect snap and melt-in-your-mouth finish.</p>
+
+      <div class="tier-selector">
+        <div class="tier-option" onclick="updatePrice(24.00, this)">
+          <strong>Solo Box</strong> - $24.00
+        </div>
+        <div class="tier-option vip active" onclick="updatePrice(38.00, this)">
+          <span class="free-gift-badge">FREE GIFT INCLUDED</span>
+          <strong>VIP Bundle</strong> - $38.00
+          <p style="font-size:0.8rem; margin:5px 0 0;">Includes: Smoked Sea Salt Dark Tasting Bar ($9 Value)</p>
+        </div>
+      </div>
+
+      <button class="btn-buy" onclick="window.location.href='/collections/all'">
+        Add to Cart - <span id="dynamic-price">$38.00</span>
+      </button>
+
+      <div class="guarantee-strip">
+        <span>✓ Utah Dispatch</span>
+        <span>✓ 60-Day Trial</span>
+        <span>✓ Free US Shipping</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updatePrice(price, el) {
+      document.getElementById('dynamic-price').innerText = '$' + price.toFixed(2);
+      document.querySelectorAll('.tier-option').forEach(opt => opt.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Crave Lab Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Crave Lab Hero Section",
+      "category": "Conversion"
+    }
+  ]
+}
+{% endschema %}

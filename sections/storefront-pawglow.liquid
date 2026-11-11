@@ -1,0 +1,69 @@
+<section class="pawglow-hero-section" id="shopify-section-pawglow-hero">
+  <style>
+    .pawglow-hero-section { background: #F8FAFC; color: #1E293B; font-family: -apple-system, sans-serif; padding: 40px 20px; }
+    .pawglow-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .sticky-banner { position: sticky; top: 0; background: #2563EB; color: #fff; padding: 10px; text-align: center; font-weight: 600; font-size: 0.9rem; z-index: 100; margin-bottom: 20px; }
+    .hero-content h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; }
+    .rating { color: #F59E0B; margin-bottom: 1rem; font-weight: bold; }
+    .offer-selector { display: flex; flex-direction: column; gap: 15px; margin: 30px 0; }
+    .offer-card { border: 2px solid #E2E8F0; padding: 20px; border-radius: 12px; cursor: pointer; transition: 0.3s; position: relative; }
+    .offer-card.active { border-color: #2563EB; background: #EFF6FF; }
+    .free-gift-badge { background: #10B981; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; float: right; }
+    .buy-btn { background: #2563EB; color: white; width: 100%; padding: 18px; border: none; border-radius: 8px; font-weight: 700; font-size: 1.1rem; cursor: pointer; }
+    .guarantee-strip { display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.85rem; color: #64748B; }
+    @media (max-width: 768px) { .pawglow-container { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="sticky-banner">🚀 Fast Dispatch from Utah | Free US Shipping Today Only</div>
+
+  <div class="pawglow-container">
+    <div class="hero-content">
+      <div class="rating">★★★★★ 4.9/5 (12,400+ Happy Pets)</div>
+      <h1>The Ultimate Ultrasonic Steam Deshedding Brush</h1>
+      <p>Remove 95% of loose fur while providing a soothing spa-like massage. Your pet’s coat has never looked this healthy.</p>
+      
+      <div class="offer-selector">
+        <div class="offer-card active" onclick="selectOffer(this, 22.99)">
+          <strong>Solo Brush</strong> - $22.99
+        </div>
+        <div class="offer-card" onclick="selectOffer(this, 34.99)">
+          <span class="free-gift-badge">FREE GIFT UNLOCKED</span>
+          <strong>VIP Bundle</strong> - $34.99 <br>
+          <small>+ Organic Lavender Coat Mist ($15 Value)</small>
+        </div>
+      </div>
+
+      <button class="buy-btn" onclick="window.location.href='/collections/all'">Claim My PawGlow™ Now</button>
+
+      <div class="guarantee-strip">
+        <span>✓ Utah Dispatch</span>
+        <span>✓ 60-Day Trial</span>
+        <span>✓ Free US Delivery</span>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <img src="https://cdn.shopify.com/s/files/1/0000/0000/files/brush-mockup.png" alt="Ultrasonic Steam Brush" style="width:100%; border-radius:20px;">
+    </div>
+  </div>
+
+  <script>
+    function selectOffer(el, price) {
+      document.querySelectorAll('.offer-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "PawGlow Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "PawGlow Hero",
+      "category": "Conversion"
+    }
+  ]
+}
+{% endschema %}

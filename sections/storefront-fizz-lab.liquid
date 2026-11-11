@@ -1,0 +1,77 @@
+<section class="fizz-lab-hero" id="fizz-lab-section">
+  <style>
+    .fizz-lab-hero { background: #FFF9F5; color: #2C1810; font-family: -apple-system, sans-serif; padding: 40px 20px; overflow: hidden; }
+    .fizz-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 768px) { .fizz-container { grid-template-columns: 1fr; } }
+    
+    .sticky-banner { position: sticky; top: 0; background: #D84315; color: white; text-align: center; padding: 8px; font-weight: 700; font-size: 0.85rem; z-index: 100; margin-bottom: 20px; }
+    .hero-headline { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; }
+    .rating { color: #D84315; font-weight: 600; margin-bottom: 20px; }
+    
+    .tier-card { border: 2px solid #E0D5CE; padding: 20px; border-radius: 12px; cursor: pointer; transition: 0.3s; margin-bottom: 15px; position: relative; }
+    .tier-card.active { border-color: #D84315; background: #fff; }
+    .tier-card.vip { border-color: #D84315; background: #FFF3F0; }
+    
+    .free-gift-badge { background: #D84315; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+    
+    .buy-btn { background: #2C1810; color: #FFF9F5; width: 100%; padding: 18px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: 700; cursor: pointer; transition: transform 0.2s; }
+    .buy-btn:hover { transform: scale(1.02); }
+    
+    .guarantee-strip { display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.8rem; border-top: 1px solid #E0D5CE; padding-top: 20px; }
+  </style>
+
+  <div class="sticky-banner">⚡ FAST DISPATCH FROM UTAH — FREE US SHIPPING ON ALL ORDERS</div>
+
+  <div class="fizz-container">
+    <div class="hero-content">
+      <div class="rating">★★★★★ 4.9/5 (1,240+ Reviews)</div>
+      <h1 class="hero-headline">Bring the Utah Dirty Soda Bar Home.</h1>
+      <p style="font-size: 1.2rem; margin-bottom: 30px;">Mix, sip, and swirl your favorite soda shop flavors in seconds. The ultimate kit for the perfect Dirty Soda experience.</p>
+      
+      <div id="tier-selector">
+        <div class="tier-card" onclick="selectTier('solo')">
+          <strong>Solo Kit</strong> - $32.00
+        </div>
+        <div class="tier-card vip active" onclick="selectTier('vip')">
+          <span class="free-gift-badge">Best Value + Free Gift</span>
+          <div style="margin-top: 5px;"><strong>VIP Bundle</strong> - $48.00</div>
+          <p style="font-size: 0.85rem; margin: 5px 0 0;">Includes: High-Speed Electric Cream Frother ($16 Value)</p>
+        </div>
+      </div>
+
+      <button class="buy-btn" onclick="window.location.href='/collections/all'">Add VIP Bundle to Cart</button>
+      
+      <div class="guarantee-strip">
+        <span>🚚 Utah Dispatch</span>
+        <span>🛡️ 60-Day Trial</span>
+        <span>📦 Free US Delivery</span>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <img src="{{ 'hero-product.jpg' | asset_img_url: '800x' }}" alt="Fizz Lab Dirty Soda Kit" style="width:100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+
+  <script>
+    function selectTier(tier) {
+      document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      const btn = document.querySelector('.buy-btn');
+      btn.innerText = tier === 'vip' ? 'Add VIP Bundle to Cart' : 'Add Solo Kit to Cart';
+    }
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Fizz Lab Hero Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Fizz Lab Hero Section",
+      "category": "Conversion"
+    }
+  ]
+}
+{% endschema %}

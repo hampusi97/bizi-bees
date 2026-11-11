@@ -1,0 +1,555 @@
+{% comment %}
+  GOOGLE AI STUDIO STOREFRONT APPLICATIONS (14 STORES)
+  Repo: bizi-bees / sections/google-ai-storefront-apps.liquid
+  Interactive AI Concierge & Diagnostic Apps powered by Google AI Studio Gemini API
+{% endcomment %}
+
+<div class="gaia-wrapper" id="gaiaWrapper">
+  <div class="gaia-container">
+    
+    <!-- Top Header -->
+    <div class="gaia-header">
+      <span class="gaia-badge">✨ POWERED BY GOOGLE AI STUDIO • GEMINI 3.5</span>
+      <h2 class="gaia-title" id="gaiaTitle">Bizi Bees™ Book Matchmaker &amp; Ritual AI</h2>
+      <p class="gaia-subtitle" id="gaiaSubtitle">
+        Consult our specialized AI advisor for curated mystery book pairings, sensory kits, and personalized gift recommendations.
+      </p>
+    </div>
+
+    <!-- Store & App Switcher Tabs -->
+    <div class="gaia-store-selector-scroll">
+      <div class="gaia-store-pills" id="gaiaStorePills">
+        <button type="button" class="gaia-pill active" onclick="switchGaiaStore('bizi-bees', 'Bizi Bees™ Book Matchmaker & Ritual AI', 'Curate your mystery paperback, brass honeybee bookmark, and herbal tea ritual.', '#D9822B', 'Blind Date with a Book', '14.99', '38.00', 'Solid Brass Honeybee Bookmark ($12 Value)', this)">
+          🐝 Bizi Bees
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('luma-clinical', 'Luma Clinical™ Derm-Tech Routine Architect', 'Discover your clinical phototherapy wavelength and peptide pairing protocol.', '#0D9488', 'LumaGlow™ QuadWave Pro 4-in-1', '39.99', '59.99', 'Full-Size Activating Peptide Serum ($24 Value)', this)">
+          🔬 Luma Clinical
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('luma-relief', 'Luma Relief™ Cold Compression Advisor', 'Get personalized tension and migraine relief routines with temperature tracking.', '#0284C7', 'LumaRelief™ 360° Cold Cap', '24.99', '34.99', 'Herbal Sinus Acupressure Roller ($18 Value)', this)">
+          ❄️ Luma Relief
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('fizz-lab', 'Fizz Lab™ Dirty Soda Mixology Lab', 'Mix your custom syrups, purées, and coconut cream frothing recipes.', '#D84315', 'Dirty Soda At-Home Starter Kit', '32.00', '48.00', 'Electric High-Speed Cream Frother ($16 Value)', this)">
+          🥤 Fizz Lab
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('crave-lab', 'Crave Lab™ Belgian Chocolate Sommelier', 'Craft your 4-bar tasting flight with smoked sea salt and dark praline notes.', '#8D5B4C', 'Custom 4-Bar Bento Box', '24.00', '38.00', 'Smoked Sea Salt Dark Bar ($9 Value)', this)">
+          🍫 Crave Lab
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('aura-sculpt', 'Aura Sculpt™ Seamless Stylist', 'Find your perfect compression fit and mix & match neutral palette.', '#5C5D58', 'CloudSoft™ 2-Piece Sculpt Set', '38.00', '54.00', 'Non-Slip Pilates Grip Socks ($16 Value)', this)">
+          🧘 Aura Sculpt
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('pawglow', 'PawGlow™ Pet Deshedding Diagnostics', 'Ultrasonic steam brush routines for a tangle-free, glossy pet coat.', '#2563EB', 'Ultrasonic Steam Deshedding Brush', '22.99', '34.99', 'Organic Lavender Coat Mist ($15 Value)', this)">
+          🐾 PawGlow
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('zenith-sleep', 'Zenith Sleep™ Circadian Biohack Coach', 'Optimize sleep cycles with 3D ergonomic zero-pressure blackout protocols.', '#6366F1', 'Bluetooth 3D Blackout Mask', '34.99', '49.99', 'Satin Travel Case + Earplugs ($14 Value)', this)">
+          🌙 Zenith Sleep
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('aura-posture', 'Aura Posture™ Haptic Spine Calibration', 'Ergonomic sensor calibration for healthy posture without bulky braces.', '#10B981', 'Smart Haptic Posture Sensor', '38.00', '54.00', 'Ergonomic Gel Wrist Rest ($18 Value)', this)">
+          📐 Aura Posture
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('lumicarve', 'LumiCarve™ Micro-Engraving Bit Advisor', 'Calculate ideal RPM, material feed, and burr bit for glass, wood, or metal.', '#EA580C', 'Cordless Micro Engraving Pen', '42.00', '58.00', '30-Piece Diamond Burr Kit ($22 Value)', this)">
+          🖋️ LumiCarve
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('dermasonic', 'Dermasonic™ Ultrasonic Pore Specialist', 'Water-ion extraction guide for blackheads and deep nutrient infusion.', '#14B8A6', 'Ultrasonic Blackhead Scrubber', '29.99', '44.99', 'Pore-Melting Botanical Toner ($19 Value)', this)">
+          🫧 Dermasonic
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('calmcore', 'CalmCore™ Thermal Acupressure Guide', 'Weighted clay herbal heat routines for neck, shoulders, and tension.', '#78716C', 'Weighted Clay Herbal Wrap', '44.00', '64.00', 'Aromatherapy Oil Roll-On ($16 Value)', this)">
+          🌿 CalmCore
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('floraspring', 'FloraSpring™ Plant Care Doctor', 'Terracotta self-watering scheduling for pothos, monstera, and succulents.', '#4D7C0F', 'Terracotta Watering Spikes (x4)', '21.99', '34.99', 'Organic Liquid Plant Food ($14 Value)', this)">
+          🌱 FloraSpring
+        </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('velobrew', 'VeloBrew™ 20-Bar Portable Barista Pro', 'Dial in grind size, temperature, and crema extraction on the go.', '#D97706', '20-Bar Cordless Espresso Maker', '54.00', '74.00', 'Steel Dosing Ring & Tamper ($20 Value)', this)">
+          ☕ VeloBrew
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive AI App Workspace -->
+    <div class="gaia-app-canvas">
+      
+      <!-- Preset Prompt Suggestions -->
+      <div class="gaia-prompt-chips" id="gaiaChips">
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('Recommend a cozy rainy-day whodunit with warm tea')">🌧️ Rainy Day Whodunit</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What gift box is best for a book lover who likes fantasy?')">🐉 Fantasy Gift Crate</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('How does the Utah 24h dispatch guarantee work?')">⚡ Utah 24h Shipping</button>
+      </div>
+
+      <!-- Dialogue History Window -->
+      <div class="gaia-dialogue-window" id="gaiaDialogue">
+        <div class="gaia-msg bot">
+          <div class="msg-avatar">🐝</div>
+          <div class="msg-bubble">
+            <strong>Welcome to the Bizi Bees™ AI Reading Concierge!</strong>
+            <p>Tell me what vibe, genre, or mood you are craving, and I'll curate your mystery book unboxing with a handcrafted brass bookmark and chamomile tea ritual.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Loading State -->
+      <div class="gaia-loading-indicator" id="gaiaLoading" style="display: none;">
+        <span class="gaia-pulse-dot"></span>
+        <span id="gaiaLoadingText">Consulting Google AI Studio (Gemini 3.5)...</span>
+      </div>
+
+      <!-- Input Bar -->
+      <form class="gaia-input-form" onsubmit="handleGaiaSubmit(event)">
+        <input 
+          type="text" 
+          id="gaiaInput" 
+          placeholder="Ask Bizi Bees™ AI anything about genres, gift crates, or rituals..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="gaiaSendBtn" class="gaia-send-btn">
+          <span>Consult AI →</span>
+        </button>
+      </form>
+
+      <!-- Dynamic Product Recommendation Card -->
+      <div class="gaia-product-bar" id="gaiaProductBar">
+        <div class="gaia-prod-info">
+          <span class="gaia-prod-badge" id="gaiaProdBadge">FLAGSHIP VIP RECOMMENDATION</span>
+          <h4 id="gaiaProdTitle">Blind Date with a Book &amp; Cozy Evening Crate</h4>
+          <p id="gaiaProdGift">🎁 Includes: <strong>Solid Brass Honeybee Bookmark ($12 Value)</strong> at $0 extra cost</p>
+        </div>
+        <div class="gaia-prod-action">
+          <div class="gaia-prod-price">
+            <strong id="gaiaProdPrice">$38.00</strong>
+            <span id="gaiaProdStrike">$68.00</span>
+          </div>
+          <a href="/collections/all" class="gaia-buy-link" id="gaiaBuyLink">
+            Claim VIP Bundle →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .gaia-wrapper {
+    background: #090D16;
+    color: #F8FAFC;
+    padding: 70px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-bottom: 1px solid #1E293B;
+    position: relative;
+  }
+  .gaia-container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  .gaia-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 35px;
+  }
+  .gaia-badge {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #C4B5FD;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+  }
+  .gaia-title {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+  }
+  .gaia-subtitle {
+    font-size: 15px;
+    color: #94A3B8;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Store Switcher Pills */
+  .gaia-store-selector-scroll {
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    scrollbar-width: thin;
+  }
+  .gaia-store-pills {
+    display: flex;
+    gap: 8px;
+    min-width: max-content;
+  }
+  .gaia-pill {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    color: #94A3B8;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .gaia-pill:hover {
+    border-color: #38BDF8;
+    color: #FFFFFF;
+  }
+  .gaia-pill.active {
+    background: #1E293B;
+    border-color: #8B5CF6;
+    color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Main Canvas */
+  .gaia-app-canvas {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  }
+  .gaia-prompt-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 12px;
+  }
+  .chips-label {
+    color: #64748B;
+    font-weight: 700;
+  }
+  .chip {
+    background: #1E293B;
+    border: 1px solid #334155;
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .chip:hover {
+    border-color: #8B5CF6;
+    color: #FFFFFF;
+  }
+
+  /* Dialogue Box */
+  .gaia-dialogue-window {
+    background: #090D16;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .gaia-msg {
+    display: flex;
+    gap: 12px;
+    max-width: 85%;
+  }
+  .gaia-msg.user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
+  .msg-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .gaia-msg.bot .msg-bubble {
+    background: #131D33;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #E2E8F0;
+  }
+  .gaia-msg.user .msg-bubble {
+    background: #8B5CF6;
+    color: #FFFFFF;
+    border-radius: 16px;
+    border-top-right-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .msg-bubble p { margin: 6px 0 0; }
+  .msg-bubble strong { color: #FFFFFF; }
+
+  /* Loading State */
+  .gaia-loading-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #A78BFA;
+    margin-bottom: 12px;
+    padding-left: 8px;
+  }
+  .gaia-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #8B5CF6;
+    border-radius: 50%;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Input Form */
+  .gaia-input-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .gaia-input-form input {
+    flex-grow: 1;
+    background: #090D16;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #FFFFFF;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .gaia-input-form input:focus {
+    border-color: #8B5CF6;
+  }
+  .gaia-send-btn {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    padding: 0 24px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  .gaia-send-btn:hover { opacity: 0.92; }
+
+  /* Product Recommendation Bar */
+  .gaia-product-bar {
+    background: #131D33;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .gaia-prod-badge {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #10B981;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .gaia-prod-info h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .gaia-prod-gift {
+    font-size: 12px;
+    color: #94A3B8;
+    margin: 0;
+  }
+  .gaia-prod-gift strong { color: #F59E0B; }
+  .gaia-prod-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .gaia-prod-price strong {
+    font-size: 20px;
+    font-weight: 900;
+    color: #FFFFFF;
+    display: block;
+  }
+  .gaia-prod-price span {
+    font-size: 12px;
+    color: #64748B;
+    text-decoration: line-through;
+  }
+  .gaia-buy-link {
+    background: #10B981;
+    color: #090D16;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .gaia-buy-link:hover { background: #34D399; }
+</style>
+
+<script>
+  let activeGaiaStoreId = 'bizi-bees';
+  let activeGaiaStoreName = 'Bizi Bees™';
+
+  function switchGaiaStore(storeId, title, sub, accent, hero, solo, bundle, gift, btn) {
+    activeGaiaStoreId = storeId;
+    activeGaiaStoreName = title.split(' ')[0];
+
+    document.querySelectorAll('.gaia-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.getElementById('gaiaTitle').innerText = title;
+    document.getElementById('gaiaSubtitle').innerText = sub;
+    document.getElementById('gaiaProdTitle').innerText = hero + ' (VIP Bundle)';
+    document.getElementById('gaiaProdPrice').innerText = '$' + bundle;
+    document.getElementById('gaiaProdGift').innerHTML = `🎁 Includes: <strong>${gift}</strong> at $0 extra cost`;
+
+    const dialogue = document.getElementById('gaiaDialogue');
+    dialogue.innerHTML = `
+      <div class="gaia-msg bot">
+        <div class="msg-avatar">✨</div>
+        <div class="msg-bubble">
+          <strong>Welcome to ${title}!</strong>
+          <p>${sub}</p>
+        </div>
+      </div>
+    `;
+
+    // Update Presets based on store
+    updateGaiaChips(storeId);
+  }
+
+  function updateGaiaChips(storeId) {
+    const chipsContainer = document.getElementById('gaiaChips');
+    if (storeId === 'luma-clinical') {
+      chipsContainer.innerHTML = `
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('How do I alternate red light vs blue light for adult breakouts?')">🔴 Red vs Blue Light</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What is the peptide serum activation protocol?')">✨ Peptide Protocol</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('Is it safe for sensitive skin under eyes?')">👁️ Sensitive Eye Care</button>
+      `;
+    } else if (storeId === 'fizz-lab') {
+      chipsContainer.innerHTML = `
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('Give me the best Dirty Diet Coke recipe with coconut cream and fresh lime')">🥤 Dirty Diet Coke</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('How do I froth sweet cream at home?')">⚡ Frothing Tips</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What syrups come in the starter bar kit?')">📦 Kit Contents</button>
+      `;
+    } else if (storeId === 'velobrew') {
+      chipsContainer.innerHTML = `
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('How do I pull a rich golden crema shot outdoors?')">☕ 20-Bar Crema Guide</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What grind size is best for portable 20-bar extraction?')">⚙️ Grind Dial-In</button>
+      `;
+    } else {
+      chipsContainer.innerHTML = `
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('Recommend your bestselling VIP bundle and why it converts')">★ Best VIP Bundle</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What free bonus gift do I unlock today?')">🎁 Free Gift Details</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What is the shipping dispatch speed from Utah?')">⚡ Shipping Speed</button>
+      `;
+    }
+  }
+
+  function askGaiaPreset(text) {
+    document.getElementById('gaiaInput').value = text;
+    handleGaiaSubmit(new Event('submit'));
+  }
+
+  async function handleGaiaSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('gaiaInput');
+    const query = input.value.trim();
+    if (!query) return;
+
+    // Append user message
+    appendGaiaMessage('user', query);
+    input.value = '';
+
+    // Show loading
+    const loading = document.getElementById('gaiaLoading');
+    loading.style.display = 'flex';
+
+    try {
+      const endpoint = window.location.hostname.includes('localhost') 
+        ? '/api/ai/app' 
+        : 'https://bizi-bees.vercel.app/api/ai/app';
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          storeId: activeGaiaStoreId,
+          query: query,
+          appType: 'storefront_concierge'
+        })
+      });
+
+      const data = await res.json();
+      loading.style.display = 'none';
+
+      if (data.success && data.response) {
+        appendGaiaMessage('bot', data.response, data.freeGift);
+      } else {
+        appendGaiaMessage('bot', "Our flagship VIP collection is currently in stock with 24h Utah priority dispatch. Would you like to review bundle pricing?");
+      }
+    } catch (err) {
+      loading.style.display = 'none';
+      appendGaiaMessage('bot', "Our VIP bundle includes priority US shipping and complimentary bonus gifts. Feel free to explore our collection!");
+    }
+  }
+
+  function appendGaiaMessage(sender, text, freeGift) {
+    const dialogue = document.getElementById('gaiaDialogue');
+    const msg = document.createElement('div');
+    msg.className = `gaia-msg ${sender}`;
+
+    const icon = sender === 'user' ? '👤' : '✨';
+    let formattedText = text.replace(/\n/g, '<br>');
+
+    msg.innerHTML = `
+      <div class="msg-avatar">${icon}</div>
+      <div class="msg-bubble">
+        <p>${formattedText}</p>
+      </div>
+    `;
+
+    dialogue.appendChild(msg);
+    dialogue.scrollTop = dialogue.scrollHeight;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Google AI Storefront Apps",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Google AI Storefront Apps"
+    }
+  ]
+}
+{% endschema %}
