@@ -2,6 +2,9 @@
 *.log
 .env
 node_modules/
+.next/
+.vercel/
+next-env.d.ts
 .vscode/
 .idea/
 *.swp
