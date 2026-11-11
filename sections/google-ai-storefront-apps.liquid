@@ -22,6 +22,9 @@
         <button type="button" class="gaia-pill active" onclick="switchGaiaStore('bizi-bees', 'Bizi Bees™ Book Matchmaker & Ritual AI', 'Curate your mystery paperback, brass honeybee bookmark, and herbal tea ritual.', '#D9822B', 'Blind Date with a Book', '14.99', '38.00', 'Solid Brass Honeybee Bookmark ($12 Value)', this)">
           🐝 Bizi Bees
         </button>
+        <button type="button" class="gaia-pill" onclick="switchGaiaStore('ember-oak', 'Ember & Oak™ Reserve Sommelier & Humidor AI', 'Master Spanish cedar seasoning, briar pipe pairing, and aficionado torch protocols.', '#D97706', 'Spanish Cedar Humidor & Torch Kit', '48.00', '78.00', 'Cut-Crystal Cigar & Pipe Rest ($24 Value)', this)">
+          🍂 Ember &amp; Oak
+        </button>
         <button type="button" class="gaia-pill" onclick="switchGaiaStore('luma-clinical', 'Luma Clinical™ Derm-Tech Routine Architect', 'Discover your clinical phototherapy wavelength and peptide pairing protocol.', '#0D9488', 'LumaGlow™ QuadWave Pro 4-in-1', '39.99', '59.99', 'Full-Size Activating Peptide Serum ($24 Value)', this)">
           🔬 Luma Clinical
         </button>
@@ -444,7 +447,14 @@
 
   function updateGaiaChips(storeId) {
     const chipsContainer = document.getElementById('gaiaChips');
-    if (storeId === 'luma-clinical') {
+    if (storeId === 'ember-oak') {
+      chipsContainer.innerHTML = `
+        <span class="chips-label">Quick Ideas:</span>
+        <button type="button" class="chip" onclick="askGaiaPreset('What is the ideal seasoning humidity for Spanish Cedar?')">💨 Seasoning & Humidity</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('How does the dual-flame torch protect Maduro wrappers?')">🔥 Torch Technique</button>
+        <button type="button" class="chip" onclick="askGaiaPreset('What bonus crystal rest comes with the VIP bundle?')">💎 Crystal Rest Gift</button>
+      `;
+    } else if (storeId === 'luma-clinical') {
       chipsContainer.innerHTML = `
         <span class="chips-label">Quick Ideas:</span>
         <button type="button" class="chip" onclick="askGaiaPreset('How do I alternate red light vs blue light for adult breakouts?')">🔴 Red vs Blue Light</button>

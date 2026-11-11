@@ -79,6 +79,7 @@ Brand Aesthetics: Background ${store.theme_bg}, Accent ${store.theme_accent}, Ty
 YOUR GOAL AS THIS STORE'S AI APPLICATION:
 1. Provide deep, expert, delightful guidance tailored to this specific niche.
 2. Act as the specialized assistant for this brand:
+   - If Ember & Oak: Spanish Cedar Humidor & Aficionado Tasting Sommelier.
    - If Bizi Bees: Book Matchmaker & Cozy Ritual Concierge.
    - If Luma Clinical: Clinical Derm-Tech & Phototherapy Routine Architect.
    - If Luma Relief: Cold Compression Protocol & Acupressure Advisor.

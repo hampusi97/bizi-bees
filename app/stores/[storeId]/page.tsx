@@ -103,6 +103,86 @@ const STORE_EDITION_CONFIGS: Record<
     personalizationLabel: "Studio Fit Preference",
     personalizationPlaceholder: "e.g. High-compression reformer pilates fit",
   },
+  "pawglow": {
+    optionLabel: "Select Grooming Edition & Coat Type",
+    options: [
+      "Double-Coat Deshedding Mode · Frost White",
+      "Short-Hair Sensitive Skin · Cloud Gray",
+      "Long-Hair Anti-Tangle · Midnight Navy",
+    ],
+    personalizationLabel: "Pet Name & Breed for Custom Care Card",
+    personalizationPlaceholder: "e.g. Milo · Golden Retriever (3 yrs)",
+  },
+  "zenith-sleep": {
+    optionLabel: "Select Blackout Fit & Audio Frequency",
+    options: [
+      "Deep REM 3D Blackout · 432Hz Binaural Ready",
+      "Contoured Zero-Pressure · Delta Wave Audio",
+      "Cooling Bamboo Charcoal Edition",
+    ],
+    personalizationLabel: "Chronotype / Sleep Biohack Goal",
+    personalizationPlaceholder: "e.g. Shift worker recovering deep sleep & latency",
+  },
+  "aura-posture": {
+    optionLabel: "Select Haptic Sensor Edition & Strap Fit",
+    options: [
+      "Smart Haptic Sensor + Ergonomic Desk Mount",
+      "Dual-Zone Spine Biofeedback Sensor",
+      "Low-Profile Executive Stealth Clip",
+    ],
+    personalizationLabel: "Desk Ergonomic Focus",
+    personalizationPlaceholder: "e.g. 8-hour software engineer thoracic alignment",
+  },
+  "lumicarve": {
+    optionLabel: "Select Precision Speed & Chuck Finish",
+    options: [
+      "3-Speed 25,000 RPM · Diamond Burr Pro Kit",
+      "Titanium Collet Precision Engraver",
+      "Artisan Studio Deluxe Case Edition",
+    ],
+    personalizationLabel: "Primary Medium / Craft Material",
+    personalizationPlaceholder: "e.g. Glass bottle etching & jewelry monogramming",
+  },
+  "dermasonic": {
+    optionLabel: "Select Water-Ion Scrubber Mode",
+    options: [
+      "Ultrasonic Extraction (24kHz) + Ion- Infusion",
+      "Deep Sebum Clearing + Botanical Toner Infuser",
+      "Pore-Tightening Cryo-Sonic Edition",
+    ],
+    personalizationLabel: "Skin Type & Focus Area",
+    personalizationPlaceholder: "e.g. Oily T-zone blackhead extraction & pore refining",
+  },
+  "calmcore": {
+    optionLabel: "Select Thermal Therapy Weight & Aromatherapy",
+    options: [
+      "4.5lb Deep Clay Wrap · Lavender & Chamomile",
+      "5.5lb Extended Neck & Shoulder Wrap · Eucalyptus",
+      "Unscented Weighted Therapy Clay",
+    ],
+    personalizationLabel: "Tension Relief Focus",
+    personalizationPlaceholder: "e.g. Cervical spine & desk shoulder knot recovery",
+  },
+  "floraspring": {
+    optionLabel: "Select Terracotta Porosity & Spike Count",
+    options: [
+      "Quad Terracotta Spikes (4-Pack) + Food Drops",
+      "Deluxe Indoor Jungle 8-Spike System",
+      "Architectural Clay Reservoir Kit",
+    ],
+    personalizationLabel: "Plant Variety & Pot Size",
+    personalizationPlaceholder: "e.g. 10-inch Monstera Deliciosa & Fiddle Leaf Fig",
+  },
+  "velobrew": {
+    optionLabel: "Select Pressure Chamber & Travel Case",
+    options: [
+      "20-Bar Cordless Thermal Barista · Matte Obsidian",
+      "Alpine Trail Edition · Brushed Aluminum",
+      "Summit Dual-Cup Extraction Kit",
+    ],
+    personalizationLabel: "Roast Profile / Espresso Grind Note",
+    personalizationPlaceholder: "e.g. Light roast Ethiopian natural espresso dial-in",
+  },
 };
 
 const getStoreEditionConfig = (store: StoreDefinition) => {
