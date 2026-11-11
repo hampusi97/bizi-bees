@@ -1,0 +1,429 @@
+{% comment %}
+  EMBER & OAK™ — ULTRA-DYNAMIC LUXURY CIGAR, PIPE TOBACCO & HUMIDOR LOUNGE
+  Includes: 21+ Age Verification Gate, Drink-to-Smoke Sommelier Matcher & 3-Piece Humidor Kit Builder
+{% endcomment %}
+
+<div class="eo-lounge-wrapper" id="emberOakLounge">
+  
+  <!-- 21+ Luxury Age-Verification Gate (Auto-Dismissed Once Verified) -->
+  <div class="eo-age-gate" id="eoAgeGate" style="display: none;">
+    <div class="eo-age-card">
+      <span class="eo-crest">🥃 EMBER &amp; OAK™ PRIVATE RESERVE</span>
+      <h3>Age Verification Required</h3>
+      <p>Welcome to our private humidor and pipe cellar. Please verify that you are 21 years of age or older to enter.</p>
+      <div class="eo-age-actions">
+        <button type="button" class="eo-btn-gold" onclick="verifyEoAge(true)">I Am 21 or Older — Enter Reserve →</button>
+        <button type="button" class="eo-btn-muted" onclick="verifyEoAge(false)">Exit</button>
+      </div>
+      <small>Compliant with US Adult-Signature (21+) Delivery Standards.</small>
+    </div>
+  </div>
+
+  <div class="eo-container">
+    
+    <!-- Header -->
+    <div class="eo-header">
+      <span class="eo-eyebrow">🥃 THE AFICIONADO CELLAR • SPANISH CEDAR &amp; BRIAR RESERVE</span>
+      <h2>Ember &amp; Oak™: Fine Cigars, Pipe Blends &amp; Humidors.</h2>
+      <p>Hand-selected small-batch tasting flights, French briar pipes, Spanish cedar humidors, and triple-jet torches. Engineered for the modern evening ritual.</p>
+    </div>
+
+    <!-- Interactive Module 1: Drink-to-Smoke Sommelier Pairing Engine -->
+    <div class="eo-sommelier-box">
+      <div class="eo-sommelier-left">
+        <span class="eo-subtag">INTERACTIVE SOMMELIER PAIRING</span>
+        <h3>1. Pour Your Evening Drink to Match Your Smoke:</h3>
+        <p>Select your glass below. Our cellar sommelier dynamically pairs the ideal wrapper leaf, aromatic pipe blend, and hardware:</p>
+
+        <div class="eo-drink-grid">
+          <button type="button" class="eo-drink-btn active" onclick="selectEoPairing('bourbon', this)">
+            <span>🥃</span>
+            <div>
+              <strong>Aged Kentucky Bourbon</strong>
+              <small>Caramel, charred oak &amp; vanilla spice</small>
+            </div>
+          </button>
+          <button type="button" class="eo-drink-btn" onclick="selectEoPairing('scotch', this)">
+            <span>🧊</span>
+            <div>
+              <strong>Peated Single Malt Scotch</strong>
+              <small>Smoky Islay peat, leather &amp; sea salt</small>
+            </div>
+          </button>
+          <button type="button" class="eo-drink-btn" onclick="selectEoPairing('espresso', this)">
+            <span>☕</span>
+            <div>
+              <strong>Velvet Double Espresso</strong>
+              <small>Dark roasted crema &amp; bittersweet cocoa</small>
+            </div>
+          </button>
+          <button type="button" class="eo-drink-btn" onclick="selectEoPairing('cognac', this)">
+            <span>🍷</span>
+            <div>
+              <strong>XO Reserve Cognac</strong>
+              <small>Dried fig, candied orange &amp; toasted walnut</small>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Sommelier Pairing Card -->
+      <div class="eo-sommelier-right">
+        <div class="eo-pairing-badge" id="eoPairBadge">★ 99% SOMMELIER PAIRING MATCH</div>
+        <h4 id="eoPairTitle">San Andrés Maduro Reserve + Spanish Cedar Travel Humidor</h4>
+        <p id="eoPairNotes">Rich dark-chocolate wrapper leaf aged 5 years in cedar rooms. Cuts cleanly through the caramel sweetness of Kentucky bourbon with zero harshness.</p>
+
+        <!-- Tasting & Burn Telemetry Bars -->
+        <div class="eo-telemetry">
+          <div class="eo-meter-row">
+            <span>Body &amp; Strength</span>
+            <div class="eo-bar"><div class="eo-fill" id="eoStrengthFill" style="width: 85%;"></div></div>
+            <strong id="eoStrengthText">Medium-Full</strong>
+          </div>
+          <div class="eo-meter-row">
+            <span>Aromatic Smoke Output</span>
+            <div class="eo-bar"><div class="eo-fill" id="eoSmokeFill" style="width: 95%;"></div></div>
+            <strong id="eoSmokeText">Velvet Dense</strong>
+          </div>
+          <div class="eo-meter-row">
+            <span>Burn Duration (52 RG Toro)</span>
+            <div class="eo-bar"><div class="eo-fill" id="eoBurnFill" style="width: 80%;"></div></div>
+            <strong id="eoBurnText">70–85 Mins</strong>
+          </div>
+        </div>
+
+        <div class="eo-pair-footer">
+          <div class="eo-pair-price">
+            <strong id="eoPairPrice">$68.00</strong>
+            <span>$115.00</span>
+          </div>
+          <button type="button" class="eo-btn-gold" onclick="triggerEoQuickBuy(this)">
+            Claim This Pairing Flight →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Module 2: Build Your 3-Piece Executive Aficionado Kit -->
+    <div class="eo-kit-builder">
+      <div class="eo-kit-header">
+        <span class="eo-subtag">CUSTOM BESPOKE BUNDLE • SAVE $46 TODAY</span>
+        <h3>2. Build Your 3-Piece Executive Lounge Kit ($78.00)</h3>
+        <p>Select 1 Vessel + 1 Torch/Cutter + 1 Humidity/Aromatic Pack. Includes a <strong>FREE Cut-Crystal Cigar &amp; Pipe Rest ($24 Value)</strong>:</p>
+      </div>
+
+      <div class="eo-kit-steps">
+        <!-- Step A: Vessel -->
+        <div class="eo-step-col">
+          <h4>Step A: Select Vessel</h4>
+          <div class="eo-choice active" onclick="pickEoKit(1, 'Spanish Cedar Leather Humidor', this)">
+            <strong>📦 Spanish Cedar Travel Humidor</strong>
+            <small>Holds 6 Toro cigars • Airtight seal</small>
+          </div>
+          <div class="eo-choice" onclick="pickEoKit(1, 'Hand-Carved French Briar Pipe', this)">
+            <strong>🪈 Hand-Carved Bent Briar Pipe</strong>
+            <small>Italian ebonite stem • Cool draw</small>
+          </div>
+        </div>
+
+        <!-- Step B: Ignition & Cut -->
+        <div class="eo-step-col">
+          <h4>Step B: Select Ignition &amp; Cut</h4>
+          <div class="eo-choice active" onclick="pickEoKit(2, 'Triple-Jet Torch + Damascus V-Cutter', this)">
+            <strong>🔥 Triple-Jet Torch + V-Cutter</strong>
+            <small>Windproof blue flame + surgical steel</small>
+          </div>
+          <div class="eo-choice" onclick="pickEoKit(2, 'Soft-Flame Pipe Lighter + Czech Tool', this)">
+            <strong>✨ Brass Soft-Flame + Pipe Tamper</strong>
+            <small>Angled nozzle won't scorch briar rim</small>
+          </div>
+        </div>
+
+        <!-- Step C: Care & Aroma -->
+        <div class="eo-step-col">
+          <h4>Step C: Select Care &amp; Ritual</h4>
+          <div class="eo-choice active" onclick="pickEoKit(3, '69% Boveda Pack + Spanish Cedar Spills', this)">
+            <strong>🌡️ 69% Rh Humidity Pack + Cedar Spills</strong>
+            <small>Two-way humidity control + aromatic lighting</small>
+          </div>
+          <div class="eo-choice" onclick="pickEoKit(3, 'Bourbon Vanilla Cavendish Aromatic Kit', this)">
+            <strong>🍂 Bourbon Cask Cedar Infuser</strong>
+            <small>Seasons humidor with warm oak notes</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="eo-kit-summary-bar">
+        <div class="eo-kit-summary-text">
+          <strong>Your Custom Kit:</strong> <span id="eoKitSummary">Spanish Cedar Leather Humidor + Triple-Jet Torch + 69% Rh Humidity Pack + FREE Crystal Rest</span>
+        </div>
+        <button type="button" class="eo-btn-gold" onclick="triggerEoQuickBuy(this)">
+          Add Complete 3-Piece Kit + Free Gift ($78.00) →
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .eo-lounge-wrapper {
+    background: radial-gradient(circle at 50% 15%, #1E140F 0%, #0C0908 80%);
+    color: #F5EFE6;
+    padding: 85px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-top: 1px solid #2E2118;
+    border-bottom: 1px solid #2E2118;
+    position: relative;
+  }
+  .eo-container { max-width: 1140px; margin: 0 auto; }
+
+  /* 21+ Age Gate Modal */
+  .eo-age-gate {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 6, 5, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .eo-age-card {
+    background: #16110E;
+    border: 1px solid #C59B27;
+    border-radius: 24px;
+    max-width: 460px;
+    width: 100%;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+  }
+  .eo-crest { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #D4AF37; display: block; margin-bottom: 12px; }
+  .eo-age-card h3 { font-family: Georgia, serif; font-size: 28px; margin: 0 0 12px; color: #FFFFFF; }
+  .eo-age-card p { font-size: 14px; color: #B8A99A; line-height: 1.6; margin: 0 0 26px; }
+  .eo-age-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .eo-age-card small { font-size: 11px; color: #78695B; }
+
+  /* Header */
+  .eo-header { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+  .eo-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 2px; color: #D4AF37; display: block; margin-bottom: 12px; }
+  .eo-header h2 { font-family: Georgia, "Playfair Display", serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 900; color: #FFFFFF; margin: 0 0 14px; letter-spacing: -0.5px; }
+  .eo-header p { font-size: 16px; color: #B8A99A; line-height: 1.6; margin: 0; }
+
+  /* Sommelier Pairing Box */
+  .eo-sommelier-box {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 32px;
+    background: #16110E;
+    border: 1px solid #2E2118;
+    border-radius: 24px;
+    padding: 36px;
+    margin-bottom: 45px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+  .eo-subtag { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; color: #D4AF37; display: block; margin-bottom: 8px; }
+  .eo-sommelier-left h3, .eo-kit-header h3 { font-family: Georgia, serif; font-size: 24px; color: #FFFFFF; margin: 0 0 10px; }
+  .eo-sommelier-left p, .eo-kit-header p { font-size: 14px; color: #B8A99A; line-height: 1.5; margin: 0 0 22px; }
+
+  .eo-drink-grid { display: flex; flex-direction: column; gap: 10px; }
+  .eo-drink-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #1E1612;
+    border: 1px solid #33241B;
+    border-radius: 14px;
+    padding: 14px 18px;
+    color: #F5EFE6;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .eo-drink-btn span { font-size: 24px; }
+  .eo-drink-btn strong { display: block; font-size: 14px; color: #FFFFFF; }
+  .eo-drink-btn small { font-size: 12px; color: #9C8A79; }
+  .eo-drink-btn:hover, .eo-drink-btn.active {
+    border-color: #D4AF37;
+    background: #281D16;
+    transform: translateX(4px);
+  }
+
+  /* Sommelier Right Card */
+  .eo-sommelier-right {
+    background: radial-gradient(circle at top right, #281D16 0%, #120D0B 100%);
+    border: 1px solid #3D2C20;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .eo-pairing-badge { display: inline-block; background: rgba(212, 175, 55, 0.15); border: 1px solid #D4AF37; color: #D4AF37; font-size: 10px; font-weight: 800; padding: 5px 12px; border-radius: 30px; width: fit-content; margin-bottom: 14px; }
+  .eo-sommelier-right h4 { font-family: Georgia, serif; font-size: 22px; color: #FFFFFF; margin: 0 0 10px; }
+  .eo-sommelier-right p { font-size: 14px; color: #C7B8A8; line-height: 1.6; margin: 0 0 22px; }
+
+  .eo-telemetry { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; border-top: 1px solid #2E2118; border-bottom: 1px solid #2E2118; padding: 18px 0; }
+  .eo-meter-row { display: grid; grid-template-columns: 150px 1fr 95px; align-items: center; gap: 12px; font-size: 12px; }
+  .eo-meter-row span { color: #9C8A79; }
+  .eo-bar { height: 6px; background: #2E2118; border-radius: 10px; overflow: hidden; }
+  .eo-fill { height: 100%; background: linear-gradient(90deg, #8C4A27, #D4AF37); border-radius: 10px; transition: width 0.4s ease; }
+  .eo-meter-row strong { text-align: right; color: #D4AF37; font-size: 11px; }
+
+  .eo-pair-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .eo-pair-price strong { font-size: 28px; font-weight: 900; color: #FFFFFF; }
+  .eo-pair-price span { font-size: 14px; color: #78695B; text-decoration: line-through; margin-left: 8px; }
+
+  .eo-btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #AA8010 100%);
+    color: #0C0908 !important;
+    border: none;
+    padding: 15px 26px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+  }
+  .eo-btn-gold:hover { transform: translateY(-2px); filter: brightness(1.1); }
+  .eo-btn-muted { background: transparent; border: 1px solid #3D2C20; color: #9C8A79; padding: 12px; border-radius: 50px; cursor: pointer; }
+
+  /* 3-Piece Kit Builder */
+  .eo-kit-builder {
+    background: #16110E;
+    border: 1px solid #2E2118;
+    border-radius: 24px;
+    padding: 36px;
+  }
+  .eo-kit-header { text-align: center; max-width: 680px; margin: 0 auto 30px; }
+  .eo-kit-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 28px; }
+  .eo-step-col h4 { font-size: 13px; font-weight: 800; color: #D4AF37; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px; }
+  .eo-choice {
+    background: #1E1612;
+    border: 2px solid #2E2118;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .eo-choice strong { display: block; font-size: 14px; color: #FFFFFF; margin-bottom: 4px; }
+  .eo-choice small { font-size: 12px; color: #9C8A79; }
+  .eo-choice.active { border-color: #D4AF37; background: #281D16; }
+
+  .eo-kit-summary-bar {
+    background: #0C0908;
+    border: 1px solid #3D2C20;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .eo-kit-summary-text { font-size: 13px; color: #C7B8A8; }
+  .eo-kit-summary-text strong { color: #D4AF37; }
+
+  @media (max-width: 850px) {
+    .eo-sommelier-box, .eo-kit-steps { grid-template-columns: 1fr; }
+    .eo-kit-summary-bar { flex-direction: column; text-align: center; }
+  }
+</style>
+
+<script>
+  const eoPairings = {
+    bourbon: {
+      title: "San Andrés Maduro Reserve + Spanish Cedar Travel Humidor",
+      notes: "Rich dark-chocolate wrapper leaf aged 5 years in cedar rooms. Cuts cleanly through the caramel sweetness of Kentucky bourbon with zero harshness.",
+      strength: "85%", strengthTxt: "Medium-Full",
+      smoke: "95%", smokeTxt: "Velvet Dense",
+      burn: "80%", burnTxt: "70–85 Mins",
+      price: "$68.00"
+    },
+    scotch: {
+      title: "Habano Oscuro Private Reserve + Hand-Carved Bent Briar Pipe",
+      notes: "Earthy leather, black pepper, and toasted oak notes engineered to stand shoulder-to-shoulder with smoky Islay single malt scotch.",
+      strength: "95%", strengthTxt: "Full-Bodied",
+      smoke: "90%", smokeTxt: "Rich & Creamy",
+      burn: "90%", burnTxt: "80–95 Mins",
+      price: "$74.00"
+    },
+    espresso: {
+      title: "Connecticut Shade Velvet Toro + Triple-Jet Windproof Torch",
+      notes: "Silky Ecuadorian shade-grown wrapper delivering notes of toasted almond, sweet cream, and cedar alongside a morning or evening espresso.",
+      strength: "55%", strengthTxt: "Smooth Mild-Med",
+      smoke: "92%", smokeTxt: "Silky Cloud",
+      burn: "75%", burnTxt: "60–70 Mins",
+      price: "$58.00"
+    },
+    cognac: {
+      title: "Bourbon-Cask Cavendish Pipe Reserve + Collector's Humidor",
+      notes: "Aromatic fire-cured leaf infused with warm vanilla bean, dried fig, and cognac cask essence. Leaves an unforgettable room note.",
+      strength: "70%", strengthTxt: "Medium",
+      smoke: "98%", smokeTxt: "Aromatic Plume",
+      burn: "85%", burnTxt: "75 Mins",
+      price: "$64.00"
+    }
+  };
+
+  function selectEoPairing(key, btn) {
+    document.querySelectorAll('.eo-drink-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = eoPairings[key];
+    document.getElementById('eoPairTitle').innerText = d.title;
+    document.getElementById('eoPairNotes').innerText = d.notes;
+    document.getElementById('eoStrengthFill').style.width = d.strength;
+    document.getElementById('eoStrengthText').innerText = d.strengthTxt;
+    document.getElementById('eoSmokeFill').style.width = d.smoke;
+    document.getElementById('eoSmokeText').innerText = d.smokeTxt;
+    document.getElementById('eoBurnFill').style.width = d.burn;
+    document.getElementById('eoBurnText').innerText = d.burnTxt;
+    document.getElementById('eoPairPrice').innerText = d.price;
+  }
+
+  const eoKitChoices = {
+    1: "Spanish Cedar Leather Humidor",
+    2: "Triple-Jet Torch + Damascus V-Cutter",
+    3: "69% Rh Humidity Pack + Cedar Spills"
+  };
+
+  function pickEoKit(step, label, el) {
+    eoKitChoices[step] = label;
+    el.parentElement.querySelectorAll('.eo-choice').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('eoKitSummary').innerText = `${eoKitChoices[1]} + ${eoKitChoices[2]} + ${eoKitChoices[3]} + FREE Crystal Rest`;
+  }
+
+  function verifyEoAge(isOfAge) {
+    if (isOfAge) {
+      localStorage.setItem('eo_age_verified_21', 'true');
+      document.getElementById('eoAgeGate').style.display = 'none';
+    } else {
+      window.location.href = 'https://www.google.com';
+    }
+  }
+
+  function triggerEoQuickBuy(btn) {
+    if (window.RO_PRODUCTS && window.RO_PRODUCTS.length > 0) {
+      const p = window.RO_PRODUCTS[0];
+      window.roQuickAdd(p.variants[0].id, p.title, btn);
+    } else {
+      window.location.href = '/collections/all';
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Ember & Oak Cigar Lounge",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ember & Oak Cigar Lounge"
+    }
+  ]
+}
+{% endschema %}

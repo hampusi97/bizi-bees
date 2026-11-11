@@ -23,14 +23,24 @@
     "bizi_gemini_concierge": {
       "type": "bizi-gemini-concierge",
       "settings": {}
+    },
+    "master_flagship_storefront": {
+      "type": "master-flagship-storefront",
+      "settings": {}
+    },
+    "ember_oak_smoke_lounge": {
+      "type": "ember-oak-smoke-lounge",
+      "settings": {}
     }
   },
   "order": [
     "bizi_bees_hero",
+    "master_flagship_storefront",
     "ultra_dynamic_catalog",
     "bizi_blind_date_builder",
     "bizi_crate_builder",
     "bizi_mystery_builder",
-    "bizi_gemini_concierge"
+    "bizi_gemini_concierge",
+    "ember_oak_smoke_lounge"
   ]
 }

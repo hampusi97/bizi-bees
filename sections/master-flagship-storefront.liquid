@@ -1,0 +1,185 @@
+{% comment %}
+  MASTER ALL-IN-ONE FLAGSHIP STOREFRONT SECTION
+  Unites Luma Clinical, Migraine Relief, Bizi Bees Boutique, and Ember & Oak Cigar Lounge
+{% endcomment %}
+
+<div class="mf-wrapper" id="mfStorefront">
+  
+  <div class="mf-hero">
+    <div class="mf-hero-inner">
+      <div class="mf-live-pill">
+        <span class="mf-dot"></span>
+        <span>Verified US Priority Dispatch • 60-Day 100% Money-Back Guarantee</span>
+      </div>
+
+      <h1>Clinical Derm-Tech, Curated Classics &amp; Private Reserve.</h1>
+      <p>Switch seamlessly between our medical-grade 630nm skincare devices, Bizi Bees cozy mystery book crates, and the Ember &amp; Oak™ private cigar &amp; humidor cellar below:</p>
+
+      <div class="mf-hero-ctas">
+        <a href="#mfCatalogGrid" class="mf-btn-primary">Explore Flagship Collection ↓</a>
+        <button type="button" class="mf-btn-secondary">Take 30-Sec Concierge Quiz 🔬</button>
+      </div>
+
+      <div class="mf-press-strip">
+        <span>VOGUE</span>
+        <span>ELLE</span>
+        <span>ALLURE</span>
+        <span>GQ</span>
+        <span>ESQUIRE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Mode Switcher -->
+  <div class="mf-catalog-section" id="mfCatalogGrid">
+    <div class="mf-container">
+      
+      <div class="mf-tabs-header">
+        <div class="mf-tab-pills">
+          <button type="button" class="mf-tab active" onclick="filterMfCatalog('clinical', this)">🔬 Luma Clinical™ Tech</button>
+          <button type="button" class="mf-tab" onclick="filterMfCatalog('relief', this)">🧊 Migraine &amp; Cold Relief</button>
+          <button type="button" class="mf-tab" onclick="filterMfCatalog('boutique', this)">🐝 Bizi Bees Books &amp; Planners</button>
+          <button type="button" class="mf-tab" onclick="scrollToEmberLounge()">🥃 Ember &amp; Oak™ Cigar Lounge</button>
+          <button type="button" class="mf-tab" onclick="filterMfCatalog('all', this)">✨ View All ({{ collections['all'].products.size }})</button>
+        </div>
+      </div>
+
+      <!-- Real Shopify Products Grid -->
+      <div class="mf-product-grid">
+        {% for product in collections['all'].products limit: 36 %}
+          {% assign t_down = product.title | downcase %}
+          {% assign cat_classes = 'all' %}
+          {% assign badge_label = '★ Verified Find' %}
+          {% assign default_visible = false %}
+
+          {% if t_down contains 'luma' or t_down contains 'wand' or t_down contains 'mask' or t_down contains 'sculpt' or t_down contains 'clean' or t_down contains 'lift' %}
+            {% assign cat_classes = cat_classes | append: ' clinical' %}
+            {% assign badge_label = '🔬 Clinical Grade' %}
+            {% assign default_visible = true %}
+          {% endif %}
+
+          {% if t_down contains 'relief' or t_down contains 'migraine' or t_down contains 'cap' %}
+            {% assign cat_classes = cat_classes | append: ' relief clinical' %}
+            {% assign badge_label = '🏥 HSA/FSA Eligible' %}
+            {% assign default_visible = true %}
+          {% endif %}
+
+          {% if default_visible == false %}
+            {% assign cat_classes = cat_classes | append: ' boutique' %}
+            {% assign badge_label = '🐝 Bizi Bees Pick' %}
+          {% endif %}
+
+          <div class="mf-card" data-cats="{{ cat_classes }}" style="{% unless default_visible %}display: none;{% endunless %}">
+            <a href="{{ product.url }}" class="mf-card-img-wrap">
+              <span class="mf-corner-pill">{{ badge_label }}</span>
+              {% if product.featured_image %}
+                <img src="{{ product.featured_image | image_url: width: 650 }}" alt="{{ product.title | escape }}" loading="lazy">
+              {% else %}
+                <div class="mf-no-img">{{ product.title }}</div>
+              {% endif %}
+            </a>
+
+            <div class="mf-card-info">
+              <div class="mf-stars">★★★★★ <span>4.9 Verified</span></div>
+              <a href="{{ product.url }}" class="mf-card-title">{{ product.title }}</a>
+              
+              <div class="mf-price-row">
+                <div class="mf-prices">
+                  <strong>{{ product.price | money }}</strong>
+                  {% if product.compare_at_price > product.price %}
+                    <span class="mf-compare">{{ product.compare_at_price | money }}</span>
+                  {% endif %}
+                </div>
+                {% if product.compare_at_price > product.price %}
+                  <span class="mf-save-pill">SAVE {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}</span>
+                {% endif %}
+              </div>
+
+              <button type="button" class="mf-add-btn" onclick="window.roQuickAdd('{{ product.selected_or_first_available_variant.id }}', '{{ product.title | escape }}', this)">
+                Add to Bag — {{ product.price | money }} ⚡
+              </button>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .mf-wrapper { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #0F172A; background: #FFFFFF; }
+  .mf-container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .mf-hero { background: radial-gradient(circle at 50% 20%, #F0FDFA 0%, #FFFFFF 75%); padding: 65px 20px 50px; text-align: center; border-bottom: 1px solid #E2E8F0; }
+  .mf-hero-inner { max-width: 780px; margin: 0 auto; }
+  .mf-live-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #99F6E4; color: #0F766E; font-size: 11px; font-weight: 800; padding: 6px 16px; border-radius: 40px; margin-bottom: 20px; }
+  .mf-dot { width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 0 3px rgba(16,185,129,0.25); }
+  .mf-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.12; margin: 0 0 16px; color: #0F172A; }
+  .mf-hero p { font-size: 16px; color: #475569; line-height: 1.6; max-width: 650px; margin: 0 auto 28px; }
+  .mf-hero-ctas { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .mf-btn-primary { background: #0F172A; color: #FFFFFF !important; text-decoration: none; padding: 15px 30px; border-radius: 50px; font-weight: 800; font-size: 14px; transition: all 0.2s ease; }
+  .mf-btn-primary:hover { background: #0D9488; transform: translateY(-2px); }
+  .mf-btn-secondary { background: #FFFFFF; color: #0F172A; border: 1px solid #CBD5E1; padding: 15px 26px; border-radius: 50px; font-weight: 800; font-size: 14px; cursor: pointer; }
+  .mf-press-strip { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; border-top: 1px solid #E2E8F0; padding-top: 22px; color: #94A3B8; font-weight: 900; font-size: 13px; letter-spacing: 2px; }
+
+  .mf-catalog-section { padding: 60px 0 80px; }
+  .mf-tabs-header { display: flex; justify-content: center; margin-bottom: 40px; }
+  .mf-tab-pills { display: inline-flex; background: #F1F5F9; padding: 6px; border-radius: 50px; gap: 6px; flex-wrap: wrap; justify-content: center; }
+  .mf-tab { background: transparent; border: none; padding: 10px 20px; border-radius: 40px; font-size: 13px; font-weight: 800; color: #475569; cursor: pointer; transition: all 0.2s ease; }
+  .mf-tab.active { background: #0F172A; color: #FFFFFF; box-shadow: 0 4px 12px rgba(15,23,42,0.18); }
+
+  .mf-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .mf-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .mf-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgba(15,23,42,0.08); border-color: #CBD5E1; }
+  .mf-card-img-wrap { position: relative; height: 240px; background: #F8FAFC; border-radius: 14px; padding: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; text-decoration: none; }
+  .mf-card-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.35s ease; }
+  .mf-card:hover .mf-card-img-wrap img { transform: scale(1.06); }
+  .mf-corner-pill { position: absolute; top: 10px; left: 10px; background: #0F172A; color: #FFFFFF; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; z-index: 2; }
+  .mf-card-info { padding-top: 14px; display: flex; flex-direction: column; flex-grow: 1; }
+  .mf-stars { color: #F59E0B; font-size: 12px; font-weight: 800; margin-bottom: 6px; }
+  .mf-stars span { color: #64748B; font-weight: 500; margin-left: 4px; }
+  .mf-card-title { font-size: 15px; font-weight: 800; color: #0F172A; text-decoration: none; line-height: 1.35; margin-bottom: 12px; flex-grow: 1; }
+  .mf-price-row { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #F1F5F9; padding-top: 10px; margin-bottom: 12px; }
+  .mf-prices strong { font-size: 20px; font-weight: 900; color: #0F172A; }
+  .mf-compare { font-size: 13px; color: #94A3B8; text-decoration: line-through; margin-left: 6px; }
+  .mf-save-pill { background: #ECFDF5; color: #059669; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
+  .mf-add-btn { width: 100%; background: #0F172A; color: #FFFFFF; border: none; padding: 13px; border-radius: 50px; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s ease; }
+  .mf-add-btn:hover { background: #0D9488; }
+
+  @media (max-width: 900px) { .mf-product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .mf-product-grid { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  function filterMfCatalog(cat, btn) {
+    document.querySelectorAll('.mf-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.mf-card').forEach(card => {
+      const cats = card.getAttribute('data-cats') || '';
+      card.style.display = cats.includes(cat) ? 'flex' : 'none';
+    });
+  }
+
+  function scrollToEmberLounge() {
+    const el = document.getElementById('emberOakLounge');
+    if (el) {
+      if (!localStorage.getItem('eo_age_verified_21')) {
+        document.getElementById('eoAgeGate').style.display = 'flex';
+      }
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Master Flagship Store",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Master Flagship Store"
+    }
+  ]
+}
+{% endschema %}
