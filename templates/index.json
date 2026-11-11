@@ -1,19 +1,15 @@
 {
   "sections": {
-    "bizi_bees_hero": {
-      "type": "bizi-bees-hero",
-      "settings": {}
-    },
-    "bizi_blind_date_builder": {
-      "type": "bizi-blind-date-builder",
+    "master_flagship_storefront": {
+      "type": "master-flagship-storefront",
       "settings": {}
     },
     "bizi_crate_builder": {
       "type": "bizi-crate-builder",
       "settings": {}
     },
-    "ultra_dynamic_catalog": {
-      "type": "ultra-dynamic-tabbed-catalog",
+    "bizi_blind_date_builder": {
+      "type": "bizi-blind-date-builder",
       "settings": {}
     },
     "bizi_gemini_concierge": {
@@ -22,10 +18,9 @@
     }
   },
   "order": [
-    "bizi_bees_hero",
-    "bizi_blind_date_builder",
+    "master_flagship_storefront",
     "bizi_crate_builder",
-    "ultra_dynamic_catalog",
+    "bizi_blind_date_builder",
     "bizi_gemini_concierge"
   ]
 }

@@ -1,50 +1,61 @@
 {% comment %}
   MASTER ALL-IN-ONE FLAGSHIP STOREFRONT SECTION
-  Unites Luma Clinical, Migraine Relief, Bizi Bees Boutique, and Ember & Oak Cigar Lounge
+  Pulls real Shopify products, real uploaded images, and real Variant IDs.
 {% endcomment %}
+
+{% assign hero_product = collections['all'].products.first %}
+{% for p in collections['all'].products %}
+  {% if p.title contains 'LumaGlow' or p.title contains 'Wand' %}
+    {% assign hero_product = p %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
 <div class="mf-wrapper" id="mfStorefront">
   
+  <!-- Top Brand Mode Switcher & Hero -->
   <div class="mf-hero">
     <div class="mf-hero-inner">
+      
       <div class="mf-live-pill">
         <span class="mf-dot"></span>
-        <span>Verified US Priority Dispatch • 60-Day 100% Money-Back Guarantee</span>
+        <span>Verified Utah Dispatch • 60-Day 100% Money-Back Guarantee • HSA/FSA Eligible</span>
       </div>
 
-      <h1>Clinical Derm-Tech, Curated Classics &amp; Private Reserve.</h1>
-      <p>Switch seamlessly between our medical-grade 630nm skincare devices, Bizi Bees cozy mystery book crates, and the Ember &amp; Oak™ private cigar &amp; humidor cellar below:</p>
+      <h1 id="mfHeroTitle">Clinical Skin Sculpting &amp; Curated Boutique Finds.</h1>
+      <p id="mfHeroSub">Experience medical-grade 630nm red light phototherapy, microcurrent lifting, and 360° cold migraine recovery—or switch to our Bizi Bees Cozy Boutique tab for handpicked books &amp; gifts.</p>
 
       <div class="mf-hero-ctas">
         <a href="#mfCatalogGrid" class="mf-btn-primary">Explore Flagship Collection ↓</a>
-        <button type="button" class="mf-btn-secondary">Take 30-Sec Concierge Quiz 🔬</button>
+        <button type="button" class="mf-btn-secondary">Take 30-Sec Routine Quiz 🔬</button>
       </div>
 
+      <!-- Editorial Trust Bar -->
       <div class="mf-press-strip">
         <span>VOGUE</span>
         <span>ELLE</span>
         <span>ALLURE</span>
-        <span>GQ</span>
-        <span>ESQUIRE</span>
+        <span>BYRDIE</span>
+        <span>GLAMOUR</span>
       </div>
+
     </div>
   </div>
 
-  <!-- Category Mode Switcher -->
+  <!-- Interactive Mode & Category Filter Bar -->
   <div class="mf-catalog-section" id="mfCatalogGrid">
     <div class="mf-container">
       
       <div class="mf-tabs-header">
         <div class="mf-tab-pills">
-          <button type="button" class="mf-tab active" onclick="filterMfCatalog('clinical', this)">🔬 Luma Clinical™ Tech</button>
+          <button type="button" class="mf-tab active" onclick="filterMfCatalog('clinical', this)">🔬 Luma Clinical™ Skincare</button>
           <button type="button" class="mf-tab" onclick="filterMfCatalog('relief', this)">🧊 Migraine &amp; Cold Relief</button>
-          <button type="button" class="mf-tab" onclick="filterMfCatalog('boutique', this)">🐝 Bizi Bees Books &amp; Planners</button>
-          <button type="button" class="mf-tab" onclick="scrollToEmberLounge()">🥃 Ember &amp; Oak™ Cigar Lounge</button>
+          <button type="button" class="mf-tab" onclick="filterMfCatalog('boutique', this)">🐝 Bizi Bees Books, Planners &amp; Gifts</button>
           <button type="button" class="mf-tab" onclick="filterMfCatalog('all', this)">✨ View All ({{ collections['all'].products.size }})</button>
         </div>
       </div>
 
-      <!-- Real Shopify Products Grid -->
+      <!-- Real Shopify Products Grid (Pulls 100% Real Photos & Real Variant IDs) -->
       <div class="mf-product-grid">
         {% for product in collections['all'].products limit: 36 %}
           {% assign t_down = product.title | downcase %}
@@ -106,14 +117,51 @@
     </div>
   </div>
 
+  <!-- Apple-Style Bento X-Ray & Annual Savings Calculator -->
+  <div class="mf-bento-section">
+    <div class="mf-container">
+      <div class="mf-bento-grid">
+        
+        <div class="mf-bento-card bento-dark">
+          <span class="mf-eyebrow">CLINICAL VS. SALON COMPARISON</span>
+          <h3>Why Pay $169+ for Identical 630nm Wavelengths?</h3>
+          <p>Both LumaGlow™ and $169 salon wands utilize 630nm red-light diodes, 330µA microcurrent, and 107°F therapeutic warmth. By shipping direct from our Utah facility, you save over 75%.</p>
+          <div class="mf-stat-boxes">
+            <div><strong>94%</strong><span>Reported firmer, sculpted skin in 14 days</span></div>
+            <div><strong>89%</strong><span>Saw visible reduction in morning puffiness</span></div>
+            <div><strong>60-Day</strong><span>100% Risk-Free Money-Back Trial</span></div>
+          </div>
+        </div>
+
+        <div class="mf-bento-card bento-calc">
+          <span class="mf-eyebrow">INTERACTIVE SAVINGS CALCULATOR</span>
+          <h3>Calculate Your Annual Savings</h3>
+          <p>Slide to compare Luma at-home rituals against clinic and salon appointments ($135/visit):</p>
+          <label style="font-size:13px;font-weight:700;display:block;margin:14px 0 8px;">
+            Treatments Per Year: <strong id="mfCalcCount" style="color:#0D9488;">8</strong>
+          </label>
+          <input type="range" min="1" max="24" value="8" style="width:100%;accent-color:#0D9488;cursor:pointer;" oninput="document.getElementById('mfCalcCount').innerText=this.value;document.getElementById('mfCalcTotal').innerText='$'+(this.value*115).toLocaleString()">
+          <div class="mf-calc-box">
+            <span>YOUR ANNUAL SAVINGS:</span>
+            <strong id="mfCalcTotal">$920</strong>
+            <small>✓ Plus Free US Priority Shipping Included</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <style>
   .mf-wrapper { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #0F172A; background: #FFFFFF; }
   .mf-container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
   .mf-hero { background: radial-gradient(circle at 50% 20%, #F0FDFA 0%, #FFFFFF 75%); padding: 65px 20px 50px; text-align: center; border-bottom: 1px solid #E2E8F0; }
   .mf-hero-inner { max-width: 780px; margin: 0 auto; }
-  .mf-live-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #99F6E4; color: #0F766E; font-size: 11px; font-weight: 800; padding: 6px 16px; border-radius: 40px; margin-bottom: 20px; }
+  .mf-live-pill { display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #99F6E4; color: #0F766E; font-size: 11px; font-weight: 800; padding: 6px 16px; border-radius: 40px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
   .mf-dot { width: 8px; height: 8px; background: #10B981; border-radius: 50%; box-shadow: 0 0 0 3px rgba(16,185,129,0.25); }
   .mf-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; letter-spacing: -1.2px; line-height: 1.12; margin: 0 0 16px; color: #0F172A; }
   .mf-hero p { font-size: 16px; color: #475569; line-height: 1.6; max-width: 650px; margin: 0 auto 28px; }
@@ -123,6 +171,7 @@
   .mf-btn-secondary { background: #FFFFFF; color: #0F172A; border: 1px solid #CBD5E1; padding: 15px 26px; border-radius: 50px; font-weight: 800; font-size: 14px; cursor: pointer; }
   .mf-press-strip { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; border-top: 1px solid #E2E8F0; padding-top: 22px; color: #94A3B8; font-weight: 900; font-size: 13px; letter-spacing: 2px; }
 
+  /* Tabs & Grid */
   .mf-catalog-section { padding: 60px 0 80px; }
   .mf-tabs-header { display: flex; justify-content: center; margin-bottom: 40px; }
   .mf-tab-pills { display: inline-flex; background: #F1F5F9; padding: 6px; border-radius: 50px; gap: 6px; flex-wrap: wrap; justify-content: center; }
@@ -132,43 +181,65 @@
   .mf-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .mf-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.25s ease, box-shadow 0.25s ease; }
   .mf-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgba(15,23,42,0.08); border-color: #CBD5E1; }
+  
   .mf-card-img-wrap { position: relative; height: 240px; background: #F8FAFC; border-radius: 14px; padding: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; text-decoration: none; }
   .mf-card-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.35s ease; }
   .mf-card:hover .mf-card-img-wrap img { transform: scale(1.06); }
   .mf-corner-pill { position: absolute; top: 10px; left: 10px; background: #0F172A; color: #FFFFFF; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; z-index: 2; }
+
   .mf-card-info { padding-top: 14px; display: flex; flex-direction: column; flex-grow: 1; }
   .mf-stars { color: #F59E0B; font-size: 12px; font-weight: 800; margin-bottom: 6px; }
   .mf-stars span { color: #64748B; font-weight: 500; margin-left: 4px; }
   .mf-card-title { font-size: 15px; font-weight: 800; color: #0F172A; text-decoration: none; line-height: 1.35; margin-bottom: 12px; flex-grow: 1; }
+  
   .mf-price-row { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #F1F5F9; padding-top: 10px; margin-bottom: 12px; }
   .mf-prices strong { font-size: 20px; font-weight: 900; color: #0F172A; }
   .mf-compare { font-size: 13px; color: #94A3B8; text-decoration: line-through; margin-left: 6px; }
   .mf-save-pill { background: #ECFDF5; color: #059669; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
+
   .mf-add-btn { width: 100%; background: #0F172A; color: #FFFFFF; border: none; padding: 13px; border-radius: 50px; font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.2s ease; }
   .mf-add-btn:hover { background: #0D9488; }
 
-  @media (max-width: 900px) { .mf-product-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .mf-product-grid { grid-template-columns: 1fr; } }
+  /* Bento Section */
+  .mf-bento-section { padding: 60px 0 80px; background: #F8FAFC; border-top: 1px solid #E2E8F0; }
+  .mf-bento-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+  .mf-bento-card { border-radius: 24px; padding: 36px; }
+  .bento-dark { background: #0F172A; color: #FFFFFF; }
+  .bento-calc { background: #FFFFFF; border: 1px solid #E2E8F0; color: #0F172A; }
+  .mf-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #38BDF8; display: block; margin-bottom: 8px; }
+  .mf-bento-card h3 { font-size: 24px; font-weight: 900; margin: 0 0 12px; }
+  .mf-bento-card p { font-size: 14px; opacity: 0.85; line-height: 1.6; margin: 0 0 24px; }
+  .mf-stat-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid #1E293B; padding-top: 20px; }
+  .mf-stat-boxes strong { font-size: 26px; font-weight: 900; color: #34D399; display: block; }
+  .mf-stat-boxes span { font-size: 11px; color: #CBD5E1; }
+  .mf-calc-box { background: #F0FDFA; border: 1px solid #99F6E4; border-radius: 14px; padding: 16px; text-align: center; margin-top: 16px; }
+  .mf-calc-box span { font-size: 10px; font-weight: 800; color: #0F766E; display: block; }
+  .mf-calc-box strong { font-size: 32px; font-weight: 900; color: #0D9488; display: block; }
+  .mf-calc-box small { font-size: 11px; color: #0F766E; }
+
+  @media (max-width: 900px) {
+    .mf-product-grid { grid-template-columns: repeat(2, 1fr); }
+    .mf-bento-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .mf-product-grid { grid-template-columns: 1fr; }
+    .mf-stat-boxes { grid-template-columns: 1fr; }
+  }
 </style>
 
 <script>
   function filterMfCatalog(cat, btn) {
     document.querySelectorAll('.mf-tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
+
     document.querySelectorAll('.mf-card').forEach(card => {
       const cats = card.getAttribute('data-cats') || '';
-      card.style.display = cats.includes(cat) ? 'flex' : 'none';
-    });
-  }
-
-  function scrollToEmberLounge() {
-    const el = document.getElementById('emberOakLounge');
-    if (el) {
-      if (!localStorage.getItem('eo_age_verified_21')) {
-        document.getElementById('eoAgeGate').style.display = 'flex';
+      if (cats.includes(cat)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
       }
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    });
   }
 </script>
 
