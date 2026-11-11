@@ -1,0 +1,16 @@
+<div id="dp-cart-drawer" style="position:fixed;inset:0;z-index:250;display:none;">
+  <div onclick="window.DropperCart.close()" style="position:absolute;inset:0;background:rgba(0,0,0,0.7);"></div>
+  <div style="position:absolute;top:0;right:0;bottom:0;width:min(430px,100vw);background:var(--surface);padding:24px;display:flex;flex-direction:column;justify-content:space-between;">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.08);">
+        <strong style="font-family:'Syne',sans-serif;">YOUR BAG (VerdeHydro)</strong>
+        <button onclick="window.DropperCart.close()" style="background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;">&times;</button>
+      </div>
+      <div style="margin:14px 0;padding:12px;background:rgba(255,255,255,0.04);border-radius:12px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);">
+        Free Ship at $45.00 &bull; Bonus at $80.00 &bull; Free Solid Brass Botanical Mister ($24 Value) at $115.00
+      </div>
+    </div>
+    <a href="/checkout?discount=GROW15" class="btn-cta" style="width:100%;justify-content:center;">CHECKOUT WITH GROW15 &rarr;</a>
+  </div>
+</div>
+<script>window.DropperCart={open(){document.getElementById('dp-cart-drawer').style.display='block';},close(){document.getElementById('dp-cart-drawer').style.display='none';}};</script>
