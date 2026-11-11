@@ -1,8 +1,6 @@
 name: Sovereign Bot - 24/7 Fleet Execution, Self-Healing & Daily Report
 
 on:
-  schedule:
-    - cron: '0 * * * *' # Runs automatically every hour 24/7
   workflow_dispatch:
 
 permissions:
@@ -28,12 +26,3 @@ jobs:
         run: node dropper-sovereign-bot.mjs --maintain
       - name: Verify the fleet still builds
         run: npx tsc --noEmit
-      - name: Auto-Commit & Push Updates to GitHub
-        run: |
-          git config --global user.name "Dropper Sovereign Bot"
-          git config --global user.email "sovereign@bizibees.com"
-          git add .
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(sovereign-maintain): verified 15 stores, 7 super-bots & daily report [$(date -u +'%Y-%m-%d %H:%M UTC')]"
-            git push origin main
-          fi

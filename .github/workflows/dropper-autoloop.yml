@@ -1,8 +1,6 @@
 name: Dropper OS Autoloop
 
 on:
-  schedule:
-    - cron: "0 9 * * *"   # every day at 09:00 local
   workflow_dispatch:
 
 jobs:
@@ -54,10 +52,3 @@ jobs:
           echo "Generating daily treasury report (Phase 7)..."
           node scripts/generate-daily-report.mjs || true
 
-      - name: Commit daily report
-        run: |
-          git config user.name "Dropper OS"
-          git config user.email "dropper-os@abacus.ai"
-          git add reports/LATEST.md reports/treasury-results.json || true
-          git commit -m "chore: daily Dropper OS treasury report $(date +%F)" || true
-          git push origin main || true

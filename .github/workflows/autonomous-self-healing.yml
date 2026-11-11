@@ -1,8 +1,6 @@
 name: Autonomous Catalog & Inventory Cron
 
 on:
-  schedule:
-    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -34,10 +32,3 @@ jobs:
           python scripts/seo_blog_generator.py
           python scripts/configure_shipping_rates.py
           python scripts/bizi_bees_curator.py
-      - name: Commit Audit & Social Logs
-        run: |
-          git config --global user.name "Luma-Autonomous-Bot"
-          git config --global user.email "bot@lumaclinical.internal"
-          git add REPORTS_DAILY_AUDIT.md REPORTS_SOCIAL_PUBLISHING.md REPORTS_SEO_BLOGS.md REPORTS_SHIPPING_ECONOMICS.md || true
-          git commit -m "chore: nightly audit, seo blog and shipping economics updates [skip ci]" || exit 0
-          git push origin main

@@ -1,8 +1,6 @@
 name: 🚀 RepoOS™ Autonomous E-Commerce Engine
 
 on:
-  schedule:
-    - cron: '0 */6 * * *' # Executes autonomously every 6 hours
   workflow_dispatch:      # Allows manual trigger anytime from GitHub UI
 
 jobs:
@@ -32,10 +30,3 @@ jobs:
           python scripts/inventory_safety_guard.py || echo "Safety guard completed."
           python scripts/price_elasticity_tester.py || echo "Price elasticity check completed."
 
-      - name: Commit Generated Campaigns & System State to GitHub
-        run: |
-          git config --global user.name "RepoOS-Autonomous-Kernel"
-          git config --global user.email "kernel@repoos.internal"
-          git add state/ REPORTS/ REPORTS_PRICE_ELASTICITY.md || true
-          git commit -m "chore(repo-os): update state and broadcast organic promotion feed [skip ci]" || exit 0
-          git push origin main

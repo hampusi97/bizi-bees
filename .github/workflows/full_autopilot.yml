@@ -1,9 +1,6 @@
 name: ⚡ 100% Full-Stack E-Commerce Autopilot
 
 on:
-  schedule:
-    - cron: '0 8 * * *'   # Runs at 8:00 AM UTC daily for morning digest
-    - cron: '0 */6 * * *' # Health check every 6 hours
   workflow_dispatch:
 
 jobs:
@@ -38,7 +35,6 @@ jobs:
           git config --global user.name "GitHub Autopilot Bot"
           git config --global user.email "autopilot@bizibees-store.com"
           git add REPORTS/ EXPORTS/ config/ || true
-          git diff --staged --quiet || (git commit -m "chore(autopilot): automated daily sync [skip ci]" && git push) || true
 
       - name: Fail-Safe Alert (If Workflow Itself Crashes)
         if: failure()
