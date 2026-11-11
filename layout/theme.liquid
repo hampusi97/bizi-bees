@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#1C1917">
+    <meta name="theme-color" content="#0F172A">
 
-    <!-- Boutique design system fonts -->
+    <!-- Boutique + clinical design system fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -59,11 +59,12 @@
 :root {
   --bizi-bg: #FAF7F2;
   --bizi-surface: #FFFFFF;
-  --bizi-text-primary: #1C1917;
-  --bizi-text-secondary: #78716C;
-  --bizi-border: #E7E5E4;
+  --bizi-text-primary: #0F172A;
+  --bizi-text-secondary: #64748B;
+  --bizi-border: #E2E8F0;
   --bizi-accent-olive: #2D3B2D;
   --bizi-accent-olive-hover: #1F291F;
+  --bizi-accent-teal: #0D9488;
   --bizi-accent-terracotta: #9A4C2E;
   --bizi-font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   --bizi-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -92,7 +93,7 @@ button,input,select,textarea{font:inherit}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .skip{position:absolute;left:-10000px}
 .skip:focus{left:10px;top:10px;background:white;padding:12px;z-index:9}
-:focus-visible{outline:2px solid var(--bizi-accent-olive);outline-offset:3px}
+:focus-visible{outline:2px solid var(--bizi-accent-teal);outline-offset:3px}
 
 /* Buttons */
 .boutique-btn-primary,button.bizi-btn-primary,.button:not(.secondary){
@@ -111,22 +112,22 @@ button,input,select,textarea{font:inherit}
   padding:13px 24px;border-radius:6px;border:1px solid var(--bizi-border);cursor:pointer;
 }
 .boutique-btn-secondary:hover,.secondary:hover{
-  background:#fff;border-color:var(--bizi-accent-olive);color:var(--bizi-accent-olive);
+  background:#fff;border-color:var(--bizi-accent-teal);color:var(--bizi-accent-teal);
 }
 
 /* Cards */
 .card,.card-wrapper,.boutique-card{
   background:var(--bizi-surface);border:1px solid var(--bizi-border);
-  border-radius:10px;box-shadow:0 4px 20px rgba(28,25,23,.05);
+  border-radius:10px;box-shadow:0 4px 20px rgba(15,23,42,.05);
   transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;
   overflow:hidden;
 }
 .card:hover,.card-wrapper:hover,.boutique-card:hover{
-  transform:translateY(-4px);box-shadow:0 12px 32px rgba(28,25,23,.10);
+  transform:translateY(-4px);box-shadow:0 12px 32px rgba(15,23,42,.10);
 }
 
 /* Basic layout helpers */
-.announcement-bar{background:#1C1917;color:#FAF7F2;text-align:center;font-size:12.5px;padding:8px 16px;letter-spacing:.03em}
+.announcement-bar{background:#0F172A;color:#F8FAFC;text-align:center;font-size:12.5px;padding:8px 16px;letter-spacing:.03em}
 .site-header{background:var(--bizi-bg);border-bottom:1px solid var(--bizi-border)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 0}
 .logo-text{font-family:var(--bizi-font-serif);font-size:26px;font-weight:700;letter-spacing:-.02em}
@@ -139,6 +140,8 @@ button,input,select,textarea{font:inherit}
 </style>
 {{ 'theme.css' | asset_url | stylesheet_tag }}
 {{ 'bizi-boutique-theme.css' | asset_url | stylesheet_tag }}
+{{ 'emergency-storefront-repair.css' | asset_url | stylesheet_tag }}
+{{ 'ultra-dynamic-core.css' | asset_url | stylesheet_tag }}
     <style>
       .collection-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin:4px 0 22px}
       .collection-links a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
@@ -154,6 +157,7 @@ button,input,select,textarea{font:inherit}
 
   <body>
     <a class="skip" href="#MainContent">Skip to content</a>
+    {% render 'dynamic-free-shipping-bar' %}
     {% section 'header' %}
     <main id="MainContent">
       {{ content_for_layout }}
@@ -201,5 +205,6 @@ button,input,select,textarea{font:inherit}
       </script>
     {% endif %}
   {% render 'conversion-booster' %}
+  <script src="{{ 'ultra-dynamic-core.js' | asset_url }}" defer></script>
   </body>
 </html>
