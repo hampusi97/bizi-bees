@@ -1,5 +1,5 @@
 {% comment %}
-  BIZI BEES & LUMA CLINICAL AI CONCIERGE (POWERED BY GOOGLE GEMINI)
+  BIZI BEES RESIDENT BOOKWORM & GIFT STYLIST (POWERED BY GOOGLE GEMINI)
   Repo: bizi-bees /sections/bizi-gemini-concierge.liquid
   Dual-Key Secure Proxy: https://bizi-bees.vercel.app/api/ai/generate
 {% endcomment %}
@@ -11,10 +11,10 @@
     <div class="ai-header">
       <div class="ai-badge-pill">
         <span class="ai-pulse-dot"></span>
-        POWERED BY GOOGLE GEMINI 3.5 FLASH • DUAL-KEY PROXY
+        POWERED BY GOOGLE GEMINI AI • BIZI BEES BOUTIQUE
       </div>
-      <h2>✨ Ask Our AI Concierge</h2>
-      <p>Instant answers on Bizi Bees vintage mystery book boxes, Luma Clinical dermatology protocols, or personalized gift recommendations.</p>
+      <h2>✨ Ask Our Resident Bookworm</h2>
+      <p>Instant recommendations on vintage paperbacks, blind date with a book mystery vibes, clean soy candle pairings, and curated gift crates.</p>
     </div>
 
     <!-- Interactive AI Terminal Card -->
@@ -24,15 +24,15 @@
       <div class="ai-pills-label">Suggested Questions:</div>
       <div class="ai-pills-row">
         <button type="button" class="ai-pill" onclick="sendAiPrompt('Recommend a cozy vintage mystery book box for an Agatha Christie fan.')">
-          🐝 Cozy Mystery Recommendation
+          📖 Cozy Mystery Recommendation
         </button>
-        <button type="button" class="ai-pill" onclick="sendAiPrompt('How does the LumaGlow 4-in-1 wand compare to Solawave for skin firming?')">
-          🔬 LumaGlow vs Solawave
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('Which soy candle scent pairs best with evening reading?')">
+          🕯️ Best Candle for Reading
         </button>
-        <button type="button" class="ai-pill" onclick="sendAiPrompt('How long does the LumaRelief migraine cap retain freezing temperature?')">
-          🧊 Migraine Cap Cold Therapy
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('Tell me about the Harry Potter 12-Month Undated Planner.')">
+          ✍️ Harry Potter Planner Details
         </button>
-        <button type="button" class="ai-pill" onclick="sendAiPrompt('What is your best gift under $25 with verified 24h Utah dispatch?')">
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('What is your best curated gift under $25 with fast Utah dispatch?')">
           🎁 Best Gifts Under $25
         </button>
       </div>
@@ -40,10 +40,10 @@
       <!-- Live Chat / Output Stream -->
       <div class="ai-stream-box" id="aiStreamBox">
         <div class="ai-message ai-bot">
-          <div class="ai-avatar">🤖</div>
+          <div class="ai-avatar">🐝</div>
           <div class="ai-bubble">
-            <strong>Welcome to the Bizi Bees &amp; Luma Clinical Concierge!</strong>
-            <p>I can help you choose the right dermatology tool, explain phototherapy wavelengths, or curate your next vintage blind date with a book. What can I find for you today?</p>
+            <strong>Welcome to Bizi Bees Boutique &amp; Bookshop!</strong>
+            <p>I'm your resident bookworm and gifting concierge. Tell me what reading genre you love or who you're shopping for, and I'll curate the perfect pairing from our Salt Lake City studio.</p>
           </div>
         </div>
       </div>
@@ -53,17 +53,18 @@
         <input 
           type="text" 
           id="aiUserInput" 
-          placeholder="Ask about our vintage books, facial wands, migraine caps..." 
+          placeholder="Ask about our mystery book boxes, soy candles, planners..." 
           autocomplete="off"
           required
         />
         <button type="submit" class="ai-send-btn" id="aiSendBtn">
-          <span>Ask Gemini ⚡</span>
+          <span>Ask Bookworm</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </button>
       </form>
 
-      <div class="ai-disclaimer">
-        <span>⚡ Encrypted via Vercel Edge Mesh • Dual-Key High Availability Rotation • Sub-Second Latency</span>
+      <div class="ai-card-footer">
+        <span>⚡ Real-Time Recommendations • Hand-Packed in Kraft Paper &amp; Twine • Free US Shipping over $35</span>
       </div>
 
     </div>
@@ -73,78 +74,69 @@
 
 <style>
   .ai-concierge-wrap {
-    padding: 75px 20px 85px;
-    background: #090D16;
-    color: #F8FAFC;
+    background: radial-gradient(circle at 50% 10%, #FFFDF9 0%, #FAF7F2 100%);
+    padding: 70px 20px 80px;
+    border-top: 1px solid #EADBCE;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    position: relative;
-    overflow: hidden;
   }
-  .ai-concierge-inner {
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .ai-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  .ai-concierge-inner { max-width: 820px; margin: 0 auto; }
+  
+  .ai-header { text-align: center; margin-bottom: 30px; }
   .ai-badge-pill {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    color: #38BDF8;
+    background: #FEF3C7;
+    border: 1px solid #FDE68A;
+    color: #92400E;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     padding: 6px 16px;
     border-radius: 40px;
     margin-bottom: 14px;
   }
   .ai-pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: #38BDF8;
+    width: 7px;
+    height: 7px;
+    background: #D9822B;
     border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
-    animation: aiPulse 2s infinite;
+    animation: aiPulse 1.8s infinite;
   }
   @keyframes aiPulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.6; }
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
   }
   .ai-header h2 {
-    font-size: 32px;
+    font-family: Georgia, "Playfair Display", serif;
+    font-size: clamp(28px, 4vw, 38px);
     font-weight: 900;
-    color: #FFFFFF;
-    margin: 0 0 8px;
-    letter-spacing: -0.5px;
+    color: #29231E;
+    margin: 0 0 10px;
   }
   .ai-header p {
-    color: #94A3B8;
-    font-size: 14px;
-    max-width: 600px;
+    font-size: 15px;
+    color: #6E6257;
     margin: 0 auto;
+    max-width: 600px;
     line-height: 1.5;
   }
 
   .ai-card {
-    background: #0F172A;
-    border: 1px solid #1E293B;
+    background: #FFFFFF;
+    border: 1px solid #E6DDD1;
     border-radius: 20px;
     padding: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 30px rgba(41, 35, 30, 0.06);
   }
-
-  /* Pills */
   .ai-pills-label {
     font-size: 11px;
     font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #786C62;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748B;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .ai-pills-row {
     display: flex;
@@ -153,240 +145,201 @@
     margin-bottom: 20px;
   }
   .ai-pill {
-    background: #0B111E;
-    border: 1px solid #1E293B;
-    color: #CBD5E1;
-    font-size: 12px;
-    font-weight: 600;
+    background: #FAF7F2;
+    border: 1px solid #E6DDD1;
+    color: #29231E;
     padding: 7px 14px;
     border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
   }
   .ai-pill:hover {
-    background: rgba(56, 189, 248, 0.12);
-    border-color: #38BDF8;
-    color: #38BDF8;
+    background: #29231E;
+    color: #FAF7F2;
+    border-color: #29231E;
     transform: translateY(-1px);
   }
 
-  /* Stream Box */
   .ai-stream-box {
-    min-height: 180px;
-    max-height: 380px;
-    overflow-y: auto;
-    background: #06090F;
-    border: 1px solid #1E293B;
+    background: #FAF7F2;
+    border: 1px solid #EAE3D8;
     border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 18px;
+    padding: 18px;
+    min-height: 160px;
+    max-height: 320px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    margin-bottom: 18px;
   }
   .ai-message {
     display: flex;
     gap: 12px;
     align-items: flex-start;
   }
-  .ai-user {
-    flex-direction: row-reverse;
-  }
+  .ai-message.ai-user { flex-direction: row-reverse; }
   .ai-avatar {
     width: 32px;
     height: 32px;
-    border-radius: 8px;
-    background: #1E293B;
+    border-radius: 50%;
+    background: #EFE9DF;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16px;
     flex-shrink: 0;
   }
-  .ai-user .ai-avatar {
-    background: #0D9488;
-  }
   .ai-bubble {
-    background: #0F172A;
-    border: 1px solid #1E293B;
-    padding: 12px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E6DDD1;
     border-radius: 14px;
+    padding: 12px 16px;
     font-size: 13.5px;
-    line-height: 1.55;
-    color: #E2E8F0;
-    max-width: 80%;
-  }
-  .ai-bubble strong {
-    color: #38BDF8;
-    display: block;
-    margin-bottom: 4px;
-    font-size: 13px;
+    line-height: 1.5;
+    color: #29231E;
+    max-width: 82%;
   }
   .ai-user .ai-bubble {
-    background: #0D9488;
-    border-color: #14B8A6;
-    color: #FFFFFF;
+    background: #29231E;
+    color: #FAF7F2;
+    border-color: #29231E;
   }
-  .ai-bubble p {
-    margin: 0;
-  }
+  .ai-bubble strong { display: block; margin-bottom: 4px; font-size: 13.5px; }
+  .ai-bubble p { margin: 0; }
 
-  /* Input Form */
   .ai-input-form {
     display: flex;
     gap: 10px;
   }
   .ai-input-form input {
-    flex-grow: 1;
-    background: #06090F;
-    border: 1px solid #1E293B;
+    flex: 1;
+    background: #FAF7F2;
+    border: 1.5px solid #E2D7C8;
     border-radius: 50px;
     padding: 14px 22px;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #29231E;
     outline: none;
     transition: border-color 0.2s;
   }
   .ai-input-form input:focus {
-    border-color: #38BDF8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    border-color: #D9822B;
+    background: #FFFFFF;
   }
   .ai-send-btn {
-    background: linear-gradient(135deg, #0D9488 0%, #10B981 100%);
-    color: #FFFFFF;
+    background: #29231E;
+    color: #FAF7F2;
     border: none;
-    padding: 14px 24px;
+    padding: 0 24px;
     border-radius: 50px;
-    font-size: 14px;
     font-weight: 800;
+    font-size: 13.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    transition: all 0.2s;
-    white-space: nowrap;
+    transition: all 0.2s ease;
   }
   .ai-send-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
-  }
-  .ai-send-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+    background: #D9822B;
+    transform: translateY(-1px);
   }
 
-  .ai-disclaimer {
+  .ai-card-footer {
     margin-top: 14px;
     text-align: center;
     font-size: 11px;
-    color: #64748B;
+    color: #786C62;
   }
 
-  @media(max-width: 600px) {
-    .ai-bubble { max-width: 90%; }
+  @media (max-width: 600px) {
     .ai-input-form { flex-direction: column; }
-    .ai-send-btn { width: 100%; }
+    .ai-send-btn { padding: 14px; justify-content: center; }
   }
 </style>
 
 <script>
-  var AI_PROXY_URL = 'https://bizi-bees.vercel.app/api/ai/generate';
-
-  function appendAiMessage(sender, text) {
-    var box = document.getElementById('aiStreamBox');
-    if (!box) return;
-
-    var isUser = sender === 'user';
-    var wrapper = document.createElement('div');
-    wrapper.className = 'ai-message ' + (isUser ? 'ai-user' : 'ai-bot');
-
-    var avatar = document.createElement('div');
+  function appendMessage(role, htmlContent) {
+    const box = document.getElementById('aiStreamBox');
+    const msg = document.createElement('div');
+    msg.className = 'ai-message ai-' + role;
+    
+    const avatar = document.createElement('div');
     avatar.className = 'ai-avatar';
-    avatar.innerText = isUser ? '👤' : '🤖';
-
-    var bubble = document.createElement('div');
+    avatar.innerText = role === 'user' ? '👤' : '🐝';
+    
+    const bubble = document.createElement('div');
     bubble.className = 'ai-bubble';
-    bubble.innerHTML = isUser 
-      ? '<p>' + escapeHtml(text) + '</p>'
-      : '<strong>Concierge Answer:</strong><p>' + escapeHtml(text) + '</p>';
+    bubble.innerHTML = htmlContent;
 
-    wrapper.appendChild(avatar);
-    wrapper.appendChild(bubble);
-    box.appendChild(wrapper);
+    msg.appendChild(avatar);
+    msg.appendChild(bubble);
+    box.appendChild(msg);
     box.scrollTop = box.scrollHeight;
   }
 
-  function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.innerText = str;
-    return div.innerHTML;
-  }
-
-  function sendAiPrompt(promptText) {
-    var input = document.getElementById('aiUserInput');
-    if (input) {
-      input.value = promptText;
-      triggerAiQuery(promptText);
-    }
+  function sendAiPrompt(text) {
+    document.getElementById('aiUserInput').value = text;
+    handleAiSubmit(new Event('submit'));
   }
 
   function handleAiSubmit(e) {
-    e.preventDefault();
-    var input = document.getElementById('aiUserInput');
-    if (!input || !input.value.trim()) return;
-    var query = input.value.trim();
+    if (e && e.preventDefault) e.preventDefault();
+    const input = document.getElementById('aiUserInput');
+    const prompt = input.value.trim();
+    if (!prompt) return;
+
+    appendMessage('user', '<p>' + prompt + '</p>');
     input.value = '';
-    triggerAiQuery(query);
-  }
 
-  function triggerAiQuery(query) {
-    appendAiMessage('user', query);
+    const btn = document.getElementById('aiSendBtn');
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
 
-    var sendBtn = document.getElementById('aiSendBtn');
-    if (sendBtn) {
-      sendBtn.innerHTML = 'Thinking... ⏳';
-      sendBtn.disabled = true;
-    }
-
-    var systemInstruction = "You are the expert concierge for Bizi Bees Curated Vintage and Luma Clinical dermatology tech. Be charming, informative, concise (2-3 sentences), and highlight relevant products like the LumaGlow 4-in-1 facial wand ($38.99), LumaRelief 360 migraine cap ($22.74), or Bizi Bees Blind Date with a Book ($14.99) dispatched in 24h from Utah.";
-
-    fetch(AI_PROXY_URL, {
+    // Call Gemini API via proxy or provide smart local fallback
+    fetch('https://bizi-bees.vercel.app/api/ai/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        prompt: query,
-        systemInstruction: systemInstruction,
-        model: 'gemini-3.5-flash'
+        prompt: prompt,
+        systemInstruction: "You are the resident bookworm and boutique gifting concierge for Bizi Bees Boutique & Books in Utah. Be warm, cozy, charming, and concise (2-3 sentences max). Recommend our Blind Date with a Book ($14.99), Hand-Poured Soy Candles ($14-$37), Harry Potter 12-Month Planner ($24.99), or our 4-Item Custom Cozy Evening Crate ($38.00). Mention our free US shipping on orders over $35 and signature kraft gift packaging with beeswax seal."
       })
     })
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      if (data.success && data.text) {
-        appendAiMessage('bot', data.text);
-      } else {
-        appendAiMessage('bot', "Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!");
-      }
+    .then(r => r.json())
+    .then(data => {
+      const reply = data.text || data.output || "I recommend our classic Blind Date with a Book ($14.99)—it comes wrapped in recycled kraft paper with a real wax seal, handwritten clue tag, brass bee bookmark, and chamomile tea. Perfect for a cozy evening in!";
+      appendMessage('bot', '<p>' + reply + '</p>');
     })
-    .catch(function(err) {
-      appendAiMessage('bot', "Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!");
-    })
-    .finally(function() {
-      if (sendBtn) {
-        sendBtn.innerHTML = '<span>Ask Gemini ⚡</span>';
-        sendBtn.disabled = false;
+    .catch(() => {
+      // Graceful local boutique concierge fallback
+      let fallback = "For an unforgettable evening, I recommend pairing our **Blind Date with a Book: Rainy Day Whodunit ($14.99)** with the **Christmas Tree Farm Travel Tin Candle ($14.00)**. Both arrive wrapped in kraft paper, tied with twine, and stamped with our beeswax seal!";
+      const p = prompt.toLowerCase();
+      if (p.includes('candle')) {
+        fallback = "Our **Fresh Woods Soy Blend Candle ($37.00)** and **Christmas Tree Farm Tin Candle ($14.00)** are hand-poured with clean soy wax, cedarwood, and balsam fir for a long, soot-free burn.";
+      } else if (p.includes('planner') || p.includes('stationery') || p.includes('potter')) {
+        fallback = "Our **Harry Potter 12-Month Undated Planner ($24.99)** features potion recipe spreads and ribbon bookmarks—pair it with the **Gardener's Washi Tape Set ($12.00)** for the ultimate cozy journaling desk.";
+      } else if (p.includes('crate') || p.includes('gift')) {
+        fallback = "Our **4-Item Custom Cozy Evening Crate ($38.00)** lets you choose your vintage paperback, artisan tea, hand-poured soy candle, and brass keepsake in a wooden-wool packed kraft gift crate.";
       }
+      appendMessage('bot', '<p>' + fallback + '</p>');
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.style.opacity = '1';
     });
   }
 </script>
 
 {% schema %}
 {
-  "name": "Gemini AI Concierge",
-  "tag": "section",
-  "class": "section-gemini-ai-concierge",
+  "name": "Bizi Bees AI Concierge",
   "settings": [],
   "presets": [
     {
-      "name": "Gemini AI Concierge"
+      "name": "Bizi Bees AI Concierge"
     }
   ]
 }

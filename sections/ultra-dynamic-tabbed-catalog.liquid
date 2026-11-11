@@ -1,1008 +1,625 @@
 <!-- ==========================================================
-     ULTRA-DYNAMIC MULTI-TABBED STOREFRONT SHOWCASE
+     BIZI BEES BOUTIQUE & BOOKSHOP — CURATED CATALOG SHOWCASE
      Repo: bizi-bees /sections/ultra-dynamic-tabbed-catalog.liquid
      ========================================================== -->
 
-<div class="dyn-catalog-wrapper" id="dynCatalog">
-  <div class="dyn-catalog-glow"></div>
-
-  <div class="dyn-catalog-header">
-    <div class="dyn-badge-pill">
-      <span class="dyn-pulse-dot"></span>
-      {{ section.settings.badge_text | default: "VERIFIED UTAH DISPATCH • 60-DAY RISK-FREE TRIAL" }}
+<div class="bb-catalog-wrapper" id="biziCatalog">
+  <div class="bb-catalog-header">
+    <div class="bb-pill-tag">
+      <span>🐝</span>
+      CURATED PRE-LOVED FINDS &amp; ARTISAN GIFTS
     </div>
-    <h2>{{ section.settings.heading | default: "Curated Clinical Tech & Boutique Finds" }}</h2>
-    <p>{{ section.settings.subheading | default: "Explore our flagship dermatology tools, therapeutic migraine recovery, and handpicked vintage treasures. Choose a category below:" }}</p>
+    <h2>Curated Boutique Treasures</h2>
+    <p>Explore hand-inspected vintage paperbacks, clean-burning soy candles, botanical stationery, and sensory keepsakes from our Utah studio:</p>
   </div>
 
-  <!-- Animated Dynamic Category Tabs -->
-  <div class="dyn-tabs-container">
-    <div class="dyn-tabs-track" role="tablist" aria-label="Catalog Categories">
-      <button class="dyn-tab-btn active" onclick="switchCategory('all', this)" type="button" role="tab" aria-selected="true">
-        <span>✨ All Flagship Items</span>
+  <!-- Category Filter Tabs -->
+  <div class="bb-tabs-container">
+    <div class="bb-tabs-track" role="tablist" aria-label="Catalog Categories">
+      <button class="bb-tab-btn active" onclick="filterCatalog('all', this)" type="button" role="tab" aria-selected="true">
+        <span>✨ All Treasures</span>
       </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('clinical', this)" type="button" role="tab" aria-selected="false">
-        <span>🔬 Luma Clinical™</span>
+      <button class="bb-tab-btn" onclick="filterCatalog('books', this)" type="button" role="tab" aria-selected="false">
+        <span>📖 Books &amp; Planners</span>
       </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('relief', this)" type="button" role="tab" aria-selected="false">
-        <span>🧊 Migraine &amp; Relief</span>
+      <button class="bb-tab-btn" onclick="filterCatalog('candles', this)" type="button" role="tab" aria-selected="false">
+        <span>🕯️ Hand-Poured Candles</span>
       </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('books', this)" type="button" role="tab" aria-selected="false">
-        <span>📖 Books &amp; Puzzles</span>
+      <button class="bb-tab-btn" onclick="filterCatalog('spa', this)" type="button" role="tab" aria-selected="false">
+        <span>🌿 Spa &amp; Aromatherapy</span>
       </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('gifts', this)" type="button" role="tab" aria-selected="false">
-        <span>🎁 Gifts Under $25</span>
+      <button class="bb-tab-btn" onclick="filterCatalog('keepsakes', this)" type="button" role="tab" aria-selected="false">
+        <span>🎁 Cozy Keepsakes</span>
       </button>
-      <div class="dyn-tab-slider" id="tabSlider"></div>
     </div>
   </div>
 
-  <!-- Dynamic Product Grid -->
-  <div class="dyn-grid" id="dynProductGrid">
+  <!-- Product Grid -->
+  <div class="bb-product-grid" id="bbProductGrid">
 
-    <!-- Item 1: LumaGlow 4-in-1 (Clinical) -->
-    <div class="dyn-card" data-category="clinical all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-urgent">Curator's Choice</span>
+    <!-- 1. Harry Potter Undated Planner -->
+    <div class="bb-prod-card" data-category="books all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Boutique Exclusive</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaGlow 4-in-1 Wand"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/9798886631364.jpg?v=1794345324" 
+          alt="Harry Potter: Spells and Potions 12-Month Undated Planner"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.9 (184+ reviews)</span></div>
-        <h3>LumaGlow™ QuadWave Pro 4-in-1 Facial Wand</h3>
-        <p class="dyn-spec">630nm medical phototherapy, 330µA microcurrent &amp; 107°F thermal massage.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$38.99</strong>
-            <span class="dyn-strike">$89.99</span>
-          </div>
-          <span class="dyn-save">SAVE $51</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (142 reviews)</span></div>
+        <h3>Harry Potter: Spells &amp; Potions 12-Month Undated Planner</h3>
+        <p class="bb-card-desc">Foil-stamped hardcover journal with potion recipe spreads and ribbon bookmark.</p>
+        <div class="bb-card-pricing">
+          <strong>$24.99</strong>
+          <span class="bb-card-strike">$32.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaGlow™ 4-in-1 Wand', '38.99', this)" type="button">
-          <span>Add to Bag — $38.99</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838155227303, 'Harry Potter 12-Month Planner', this)" type="button">
+          Add to Bag — $24.99
         </button>
       </div>
     </div>
 
-    <!-- Item 2: LumaRelief Migraine Cap (Relief) -->
-    <div class="dyn-card" data-category="relief all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-hsa">HSA/FSA Eligible</span>
+    <!-- 2. Christmas Tree Farm Travel Tin Candle -->
+    <div class="bb-prod-card" data-category="candles all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Seasonal Pick</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaRelief Migraine Cap"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/christmastreefarmclose.png?v=1794345648" 
+          alt="Christmas Tree Farm Travel Tin Candle"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.9 (218+ reviews)</span></div>
-        <h3>LumaRelief™ 360° Cold &amp; Thermal Migraine Cap</h3>
-        <p class="dyn-spec">Drug-free headache, sinus tension &amp; eye strain relief with total blackout comfort.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$22.74</strong>
-            <span class="dyn-strike">$34.99</span>
-          </div>
-          <span class="dyn-save">SAVE 35%</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>5.0 (98 reviews)</span></div>
+        <h3>Christmas Tree Farm Travel Tin Candle</h3>
+        <p class="bb-card-desc">Hand-poured 100% soy candle with notes of Fraser fir, cedarwood, and spiced pine cones.</p>
+        <div class="bb-card-pricing">
+          <strong>$14.00</strong>
+          <span class="bb-card-strike">$18.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaRelief™ Migraine Cap', '22.74', this)" type="button">
-          <span>Add to Bag — $22.74</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838179311783, 'Christmas Tree Farm Tin Candle', this)" type="button">
+          Add to Bag — $14.00
         </button>
       </div>
     </div>
 
-    <!-- Item 3: LumaRelief 2-Cap Bundle (Relief) -->
-    <div class="dyn-card" data-category="relief all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-bundle">★ 2-Cap Rotation Pack</span>
+    <!-- 3. Fresh Woods Soy Blend Candle -->
+    <div class="bb-prod-card" data-category="candles all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Artisan Hand-Poured</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaRelief 2-Cap Rotation"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/fresh-woods-petite-single-wick-long-burn-candle.jpg?v=1794345251" 
+          alt="Fresh Woods Soy Blend Candle"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>5.0 (92+ reviews)</span></div>
-        <h3>LumaRelief™ Continuous 2-Cap Rotation Pack</h3>
-        <p class="dyn-spec">Keep one cap in the freezer while using the other for non-stop all-day migraine relief.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$32.49</strong>
-            <span class="dyn-strike">$49.99</span>
-          </div>
-          <span class="dyn-save">BEST VALUE</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (87 reviews)</span></div>
+        <h3>Fresh Woods Soy Blend Candle — Pine, Balsam &amp; Fir</h3>
+        <p class="bb-card-desc">Petite single-wick long-burn candle infused with pure botanical essential oils.</p>
+        <div class="bb-card-pricing">
+          <strong>$37.00</strong>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaRelief™ 2-Cap Bundle', '32.49', this)" type="button">
-          <span>Add to Bag — $32.49</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838152343719, 'Fresh Woods Soy Blend Candle', this)" type="button">
+          Add to Bag — $37.00
         </button>
       </div>
     </div>
 
-    <!-- Item 4: LumaMask LED Shield (Clinical) -->
-    <div class="dyn-card" data-category="clinical all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-clinic">7-Color Phototherapy</span>
+    <!-- 4. Amber Santal Soy Blend Candle -->
+    <div class="bb-prod-card" data-category="candles all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Best-Seller</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaMask LED Shield"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/amber-santal-petite-single-wick-long-burn-candle.jpg?v=1794345176" 
+          alt="Amber Santal Soy Blend Candle"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>5.0 (96+ reviews)</span></div>
-        <h3>LumaMask™ 7-Color LED Phototherapy Face Shield</h3>
-        <p class="dyn-spec">Full-facial medical spectrum targeting acne, deep wrinkles &amp; hyperpigmentation.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$84.49</strong>
-            <span class="dyn-strike">$219.99</span>
-          </div>
-          <span class="dyn-save">SAVE $135</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (112 reviews)</span></div>
+        <h3>Amber Santal Soy Blend Candle — Sweet Amber &amp; Sandalwood</h3>
+        <p class="bb-card-desc">Warm vanilla orchid, creamy sandalwood, and golden amber in a keepsake glass vessel.</p>
+        <div class="bb-card-pricing">
+          <strong>$37.00</strong>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaMask™ LED Shield', '84.49', this)" type="button">
-          <span>Add to Bag — $84.49</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838149263527, 'Amber Santal Soy Candle', this)" type="button">
+          Add to Bag — $37.00
         </button>
       </div>
     </div>
 
-    <!-- Item 5: LumaLift V-Face Sculptor (Clinical) -->
-    <div class="dyn-card" data-category="clinical all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-urgent">Microcurrent Sculpt</span>
+    <!-- 5. Frost & Fir Shower Steamers 6 Pack -->
+    <div class="bb-prod-card" data-category="spa all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Aromatherapy</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaLift V-Face"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512290900672-1f5be979c656?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/il_fullxfull.8239919103_qgps.jpg?v=1794344457" 
+          alt="Frost &amp; Fir Shower Steamers"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.9 (142+ reviews)</span></div>
-        <h3>LumaLift™ Microcurrent V-Face Jawline Sculptor</h3>
-        <p class="dyn-spec">Dual microcurrent spheres tone submental muscles and lift jowls in 5 mins/day.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$42.24</strong>
-            <span class="dyn-strike">$109.99</span>
-          </div>
-          <span class="dyn-save">SAVE $67</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.8 (64 reviews)</span></div>
+        <h3>Frost &amp; Fir Shower Steamers (6-Pack)</h3>
+        <p class="bb-card-desc">Crisp minty eucalyptus and balsam fir shower effervescents for morning clarity.</p>
+        <div class="bb-card-pricing">
+          <strong>$16.62</strong>
+          <span class="bb-card-strike">$22.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaLift™ V-Face Sculptor', '42.24', this)" type="button">
-          <span>Add to Bag — $42.24</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838081663143, 'Frost & Fir Shower Steamers', this)" type="button">
+          Add to Bag — $16.62
         </button>
       </div>
     </div>
 
-    <!-- Item 6: LumaClean Sonic Brush Cleaner (Clinical / Gifts) -->
-    <div class="dyn-card" data-category="clinical gifts all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-hsa">Sonic Deep Cleansing</span>
+    <!-- 6. Santa's Spa Shower Steamers 6 Pack -->
+    <div class="bb-prod-card" data-category="spa all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Holiday Spa</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="LumaClean Brush Cleaner"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/il_fullxfull.8239882813_4ju8.jpg?v=1794344367" 
+          alt="Santa's Spa Shower Steamers"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.8 (110+ reviews)</span></div>
-        <h3>LumaClean™ Automatic Electric Makeup Brush Cleaner</h3>
-        <p class="dyn-spec">Cleans and spins dry all makeup brush sizes in under 30 seconds to prevent breakouts.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$19.49</strong>
-            <span class="dyn-strike">$29.99</span>
-          </div>
-          <span class="dyn-save">UNDER $20</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (78 reviews)</span></div>
+        <h3>Santa's Spa Holiday Shower Steamers (6-Pack)</h3>
+        <p class="bb-card-desc">Cinnamon, clove, and sweet orange aromatherapy steamers in holiday gift wrap.</p>
+        <div class="bb-card-pricing">
+          <strong>$16.62</strong>
+          <span class="bb-card-strike">$22.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaClean™ Brush Cleaner', '19.49', this)" type="button">
-          <span>Add to Bag — $19.49</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838071275687, 'Santa Spa Shower Steamers', this)" type="button">
+          Add to Bag — $16.62
         </button>
       </div>
     </div>
 
-    <!-- Item 7: Blind Date with a Book Mystery Box (Bizi Bees / Books / Gifts) -->
-    <div class="dyn-card" data-category="bizibees books gifts all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-vintage">Flagship Edition</span>
+    <!-- 7. Sleigh Bells Folk-Art Quilt Book -->
+    <div class="bb-prod-card" data-category="books all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Illustrated Craft</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="Blind Date with a Book"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/9781604689471.jpg?v=1794345493" 
+          alt="Sleigh Bells: Stitch a Folk-Art Quilt Full of Winter Fun"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>5.0 (310+ reviews)</span></div>
-        <h3>Blind Date with a Book: Cozy Mystery Gift Box</h3>
-        <p class="dyn-spec">Wrapped in kraft paper with twine &amp; wax seal. Hand-inspected pre-loved vintage novel.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$14.99</strong>
-            <span class="dyn-strike">$24.00</span>
-          </div>
-          <span class="dyn-save">COZY PICK</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (53 reviews)</span></div>
+        <h3>Sleigh Bells: Stitch a Folk-Art Quilt Full of Winter Fun</h3>
+        <p class="bb-card-desc">Richly illustrated winter quilt patterns and cozy heirloom needlework projects.</p>
+        <div class="bb-card-pricing">
+          <strong>$18.99</strong>
+          <span class="bb-card-strike">$26.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('Blind Date with a Book', '14.99', this)" type="button">
-          <span>Add to Bag — $14.99</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51838164861095, 'Sleigh Bells Quilt Book', this)" type="button">
+          Add to Bag — $18.99
         </button>
       </div>
     </div>
 
-    <!-- Item 8: Weekly Luxury Planners (Bizi Bees / Gifts / Books) -->
-    <div class="dyn-card" data-category="bizibees gifts books all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-bundle">✍️ Velvet &amp; Leather</span>
+    <!-- 8. Gardener's Washi Tape Set -->
+    <div class="bb-prod-card" data-category="books all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Stationery</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="Luxury Weekly Planner"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/b2feabfecf60417387761ad52a645efff44f2cec831fd71a52ea1aa27122acdf_jpeg.webp?v=1794329002" 
+          alt="Gardener's Washi Tape Set"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.9 (84+ reviews)</span></div>
-        <h3>Curated Hardbound Weekly Planners</h3>
-        <p class="dyn-spec">Thick 120gsm bleed-proof paper, ribbon marker &amp; gold foil details. 6 gorgeous editions.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$24.99</strong>
-            <span class="dyn-strike">$45.00</span>
-          </div>
-          <span class="dyn-save">SAVE $20</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>5.0 (91 reviews)</span></div>
+        <h3>Gardener's Washi Tape Set – 7 Botanical Rolls</h3>
+        <p class="bb-card-desc">Boxed gift set featuring pressed wildflower, herbarium, and vintage fern motifs.</p>
+        <div class="bb-card-pricing">
+          <strong>$12.00</strong>
+          <span class="bb-card-strike">$16.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('Luxury Weekly Planner', '24.99', this)" type="button">
-          <span>Add to Bag — $24.99</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51836247965863, 'Gardener Washi Tape Set', this)" type="button">
+          Add to Bag — $12.00
         </button>
       </div>
     </div>
 
-    <!-- Item 9: 10 Frame Fidgets (Books & Puzzles / Gifts) -->
-    <div class="dyn-card" data-category="books gifts all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-hsa">🧩 Focus &amp; Sensory</span>
+    <!-- 9. 12 Sheets Functional Planner Stickers -->
+    <div class="bb-prod-card" data-category="books all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Stationery</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="10 Frame Fidgets"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/IMG_7717.jpg?v=1794329080" 
+          alt="12 Sheets Functional Sticker Set for Planners"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>4.8 (64+ reviews)</span></div>
-        <h3>10 Frame Sensory Fidget Blocks (Set of 12)</h3>
-        <p class="dyn-spec">Tactile sensory math &amp; focus blocks for classroom, desk focus, or kids' stocking stuffers.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$9.74</strong>
-            <span class="dyn-strike">$14.99</span>
-          </div>
-          <span class="dyn-save">UNDER $10</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.8 (83 reviews)</span></div>
+        <h3>12 Sheets Functional Planner Sticker Collection</h3>
+        <p class="bb-card-desc">Matte washi stickers for cozy reading trackers, habit logs, and daily journals.</p>
+        <div class="bb-card-pricing">
+          <strong>$18.50</strong>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('10 Frame Fidgets Set', '9.74', this)" type="button">
-          <span>Add to Bag — $9.74</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51836252225703, '12 Sheets Planner Stickers', this)" type="button">
+          Add to Bag — $18.50
         </button>
       </div>
     </div>
 
-    <!-- Item 10: Storm Japanese Crystal Whisky Glass (Bizi Bees / Gifts) -->
-    <div class="dyn-card" data-category="bizibees gifts all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-vintage">🥃 Handcrafted Crystal</span>
+    <!-- 10. Squishy Dumpling Advent Calendar -->
+    <div class="bb-prod-card" data-category="keepsakes all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Holiday Special</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="Storm Crystal Whisky Glass"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/43572d0ed1b06057cba1f9f56ed7a1d9.jpg?v=1794328801" 
+          alt="Squishy Dumpling Advent Calendar"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>5.0 (126+ reviews)</span></div>
-        <h3>Storm™ Japanese Handcrafted Crystal Whisky Glass</h3>
-        <p class="dyn-spec">Heavy 380g rock glass with 3D Mount Fuji topography base in luxury gift wooden box.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$24.99</strong>
-            <span class="dyn-strike">$38.00</span>
-          </div>
-          <span class="dyn-save">SAVE 34%</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (134 reviews)</span></div>
+        <h3>Squishy Dumpling Sensory Advent Calendar (24 Days)</h3>
+        <p class="bb-card-desc">24 individual doors packed with slow-rise maltose dumpling sensory stress relief toys.</p>
+        <div class="bb-card-pricing">
+          <strong>$28.99</strong>
+          <span class="bb-card-strike">$38.00</span>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('Storm Crystal Whisky Glass', '24.99', this)" type="button">
-          <span>Add to Bag — $24.99</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51836237414567, 'Dumpling Advent Calendar', this)" type="button">
+          Add to Bag — $28.99
         </button>
       </div>
     </div>
 
-    <!-- Item 11: Bizi Bees Mystery Reader Bundle (Bizi Bees / Books) -->
-    <div class="dyn-card" data-category="bizibees books gifts all" data-tilt>
-      <div class="dyn-card-media">
-        <span class="dyn-tag-bundle">👑 Collector's Set</span>
+    <!-- 11. Nutcracker & Sugar Plum Fairy Amigurumi Kit -->
+    <div class="bb-prod-card" data-category="keepsakes all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Handmade Craft</span>
         <img 
-          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
-          alt="Bizi Bees Mystery Reader Bundle"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80';"
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/nutcracker-sugar-plum-fairy-amigurumi-kit-mumbai-eco-friendly-yarn-crochet-knit-boho-plus-size-womens-clothing-554439.jpg?v=1794295206" 
+          alt="Nutcracker &amp; Sugar Plum Fairy Amigurumi Kit"
+          
         >
       </div>
-      <div class="dyn-card-body">
-        <div class="dyn-rating">★★★★★ <span>5.0 (178+ reviews)</span></div>
-        <h3>Bizi Bees™ Deluxe 2-Book Mystery Reader Bundle</h3>
-        <p class="dyn-spec">2 hand-curated pre-loved vintage mysteries, custom brass bookmark &amp; organic botanical tea.</p>
-        <div class="dyn-price-row">
-          <div class="dyn-price">
-            <strong>$28.50</strong>
-            <span class="dyn-strike">$45.00</span>
-          </div>
-          <span class="dyn-save">BEST VALUE</span>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>5.0 (42 reviews)</span></div>
+        <h3>Nutcracker &amp; Sugar Plum Fairy Heirloom Amigurumi Kit</h3>
+        <p class="bb-card-desc">Complete crochet kit with organic cotton yarn, ergonomic hook, stuffing, and patterns.</p>
+        <div class="bb-card-pricing">
+          <strong>$50.00</strong>
         </div>
-        <button class="dyn-buy-btn" onclick="instantAddToCart('Bizi Bees Mystery Reader Bundle', '28.50', this)" type="button">
-          <span>Add to Bag — $28.50</span>
+        <button class="bb-card-btn" onclick="addShopifyItem(51833620758695, 'Amigurumi Crochet Kit', this)" type="button">
+          Add to Bag — $50.00
         </button>
       </div>
     </div>
 
-  </div>
-
-  <!-- Gemini AI Concierge (Dual-Key Google AI Studio Integration) -->
-  <div class="dyn-gemini-concierge" id="dynGeminiConcierge">
-    <div class="dyn-ai-header">
-      <div class="dyn-badge-pill" style="margin-bottom: 8px;">
-        <span class="dyn-pulse-dot" style="background:#38BDF8; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);"></span>
-        POWERED BY GOOGLE GEMINI 3.5 FLASH • DUAL-KEY PROXY
+    <!-- 12. Tarot Spreads for All Occasions -->
+    <div class="bb-prod-card" data-category="books all">
+      <div class="bb-card-media">
+        <span class="bb-badge-gold">Hardcover Guide</span>
+        <img 
+          src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/smartmockups_lfbbcqwn.jpg?v=1794295351" 
+          alt="Tarot Spreads for All Occasions"
+          
+        >
       </div>
-      <h3>✨ Ask the Bizi &amp; Luma AI Concierge</h3>
-      <p>Instant answers on dermatology wavelengths, migraine relief, or custom vintage book gift pairings.</p>
-    </div>
-
-    <!-- Quick Prompts -->
-    <div class="dyn-ai-pills">
-      <button type="button" class="dyn-ai-pill" onclick="sendGeminiPrompt('Recommend a cozy vintage mystery book box for an Agatha Christie fan.')">
-        🐝 Cozy Mystery Recommendation
-      </button>
-      <button type="button" class="dyn-ai-pill" onclick="sendGeminiPrompt('How does the LumaGlow 4-in-1 wand compare to Solawave for skin firming?')">
-        🔬 LumaGlow vs Solawave
-      </button>
-      <button type="button" class="dyn-ai-pill" onclick="sendGeminiPrompt('How long does the LumaRelief migraine cap retain freezing temperature?')">
-        🧊 Migraine Cap Cold Therapy
-      </button>
-      <button type="button" class="dyn-ai-pill" onclick="sendGeminiPrompt('What is your best gift under $25 with verified 24h Utah dispatch?')">
-        🎁 Best Gifts Under $25
-      </button>
-    </div>
-
-    <!-- Chat Output -->
-    <div class="dyn-ai-stream" id="dynAiStream">
-      <div class="dyn-ai-msg bot">
-        <strong>🤖 Concierge:</strong>
-        <p>Hello! I am your AI concierge powered by Google Gemini. Ask me anything about our dermatology protocols, vintage literature crates, or order dispatch!</p>
+      <div class="bb-card-body">
+        <div class="bb-card-rating">★★★★★ <span>4.9 (67 reviews)</span></div>
+        <h3>Tarot Spreads for All Occasions: An Illustrated Companion</h3>
+        <p class="bb-card-desc">Curated guidebook featuring over 60 intuitive layout designs for modern readers.</p>
+        <div class="bb-card-pricing">
+          <strong>$16.00</strong>
+          <span class="bb-card-strike">$22.00</span>
+        </div>
+        <button class="bb-card-btn" onclick="addShopifyItem(51833639960743, 'Tarot Spreads Guidebook', this)" type="button">
+          Add to Bag — $16.00
+        </button>
       </div>
     </div>
 
-    <!-- Input Form -->
-    <form class="dyn-ai-form" onsubmit="submitGeminiQuery(event)">
-      <input type="text" id="geminiQueryInput" placeholder="Ask about red light therapy, migraine relief, vintage mystery books..." required autocomplete="off" />
-      <button type="submit" id="geminiSubmitBtn">
-        <span>Ask Gemini ⚡</span>
-      </button>
-    </form>
-    <div class="dyn-ai-note">🔒 Encrypted via Vercel Edge Mesh • Dual-Key High Availability Rotation • Sub-Second Latency</div>
   </div>
 </div>
 
-<!-- ==========================================================
-     SCOPED 60 FPS ULTRA-DYNAMIC STYLING
-     ========================================================== -->
 <style>
-  .dyn-catalog-wrapper {
-    position: relative;
-    padding: 80px 20px 90px;
-    background: #FFFFFF;
+  .bb-catalog-wrapper {
+    background: #FAF7F2;
+    padding: 70px 20px 80px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #0F172A;
-    overflow: hidden;
   }
-  .dyn-catalog-glow {
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(13, 148, 136, 0.10) 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .dyn-catalog-header {
+  .bb-catalog-header {
     text-align: center;
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto 35px;
-    position: relative;
-    z-index: 2;
   }
-  .dyn-badge-pill {
+  .bb-pill-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #F0FDFA;
-    border: 1px solid #99F6E4;
-    color: #0F766E;
+    background: #FEF3C7;
+    border: 1px solid #FDE68A;
+    color: #92400E;
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     padding: 6px 16px;
     border-radius: 40px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
-  .dyn-pulse-dot {
-    width: 8px;
-    height: 8px;
-    background: #0D9488;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25);
-    animation: dynPulse 2s infinite;
-  }
-  @keyframes dynPulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0.6; }
-  }
-  .dyn-catalog-header h2 {
-    font-size: clamp(30px, 4vw, 44px);
+  .bb-catalog-header h2 {
+    font-family: Georgia, "Playfair Display", serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #29231E;
     font-weight: 900;
-    color: #0F172A;
-    letter-spacing: -1px;
-    margin: 0 0 12px;
+    margin: 0 0 10px;
   }
-  .dyn-catalog-header p {
-    font-size: 16px;
-    color: #64748B;
-    line-height: 1.6;
+  .bb-catalog-header p {
+    font-size: 15px;
+    color: #6E6257;
+    line-height: 1.5;
     margin: 0;
   }
 
-  /* Animated Category Tabs */
-  .dyn-tabs-container {
+  /* Tabs */
+  .bb-tabs-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 45px;
-    position: relative;
-    z-index: 3;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    padding-bottom: 8px;
   }
-  .dyn-tabs-track {
+  .bb-tabs-track {
     display: inline-flex;
-    background: #F1F5F9;
+    gap: 8px;
+    background: #EFE9DF;
     padding: 6px;
     border-radius: 50px;
-    gap: 6px;
-    position: relative;
-    max-width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none;
+    border: 1px solid #E2D7C8;
   }
-  .dyn-tabs-track::-webkit-scrollbar { display: none; }
-  .dyn-tab-btn {
+  .bb-tab-btn {
     background: transparent;
     border: none;
-    padding: 10px 20px;
+    padding: 9px 20px;
     border-radius: 40px;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
-    color: #64748B;
+    color: #5E5246;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.2s ease;
     white-space: nowrap;
-    position: relative;
-    z-index: 2;
   }
-  .dyn-tab-btn:hover { color: #0F172A; }
-  .dyn-tab-btn.active {
-    background: #0F172A;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+  .bb-tab-btn.active {
+    background: #29231E;
+    color: #FAF7F2;
+    box-shadow: 0 4px 12px rgba(41, 35, 30, 0.25);
+  }
+  .bb-tab-btn:hover:not(.active) {
+    background: #E4DCD0;
+    color: #29231E;
   }
 
   /* Product Grid */
-  .dyn-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1160px;
+  .bb-product-grid {
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  .dyn-card {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 20px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-    will-change: transform;
-    opacity: 1;
-    transform: scale(1);
-  }
-  .dyn-card.hide {
-    display: none !important;
-  }
-  .dyn-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
-    border-color: #CBD5E1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 28px;
   }
 
-  /* Card Media & Badges */
-  .dyn-card-media {
+  /* Product Card */
+  .bb-prod-card {
+    background: #FFFFFF;
+    border: 1px solid #E6DDD1;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(41, 35, 30, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .bb-prod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(41, 35, 30, 0.12);
+    border-color: #D9822B;
+  }
+
+  /* Media */
+  .bb-card-media {
     position: relative;
-    background: #F8FAFC;
-    border-radius: 14px;
-    padding: 20px;
+    width: 100%;
+    height: 260px;
+    background: #FDFBF7;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 230px;
     overflow: hidden;
+    padding: 16px;
+    box-sizing: border-box;
   }
-  .dyn-card-media img {
-    max-height: 100%;
-    max-width: 100%;
+  .bb-card-media img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
     object-fit: contain !important;
-    opacity: 1 !important;
-    transition: transform 0.4s ease;
+    display: block !important;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
   }
-  .dyn-card:hover .dyn-card-media img {
-    transform: scale(1.08);
+  .bb-prod-card:hover .bb-card-media img {
+    transform: scale(1.05);
   }
-
-  /* Badges */
-  .dyn-tag-urgent, .dyn-tag-hsa, .dyn-tag-bundle, .dyn-tag-clinic, .dyn-tag-vintage {
+  .bb-badge-gold {
     position: absolute;
     top: 12px;
     left: 12px;
+    background: #29231E;
+    color: #FAF7F2;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 0.5px;
-    padding: 5px 12px;
-    border-radius: 30px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
     z-index: 2;
   }
-  .dyn-tag-urgent { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
-  .dyn-tag-hsa { background: #ECFDF5; color: #059669; border: 1px solid #A7F3D0; }
-  .dyn-tag-bundle { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
-  .dyn-tag-clinic { background: #F0FDFA; color: #0D9488; border: 1px solid #99F6E4; }
-  .dyn-tag-vintage { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
 
   /* Body */
-  .dyn-card-body {
-    padding-top: 16px;
+  .bb-card-body {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
-  .dyn-rating {
-    font-size: 13px;
-    color: #F59E0B;
-    font-weight: 700;
-    margin-bottom: 6px;
+  .bb-card-rating {
+    font-size: 12px;
+    color: #D9822B;
+    margin-bottom: 8px;
   }
-  .dyn-rating span {
-    color: #64748B;
+  .bb-card-rating span {
+    color: #786C62;
     font-size: 11px;
-    font-weight: 500;
     margin-left: 4px;
   }
-  .dyn-card-body h3 {
-    font-size: 16px;
+  .bb-card-body h3 {
+    font-family: Georgia, "Playfair Display", serif;
+    font-size: 17px;
     font-weight: 800;
-    color: #0F172A;
-    margin: 0 0 6px;
-    line-height: 1.35;
+    color: #29231E;
+    margin: 0 0 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 44px;
   }
-  .dyn-spec {
-    font-size: 12px;
-    color: #64748B;
-    line-height: 1.5;
+  .bb-card-desc {
+    font-size: 13px;
+    color: #6E6257;
+    line-height: 1.45;
     margin: 0 0 16px;
-    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 38px;
   }
-
-  /* Price & Buy */
-  .dyn-price-row {
+  .bb-card-pricing {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: auto;
     margin-bottom: 14px;
-    padding-top: 10px;
-    border-top: 1px solid #F1F5F9;
   }
-  .dyn-price strong {
-    font-size: 22px;
-    font-weight: 900;
-    color: #0F172A;
+  .bb-card-pricing strong {
+    font-size: 20px;
+    color: #29231E;
+    font-weight: 800;
   }
-  .dyn-strike {
+  .bb-card-strike {
     font-size: 13px;
-    color: #94A3B8;
+    color: #A89F95;
     text-decoration: line-through;
-    margin-left: 6px;
-  }
-  .dyn-save {
-    font-size: 10px;
-    font-weight: 800;
-    color: #0D9488;
-    background: #E6FFFA;
-    padding: 4px 8px;
-    border-radius: 4px;
   }
 
-  .dyn-buy-btn {
+  /* Button */
+  .bb-card-btn {
     width: 100%;
-    background: #0F172A;
-    color: #FFFFFF;
+    background: #29231E;
+    color: #FAF7F2;
     border: none;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 800;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .dyn-buy-btn:hover {
-    background: #0D9488;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(13, 148, 136, 0.25);
-  }
-
-  /* Scoped suppression of intrusive badges */
-  .dyn-catalog-wrapper .card-image > span[style*="d90429"],
-  .dyn-catalog-wrapper .card-image > span[style*="dc2626"],
-  .dyn-catalog-wrapper span[style*="35% OFF TODAY"],
-  .dyn-catalog-wrapper [class*="badge"][style*="red"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
-
-  @media (max-width: 900px) {
-    .dyn-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  }
-  @media (max-width: 600px) {
-    .dyn-grid { grid-template-columns: 1fr; }
-    .dyn-tabs-track { width: 100%; justify-content: flex-start; }
-    .dyn-card-media { height: 190px; }
-  }
-
-  /* Gemini AI Concierge Box */
-  .dyn-gemini-concierge {
-    margin-top: 45px;
-    background: #090D16;
-    border: 1px solid #1E293B;
-    border-radius: 20px;
-    padding: 30px 24px;
-    color: #F8FAFC;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  }
-  .dyn-ai-header { text-align: center; margin-bottom: 20px; }
-  .dyn-ai-header h3 { font-size: 24px; font-weight: 900; color: #FFFFFF; margin: 0 0 6px; }
-  .dyn-ai-header p { font-size: 13px; color: #94A3B8; margin: 0 auto; max-width: 550px; }
-  .dyn-ai-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 18px; }
-  .dyn-ai-pill {
-    background: #0F172A;
-    border: 1px solid #1E293B;
-    color: #CBD5E1;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .dyn-ai-pill:hover { background: rgba(56,189,248,0.12); border-color: #38BDF8; color: #38BDF8; }
-  .dyn-ai-stream {
-    min-height: 120px;
-    max-height: 280px;
-    overflow-y: auto;
-    background: #06090F;
-    border: 1px solid #1E293B;
-    border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .dyn-ai-msg { font-size: 13px; line-height: 1.5; color: #E2E8F0; }
-  .dyn-ai-msg.user { color: #38BDF8; font-weight: 600; text-align: right; }
-  .dyn-ai-msg strong { color: #38BDF8; }
-  .dyn-ai-form { display: flex; gap: 8px; }
-  .dyn-ai-form input {
-    flex-grow: 1;
-    background: #06090F;
-    border: 1px solid #1E293B;
-    border-radius: 50px;
-    padding: 12px 20px;
-    color: #FFFFFF;
-    font-size: 13px;
-    outline: none;
-  }
-  .dyn-ai-form input:focus { border-color: #38BDF8; }
-  .dyn-ai-form button {
-    background: linear-gradient(135deg, #0D9488 0%, #10B981 100%);
-    color: #FFFFFF;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 50px;
+    padding: 13px;
+    border-radius: 40px;
     font-size: 13px;
     font-weight: 800;
     cursor: pointer;
-    white-space: nowrap;
+    transition: all 0.2s ease;
   }
-  .dyn-ai-note { text-align: center; font-size: 10px; color: #64748B; margin-top: 10px; }
+  .bb-card-btn:hover {
+    background: #D9822B;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(217, 130, 43, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    .bb-product-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
-<!-- ==========================================================
-     INTERACTIVE JAVASCRIPT: TABS + 3D TILT + INSTANT BUY
-     ========================================================== -->
 <script>
-  // 1. Interactive Animated Tab Switcher
-  function switchCategory(catName, btn) {
-    // Switch active tab styling
-    document.querySelectorAll('.dyn-tab-btn').forEach(function(b) {
-      b.classList.remove('active');
-      b.setAttribute('aria-selected', 'false');
-    });
+  function filterCatalog(category, btn) {
+    document.querySelectorAll('.bb-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
 
-    if (catName === 'ai-concierge') {
-      var concierge = document.getElementById('dynGeminiConcierge');
-      if (concierge) {
-        concierge.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        var input = document.getElementById('geminiQueryInput');
-        if (input) setTimeout(function() { input.focus(); }, 400);
-      }
-      return;
-    }
-
-    // Filter cards with smooth fade
-    var cards = document.querySelectorAll('.dyn-card');
-    cards.forEach(function(card) {
-      var categories = card.getAttribute('data-category') || '';
-      if (categories.indexOf(catName) !== -1) {
+    const cards = document.querySelectorAll('.bb-prod-card');
+    cards.forEach(card => {
+      const cats = card.getAttribute('data-category') || '';
+      if (category === 'all' || cats.includes(category)) {
         card.style.display = 'flex';
-        setTimeout(function() {
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        }, 10);
       } else {
-        card.style.opacity = '0';
-        card.style.transform = 'scale(0.96)';
-        setTimeout(function() {
-          card.style.display = 'none';
-        }, 200);
+        card.style.display = 'none';
       }
     });
   }
 
-  // 1b. Gemini AI Concierge Query Engine (Dual-Key High Availability)
-  function sendGeminiPrompt(text) {
-    var input = document.getElementById('geminiQueryInput');
-    if (input) {
-      input.value = text;
-      runGeminiQuery(text);
-    }
-  }
-
-  function submitGeminiQuery(e) {
-    e.preventDefault();
-    var input = document.getElementById('geminiQueryInput');
-    if (!input || !input.value.trim()) return;
-    var query = input.value.trim();
-    input.value = '';
-    runGeminiQuery(query);
-  }
-
-  function runGeminiQuery(query) {
-    var stream = document.getElementById('dynAiStream');
-    var btn = document.getElementById('geminiSubmitBtn');
-    if (stream) {
-      var uMsg = document.createElement('div');
-      uMsg.className = 'dyn-ai-msg user';
-      uMsg.innerText = '👤 You: ' + query;
-      stream.appendChild(uMsg);
-      stream.scrollTop = stream.scrollHeight;
-    }
-    if (btn) {
-      btn.innerHTML = 'Thinking... ⏳';
-      btn.disabled = true;
-    }
-
-    fetch('https://bizi-bees.vercel.app/api/ai/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        prompt: query,
-        systemInstruction: "You are the expert AI concierge for Bizi Bees Curated Vintage and Luma Clinical dermatology tools. Answer concisely (2-3 sentences), warmly, and highlight LumaGlow 4-in-1 ($38.99), LumaRelief migraine cap ($22.74), or Bizi Bees Blind Date with a Book ($14.99) dispatched in 24h from Utah.",
-        model: 'gemini-3.5-flash'
-      })
-    })
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-      if (stream) {
-        var bMsg = document.createElement('div');
-        bMsg.className = 'dyn-ai-msg bot';
-        var replyText = (data.success && data.text) ? data.text : "Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!";
-        bMsg.innerHTML = '<strong>🤖 Concierge:</strong> ' + replyText;
-        stream.appendChild(bMsg);
-        stream.scrollTop = stream.scrollHeight;
-      }
-    })
-    .catch(function() {
-      if (stream) {
-        var bMsg = document.createElement('div');
-        bMsg.className = 'dyn-ai-msg bot';
-        bMsg.innerHTML = '<strong>🤖 Concierge:</strong> Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!';
-        stream.appendChild(bMsg);
-        stream.scrollTop = stream.scrollHeight;
-      }
-    })
-    .finally(function() {
-      if (btn) {
-        btn.innerHTML = '<span>Ask Gemini ⚡</span>';
-        btn.disabled = false;
-      }
-    });
-  }
-
-  // 2. Instant 1-Click Buy / Cart Add
-  var productUrlMap = {
-    'LumaGlow™ 4-in-1 Wand': '/products/lumaglow-4-in-1-facial-wand',
-    'LumaRelief™ Migraine Cap': '/products/lumarelief-migraine-cap',
-    'LumaRelief™ 2-Cap Bundle': '/products/lumarelief-migraine-cap',
-    'LumaMask™ LED Shield': '/products/lumaglow-4-in-1-facial-wand',
-    'LumaLift™ V-Face Sculptor': '/products/lumaglow-4-in-1-facial-wand',
-    'LumaClean™ Brush Cleaner': '/products/lumaglow-4-in-1-facial-wand',
-    'Blind Date with a Book': '/products/blind-date-book-mystery',
-    'Luxury Weekly Planner': '/collections/books',
-    '10 Frame Fidgets Set': '/collections/games-puzzles',
-    'Storm Crystal Whisky Glass': '/products/storm-japanese-crystal-whisky-glass',
-    'Bizi Bees Mystery Reader Bundle': '/products/blind-date-book-mystery'
-  };
-
-  function instantAddToCart(title, price, btn) {
-    var originalText = btn.innerHTML;
-    btn.innerHTML = '<span>Adding... ⏳</span>';
+  function addShopifyItem(variantId, title, btn) {
+    const orig = btn.innerText;
+    btn.innerText = 'Adding...';
     btn.disabled = true;
 
-    var targetUrl = productUrlMap[title] || '/collections/all';
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(r => r.json())
+    .then(data => {
+      btn.innerText = '✓ Added to Bag!';
+      btn.style.background = '#10B981';
 
-    // Check variant mapping for instant checkout or cart add
-    var variantMap = {
-      'LumaGlow™ 4-in-1 Wand': 47983637332263,
-      'LumaRelief™ Migraine Cap': 47983637365031,
-      'LumaRelief™ 2-Cap Bundle': 47983637397799,
-      'LumaMask™ LED Shield': 47983637430567,
-      'LumaLift™ V-Face Sculptor': 47983637463335
-    };
-    var variantId = variantMap[title];
+      // Update cart count
+      fetch('/cart.js')
+        .then(r => r.json())
+        .then(cart => {
+          const counts = document.querySelectorAll('#HeaderCartCount, .editorial-cart-count');
+          counts.forEach(c => { c.innerText = cart.item_count; });
+          
+          // Trigger dynamic island if present
+          const island = document.getElementById('roDynamicIsland');
+          if (island) {
+            const msg = document.getElementById('roIslandMsg');
+            if (msg) msg.innerText = '✓ ' + title + ' Added to Bag!';
+            island.classList.add('active');
+            setTimeout(() => island.classList.remove('active'), 4500);
+          }
+        });
 
-    if (variantId && typeof fetch !== 'undefined') {
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] })
-      })
-      .then(function(res) {
-        if (!res.ok) {
-          window.location.href = targetUrl;
-          return null;
-        }
-        return res.json();
-      })
-      .then(function(item) {
-        if (!item) return;
-        btn.innerHTML = '<span>✓ Added to Bag!</span>';
-        btn.style.background = '#0D9488';
-
-        // Broadcast cart:updated event and refresh cart state
-        fetch('/cart.js')
-          .then(function(cRes) { return cRes.json(); })
-          .then(function(cart) {
-            document.dispatchEvent(new CustomEvent('cart:updated', { detail: cart }));
-            document.dispatchEvent(new CustomEvent('cart:change', { detail: cart }));
-
-            // Open cart drawer if present
-            var drawer = document.querySelector('cart-drawer') || document.getElementById('cartDrawer') || document.querySelector('.cart-drawer');
-            if (window.openCartDrawer) {
-              window.openCartDrawer();
-            } else if (drawer && typeof drawer.open === 'function') {
-              drawer.open();
-            } else if (drawer && drawer.classList) {
-              drawer.classList.add('is-open', 'active');
-            } else {
-              setTimeout(function() {
-                window.location.href = '/checkout';
-              }, 400);
-            }
-          })
-          .catch(function() {
-            window.location.href = '/checkout';
-          });
-      })
-      .catch(function() {
-        btn.innerHTML = '<span>✓ Redirecting...</span>';
-        btn.style.background = '#0D9488';
-        setTimeout(function() {
-          window.location.href = targetUrl;
-        }, 300);
-      });
-    } else {
-      setTimeout(function() {
-        btn.innerHTML = '<span>✓ Redirecting...</span>';
-        btn.style.background = '#0D9488';
-        window.location.href = targetUrl;
-      }, 300);
-    }
-  }
-
-  // 3. 3D Card Tilt Physics (Mouse Follow)
-  (function() {
-    var cards = document.querySelectorAll('[data-tilt]');
-    cards.forEach(function(card) {
-      card.addEventListener('mousemove', function(e) {
-        var rect = card.getBoundingClientRect();
-        var x = e.clientX - rect.left - rect.width / 2;
-        var y = e.clientY - rect.top - rect.height / 2;
-        card.style.transform = 'perspective(800px) rotateX(' + (y * -0.04) + 'deg) rotateY(' + (x * 0.04) + 'deg) translateY(-6px)';
-      });
-      card.addEventListener('mouseleave', function() {
-        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
-      });
+      setTimeout(() => {
+        btn.innerText = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 2000);
+    })
+    .catch(err => {
+      console.error('Cart add error:', err);
+      btn.innerText = 'Go to Bag →';
+      btn.onclick = function() { window.location.href = '/cart'; };
     });
-  })();
+  }
 </script>
 
 {% schema %}
 {
-  "name": "Ultra Dynamic Catalog",
-  "tag": "section",
-  "class": "section-ultra-dynamic-catalog",
-  "settings": [
-    {
-      "type": "text",
-      "id": "badge_text",
-      "label": "Badge Text",
-      "default": "VERIFIED UTAH DISPATCH • 60-DAY RISK-FREE TRIAL"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Curated Clinical Tech & Boutique Finds"
-    },
-    {
-      "type": "textarea",
-      "id": "subheading",
-      "label": "Subheading",
-      "default": "Explore our flagship dermatology tools, therapeutic migraine recovery, and handpicked vintage treasures. Choose a category below:"
-    }
-  ],
+  "name": "Bizi Bees Curated Catalog",
+  "settings": [],
   "presets": [
     {
-      "name": "Ultra Dynamic Tabbed Catalog"
+      "name": "Bizi Bees Curated Catalog"
     }
   ]
 }
