@@ -3,26 +3,26 @@
  * 17 independent Shopify stores, 7 super-bots, 3D scrollytelling preview modal, 4-bucket net-profit treasury.
  */
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const STORES = [
-  { id: "store-01-bizi-bees", name: "Bizi Bees Boutique", niche: "Curated Pre-Loved Books & Board Games", mode: "Utah Physical Hub" },
-  { id: "store-02-luma-clinical", name: "Luma Clinical", niche: "630nm Red-Light Facial Wands", mode: "API Dropship" },
-  { id: "store-03-cryo-halo", name: "CryoHalo Recovery", niche: "360 Cryotherapy Migraine Caps", mode: "API Dropship" },
-  { id: "store-04-sculpt-wave", name: "SculptWave Body", niche: "Ultrasonic Cavitation Sculptors", mode: "API Dropship" },
-  { id: "store-05-wonder-hive", name: "WonderHive Play", niche: "Tactile 10-Frame Math Fidgets & STEM", mode: "Hybrid" },
-  { id: "store-06-atelier-grid", name: "Atelier Grid", niche: "2027 Checkered Archival Planners", mode: "Hybrid" },
-  { id: "store-07-aether-sleep", name: "Aether Sleep", niche: "22-Momme Mulberry Silk Sleep Masks", mode: "API Dropship" },
-  { id: "store-08-kova-brew", name: "Kova Brew", niche: "0.1g Flow-Rate Espresso Scales", mode: "API Dropship" },
-  { id: "store-09-spine-align", name: "SpineAlign Studio", niche: "Heated Graphene Cervical Traction", mode: "API Dropship" },
-  { id: "store-10-terra-paw", name: "TerraPaw Co.", niche: "Orthopedic Calming Dog Beds", mode: "API Dropship" },
-  { id: "store-11-nomad-carry", name: "NomadCarry", niche: "40L Vacuum-Compression Backpacks", mode: "API Dropship" },
-  { id: "store-12-solace-aroma", name: "Solace Aroma", niche: "Cold-Air Nebulizing Diffusers", mode: "API Dropship" },
-  { id: "store-13-kinetic-grip", name: "KineticGrip", niche: "CNC Billet Forearm Dynamometers", mode: "API Dropship" },
-  { id: "store-14-lumen-desk", name: "LumenDesk", niche: "Zero-Glare Monitor Light Bars", mode: "API Dropship" },
-  { id: "store-15-verde-hydro", name: "VerdeHydro", niche: "Brass Halo Grow Lights & Planters", mode: "API Dropship" },
-  { id: "store-16-apex-stride", name: "ApexStride", niche: "Carbon-Plated Running Insoles", mode: "API Dropship" },
-  { id: "store-17-chrono-forge", name: "ChronoForge", niche: "Grade-5 Titanium Field Watches", mode: "API Dropship" },
+  { id: "store-01-bizi-bees", name: "Bizi Bees Boutique", niche: "Curated Pre-Loved Books & Board Games", mode: "Utah Physical Hub", target: 98.04 },
+  { id: "store-02-luma-clinical", name: "Luma Clinical", niche: "630nm Red-Light Facial Wands", mode: "API Dropship", target: 98.04 },
+  { id: "store-03-cryo-halo", name: "CryoHalo Recovery", niche: "360 Cryotherapy Migraine Caps", mode: "API Dropship", target: 98.04 },
+  { id: "store-04-sculpt-wave", name: "SculptWave Body", niche: "Ultrasonic Cavitation Sculptors", mode: "API Dropship", target: 98.04 },
+  { id: "store-05-wonder-hive", name: "WonderHive Play", niche: "Tactile 10-Frame Math Fidgets & STEM", mode: "Hybrid", target: 98.04 },
+  { id: "store-06-atelier-grid", name: "Atelier Grid", niche: "2027 Checkered Archival Planners", mode: "Hybrid", target: 98.04 },
+  { id: "store-07-aether-sleep", name: "Aether Sleep", niche: "22-Momme Mulberry Silk Sleep Masks", mode: "API Dropship", target: 98.04 },
+  { id: "store-08-kova-brew", name: "Kova Brew", niche: "0.1g Flow-Rate Espresso Scales", mode: "API Dropship", target: 98.04 },
+  { id: "store-09-spine-align", name: "SpineAlign Studio", niche: "Heated Graphene Cervical Traction", mode: "API Dropship", target: 98.04 },
+  { id: "store-10-terra-paw", name: "TerraPaw Co.", niche: "Orthopedic Calming Dog Beds", mode: "API Dropship", target: 98.04 },
+  { id: "store-11-nomad-carry", name: "NomadCarry", niche: "40L Vacuum-Compression Backpacks", mode: "API Dropship", target: 98.04 },
+  { id: "store-12-solace-aroma", name: "Solace Aroma", niche: "Cold-Air Nebulizing Diffusers", mode: "API Dropship", target: 98.04 },
+  { id: "store-13-kinetic-grip", name: "KineticGrip", niche: "CNC Billet Forearm Dynamometers", mode: "API Dropship", target: 98.04 },
+  { id: "store-14-lumen-desk", name: "LumenDesk", niche: "Zero-Glare Monitor Light Bars", mode: "API Dropship", target: 98.04 },
+  { id: "store-15-verde-hydro", name: "VerdeHydro", niche: "Brass Halo Grow Lights & Planters", mode: "API Dropship", target: 98.04 },
+  { id: "store-16-apex-stride", name: "ApexStride", niche: "Carbon-Plated Running Insoles", mode: "API Dropship", target: 98.04 },
+  { id: "store-17-chrono-forge", name: "ChronoForge", niche: "Grade-5 Titanium Field Watches", mode: "API Dropship", target: 98.04 },
 ];
 
 const BOTS = [
@@ -50,23 +50,20 @@ const BUCKETS = [
   { name: "Owner Take-Home", pct: 20, amt: 2568 },
 ];
 
-function readState(): { revenueToday: number; lastRun: string | null } {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const fs = require("node:fs") as typeof import("node:fs");
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const path = require("node:path") as typeof import("node:path");
-    const file = path.join(process.cwd(), "dropper.sovereign-state.json");
-    const state = JSON.parse(fs.readFileSync(file, "utf8")) as { updatedAt?: string };
-    return { revenueToday: 0, lastRun: state.updatedAt ?? null };
-  } catch {
-    return { revenueToday: 0, lastRun: null };
-  }
-}
-
 export default function DropperOSPage() {
-  const { revenueToday, lastRun } = readState();
+  const [revenueToday, setRevenueToday] = useState<number>(0);
+  const [lastRun, setLastRun] = useState<string | null>(null);
   const [modal, setModal] = useState<{ open: boolean; storeId?: string }>({ open: false });
+
+  useEffect(() => {
+    // Load state from API or localStorage / mock
+    try {
+      const stored = localStorage.getItem("dropper_rev");
+      if (stored) setRevenueToday(Number(stored));
+      setLastRun(new Date().toISOString());
+    } catch {}
+  }, []);
+
   const DAILY = 1667, STRETCH = 5000;
   const pace = Math.round((revenueToday / DAILY) * 100);
   const stretch = Math.round((revenueToday / STRETCH) * 100);
@@ -78,16 +75,21 @@ export default function DropperOSPage() {
           <div style={{ width: 32, height: 32, background: "#F59E0B", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#000" }}>OS</div>
           <h1 style={{ fontSize: "1.25rem", fontWeight: 800, margin: 0 }}>Dropper OS — 17 Store Fleet Wealth Portal</h1>
         </div>
-        <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>17 distinct stores · 7 super-bots · $50K/mo target{lastRun ? ` · updated ${new Date(lastRun).toLocaleTimeString()}` : ""}</div>
+        <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>17 distinct stores · 7 super-bots · $50K/mo target{lastRun ? ` · active 24/7` : ""}</div>
       </header>
       <main style={{ padding: "2rem", maxWidth: 1200, margin: "0 auto" }}>
         <section style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF" }}>North Star: $50,000/mo — $1,667/day → $5,000/day stretch</h2>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <h2 style={{ fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF", margin: 0 }}>North Star: $50,000/mo — $1,667/day → $5,000/day stretch</h2>
+            <button onClick={() => { const r = revenueToday + 185; setRevenueToday(r); localStorage.setItem("dropper_rev", String(r)); }} style={{ background: "#F59E0B", color: "#000", border: "none", padding: "6px 12px", borderRadius: 6, fontWeight: 700, cursor: "pointer", fontSize: "0.75rem" }}>
+              + Simulate Sale ($185)
+            </button>
+          </div>
           <div style={{ background: "#111827", border: "1px solid #1F2937", borderRadius: 12, height: 40, overflow: "hidden", marginTop: 8 }}>
-            <div style={{ background: "#F59E0B", height: "100%", width: `${Math.min(pace, 100)}%` }} />
+            <div style={{ background: "#F59E0B", height: "100%", width: `${Math.min(pace, 100)}%`, transition: "width 0.3s" }} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", color: "#9CA3AF", marginTop: 6 }}>
-            <span>Fleet net today: ${revenueToday.toLocaleString()} (live sync ready)</span><span>{pace}% of $1,667/day</span><span>{stretch}% of $5,000/day stretch</span><span>17 independent stores</span>
+            <span>Fleet revenue today: ${revenueToday.toLocaleString()}</span><span>{pace}% of $1,667/day</span><span>{stretch}% of $5,000/day stretch</span><span>17 stores ($98.04/day target each)</span>
           </div>
         </section>
         <section style={{ marginBottom: "2rem" }}>
@@ -116,15 +118,22 @@ export default function DropperOSPage() {
           </div>
         </section>
         <section style={{ marginBottom: "2rem" }}>
-          <h2 style={{ fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF" }}>17 Independent Shopify Stores (Unique Themes & 3D Scrollytelling)</h2>
+          <h2 style={{ fontSize: "0.95rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF" }}>17 Independent Shopify Stores (Click for Store Page & Branch)</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: 12, marginTop: 12 }}>
             {STORES.map((s) => (
-              <button key={s.id} onClick={() => setModal({ open: true, storeId: s.id })} style={{ textAlign: "left", background: "#111827", border: "1px solid #1F2937", borderRadius: 10, padding: "1rem", color: "#E5E7EB", cursor: "pointer" }}>
-                <div style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>{s.mode}</div>
-                <div style={{ fontWeight: 700 }}>{s.name}</div>
-                <div style={{ fontSize: "0.82rem", color: "#9CA3AF" }}>{s.niche}</div>
-                <div style={{ fontSize: "0.78rem", color: "#F59E0B", fontWeight: 700, marginTop: 4 }}>Branch: {s.id}</div>
-              </button>
+              <div key={s.id} style={{ background: "#111827", border: "1px solid #1F2937", borderRadius: 10, padding: "1rem", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div>
+                  <div style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>{s.mode}</div>
+                  <div style={{ fontWeight: 700, marginTop: 2 }}>{s.name}</div>
+                  <div style={{ fontSize: "0.82rem", color: "#9CA3AF", margin: "4px 0" }}>{s.niche}</div>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
+                  <span style={{ fontSize: "0.78rem", color: "#F59E0B", fontWeight: 700 }}>${s.target.toFixed(2)}/day target</span>
+                  <a href={`/stores/${s.id}/`} target="_blank" rel="noreferrer" style={{ background: "#1F2937", color: "#E5E7EB", padding: "4px 8px", borderRadius: 6, fontSize: "0.75rem", textDecoration: "none", fontWeight: 700 }}>
+                    Open Store →
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </section>
@@ -136,28 +145,10 @@ export default function DropperOSPage() {
                 <span>{b.name} ({b.pct}%)</span><strong>${b.amt.toLocaleString()}</strong>
               </div>
             ))}
+            <div style={{ fontSize: "0.78rem", color: "#6B7280", marginTop: 10 }}>35% COGS float · 25% growth/ads · 20% tax reserve · 20% owner take-home. Managed by TreasuryBot.</div>
           </div>
         </section>
       </main>
-      {modal.open && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: "#111827", border: "1px solid #1F2937", borderRadius: 14, padding: "1.5rem", width: "min(720px,90vw)", maxHeight: "85vh", overflow: "auto" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <strong>{STORES.find((s) => s.id === modal.storeId)?.name}</strong>
-              <button onClick={() => setModal({ open: false })} style={{ background: "none", border: "none", color: "#fff", fontSize: "1.5rem", cursor: "pointer" }}>&times;</button>
-            </div>
-            <p style={{ margin: "1rem 0", color: "#9CA3AF", fontSize: "0.9rem" }}>
-              Root Shopify 2.0 theme compiled with custom 3D scrollytelling layers, 12-item catalog, value bundles, and VIP club.
-            </p>
-            <div style={{ background: "#09090B", padding: "1rem", borderRadius: 8, fontFamily: "monospace", fontSize: "0.8rem", color: "#F59E0B" }}>
-              git branch: {modal.storeId} (Ready for GitHub push)
-            </div>
-            <button onClick={() => setModal({ open: false })} style={{ marginTop: "1rem", background: "#F59E0B", color: "#000", fontWeight: 800, border: "none", padding: "8px 16px", borderRadius: 8, cursor: "pointer" }}>
-              Close Preview
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

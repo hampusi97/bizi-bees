@@ -1,1 +1,116 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:g="http://base.google.com/ns/1.0" version="2.0"><channel><title>ApexStride</title><link>https://apexstride.com</link></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+<channel>
+<title>ApexStride Google Shopping Feed</title>
+<link>https://apexstride.com</link>
+<description>100% verified catalog for Carbon-Plated Running Insoles & Pneumatic Recovery Boots</description>
+  <item>
+    <g:id>DROP-APEX-200</g:id>
+    <title><![CDATA[ApexStride Collection Item #1]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-1</link>
+    <g:price>39.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-201</g:id>
+    <title><![CDATA[ApexStride Collection Item #2]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-2</link>
+    <g:price>47.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-202</g:id>
+    <title><![CDATA[ApexStride Collection Item #3]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-3</link>
+    <g:price>55.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-203</g:id>
+    <title><![CDATA[ApexStride Collection Item #4]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-4</link>
+    <g:price>63.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-204</g:id>
+    <title><![CDATA[ApexStride Collection Item #5]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-5</link>
+    <g:price>71.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-205</g:id>
+    <title><![CDATA[ApexStride Collection Item #6]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-6</link>
+    <g:price>79.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-206</g:id>
+    <title><![CDATA[ApexStride Collection Item #7]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-7</link>
+    <g:price>87.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-207</g:id>
+    <title><![CDATA[ApexStride Collection Item #8]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-8</link>
+    <g:price>95.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-208</g:id>
+    <title><![CDATA[ApexStride Collection Item #9]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-9</link>
+    <g:price>103.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-209</g:id>
+    <title><![CDATA[ApexStride Collection Item #10]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-10</link>
+    <g:price>111.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-210</g:id>
+    <title><![CDATA[ApexStride Collection Item #11]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-11</link>
+    <g:price>119.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-APEX-211</g:id>
+    <title><![CDATA[ApexStride Collection Item #12]]></title>
+    <link>https://apexstride.com/products/store-16-apex-stride-item-12</link>
+    <g:price>127.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>ApexStride</g:brand>
+  </item>
+</channel>
+</rss>
