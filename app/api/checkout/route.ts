@@ -64,11 +64,11 @@ export async function POST(req: NextRequest) {
 
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) {
-    record(store, { ...order, status: "paid_pending_fulfillment", mode: "local" });
+    record(store, { ...order, status: "unpaid_no_payment_processor", mode: "local" });
     return NextResponse.json({
       ok: true,
       mode: "local",
-      order: { ...order, status: "paid_pending_fulfillment" },
+      order: { ...order, status: "unpaid_no_payment_processor" },
     });
   }
 

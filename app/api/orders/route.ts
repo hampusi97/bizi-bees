@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       total: Math.round(total * 100) / 100,
       customer: { name: body.name || "", email: body.email || "", address: body.address || "" },
       createdAt: new Date().toISOString(),
-      status: "paid_pending_fulfillment",
+      status: "unpaid_no_payment_processor",
     };
     const dir = join(process.cwd(), "orders");
     mkdirSync(dir, { recursive: true });
