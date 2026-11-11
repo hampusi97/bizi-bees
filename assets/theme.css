@@ -251,3 +251,138 @@ button:not(.exit-close-btn):hover,
   box-shadow: 0 6px 18px rgba(13, 148, 136, 0.25) !important;
 }
 
+
+/* ==========================================================
+   FORCED LIVE FIX: KILL RED BADGES & RESTORE LUXURY AESTHETIC
+   ========================================================== */
+
+/* 1. PERMANENTLY HIDE THE GIANT RED BADGES COVERING PHOTOS */
+.card__badge,
+.product-card__badge,
+.badge--sale,
+.badge,
+[class*="sale-badge"],
+[class*="badge--bottom"],
+[class*="35-off"],
+.card-wrapper [class*="badge"],
+.card-wrapper .card__content .badge {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 2. REVEAL & SHARPEN PRODUCT IMAGERY */
+.card__media,
+.card-wrapper .media,
+.product-card .media,
+.media--square {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  padding: 10px !important;
+}
+
+.card__media img,
+.card-wrapper .media img,
+.product__media img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  object-fit: contain !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.04) !important;
+}
+
+/* 3. CLEAN PRODUCT CARD ELEVATION */
+.card-wrapper {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  padding: 14px !important;
+  overflow: hidden !important;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* 4. CLEAN PRICING & BUTTONS (NO HARSH RED) */
+.price-item--sale,
+.price__regular .price-item {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.price-item--regular {
+  color: #94A3B8 !important;
+  font-size: 13px !important;
+  text-decoration: line-through !important;
+  margin-left: 6px !important;
+  font-weight: 500 !important;
+}
+
+.button,
+.button--primary,
+.btn {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 12px 28px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+  transition: all 0.2s ease !important;
+}
+
+.button:hover,
+.button--primary:hover {
+  background: #0D9488 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25) !important;
+}
+
+/* 5. NEUTRALIZE MINT GREEN STATS BAR */
+.clinical-stats-bar,
+[class*="stats"],
+[class*="counter"] {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 24px 15px !important;
+}
+
+.clinical-stats-bar strong,
+[class*="stats"] strong,
+[class*="stats"] h3 {
+  color: #0D9488 !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+}
+
+.clinical-stats-bar span,
+[class*="stats"] p {
+  color: #64748B !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+/* 6. HIDE THE $150,000 LEGAL THREAT TEXT IN FOOTER */
+footer p:contains("150,000"),
+footer p:contains("Lanham Act"),
+.footer__content-bottom:has(p:contains("STRICT LEGAL WARNING")) {
+  display: none !important;
+}
