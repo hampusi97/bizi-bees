@@ -1,0 +1,381 @@
+{% comment %}
+  Dropper OS - Ajax Slide-Out Cart Drawer
+  File: snippets/cart-drawer.liquid
+{% endcomment %}
+
+<div id="DropperCartDrawer" class="dropper-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+  <div class="dropper-drawer-overlay" id="DropperCartOverlay"></div>
+  <div class="dropper-drawer-panel">
+    <!-- Header -->
+    <div class="dropper-drawer-header">
+      <div class="dropper-drawer-title-group">
+        <h3 class="dropper-drawer-title">Your Cart</h3>
+        <span class="dropper-cart-badge" id="DropperCartCount">0</span>
+      </div>
+      <button type="button" class="dropper-drawer-close" id="DropperCartClose" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Free Shipping Milestone Progress ($50 Threshold) -->
+    <div class="dropper-shipping-meter" id="DropperShippingMeter">
+      <div class="shipping-meter-text" id="ShippingMeterText">
+        Add <strong>$50.00</strong> to unlock <strong>Free Standard Shipping</strong>
+      </div>
+      <div class="shipping-meter-bar-bg">
+        <div class="shipping-meter-bar-fill" id="ShippingMeterFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll Area -->
+    <div class="dropper-drawer-body" id="DropperCartItemsContainer">
+      <div class="dropper-cart-empty" id="DropperCartEmptyState">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <p>Your shopping cart is empty</p>
+        <a href="/collections/all" class="btn-editorial-secondary" style="font-size: 13px; padding: 8px 20px;">Explore Collection</a>
+      </div>
+      <div class="dropper-cart-items-list" id="DropperCartItemsList">
+        <!-- Dynamically injected via dropper-cart.js -->
+      </div>
+    </div>
+
+    <!-- 1-Click Upsell Grid (2 Curated Add-ons) -->
+    <div class="dropper-drawer-upsells" id="DropperDrawerUpsells">
+      <div class="upsell-section-title">Frequently Added Together</div>
+      <div class="upsell-grid">
+        <div class="upsell-card" data-variant-id="44991283000001" data-price="1400">
+          <div class="upsell-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80" alt="Botanical Bookish Bookmark Set" width="56" height="56" class="upsell-thumb" loading="lazy">
+          </div>
+          <div class="upsell-info">
+            <span class="upsell-title">Botanical Bookmark Set</span>
+            <span class="upsell-price">$14.00</span>
+          </div>
+          <button type="button" class="upsell-add-btn" onclick="DropperCart.quickAddUpsell('44991283000001', 'Botanical Bookmark Set', 1400)">+ Add</button>
+        </div>
+
+        <div class="upsell-card" data-variant-id="44991283000002" data-price="1800">
+          <div class="upsell-thumb-wrapper">
+            <img src="https://images.unsplash.com/photo-1608248597359-5779148d42d3?auto=format&fit=crop&w=120&q=80" alt="Amber Glass Apothecary Candle" width="56" height="56" class="upsell-thumb" loading="lazy">
+          </div>
+          <div class="upsell-info">
+            <span class="upsell-title">Amber Glass Candle (4oz)</span>
+            <span class="upsell-price">$18.00</span>
+          </div>
+          <button type="button" class="upsell-add-btn" onclick="DropperCart.quickAddUpsell('44991283000002', 'Amber Glass Candle (4oz)', 1800)">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer / Checkout Area -->
+    <div class="dropper-drawer-footer" id="DropperDrawerFooter">
+      <div class="dropper-summary-row">
+        <span class="summary-label">Subtotal</span>
+        <span class="summary-value" id="DropperSubtotal">$0.00</span>
+      </div>
+      <p class="summary-notice">Taxes, discounts and shipping calculated at checkout.</p>
+      <a href="/checkout" class="btn-editorial-primary dropper-checkout-btn" id="DropperCheckoutBtn">
+        <span>Proceed to Checkout</span>
+        <span class="checkout-total-pill" id="DropperCheckoutTotal">$0.00</span>
+      </a>
+      <div class="dropper-guarantee-strip">
+        <span>Free 30-Day Returns</span> • <span>Encrypted SSL Checkout</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dropper-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .dropper-drawer.active {
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .dropper-drawer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 25, 23, 0.45);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .dropper-drawer.active .dropper-drawer-overlay {
+    opacity: 1;
+  }
+  .dropper-drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: -10px 0 35px rgba(28, 25, 23, 0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dropper-drawer.active .dropper-drawer-panel {
+    transform: translateX(0);
+  }
+  .dropper-drawer-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #E7E5E4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dropper-drawer-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dropper-drawer-title {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #1C1917;
+  }
+  .dropper-cart-badge {
+    background: #F5F3EF;
+    color: #1C1917;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+  .dropper-drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #78716C;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+  }
+  .dropper-drawer-close:hover {
+    color: #1C1917;
+  }
+  /* Shipping Meter */
+  .dropper-shipping-meter {
+    background: #FBF9F5;
+    border-bottom: 1px solid #E7E5E4;
+    padding: 14px 24px;
+  }
+  .shipping-meter-text {
+    font-size: 12.5px;
+    color: #44403C;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .shipping-meter-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #E7E5E4;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .shipping-meter-bar-fill {
+    height: 100%;
+    background: #2D3B2D;
+    border-radius: 9999px;
+    transition: width 0.4s ease;
+  }
+  .shipping-unlocked {
+    color: #2D3B2D;
+    font-weight: 600;
+  }
+  /* Body */
+  .dropper-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px;
+  }
+  .dropper-cart-empty {
+    text-align: center;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .dropper-cart-empty p {
+    color: #78716C;
+    font-size: 14px;
+    margin: 0;
+  }
+  /* Cart item row */
+  .cart-item-row {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #F5F3EF;
+  }
+  .cart-item-img {
+    width: 68px;
+    height: 68px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #F5F3EF;
+    border: 1px solid #E7E5E4;
+  }
+  .cart-item-details {
+    flex: 1;
+  }
+  .cart-item-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1C1917;
+    margin: 0 0 4px;
+    text-decoration: none;
+    display: block;
+  }
+  .cart-item-variant {
+    font-size: 12px;
+    color: #78716C;
+    margin-bottom: 8px;
+  }
+  .cart-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cart-item-qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid #E7E5E4;
+    border-radius: 4px;
+  }
+  .qty-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #44403C;
+  }
+  .qty-val {
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .cart-item-price {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1C1917;
+  }
+  /* Upsell */
+  .dropper-drawer-upsells {
+    background: #FBF9F5;
+    border-top: 1px solid #E7E5E4;
+    padding: 16px 24px;
+  }
+  .upsell-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #78716C;
+    margin-bottom: 12px;
+  }
+  .upsell-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .upsell-card {
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .upsell-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  .upsell-info {
+    flex: 1;
+  }
+  .upsell-title {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #1C1917;
+  }
+  .upsell-price {
+    font-size: 12px;
+    color: #78716C;
+  }
+  .upsell-add-btn {
+    background: #F5F3EF;
+    border: 1px solid #E7E5E4;
+    color: #1C1917;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .upsell-add-btn:hover {
+    background: #2D3B2D;
+    color: #FFFFFF;
+    border-color: #2D3B2D;
+  }
+  /* Footer */
+  .dropper-drawer-footer {
+    border-top: 1px solid #E7E5E4;
+    padding: 18px 24px;
+    background: #FFFFFF;
+  }
+  .dropper-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1C1917;
+    margin-bottom: 6px;
+  }
+  .summary-notice {
+    font-size: 11.5px;
+    color: #78716C;
+    margin: 0 0 14px;
+  }
+  .dropper-checkout-btn {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+  .checkout-total-pill {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 13px;
+  }
+  .dropper-guarantee-strip {
+    text-align: center;
+    font-size: 11px;
+    color: #A8A29E;
+    margin-top: 12px;
+  }
+</style>

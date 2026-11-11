@@ -1,0 +1,119 @@
+{% comment %}
+  Dropper OS - Mobile Sticky Conversion Bar
+  File: snippets/sticky-buy-bar.liquid
+{% endcomment %}
+
+<div id="DropperStickyBar" class="dropper-sticky-bar" aria-hidden="true">
+  <div class="dropper-sticky-bar-inner">
+    <div class="sticky-product-meta">
+      <img
+        id="StickyProductImage"
+        src="{% if product.featured_image %}{{ product.featured_image | image_url: width: 120 }}{% else %}https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80{% endif %}"
+        alt="{{ product.title | escape | default: 'Product' }}"
+        class="sticky-thumb"
+        width="48"
+        height="48"
+        loading="lazy"
+      >
+      <div class="sticky-text-group">
+        <h4 class="sticky-title" id="StickyProductTitle">
+          {{ product.title | default: 'Bizi Bees™ Signature Gift Collection' | truncate: 32 }}
+        </h4>
+        <span class="sticky-price" id="StickyProductPrice">
+          {{ product.price | default: 3999 | money }}
+        </span>
+      </div>
+    </div>
+    <div class="sticky-action-group">
+      <button
+        type="button"
+        id="StickyAddToCartBtn"
+        class="btn-editorial-primary sticky-buy-btn"
+        data-variant-id="{{ product.selected_or_first_available_variant.id | default: '44991283000000' }}"
+      >
+        <span>Quick Add</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dropper-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    border-top: 1px solid #E7E5E4;
+    box-shadow: 0 -4px 20px rgba(28, 25, 23, 0.08);
+    z-index: 850;
+    transform: translateY(110%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dropper-sticky-bar.visible {
+    transform: translateY(0);
+  }
+  .dropper-sticky-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .sticky-product-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  .sticky-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #E7E5E4;
+    flex-shrink: 0;
+  }
+  .sticky-text-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .sticky-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1C1917;
+    margin: 0 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2D3B2D;
+  }
+  .sticky-action-group {
+    flex-shrink: 0;
+  }
+  .sticky-buy-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  @media(max-width: 480px) {
+    .dropper-sticky-bar-inner {
+      padding: 10px 14px;
+    }
+    .sticky-title {
+      max-width: 150px;
+      font-size: 12.5px;
+    }
+    .sticky-buy-btn {
+      padding: 9px 18px;
+      font-size: 12.5px;
+    }
+  }
+</style>

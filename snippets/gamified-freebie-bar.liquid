@@ -26,13 +26,13 @@
   <!-- Dynamic Motivation Heading -->
   <div class="rewards-status-text" id="rewardsStatusText">
     {% if cart_total < tier_1 %}
-      Add <strong class="highlight">${{ tier_1 | minus: cart_total | money_without_currency }}</strong> to unlock <strong>FREE US Priority Shipping</strong>! 🚚
+      Add <strong class="highlight">${{ tier_1 | minus: cart_total | money_without_currency }}</strong> to unlock <strong>Free Standard Shipping</strong>
     {% elsif cart_total < tier_2 %}
-      🎉 <strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">${{ tier_2 | minus: cart_total | money_without_currency }}</strong> for a <strong>{{ gift_name }}</strong>! 🎁
+      <strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">${{ tier_2 | minus: cart_total | money_without_currency }}</strong> for a <strong>{{ gift_name }}</strong>
     {% elsif cart_total < tier_3 %}
-      🎁 <strong>Free Shipping + Free Gift Unlocked!</strong> Add <strong class="highlight">${{ tier_3 | minus: cart_total | money_without_currency }}</strong> for an <strong>Instant 15% VIP Discount</strong>! ⚡
+      <strong>Free Shipping &amp; Gift Unlocked!</strong> Add <strong class="highlight">${{ tier_3 | minus: cart_total | money_without_currency }}</strong> for an <strong>Instant 15% VIP Savings</strong>
     {% else %}
-      🌟 <strong>MAXIMUM VIP REWARDS UNLOCKED!</strong> Free Shipping + Free Gift + 15% VIP Applied! 🏆
+      <strong>Maximum Tier Benefits Unlocked:</strong> Free Shipping, Free Gift &amp; 15% Savings Applied!
     {% endif %}
   </div>
 
@@ -42,17 +42,17 @@
     
     <!-- Milestone Indicators -->
     <div class="milestone-marker m1 {% if cart_total >= tier_1 %}achieved{% endif %}">
-      <div class="marker-dot">🚚</div>
+      <div class="marker-dot">✓</div>
       <span>Free Ship</span>
     </div>
     
     <div class="milestone-marker m2 {% if cart_total >= tier_2 %}achieved{% endif %}">
-      <div class="marker-dot">🎁</div>
+      <div class="marker-dot">✓</div>
       <span>Free Gift</span>
     </div>
     
     <div class="milestone-marker m3 {% if cart_total >= tier_3 %}achieved{% endif %}">
-      <div class="marker-dot">⚡</div>
+      <div class="marker-dot">✓</div>
       <span>15% VIP</span>
     </div>
   </div>
@@ -164,13 +164,13 @@
     const giftDesc = "{{ gift_name }}";
 
     if (totalPriceCents < t1) {
-      text.innerHTML = `Add <strong class="highlight">$${((t1 - totalPriceCents)/100).toFixed(2)}</strong> to unlock <strong>FREE US Priority Shipping</strong>! 🚚`;
+      text.innerHTML = `Add <strong class="highlight">$${((t1 - totalPriceCents)/100).toFixed(2)}</strong> to unlock <strong>Free Standard Shipping</strong>`;
     } else if (totalPriceCents < t2) {
-      text.innerHTML = `🎉 <strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">$${((t2 - totalPriceCents)/100).toFixed(2)}</strong> for a <strong>${giftDesc}</strong>! 🎁`;
+      text.innerHTML = `<strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">$${((t2 - totalPriceCents)/100).toFixed(2)}</strong> for a <strong>${giftDesc}</strong>`;
     } else if (totalPriceCents < t3) {
-      text.innerHTML = `🎁 <strong>Free Shipping + Free Gift Unlocked!</strong> Add <strong class="highlight">$${((t3 - totalPriceCents)/100).toFixed(2)}</strong> for an <strong>Instant 15% VIP Discount</strong>! ⚡`;
+      text.innerHTML = `<strong>Free Shipping &amp; Gift Unlocked!</strong> Add <strong class="highlight">$${((t3 - totalPriceCents)/100).toFixed(2)}</strong> for an <strong>Instant 15% VIP Savings</strong>`;
     } else {
-      text.innerHTML = `🌟 <strong>MAXIMUM VIP REWARDS UNLOCKED!</strong> Free Shipping + Free Gift + 15% VIP Applied! 🏆`;
+      text.innerHTML = `<strong>Maximum Tier Benefits Unlocked:</strong> Free Shipping, Free Gift &amp; 15% Savings Applied!`;
     }
   }
 

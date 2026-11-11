@@ -3,15 +3,15 @@
   <div class="upsell-backdrop"></div>
   <div class="upsell-card">
     <div class="upsell-header">
-      <div class="urgency-banner">
-        ⚡ <strong>EXCLUSIVE 1-TIME OFFER:</strong> <span id="upsellTimer">02:59</span>
+      <div class="urgency-banner" style="background: #F5F3EF; color: #2D3B2D; font-weight: 600;">
+        Special Member Companion Curation
       </div>
-      <h3 class="upsell-title" id="upsellHeadline">Wait! Complete Your Clinical Protocol</h3>
-      <p class="upsell-subhead" id="upsellSubhead">Your card is already authorized. Add this exclusive upgrade to your package with 1 tap—no re-entering card details.</p>
+      <h3 class="upsell-title" id="upsellHeadline">Complete Your Selection</h3>
+      <p class="upsell-subhead" id="upsellSubhead">Add this companion upgrade to your package with one click before dispatch.</p>
     </div>
 
     <div class="upsell-product-preview">
-      <div class="upsell-badge" id="upsellDiscountBadge">42% OFF</div>
+      <div class="upsell-badge" id="upsellDiscountBadge">Special Value</div>
       <div class="upsell-product-info">
         <h4 id="upsellProductName">Activating Botanical Peptide Conduction Serum (50ml)</h4>
         <div class="upsell-pricing">
@@ -24,10 +24,10 @@
 
     <div class="upsell-actions">
       <button type="button" class="btn-upsell-claim" id="btnClaimUpsell" onclick="executeOneClickUpsell()">
-        <span class="btn-text" id="upsellCtaText">Add to My Order for $14.00 (1-Click) →</span>
+        <span class="btn-text" id="upsellCtaText">Add to My Order &mdash; $14.00</span>
       </button>
       <button type="button" class="btn-upsell-decline" onclick="dismissUpsell()">
-        No thanks, I will pay full price later
+        No thanks, proceed to confirmation
       </button>
     </div>
 
@@ -179,30 +179,12 @@
 </style>
 
 <script>
-  let upsellSeconds = 179;
-  function startUpsellTimer() {
-    const timerEl = document.getElementById("upsellTimer");
-    if (!timerEl) return;
-    const interval = setInterval(() => {
-      if (upsellSeconds <= 0) {
-        clearInterval(interval);
-        dismissUpsell();
-        return;
-      }
-      const m = Math.floor(upsellSeconds / 60);
-      const s = upsellSeconds % 60;
-      timerEl.textContent = `0${m}:${s < 10 ? '0' : ''}${s}`;
-      upsellSeconds--;
-    }, 1000);
-  }
-
   function executeOneClickUpsell() {
     const btn = document.getElementById("btnClaimUpsell");
-    if (btn) btn.innerHTML = "Processing 1-Click Addition...";
+    if (btn) btn.innerHTML = "Adding to your package...";
     setTimeout(() => {
-      alert("✅ Upsell added successfully to your order! Dispatched in the same package.");
       dismissUpsell();
-    }, 600);
+    }, 500);
   }
 
   function dismissUpsell() {
@@ -210,9 +192,9 @@
     if (modal) modal.style.display = "none";
   }
 
-  // Auto trigger after simulated purchase if parameter exists
+  // Auto trigger after purchase if parameter exists
   if (window.location.search.includes("upsell=true") || window.location.pathname.includes("thank_you")) {
-    document.getElementById("lumaPostPurchaseModal").style.display = "flex";
-    startUpsellTimer();
+    const modal = document.getElementById("lumaPostPurchaseModal");
+    if (modal) modal.style.display = "flex";
   }
 </script>

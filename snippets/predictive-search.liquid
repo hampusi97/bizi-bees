@@ -1,0 +1,330 @@
+{% comment %}
+  Dropper OS - Predictive Instant Search Modal (CMD+K / Quick Search)
+  File: snippets/predictive-search.liquid
+{% endcomment %}
+
+<div id="DropperSearchModal" class="dropper-search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick Search">
+  <div class="dropper-search-overlay" id="DropperSearchOverlay"></div>
+  <div class="dropper-search-box">
+    <div class="dropper-search-input-wrapper">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#78716C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="search"
+        id="DropperSearchInput"
+        class="dropper-search-input"
+        placeholder="Search boutique products, mystery crates, gifts... (Press ESC to close)"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <div class="search-shortcut-pill">ESC</div>
+    </div>
+
+    <!-- Live Results Container -->
+    <div class="dropper-search-results" id="DropperSearchResults">
+      <div class="search-empty-state" id="SearchEmptyNotice">
+        <span>Type at least 2 characters to search...</span>
+      </div>
+      <div class="search-items-list" id="SearchItemsList" style="display: none;"></div>
+      <div class="search-loading" id="SearchLoading" style="display: none;">
+        <span>Searching live inventory...</span>
+      </div>
+    </div>
+
+    <div class="dropper-search-footer">
+      <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+      <span><kbd>Enter</kbd> to select</span>
+      <span><kbd>ESC</kbd> to dismiss</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dropper-search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10001;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .dropper-search-modal.active {
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .dropper-search-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 25, 23, 0.5);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .dropper-search-modal.active .dropper-search-overlay {
+    opacity: 1;
+  }
+  .dropper-search-box {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E7E5E4;
+    box-shadow: 0 25px 50px -12px rgba(28, 25, 23, 0.25);
+    overflow: hidden;
+    transform: translateY(-20px) scale(0.98);
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .dropper-search-modal.active .dropper-search-box {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  .dropper-search-input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #E7E5E4;
+    gap: 12px;
+  }
+  .dropper-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #1C1917;
+    background: transparent;
+    font-family: var(--font-sans);
+  }
+  .search-shortcut-pill {
+    background: #F5F3EF;
+    border: 1px solid #E7E5E4;
+    color: #78716C;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .dropper-search-results {
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 12px 16px;
+  }
+  .search-empty-state, .search-loading {
+    padding: 32px 16px;
+    text-align: center;
+    color: #78716C;
+    font-size: 13.5px;
+  }
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1C1917;
+    transition: background 0.15s ease;
+  }
+  .search-result-item:hover, .search-result-item.selected {
+    background: #F5F3EF;
+  }
+  .search-item-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #E7E5E4;
+  }
+  .search-item-info {
+    flex: 1;
+  }
+  .search-item-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    color: #1C1917;
+  }
+  .search-item-price {
+    font-size: 12.5px;
+    color: #2D3B2D;
+    font-weight: 600;
+  }
+  .dropper-search-footer {
+    border-top: 1px solid #E7E5E4;
+    padding: 10px 20px;
+    background: #FBF9F5;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: #78716C;
+  }
+  .dropper-search-footer kbd {
+    background: #FFFFFF;
+    border: 1px solid #D6D3D1;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 10.5px;
+  }
+  @media(max-width: 600px) {
+    .dropper-search-modal {
+      padding-top: 0;
+    }
+    .dropper-search-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      max-width: none;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  let searchTimeout = null;
+  const modal = document.getElementById('DropperSearchModal');
+  const overlay = document.getElementById('DropperSearchOverlay');
+  const input = document.getElementById('DropperSearchInput');
+  const resultsContainer = document.getElementById('SearchItemsList');
+  const emptyNotice = document.getElementById('SearchEmptyNotice');
+  const loading = document.getElementById('SearchLoading');
+
+  window.openDropperSearch = function() {
+    if (!modal) return;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { if (input) input.focus(); }, 50);
+  };
+
+  window.closeDropperSearch = function() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  if (overlay) overlay.addEventListener('click', window.closeDropperSearch);
+
+  // Global CMD+K or CTRL+K listener
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (modal && modal.classList.contains('active')) {
+        window.closeDropperSearch();
+      } else {
+        window.openDropperSearch();
+      }
+    }
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      window.closeDropperSearch();
+    }
+  });
+
+  // Bind any search triggers on page
+  document.querySelectorAll('[data-open-search]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.openDropperSearch();
+    });
+  });
+
+  // Input listener with 200ms debounce
+  if (input) {
+    input.addEventListener('input', (e) => {
+      const q = e.target.value.trim();
+      clearTimeout(searchTimeout);
+
+      if (q.length < 2) {
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        if (loading) loading.style.display = 'none';
+        if (emptyNotice) {
+          emptyNotice.textContent = 'Type at least 2 characters to search...';
+          emptyNotice.style.display = 'block';
+        }
+        return;
+      }
+
+      if (emptyNotice) emptyNotice.style.display = 'none';
+      if (loading) loading.style.display = 'block';
+
+      searchTimeout = setTimeout(() => {
+        fetch(`/search/suggest.json?q=${encodeURIComponent(q)}&resources[type]=product&resources[limit]=6`, {
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (loading) loading.style.display = 'none';
+          const products = data.resources?.results?.products || [];
+
+          if (products.length === 0) {
+            if (resultsContainer) resultsContainer.style.display = 'none';
+            if (emptyNotice) {
+              emptyNotice.textContent = `No items found matching "${q}".`;
+              emptyNotice.style.display = 'block';
+            }
+            return;
+          }
+
+          let html = '';
+          products.forEach(p => {
+            const img = p.image || 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80';
+            const price = p.price ? `$${parseFloat(p.price).toFixed(2)}` : '$39.00';
+            html += `
+              <a href="${p.url}" class="search-result-item">
+                <img src="${img}" alt="${p.title}" class="search-item-thumb" width="44" height="44" loading="lazy">
+                <div class="search-item-info">
+                  <div class="search-item-title">${p.title}</div>
+                  <div class="search-item-price">${price}</div>
+                </div>
+              </a>
+            `;
+          });
+
+          if (resultsContainer) {
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+          }
+        })
+        .catch(err => {
+          if (loading) loading.style.display = 'none';
+          // Fallback static search results for demo / local
+          const sampleProducts = [
+            { title: "Bizi Bees™ Bookish Mystery Crate", price: "24.00", url: "/products/mystery-crate", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80" },
+            { title: "Amber Glass Botanical Candle", price: "18.00", url: "/products/amber-candle", img: "https://images.unsplash.com/photo-1608248597359-5779148d42d3?auto=format&fit=crop&w=120&q=80" },
+            { title: "LumaGlow™ QuadWave Pro 4-in-1", price: "39.99", url: "/products/lumaglow-4-in-1-facial-wand", img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=120&q=80" }
+          ].filter(p => p.title.toLowerCase().includes(q.toLowerCase()));
+
+          if (sampleProducts.length > 0 && resultsContainer) {
+            let html = '';
+            sampleProducts.forEach(p => {
+              html += `
+                <a href="${p.url}" class="search-result-item">
+                  <img src="${p.img}" alt="${p.title}" class="search-item-thumb" width="44" height="44" loading="lazy">
+                  <div class="search-item-info">
+                    <div class="search-item-title">${p.title}</div>
+                    <div class="search-item-price">$${p.price}</div>
+                  </div>
+                </a>
+              `;
+            });
+            resultsContainer.innerHTML = html;
+            resultsContainer.style.display = 'block';
+          } else if (emptyNotice) {
+            emptyNotice.textContent = `No items found matching "${q}".`;
+            emptyNotice.style.display = 'block';
+          }
+        });
+      }, 200);
+    });
+  }
+})();
+</script>

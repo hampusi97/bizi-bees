@@ -1,38 +1,32 @@
 {% comment %}
-  The "Anti-Amazon" Trust Badge Matrix
+  The Direct Advantage Matrix (Anti-Amazon Quality Assurance)
   Repo: bizi-bees /snippets/anti-amazon-badges.liquid
-  Highlights physical and guarantee benefits of direct purchasing vs Amazon commingled inventory.
 {% endcomment %}
 
 <div class="direct-vs-amazon-box">
   <div class="dva-header">
-    <span class="dva-shield-icon">🛡️</span>
-    <h4>Why Buying Direct Beats Amazon Third-Party:</h4>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2D3B2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    <h4>Why Ordering Direct Beats Third-Party Resellers</h4>
   </div>
   <div class="dva-grid">
     <div class="dva-row">
-      <span class="dva-feat">🔒 Verified 100% Authentic Batch:</span>
-      <span class="dva-direct">✓ Direct Hub</span>
-      <span class="dva-amazon">✕ Commingled Stock</span>
+      <span class="dva-feat">Verified Small-Batch Authenticity:</span>
+      <span class="dva-direct">✓ Fresh Workshop Batch</span>
+      <span class="dva-amazon">✕ Commingled Warehouses</span>
     </div>
     <div class="dva-row">
-      <span class="dva-feat">⏳ Extended In-Home Trial:</span>
+      <span class="dva-feat">Extended In-Home Guarantee:</span>
       <span class="dva-direct">✓ 60 Days</span>
       <span class="dva-amazon">✕ 30 Days</span>
     </div>
     <div class="dva-row">
-      <span class="dva-feat">🎁 Free Physical Gifts ($15–$24):</span>
+      <span class="dva-feat">Curated Complimentary Gifts:</span>
       <span class="dva-direct">✓ Included Free</span>
-      <span class="dva-amazon">✕ Never</span>
+      <span class="dva-amazon">✕ None</span>
     </div>
     <div class="dva-row">
-      <span class="dva-feat">🏥 HSA / FSA Eligible Receipt:</span>
-      <span class="dva-direct">✓ Instant PDF</span>
-      <span class="dva-amazon">✕ Difficult / Absent</span>
-    </div>
-    <div class="dva-row">
-      <span class="dva-feat">📦 Anti-Crush Luxury Packaging:</span>
-      <span class="dva-direct">✓ Protected Gift Box</span>
+      <span class="dva-feat">Careful Sustainable Packaging:</span>
+      <span class="dva-direct">✓ Gift-Ready Box</span>
       <span class="dva-amazon">✕ Poly Mailer Bag</span>
     </div>
   </div>
@@ -41,13 +35,13 @@
 <style>
   .direct-vs-amazon-box {
     background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 16px;
+    border: 1px solid var(--border-subtle, #E7E5E4);
+    border-radius: 12px;
     padding: 18px 20px;
     margin: 20px 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-sans, -apple-system, sans-serif);
     font-size: 13px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 2px 8px rgba(28, 25, 23, 0.04);
   }
   .dva-header {
     display: flex;
@@ -55,49 +49,45 @@
     gap: 8px;
     margin-bottom: 14px;
   }
-  .dva-shield-icon {
-    font-size: 16px;
-  }
   .direct-vs-amazon-box h4 {
     margin: 0;
-    font-size: 14px;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.2px;
+    font-family: var(--font-serif, serif);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary, #1C1917);
   }
   .dva-grid { 
     display: flex; 
     flex-direction: column; 
-    gap: 8px; 
+    gap: 10px; 
   }
   .dva-row { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    border-bottom: 1px solid #F1F5F9; 
-    padding-bottom: 7px; 
+    border-bottom: 1px solid #F5F3EF; 
+    padding-bottom: 8px; 
   }
   .dva-row:last-child {
     border-bottom: none;
     padding-bottom: 0;
   }
   .dva-feat { 
-    color: #334155; 
-    font-weight: 600; 
-    font-size: 12px; 
+    color: var(--text-secondary, #78716C); 
+    font-weight: 500; 
+    font-size: 12.5px; 
   }
   .dva-direct { 
-    color: #0D9488; 
-    font-weight: 800; 
+    color: #2D3B2D; 
+    font-weight: 600; 
     font-size: 12px; 
-    background: rgba(13, 148, 136, 0.08);
-    padding: 2px 8px;
-    border-radius: 6px;
+    background: #F5F3EF;
+    padding: 3px 8px;
+    border-radius: 4px;
   }
   .dva-amazon { 
-    color: #94A3B8; 
+    color: #A8A29E; 
     font-size: 12px; 
     text-decoration: line-through; 
-    font-weight: 500;
   }
 </style>

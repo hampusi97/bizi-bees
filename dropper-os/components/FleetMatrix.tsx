@@ -104,33 +104,41 @@ export default function FleetMatrix({
 
             {/* Action Buttons */}
             <div className="mt-5 space-y-2 pt-2 border-t border-titanium-800">
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href={`https://${store.domain}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center space-x-1.5 rounded-lg border border-titanium-700 bg-titanium-800 px-3 py-1.5 text-xs font-medium text-titanium-200 hover:bg-titanium-700 hover:text-white transition"
+              <div className="grid grid-cols-3 gap-2">
+                <button
+                  onClick={() => onQuickDeploy(store.storeId, store.storeName)}
+                  className="flex items-center justify-center space-x-1 rounded-lg border border-titanium-700 bg-titanium-800 px-2.5 py-1.5 text-[11px] font-medium text-titanium-200 hover:bg-titanium-700 hover:text-white transition"
                 >
-                  <ExternalLink className="h-3.5 w-3.5" />
-                  <span>Open Store</span>
-                </a>
+                  <RefreshCw className="h-3 w-3 text-cyber-cyan" />
+                  <span>Sync Theme</span>
+                </button>
+
+                <button
+                  onClick={onRefreshTelemetry}
+                  className="flex items-center justify-center space-x-1 rounded-lg border border-titanium-700 bg-titanium-800 px-2.5 py-1.5 text-[11px] font-medium text-titanium-200 hover:bg-titanium-700 hover:text-white transition"
+                >
+                  <Zap className="h-3 w-3 text-cyber-emerald" />
+                  <span>Diagnostics</span>
+                </button>
 
                 <button
                   onClick={() => onQuickDeploy(store.storeId, store.storeName)}
-                  className="flex items-center justify-center space-x-1.5 rounded-lg bg-cyber-emerald/15 border border-cyber-emerald/30 px-3 py-1.5 text-xs font-semibold text-cyber-emerald hover:bg-cyber-emerald/25 transition"
+                  className="flex items-center justify-center space-x-1 rounded-lg bg-cyber-emerald/15 border border-cyber-emerald/30 px-2.5 py-1.5 text-[11px] font-semibold text-cyber-emerald hover:bg-cyber-emerald/25 transition"
                 >
-                  <Zap className="h-3.5 w-3.5" />
-                  <span>Push Theme</span>
+                  <Layers className="h-3 w-3" />
+                  <span>Deploy Cart</span>
                 </button>
               </div>
 
-              <button
-                onClick={() => onQuickDeploy(store.storeId, store.storeName)}
+              <a
+                href={`https://${store.domain}`}
+                target="_blank"
+                rel="noreferrer"
                 className="w-full flex items-center justify-center space-x-1.5 rounded-lg border border-titanium-700/60 bg-titanium-800/40 px-3 py-1.5 text-xs text-titanium-300 hover:border-titanium-600 hover:text-white transition"
               >
-                <Layers className="h-3.5 w-3.5 text-cyber-cyan" />
-                <span>Inject Dynamic Cart Drawer</span>
-              </button>
+                <ExternalLink className="h-3.5 w-3.5" />
+                <span>Visit Live Storefront</span>
+              </a>
             </div>
           </div>
         ))}

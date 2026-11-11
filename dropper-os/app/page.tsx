@@ -28,10 +28,15 @@ export default function DropperOSDashboard() {
       revenue24h: 612.4,
       orders24h: 15,
       aov: 40.83,
+      topProducts: [
+        { id: "1", title: "Blind Date Mystery Book Crate", quantitySold: 8, revenue: 192.00 },
+        { id: "2", title: "Amber Glass Botanical Candle", quantitySold: 5, revenue: 90.00 }
+      ],
       lowStockCount: 2,
       lowStockItems: [
         { id: "1", title: "Blind Date Mystery Book Box", inventory: 3 },
       ],
+      unfulfilledOrdersCount: 2,
       abandonedCartCount: 8,
       abandonmentRate: 61.5,
       status: "ONLINE",
@@ -46,10 +51,14 @@ export default function DropperOSDashboard() {
       revenue24h: 849.8,
       orders24h: 14,
       aov: 60.7,
+      topProducts: [
+        { id: "1", title: "LumaGlow 4-in-1 Facial Wand", quantitySold: 9, revenue: 359.91 }
+      ],
       lowStockCount: 1,
       lowStockItems: [
         { id: "2", title: "LumaGlow Activating Serum 50ml", inventory: 2 },
       ],
+      unfulfilledOrdersCount: 1,
       abandonedCartCount: 6,
       abandonmentRate: 58.2,
       status: "ONLINE",
@@ -64,8 +73,12 @@ export default function DropperOSDashboard() {
       revenue24h: 418.5,
       orders24h: 9,
       aov: 46.5,
+      topProducts: [
+        { id: "1", title: "Dirty Soda Flavor Syrup Pack", quantitySold: 6, revenue: 144.00 }
+      ],
       lowStockCount: 0,
       lowStockItems: [],
+      unfulfilledOrdersCount: 1,
       abandonedCartCount: 4,
       abandonmentRate: 63.0,
       status: "ONLINE",

@@ -4,66 +4,43 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#0D9488">
+    <meta name="theme-color" content="#2D3B2D">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     {%- if page_title -%}
       <title>{{ page_title }} &ndash; {{ shop.name }}</title>
     {%- else -%}
-      <title>{{ shop.name }} &ndash; Dermatology-Grade Phototherapy</title>
+      <title>Bizi Bees Boutique &ndash; Curated Literature & Botanical Goods</title>
     {%- endif -%}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- else -%}
-      <meta name="description" content="LUMA CLINICAL™ — Dermatology-Grade Phototherapy & QuadWave™ Microcurrent Sculpting Engineered for Daily Home Rituals. Dispatched from Utah, USA.">
+      <meta name="description" content="Bizi Bees Boutique — Handcrafted blind date book crates, botanical apothecary candles, and intentional home rituals. Dispatched nationwide with care.">
     {%- endif -%}
 
     {{ content_for_header }}
 
-    <!-- Master DTC Modern Luxury Design System -->
-    {{ 'luma-modern-luxury.css' | asset_url | stylesheet_tag }}
-    {{ 'ultra-dynamic-luxury.css' | asset_url | stylesheet_tag }}
+    <!-- Editorial Boutique Design System -->
+    {{ 'dropper-editorial.css' | asset_url | stylesheet_tag }}
     {{ 'ultra-dynamic-core.css' | asset_url | stylesheet_tag }}
+
+    <!-- Scripts -->
     <script src="{{ 'ultra-dynamic-core.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'dropper-cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'dropper-pdp.js' | asset_url }}" defer="defer"></script>
 
-    <!-- Google Position 0 Rich Snippet Schema (Product & Aggregate Review) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
-      "image": "https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg",
-      "description": "Medical-grade 630nm phototherapy, 330µA microcurrent, and 107°F thermal massage.",
-      "brand": { "@type": "Brand", "name": "Luma Clinical" },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://bizibees-store.myshopify.com/products/lumaglow-4-in-1-facial-wand",
-        "priceCurrency": "USD",
-        "price": "39.99",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition",
-        "seller": {
-          "@type": "Organization",
-          "name": "Luma Clinical LLC"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "184"
-      }
-    }
-    </script>
-
-    <!-- Google Position 0 Rich Snippet Schema (WebSite & Breadcrumbs) -->
+    <!-- Schema.org Microdata -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Luma Clinical",
+      "name": "Bizi Bees Boutique",
       "url": "https://bizibees-store.myshopify.com",
       "potentialAction": {
         "@type": "SearchAction",
@@ -72,58 +49,39 @@
       }
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://bizibees-store.myshopify.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Protocols",
-          "item": "https://bizibees-store.myshopify.com/collections/all"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "LumaGlow™ QuadWave Pro 4-in-1",
-          "item": "https://bizibees-store.myshopify.com/products/lumaglow-4-in-1-facial-wand"
-        }
-      ]
-    }
-    </script>
   </head>
 
-  <body class="gradient">
-    <!-- Announcement Bar -->
-    <div class="luma-announcement-bar">
-      <span>⚡ <strong>FAST US PRIORITY DISPATCH:</strong> Free Domestic Shipping on Orders $35+ • HSA/FSA Eligible • 60-Day Trial Guarantee</span>
+  <body>
+    <!-- Clean Editorial Announcement Bar -->
+    <div class="editorial-announcement-bar">
+      <span>Complimentary Standard US Shipping on Orders Over $50 • Handcrafted in Small Batches</span>
     </div>
 
-    <!-- Dynamic Real-Time Free Shipping Threshold Bar -->
-    {% render 'dynamic-free-shipping-bar' %}
-
-    <!-- Navigation Header -->
-    <header class="luma-main-header">
-      <div class="luma-header-inner">
-        <a href="/" class="luma-brand-logo">
-          <img src="{{ 'luma-logo.svg' | asset_url }}" alt="LUMA CLINICAL™" width="220" height="44" style="height: 40px; width: auto; display: block;">
+    <!-- Editorial Navigation Header -->
+    <header class="editorial-header">
+      <div class="editorial-header-inner">
+        <a href="/" class="editorial-logo">
+          Bizi Bees <span>Boutique</span>
         </a>
-        <nav class="luma-nav-menu">
-          <a href="/collections/all" class="nav-link">Protocols</a>
-          <a href="/products/lumaglow-4-in-1-facial-wand" class="nav-link">LumaGlow™ Pro</a>
-          <a href="/products/lumarelief-migraine-cap" class="nav-link">LumaRelief™ Cap</a>
-          <a href="/pages/track-order" class="nav-link">Track Shipment</a>
+
+        <nav class="editorial-nav">
+          <a href="/collections/all" class="editorial-nav-link">All Curations</a>
+          <a href="/products/mystery-crate" class="editorial-nav-link">Book Crates</a>
+          <a href="/collections/candles" class="editorial-nav-link">Apothecary</a>
+          <a href="/products/lumaglow-4-in-1-facial-wand" class="editorial-nav-link">Signature Care</a>
+          <a href="/pages/track-order" class="editorial-nav-link">Track Order</a>
         </nav>
-        <div class="luma-header-actions">
-          <a href="/cart" class="luma-cart-btn">
-            Cart <span class="cart-pill">({{ cart.item_count }})</span>
+
+        <div class="editorial-actions">
+          <button type="button" class="editorial-action-btn" data-open-search aria-label="Search catalog">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span style="font-size: 12.5px;">Search</span>
+            <span style="font-size: 10px; background: #F5F3EF; padding: 1px 5px; border-radius: 4px; margin-left: 6px; border: 1px solid #E7E5E4;">⌘K</span>
+          </button>
+
+          <a href="/cart" class="editorial-cart-btn" data-open-cart aria-label="Open Shopping Bag">
+            <span>Bag</span>
+            <span class="editorial-cart-count" id="HeaderCartCount">{{ cart.item_count }}</span>
           </a>
         </div>
       </div>
@@ -133,33 +91,13 @@
       {{ content_for_layout }}
     </main>
 
-    <!-- VIP Conglomerate Pass - Cross-Brand Loyalty Ecosystem -->
-    {% render 'conglomerate-loyalty-pass' %}
+    <!-- Clean 4-Column Editorial Footer -->
+    {% render 'editorial-footer' %}
 
-    <!-- 13-Brand Universal VIP Passport -->
-    {% render 'universal-loyalty-passport' %}
+    <!-- Dynamic Conversion Systems (Slide-Out Cart Drawer, Predictive Search, Sticky Bar) -->
+    {% render 'cart-drawer' %}
+    {% render 'predictive-search' %}
+    {% render 'sticky-buy-bar' %}
 
-    <!-- Bank / Stripe Compliance Trust Shield -->
-    {% render 'compliance-trust-shield' %}
-
-    <!-- Sticky Mobile 1-Click Buy Drawer -->
-    {% render 'luma-sticky-cart' %}
-
-    <style>
-      .luma-announcement-bar { background: #0F172A; color: #FFFFFF; text-align: center; padding: 10px 16px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.03em; }
-      .luma-announcement-bar strong { color: #99F6E4; }
-      .luma-main-header { background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 16px 24px; position: sticky; top: 0; z-index: 1000; }
-      .luma-header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-      .luma-nav-menu { display: flex; gap: 28px; }
-      .nav-link { color: #334155; text-decoration: none; font-size: 13.5px; font-weight: 700; transition: color 0.2s ease; }
-      .nav-link:hover { color: #0D9488; }
-      .luma-cart-btn { background: #F8FAFC; border: 1px solid #E2E8F0; color: #0F172A; text-decoration: none; padding: 8px 18px; border-radius: 40px; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; }
-      .cart-pill { color: #0D9488; }
-      @media(max-width: 768px) {
-        .luma-nav-menu { display: none; }
-      }
-    </style>
-    <!-- Ultra-Dynamic Live Social Proof Toast -->
-    {% render 'live-social-proof-toast' %}
   </body>
 </html>

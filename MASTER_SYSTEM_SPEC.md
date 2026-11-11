@@ -1851,9 +1851,35 @@ cd dropper-os
 # Boot Web Command Center
 npm run dev # Launches at http://localhost:3000
 
+# Run Daily Intelligence Report
+npm run report # Or: npm run report -- --dry-run
+
 # Launch Background Fleet Daemon
 node dropper-daemon.js
 ```
+
+---
+
+## 32. Storefront Editorial Overhaul & 8-Figure Conversion Architecture
+
+### 1. Spam Pattern Purge
+- **Urgency Clutter Purged:** Countdowns, flash sale banners, and exit-intent popups removed.
+- **Fake Social Proof Purged:** Toast notifications ("Rachel from Salt Lake City purchased...") completely removed.
+- **Media Strip Purged:** Unverified press logos eliminated.
+- **Footer Cleaned:** Zero $150,000 legal threats or Lanham Act text. Replaced by a clean 4-column boutique footer (Brand Story, Collections, Customer Care, Standard Policies).
+- **Emoji Purged:** Emojis stripped across header, product titles, badges, and buttons.
+
+### 2. Editorial Design System
+- **Background:** Warm linen/stone (`#FBF9F5`)
+- **Cards/Surfaces:** Crisp white (`#FFFFFF`) with subtle border (`#E7E5E4`)
+- **Text:** Primary charcoal (`#1C1917`), secondary muted (`#78716C`)
+- **Accent/Buttons:** Deep forest green (`#2D3B2D`), warm terracotta (`#C25E40`)
+- **Typography:** Editorial Serif (`Playfair Display`, `Cormorant Garamond`) + Sans-Serif (`Inter`, system-ui)
+
+### 3. High-Converting Dynamic Modules
+- **Module A: Ajax Slide-Out Cart Drawer (`snippets/cart-drawer.liquid`, `assets/dropper-cart.js`):** Dynamic $50 free shipping milestone bar, 1-click upsell add-ons, and instant checkout preview.
+- **Module B: Mobile Sticky Conversion Bar (`snippets/sticky-buy-bar.liquid`, `assets/dropper-pdp.js`):** `IntersectionObserver` on main PDP submit button; slides up with product thumbnail, price, and quick add.
+- **Module C: Predictive Search Modal (`snippets/predictive-search.liquid`):** Accessible via header or `⌘K` / `Ctrl+K` with 200ms debounce querying `/search/suggest.json`.
 
 ---
 

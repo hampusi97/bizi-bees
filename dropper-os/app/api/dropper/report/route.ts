@@ -33,9 +33,9 @@ export async function POST() {
     const result = await github.commitDailyIntelligenceReport(dateStr, reportMarkdown);
 
     return NextResponse.json({
-      success: result.success,
+      success: result.dateReport?.success ?? true,
       date: dateStr,
-      commitSha: result.sha,
+      commitSha: result.dateReport?.sha,
       message: `Daily report for ${dateStr} committed to /reports/${dateStr}.md`,
     });
   } catch (error: any) {

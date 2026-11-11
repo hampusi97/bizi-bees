@@ -1,0 +1,9 @@
+[
+  {
+    "id": "bizi-bees",
+    "name": "Bizi Bees Boutique",
+    "domain": "bizibees-store.myshopify.com",
+    "apiEnvPrefix": "BIZI_BEES",
+    "active": true
+  }
+]
