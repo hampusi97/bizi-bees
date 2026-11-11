@@ -35,10 +35,19 @@
     "shoppable_instagram_feed": {
       "type": "shoppable-instagram-feed",
       "settings": {}
+    },
+    "master_flagship_storefront": {
+      "type": "master-flagship-storefront",
+      "settings": {}
+    },
+    "ember_oak_smoke_lounge": {
+      "type": "ember-oak-smoke-lounge",
+      "settings": {}
     }
   },
   "order": [
     "bizi_bees_hero",
+    "master_flagship_storefront",
     "advanced_xray_bento",
     "bizi_blind_date_builder",
     "bizi_crate_builder",
@@ -46,6 +55,7 @@
     "advanced_ai_quiz",
     "google_ai_storefront_apps",
     "bizi_gemini_concierge",
-    "shoppable_instagram_feed"
+    "shoppable_instagram_feed",
+    "ember_oak_smoke_lounge"
   ]
 }
