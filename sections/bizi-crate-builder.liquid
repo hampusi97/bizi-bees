@@ -1,0 +1,485 @@
+{% comment %}
+  BIZI BEES™ COZY EVENING CRATE BUILDER
+  Repo: bizi-bees /sections/bizi-crate-builder.liquid
+  Interactive bundle customizer for Blind Date with a Book & Cozy Evening Crate
+{% endcomment %}
+
+<section class="bb-crate-section" id="biziCrateSection">
+  <div class="bb-crate-aura"></div>
+
+  <div class="bb-crate-container">
+    <div class="bb-crate-header">
+      <span class="bb-crate-badge">🐝 BIZI BEES™ HERITAGE CRAFT</span>
+      <h2 class="bb-crate-title">Build Your Cozy Evening Crate</h2>
+      <p class="bb-crate-subtitle">
+        Curate your personal ritual: hand-wrapped mystery book, brass honeybee keepsake, artisanal botanical candle, and chamomile herbal tea.
+      </p>
+    </div>
+
+    <div class="bb-crate-grid">
+      <!-- Left: Visual Crate Showcase -->
+      <div class="bb-crate-visual" id="crateVisualCard">
+        <div class="bb-crate-seal-badge">👑 VIP EDITION • WAX SEALED</div>
+        <div class="bb-crate-box-graphic">
+          <div class="bb-crate-box-inner">
+            <div class="bb-crate-ribbon"></div>
+            <div class="bb-crate-wax-stamp" onclick="openWaxSealPopup()">🐝</div>
+            <div class="bb-crate-contents-preview" id="crateContentsPreview">
+              <span class="bb-crate-item-tag">📚 Mystery Book (Hand-Selected)</span>
+              <span class="bb-crate-item-tag" id="tagBookmark">✨ Solid Brass Bee Bookmark ($12 Value)</span>
+              <span class="bb-crate-item-tag" id="tagTea">🍵 Artisanal Chamomile Tea</span>
+              <span class="bb-crate-item-tag" id="tagCandle">🕯️ Hand-Poured Honeycomb Candle</span>
+            </div>
+          </div>
+        </div>
+        <div class="bb-crate-trust-row">
+          <span>📦 Dispatched from Utah</span>
+          <span>🛡️ No-Repeat Swap Guarantee</span>
+          <span>🎁 Gift Box Included</span>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Crate Configurator -->
+      <div class="bb-crate-config">
+        <!-- Step 1: Mystery Genre -->
+        <div class="bb-crate-step">
+          <label class="bb-step-label">1. Choose Your Mystery Reading Vibe:</label>
+          <div class="bb-vibe-grid">
+            <button type="button" class="bb-vibe-pill active" onclick="selectCrateVibe('Rainy Day Whodunit', 'Scottish manor, 1920s puzzle, thunderstorm outside', this)">
+              🌧️ Whodunit
+            </button>
+            <button type="button" class="bb-vibe-pill" onclick="selectCrateVibe('Cozy Hearth & Home', 'Warm bakeries, small towns, gentle mysteries', this)">
+              ☕ Cozy Hearth
+            </button>
+            <button type="button" class="bb-vibe-pill" onclick="selectCrateVibe('Retro Golden Age', '1970s espionage, vintage typography, vinyl mood', this)">
+              🕰️ Retro Gold
+            </button>
+            <button type="button" class="bb-vibe-pill" onclick="selectCrateVibe('Midnight Thriller', 'Twisted plot, psychological cliffhanger, 3 AM pages', this)">
+              ⚡ Midnight Thrill
+            </button>
+          </div>
+          <div class="bb-vibe-clue-box" id="crateClueBox">
+            <span class="bb-clue-icon">🔎</span>
+            <span id="crateClueText">Scottish manor, 1920s puzzle, thunderstorm outside</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Crate Tier Selection -->
+        <div class="bb-crate-step">
+          <label class="bb-step-label">2. Select Your Crate Tier:</label>
+          <div class="bb-tier-options">
+            <!-- Tier A: Solo Book -->
+            <div class="bb-tier-card" onclick="selectCrateTier('solo', 14.99, 24.00, false, this)">
+              <div class="bb-tier-radio"></div>
+              <div class="bb-tier-desc">
+                <strong>Blind Date Solo Book</strong>
+                <small>1 Hand-wrapped mystery novel + vintage clue tag</small>
+              </div>
+              <div class="bb-tier-price">
+                <strong>$14.99</strong>
+                <span>$24.00</span>
+              </div>
+            </div>
+
+            <!-- Tier B: VIP Cozy Evening Crate (Default) -->
+            <div class="bb-tier-card active" onclick="selectCrateTier('bundle', 38.00, 68.00, true, this)">
+              <div class="bb-vip-ribbon">★ BESTSELLER • FREE BRASS BOOKMARK UNLOCKED</div>
+              <div class="bb-tier-radio"></div>
+              <div class="bb-tier-desc">
+                <strong>Full Cozy Evening Crate</strong>
+                <small>Mystery Book + Brass Bookmark + Honeycomb Candle + Artisanal Tea</small>
+              </div>
+              <div class="bb-tier-price">
+                <strong>$38.00</strong>
+                <span>$68.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Gift Banner -->
+        <div class="bb-gift-banner" id="crateGiftBanner">
+          <span class="bb-gift-emoji">🎁</span>
+          <div class="bb-gift-content">
+            <strong>FREE Solid Brass Honeybee Bookmark Unlocked ($12 Value)!</strong>
+            <small>Handcrafted heirloom metal bookmark auto-packed in your crate at $0.00.</small>
+          </div>
+          <span class="bb-gift-tag">FREE</span>
+        </div>
+
+        <!-- CTA Buy Button -->
+        <button type="button" class="bb-crate-cta" id="crateBuyBtn" onclick="checkoutCrate()">
+          <span id="crateBtnText">Claim Cozy Crate + Free Bookmark — $38.00 →</span>
+          <small>⚡ Utah Priority Dispatch • 1-Click Shop Pay / Apple Pay / PayPal</small>
+        </button>
+
+        <p class="bb-wax-hint">
+          Want a custom wax seal color? <button type="button" class="bb-link-btn" onclick="openWaxSealPopup()">Preview Wax Seal Stamping →</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bb-crate-section {
+    background: #FAF7F2;
+    padding: 70px 20px;
+    font-family: Georgia, serif;
+    color: #29231E;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #EADBCE;
+  }
+  .bb-crate-aura {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(217, 130, 43, 0.15) 0%, rgba(250, 247, 242, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bb-crate-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .bb-crate-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+  }
+  .bb-crate-badge {
+    display: inline-block;
+    background: #EFE4D6;
+    color: #925310;
+    border: 1px solid #DFCBBA;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-crate-title {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    margin: 0 0 14px;
+    color: #29231E;
+    letter-spacing: -0.5px;
+  }
+  .bb-crate-subtitle {
+    font-size: 16px;
+    color: #6E5F53;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .bb-crate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 45px;
+    align-items: center;
+  }
+  .bb-crate-visual {
+    background: #FFFFFF;
+    border: 1px solid #EADBCE;
+    border-radius: 24px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(41, 35, 30, 0.06);
+    position: relative;
+  }
+  .bb-crate-seal-badge {
+    display: inline-block;
+    background: #FAF7F2;
+    border: 1px solid #EADBCE;
+    color: #D9822B;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-crate-box-graphic {
+    background: linear-gradient(135deg, #E6D8C8 0%, #D8C4B0 100%);
+    border: 2px solid #C4AC94;
+    border-radius: 18px;
+    padding: 30px 20px;
+    position: relative;
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.06), 0 12px 25px rgba(0,0,0,0.08);
+  }
+  .bb-crate-wax-stamp {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #8B2626 0%, #5E1717 100%);
+    color: #FFE6A8;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 14px rgba(139, 38, 38, 0.45);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .bb-crate-wax-stamp:hover { transform: scale(1.1); }
+  .bb-crate-contents-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .bb-crate-item-tag {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: 1px solid #D8C8B8;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #29231E;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-crate-trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-size: 11px;
+    color: #786C62;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-crate-config {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .bb-step-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #29231E;
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-vibe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .bb-vibe-pill {
+    background: #FFFFFF;
+    border: 1.5px solid #EADBCE;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #29231E;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-vibe-pill:hover { border-color: #D9822B; }
+  .bb-vibe-pill.active {
+    background: #FAF7F2;
+    border-color: #D9822B;
+    box-shadow: 0 0 0 1px #D9822B;
+    color: #D9822B;
+  }
+  .bb-vibe-clue-box {
+    margin-top: 10px;
+    background: #FFFFFF;
+    border: 1px dashed #D9822B;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #6E5F53;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-style: italic;
+  }
+  .bb-tier-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .bb-tier-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #FFFFFF;
+    border: 2px solid #EADBCE;
+    border-radius: 16px;
+    padding: 16px 18px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-tier-card:hover { border-color: #CBB6A2; }
+  .bb-tier-card.active {
+    border-color: #D9822B;
+    background: #FFFDF9;
+    box-shadow: 0 6px 18px rgba(217, 130, 43, 0.08);
+  }
+  .bb-vip-ribbon {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #D9822B;
+    color: #FFFFFF;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .bb-tier-radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #C4B2A0;
+    flex-shrink: 0;
+  }
+  .bb-tier-card.active .bb-tier-radio {
+    border-color: #D9822B;
+    background: radial-gradient(circle, #D9822B 45%, transparent 55%);
+  }
+  .bb-tier-desc { flex-grow: 1; }
+  .bb-tier-desc strong { display: block; font-size: 14px; color: #29231E; }
+  .bb-tier-desc small { font-size: 12px; color: #786C62; }
+  .bb-tier-price { text-align: right; }
+  .bb-tier-price strong { display: block; font-size: 18px; font-weight: 900; color: #29231E; }
+  .bb-tier-price span { font-size: 12px; color: #9C8E82; text-decoration: line-through; }
+
+  .bb-gift-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F2F8EE;
+    border: 1px dashed #4D7C0F;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-gift-emoji { font-size: 22px; }
+  .bb-gift-content strong { display: block; font-size: 13px; color: #2B4E08; }
+  .bb-gift-content small { font-size: 11px; color: #4D7C0F; }
+  .bb-gift-tag {
+    margin-left: auto;
+    background: #4D7C0F;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  .bb-crate-cta {
+    width: 100%;
+    background: #29231E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 24px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(41, 35, 30, 0.2);
+    transition: all 0.2s ease;
+  }
+  .bb-crate-cta:hover {
+    background: #D9822B;
+    transform: translateY(-2px);
+  }
+  .bb-crate-cta span { font-size: 16px; font-weight: 800; }
+  .bb-crate-cta small { font-size: 11px; opacity: 0.85; margin-top: 3px; }
+
+  .bb-wax-hint {
+    text-align: center;
+    font-size: 12px;
+    color: #786C62;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-link-btn {
+    background: none;
+    border: none;
+    color: #D9822B;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  @media (max-width: 850px) {
+    .bb-crate-grid { grid-template-columns: 1fr; }
+    .bb-vibe-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  let selectedCratePrice = 38.00;
+
+  function selectCrateVibe(name, clue, btn) {
+    document.querySelectorAll('.bb-vibe-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('crateClueText').innerText = clue;
+  }
+
+  function selectCrateTier(tier, price, strike, showGift, cardEl) {
+    document.querySelectorAll('.bb-tier-card').forEach(c => c.classList.remove('active'));
+    cardEl.classList.add('active');
+
+    selectedCratePrice = price;
+    const banner = document.getElementById('crateGiftBanner');
+    const btnText = document.getElementById('crateBtnText');
+    const tagBookmark = document.getElementById('tagBookmark');
+    const tagTea = document.getElementById('tagTea');
+    const tagCandle = document.getElementById('tagCandle');
+
+    if (showGift) {
+      banner.style.display = 'flex';
+      btnText.innerText = `Claim Cozy Crate + Free Bookmark — $${price.toFixed(2)} →`;
+      if (tagBookmark) tagBookmark.style.display = 'inline-block';
+      if (tagTea) tagTea.style.display = 'inline-block';
+      if (tagCandle) tagCandle.style.display = 'inline-block';
+    } else {
+      banner.style.display = 'none';
+      btnText.innerText = `Claim Solo Book — $${price.toFixed(2)} →`;
+      if (tagBookmark) tagBookmark.style.display = 'none';
+      if (tagTea) tagTea.style.display = 'none';
+      if (tagCandle) tagCandle.style.display = 'none';
+    }
+  }
+
+  function checkoutCrate() {
+    window.location.href = '/collections/all';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Bizi Crate Builder",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Bizi Cozy Crate Builder"
+    }
+  ]
+}
+{% endschema %}

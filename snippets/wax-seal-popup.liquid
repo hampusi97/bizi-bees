@@ -1,0 +1,265 @@
+{% comment %}
+  WAX SEAL STAMPING POPUP & CUSTOMIZER
+  Repo: bizi-bees /snippets/wax-seal-popup.liquid
+  Interactive wax seal color and stamp selector
+{% endcomment %}
+
+<div class="bb-seal-modal" id="waxSealModal" style="display: none;">
+  <div class="bb-seal-overlay" onclick="closeWaxSealPopup()"></div>
+  <div class="bb-seal-dialog">
+    <button type="button" class="bb-seal-close" onclick="closeWaxSealPopup()">✕</button>
+
+    <div class="bb-seal-header">
+      <span class="bb-seal-eyebrow">HEIRLOOM PACKAGING FINISH</span>
+      <h3>Choose Your Wax Stamp &amp; Color</h3>
+      <p>Every Bizi Bees™ crate is hand-stamped with boiling sealing wax before leaving Utah.</p>
+    </div>
+
+    <!-- Live Wax Stamp Visualizer -->
+    <div class="bb-seal-stage">
+      <div class="bb-seal-emboss" id="waxEmbossVisual" style="background: radial-gradient(circle, #8B2626 0%, #5E1717 100%);">
+        <span id="waxEmbossIcon">🐝</span>
+      </div>
+      <div class="bb-seal-caption" id="waxSealCaption">
+        Stamp: <strong>Heirloom Honeybee</strong> • Color: <strong>Crimson Velvet</strong>
+      </div>
+    </div>
+
+    <!-- Stamp Design Selector -->
+    <div class="bb-seal-section">
+      <label>1. Select Stamp Motif:</label>
+      <div class="bb-stamp-icons">
+        <button type="button" class="bb-motif-btn active" onclick="setWaxMotif('🐝', 'Heirloom Honeybee', this)">🐝 Honeybee</button>
+        <button type="button" class="bb-motif-btn" onclick="setWaxMotif('🌿', 'Botanical Fern', this)">🌿 Fern</button>
+        <button type="button" class="bb-motif-btn" onclick="setWaxMotif('⚜️', 'Fleur-de-lis', this)">⚜️ Fleur</button>
+        <button type="button" class="bb-motif-btn" onclick="setWaxMotif('📖', 'Open Grimoire', this)">📖 Book</button>
+      </div>
+    </div>
+
+    <!-- Wax Color Swatches -->
+    <div class="bb-seal-section">
+      <label>2. Select Sealing Wax Shade:</label>
+      <div class="bb-wax-shades">
+        <button type="button" class="bb-wax-color active" style="background: #8B2626;" onclick="setWaxColor('#8B2626', '#5E1717', 'Crimson Velvet', this)" title="Crimson Velvet"></button>
+        <button type="button" class="bb-wax-color" style="background: #D4AF37;" onclick="setWaxColor('#D4AF37', '#997F24', 'Imperial Gold', this)" title="Imperial Gold"></button>
+        <button type="button" class="bb-wax-color" style="background: #4D7C0F;" onclick="setWaxColor('#4D7C0F', '#2C4907', 'Forest Sage', this)" title="Forest Sage"></button>
+        <button type="button" class="bb-wax-color" style="background: #1E293B;" onclick="setWaxColor('#1E293B', '#0F172A', 'Obsidian Midnight', this)" title="Obsidian Midnight"></button>
+      </div>
+    </div>
+
+    <button type="button" class="bb-seal-confirm-btn" onclick="confirmWaxSeal()">
+      Save Wax Seal Preference ✓
+    </button>
+  </div>
+</div>
+
+<style>
+  .bb-seal-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bb-seal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(4px);
+  }
+  .bb-seal-dialog {
+    position: relative;
+    background: #FAF7F2;
+    border: 2px solid #EADBCE;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    text-align: center;
+  }
+  .bb-seal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #786C62;
+  }
+  .bb-seal-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    color: #D9822B;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .bb-seal-header h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #29231E;
+    font-family: Georgia, serif;
+  }
+  .bb-seal-header p {
+    margin: 0 0 20px;
+    font-size: 13px;
+    color: #6E5F53;
+    line-height: 1.4;
+  }
+  .bb-seal-stage {
+    background: #FFFFFF;
+    border: 1px solid #EADBCE;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .bb-seal-emboss {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #FFE6A8;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .bb-seal-caption {
+    font-size: 12px;
+    color: #29231E;
+  }
+  .bb-seal-section {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .bb-seal-section label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6E5F53;
+    margin-bottom: 8px;
+  }
+  .bb-stamp-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .bb-motif-btn {
+    background: #FFFFFF;
+    border: 1.5px solid #EADBCE;
+    border-radius: 8px;
+    padding: 8px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #29231E;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .bb-motif-btn.active {
+    border-color: #D9822B;
+    background: #FFFDF9;
+    color: #D9822B;
+  }
+  .bb-wax-shades {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+  .bb-wax-color {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 0 0 1px #CBD5E1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .bb-wax-color.active {
+    box-shadow: 0 0 0 2px #29231E;
+    transform: scale(1.15);
+  }
+  .bb-seal-confirm-btn {
+    width: 100%;
+    background: #D9822B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+  }
+  .bb-seal-confirm-btn:hover { background: #B86B1F; }
+</style>
+
+<script>
+  let currentMotifName = 'Heirloom Honeybee';
+  let currentColorName = 'Crimson Velvet';
+  let currentGradStart = '#8B2626';
+  let currentGradEnd = '#5E1717';
+
+  function openWaxSealPopup() {
+    const modal = document.getElementById('waxSealModal');
+    if (modal) modal.style.display = 'flex';
+  }
+
+  function closeWaxSealPopup() {
+    const modal = document.getElementById('waxSealModal');
+    if (modal) modal.style.display = 'none';
+  }
+
+  function setWaxMotif(icon, name, btn) {
+    document.querySelectorAll('.bb-motif-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentMotifName = name;
+    document.getElementById('waxEmbossIcon').innerText = icon;
+    updateSealCaption();
+    triggerStampAnimation();
+  }
+
+  function setWaxColor(c1, c2, name, btn) {
+    document.querySelectorAll('.bb-wax-color').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentColorName = name;
+    currentGradStart = c1;
+    currentGradEnd = c2;
+    document.getElementById('waxEmbossVisual').style.background = `radial-gradient(circle, ${c1} 0%, ${c2} 100%)`;
+    updateSealCaption();
+    triggerStampAnimation();
+  }
+
+  function updateSealCaption() {
+    document.getElementById('waxSealCaption').innerHTML = `Stamp: <strong>${currentMotifName}</strong> • Color: <strong>${currentColorName}</strong>`;
+  }
+
+  function triggerStampAnimation() {
+    const el = document.getElementById('waxEmbossVisual');
+    if (!el) return;
+    el.style.transform = 'scale(0.85)';
+    setTimeout(() => {
+      el.style.transform = 'scale(1)';
+    }, 150);
+  }
+
+  function confirmWaxSeal() {
+    closeWaxSealPopup();
+  }
+</script>

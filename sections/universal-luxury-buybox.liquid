@@ -1,0 +1,367 @@
+{% comment %}
+  UNIVERSAL LUXURY INTERACTIVE BUY-BOX (WORKS ON ALL 14 STORES)
+  Repo: bizi-bees /sections/universal-luxury-buybox.liquid
+{% endcomment %}
+
+<div class="ulux-wrapper" id="uluxWrapper">
+  <div class="ulux-ambient-aura" id="uluxAura"></div>
+
+  <div class="ulux-container">
+    
+    <!-- Top Live Social Proof Pill -->
+    <div class="ulux-radar-bar">
+      <span class="ulux-ping"></span>
+      <span><strong id="uluxViewerCount">38 people</strong> are customizing their order right now • Last sold <strong id="uluxCity">Salt Lake City, UT</strong> (2m ago)</span>
+    </div>
+
+    <div class="ulux-main-grid">
+      
+      <!-- Left: 3D Interactive Product Stage -->
+      <div class="ulux-media-card" id="uluxTiltCard">
+        <div class="ulux-badge-float">★ 4.9/5 RATING (410+ VERIFIED REVIEWS)</div>
+        <img id="uluxHeroImg" src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" alt="Flagship Product" class="ulux-img">
+        <div class="ulux-trust-strip">
+          <span>🛡️ 60-Day Trial</span>
+          <span>🚚 Free US Shipping</span>
+          <span>⚡ 24h Dispatch</span>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Configurator -->
+      <div class="ulux-config-panel">
+        <span class="ulux-subtag">FLAGSHIP EDITION • IN STOCK</span>
+        <h2 class="ulux-heading">Customize Your Experience</h2>
+        <p class="ulux-desc">Select your preferred aesthetic edition and package tier below to unlock your complimentary VIP gift and free priority shipping.</p>
+
+        <!-- Step 1: Edition / Color Swatches -->
+        <div class="ulux-step-block">
+          <label>1. Choose Edition: <strong id="selectedEditionName">Signature Edition</strong></label>
+          <div class="ulux-swatches">
+            <button type="button" class="ulux-swatch active" style="background: #D9822B;" onclick="changeUluxEdition('Signature Honey / Rose', '#D9822B', this)"></button>
+            <button type="button" class="ulux-swatch" style="background: #0D9488;" onclick="changeUluxEdition('Clinical Teal', '#0D9488', this)"></button>
+            <button type="button" class="ulux-swatch" style="background: #1E293B;" onclick="changeUluxEdition('Obsidian Midnight', '#1E293B', this)"></button>
+          </div>
+        </div>
+
+        <!-- Step 2: Interactive Tier Selector -->
+        <div class="ulux-step-block">
+          <label>2. Select Package Tier:</label>
+          <div class="ulux-tier-options">
+            
+            <!-- Option A: Solo -->
+            <div class="ulux-tier-box" onclick="selectUluxTier('solo', 24.99, 39.99, false, this)">
+              <div class="tier-radio"></div>
+              <div class="tier-info">
+                <strong>Standard Solo Edition</strong>
+                <small>Single item + standard tracked delivery</small>
+              </div>
+              <div class="tier-pricing">
+                <strong>$24.99</strong>
+                <span>$39.99</span>
+              </div>
+            </div>
+
+            <!-- Option B: VIP Bundle (Default Active) -->
+            <div class="ulux-tier-box active" onclick="selectUluxTier('bundle', 38.00, 64.00, true, this)">
+              <div class="popular-tag">★ MOST POPULAR • INCLUDES FREE GIFT</div>
+              <div class="tier-radio"></div>
+              <div class="tier-info">
+                <strong>The Complete VIP Ritual Bundle</strong>
+                <small>2x Value Pack + Free Bonus Gift + Free Priority Shipping</small>
+              </div>
+              <div class="tier-pricing">
+                <strong>$38.00</strong>
+                <span>$64.00</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dynamic Free Gift Unlocked Banner -->
+        <div class="ulux-gift-banner" id="uluxGiftBanner">
+          <span class="gift-icon">🎁</span>
+          <div>
+            <strong>FREE VIP Gift Unlocked ($18.00 Value)!</strong>
+            <small>Automatically included in your package at $0.00 extra cost.</small>
+          </div>
+          <span class="gift-free-tag">FREE</span>
+        </div>
+
+        <!-- Magnetic 1-Click Buy Button -->
+        <button type="button" class="ulux-cta-btn" id="uluxBuyBtn" onclick="executeUluxCheckout()">
+          <span id="uluxBtnText">Claim VIP Bundle + Free Gift — $38.00 →</span>
+          <small>🔒 1-Click Checkout with Shop Pay, Apple Pay &amp; PayPal</small>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .ulux-wrapper {
+    position: relative;
+    padding: 75px 20px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .ulux-ambient-aura {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 850px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(217, 130, 43, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    transition: background 0.6s ease;
+    z-index: 0;
+  }
+  .ulux-container { max-width: 1120px; margin: 0 auto; position: relative; z-index: 2; }
+
+  /* Live Radar Pill */
+  .ulux-radar-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 12px;
+    color: #334155;
+    max-width: fit-content;
+    margin: 0 auto 35px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+  .ulux-ping {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+  }
+
+  .ulux-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 45px;
+    align-items: center;
+  }
+
+  /* Left 3D Stage */
+  .ulux-media-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
+    transition: transform 0.25s ease;
+    will-change: transform;
+  }
+  .ulux-badge-float {
+    display: inline-block;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 30px;
+    color: #0F172A;
+    margin-bottom: 20px;
+  }
+  .ulux-img {
+    max-width: 100%;
+    height: 310px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 25px;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+  }
+  .ulux-trust-strip {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* Right Config Panel */
+  .ulux-subtag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #0D9488; display: block; margin-bottom: 6px; }
+  .ulux-heading { font-size: clamp(28px, 3.5vw, 38px); font-weight: 900; margin: 0 0 10px; letter-spacing: -0.8px; }
+  .ulux-desc { font-size: 15px; color: #64748B; line-height: 1.5; margin: 0 0 24px; }
+
+  .ulux-step-block { margin-bottom: 22px; }
+  .ulux-step-block label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #1E293B; }
+  .ulux-swatches { display: flex; gap: 12px; }
+  .ulux-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 0 0 1px #CBD5E1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .ulux-swatch.active { box-shadow: 0 0 0 2px #0F172A; transform: scale(1.12); }
+
+  /* Tier Boxes */
+  .ulux-tier-options { display: flex; flex-direction: column; gap: 12px; }
+  .ulux-tier-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 16px 18px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  .ulux-tier-box:hover { border-color: #94A3B8; }
+  .ulux-tier-box.active {
+    border-color: #0F172A;
+    background: #F8FAFC;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  }
+  .popular-tag {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #0D9488;
+    color: #FFFFFF;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .tier-radio {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #94A3B8;
+    flex-shrink: 0;
+  }
+  .ulux-tier-box.active .tier-radio {
+    border-color: #0F172A;
+    background: radial-gradient(circle, #0F172A 45%, transparent 55%);
+  }
+  .tier-info { flex-grow: 1; }
+  .tier-info strong { display: block; font-size: 14px; color: #0F172A; }
+  .tier-info small { font-size: 12px; color: #64748B; }
+  .tier-pricing { text-align: right; }
+  .tier-pricing strong { display: block; font-size: 18px; font-weight: 900; color: #0F172A; }
+  .tier-pricing span { font-size: 12px; color: #94A3B8; text-decoration: line-through; }
+
+  /* Free Gift Banner */
+  .ulux-gift-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F0FDF4;
+    border: 1px dashed #16A34A;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .gift-icon { font-size: 24px; }
+  .ulux-gift-banner strong { display: block; font-size: 13px; color: #166534; }
+  .ulux-gift-banner small { font-size: 11px; color: #15803D; }
+  .gift-free-tag { margin-left: auto; background: #16A34A; color: #FFFFFF; font-size: 10px; font-weight: 900; padding: 4px 8px; border-radius: 6px; }
+
+  /* CTA Button */
+  .ulux-cta-btn {
+    width: 100%;
+    background: #0F172A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+    transition: all 0.2s ease;
+  }
+  .ulux-cta-btn:hover { background: #0D9488; transform: translateY(-2px); }
+  .ulux-cta-btn span { font-size: 16px; font-weight: 800; }
+  .ulux-cta-btn small { font-size: 11px; opacity: 0.85; margin-top: 3px; }
+
+  @media (max-width: 850px) {
+    .ulux-main-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  function changeUluxEdition(name, hex, btn) {
+    document.getElementById('selectedEditionName').innerText = name;
+    document.querySelectorAll('.ulux-swatch').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    const aura = document.getElementById('uluxAura');
+    if (aura) {
+      aura.style.background = `radial-gradient(circle, ${hex}28 0%, rgba(255,255,255,0) 70%)`;
+    }
+  }
+
+  function selectUluxTier(tierType, price, comparePrice, showGift, boxEl) {
+    document.querySelectorAll('.ulux-tier-box').forEach(b => b.classList.remove('active'));
+    boxEl.classList.add('active');
+
+    const giftBanner = document.getElementById('uluxGiftBanner');
+    const btnText = document.getElementById('uluxBtnText');
+
+    if (showGift) {
+      giftBanner.style.display = 'flex';
+      btnText.innerText = `Claim VIP Bundle + Free Gift — $${price.toFixed(2)} →`;
+    } else {
+      giftBanner.style.display = 'none';
+      btnText.innerText = `Buy Solo Edition — $${price.toFixed(2)} →`;
+    }
+  }
+
+  function executeUluxCheckout() {
+    window.location.href = '/collections/all';
+  }
+
+  // 3D Tilt on Product Media Card
+  (function() {
+    const card = document.getElementById('uluxTiltCard');
+    if (!card) return;
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      card.style.transform = `perspective(900px) rotateX(${y * -0.03}deg) rotateY(${x * 0.03}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Universal Luxury Buy-Box",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Universal Luxury Buy-Box"
+    }
+  ]
+}
+{% endschema %}

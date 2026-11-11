@@ -172,7 +172,7 @@ export default function MissionControlDashboard() {
 
   const totalRevenue =
     fleet?.stores.reduce((acc, s) => acc + s.revenue24h, 0) || 0;
-  const targetRevenue = fleet?.targetRevenueDaily || 21666.67;
+  const targetRevenue = fleet?.targetRevenueDaily || 23333.33;
   const revenuePct = Math.min(
     100,
     Number(((totalRevenue / targetRevenue) * 100).toFixed(1))
@@ -180,7 +180,7 @@ export default function MissionControlDashboard() {
 
   const totalOrders =
     fleet?.stores.reduce((acc, s) => acc + s.orders24h, 0) || 0;
-  const targetOrders = fleet?.targetOrdersDaily || 338;
+  const targetOrders = fleet?.targetOrdersDaily || 364;
   const ordersPct = Math.min(
     100,
     Number(((totalOrders / targetOrders) * 100).toFixed(1))
@@ -216,7 +216,7 @@ export default function MissionControlDashboard() {
                 </span>
               </div>
               <p className="text-xs text-[#94A3B8] tracking-wide">
-                Unified Autonomous Shopify Fleet Command • 13 Direct DTC Storefronts • Dual Google AI Studio Keys
+                Unified Autonomous Shopify Fleet Command • 14 Direct DTC Storefronts • Dual Google AI Studio Keys
               </p>
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function MissionControlDashboard() {
             {/* Live Fleet Health Badge */}
             <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-[#10B981] mr-2 animate-ping" />
-              <span>🟢 13 of 13 Stores Online</span>
+              <span>🟢 14 of 14 Stores Online</span>
             </div>
 
             {/* Refresh Telemetry Button */}
@@ -270,7 +270,7 @@ export default function MissionControlDashboard() {
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Target: <strong className="text-[#94A3B8]">$21,666.67/day</strong> ($650k/mo run-rate)
+              Target: <strong className="text-[#94A3B8]">$23,333.33/day</strong> ($700k/mo run-rate)
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -295,7 +295,7 @@ export default function MissionControlDashboard() {
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Daily Volume Target: <strong className="text-[#94A3B8]">338 orders/day</strong> across 13 stores
+              Daily Volume Target: <strong className="text-[#94A3B8]">364 orders/day</strong> across 14 stores
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -381,7 +381,7 @@ export default function MissionControlDashboard() {
           </div>
         </section>
 
-        {/* 13-Store Fleet Management Matrix */}
+        {/* 14-Store Fleet Management Matrix */}
         <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
@@ -392,7 +392,7 @@ export default function MissionControlDashboard() {
                 </span>
               </h2>
               <p className="text-xs text-[#94A3B8]">
-                Direct telemetry, autonomous intervention, and 1-click Google AI Studio design synthesis
+                Direct telemetry, autonomous intervention, and 1-click Google AI Studio design synthesis across all 14 brands
               </p>
             </div>
 
@@ -805,7 +805,7 @@ export default function MissionControlDashboard() {
               <span className="w-2 h-2 rounded-full bg-[#10B981]" /> All Edge Nodes Nominal
             </span>
             <span>Latency: 18ms</span>
-            <span>Target: $650k/mo</span>
+            <span>Target: $700k/mo</span>
           </div>
         </footer>
       </main>

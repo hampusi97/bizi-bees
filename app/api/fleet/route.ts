@@ -31,8 +31,8 @@ export interface FleetState {
 
 // In-memory telemetry state for private dashboard operation
 const fleetData: FleetState = {
-  targetRevenueDaily: 21666.67, // $650,000 / 30 days
-  targetOrdersDaily: 338,
+  targetRevenueDaily: 23333.33, // $700,000 / 30 days ($50,000/mo x 14 stores)
+  targetOrdersDaily: 364,
   stores: [
     {
       id: "luma-clinical",
@@ -228,6 +228,21 @@ const fleetData: FleetState = {
       conversionRate: 1.88,
       lastHealed: "2h ago",
       seoArticlesCount: 5,
+    },
+    {
+      id: "velobrew",
+      name: "VeloBrew™",
+      niche: "Portable Barista Tech",
+      domain: "velobrew.myshopify.com",
+      adminUrl: "https://admin.shopify.com/store/velobrew",
+      status: "online",
+      statusCode: 200,
+      revenue24h: 1728.00,
+      orders24h: 32,
+      aov: 54.00,
+      conversionRate: 2.94,
+      lastHealed: "8m ago",
+      seoArticlesCount: 9,
     },
   ],
   recentLogs: [
