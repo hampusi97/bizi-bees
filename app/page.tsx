@@ -65,6 +65,26 @@ const STORE_PRESETS: Record<string, { label: string; query: string }[]> = {
   ]
 };
 
+const STORE_ACCENTS: Record<string, string> = {
+  "bizi-bees": "#D9822B",
+  "luma-clinical": "#38BDF8",
+  "luma-relief": "#8B5CF6",
+  "fizz-lab": "#F43F5E",
+  "crave-lab": "#D97706",
+  "aura-sculpt": "#10B981",
+  "pawglow": "#A855F7",
+  "zenith-sleep": "#6366F1",
+  "aura-posture": "#14B8A6",
+  "lumicarve": "#EAB308",
+  "dermasonic": "#EC4899",
+  "calmcore": "#06B6D4",
+  "floraspring": "#22C55E",
+  "velobrew": "#F97316",
+  "ember-oak": "#B45309"
+};
+
+const getStoreAccent = (storeId?: string) => (storeId && STORE_ACCENTS[storeId]) || "#10B981";
+
 export default function MissionControlDashboard() {
   const [fleet, setFleet] = useState<FleetState | null>(null);
   const [loading, setLoading] = useState(true);
@@ -893,7 +913,7 @@ export default function MissionControlDashboard() {
                         >
                           <span
                             className="w-2.5 h-2.5 rounded-full"
-                            style={{ backgroundColor: st.theme_accent }}
+                            style={{ backgroundColor: (st as any).theme_accent || getStoreAccent(st.store_id) }}
                           />
                           <span>{st.name}</span>
                         </button>
@@ -907,7 +927,7 @@ export default function MissionControlDashboard() {
                   className="rounded-2xl p-4 sm:p-5 border transition-all"
                   style={{
                     backgroundColor: "#0B111E",
-                    borderColor: `${activeAppStore.theme_accent}40`,
+                    borderColor: `${(activeAppStore as any).theme_accent || getStoreAccent(activeAppStore.store_id)}40`,
                   }}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -915,7 +935,7 @@ export default function MissionControlDashboard() {
                       <div className="flex items-center gap-2">
                         <span
                           className="w-3 h-3 rounded-full"
-                          style={{ backgroundColor: activeAppStore.theme_accent }}
+                          style={{ backgroundColor: (activeAppStore as any).theme_accent || getStoreAccent(activeAppStore.store_id) }}
                         />
                         <h3 className="text-base font-black text-white">
                           {activeAppStore.name} AI Specialist
@@ -1127,7 +1147,7 @@ export default function MissionControlDashboard() {
                           <div className="flex items-center gap-2">
                             <span
                               className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                              style={{ backgroundColor: st.theme_accent }}
+                              style={{ backgroundColor: (st as any).theme_accent || getStoreAccent(st.store_id) }}
                             />
                             <span className="font-bold text-xs text-white">
                               {st.name}

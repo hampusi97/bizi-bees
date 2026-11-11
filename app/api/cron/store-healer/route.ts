@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge'; // Executes at sub-millisecond speeds on Vercel Edge
 
 const STORES_TO_MONITOR = [
   { name: 'Luma Clinical', url: 'https://bizibees-store.myshopify.com' },

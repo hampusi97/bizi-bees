@@ -26,10 +26,13 @@
     "next-env.d.ts",
     "app/**/*.ts",
     "app/**/*.tsx",
+    "lib/**/*.ts",
+    "middleware.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
+    "dropper-os",
     "tests",
     "playwright.config.ts"
   ]
