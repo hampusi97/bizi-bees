@@ -1,0 +1,109 @@
+{% comment %}
+  Luma Clinical - Delivery Estimator & Dynamic Dispatch Counter
+  File: snippets/delivery-estimator.liquid
+{% endcomment %}
+
+<div class="delivery-estimator-box" id="deliveryEstimator">
+  <div class="estimator-header">
+    <span class="truck-icon">🚚</span>
+    <span><strong>Fast Tracked Dispatch:</strong> Order in <span id="countdownTimer" style="font-weight:800; color:#0D9488;">03h : 24m</span> to dispatch tomorrow!</span>
+  </div>
+  <div class="estimator-timeline">
+    <div class="timeline-step">
+      <div class="step-circle active"></div>
+      <span>Ordered Today</span>
+    </div>
+    <div class="timeline-line"></div>
+    <div class="timeline-step">
+      <div class="step-circle active"></div>
+      <span>US Hub Dispatch</span>
+    </div>
+    <div class="timeline-line"></div>
+    <div class="timeline-step">
+      <div class="step-circle"></div>
+      <span id="dateDelivery" style="color:#0D9488; font-weight:800;">Estimated Delivery</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .delivery-estimator-box { 
+    background: #F0FDFA; 
+    border: 1px solid #99F6E4; 
+    border-radius: 14px; 
+    padding: 16px; 
+    margin: 20px 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    font-size: 12px; 
+  }
+  .estimator-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: #0F766E; 
+    margin-bottom: 12px; 
+  }
+  .truck-icon { font-size: 16px; }
+  .estimator-timeline { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+  }
+  .timeline-step { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 4px; 
+    text-align: center;
+  }
+  .step-circle { 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    background: #CBD5E1; 
+  }
+  .step-circle.active { 
+    background: #0D9488; 
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+  }
+  .timeline-line { 
+    flex-grow: 1; 
+    height: 2px; 
+    background: #99F6E4; 
+    margin: 0 8px 14px; 
+  }
+</style>
+
+<script>
+  (function() {
+    // Dynamic countdown timer towards end of business dispatch day
+    function updateCountdown() {
+      const now = new Date();
+      const cutoff = new Date();
+      cutoff.setHours(17, 0, 0, 0); // 5:00 PM cutoff
+
+      if (now > cutoff) {
+        cutoff.setDate(cutoff.getDate() + 1);
+      }
+
+      const diff = cutoff - now;
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const timerEl = document.getElementById('countdownTimer');
+      if (timerEl) {
+        timerEl.innerText = (hours < 10 ? '0' : '') + hours + 'h : ' + (mins < 10 ? '0' : '') + mins + 'm';
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    // Set Estimated Delivery Date (+3 to 4 business days)
+    const d = new Date();
+    d.setDate(d.getDate() + 4);
+    const dateEl = document.getElementById('dateDelivery');
+    if (dateEl) {
+      dateEl.innerText = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    }
+  })();
+</script>

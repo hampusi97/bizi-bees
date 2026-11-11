@@ -1,0 +1,3 @@
+# Production Hardening & Safety Guards
+# Ignore live theme customizer settings to prevent overwriting production merchant settings
+config/settings_data.json

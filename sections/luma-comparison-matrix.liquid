@@ -1,212 +1,244 @@
 {% comment %}
-  Luma Clinical Comparison Matrix - Shopify OS 2.0
-  Interactive 4-Column Clinical Value Comparison Table
-  Columns:
-    1. In-Office Dermatologist ($1,500+)
-    2. Leading Brand Wand ($169.00)
-    3. Cheap Knockoffs ($15.00, no microcurrent, long overseas shipping)
-    4. LumaGlow 4-in-1 ($38.99, 630nm light, microcurrent, 107°F warmth, 60-day guarantee, Utah dispatch)
+  Luma Clinical Wellness - The Clinical Comparison Matrix
+  File: sections/luma-comparison-matrix.liquid
 {% endcomment %}
 
-<section class="luma-matrix-section" id="luma-matrix-{{ section.id }}" data-section-id="{{ section.id }}">
-  <div class="luma-matrix-inner">
+<section class="luma-matrix" id="luma-matrix-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="luma-matrix__container">
     
-    <div class="luma-matrix-header">
-      <span class="luma-matrix-eyebrow">CLINICAL VALUE MATRIX</span>
-      <h2 class="luma-matrix-title">{{ section.settings.title | default: 'The Smarter Way to Rejuvenate' }}</h2>
-      <p class="luma-matrix-subtitle">
-        {{ section.settings.subtitle | default: 'See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs.' }}
+    <!-- Header Area -->
+    <div class="luma-matrix__header">
+      <span class="luma-badge-pill luma-badge-teal">
+        {{ section.settings.badge_label | default: "Dermatological Benchmark" }}
+      </span>
+      <h2 class="luma-matrix__title">
+        {{ section.settings.title | default: "The Clinical Comparison Matrix" }}
+      </h2>
+      <p class="luma-matrix__subtitle">
+        {{ section.settings.subtitle | default: "Why thousands of patients and beauty-tech purists are replacing $1,500 clinical visits and overpriced $169 wands with LumaGlow." }}
       </p>
     </div>
 
-    <!-- Interactive Table Container -->
-    <div class="luma-table-container">
-      <table class="luma-matrix-table" aria-label="Comparison of facial rejuvenation methods">
-        <thead>
-          <tr>
-            <th class="th-features">Key Clinical Capabilities</th>
-            <th class="th-competitor th-clinic">
-              <div class="col-head-title">In-Office Dermatologist</div>
-              <div class="col-head-price">$1,500+ / yr</div>
-              <div class="col-head-sub">Recurring Appointments</div>
-            </th>
-            <th class="th-competitor th-brand">
-              <div class="col-head-title">Leading Brand Wand</div>
-              <div class="col-head-price">$169.00</div>
-              <div class="col-head-sub">Overpriced Name-Brand</div>
-            </th>
-            <th class="th-competitor th-knockoff">
-              <div class="col-head-title">Cheap Knockoffs</div>
-              <div class="col-head-price">$15.00</div>
-              <div class="col-head-sub">Unverified Overseas Clones</div>
-            </th>
-            <th class="th-highlight th-luma">
-              <div class="luma-col-badge">MOST POPULAR</div>
-              <div class="col-head-title lumaglow-title">LumaGlow 4-in-1</div>
-              <div class="col-head-price price-glow">$38.99</div>
-              <div class="col-head-sub">Today's Special Deal</div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="td-feature-title">
-              <strong>Targeted 630nm Phototherapy</strong>
-              <span>Penetrates deep into dermis to boost natural cellular glow</span>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>Effective</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>630nm LEDs</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small class="text-danger">Fake/Weak Tinted LEDs</small>
-            </td>
-            <td class="td-col td-highlight">
-              <span class="luma-check-gold">✓</span>
-              <strong>Precision 630nm Dual-Spectrum</strong>
-            </td>
-          </tr>
+    <!-- Comparison Table / Card Container -->
+    <div class="luma-matrix__table-wrap">
+      <div class="luma-matrix__table" role="table" aria-label="Clinical Comparison Matrix">
+        
+        <!-- Table Column Headers -->
+        <div class="luma-matrix__row luma-matrix__row--head" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature-head" role="columnheader">
+            <span class="luma-matrix__head-label">CLINICAL SPECIFICATION</span>
+          </div>
 
-          <tr>
-            <td class="td-feature-title">
-              <strong>Microcurrent Facial Contouring</strong>
-              <span>Tones and lifts facial contours, jawline, and cheekbones</span>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>Clinical grade</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>Standard level</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small class="text-danger">No microcurrent circuitry</small>
-            </td>
-            <td class="td-col td-highlight">
-              <span class="luma-check-gold">✓</span>
-              <strong>True Wave Microcurrent</strong>
-            </td>
-          </tr>
+          <!-- Column: In-Office -->
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="columnheader">
+            <div class="luma-matrix__col-header">
+              <span class="luma-matrix__entity">In-Office Clinic</span>
+              <span class="luma-matrix__price-tag">$1,500+</span>
+              <span class="luma-matrix__subnote">Recurring visits required</span>
+            </div>
+          </div>
 
-          <tr>
-            <td class="td-feature-title">
-              <strong>Therapeutic 107°F Warmth</strong>
-              <span>Opens pores to accelerate active serum absorption</span>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>Available in facials</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-check">✓</span>
-              <small>100°F - 104°F</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small class="text-danger">Prone to overheating</small>
-            </td>
-            <td class="td-col td-highlight">
-              <span class="luma-check-gold">✓</span>
-              <strong>Smart Sensor 107°F Warmth</strong>
-            </td>
-          </tr>
+          <!-- Column: Solawave -->
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="columnheader">
+            <div class="luma-matrix__col-header">
+              <span class="luma-matrix__entity">Solawave™ Wand</span>
+              <span class="luma-matrix__price-tag">$169.00</span>
+              <span class="luma-matrix__subnote">Overpriced DTC markup</span>
+            </div>
+          </div>
 
-          <tr>
-            <td class="td-feature-title">
-              <strong>Fast Dispatch from Utah, USA</strong>
-              <span>Tracked 24-48h USPS Priority Delivery from Provo, UT</span>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small>Must book weeks ahead</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small>Standard 7-10 days</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small class="text-danger">3-6 Weeks from Overseas</small>
-            </td>
-            <td class="td-col td-highlight">
-              <span class="luma-check-gold">✓</span>
-              <strong>24h Fast Utah Dispatch</strong>
-            </td>
-          </tr>
+          <!-- Column: LumaGlow (HIGHLIGHTED) -->
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="columnheader">
+            <div class="luma-matrix__badge-winner">
+              <span>★ BEST CLINICAL VALUE</span>
+            </div>
+            <div class="luma-matrix__col-header">
+              <span class="luma-matrix__entity luma-text-teal">LumaGlow™ 4-in-1</span>
+              <span class="luma-matrix__price-tag luma-text-teal">$38.99</span>
+              <span class="luma-matrix__subnote">Direct-from-lab pricing</span>
+            </div>
+          </div>
+        </div>
 
-          <tr>
-            <td class="td-feature-title">
-              <strong>60-Day Risk-Free Guarantee</strong>
-              <span>Try it completely risk-free with full 100% money back</span>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small>Zero refunds on service</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small>Strict 30 days only</small>
-            </td>
-            <td class="td-col">
-              <span class="luma-cross">✕</span>
-              <small class="text-danger">No warranty / No returns</small>
-            </td>
-            <td class="td-col td-highlight">
-              <span class="luma-check-gold">✓</span>
-              <strong>60-Day Glow Guarantee</strong>
-            </td>
-          </tr>
+        <!-- Table Row 1: Target Wavelength -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>630nm Medical Red Light</strong>
+            <span class="luma-matrix__tooltip">Optimal depth for collagen synthesis and cellular ATP energy</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-check" title="Included">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">In-office only</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-check" title="Included">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">660nm fixed</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <div class="luma-icon-check luma-icon-check--teal" title="Included">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-bold-pill">True 630nm Precision</span>
+          </div>
+        </div>
 
-          <tr class="luma-row-investment">
-            <td class="td-feature-title">
-              <strong>Total Investment</strong>
-              <span>Upfront cost for complete regimen</span>
-            </td>
-            <td class="td-col td-price-dim">
-              <div class="crossed-price">$1,500+</div>
-              <small>Ongoing clinic fees</small>
-            </td>
-            <td class="td-col td-price-dim">
-              <div class="high-price">$169.00</div>
-              <small>Pricey hardware</small>
-            </td>
-            <td class="td-col td-price-dim">
-              <div class="cheap-price">$15.00</div>
-              <small>Cheap, breaks easily</small>
-            </td>
-            <td class="td-col td-highlight td-final-luma">
-              <div class="deal-pill">SAVE $130 TODAY</div>
-              <div class="hero-price-now">$38.99</div>
-              <small class="one-time-text">One-time payment • Lifetime use</small>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <!-- Table Row 2: Microcurrent Sculpting -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>Galvanic Microcurrent</strong>
+            <span class="luma-matrix__tooltip">Low-voltage electrical current that tones facial muscles & contours jawline</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">High intensity (requires numbing)</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-cross">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">Weak galvanic current (0.2mA)</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <div class="luma-icon-check luma-icon-check--teal">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-bold-pill">Optimized 0.35mA Sculpt</span>
+          </div>
+        </div>
 
-    <!-- 1-Click Buy Action Block -->
-    <div class="luma-matrix-action-block">
-      <a href="{{ section.settings.buy_url | default: '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand' }}" 
-         class="luma-matrix-1click-btn"
-         id="luma-matrix-buy-btn"
-         onclick="handleMatrixBuyClick(event, '{{ section.settings.buy_url | default: '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand' }}')">
-        <span class="btn-main-text">Get LumaGlow 4-in-1 For $38.99 (Save $130) →</span>
-        <span class="btn-sub-text">⚡ 1-Click Fast Checkout • Free US Shipping from Utah</span>
-      </a>
-      
-      <div class="luma-matrix-assurances">
-        <span>🔒 256-Bit SSL Encrypted Checkout</span>
-        <span>•</span>
-        <span>📦 Dispatches in 24h via USPS</span>
-        <span>•</span>
-        <span>🛡️ 60-Day 100% Money-Back Guarantee</span>
+        <!-- Table Row 3: 107°F Thermal Therapy -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>Therapeutic Dermal Warmth</strong>
+            <span class="luma-matrix__tooltip">Dilates blood vessels to increase serum penetration by 300%</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-cross">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">Separate charge ($250+)</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">Slow warming (98°F)</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <div class="luma-icon-check luma-icon-check--teal">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-bold-pill">Instant 107°F Thermal Boost</span>
+          </div>
+        </div>
+
+        <!-- Table Row 4: Facial Lymphatic Massage -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>Sonic Lymphatic Vibration</strong>
+            <span class="luma-matrix__tooltip">8,000 VPM for instant drainage of under-eye fluid & puffiness</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-cross">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">Manual massage only</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <div class="luma-icon-check">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-mobile-text">Basic vibration</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <div class="luma-icon-check luma-icon-check--teal">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <span class="luma-bold-pill">High-Frequency 8,000 VPM</span>
+          </div>
+        </div>
+
+        <!-- Table Row 5: Risk-Free Trial -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>Clinical Guarantee</strong>
+            <span class="luma-matrix__tooltip">Money-back trial period to observe visible dermal remodeling</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <span class="luma-matrix__text-red">No Refunds</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <span class="luma-matrix__text-neutral">30 Days (Restocking Fee)</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <span class="luma-matrix__text-green"><strong>60-Day 100% Glow Guarantee</strong></span>
+          </div>
+        </div>
+
+        <!-- Table Row 6: Fulfillment & Dispatch -->
+        <div class="luma-matrix__row" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature" role="rowheader">
+            <strong>Shipping & Origin</strong>
+            <span class="luma-matrix__tooltip">Dispatch location, fulfillment speed, and customs guarantee</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <span class="luma-matrix__text-neutral">In-person commute</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor" role="cell">
+            <span class="luma-matrix__text-neutral">3–7 Business Days</span>
+          </div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight" role="cell">
+            <span class="luma-matrix__text-green"><strong>Utah Warehouse — Dispatches in 24h</strong></span>
+          </div>
+        </div>
+
+        <!-- Table Bottom CTA Row -->
+        <div class="luma-matrix__row luma-matrix__row--footer" role="row">
+          <div class="luma-matrix__cell luma-matrix__cell--feature"></div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor"></div>
+          <div class="luma-matrix__cell luma-matrix__cell--competitor"></div>
+          <div class="luma-matrix__cell luma-matrix__cell--luma luma-matrix__cell--highlight">
+            <a href="{{ section.settings.cta_url | default: '/products/lumaglow-4-in-1-facial-wand' }}" class="luma-btn-primary luma-matrix__cta-btn">
+              <span>Claim LumaGlow for $38.99</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <span class="luma-matrix__cta-sub">Free Tracked Delivery Over $50 • 60-Day Trial</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -215,372 +247,280 @@
 
 <style>
   #luma-matrix-{{ section.id }} {
-    background: #FAFAFC;
-    padding: 64px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 72px 0 60px;
+    background-color: {{ section.settings.bg_color | default: "#FFFFFF" }};
+    font-family: var(--luma-font-body);
   }
 
-  .luma-matrix-inner {
-    max-width: 1140px;
+  .luma-matrix__container {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 24px;
   }
 
-  .luma-matrix-header {
+  .luma-matrix__header {
     text-align: center;
-    max-width: 680px;
-    margin: 0 auto 36px auto;
+    max-width: 720px;
+    margin: 0 auto 48px;
   }
 
-  .luma-matrix-eyebrow {
-    display: inline-block;
-    background: rgba(13, 148, 136, 0.1);
-    color: #0D9488;
-    font-size: 11px;
+  .luma-matrix__title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 800;
-    letter-spacing: 0.12em;
-    padding: 5px 14px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+    color: var(--luma-text-heading);
+    letter-spacing: -0.02em;
+    margin: 14px 0 12px;
   }
 
-  .luma-matrix-title {
-    font-size: clamp(28px, 3.8vw, 42px);
-    font-weight: 900;
-    color: #111827;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    margin: 0 0 12px 0;
-  }
-
-  .luma-matrix-subtitle {
-    font-size: 15.5px;
-    line-height: 1.55;
-    color: #4B5563;
+  .luma-matrix__subtitle {
+    font-size: 1.05rem;
+    color: var(--luma-text-body);
+    line-height: 1.6;
     margin: 0;
   }
 
-  .luma-table-container {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 20px;
+  .luma-matrix__table-wrap {
     overflow-x: auto;
-    box-shadow: 0 12px 36px -8px rgba(17, 24, 39, 0.07);
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
   }
 
-  .luma-matrix-table {
-    width: 100%;
-    min-width: 780px;
-    border-collapse: collapse;
+  .luma-matrix__table {
+    display: flex;
+    flex-direction: column;
+    min-width: 760px;
+    border-radius: var(--luma-radius-lg);
+    background: #FFFFFF;
+    border: 1px solid var(--luma-border-light);
+  }
+
+  .luma-matrix__row {
+    display: grid;
+    grid-template-columns: 2.2fr 1.6fr 1.6fr 2.2fr;
+    border-bottom: 1px solid var(--luma-border-light);
+    align-items: center;
+  }
+
+  .luma-matrix__row:last-child {
+    border-bottom: none;
+  }
+
+  .luma-matrix__row--head {
+    background-color: #F9FAFB;
+    border-top-left-radius: var(--luma-radius-lg);
+    border-top-right-radius: var(--luma-radius-lg);
+    align-items: stretch;
+  }
+
+  .luma-matrix__cell {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .luma-matrix__cell--feature-head {
     text-align: left;
+    align-items: flex-start;
   }
 
-  .luma-matrix-table th,
-  .luma-matrix-table td {
-    padding: 16px 18px;
-    border-bottom: 1px solid #F3F4F6;
-    vertical-align: middle;
-  }
-
-  .luma-matrix-table thead th {
-    background: #F9FAFB;
+  .luma-matrix__head-label {
+    font-size: 0.72rem;
     font-weight: 700;
-    color: #374151;
-  }
-
-  .th-features {
-    width: 28%;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: #6B7280;
+    letter-spacing: 0.1em;
   }
 
-  .th-competitor {
-    width: 18%;
-    text-align: center;
-    border-left: 1px solid #E5E7EB;
+  .luma-matrix__cell--feature {
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 24px;
   }
 
-  .col-head-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #111827;
-  }
-
-  .col-head-price {
-    font-size: 17px;
-    font-weight: 900;
-    margin-top: 4px;
-    color: #4B5563;
-  }
-
-  .col-head-sub {
-    font-size: 11px;
-    color: #9CA3AF;
-    font-weight: 500;
-    margin-top: 2px;
-  }
-
-  .th-highlight {
-    width: 22%;
-    text-align: center;
-    background: #FEFCE8 !important;
-    border-left: 2px solid #EAB308;
-    border-right: 2px solid #EAB308;
-    position: relative;
-    padding-top: 24px;
-  }
-
-  .luma-col-badge {
-    position: absolute;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #DC2626;
-    color: #FFFFFF;
-    font-size: 9.5px;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    padding: 2px 8px;
-    border-radius: 999px;
-  }
-
-  .lumaglow-title {
-    color: #92400E;
-    font-size: 15px;
-  }
-
-  .price-glow {
-    color: #DC2626 !important;
-    font-size: 22px !important;
-  }
-
-  .td-feature-title {
-    padding-right: 12px;
-  }
-
-  .td-feature-title strong {
-    display: block;
-    font-size: 14px;
-    color: #111827;
+  .luma-matrix__cell--feature strong {
+    font-size: 0.95rem;
+    color: var(--luma-text-heading);
     margin-bottom: 2px;
   }
 
-  .td-feature-title span {
-    display: block;
-    font-size: 11.5px;
-    color: #6B7280;
+  .luma-matrix__tooltip {
+    font-size: 0.78rem;
+    color: var(--luma-text-muted);
     line-height: 1.35;
   }
 
-  .td-col {
-    text-align: center;
-    border-left: 1px solid #F3F4F6;
-    font-size: 13px;
+  /* Highlight Column (LumaGlow) */
+  .luma-matrix__cell--highlight {
+    background-color: rgba(13, 148, 136, 0.04);
+    border-left: 2px solid var(--luma-accent-teal);
+    border-right: 2px solid var(--luma-accent-teal);
+    position: relative;
   }
 
-  .td-col small {
-    display: block;
-    font-size: 10.5px;
-    color: #6B7280;
-    margin-top: 2px;
+  .luma-matrix__row--head .luma-matrix__cell--highlight {
+    border-top: 2px solid var(--luma-accent-teal);
+    border-top-right-radius: 14px;
+    background-color: #F0FDFA;
+    padding-top: 28px;
   }
 
-  .text-danger {
-    color: #DC2626 !important;
-    font-weight: 600;
+  .luma-matrix__row--footer .luma-matrix__cell--highlight {
+    border-bottom: 2px solid var(--luma-accent-teal);
+    border-bottom-right-radius: 14px;
+    padding-bottom: 28px;
   }
 
-  .td-highlight {
-    background: #FFFDF5;
-    border-left: 2px solid #EAB308;
-    border-right: 2px solid #EAB308;
-    color: #111827;
-    font-size: 13.5px;
-  }
-
-  .luma-check {
-    color: #10B981;
-    font-weight: 900;
-    font-size: 17px;
-  }
-
-  .luma-check-gold {
-    color: #D97706;
-    font-weight: 900;
-    font-size: 19px;
-    display: inline-block;
-  }
-
-  .luma-cross {
-    color: #9CA3AF;
-    font-weight: 900;
-    font-size: 15px;
-  }
-
-  .luma-row-investment td {
-    padding-top: 22px;
-    padding-bottom: 22px;
-    background: #FAFAFA;
-  }
-
-  .td-price-dim .crossed-price {
-    font-size: 17px;
-    font-weight: 700;
-    color: #9CA3AF;
-    text-decoration: line-through;
-  }
-
-  .td-price-dim .high-price {
-    font-size: 17px;
+  .luma-matrix__badge-winner {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--luma-accent-teal);
+    color: #FFFFFF;
+    font-size: 0.68rem;
     font-weight: 800;
-    color: #EF4444;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: var(--luma-radius-full);
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(13, 148, 136, 0.3);
   }
 
-  .td-price-dim .cheap-price {
-    font-size: 16px;
-    font-weight: 600;
-    color: #6B7280;
-  }
-
-  .td-final-luma {
-    background: #FEF9C3 !important;
-  }
-
-  .deal-pill {
-    display: inline-block;
-    background: #FEF08A;
-    color: #854D0E;
-    font-size: 10px;
-    font-weight: 900;
-    padding: 2px 7px;
-    border-radius: 4px;
-    margin-bottom: 4px;
-  }
-
-  .hero-price-now {
-    font-size: 26px;
-    font-weight: 900;
-    color: #B45309;
-    line-height: 1;
-  }
-
-  .one-time-text {
-    font-size: 10px;
-    color: #78350F;
-    font-weight: 700;
-    margin-top: 3px;
-    display: block;
-  }
-
-  /* 1-Click Action Block */
-  .luma-matrix-action-block {
-    text-align: center;
-    margin-top: 36px;
-  }
-
-  .luma-matrix-1click-btn {
-    display: inline-flex;
+  .luma-matrix__col-header {
+    display: flex;
     flex-direction: column;
+    gap: 4px;
+  }
+
+  .luma-matrix__entity {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--luma-text-heading);
+  }
+
+  .luma-text-teal {
+    color: var(--luma-accent-teal) !important;
+  }
+
+  .luma-matrix__price-tag {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .luma-matrix__subnote {
+    font-size: 0.75rem;
+    color: var(--luma-text-muted);
+  }
+
+  /* Icons & Indicators */
+  .luma-icon-check {
+    color: #10B981;
+    display: inline-flex;
     align-items: center;
-    background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
-    color: #FFFFFF !important;
-    text-decoration: none;
-    padding: 18px 42px;
-    border-radius: 999px;
-    box-shadow: 0 10px 28px -4px rgba(17, 24, 39, 0.35);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease;
-    cursor: pointer;
-    border: none;
+    justify-content: center;
   }
 
-  .luma-matrix-1click-btn:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(135deg, #030712 0%, #111827 100%);
-    box-shadow: 0 16px 36px -4px rgba(17, 24, 39, 0.45);
+  .luma-icon-check--teal {
+    color: var(--luma-accent-teal);
   }
 
-  .btn-main-text {
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: -0.01em;
+  .luma-icon-cross {
+    color: #9CA3AF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .btn-sub-text {
-    font-size: 11.5px;
-    color: #D1D5DB;
-    font-weight: 600;
+  .luma-bold-pill {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--luma-accent-teal-hover);
+    background-color: var(--luma-accent-teal-soft);
+    padding: 4px 10px;
+    border-radius: var(--luma-radius-full);
     margin-top: 4px;
   }
 
-  .luma-matrix-assurances {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-size: 12px;
+  .luma-mobile-text {
+    font-size: 0.78rem;
     color: #6B7280;
+    margin-top: 4px;
+  }
+
+  .luma-matrix__text-green {
+    font-size: 0.88rem;
+    color: var(--luma-trust-green);
+  }
+
+  .luma-matrix__text-red {
+    font-size: 0.85rem;
+    color: #EF4444;
     font-weight: 600;
-    margin-top: 14px;
+  }
+
+  .luma-matrix__text-neutral {
+    font-size: 0.85rem;
+    color: #6B7280;
+  }
+
+  .luma-matrix__cta-btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .luma-matrix__cta-sub {
+    font-size: 0.72rem;
+    color: var(--luma-text-muted);
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    #luma-matrix-{{ section.id }} {
+      padding: 44px 0 36px;
+    }
   }
 </style>
-
-<script>
-  function handleMatrixBuyClick(event, url) {
-    if (window.fbq) {
-      fbq('track', 'AddToCart', {
-        content_name: 'LumaGlow 4-in-1 Facial Wand',
-        content_type: 'product',
-        value: 38.99,
-        currency: 'USD'
-      });
-      fbq('track', 'InitiateCheckout', {
-        content_name: 'LumaGlow 4-in-1 Facial Wand',
-        value: 38.99,
-        currency: 'USD'
-      });
-    }
-    if (window.ttq) {
-      ttq.track('AddToCart', {
-        content_name: 'LumaGlow 4-in-1 Facial Wand',
-        content_type: 'product',
-        value: 38.99,
-        currency: 'USD'
-      });
-      ttq.track('InitiateCheckout', {
-        content_name: 'LumaGlow 4-in-1 Facial Wand',
-        value: 38.99,
-        currency: 'USD'
-      });
-    }
-  }
-</script>
 
 {% schema %}
 {
   "name": "Luma Comparison Matrix",
   "tag": "section",
-  "class": "section-luma-matrix",
+  "class": "luma-matrix-section",
   "settings": [
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge Pill Text",
+      "default": "Dermatological Benchmark"
+    },
     {
       "type": "text",
       "id": "title",
       "label": "Section Title",
-      "default": "The Smarter Way to Rejuvenate"
+      "default": "The Clinical Comparison Matrix"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "See why over 2,400+ smart shoppers choose LumaGlow over overpriced clinic sessions, fragile name-brand wands, and risky overseas knockoffs."
+      "default": "Why thousands of patients and beauty-tech purists are replacing $1,500 clinical visits and overpriced $169 wands with LumaGlow."
     },
     {
       "type": "url",
-      "id": "buy_url",
-      "label": "Buy Now URL"
+      "id": "cta_url",
+      "label": "LumaGlow Buy URL"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
     }
   ],
   "presets": [

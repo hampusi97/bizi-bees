@@ -1,0 +1,183 @@
+{% comment %}
+  AURA SCULPT™ 2-PIECE MIX & MATCH SET BUILDER
+  Repo: bizi-bees /sections/aura-set-builder.liquid
+{% endcomment %}
+
+<div class="aura-wrap" id="aura-set-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="aura-inner">
+    
+    <div class="aura-header">
+      <span class="aura-pill">{{ section.settings.pill_text | default: "CLOUDSOFT™ SEAMLESS TECHNOLOGY" }}</span>
+      <h2>{{ section.settings.heading | default: "Build Your 2-Piece Sculpt Set" }}</h2>
+      <p>{{ section.settings.subheading | default: "Mix and match top and bottom sizes & colors. Unlocks automatic $18 bundle discount at checkout." }}</p>
+    </div>
+
+    <div class="aura-builder-grid">
+      
+      <!-- Top Piece Configurator -->
+      <div class="piece-box">
+        <span class="piece-label">PIECE 1: CONTOUR SPORTS BRA</span>
+        <div class="piece-price">$28.00 (Separately)</div>
+        
+        <label>Select Bra Size:</label>
+        <div class="size-swatches" id="topSizes">
+          <button type="button" class="s-btn active" onclick="selectSize(this, 'top')">XS</button>
+          <button type="button" class="s-btn" onclick="selectSize(this, 'top')">S</button>
+          <button type="button" class="s-btn" onclick="selectSize(this, 'top')">M</button>
+          <button type="button" class="s-btn" onclick="selectSize(this, 'top')">L</button>
+        </div>
+
+        <label>Select Color:</label>
+        <div class="color-swatches">
+          <span class="c-dot active" style="background:#2C2C2E;" title="Onyx Black" onclick="selectColor(this, 'top')"></span>
+          <span class="c-dot" style="background:#5C5D58;" title="Sage Mist" onclick="selectColor(this, 'top')"></span>
+          <span class="c-dot" style="background:#9B786F;" title="Mocha Cloud" onclick="selectColor(this, 'top')"></span>
+        </div>
+      </div>
+
+      <!-- Bottom Piece Configurator -->
+      <div class="piece-box">
+        <span class="piece-label">PIECE 2: HIGH-WAIST LIFT LEGGINGS</span>
+        <div class="piece-price">$44.00 (Separately)</div>
+        
+        <label>Select Legging Size:</label>
+        <div class="size-swatches" id="bottomSizes">
+          <button type="button" class="s-btn" onclick="selectSize(this, 'bottom')">XS</button>
+          <button type="button" class="s-btn active" onclick="selectSize(this, 'bottom')">S</button>
+          <button type="button" class="s-btn" onclick="selectSize(this, 'bottom')">M</button>
+          <button type="button" class="s-btn" onclick="selectSize(this, 'bottom')">L</button>
+        </div>
+
+        <label>Select Color:</label>
+        <div class="color-swatches">
+          <span class="c-dot active" style="background:#2C2C2E;" title="Onyx Black" onclick="selectColor(this, 'bottom')"></span>
+          <span class="c-dot" style="background:#5C5D58;" title="Sage Mist" onclick="selectColor(this, 'bottom')"></span>
+          <span class="c-dot" style="background:#9B786F;" title="Mocha Cloud" onclick="selectColor(this, 'bottom')"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Total & Fast Checkout -->
+    <div class="aura-checkout-card">
+      <div class="calc-left">
+        <div class="strike-val">$72.00 Value</div>
+        <div class="bundle-val">$54.00 <span>(Save $18.00 Instantly)</span></div>
+        <small>✓ Free Express Shipping • Squat-Proof Guaranteed</small>
+      </div>
+      <button type="button" class="aura-bundle-btn" onclick="checkoutAuraSet()">Claim My Set ($54.00) &rarr;</button>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .aura-wrap { background: #FFFFFF; padding: 75px 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1C1C1E; }
+  .aura-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .aura-pill { background: #F2F2F7; color: #1C1C1E; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 30px; display: inline-block; }
+  .aura-header h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin: 16px 0 10px; letter-spacing: -1px; }
+  .aura-header p { font-size: 15px; color: #8E8E93; margin-bottom: 40px; }
+  
+  .aura-builder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; margin-bottom: 30px; }
+  .piece-box { background: #F9F9FB; border: 1px solid #E5E5EA; border-radius: 16px; padding: 25px; }
+  .piece-label { font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #8E8E93; display: block; margin-bottom: 4px; }
+  .piece-price { font-size: 18px; font-weight: 800; color: #1C1C1E; margin-bottom: 18px; }
+  .piece-box label { font-size: 12px; font-weight: 700; color: #3A3A3C; display: block; margin-bottom: 8px; }
+  
+  .size-swatches { display: flex; gap: 8px; margin-bottom: 18px; }
+  .s-btn { background: #FFFFFF; border: 1px solid #D1D1D6; border-radius: 8px; padding: 8px 14px; font-weight: 700; font-size: 12px; cursor: pointer; transition: all 0.15s ease; }
+  .s-btn.active { background: #1C1C1E; color: #FFFFFF; border-color: #1C1C1E; }
+
+  .color-swatches { display: flex; gap: 10px; }
+  .c-dot { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid #FFFFFF; box-shadow: 0 0 0 1px #D1D1D6; transition: transform 0.15s ease; }
+  .c-dot.active { box-shadow: 0 0 0 2px #1C1C1E; transform: scale(1.1); }
+
+  .aura-checkout-card { background: #F2F2F7; border-radius: 16px; padding: 25px 30px; display: flex; align-items: center; justify-content: space-between; text-align: left; }
+  .strike-val { font-size: 14px; color: #8E8E93; text-decoration: line-through; }
+  .bundle-val { font-size: 28px; font-weight: 900; color: #1C1C1E; }
+  .bundle-val span { font-size: 13px; font-weight: 700; color: #34C759; margin-left: 6px; }
+  .calc-left small { font-size: 12px; color: #636366; display: block; margin-top: 4px; }
+  .aura-bundle-btn { background: #1C1C1E; color: #FFFFFF; border: none; padding: 16px 36px; border-radius: 50px; font-weight: 800; font-size: 15px; cursor: pointer; transition: all 0.2s ease; }
+  .aura-bundle-btn:hover { background: #000000; transform: scale(1.02); }
+
+  @media(max-width: 768px) {
+    .aura-builder-grid { grid-template-columns: 1fr; }
+    .aura-checkout-card { flex-direction: column; gap: 18px; text-align: center; }
+  }
+</style>
+
+<script>
+  let auraConfig = {
+    topSize: 'XS',
+    topColor: 'Onyx Black',
+    bottomSize: 'S',
+    bottomColor: 'Onyx Black'
+  };
+
+  function selectSize(btn, type) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.s-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (type === 'top') auraConfig.topSize = btn.innerText.trim();
+    if (type === 'bottom') auraConfig.bottomSize = btn.innerText.trim();
+  }
+
+  function selectColor(dot, type) {
+    const parent = dot.parentElement;
+    parent.querySelectorAll('.c-dot').forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+    const colorName = dot.getAttribute('title') || 'Selected Color';
+    if (type === 'top') auraConfig.topColor = colorName;
+    if (type === 'bottom') auraConfig.bottomColor = colorName;
+  }
+
+  function checkoutAuraSet() {
+    const topVariant = '{{ section.settings.bra_variant_id | default: "BRA_VARIANT_ID" }}';
+    const bottomVariant = '{{ section.settings.legging_variant_id | default: "LEGGING_VARIANT_ID" }}';
+    const props = encodeURIComponent(`Top: ${auraConfig.topSize} / ${auraConfig.topColor} | Bottom: ${auraConfig.bottomSize} / ${auraConfig.bottomColor}`);
+    window.location.href = `/cart/add?id=${topVariant}&quantity=1&id=${bottomVariant}&quantity=1&properties[Config]=${props}`;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Aura Set Builder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Badge Pill Text",
+      "default": "CLOUDSOFT™ SEAMLESS TECHNOLOGY"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build Your 2-Piece Sculpt Set"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Mix and match top and bottom sizes & colors. Unlocks automatic $18 bundle discount at checkout."
+    },
+    {
+      "type": "text",
+      "id": "bra_variant_id",
+      "label": "Bra Variant ID",
+      "default": "BRA_VARIANT_ID"
+    },
+    {
+      "type": "text",
+      "id": "legging_variant_id",
+      "label": "Legging Variant ID",
+      "default": "LEGGING_VARIANT_ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aura Set Builder"
+    }
+  ]
+}
+{% endschema %}

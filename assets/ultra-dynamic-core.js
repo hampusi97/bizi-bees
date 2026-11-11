@@ -1,148 +1,115 @@
-/**
- * Ultra-Dynamic Core — Bizi Bees / Luma
- * Magnetic CTAs, 3D tilt + specular, reactive aura, live radar pill.
- * Vanilla JS, no dependencies. Respects prefers-reduced-motion.
- */
-(function () {
-  'use strict';
+/* ==========================================================
+   ULTRA-DYNAMIC CORE ENGINE v4.2 (60 FPS WebGL/CSS Transform)
+   Repo: bizi-bees /assets/ultra-dynamic-core.js
+   ========================================================== */
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- Magnetic buttons ---------- */
-  function initMagnetic() {
-    if (reduceMotion) return;
-    var nodes = document.querySelectorAll('.ud-magnetic, .boutique-btn-primary, [data-ud-magnetic]');
-    nodes.forEach(function (btn) {
-      if (btn.dataset.udMagneticInit) return;
-      btn.dataset.udMagneticInit = '1';
-      btn.classList.add('ud-magnetic');
-      var inner = btn.querySelector('.ud-magnetic-inner');
-      if (!inner) {
-        inner = document.createElement('span');
-        inner.className = 'ud-magnetic-inner';
-        while (btn.firstChild) inner.appendChild(btn.firstChild);
-        btn.appendChild(inner);
-      }
-      btn.addEventListener('pointermove', function (e) {
-        var r = btn.getBoundingClientRect();
-        var x = e.clientX - r.left - r.width / 2;
-        var y = e.clientY - r.top - r.height / 2;
-        var strength = 0.22;
-        btn.style.transform = 'translate(' + (x * strength) + 'px,' + (y * strength) + 'px)';
-        inner.style.transform = 'translate(' + (x * strength * 0.4) + 'px,' + (y * strength * 0.4) + 'px)';
+(function() {
+  // 1. MAGNETIC BUTTON PHYSICS
+  function initMagneticButtons() {
+    const magneticBtns = document.querySelectorAll('.magnetic-btn, .button--primary, .luma-buy-now-btn, .tier-btn-primary, .luma-instant-checkout-btn');
+    
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate3d(${x * 0.25}px, ${y * 0.25}px, 0) scale(1.03)`;
       });
-      btn.addEventListener('pointerleave', function () {
-        btn.style.transform = '';
-        inner.style.transform = '';
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0) scale(1)';
+        btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      });
+
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transition = 'none';
       });
     });
   }
 
-  /* ---------- 3D holographic tilt + specular ---------- */
-  function initTilt() {
-    if (reduceMotion) return;
-    var cards = document.querySelectorAll('.ud-tilt-card, .boutique-card, .bizi-product-card, [data-ud-tilt]');
-    cards.forEach(function (card) {
-      if (card.dataset.udTiltInit) return;
-      card.dataset.udTiltInit = '1';
-      card.classList.add('ud-tilt-card');
-      var specular = card.querySelector('.ud-specular');
-      if (!specular) {
-        specular = document.createElement('div');
-        specular.className = 'ud-specular';
-        card.appendChild(specular);
+  // 2. 3D HOLOGRAPHIC CARD TILT & SPECULAR GLARE
+  function init3DCardTilt() {
+    const cards = document.querySelectorAll('.card-wrapper, .luma-tier-card, .flavor-card, .tilt-card, .direct-vs-amazon-box, .gamified-rewards-wrapper');
+    
+    cards.forEach(card => {
+      // Inject Glare Reflection Element
+      if (!card.querySelector('.card-glare')) {
+        const glare = document.createElement('div');
+        glare.className = 'card-glare';
+        card.appendChild(glare);
       }
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;
-        var py = (e.clientY - r.top) / r.height;
-        var rx = (py - 0.5) * -12;
-        var ry = (px - 0.5) * 14;
-        card.style.transform = 'perspective(1000px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) scale3d(1.02,1.02,1.02)';
-        card.style.setProperty('--ud-mx', (px * 100) + '%');
-        card.style.setProperty('--ud-my', (py * 100) + '%');
-        card.classList.add('is-tilting');
-      });
-      card.addEventListener('pointerleave', function () {
-        card.style.transform = '';
-        card.classList.remove('is-tilting');
-      });
-    });
-  }
 
-  /* ---------- Reactive ambient aura (swatches) ---------- */
-  function initAura() {
-    var sections = document.querySelectorAll('[data-ud-aura]');
-    sections.forEach(function (sec) {
-      sec.classList.add('ud-aura-section');
-      var swatches = sec.querySelectorAll('[data-swatch-color], [data-color]');
-      swatches.forEach(function (sw) {
-        var color = sw.getAttribute('data-swatch-color') || sw.getAttribute('data-color') || '#0D9488';
-        function apply() {
-          sec.style.setProperty('--ud-aura-color', colorToRgba(color, 0.14));
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        
+        // Move specular glare
+        const glare = card.querySelector('.card-glare');
+        if (glare) {
+          glare.style.opacity = '1';
+          glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%)`;
         }
-        sw.addEventListener('mouseenter', apply);
-        sw.addEventListener('focus', apply);
-        sw.addEventListener('click', apply);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+        card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+        const glare = card.querySelector('.card-glare');
+        if (glare) glare.style.opacity = '0';
+      });
+
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'none';
       });
     });
   }
 
-  function colorToRgba(hex, alpha) {
-    var c = (hex || '#0D9488').replace('#', '');
-    if (c.length === 3) c = c[0] + c[0] + c[1] + c[1] + c[2] + c[2];
-    var r = parseInt(c.slice(0, 2), 16) || 13;
-    var g = parseInt(c.slice(2, 4), 16) || 148;
-    var b = parseInt(c.slice(4, 6), 16) || 136;
-    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  // 3. REACTIVE AMBIENT AURA (Color Morphing)
+  window.morphAmbientAura = function(hexColor) {
+    const aura = document.getElementById('dynamicAmbientAura');
+    if (aura) {
+      aura.style.background = `radial-gradient(circle at 50% 30%, ${hexColor}33 0%, rgba(255,255,255,0) 70%)`;
+    }
+  };
+
+  // 4. LIVE CITY RADAR DISPATCH PULSE
+  function initLiveCityPulse() {
+    const cities = ["Salt Lake City, UT", "Austin, TX", "Scottsdale, AZ", "Denver, CO", "Seattle, WA", "Nashville, TN", "San Diego, CA", "Provo, UT"];
+    const ticker = document.getElementById('liveRadarCity');
+    if (!ticker) return;
+
+    let index = 0;
+    setInterval(() => {
+      ticker.style.opacity = '0';
+      ticker.style.transform = 'translateY(6px)';
+      
+      setTimeout(() => {
+        index = (index + 1) % cities.length;
+        ticker.innerText = cities[index];
+        ticker.style.opacity = '1';
+        ticker.style.transform = 'translateY(0)';
+      }, 400);
+    }, 4500);
   }
 
-  /* ---------- Live city radar pill ---------- */
-  var CITIES = [
-    'Salt Lake City, UT',
-    'Denver, CO',
-    'Phoenix, AZ',
-    'Boise, ID',
-    'Las Vegas, NV',
-    'Portland, OR',
-    'Austin, TX',
-    'Seattle, WA'
-  ];
-
-  function initRadar() {
-    var pills = document.querySelectorAll('[data-ud-radar]');
-    if (!pills.length) return;
-    pills.forEach(function (el) {
-      el.classList.add('ud-radar-pill');
-      var idx = 0;
-      function tick() {
-        var mins = 2 + Math.floor(Math.random() * 11);
-        el.innerHTML =
-          '<span class="ud-radar-dot" aria-hidden="true"></span>' +
-          '<span>Dispatched to ' + CITIES[idx % CITIES.length] + ' · ' + mins + 'm ago</span>';
-        idx++;
-      }
-      tick();
-      setInterval(tick, 14000);
-    });
-  }
-
-  function boot() {
-    initMagnetic();
-    initTilt();
-    initAura();
-    initRadar();
-  }
-
+  // Auto-boot on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+    document.addEventListener('DOMContentLoaded', () => {
+      initMagneticButtons();
+      init3DCardTilt();
+      initLiveCityPulse();
+    });
   } else {
-    boot();
+    initMagneticButtons();
+    init3DCardTilt();
+    initLiveCityPulse();
   }
-
-  // Re-init after Shopify section / cart AJAX re-renders
-  document.addEventListener('shopify:section:load', boot);
-  document.addEventListener('cart:updated', function () {
-    setTimeout(initMagnetic, 100);
-  });
 })();

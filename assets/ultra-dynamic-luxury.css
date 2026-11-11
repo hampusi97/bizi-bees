@@ -1,0 +1,76 @@
+/**
+ * Ultra-Dynamic Luxury Design System
+ * Repo: bizi-bees /assets/ultra-dynamic-luxury.css
+ * Delivers high-converting micro-interactions, animated glowing CTAs, and glassmorphism across all 13 fleet stores.
+ */
+
+:root {
+  --luma-teal-glow: 0 0 25px rgba(13, 148, 136, 0.45);
+  --luma-gold-glow: 0 0 25px rgba(245, 158, 11, 0.35);
+  --luma-emerald-glow: 0 0 20px rgba(16, 185, 129, 0.4);
+  --luma-dark-card: rgba(15, 23, 42, 0.96);
+}
+
+/* Pulsing Buy Button Glow */
+.luma-instant-checkout-btn, .luma-buy-now-btn, .btn-checkout-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+}
+
+.luma-instant-checkout-btn::after, .btn-checkout-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: rotate(25deg);
+  animation: shimmerSweep 3.5s infinite;
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  35% { transform: translateX(100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.luma-instant-checkout-btn:hover, .btn-checkout-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(13, 148, 136, 0.35) !important;
+}
+
+/* Glassmorphism Card Elevations */
+.direct-vs-amazon-box, .gamified-rewards-wrapper, .summary-box, .cart-item-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.direct-vs-amazon-box:hover, .gamified-rewards-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Shimmer on Progress Tracks */
+.rewards-progress-fill, .shipping-progress-bar {
+  background-size: 200% 100% !important;
+  animation: gradientFlow 2.8s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Micro Mobile Haptics */
+@media (max-width: 768px) {
+  .luma-instant-checkout-btn, .luma-buy-now-btn {
+    padding: 14px 20px !important;
+  }
+}

@@ -1,0 +1,304 @@
+{% comment %}
+  The 13-Brand Universal VIP Passport
+  Repo: bizi-bees /snippets/universal-loyalty-passport.liquid
+  Shared conglomerate rewards engine connecting all 13 sister stores.
+{% endcomment %}
+
+<div class="universal-passport-wrap" id="universalPassport">
+  <div class="passport-banner">
+    <div class="passport-icon">🛂</div>
+    <div class="passport-titles">
+      <div class="passport-chip">UNIVERSAL CONGLOMERATE ECOSYSTEM</div>
+      <h3>The 13-Brand VIP Passport</h3>
+      <p>1 Account. 13 Specialized Brands. Universal Rewards with Zero Expiration.</p>
+    </div>
+  </div>
+
+  <!-- Earn & Redeem Loop Visual -->
+  <div class="passport-loop-grid">
+    <div class="loop-step">
+      <div class="step-num">1</div>
+      <div class="step-icon">✨</div>
+      <div class="step-title">EARN ON LUMA</div>
+      <p>Shop skincare & tech. Earn <strong>10 Points per $1</strong> spent instantly.</p>
+    </div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">
+      <div class="step-num">2</div>
+      <div class="step-icon">🥤</div>
+      <div class="step-title">REDEEM ON FIZZ LAB</div>
+      <p>Apply points for a <strong>$10 Dirty Soda Kit credit</strong> or free pumps.</p>
+    </div>
+    <div class="loop-arrow">&rarr;</div>
+    <div class="loop-step">
+      <div class="step-num">3</div>
+      <div class="step-icon">🍫</div>
+      <div class="step-title">REDEEM ON CRAVE LAB</div>
+      <p>Claim free <strong>Belgian Tasting Bars</strong> shipped in cold-packs.</p>
+    </div>
+  </div>
+
+  <!-- Points & Benefits Matrix -->
+  <div class="passport-benefits-bar">
+    <div class="benefit-col">
+      <strong>500 PTS</strong>
+      <span>$5 Off or Free Priority Shipping</span>
+      <code>Code: PASSPORT5</code>
+    </div>
+    <div class="benefit-col active-tier">
+      <div class="star-badge">MOST POPULAR</div>
+      <strong>1,000 PTS</strong>
+      <span>$15 Off Across Any Sister Store</span>
+      <code>Code: PASSPORT15</code>
+    </div>
+    <div class="benefit-col">
+      <strong>REFER A FRIEND</strong>
+      <span>Give $15, Get $15 Store Credit</span>
+      <code>1-Click Link</code>
+    </div>
+  </div>
+
+  <!-- 1-Click Referral Link Generator -->
+  <div class="passport-referral-box">
+    <div class="ref-input-group">
+      <span class="ref-label">YOUR PRIVATE VIP REFERRAL LINK:</span>
+      <div class="ref-copy-flex">
+        <input type="text" readonly value="https://bizibees-store.myshopify.com/?ref=VIP-{{ customer.id | default: 'MEMBER' }}" id="passportRefLink">
+        <button type="button" class="btn-ref-copy" onclick="copyPassportLink()">COPY $15 LINK</button>
+      </div>
+    </div>
+    <span class="ref-footnote">✨ Your friend gets $15 off immediately on orders over $40. You receive $15 credit upon their first delivery.</span>
+  </div>
+</div>
+
+<style>
+  .universal-passport-wrap {
+    background: radial-gradient(circle at 10% 20%, #1E293B 0%, #0F172A 90%);
+    border: 1px solid #334155;
+    border-radius: 20px;
+    padding: 30px 24px;
+    color: #F8FAFC;
+    margin: 35px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.3);
+  }
+  .passport-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 18px;
+  }
+  .passport-icon {
+    font-size: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .passport-chip {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #10B981;
+    margin-bottom: 4px;
+  }
+  .passport-titles h3 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+  .passport-titles p {
+    margin: 0;
+    font-size: 13px;
+    color: #94A3B8;
+  }
+  .passport-loop-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 25px;
+  }
+  .loop-step {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 16px 14px;
+    text-align: center;
+    position: relative;
+  }
+  .step-num {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: #0D9488;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-icon { font-size: 24px; margin-bottom: 6px; }
+  .step-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .loop-step p {
+    margin: 0;
+    font-size: 12px;
+    color: #CBD5E1;
+    line-height: 1.4;
+  }
+  .loop-arrow {
+    color: #64748B;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .passport-benefits-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .benefit-col {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    position: relative;
+  }
+  .benefit-col.active-tier {
+    border-color: #0D9488;
+    background: rgba(13, 148, 136, 0.1);
+  }
+  .star-badge {
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background: #F59E0B;
+    color: #0F172A;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .benefit-col strong {
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+  .benefit-col span {
+    display: block;
+    font-size: 11px;
+    color: #94A3B8;
+    margin-bottom: 6px;
+  }
+  .benefit-col code {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: #38BDF8;
+  }
+  .passport-referral-box {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 14px 18px;
+    text-align: left;
+  }
+  .ref-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #94A3B8;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .ref-copy-flex {
+    display: flex;
+    gap: 8px;
+  }
+  .ref-copy-flex input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #E2E8F0;
+    font-size: 12px;
+    font-family: monospace;
+  }
+  .btn-ref-copy {
+    background: #0D9488;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-ref-copy:hover {
+    background: #0F766E;
+  }
+  .ref-footnote {
+    display: block;
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .passport-loop-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .loop-arrow {
+      transform: rotate(90deg);
+      margin: -6px auto;
+    }
+    .passport-benefits-bar {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  function copyPassportLink() {
+    const input = document.getElementById('passportRefLink');
+    if (input) {
+      input.select();
+      input.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(input.value).then(function() {
+        const btn = document.querySelector('.btn-ref-copy');
+        if (btn) {
+          const original = btn.innerText;
+          btn.innerText = "COPIED!";
+          btn.style.background = "#10B981";
+          setTimeout(() => {
+            btn.innerText = original;
+            btn.style.background = "#0D9488";
+          }, 2000);
+        }
+      });
+    }
+  }
+</script>

@@ -1,0 +1,97 @@
+{% comment %}
+  Multi-Store VIP Cross-Sell Network (Zero-CAC Acquisition)
+  File: sections/cross-store-network.liquid
+  Purpose: Cross-sells high-margin sister brands (Crave Lab, Aura Sculpt, Luma Relief)
+           on post-purchase Thank-You pages and order confirmations with combined shipping.
+{% endcomment %}
+
+<div class="luma-cross-sell-wrapper">
+  <div class="luma-cross-sell-inner">
+    <div class="cross-sell-badge">👑 EXCLUSIVE VIP SISTER BRAND OFFER</div>
+    <h3>Complete Your Daily Ritual &mdash; Unlock $0 CAC VIP Bundles</h3>
+    <p>Because you are a verified customer, you unlock member-only pricing from our sister lab brands with combined complimentary shipping.</p>
+
+    <div class="cross-sell-cards-grid">
+      <!-- Card 1: Crave Lab Chocolate -->
+      <div class="cross-card">
+        <div class="cross-card-badge">83% OFF RETAIL</div>
+        <div class="cross-icon">🍫</div>
+        <h4>Crave Lab™ Belgian Tasting Box</h4>
+        <p>4 micro-batch Belgian cocoa bars with freeze-dried berries & smoked sea salt.</p>
+        <div class="cross-pricing">
+          <span class="cross-deal">$12.00</span>
+          <span class="cross-regular">$38.00</span>
+        </div>
+        <a href="https://cravelab.com/products/bento-box?discount=LUMAVIP" class="cross-btn" target="_blank">Add to Order &mdash; $12.00 →</a>
+      </div>
+
+      <!-- Card 2: Aura Sculpt Activewear -->
+      <div class="cross-card">
+        <div class="cross-card-badge">SAVE $24 TODAY</div>
+        <div class="cross-icon">✨</div>
+        <h4>Aura Sculpt™ Contouring Leggings</h4>
+        <p>CloudSoft™ high-waist squat-proof seamless compression leggings.</p>
+        <div class="cross-pricing">
+          <span class="cross-deal">$20.00</span>
+          <span class="cross-regular">$44.00</span>
+        </div>
+        <a href="https://aurasculpt.com/products/leggings?discount=LUMAVIP" class="cross-btn" target="_blank">Add to Order &mdash; $20.00 →</a>
+      </div>
+
+      <!-- Card 3: Luma Relief Cap -->
+      <div class="cross-card">
+        <div class="cross-card-badge">PATIENT FAVORITE</div>
+        <div class="cross-icon">🧊</div>
+        <h4>LumaRelief™ 360° Migraine Cap</h4>
+        <p>Medical-grade hydrogel cap for 45-minute light-blocking tension relief.</p>
+        <div class="cross-pricing">
+          <span class="cross-deal">$15.00</span>
+          <span class="cross-regular">$24.99</span>
+        </div>
+        <a href="/products/lumarelief-migraine-cap?discount=LUMAVIP" class="cross-btn">Add to Order &mdash; $15.00 →</a>
+      </div>
+    </div>
+
+    <div class="cross-sell-note">
+      🔒 1-Click payment authorization • Insured domestic shipping guaranteed
+    </div>
+  </div>
+</div>
+
+<style>
+  .luma-cross-sell-wrapper { background: #F8FAFC; border: 1.5px dashed #CBD5E1; border-radius: 20px; padding: 40px 24px; margin: 40px auto; max-width: 1040px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; }
+  .luma-cross-sell-inner { max-width: 960px; margin: 0 auto; }
+  .cross-sell-badge { display: inline-block; background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; font-size: 11px; font-weight: 800; padding: 5px 14px; border-radius: 30px; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .luma-cross-sell-wrapper h3 { font-size: 24px; font-weight: 900; color: #0F172A; margin: 0 0 8px; }
+  .luma-cross-sell-wrapper p { font-size: 14px; color: #64748B; margin: 0 0 30px; line-height: 1.5; }
+
+  .cross-sell-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left; }
+  .cross-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px; position: relative; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .cross-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08); border-color: #0D9488; }
+  .cross-card-badge { position: absolute; top: -10px; right: 16px; background: #0D9488; color: #FFFFFF; font-size: 9.5px; font-weight: 800; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; }
+  .cross-icon { font-size: 32px; margin-bottom: 12px; }
+  .cross-card h4 { font-size: 15px; font-weight: 800; color: #0F172A; margin: 0 0 6px; }
+  .cross-card p { font-size: 12.5px; color: #64748B; margin: 0 0 16px; line-height: 1.4; }
+  .cross-pricing { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+  .cross-deal { font-size: 22px; font-weight: 900; color: #0F172A; }
+  .cross-regular { font-size: 13px; color: #94A3B8; text-decoration: line-through; }
+  .cross-btn { display: block; text-align: center; background: #0F172A; color: #FFFFFF; text-decoration: none; padding: 10px 16px; border-radius: 40px; font-size: 12.5px; font-weight: 800; transition: background 0.2s ease; }
+  .cross-btn:hover { background: #0D9488; }
+  .cross-sell-note { font-size: 11px; color: #94A3B8; margin-top: 24px; }
+
+  @media(max-width: 800px) {
+    .cross-sell-cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Cross-Store VIP Network",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Cross-Store VIP Network"
+    }
+  ]
+}
+{% endschema %}

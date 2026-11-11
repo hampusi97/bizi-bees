@@ -1,135 +1,134 @@
 {% comment %}
-  Dynamic free-shipping progress bar
-  Threshold: $40.00 USD (4000 cents)
-  Updates on cart:updated without full reload when Shopify Cart AJAX is available.
+  Dynamic Real-Time Free Shipping Threshold Bar
+  Repo: bizi-bees /snippets/dynamic-free-shipping-bar.liquid
+  Live calculation with animated progress track and vehicle milestone icon.
 {% endcomment %}
 
-{% assign threshold_cents = 4000 %}
+{% assign free_shipping_threshold = 4000 %} <!-- Threshold set to $40.00 (in cents) -->
 {% assign cart_total = cart.total_price %}
-{% assign remaining = threshold_cents | minus: cart_total %}
-{% if remaining < 0 %}{% assign remaining = 0 %}{% endif %}
-{% assign progress_pct = cart_total | times: 100.0 | divided_by: threshold_cents %}
+{% assign remaining_amount = free_shipping_threshold | minus: cart_total %}
+{% assign progress_pct = cart_total | times: 100.0 | divided_by: free_shipping_threshold %}
 {% if progress_pct > 100 %}{% assign progress_pct = 100 %}{% endif %}
 
-<div
-  id="bizi-ship-bar"
-  class="bizi-ship-bar{% if remaining == 0 %} is-unlocked{% endif %}"
-  data-threshold="{{ threshold_cents }}"
-  data-cart-total="{{ cart_total }}"
-  role="status"
-  aria-live="polite"
->
-  <div class="bizi-ship-bar__inner">
-    <div class="bizi-ship-bar__copy" id="bizi-ship-bar-copy">
-      {% if remaining == 0 %}
-        You've unlocked FREE Priority Shipping
-      {% else %}
-        You are only <strong id="bizi-ship-remaining">{{ remaining | money }}</strong> away from FREE Priority Shipping
-      {% endif %}
-    </div>
-    <div class="bizi-ship-bar__track" aria-hidden="true">
-      <div class="bizi-ship-bar__fill" id="bizi-ship-bar-fill" style="width: {{ progress_pct }}%;"></div>
+<div class="dynamic-shipping-bar-container" id="shippingBarContainer">
+  <div class="shipping-bar-text" id="shippingBarText">
+    {% if cart_total >= free_shipping_threshold %}
+      🎉 <strong style="color: #059669;">Congratulations! You've unlocked FREE Priority Shipping!</strong>
+    {% else %}
+      🚚 You are only <strong class="shipping-highlight" id="shippingRemaining">${{ remaining_amount | money_without_currency }}</strong> away from <strong>FREE US Priority Shipping</strong>!
+    {% endif %}
+  </div>
+
+  <div class="shipping-progress-track">
+    <div class="shipping-progress-bar {% if cart_total >= free_shipping_threshold %}completed{% endif %}" id="shippingProgressBar" style="width: {{ progress_pct }}%;">
+      <span class="truck-icon">🚚</span>
     </div>
   </div>
 </div>
 
 <style>
-  .bizi-ship-bar {
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    background: #0F172A;
-    color: #F8FAFC;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    border-bottom: 1px solid #1E293B;
-  }
-  .bizi-ship-bar.is-unlocked {
-    background: #0D9488;
-    border-bottom-color: #0F766E;
-  }
-  .bizi-ship-bar__inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 10px 20px 12px;
-  }
-  .bizi-ship-bar__copy {
-    font-size: 13px;
-    font-weight: 600;
+  .dynamic-shipping-bar-container {
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 10px 16px 12px;
+    box-sizing: border-box;
     text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    z-index: 999;
+  }
+  .shipping-bar-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1E293B;
     margin-bottom: 8px;
+    letter-spacing: -0.2px;
   }
-  .bizi-ship-bar__copy strong {
+  .shipping-highlight {
+    color: #0D9488;
     font-weight: 800;
+    font-size: 14px;
   }
-  .bizi-ship-bar__track {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    overflow: hidden;
+  .shipping-progress-track {
+    position: relative;
+    max-width: 500px;
+    height: 7px;
+    background: #E2E8F0;
+    border-radius: 20px;
+    margin: 0 auto;
+    overflow: visible;
   }
-  .bizi-ship-bar__fill {
+  .shipping-progress-bar {
+    position: relative;
     height: 100%;
-    background: #F8FAFC;
-    border-radius: 999px;
-    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: linear-gradient(90deg, #0D9488 0%, #10B981 100%);
+    border-radius: 20px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .bizi-ship-bar.is-unlocked .bizi-ship-bar__fill {
-    background: #CCFBF1;
+  .shipping-progress-bar.completed {
+    background: #10B981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+  }
+  .truck-icon {
+    position: absolute;
+    right: -10px;
+    top: -9px;
+    font-size: 13px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 600px) {
+    .shipping-bar-text { font-size: 12px; }
+    .shipping-progress-track { max-width: 100%; }
   }
 </style>
 
 <script>
-(function () {
-  var bar = document.getElementById('bizi-ship-bar');
-  if (!bar) return;
-  var threshold = parseInt(bar.getAttribute('data-threshold'), 10) || 4000;
-  var fill = document.getElementById('bizi-ship-bar-fill');
-  var copy = document.getElementById('bizi-ship-bar-copy');
+  (function() {
+    const THRESHOLD = 4000; // $40.00 in cents
 
-  function money(cents) {
-    try {
-      return (cents / 100).toLocaleString(undefined, { style: 'currency', currency: '{{ cart.currency.iso_code | default: shop.currency }}' });
-    } catch (e) {
-      return '$' + (cents / 100).toFixed(2);
+    // Real-Time Interceptor: Listens for any Add to Cart or Quantity Change
+    function refreshShippingBar() {
+      fetch('/cart.js')
+        .then(res => res.json())
+        .then(cart => {
+          const total = cart.total_price;
+          const container = document.getElementById('shippingBarContainer');
+          const textEl = document.getElementById('shippingBarText');
+          const barEl = document.getElementById('shippingProgressBar');
+
+          if (!container || !textEl || !barEl) return;
+
+          let pct = (total / THRESHOLD) * 100;
+          if (pct > 100) pct = 100;
+          barEl.style.width = pct + '%';
+
+          if (total >= THRESHOLD) {
+            barEl.classList.add('completed');
+            textEl.innerHTML = `🎉 <strong style="color: #059669;">Congratulations! You've unlocked FREE Priority Shipping!</strong>`;
+          } else {
+            barEl.classList.remove('completed');
+            const diff = ((THRESHOLD - total) / 100).toFixed(2);
+            textEl.innerHTML = `🚚 You are only <strong class="shipping-highlight">$${diff}</strong> away from <strong>FREE US Priority Shipping</strong>!`;
+          }
+        })
+        .catch(err => console.debug('Shipping bar refresh notice:', err));
     }
-  }
 
-  function render(totalCents) {
-    var remaining = Math.max(0, threshold - totalCents);
-    var pct = Math.min(100, (totalCents / threshold) * 100);
-    if (fill) fill.style.width = pct + '%';
-    if (remaining === 0) {
-      bar.classList.add('is-unlocked');
-      if (copy) copy.textContent = "You've unlocked FREE Priority Shipping";
-    } else {
-      bar.classList.remove('is-unlocked');
-      if (copy) {
-        copy.innerHTML = 'You are only <strong>' + money(remaining) + '</strong> away from FREE Priority Shipping';
-      }
-    }
-  }
+    // Automatically recalculates when cart drawer opens or items change
+    document.addEventListener('cart:updated', refreshShippingBar);
+    document.addEventListener('cart:change', refreshShippingBar);
 
-  document.addEventListener('cart:updated', function (event) {
-    var detail = event.detail || {};
-    var total = detail.total_price != null ? detail.total_price : null;
-    if (total == null && detail.cart && detail.cart.total_price != null) total = detail.cart.total_price;
-    if (total != null) render(parseInt(total, 10) || 0);
-  });
-
-  // Poll Shopify cart.js when theme does not emit cart:updated
-  function refreshFromCartJs() {
-    fetch('/cart.js', { credentials: 'same-origin' })
-      .then(function (r) { return r.json(); })
-      .then(function (cart) { if (cart && typeof cart.total_price === 'number') render(cart.total_price); })
-      .catch(function () {});
-  }
-
-  document.addEventListener('click', function (e) {
-    var t = e.target;
-    if (!t) return;
-    if (t.closest('form[action*="/cart/add"], [name="add"], .ajax-cart, [data-add-to-cart]')) {
-      setTimeout(refreshFromCartJs, 600);
-    }
-  });
-})();
+    // Global fetch listener to catch any custom theme AJAX cart updates
+    const origFetch = window.fetch;
+    window.fetch = function() {
+      return origFetch.apply(this, arguments).then(response => {
+        if (arguments[0] && typeof arguments[0] === 'string' && (arguments[0].includes('/cart/add') || arguments[0].includes('/cart/change'))) {
+          setTimeout(refreshShippingBar, 300);
+        }
+        return response;
+      });
+    };
+  })();
 </script>

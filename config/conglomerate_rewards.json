@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "name": "The Conglomerate VIP Loyalty Pass",
+  "generated_at": "2026-11-10T23:38:00Z",
+  "description": "Private cross-brand reward network connecting all 13 stores at $0 CAC.",
+  "tiers": [
+    {
+      "trigger_brand": "Luma Clinical",
+      "qualifying_spend": 50.00,
+      "unlocked_rewards": [
+        {
+          "reward_brand": "Fizz Lab (Dirty Soda)",
+          "reward_title": "$10 Complimentary Gift Credit",
+          "promo_code": "FIZZVIP10",
+          "redeem_url": "https://bizibees-store.myshopify.com/products/dirty-soda-starter-kit?discount=FIZZVIP10",
+          "badge": "FREE $10 SODA CREDIT"
+        },
+        {
+          "reward_brand": "Crave Lab (Belgian Chocolate)",
+          "reward_title": "20% Off Artisan 4-Bar Bento Box",
+          "promo_code": "CRAVEVIP20",
+          "redeem_url": "https://bizibees-store.myshopify.com/products/crave-chocolate-bento?discount=CRAVEVIP20",
+          "badge": "20% OFF CHOCOLATE"
+        }
+      ]
+    },
+    {
+      "trigger_brand": "Fizz Lab",
+      "qualifying_spend": 45.00,
+      "unlocked_rewards": [
+        {
+          "reward_brand": "Luma Relief (Migraine Care)",
+          "reward_title": "$15 Off 360° Cold Compression Mask",
+          "promo_code": "RELIEF15VIP",
+          "redeem_url": "https://bizibees-store.myshopify.com/products/lumarelief-migraine-cap?discount=RELIEF15VIP",
+          "badge": "SAVE $15 ON PAIN CARE"
+        },
+        {
+          "reward_brand": "Aura Sculpt (Apparel)",
+          "reward_title": "15% Off CloudSoft 2-Piece Sculpt Set",
+          "promo_code": "AURAVIP15",
+          "redeem_url": "https://bizibees-store.myshopify.com/products/aura-sculpt-set?discount=AURAVIP15",
+          "badge": "15% OFF ACTIVEWEAR"
+        }
+      ]
+    },
+    {
+      "trigger_brand": "Crave Lab",
+      "qualifying_spend": 35.00,
+      "unlocked_rewards": [
+        {
+          "reward_brand": "Bizi Bees Boutique",
+          "reward_title": "Free Literary Keepsake with Book Box",
+          "promo_code": "BEEVIPBOOK",
+          "redeem_url": "https://bizibees-store.myshopify.com/products/blind-date-book-mystery?discount=BEEVIPBOOK",
+          "badge": "FREE BOOK GIFT"
+        }
+      ]
+    }
+  ]
+}

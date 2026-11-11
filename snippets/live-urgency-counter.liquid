@@ -1,0 +1,141 @@
+{% comment %}
+  Ultra-Dynamic Live Urgency & Activity Engine
+  Repo: bizi-bees /snippets/live-urgency-counter.liquid
+  Displays live viewing counter, low inventory alert, and same-day dispatch countdown.
+{% endcomment %}
+
+<div class="live-urgency-container">
+  <!-- Live Viewer Signal -->
+  <div class="urgency-row viewer-signal">
+    <span class="pulsing-radar-dot"></span>
+    <span class="viewer-text">
+      <strong id="liveViewerCount">23</strong> shoppers are viewing this protocol right now
+    </span>
+  </div>
+
+  <!-- Low Stock Scarcity Alert -->
+  <div class="urgency-row stock-signal">
+    <span class="fire-icon">🔥</span>
+    <span class="stock-text">
+      <strong>High Demand:</strong> Only <strong class="stock-highlight" id="liveStockUnits">4 units</strong> remaining from today's domestic US batch.
+    </span>
+  </div>
+
+  <!-- Same-Day Dispatch Countdown Timer -->
+  <div class="urgency-row cutoff-signal">
+    <span class="clock-icon">⚡</span>
+    <span class="cutoff-text">
+      Order within <span class="countdown-timer-pill" id="cutoffCountdown">02h 18m 42s</span> to guarantee <strong>Same-Day Dispatch</strong>.
+    </span>
+  </div>
+</div>
+
+<style>
+  .live-urgency-container {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .urgency-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pulsing-radar-dot {
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: radarPulse 2s infinite ease-out;
+    flex-shrink: 0;
+  }
+  @keyframes radarPulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+  .viewer-text {
+    color: #334155;
+    font-weight: 500;
+  }
+  .viewer-text strong {
+    color: #0F172A;
+  }
+  .fire-icon, .clock-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .stock-text {
+    color: #DC2626;
+  }
+  .stock-highlight {
+    font-weight: 800;
+    color: #B91C1C;
+  }
+  .cutoff-text {
+    color: #475569;
+  }
+  .cutoff-text strong {
+    color: #0D9488;
+  }
+  .countdown-timer-pill {
+    background: #0F172A;
+    color: #38BDF8;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 11.5px;
+    letter-spacing: 0.5px;
+  }
+</style>
+
+<script>
+  (function() {
+    // 1. Realistic live viewer jitter (21–34)
+    const viewerEl = document.getElementById('liveViewerCount');
+    if (viewerEl) {
+      setInterval(() => {
+        let current = parseInt(viewerEl.innerText, 10);
+        let delta = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        let next = current + delta;
+        if (next < 19) next = 22;
+        if (next > 36) next = 31;
+        viewerEl.innerText = next;
+      }, 4500);
+    }
+
+    // 2. Real-time countdown timer to 5:00 PM domestic cutoff
+    function updateCountdown() {
+      const el = document.getElementById('cutoffCountdown');
+      if (!el) return;
+
+      const now = new Date();
+      const cutoff = new Date();
+      cutoff.setHours(17, 0, 0, 0); // 5:00 PM local
+      if (now > cutoff) {
+        cutoff.setDate(cutoff.getDate() + 1);
+      }
+
+      const diff = cutoff - now;
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+      const pad = (n) => (n < 10 ? '0' + n : n);
+      el.innerText = `${pad(hours)}h ${pad(mins)}m ${pad(secs)}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  })();
+</script>

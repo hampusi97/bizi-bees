@@ -1,0 +1,72 @@
+name: 🌐 13-Store Parallel Autonomous Fleet Matrix
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Executes across all 13 stores every 4 hours
+  workflow_dispatch:
+
+jobs:
+  parallel-store-engine:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        store:
+          - { id: "luma-clinical", domain: "bizibees-store.myshopify.com", niche: "beauty" }
+          - { id: "luma-relief", domain: "luma-relief.myshopify.com", niche: "migraine" }
+          - { id: "fizz-lab", domain: "fizz-lab.myshopify.com", niche: "dirty_soda" }
+          - { id: "crave-lab", domain: "crave-lab.myshopify.com", niche: "chocolate" }
+          - { id: "aura-sculpt", domain: "aura-sculpt.myshopify.com", niche: "apparel" }
+          - { id: "bizi-bees", domain: "shopbizibees.myshopify.com", niche: "vintage" }
+          - { id: "pawglow", domain: "pawglow.myshopify.com", niche: "pet" }
+          - { id: "zenith-sleep", domain: "zenith-sleep.myshopify.com", niche: "sleep" }
+          - { id: "aura-posture", domain: "aura-posture.myshopify.com", niche: "posture" }
+          - { id: "lumicarve", domain: "lumicarve.myshopify.com", niche: "diy" }
+          - { id: "dermasonic", domain: "dermasonic.myshopify.com", niche: "skincare" }
+          - { id: "calmcore", domain: "calmcore.myshopify.com", niche: "thermal" }
+          - { id: "floraspring", domain: "floraspring.myshopify.com", niche: "plants" }
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Network & E-Commerce Tools
+        run: pip install requests aiohttp schedule
+
+      - name: Execute Node Engine for ${{ matrix.store.id }}
+        env:
+          TARGET_STORE_ID: ${{ matrix.store.id }}
+          TARGET_STORE_DOMAIN: ${{ matrix.store.domain }}
+          TARGET_NICHE: ${{ matrix.store.niche }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+        run: |
+          echo "🚀 Booting parallel execution for ${{ matrix.store.id }}..."
+          python core/auto_healer.py
+          python scripts/seo_blog_generator.py
+          python scripts/inventory_safety_guard.py
+          echo "✅ Completed autonomous pass for ${{ matrix.store.id }}."
+
+  consolidate-and-report:
+    needs: parallel-store-engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install requests aiohttp
+      - name: Run Global Fleet Revenue Telemetry & Founder Digest
+        env:
+          SHOPIFY_ADMIN_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+          ALERT_SENDER_EMAIL: ${{ secrets.ALERT_SENDER_EMAIL }}
+          ALERT_SENDER_PASSWORD: ${{ secrets.ALERT_SENDER_PASSWORD }}
+          FOUNDER_EMAIL: ${{ secrets.FOUNDER_EMAIL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python core/fleet_telemetry.py
+          python core/master_autopilot.py

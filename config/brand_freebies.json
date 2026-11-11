@@ -1,0 +1,127 @@
+{
+  "portfolio_spend_thresholds": {
+    "tier_1_free_shipping_usd": 40.00,
+    "tier_2_free_gift_usd": 65.00,
+    "tier_3_vip_discount_pct": 15,
+    "tier_3_threshold_usd": 90.00
+  },
+  "brand_freebies": {
+    "luma-clinical": {
+      "store_name": "Luma Clinical",
+      "freebie_name": "Full-Size Activating Conductive Peptide Serum",
+      "retail_value_usd": 24.00,
+      "supplier_wholesale_usd": 2.80,
+      "margin_cushion_pct": 88.3,
+      "badge_icon": "✨",
+      "unboxing_experience": "Frosted glass pump bottle with custom gold foil clinical instruction protocol"
+    },
+    "luma-relief": {
+      "store_name": "Luma Relief",
+      "freebie_name": "Therapeutic Herbal Sinus Acupressure Roller",
+      "retail_value_usd": 18.00,
+      "supplier_wholesale_usd": 1.90,
+      "margin_cushion_pct": 89.4,
+      "badge_icon": "🧊",
+      "unboxing_experience": "Aesthetic velvet drawstring travel pouch with acupressure trigger point guide"
+    },
+    "fizz-lab": {
+      "store_name": "Fizz Lab Provo",
+      "freebie_name": "High-Speed Electric Barista Foam Wand",
+      "retail_value_usd": 16.00,
+      "supplier_wholesale_usd": 2.10,
+      "margin_cushion_pct": 86.9,
+      "badge_icon": "🥤",
+      "unboxing_experience": "Matte finish frother with Utah Dirty Soda secret recipe card deck"
+    },
+    "crave-lab": {
+      "store_name": "Crave Lab Confections",
+      "freebie_name": "Smoked Sea Salt Dark Chocolate Tasting Bar",
+      "retail_value_usd": 9.00,
+      "supplier_wholesale_usd": 1.10,
+      "margin_cushion_pct": 87.8,
+      "badge_icon": "🍫",
+      "unboxing_experience": "Wax-sealed artisan wrapping with gold tasting knife & origin story insert"
+    },
+    "aura-sculpt": {
+      "store_name": "Aura Sculpt",
+      "freebie_name": "CloudSoft™ Seamless Non-Slip Headband",
+      "retail_value_usd": 14.00,
+      "supplier_wholesale_usd": 1.20,
+      "margin_cushion_pct": 91.4,
+      "badge_icon": "🧘‍♀️",
+      "unboxing_experience": "Branded satin hair-tie pouch with fabric care and styling guide"
+    },
+    "bizi-bees": {
+      "store_name": "Bizi Bees Boutique",
+      "freebie_name": "Mystery Handpicked Paperback + Honey Bookmark",
+      "retail_value_usd": 15.00,
+      "supplier_wholesale_usd": 1.50,
+      "margin_cushion_pct": 90.0,
+      "badge_icon": "📖",
+      "unboxing_experience": "Vintage brown kraft wrap with beeswax-dipped twine and personal founder note"
+    },
+    "pawglow": {
+      "store_name": "PawGlow Pets",
+      "freebie_name": "Natural Calming Lavender Grooming Mist",
+      "retail_value_usd": 16.00,
+      "supplier_wholesale_usd": 1.80,
+      "margin_cushion_pct": 88.8,
+      "badge_icon": "🐾",
+      "unboxing_experience": "Eco-friendly spray with pet de-shedding glove and organic treat sample"
+    },
+    "purehydro": {
+      "store_name": "PureHydro Living",
+      "freebie_name": "Precision Mineral Infusion Pod",
+      "retail_value_usd": 18.00,
+      "supplier_wholesale_usd": 2.20,
+      "margin_cushion_pct": 87.8,
+      "badge_icon": "💧",
+      "unboxing_experience": "Medical-grade stainless filter pod with water purity pH test strip"
+    },
+    "zenvibe": {
+      "store_name": "ZenVibe Wellness",
+      "freebie_name": "Guided Mindfulness Journal & Crystal Pen",
+      "retail_value_usd": 15.00,
+      "supplier_wholesale_usd": 1.60,
+      "margin_cushion_pct": 89.3,
+      "badge_icon": "🌿",
+      "unboxing_experience": "Linen-bound 30-day reflection journal with dried botanical sprig"
+    },
+    "orbitglow": {
+      "store_name": "OrbitGlow Tech",
+      "freebie_name": "Magnetic Night-Sky Ambient Projector Capsule",
+      "retail_value_usd": 18.00,
+      "supplier_wholesale_usd": 2.40,
+      "margin_cushion_pct": 86.7,
+      "badge_icon": "🌌",
+      "unboxing_experience": "Metallic capsule case with USB-C braided braided cord and constellation map"
+    },
+    "cozyhaven": {
+      "store_name": "CozyHaven Decor",
+      "freebie_name": "Aromatherapy French Lavender Linen Mist",
+      "retail_value_usd": 16.00,
+      "supplier_wholesale_usd": 1.90,
+      "margin_cushion_pct": 88.1,
+      "badge_icon": "🕯️",
+      "unboxing_experience": "Amber glass spray bottle with woven cotton coaster"
+    },
+    "swiftclean": {
+      "store_name": "SwiftClean Auto",
+      "freebie_name": "Micro-Sonic Detail Scrub Brush & Gel Pod",
+      "retail_value_usd": 14.00,
+      "supplier_wholesale_usd": 1.70,
+      "margin_cushion_pct": 87.9,
+      "badge_icon": "🚗",
+      "unboxing_experience": "Water-resistant zipper pouch with scratch-free micro-fiber buffing towel"
+    },
+    "titangrip": {
+      "store_name": "TitanGrip Athletics",
+      "freebie_name": "High-Tensile Chalk Ball & Finger Extensor Bands",
+      "retail_value_usd": 15.00,
+      "supplier_wholesale_usd": 1.80,
+      "margin_cushion_pct": 88.0,
+      "badge_icon": "⚡",
+      "unboxing_experience": "Breathable mesh carry bag with heavy grip training progressive protocol chart"
+    }
+  }
+}

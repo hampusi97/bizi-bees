@@ -1,0 +1,97 @@
+/* ==========================================================
+   LUMA CLINICAL™ — DTC LUXURY DESIGN SYSTEM TOKENS
+   ========================================================== */
+:root {
+  --luma-bg: #FFFFFF;
+  --luma-surface: #F8FAFC;
+  --luma-text: #0F172A;
+  --luma-muted: #64748B;
+  --luma-teal: #0D9488;
+  --luma-teal-dark: #0F766E;
+  --luma-teal-light: #F0FDFA;
+  --luma-border: rgba(226, 232, 240, 0.8);
+  --luma-radius: 16px;
+  --luma-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+body, .gradient {
+  background-color: var(--luma-bg) !important;
+  color: var(--luma-text) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* 1. PURGE CLASHING RED BADGES & DROPSHIP CLUTTER */
+.product-card__badge,
+.card__badge,
+.badge--sale,
+[class*="sale-badge"],
+[class*="35-off"],
+[class*="PROVOTODAY"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 2. ELEVATED PRODUCT CARDS */
+.card-wrapper, .product-card {
+  background: var(--luma-surface) !important;
+  border: 1px solid var(--luma-border) !important;
+  border-radius: var(--luma-radius) !important;
+  box-shadow: none !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 12px !important;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--luma-shadow) !important;
+  border-color: #CBD5E1 !important;
+}
+
+.card__media, .card-wrapper .media {
+  background: #FFFFFF !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.card__media img {
+  object-fit: contain !important;
+  padding: 14px !important;
+  transition: transform 0.4s ease !important;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.04) !important;
+}
+
+/* 3. REFINED PRICING & BUTTONS */
+.price-item--sale {
+  color: var(--luma-text) !important;
+  font-weight: 800 !important;
+  font-size: 17px !important;
+}
+
+.price-item--regular {
+  color: #94A3B8 !important;
+  font-size: 14px !important;
+  text-decoration: line-through !important;
+  margin-left: 6px !important;
+}
+
+.button, .button--primary, .btn {
+  background: var(--luma-text) !important;
+  color: #FFFFFF !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 12px 28px !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.button:hover {
+  background: var(--luma-teal) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25) !important;
+}

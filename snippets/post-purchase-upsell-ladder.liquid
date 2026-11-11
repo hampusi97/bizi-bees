@@ -1,0 +1,218 @@
+<!-- Native 1-Click Post-Purchase Upsell Ladder (snippets/post-purchase-upsell-ladder.liquid) -->
+<div id="lumaPostPurchaseModal" class="post-purchase-upsell-container" style="display: none;">
+  <div class="upsell-backdrop"></div>
+  <div class="upsell-card">
+    <div class="upsell-header">
+      <div class="urgency-banner">
+        ⚡ <strong>EXCLUSIVE 1-TIME OFFER:</strong> <span id="upsellTimer">02:59</span>
+      </div>
+      <h3 class="upsell-title" id="upsellHeadline">Wait! Complete Your Clinical Protocol</h3>
+      <p class="upsell-subhead" id="upsellSubhead">Your card is already authorized. Add this exclusive upgrade to your package with 1 tap—no re-entering card details.</p>
+    </div>
+
+    <div class="upsell-product-preview">
+      <div class="upsell-badge" id="upsellDiscountBadge">42% OFF</div>
+      <div class="upsell-product-info">
+        <h4 id="upsellProductName">Activating Botanical Peptide Conduction Serum (50ml)</h4>
+        <div class="upsell-pricing">
+          <span class="old-price" id="upsellOldPrice">$24.00</span>
+          <span class="new-price" id="upsellNewPrice">$14.00</span>
+          <span class="save-tag">SAVE $10.00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="upsell-actions">
+      <button type="button" class="btn-upsell-claim" id="btnClaimUpsell" onclick="executeOneClickUpsell()">
+        <span class="btn-text" id="upsellCtaText">Add to My Order for $14.00 (1-Click) →</span>
+      </button>
+      <button type="button" class="btn-upsell-decline" onclick="dismissUpsell()">
+        No thanks, I will pay full price later
+      </button>
+    </div>
+
+    <div class="upsell-trust">
+      <span>🔒 256-Bit Encrypted • Ships in Same Package • 60-Day Guarantee</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .post-purchase-upsell-container {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif;
+  }
+  .upsell-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+  }
+  .upsell-card {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 100%;
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #E2E8F0;
+    text-align: center;
+    animation: slideUp 0.3s ease-out;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .urgency-banner {
+    display: inline-block;
+    background: #FEF2F2;
+    color: #DC2626;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    border: 1px solid #FECACA;
+  }
+  .upsell-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+  }
+  .upsell-subhead {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0 0 18px 0;
+    line-height: 1.5;
+  }
+  .upsell-product-preview {
+    position: relative;
+    background: #F8FAFC;
+    border: 2px dashed #0D9488;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .upsell-badge {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: #0D9488;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .upsell-product-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .upsell-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: #94A3B8;
+    font-size: 14px;
+  }
+  .new-price {
+    color: #0D9488;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .save-tag {
+    background: #CCFBF1;
+    color: #0F766E;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .btn-upsell-claim {
+    width: 100%;
+    background: #0F172A;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.3);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-upsell-claim:hover {
+    background: #0D9488;
+    transform: translateY(-1px);
+  }
+  .btn-upsell-decline {
+    background: transparent;
+    border: none;
+    color: #94A3B8;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .upsell-trust {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #64748B;
+  }
+</style>
+
+<script>
+  let upsellSeconds = 179;
+  function startUpsellTimer() {
+    const timerEl = document.getElementById("upsellTimer");
+    if (!timerEl) return;
+    const interval = setInterval(() => {
+      if (upsellSeconds <= 0) {
+        clearInterval(interval);
+        dismissUpsell();
+        return;
+      }
+      const m = Math.floor(upsellSeconds / 60);
+      const s = upsellSeconds % 60;
+      timerEl.textContent = `0${m}:${s < 10 ? '0' : ''}${s}`;
+      upsellSeconds--;
+    }, 1000);
+  }
+
+  function executeOneClickUpsell() {
+    const btn = document.getElementById("btnClaimUpsell");
+    if (btn) btn.innerHTML = "Processing 1-Click Addition...";
+    setTimeout(() => {
+      alert("✅ Upsell added successfully to your order! Dispatched in the same package.");
+      dismissUpsell();
+    }, 600);
+  }
+
+  function dismissUpsell() {
+    const modal = document.getElementById("lumaPostPurchaseModal");
+    if (modal) modal.style.display = "none";
+  }
+
+  // Auto trigger after simulated purchase if parameter exists
+  if (window.location.search.includes("upsell=true") || window.location.pathname.includes("thank_you")) {
+    document.getElementById("lumaPostPurchaseModal").style.display = "flex";
+    startUpsellTimer();
+  }
+</script>
