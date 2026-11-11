@@ -4,10 +4,26 @@
    ========================================================================== */
 
 (function() {
-  const FREE_SHIPPING_THRESHOLD_CENTS = 5000; // $50.00 Threshold
+  let activeThresholdCents = 5000; // Default $50.00 fallback
+  let activeBanditVariant = 'tier-50';
+
+  // Autonomous MAB calibration
+  fetch('/api/bandit/decide?experiment=free-shipping-threshold')
+    .then(res => res.json())
+    .then(json => {
+      if (json.success && json.decision) {
+        activeThresholdCents = json.decision.value?.thresholdCents || 5000;
+        activeBanditVariant = json.decision.selectedVariantId;
+        if (window.DropperCart && window.DropperCart.renderLastCart) {
+          window.DropperCart.render(window.DropperCart.renderLastCart);
+        }
+      }
+    })
+    .catch(() => {});
 
   window.DropperCart = {
     isOpen: false,
+    renderLastCart: null,
 
     init: function() {
       this.bindEvents();
@@ -81,6 +97,18 @@
     },
 
     addItem: function(items, openDrawer = true) {
+      // Record conversion for MAB Free Shipping threshold
+      if (activeBanditVariant) {
+        fetch('/api/bandit/decide', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            experimentId: 'free-shipping-threshold',
+            variantId: activeBanditVariant
+          })
+        }).catch(() => {});
+      }
+
       return fetch('/cart/add.js', {
         method: 'POST',
         headers: {
@@ -123,6 +151,7 @@
     },
 
     render: function(cart) {
+      this.renderLastCart = cart;
       // 1. Update Cart Count Badges
       const countBadges = document.querySelectorAll('#DropperCartCount, .editorial-cart-count, .cart-pill');
       countBadges.forEach(b => b.textContent = cart.item_count || 0);
@@ -140,13 +169,13 @@
       if (checkoutTotalEl) checkoutTotalEl.textContent = formattedTotal;
 
       if (meterText && meterFill) {
-        if (totalCents >= FREE_SHIPPING_THRESHOLD_CENTS) {
+        if (totalCents >= activeThresholdCents) {
           meterText.innerHTML = '<span class="shipping-unlocked">🎉 You\'ve unlocked Free Standard Shipping!</span>';
           meterFill.style.width = '100%';
           meterFill.style.backgroundColor = '#2D3B2D';
         } else {
-          const remaining = ((FREE_SHIPPING_THRESHOLD_CENTS - totalCents) / 100).toFixed(2);
-          const percent = Math.min(100, Math.max(0, (totalCents / FREE_SHIPPING_THRESHOLD_CENTS) * 100));
+          const remaining = ((activeThresholdCents - totalCents) / 100).toFixed(2);
+          const percent = Math.min(100, Math.max(0, (totalCents / activeThresholdCents) * 100));
           meterText.innerHTML = `Add <strong>$${remaining}</strong> to unlock <strong>Free Standard Shipping</strong>`;
           meterFill.style.width = `${percent}%`;
           meterFill.style.backgroundColor = '#2D3B2D';

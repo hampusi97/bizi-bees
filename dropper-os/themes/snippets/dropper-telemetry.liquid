@@ -1,0 +1,110 @@
+{% comment %}
+  Dropper OS V2 - Self-Hosted Edge Telemetry & Rage-Click Tracker (1.2KB Zero-Dependency)
+  File: dropper-os/themes/snippets/dropper-telemetry.liquid
+{% endcomment %}
+
+<script>
+(function() {
+  var ENDPOINT = '/api/telemetry/ingest';
+  var SID_KEY = '_dropper_sid';
+  var sid = sessionStorage.getItem(SID_KEY);
+  if (!sid) {
+    sid = 's_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6);
+    sessionStorage.setItem(SID_KEY, sid);
+  }
+
+  var pageLoadTime = Date.now();
+  var deviceType = window.innerWidth <= 640 ? 'mobile' : (window.innerWidth <= 1024 ? 'tablet' : 'desktop');
+
+  function emit(type, data) {
+    var payload = JSON.stringify({
+      type: type,
+      sessionId: sid,
+      path: window.location.pathname,
+      device: deviceType,
+      data: data || {},
+      timestamp: Date.now()
+    });
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(ENDPOINT, payload);
+    } else {
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true
+      }).catch(function() {});
+    }
+  }
+
+  // 1. Initial Pageview
+  emit('pageview', { title: document.title, referrer: document.referrer });
+
+  // 2. Scroll Depth Milestones (25%, 50%, 75%, 100%)
+  var depthReached = { 25: false, 50: false, 75: false, 100: false };
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var pct = Math.round((scrollTop / docHeight) * 100);
+
+    [25, 50, 75, 100].forEach(function(m) {
+      if (pct >= m && !depthReached[m]) {
+        depthReached[m] = true;
+        emit('scroll_depth', { depth: m });
+      }
+    });
+  }, { passive: true });
+
+  // 3. Time-to-Cart Tracking
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('button, a, [data-add-to-cart], [name="add"], .btn-editorial-primary');
+    if (btn && (btn.innerText.indexOf('Add') !== -1 || btn.innerText.indexOf('Bag') !== -1 || btn.getAttribute('data-add-to-cart'))) {
+      var sec = Math.round((Date.now() - pageLoadTime) / 1000);
+      emit('time_to_cart', { seconds: sec, buttonText: (btn.innerText || '').trim() });
+    }
+  }, true);
+
+  // 4. Rage-Click Detection (>= 3 clicks on same element within 800ms)
+  var lastTarget = null;
+  var clickTimes = [];
+  document.addEventListener('click', function(e) {
+    var target = e.target;
+    var now = Date.now();
+
+    if (target === lastTarget) {
+      clickTimes.push(now);
+      clickTimes = clickTimes.filter(function(t) { return now - t <= 800; });
+      if (clickTimes.length >= 3) {
+        emit('rage_click', {
+          tagName: target.tagName,
+          className: target.className,
+          id: target.id,
+          clickCount: clickTimes.length
+        });
+        clickTimes = [];
+      }
+    } else {
+      lastTarget = target;
+      clickTimes = [now];
+    }
+  }, true);
+
+  // 5. Cart Abandonment Velocity (Item in cart but no checkout within 3 minutes)
+  var cartTimer = null;
+  document.addEventListener('dropper:cart:open', function() {
+    if (!cartTimer) {
+      cartTimer = setTimeout(function() {
+        if (!window.location.pathname.includes('/checkout')) {
+          emit('cart_abandonment_velocity', { idleMinutes: 3 });
+        }
+      }, 180000);
+    }
+  });
+
+  window.addEventListener('beforeunload', function() {
+    if (cartTimer) clearTimeout(cartTimer);
+  });
+})();
+</script>

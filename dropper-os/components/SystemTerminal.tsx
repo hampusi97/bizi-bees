@@ -3,50 +3,55 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Terminal, Shield, Play, RotateCcw } from "lucide-react";
 
+export type LogSource =
+  | "RADAR"
+  | "BANDIT"
+  | "FORECAST"
+  | "ISSUE-OPS"
+  | "PANIC"
+  | "TELEMETRY"
+  | "DROPPER_DAEMON"
+  | "GITHUB_BRIDGE"
+  | "GIT_PUSH";
+
 interface LogEntry {
   timestamp: string;
-  source: "DROPPER_DAEMON" | "TELEMETRY" | "GITHUB_BRIDGE" | "REPORT_GEN" | "GIT_PUSH" | "AUTOPILOT";
+  source: LogSource;
   message: string;
-  level: "info" | "success" | "warn" | "pulse";
+  level: "info" | "success" | "warn" | "danger" | "pulse";
 }
 
 export default function SystemTerminal() {
   const [logs, setLogs] = useState<LogEntry[]>([
     {
       timestamp: "00:00:01",
-      source: "DROPPER_DAEMON",
-      message: "Connecting to Shopify GraphQL API (bizibees-store)...",
-      level: "info",
+      source: "RADAR",
+      message: "New visitor entering checkout from Salt Lake City, UT (Session s_9f2a).",
+      level: "pulse",
     },
     {
       timestamp: "00:00:02",
-      source: "TELEMETRY",
-      message: "Response 200 OK (114ms) • SSL TLS_1_3 Active",
+      source: "BANDIT",
+      message: "Variant B (Free Shipping at $50) leading with 4.8% CR (+1.2% over Variant A).",
       level: "success",
     },
     {
       timestamp: "00:00:04",
-      source: "GITHUB_BRIDGE",
-      message: "Synced branch 'main' with commit 9c3eacd (Verified Clean)",
-      level: "pulse",
-    },
-    {
-      timestamp: "00:00:05",
-      source: "REPORT_GEN",
-      message: `Daily markdown briefing written to /reports/${new Date().toISOString().split("T")[0]}.md`,
-      level: "info",
+      source: "FORECAST",
+      message: "Bizi Bees™ Bookish Mystery Crate burn alert triggered: 4.6 days remaining (DIR).",
+      level: "warn",
     },
     {
       timestamp: "00:00:06",
-      source: "GIT_PUSH",
-      message: "Pushed automated commit to origin/main successfully (HTTP 200 OK).",
-      level: "success",
+      source: "ISSUE-OPS",
+      message: "Restock issue #12 auto-created on GitHub with reorder quantity Q=140.",
+      level: "info",
     },
     {
-      timestamp: "00:00:09",
-      source: "AUTOPILOT",
-      message: "Management by Exception active. Zero action items needed.",
-      level: "pulse",
+      timestamp: "00:00:08",
+      source: "TELEMETRY",
+      message: "Sub-5ms beacon ingest stream active. 0 rage clicks in the last 15 minutes.",
+      level: "success",
     },
   ]);
 
@@ -56,30 +61,68 @@ export default function SystemTerminal() {
     terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [logs]);
 
-  // Periodic heartbeat message
+  // Connect to live SSE stream for real events
   useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString("en-US", { hour12: false });
-      const pings = [
-        {
-          timestamp: timeStr,
-          source: "TELEMETRY" as const,
-          message: `Health check passed across 3 storefronts (avg 24ms). All checkouts 200 OK.`,
-          level: "success" as const,
-        },
-        {
-          timestamp: timeStr,
-          source: "DROPPER_DAEMON" as const,
-          message: `Audited supplier stockouts. Zero unmapped orders detected.`,
-          level: "info" as const,
-        },
-      ];
-      const selected = pings[Math.floor(Math.random() * pings.length)];
-      setLogs((prev) => [...prev.slice(-30), selected]);
-    }, 24000);
+    let es: EventSource | null = null;
+    try {
+      es = new EventSource("/api/telemetry/stream");
+      es.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          const nowStr = new Date().toLocaleTimeString("en-US", { hour12: false });
 
-    return () => clearInterval(timer);
+          if (msg.channel === "bandit") {
+            setLogs((prev) => [
+              ...prev.slice(-40),
+              {
+                timestamp: nowStr,
+                source: "BANDIT",
+                message: `Variant '${msg.data?.variantId}' served (isExploration: ${msg.data?.isExploration ? "true" : "false"})`,
+                level: "success",
+              },
+            ]);
+          } else if (msg.channel === "issue-ops") {
+            setLogs((prev) => [
+              ...prev.slice(-40),
+              {
+                timestamp: nowStr,
+                source: "ISSUE-OPS",
+                message: `Restock issue logged for '${msg.data?.title}' (${msg.data?.daysRemaining} days left).`,
+                level: "info",
+              },
+            ]);
+          } else if (msg.channel === "panic") {
+            setLogs((prev) => [
+              ...prev.slice(-40),
+              {
+                timestamp: nowStr,
+                source: "PANIC",
+                message: msg.data?.message || "EMERGENCY PANIC MODE STATUS CHANGED",
+                level: "danger",
+              },
+            ]);
+          } else if (msg.channel === "telemetry" && msg.event === "rage_click") {
+            setLogs((prev) => [
+              ...prev.slice(-40),
+              {
+                timestamp: nowStr,
+                source: "RADAR",
+                message: `Rage click detected on element <${msg.data?.data?.tagName || 'unknown'}>. Alert triggered.`,
+                level: "warn",
+              },
+            ]);
+          }
+        } catch {
+          // ignore
+        }
+      };
+    } catch {
+      // fallback
+    }
+
+    return () => {
+      if (es) es.close();
+    };
   }, []);
 
   return (
@@ -103,15 +146,27 @@ export default function SystemTerminal() {
       <div className="overflow-y-auto mt-3 space-y-1.5 flex-1 pr-1 select-text">
         {logs.map((log, index) => {
           let sourceColor = "text-cyber-cyan";
-          if (log.source === "TELEMETRY") sourceColor = "text-cyber-emerald";
-          if (log.source === "GIT_PUSH") sourceColor = "text-cyber-violet";
-          if (log.source === "REPORT_GEN") sourceColor = "text-cyber-amber";
+          if (log.source === "RADAR") sourceColor = "text-cyber-cyan";
+          if (log.source === "BANDIT") sourceColor = "text-cyber-emerald";
+          if (log.source === "FORECAST") sourceColor = "text-cyber-amber";
+          if (log.source === "ISSUE-OPS") sourceColor = "text-cyber-violet";
+          if (log.source === "PANIC") sourceColor = "text-cyber-rose";
 
           return (
             <div key={index} className="leading-relaxed flex items-start space-x-2">
               <span className="text-titanium-400 select-none">[{log.timestamp}]</span>
               <span className={`font-bold ${sourceColor}`}>[{log.source}]:</span>
-              <span className="text-titanium-200">{log.message}</span>
+              <span
+                className={`${
+                  log.level === "danger"
+                    ? "text-cyber-rose font-bold"
+                    : log.level === "warn"
+                    ? "text-cyber-amber"
+                    : "text-titanium-200"
+                }`}
+              >
+                {log.message}
+              </span>
             </div>
           );
         })}
@@ -121,10 +176,10 @@ export default function SystemTerminal() {
       {/* Terminal Prompt Footer */}
       <div className="mt-3 pt-2 border-t border-titanium-800/80 flex items-center justify-between text-[11px] text-titanium-400">
         <div className="flex items-center space-x-1.5">
-          <span className="text-cyber-emerald">dropper-os@fleet:~$</span>
+          <span className="text-cyber-emerald">dropper-os@v2:~$</span>
           <span className="animate-pulse">_</span>
         </div>
-        <span>Next cron cycle: 23:59:00 UTC</span>
+        <span>Bandit &amp; Telemetry streaming</span>
       </div>
     </div>
   );

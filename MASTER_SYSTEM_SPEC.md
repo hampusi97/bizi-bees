@@ -1883,5 +1883,63 @@ node dropper-daemon.js
 
 ---
 
+## 33. Dropper OS V2: Autonomous Algorithmic Commerce Engine
+
+```text
+dropper-os/
+├── lib/
+│   ├── telemetry/
+│   │   ├── edge-collector.ts       # Self-hosted sub-5ms analytics & rage-click ingest
+│   │   └── sse-event-bus.ts        # Server-Sent Events (SSE) live data stream
+│   ├── algorithms/
+│   │   ├── multi-armed-bandit.ts   # Epsilon-Greedy client-side A/B/n testing engine
+│   │   └── inventory-forecaster.ts # Linear regression burn-rate & runout date predictor
+│   └── github/
+│       └── issue-ops.ts            # Programmatic GitHub Issue creator for restocks & alerts
+├── app/
+│   ├── api/
+│   │   ├── telemetry/
+│   │   │   ├── ingest/route.ts     # Lightweight beacon endpoint for storefront tracking
+│   │   │   └── stream/route.ts     # SSE endpoint for real-time live desktop HUD
+│   │   ├── bandit/
+│   │   │   └── decide/route.ts     # Edge variant decision router
+│   │   ├── inventory/
+│   │   │   └── forecast/route.ts   # Inventory burn-rate & restock ops trigger
+│   │   └── dropper/
+│   │       └── panic/route.ts      # Emergency kill-switch (Panic Mode)
+│   └── components/
+│       ├── LiveVisitorRadar.tsx    # Real-time cart & live session visualizer
+│       └── PredictiveStockHUD.tsx  # Forecasted runout curve charts
+└── themes/
+    └── snippets/
+        └── dropper-telemetry.liquid # Zero-dependency 1.2KB tracking snippet
+```
+
+### 1. Subsystem 1: Self-Hosted Edge Telemetry & Rage-Click Tracker
+- 1.2KB zero-dependency tracking snippet (`snippets/dropper-telemetry.liquid`).
+- Non-blocking beacon delivery via `navigator.sendBeacon('/api/telemetry/ingest')`.
+- Tracks: Session ID, Page Path, Device Type, Scroll Depth (25%, 50%, 75%, 100%), Time-to-Cart.
+- Rage-Click Detection: Identifies $\ge 3$ rapid clicks on unhandled elements within 800ms.
+- Cart Abandonment Velocity: Triggers alert when cart is idle for 3 minutes without checkout initiation.
+- Real-time Server-Sent Events (SSE) feed via `/api/telemetry/stream`.
+
+### 2. Subsystem 2: Multi-Armed Bandit Testing (MAB)
+- Epsilon-Greedy dynamic allocation algorithm (`lib/algorithms/multi-armed-bandit.ts`).
+- Avoids wasting 50% traffic on losing variants: allocates 90% of traffic to the winning variant ($1 - \epsilon$) while maintaining 10% continuous exploration ($\epsilon$).
+- Wired to Free Shipping Threshold ($35 vs $50 vs $65) and Storefront Editorial Headlines.
+
+### 3. Subsystem 3: Predictive Inventory Forecasting & GitHub Issue-Ops
+- Linear burn-rate formula: $v = \frac{\text{Units Sold in Last 14 Days}}{14}$.
+- Days of Inventory Remaining: $\text{DIR} = \frac{\text{Current Inventory Balance}}{v}$.
+- Reorder calculation: $Q = v \times \text{leadTimeDays} \times 1.5$.
+- Automated GitHub Issue Ops (`lib/github/issue-ops.ts`): Automatically creates `[RESTOCK CRITICAL]: {Product Title}` tickets on GitHub repository when DIR $< 7$ days.
+
+### 4. Subsystem 4: Dropper OS HUD & Emergency Panic Mode
+- `LiveVisitorRadar.tsx`: Live canvas/SVG visitor pulse map with real-time active carts and rage click alerts.
+- `PredictiveStockHUD.tsx`: Dynamic runout trajectory forecast table with 1-click GitHub restock ticket sync.
+- Emergency Kill-Switch: Single-button HUD toggle (`/api/dropper/panic`) to instantly pause dynamic scripts and revert theme to safe standard fallback.
+
+---
+
 ### Operating Philosophy
 Save this document as `MASTER_SYSTEM_SPEC.md` in the root of your project repository. It serves as the single source of truth for all code, styling, operational workflows, and marketing funnels across your e-commerce properties.

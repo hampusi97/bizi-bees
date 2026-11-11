@@ -6,6 +6,8 @@ import FleetMatrix from "@/components/FleetMatrix";
 import LiveSalesFeed from "@/components/LiveSalesFeed";
 import SystemTerminal from "@/components/SystemTerminal";
 import QuickDeployModal from "@/components/QuickDeployModal";
+import LiveVisitorRadar from "@/components/LiveVisitorRadar";
+import PredictiveStockHUD from "@/components/PredictiveStockHUD";
 import { StoreMetrics } from "@/lib/shopify-client";
 import {
   TrendingUp,
@@ -16,6 +18,8 @@ import {
   FileText,
   Search,
   CheckCircle,
+  AlertOctagon,
+  Power,
 } from "lucide-react";
 
 export default function DropperOSDashboard() {
@@ -95,6 +99,46 @@ export default function DropperOSDashboard() {
     name: "Bizi Bees Boutique",
   });
   const [reportSuccessNotice, setReportSuccessNotice] = useState<string | null>(null);
+  const [panicMode, setPanicMode] = useState<boolean>(false);
+
+  // Check initial panic state
+  useEffect(() => {
+    fetch("/api/dropper/panic")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data && data.panicMode !== undefined) {
+          setPanicMode(data.panicMode);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const handleTogglePanic = async () => {
+    const nextState = !panicMode;
+    const confirmMsg = nextState
+      ? "EMERGENCY PANIC MODE: Instantly pause dynamic scripts and revert theme to standard fallback mode?"
+      : "Disengage Emergency Panic Mode and restore dynamic algorithmic engines?";
+    if (!confirm(confirmMsg)) return;
+
+    try {
+      const res = await fetch("/api/dropper/panic", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ active: nextState }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setPanicMode(json.panicMode);
+        setReportSuccessNotice(
+          json.panicMode
+            ? "EMERGENCY PANIC MODE ENGAGED: Dynamic scripts paused."
+            : "Panic mode disengaged: Full dynamic engines restored."
+        );
+      }
+    } catch (e: any) {
+      alert("Panic mode error: " + e.message);
+    }
+  };
 
   // Keyboard shortcut listener for ⌘K
   useEffect(() => {
@@ -172,6 +216,36 @@ export default function DropperOSDashboard() {
           </div>
         )}
 
+        {/* V2 Emergency Panic Mode & Control Banner */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-xl border border-titanium-800 bg-titanium-900/40 p-3.5 backdrop-blur">
+          <div className="flex items-center space-x-3">
+            <span className={`flex h-3 w-3 rounded-full ${panicMode ? "bg-cyber-rose animate-ping" : "bg-cyber-emerald"}`}></span>
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-titanium-200">
+                Dropper OS V2 · Algorithmic Core:{" "}
+                <span className={panicMode ? "text-cyber-rose" : "text-cyber-emerald"}>
+                  {panicMode ? "PANIC MODE ENGAGED (SAFE FALLBACK)" : "ACTIVE & SELF-OPTIMIZING"}
+                </span>
+              </span>
+              <p className="text-[11px] text-titanium-400 font-mono mt-0.5">
+                MAB testing, edge telemetry &amp; predictive forecasting executing in real time.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={handleTogglePanic}
+            className={`flex items-center space-x-2 rounded-lg px-3.5 py-1.5 text-xs font-mono font-bold transition border ${
+              panicMode
+                ? "bg-cyber-emerald/15 border-cyber-emerald/40 text-cyber-emerald hover:bg-cyber-emerald/25"
+                : "bg-cyber-rose/15 border-cyber-rose/40 text-cyber-rose hover:bg-cyber-rose/25"
+            }`}
+          >
+            <Power className="h-3.5 w-3.5" />
+            <span>{panicMode ? "RESTORE DYNAMIC ENGINES" : "EMERGENCY PANIC KILL-SWITCH"}</span>
+          </button>
+        </div>
+
         {/* Hero Telemetry Strip */}
         <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {/* Card 1: Total Fleet Revenue */}
@@ -244,6 +318,12 @@ export default function DropperOSDashboard() {
           onRefreshTelemetry={fetchTelemetry}
           isRefreshing={isRefreshing}
         />
+
+        {/* Dropper OS V2: Live Visitor Radar & Predictive Stock HUD */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <LiveVisitorRadar />
+          <PredictiveStockHUD />
+        </section>
 
         {/* Bottom Split Pane: Live Sales Feed & System Terminal */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-[420px]">
