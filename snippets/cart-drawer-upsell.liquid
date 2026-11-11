@@ -1,0 +1,145 @@
+{% comment %}
+  In-cart 1-click upsell — Activating Conductive Peptide Serum
+  Place inside cart drawer / cart page near line items.
+{% endcomment %}
+
+{% assign serum_handle = section.settings.serum_handle | default: 'lumaglow-activating-conductive-peptide-serum' %}
+{% assign serum = all_products[serum_handle] %}
+
+{% if serum != blank and serum.available %}
+<div class="cart-upsell" id="cart-upsell-serum" data-variant-id="{{ serum.selected_or_first_available_variant.id }}">
+  <div class="cart-upsell__media">
+    {% if serum.featured_image %}
+      {{ serum.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', class: 'cart-upsell__img', alt: serum.title }}
+    {% endif %}
+  </div>
+  <div class="cart-upsell__body">
+    <div class="cart-upsell__eyebrow">Complete your ritual</div>
+    <div class="cart-upsell__title">{{ serum.title | truncate: 48 }}</div>
+    <div class="cart-upsell__price-row">
+      <span class="cart-upsell__price">{{ serum.price | money }}</span>
+      {% if serum.compare_at_price > serum.price %}
+        <span class="cart-upsell__save">Save {{ serum.compare_at_price | minus: serum.price | times: 100.0 | divided_by: serum.compare_at_price | round }}%</span>
+      {% else %}
+        <span class="cart-upsell__save">Add-on</span>
+      {% endif %}
+    </div>
+  </div>
+  <button type="button" class="cart-upsell__btn" data-cart-upsell-add>
+    + Add
+  </button>
+</div>
+
+<style>
+  .cart-upsell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-radius: 12px;
+    margin: 12px 0;
+  }
+  .cart-upsell__media {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    flex-shrink: 0;
+  }
+  .cart-upsell__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cart-upsell__body {
+    flex: 1;
+    min-width: 0;
+  }
+  .cart-upsell__eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0D9488;
+  }
+  .cart-upsell__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.3;
+    margin: 2px 0 4px;
+  }
+  .cart-upsell__price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cart-upsell__price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .cart-upsell__save {
+    font-size: 11px;
+    font-weight: 600;
+    color: #0D9488;
+  }
+  .cart-upsell__btn {
+    flex-shrink: 0;
+    background: #0F172A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .cart-upsell__btn:hover {
+    background: #0D9488;
+  }
+  .cart-upsell__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('cart-upsell-serum');
+  if (!root) return;
+  var btn = root.querySelector('[data-cart-upsell-add]');
+  var variantId = root.getAttribute('data-variant-id');
+  if (!btn || !variantId) return;
+
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    btn.textContent = 'Adding…';
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ id: Number(variantId), quantity: 1 })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function () {
+        btn.textContent = 'Added';
+        document.dispatchEvent(new CustomEvent('cart:updated'));
+        // Optional: refresh drawer if theme exposes a method
+        if (window.theme && typeof window.theme.refreshCart === 'function') {
+          window.theme.refreshCart();
+        } else {
+          setTimeout(function () { window.location.href = '/cart'; }, 600);
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = '+ Add';
+      });
+  });
+})();
+</script>
+{% endif %}

@@ -1,0 +1,206 @@
+{% comment %}
+  Luma Flagship 3-Tier Bundle Ladder
+  Solo · Glow Kit (featured) · Clinical Master Suite
+{% endcomment %}
+
+<section class="luma-flagship" id="luma-flagship-{{ section.id }}" data-ud-aura>
+  <div class="wrap">
+    <div class="luma-flagship__header">
+      <span class="luma-flagship__eyebrow">{{ section.settings.eyebrow | default: 'Choose your protocol' }}</span>
+      <h2 class="luma-flagship__title">{{ section.settings.title | default: 'The Luma Clinical Ladder' }}</h2>
+      <p class="luma-flagship__sub">{{ section.settings.subtitle | default: 'Start with the wand, step up to the full 30-day kit, or go complete with the Master Suite.' }}</p>
+    </div>
+
+    <div class="luma-flagship__grid">
+      <!-- Tier 1: Solo -->
+      <article class="luma-tier">
+        <div class="luma-tier__label">Solo</div>
+        <h3 class="luma-tier__name">{{ section.settings.tier1_title | default: 'LumaGlow Wand' }}</h3>
+        <p class="luma-tier__desc">{{ section.settings.tier1_desc | default: '4-in-1 red light + microcurrent facial wand for daily at-home rituals.' }}</p>
+        <div class="luma-tier__price">
+          <span class="luma-tier__current">{{ section.settings.tier1_price | default: '$39.99' }}</span>
+        </div>
+        <p class="luma-tier__pay">or 4 interest-free payments of $10.00 with Shop Pay</p>
+        <a href="{{ section.settings.tier1_url | default: '/products/lumaglow-4-in-1-red-light-microcurrent-facial-sculpting-wand' }}" class="luma-tier__btn boutique-btn-secondary">Shop Solo</a>
+      </article>
+
+      <!-- Tier 2: Featured -->
+      <article class="luma-tier luma-tier--featured ud-tilt-card">
+        <div class="luma-tier__badge">Most Popular</div>
+        <div class="luma-tier__label">30-Day Glow Kit</div>
+        <h3 class="luma-tier__name">{{ section.settings.tier2_title | default: 'Wand + Serum + Case' }}</h3>
+        <p class="luma-tier__desc">{{ section.settings.tier2_desc | default: 'Complete starter system with activating peptide serum and velvet travel case.' }}</p>
+        <div class="luma-tier__price">
+          <span class="luma-tier__current">{{ section.settings.tier2_price | default: '$59.99' }}</span>
+          <span class="luma-tier__compare">{{ section.settings.tier2_compare | default: '$89.99' }}</span>
+        </div>
+        <p class="luma-tier__pay">or 4 interest-free payments of $15.00 with Shop Pay</p>
+        <a href="{{ section.settings.tier2_url | default: '/collections/luma-wellness' }}" class="luma-tier__btn boutique-btn-primary ud-magnetic">Claim Glow Kit</a>
+      </article>
+
+      <!-- Tier 3: Master -->
+      <article class="luma-tier">
+        <div class="luma-tier__label">Clinical Master</div>
+        <h3 class="luma-tier__name">{{ section.settings.tier3_title | default: 'Full Suite' }}</h3>
+        <p class="luma-tier__desc">{{ section.settings.tier3_desc | default: 'Wand, mask, sculptor, serum, and case — the complete at-home protocol.' }}</p>
+        <div class="luma-tier__price">
+          <span class="luma-tier__current">{{ section.settings.tier3_price | default: '$119.00' }}</span>
+        </div>
+        <p class="luma-tier__pay">or 4 interest-free payments of $29.75 with Shop Pay</p>
+        <a href="{{ section.settings.tier3_url | default: '/collections/luma-wellness' }}" class="luma-tier__btn boutique-btn-secondary">Shop Master Suite</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .luma-flagship {
+    padding: 72px 0 64px;
+    background: #F8FAFC;
+  }
+  .luma-flagship__header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+  .luma-flagship__eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0D9488;
+    margin-bottom: 12px;
+  }
+  .luma-flagship__title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #0F172A;
+    margin: 0 0 12px;
+  }
+  .luma-flagship__sub {
+    color: #64748B;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .luma-flagship__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+  .luma-tier {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 28px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .luma-tier--featured {
+    border-color: #0D9488;
+    box-shadow: 0 12px 40px rgba(13, 148, 136, 0.12);
+    transform: scale(1.03);
+    z-index: 1;
+  }
+  .luma-tier__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0D9488;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .luma-tier__label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748B;
+    margin-bottom: 8px;
+  }
+  .luma-tier__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 10px;
+  }
+  .luma-tier__desc {
+    font-size: 0.9rem;
+    color: #64748B;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin: 0 0 20px;
+  }
+  .luma-tier__price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .luma-tier__current {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .luma-tier__compare {
+    font-size: 0.95rem;
+    color: #94A3B8;
+    text-decoration: line-through;
+  }
+  .luma-tier__pay {
+    font-size: 12px;
+    color: #64748B;
+    margin: 0 0 20px;
+  }
+  .luma-tier__btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  @media (max-width: 900px) {
+    .luma-flagship__grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .luma-tier--featured {
+      transform: none;
+      order: -1;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Luma Flagship Offer",
+  "tag": "section",
+  "class": "section-luma-flagship",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Choose your protocol" },
+    { "type": "text", "id": "title", "label": "Title", "default": "The Luma Clinical Ladder" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Start with the wand, step up to the full 30-day kit, or go complete with the Master Suite." },
+    { "type": "text", "id": "tier1_title", "label": "Tier 1 Title", "default": "LumaGlow Wand" },
+    { "type": "text", "id": "tier1_desc", "label": "Tier 1 Description" },
+    { "type": "text", "id": "tier1_price", "label": "Tier 1 Price", "default": "$39.99" },
+    { "type": "url", "id": "tier1_url", "label": "Tier 1 URL" },
+    { "type": "text", "id": "tier2_title", "label": "Tier 2 Title", "default": "Wand + Serum + Case" },
+    { "type": "text", "id": "tier2_desc", "label": "Tier 2 Description" },
+    { "type": "text", "id": "tier2_price", "label": "Tier 2 Price", "default": "$59.99" },
+    { "type": "text", "id": "tier2_compare", "label": "Tier 2 Compare", "default": "$89.99" },
+    { "type": "url", "id": "tier2_url", "label": "Tier 2 URL" },
+    { "type": "text", "id": "tier3_title", "label": "Tier 3 Title", "default": "Full Suite" },
+    { "type": "text", "id": "tier3_desc", "label": "Tier 3 Description" },
+    { "type": "text", "id": "tier3_price", "label": "Tier 3 Price", "default": "$119.00" },
+    { "type": "url", "id": "tier3_url", "label": "Tier 3 URL" }
+  ],
+  "presets": [{ "name": "Luma Flagship Offer" }]
+}
+{% endschema %}
