@@ -1,105 +1,86 @@
-{
-  "version": "2.4.0",
-  "engine": "Remotion-Headless-CLI",
-  "generatedAt": "2026-11-11T01:54:04.840Z",
-  "jobs": [
-    {
-      "jobId": "vid_render_luma_wand_1080x1920",
-      "brand": "Luma Clinical",
-      "product": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
-      "resolution": {
-        "width": 1080,
-        "height": 1920,
-        "fps": 30,
-        "aspectRatio": "9:16"
-      },
-      "durationSeconds": 14,
-      "mediaAssetUrl": "https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg",
-      "voiceover": {
-        "provider": "ElevenLabs",
-        "voiceId": "21m00Tcm4TlvDq8ikWAM",
-        "model": "eleven_multilingual_v2",
-        "script": "Stop spending $170 on facial wands that break in a month. This medical-grade 4-in-1 wand does red phototherapy, microcurrent, and thermal massage for under $40."
-      },
-      "audioTrack": {
-        "title": "Lo-Fi Clinical Ambient Chill",
-        "bpm": 110,
-        "duckingPct": 35
-      },
-      "scenes": [
-        {
-          "startTime": 0,
-          "endTime": 3.5,
-          "hookText": "SOLAWAVE VS. $40 DUP",
-          "captionStyle": "kinetic-pop-yellow",
-          "visualEffect": "3D_specular_zoom"
-        },
-        {
-          "startTime": 3.5,
-          "endTime": 9,
-          "hookText": "630nm Medical Red Light + 330µA Microcurrent",
-          "captionStyle": "subtle-badge-pill",
-          "visualEffect": "clinical_split_comparison"
-        },
-        {
-          "startTime": 9,
-          "endTime": 14,
-          "hookText": "Free US Shipping + Free Peptide Serum",
-          "captionStyle": "urgency-pulse-emerald",
-          "visualEffect": "cta_cart_unlock"
-        }
-      ],
-      "outputFile": "vid_render_luma_wand_1080x1920.mp4",
-      "status": "READY_FOR_FFMPEG_DISPATCH"
+[
+  {
+    "job_id": "vid_luma_wand_14s",
+    "brand": "Luma Clinical",
+    "product_name": "LumaGlow\u2122 QuadWave Pro 4-in-1 Facial Wand",
+    "product_url": "https://bizibees-store.myshopify.com/products/lumaglow-4-in-1-facial-wand",
+    "format": {
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "duration_seconds": 14.0,
+      "fps": 30
     },
-    {
-      "jobId": "vid_render_fizz_soda_1080x1920",
-      "brand": "Fizz Lab",
-      "product": "At-Home Dirty Soda Bar Mixology Kit",
-      "resolution": {
-        "width": 1080,
-        "height": 1920,
-        "fps": 30,
-        "aspectRatio": "9:16"
+    "voiceover": {
+      "model": "elevenlabs_multilingual_v2",
+      "voice_id": "21m00Tcm4TlvDq8ikWAM",
+      "speech_rate": 1.15
+    },
+    "timeline": [
+      {
+        "time_range": "0:00 - 0:03",
+        "scene_type": "HOOK_AVATAR",
+        "visual_prompt": "Female creator 28yo in modern luxury bathroom touching glowing 630nm red light wand to cheek in mirror reflection",
+        "text_overlay": "Dermatologists charge $169 for this exact same wand \ud83e\udd2b",
+        "audio_script": "If you are still overpaying for that famous red light wand, watch this."
       },
-      "durationSeconds": 14,
-      "mediaAssetUrl": "https://fizz-lab.myshopify.com/cdn/shop/files/dirty-soda-hero.jpg",
-      "voiceover": {
-        "provider": "ElevenLabs",
-        "voiceId": "AZnzlk1XvdvUeBnXmlld",
-        "model": "eleven_multilingual_v2",
-        "script": "POV: You live anywhere in the US and can now make Utah dirty soda right in your own kitchen for 60 cents a glass."
+      {
+        "time_range": "0:03 - 0:08",
+        "scene_type": "CLINICAL_DEMO",
+        "visual_prompt": "Macro close-up rotating 90-degree wand head, microcurrent pulse lines, 107 degree thermal warmth on skin",
+        "text_overlay": "630nm Light + 330\u00b5A Microcurrent = $39.99",
+        "audio_script": "It depuffs morning fluid and lifts the jawline in 3 minutes a day."
       },
-      "audioTrack": {
-        "title": "Effervescent Pop Upbeat ASMR",
-        "bpm": 124,
-        "duckingPct": 40
+      {
+        "time_range": "0:08 - 0:14",
+        "scene_type": "CTA_UNBOXING",
+        "visual_prompt": "Elegant luxury unboxing box with velvet insert and USPS priority dispatch label",
+        "text_overlay": "\u26a1 Free 24h US Dispatch \u2022 60-Day Trial Guarantee",
+        "audio_script": "Linked in our showcase below with free tracked priority shipping!"
+      }
+    ],
+    "music_track": "trending_lofi_aesthetic_clean_beat",
+    "output_filename": "lumaglow_14s_solawave_callout.mp4"
+  },
+  {
+    "job_id": "vid_fizz_soda_14s",
+    "brand": "Fizz Lab",
+    "product_name": "At-Home Dirty Soda Bar Starter Kit",
+    "product_url": "https://bizibees-store.myshopify.com/products/dirty-soda-starter-kit",
+    "format": {
+      "aspect_ratio": "9:16",
+      "resolution": "1080x1920",
+      "duration_seconds": 14.0,
+      "fps": 30
+    },
+    "voiceover": {
+      "model": "elevenlabs_multilingual_v2",
+      "voice_id": "AZnzlk1XvdvUeBnXmlld",
+      "speech_rate": 1.2
+    },
+    "timeline": [
+      {
+        "time_range": "0:00 - 0:03",
+        "scene_type": "HOOK_ASMR",
+        "visual_prompt": "Close up glass cup filled with ice cubes, Diet Coke being poured rapidly with fizz bubbles popping",
+        "text_overlay": "Making an authentic Utah dirty soda at home \ud83e\udd64",
+        "audio_script": "Here is how people in Utah turn normal soda into a luxury drink."
       },
-      "scenes": [
-        {
-          "startTime": 0,
-          "endTime": 4,
-          "hookText": "DIRTY SODA AT HOME IN 30 SECONDS",
-          "captionStyle": "bubble-bouncy-white",
-          "visualEffect": "carbonation_foam_pour"
-        },
-        {
-          "startTime": 4,
-          "endTime": 9.5,
-          "hookText": "Coconut Cream + Peach Purée + Tart Lime",
-          "captionStyle": "flavor-swatch-slide",
-          "visualEffect": "ice_swirl_macro"
-        },
-        {
-          "startTime": 9.5,
-          "endTime": 14,
-          "hookText": "Includes Free Barista Whisk & Syrup Pumps",
-          "captionStyle": "urgency-pulse-gold",
-          "visualEffect": "unboxing_spread"
-        }
-      ],
-      "outputFile": "vid_render_fizz_soda_1080x1920.mp4",
-      "status": "READY_FOR_FFMPEG_DISPATCH"
-    }
-  ]
-}
+      {
+        "time_range": "0:03 - 0:08",
+        "scene_type": "PUMP_DEMO",
+        "visual_prompt": "Two pumps of toasted coconut syrup splashing into soda, followed by a thick sweet coconut cream float swirling down",
+        "text_overlay": "2 Pumps Coconut + Sweet Cream Float",
+        "audio_script": "Two pumps of coconut barista syrup, then float sweet coconut cream right over the top."
+      },
+      {
+        "time_range": "0:08 - 0:14",
+        "scene_type": "TASTE_CTA",
+        "visual_prompt": "Straw inserted into swirling cream cup, box packaging showing pumps and recipe cards",
+        "text_overlay": "Barista Pumps + Syrups Shipped to Your Door ($48)",
+        "audio_script": "Get the complete Utah soda bar kit linked below before this batch sells out!"
+      }
+    ],
+    "music_track": "upbeat_acoustic_cheerful_pop",
+    "output_filename": "fizz_lab_14s_dirty_soda_asmr.mp4"
+  }
+]
