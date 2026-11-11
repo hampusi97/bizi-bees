@@ -44,7 +44,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/9798886631364.jpg?v=1794345324" 
           alt="Harry Potter: Spells and Potions 12-Month Undated Planner"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -68,7 +68,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/christmastreefarmclose.png?v=1794345648" 
           alt="Christmas Tree Farm Travel Tin Candle"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -92,7 +92,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/fresh-woods-petite-single-wick-long-burn-candle.jpg?v=1794345251" 
           alt="Fresh Woods Soy Blend Candle"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -115,7 +115,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/amber-santal-petite-single-wick-long-burn-candle.jpg?v=1794345176" 
           alt="Amber Santal Soy Blend Candle"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -138,7 +138,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/il_fullxfull.8239919103_qgps.jpg?v=1794344457" 
           alt="Frost &amp; Fir Shower Steamers"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -162,7 +162,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/il_fullxfull.8239882813_4ju8.jpg?v=1794344367" 
           alt="Santa's Spa Shower Steamers"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -186,7 +186,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/9781604689471.jpg?v=1794345493" 
           alt="Sleigh Bells: Stitch a Folk-Art Quilt Full of Winter Fun"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -210,7 +210,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/b2feabfecf60417387761ad52a645efff44f2cec831fd71a52ea1aa27122acdf_jpeg.webp?v=1794329002" 
           alt="Gardener's Washi Tape Set"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -234,7 +234,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/IMG_7717.jpg?v=1794329080" 
           alt="12 Sheets Functional Sticker Set for Planners"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -257,7 +257,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/43572d0ed1b06057cba1f9f56ed7a1d9.jpg?v=1794328801" 
           alt="Squishy Dumpling Advent Calendar"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -281,7 +281,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/nutcracker-sugar-plum-fairy-amigurumi-kit-mumbai-eco-friendly-yarn-crochet-knit-boho-plus-size-womens-clothing-554439.jpg?v=1794295206" 
           alt="Nutcracker &amp; Sugar Plum Fairy Amigurumi Kit"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -304,7 +304,7 @@
         <img 
           src="https://cdn.shopify.com/s/files/1/0778/2465/5527/files/smartmockups_lfbbcqwn.jpg?v=1794295351" 
           alt="Tarot Spreads for All Occasions"
-          loading="lazy"
+          
         >
       </div>
       <div class="bb-card-body">
@@ -431,23 +431,27 @@
   .bb-card-media {
     position: relative;
     width: 100%;
-    aspect-ratio: 1;
-    background: #F8F5EE;
+    height: 260px;
+    background: #FDFBF7;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     padding: 16px;
+    box-sizing: border-box;
   }
   .bb-card-media img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
     border-radius: 10px;
     transition: transform 0.3s ease;
   }
   .bb-prod-card:hover .bb-card-media img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
   .bb-badge-gold {
     position: absolute;
