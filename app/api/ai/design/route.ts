@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 export async function POST(request: Request) {
   try {
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
       storeName,
       niche,
       designGoal = "Hero Banner & Value Props",
-      aesthetic = "Luxury DTC with obsidian/gold accents and micro-interactions"
+      aesthetic = "Warm Tactile Craft & Vintage Kraft"
     } = await request.json();
 
     if (!storeName) {
@@ -53,7 +54,7 @@ Desired Aesthetic: ${aesthetic}
 
 Please produce a comprehensive, ultra-professional design spec with ready-to-use Shopify Liquid code.`;
 
-    const modelsToTry = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-3.8-flash"];
+    const modelsToTry = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.8-flash"];
     let lastError: any = null;
 
     for (let kIdx = 0; kIdx < availableKeys.length; kIdx++) {
@@ -67,7 +68,14 @@ Please produce a comprehensive, ultra-professional design spec with ready-to-use
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               contents: [{ parts: [{ text: prompt }] }],
-              systemInstruction: { parts: [{ text: systemInstruction }] }
+              systemInstruction: { parts: [{ text: systemInstruction }] },
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 2500,
+                thinkingConfig: {
+                  thinkingBudget: 0
+                }
+              }
             })
           });
 
@@ -93,12 +101,10 @@ Please produce a comprehensive, ultra-professional design spec with ready-to-use
             }
           } else {
             lastError = data.error || { message: "Design generation failed" };
-            // If 429 quota exhausted on this key, break to next key
             if (data.error?.code === 429) {
-              break;
+              break; // Try next key
             }
-            // If 503 high demand or model error, continue to next model in loop
-            continue;
+            continue; // Try next model
           }
         } catch (err: any) {
           lastError = err;

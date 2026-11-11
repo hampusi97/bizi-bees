@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 60;
 
 export async function POST(request: Request) {
   try {
-    const { prompt, systemInstruction, model = "gemini-flash-latest" } = await request.json();
+    const { prompt, systemInstruction, model = "gemini-3.5-flash" } = await request.json();
 
     if (!prompt) {
       return NextResponse.json({ success: false, error: "Prompt is required" }, { status: 400 });
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: "No GEMINI_API_KEY configured" }, { status: 500 });
     }
 
-    const modelsToTry = [model, "gemini-flash-latest", "gemini-3.5-flash", "gemini-3.8-flash"];
+    const modelsToTry = [model, "gemini-3.5-flash", "gemini-flash-latest", "gemini-3.8-flash"];
     const uniqueModels = Array.from(new Set(modelsToTry));
     let lastError: any = null;
 
@@ -37,7 +38,14 @@ export async function POST(request: Request) {
               {
                 parts: [{ text: prompt }]
               }
-            ]
+            ],
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 1024,
+              thinkingConfig: {
+                thinkingBudget: 0
+              }
+            }
           };
 
           if (systemInstruction) {
@@ -73,12 +81,10 @@ export async function POST(request: Request) {
             }
           } else {
             lastError = data.error || { message: "Generation failed" };
-            // If quota exhausted (429), break to next key
             if (data.error?.code === 429) {
-              break;
+              break; // Try next key
             }
-            // If model error / high demand (503), continue to next model
-            continue;
+            continue; // Try next model
           }
         } catch (err: any) {
           lastError = err;
