@@ -1,0 +1,33 @@
+<!-- sections/interactive-micro-tool.liquid -->
+<section id="dp-micro-tool" style="max-width:1100px;margin:0 auto;padding:72px 24px;">
+  <div style="background:linear-gradient(145deg,var(--surface),#09090b);border:1px solid rgba(255,255,255,0.14);border-radius:24px;padding:36px;">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);">FREE INTERACTIVE DIAGNOSTIC & CONFIGURATOR</span>
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.85rem;font-weight:800;margin:6px 0 18px;">Calculate Your Custom {{ shop.name }} Ritual & Dosage</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px;">
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;opacity:0.75;display:block;margin-bottom:6px;">1. SELECT PRIMARY GOAL</label>
+        <select id="dp-tool-goal" style="width:100%;padding:12px;border-radius:10px;background:#09090b;color:#fff;border:1px solid rgba(255,255,255,0.18);">
+          <option value="fast">Fast Daily Results (5 Mins/Day)</option>
+          <option value="deep">Deep Intensive Recovery & Ritual</option>
+          <option value="gift">Complete Collector / Family Gift Box</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;opacity:0.75;display:block;margin-bottom:6px;">2. EXPERIENCE LEVEL</label>
+        <select id="dp-tool-level" style="width:100%;padding:12px;border-radius:10px;background:#09090b;color:#fff;border:1px solid rgba(255,255,255,0.18);">
+          <option value="starter">First-Time Beginner</option>
+          <option value="pro">Daily Enthusiast / Pro</option>
+          <option value="studio">Studio / Classroom / Household (2+ Users)</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:flex-end;">
+        <button onclick="document.getElementById('dp-tool-output').style.display='block'" class="btn-cta" style="width:100%;justify-content:center;padding:12px;">Generate My Custom Protocol &rarr;</button>
+      </div>
+    </div>
+    <div id="dp-tool-output" style="display:none;margin-top:20px;padding:20px;background:rgba(255,255,255,0.04);border-left:4px solid var(--accent);border-radius:12px;">
+      <strong style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--accent);display:block;margin-bottom:6px;">RECOMMENDED PROTOCOL UNLOCKED (+$15 OFF CODE: WELCOME15)</strong>
+      <p style="font-size:0.9rem;line-height:1.6;margin-bottom:14px;">Based on your profile, our <strong>Tier-2 Duo System + Instant Digital Masterclass Vault</strong> delivers the highest ROI and fastest daily results—and qualifies for Free Insured Express Shipping.</p>
+      <a href="#dp-bundles" class="btn-cta" style="padding:10px 22px;font-size:0.82rem;">Claim Recommended Bundle ($15 Off Auto-Applied) &rarr;</a>
+    </div>
+  </div>
+</section>{% schema %}{"name":"Interactive Traffic Micro-Tool","settings":[]}{% endschema %}
