@@ -53,7 +53,7 @@ div[style*="35% OFF LAUNCH"],
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   opacity: 1 !important;
   visibility: visible !important;
   position: relative !important;

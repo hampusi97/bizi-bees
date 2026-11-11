@@ -13,6 +13,10 @@
       "type": "home",
       "settings": {}
     },
+    "ultra_dynamic_tabbed_catalog": {
+      "type": "ultra-dynamic-tabbed-catalog",
+      "settings": {}
+    },
     "inspection_matrix": {
       "type": "bizi-inspection-matrix",
       "settings": {}
@@ -20,6 +24,7 @@
   },
   "order": [
     "editorial_home",
+    "ultra_dynamic_tabbed_catalog",
     "inspection_matrix"
   ]
 }

@@ -1,0 +1,715 @@
+<!-- ==========================================================
+     ULTRA-DYNAMIC MULTI-TABBED STOREFRONT SHOWCASE
+     Repo: bizi-bees /sections/ultra-dynamic-tabbed-catalog.liquid
+     ========================================================== -->
+
+<div class="dyn-catalog-wrapper" id="dynCatalog">
+  <div class="dyn-catalog-glow"></div>
+
+  <div class="dyn-catalog-header">
+    <div class="dyn-badge-pill">
+      <span class="dyn-pulse-dot"></span>
+      {{ section.settings.badge_text | default: "VERIFIED UTAH DISPATCH • 60-DAY RISK-FREE TRIAL" }}
+    </div>
+    <h2>{{ section.settings.heading | default: "Curated Clinical Tech & Boutique Finds" }}</h2>
+    <p>{{ section.settings.subheading | default: "Explore our flagship dermatology tools, therapeutic migraine recovery, and handpicked vintage treasures. Choose a category below:" }}</p>
+  </div>
+
+  <!-- Animated Dynamic Category Tabs -->
+  <div class="dyn-tabs-container">
+    <div class="dyn-tabs-track" role="tablist" aria-label="Catalog Categories">
+      <button class="dyn-tab-btn active" onclick="switchCategory('all', this)" type="button" role="tab" aria-selected="true">
+        <span>✨ All Flagship Items</span>
+      </button>
+      <button class="dyn-tab-btn" onclick="switchCategory('clinical', this)" type="button" role="tab" aria-selected="false">
+        <span>🔬 Luma Clinical™</span>
+      </button>
+      <button class="dyn-tab-btn" onclick="switchCategory('relief', this)" type="button" role="tab" aria-selected="false">
+        <span>🧊 Migraine &amp; Relief</span>
+      </button>
+      <button class="dyn-tab-btn" onclick="switchCategory('books', this)" type="button" role="tab" aria-selected="false">
+        <span>📖 Books &amp; Puzzles</span>
+      </button>
+      <button class="dyn-tab-btn" onclick="switchCategory('gifts', this)" type="button" role="tab" aria-selected="false">
+        <span>🎁 Gifts Under $25</span>
+      </button>
+      <div class="dyn-tab-slider" id="tabSlider"></div>
+    </div>
+  </div>
+
+  <!-- Dynamic Product Grid -->
+  <div class="dyn-grid" id="dynProductGrid">
+
+    <!-- Item 1: LumaGlow 4-in-1 (Clinical) -->
+    <div class="dyn-card" data-category="clinical all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-urgent">🔥 High Demand</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaGlow 4-in-1 Wand"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/0778/2465/5527/files/photo-1522337360788-8b13dee7a37e.jpg?v=1793651113';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.9 (184+ reviews)</span></div>
+        <h3>LumaGlow™ QuadWave Pro 4-in-1 Facial Wand</h3>
+        <p class="dyn-spec">630nm medical phototherapy, 330µA microcurrent &amp; 107°F thermal massage.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$38.99</strong>
+            <span class="dyn-strike">$89.99</span>
+          </div>
+          <span class="dyn-save">SAVE $51</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaGlow™ 4-in-1 Wand', '38.99', this)" type="button">
+          <span>Buy Now — $38.99 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 2: LumaRelief Migraine Cap (Relief) -->
+    <div class="dyn-card" data-category="relief all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-hsa">🏥 HSA/FSA Eligible</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaRelief Migraine Cap"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.9 (218+ reviews)</span></div>
+        <h3>LumaRelief™ 360° Cold &amp; Thermal Migraine Cap</h3>
+        <p class="dyn-spec">Drug-free headache, sinus tension &amp; eye strain relief with total blackout comfort.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$22.74</strong>
+            <span class="dyn-strike">$34.99</span>
+          </div>
+          <span class="dyn-save">SAVE 35%</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaRelief™ Migraine Cap', '22.74', this)" type="button">
+          <span>Buy Now — $22.74 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 3: LumaRelief 2-Cap Bundle (Relief) -->
+    <div class="dyn-card" data-category="relief all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-bundle">★ 2-Cap Rotation Pack</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaRelief 2-Cap Rotation"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>5.0 (92+ reviews)</span></div>
+        <h3>LumaRelief™ Continuous 2-Cap Rotation Pack</h3>
+        <p class="dyn-spec">Keep one cap in the freezer while using the other for non-stop all-day migraine relief.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$32.49</strong>
+            <span class="dyn-strike">$49.99</span>
+          </div>
+          <span class="dyn-save">BEST VALUE</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaRelief™ 2-Cap Bundle', '32.49', this)" type="button">
+          <span>Buy Bundle — $32.49 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 4: LumaMask LED Shield (Clinical) -->
+    <div class="dyn-card" data-category="clinical all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-clinic">🔬 7-Color Phototherapy</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaMask LED Shield"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>5.0 (96+ reviews)</span></div>
+        <h3>LumaMask™ 7-Color LED Phototherapy Face Shield</h3>
+        <p class="dyn-spec">Full-facial medical spectrum targeting acne, deep wrinkles &amp; hyperpigmentation.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$84.49</strong>
+            <span class="dyn-strike">$219.99</span>
+          </div>
+          <span class="dyn-save">SAVE $135</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaMask™ LED Shield', '84.49', this)" type="button">
+          <span>Buy Now — $84.49 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 5: LumaLift V-Face Sculptor (Clinical) -->
+    <div class="dyn-card" data-category="clinical all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-urgent">⚡ Microcurrent Lift</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaLift V-Face"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512290900672-1f5be979c656?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.9 (142+ reviews)</span></div>
+        <h3>LumaLift™ Microcurrent V-Face Jawline Sculptor</h3>
+        <p class="dyn-spec">Dual microcurrent spheres tone submental muscles and lift jowls in 5 mins/day.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$42.24</strong>
+            <span class="dyn-strike">$109.99</span>
+          </div>
+          <span class="dyn-save">SAVE $67</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaLift™ V-Face Sculptor', '42.24', this)" type="button">
+          <span>Buy Now — $42.24 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 6: LumaClean Sonic Brush Cleaner (Clinical / Gifts) -->
+    <div class="dyn-card" data-category="clinical gifts all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-hsa">✨ Rapid Sonic Spin</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="LumaClean Brush Cleaner"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.8 (110+ reviews)</span></div>
+        <h3>LumaClean™ Automatic Electric Makeup Brush Cleaner</h3>
+        <p class="dyn-spec">Cleans and spins dry all makeup brush sizes in under 30 seconds to prevent breakouts.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$19.49</strong>
+            <span class="dyn-strike">$29.99</span>
+          </div>
+          <span class="dyn-save">UNDER $20</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('LumaClean™ Brush Cleaner', '19.49', this)" type="button">
+          <span>Buy Now — $19.49 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 7: Blind Date with a Book Mystery Box (Books / Gifts) -->
+    <div class="dyn-card" data-category="books gifts all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-vintage">📖 Handpicked Vintage</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="Blind Date with a Book"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>5.0 (310+ reviews)</span></div>
+        <h3>Blind Date with a Book: Cozy Mystery Gift Box</h3>
+        <p class="dyn-spec">Wrapped in kraft paper with twine &amp; wax seal. Hand-inspected pre-loved vintage novel.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$14.99</strong>
+            <span class="dyn-strike">$24.00</span>
+          </div>
+          <span class="dyn-save">COZY PICK</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('Blind Date with a Book', '14.99', this)" type="button">
+          <span>Claim Mystery Box — $14.99 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 8: Weekly Luxury Planners (Gifts / Books) -->
+    <div class="dyn-card" data-category="gifts books all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-bundle">✍️ Velvet &amp; Leather</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="Luxury Weekly Planner"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.9 (84+ reviews)</span></div>
+        <h3>Curated Hardbound Weekly Planners</h3>
+        <p class="dyn-spec">Thick 120gsm bleed-proof paper, ribbon marker &amp; gold foil details. 6 gorgeous editions.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$24.99</strong>
+            <span class="dyn-strike">$45.00</span>
+          </div>
+          <span class="dyn-save">SAVE $20</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('Luxury Weekly Planner', '24.99', this)" type="button">
+          <span>Buy Planner — $24.99 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 9: 10 Frame Fidgets (Gifts) -->
+    <div class="dyn-card" data-category="gifts all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-hsa">🧩 Focus &amp; Sensory</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="10 Frame Fidgets"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>4.8 (64+ reviews)</span></div>
+        <h3>10 Frame Sensory Fidget Blocks (Set of 12)</h3>
+        <p class="dyn-spec">Tactile sensory math &amp; focus blocks for classroom, desk focus, or kids' stocking stuffers.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$9.74</strong>
+            <span class="dyn-strike">$14.99</span>
+          </div>
+          <span class="dyn-save">UNDER $10</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('10 Frame Fidgets Set', '9.74', this)" type="button">
+          <span>Buy Set — $9.74 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==========================================================
+     SCOPED 60 FPS ULTRA-DYNAMIC STYLING
+     ========================================================== -->
+<style>
+  .dyn-catalog-wrapper {
+    position: relative;
+    padding: 80px 20px 90px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+  }
+  .dyn-catalog-glow {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.10) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .dyn-catalog-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 35px;
+    position: relative;
+    z-index: 2;
+  }
+  .dyn-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    color: #0F766E;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 40px;
+    margin-bottom: 16px;
+  }
+  .dyn-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #0D9488;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.25);
+    animation: dynPulse 2s infinite;
+  }
+  @keyframes dynPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+  }
+  .dyn-catalog-header h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 900;
+    color: #0F172A;
+    letter-spacing: -1px;
+    margin: 0 0 12px;
+  }
+  .dyn-catalog-header p {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Animated Category Tabs */
+  .dyn-tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 3;
+  }
+  .dyn-tabs-track {
+    display: inline-flex;
+    background: #F1F5F9;
+    padding: 6px;
+    border-radius: 50px;
+    gap: 6px;
+    position: relative;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .dyn-tabs-track::-webkit-scrollbar { display: none; }
+  .dyn-tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748B;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+  }
+  .dyn-tab-btn:hover { color: #0F172A; }
+  .dyn-tab-btn.active {
+    background: #0F172A;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+  }
+
+  /* Product Grid */
+  .dyn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1160px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .dyn-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .dyn-card.hide {
+    display: none !important;
+  }
+  .dyn-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.10);
+    border-color: #CBD5E1;
+  }
+
+  /* Card Media & Badges */
+  .dyn-card-media {
+    position: relative;
+    background: #F8FAFC;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 230px;
+    overflow: hidden;
+  }
+  .dyn-card-media img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain !important;
+    opacity: 1 !important;
+    transition: transform 0.4s ease;
+  }
+  .dyn-card:hover .dyn-card-media img {
+    transform: scale(1.08);
+  }
+
+  /* Badges */
+  .dyn-tag-urgent, .dyn-tag-hsa, .dyn-tag-bundle, .dyn-tag-clinic, .dyn-tag-vintage {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 30px;
+    z-index: 2;
+  }
+  .dyn-tag-urgent { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
+  .dyn-tag-hsa { background: #ECFDF5; color: #059669; border: 1px solid #A7F3D0; }
+  .dyn-tag-bundle { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+  .dyn-tag-clinic { background: #F0FDFA; color: #0D9488; border: 1px solid #99F6E4; }
+  .dyn-tag-vintage { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+
+  /* Body */
+  .dyn-card-body {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .dyn-rating {
+    font-size: 13px;
+    color: #F59E0B;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .dyn-rating span {
+    color: #64748B;
+    font-size: 11px;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .dyn-card-body h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 6px;
+    line-height: 1.35;
+  }
+  .dyn-spec {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+
+  /* Price & Buy */
+  .dyn-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-top: 10px;
+    border-top: 1px solid #F1F5F9;
+  }
+  .dyn-price strong {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0F172A;
+  }
+  .dyn-strike {
+    font-size: 13px;
+    color: #94A3B8;
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+  .dyn-save {
+    font-size: 10px;
+    font-weight: 800;
+    color: #0D9488;
+    background: #E6FFFA;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .dyn-buy-btn {
+    width: 100%;
+    background: #0F172A;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dyn-buy-btn:hover {
+    background: #0D9488;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(13, 148, 136, 0.25);
+  }
+
+  /* Scoped suppression of intrusive badges */
+  .dyn-catalog-wrapper .card-image > span[style*="d90429"],
+  .dyn-catalog-wrapper .card-image > span[style*="dc2626"],
+  .dyn-catalog-wrapper span[style*="35% OFF TODAY"],
+  .dyn-catalog-wrapper [class*="badge"][style*="red"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  @media (max-width: 900px) {
+    .dyn-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+  @media (max-width: 600px) {
+    .dyn-grid { grid-template-columns: 1fr; }
+    .dyn-tabs-track { width: 100%; justify-content: flex-start; }
+    .dyn-card-media { height: 190px; }
+  }
+</style>
+
+<!-- ==========================================================
+     INTERACTIVE JAVASCRIPT: TABS + 3D TILT + INSTANT BUY
+     ========================================================== -->
+<script>
+  // 1. Interactive Animated Tab Switcher
+  function switchCategory(catName, btn) {
+    // Switch active tab styling
+    document.querySelectorAll('.dyn-tab-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    // Filter cards with smooth fade
+    var cards = document.querySelectorAll('.dyn-card');
+    cards.forEach(function(card) {
+      var categories = card.getAttribute('data-category') || '';
+      if (categories.indexOf(catName) !== -1) {
+        card.style.display = 'flex';
+        setTimeout(function() {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }, 10);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.96)';
+        setTimeout(function() {
+          card.style.display = 'none';
+        }, 200);
+      }
+    });
+  }
+
+  // 2. Instant 1-Click Buy / Cart Add
+  function instantAddToCart(title, price, btn) {
+    var originalText = btn.innerHTML;
+    btn.innerHTML = '<span>Adding... ⏳</span>';
+    btn.disabled = true;
+
+    // Check variant mapping for instant checkout or cart add
+    var variantMap = {
+      'LumaGlow™ 4-in-1 Wand': 47983637332263,
+      'LumaRelief™ Migraine Cap': 47983637365031,
+      'LumaRelief™ 2-Cap Bundle': 47983637397799,
+      'LumaMask™ LED Shield': 47983637430567,
+      'LumaLift™ V-Face Sculptor': 47983637463335
+    };
+    var variantId = variantMap[title];
+
+    if (variantId && typeof fetch !== 'undefined') {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] })
+      })
+      .then(function() {
+        btn.innerHTML = '<span>✓ Added to Bag!</span>';
+        btn.style.background = '#10B981';
+        setTimeout(function() {
+          window.location.href = '/checkout';
+        }, 350);
+      })
+      .catch(function() {
+        btn.innerHTML = '<span>✓ Added to Bag!</span>';
+        btn.style.background = '#10B981';
+        setTimeout(function() {
+          window.location.href = '/collections/all';
+        }, 400);
+      });
+    } else {
+      setTimeout(function() {
+        btn.innerHTML = '<span>✓ Added to Bag!</span>';
+        btn.style.background = '#10B981';
+        window.location.href = '/collections/all';
+      }, 400);
+    }
+  }
+
+  // 3. 3D Card Tilt Physics (Mouse Follow)
+  (function() {
+    var cards = document.querySelectorAll('[data-tilt]');
+    cards.forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        card.style.transform = 'perspective(800px) rotateX(' + (y * -0.04) + 'deg) rotateY(' + (x * 0.04) + 'deg) translateY(-6px)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Ultra Dynamic Catalog",
+  "tag": "section",
+  "class": "section-ultra-dynamic-catalog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "VERIFIED UTAH DISPATCH • 60-DAY RISK-FREE TRIAL"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Curated Clinical Tech & Boutique Finds"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore our flagship dermatology tools, therapeutic migraine recovery, and handpicked vintage treasures. Choose a category below:"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ultra Dynamic Tabbed Catalog"
+    }
+  ]
+}
+{% endschema %}

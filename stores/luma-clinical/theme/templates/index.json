@@ -12,6 +12,10 @@
         "secondary_cta_url": "/pages/skincare-routine-quiz"
       }
     },
+    "ultra_dynamic_tabbed_catalog": {
+      "type": "ultra-dynamic-tabbed-catalog",
+      "settings": {}
+    },
     "luma_comparison_matrix": {
       "type": "luma-comparison-matrix",
       "settings": {
@@ -128,6 +132,7 @@
   },
   "order": [
     "luma_clinical_hero",
+    "ultra_dynamic_tabbed_catalog",
     "luma_comparison_matrix",
     "luma_before_after",
     "shoppable_instagram_feed",
