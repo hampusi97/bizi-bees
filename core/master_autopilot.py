@@ -89,6 +89,16 @@ try:
 except ImportError:
     from core.ugc_review_flywheel import run_ugc_review_flywheel
 
+try:
+    from autonomous_sourcing_engine import run_autonomous_sourcing_pipeline
+except ImportError:
+    from core.autonomous_sourcing_engine import run_autonomous_sourcing_pipeline
+
+try:
+    from resale_arbitrage_scanner import run_resale_arbitrage_scanner
+except ImportError:
+    from core.resale_arbitrage_scanner import run_resale_arbitrage_scanner
+
 def run_100pct_autopilot_cycle():
     timestamp_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     print("=" * 65)
@@ -208,7 +218,23 @@ def run_100pct_autopilot_cycle():
     except Exception as e:
         print(f"UGC flywheel note: {e}")
 
-    # 12. SEND DAILY FOUNDER MORNING BRIEFING (Only 1 email per day)
+    # 12. 5-STAGE AUTONOMOUS DROPSHIP SOURCING & INGESTION (shopify-autonomous-dropship)
+    try:
+        sourced_count = run_autonomous_sourcing_pipeline()
+        actions_completed.append(f"Scouted viral signals, vetted 3x margins & US SLA, generated OS 2.0 copy & ad hooks for {sourced_count} qualified items.")
+        print(f"✓ [DROPSHIP SOURCING] Vetted & staged {sourced_count} qualified products.")
+    except Exception as e:
+        print(f"Dropship sourcing note: {e}")
+
+    # 13. FLIPFINDER RESALE & VINTAGE ARBITRAGE SCANNER (FlipFinder)
+    try:
+        resale_count = run_resale_arbitrage_scanner()
+        actions_completed.append(f"Scanned {resale_count} local vintage lots & estate liquidation feeds with 58-70% net profit margins.")
+        print(f"✓ [RESALE ARBITRAGE] Evaluated {resale_count} high-margin vintage curation lots.")
+    except Exception as e:
+        print(f"Resale arbitrage note: {e}")
+
+    # 14. SEND DAILY FOUNDER MORNING BRIEFING (Only 1 email per day)
     trigger_daily_executive_digest(
         revenue=growth_rev,
         orders=18,

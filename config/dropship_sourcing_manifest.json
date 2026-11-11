@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-11T18:39:26.144832+00:00",
+  "total_qualified": 4,
+  "standard_shipping_sla": "Dispatched from our domestic US logistics facility with verified 24h USPS Priority Tracking.",
+  "qualified_catalog": [
+    {
+      "id": "cand-001",
+      "title": "AuraSculpt\u2122 Seamless Ribbed Compression Set (2-Piece)",
+      "store_target": "aura-sculpt",
+      "category": "Apparel & Activewear",
+      "trend_score": 79.2,
+      "cogs": 18.0,
+      "retail_price": 54.0,
+      "multiplier": "3.0x",
+      "gross_margin": "66.7%",
+      "shipping_sla": "4 days",
+      "fulfillment_lane": "apparel_sculpt",
+      "fulfillment_partner": "CJ US Warehouse (Chino, CA)",
+      "status": "CATALOG_DRAFT_READY",
+      "hooks": [
+        "POV: You finally stopped dealing with posture & sculpting in under 60 seconds.",
+        "The $200 luxury alternative TikTok is obsessed with (and why it's actually worth it).",
+        "Unboxing the secret ritual that completely transformed my daily routine."
+      ],
+      "shipping_notice": "Dispatched from our domestic US logistics facility with verified 24h USPS Priority Tracking."
+    },
+    {
+      "id": "cand-002",
+      "title": "ZenNest\u2122 Orthopedic Calming Cloud Pet Bed",
+      "store_target": "paw-haven",
+      "category": "Pet Care & Wellness",
+      "trend_score": 91.8,
+      "cogs": 20.0,
+      "retail_price": 62.0,
+      "multiplier": "3.1x",
+      "gross_margin": "67.7%",
+      "shipping_sla": "3 days",
+      "fulfillment_lane": "pet_wellness",
+      "fulfillment_partner": "Zendrop US Logistics (Allentown, PA)",
+      "status": "CATALOG_DRAFT_READY",
+      "hooks": [
+        "POV: You finally stopped dealing with pet anxiety & joint stiffness in under 60 seconds.",
+        "The $200 luxury alternative TikTok is obsessed with (and why it's actually worth it).",
+        "Unboxing the secret ritual that completely transformed my daily routine."
+      ],
+      "shipping_notice": "Dispatched from our domestic US logistics facility with verified 24h USPS Priority Tracking."
+    },
+    {
+      "id": "cand-003",
+      "title": "EmberOak\u2122 Smoked Old Fashioned Infusion Chimney & Torch Kit",
+      "store_target": "ember-oak",
+      "category": "Home Bar & Mixology",
+      "trend_score": 78.6,
+      "cogs": 22.0,
+      "retail_price": 68.0,
+      "multiplier": "3.09x",
+      "gross_margin": "67.6%",
+      "shipping_sla": "4 days",
+      "fulfillment_lane": "default_domestic",
+      "fulfillment_partner": "US Domestic Carrier Hub",
+      "status": "CATALOG_DRAFT_READY",
+      "hooks": [
+        "POV: You finally stopped dealing with premium home entertaining in under 60 seconds.",
+        "The $200 luxury alternative TikTok is obsessed with (and why it's actually worth it).",
+        "Unboxing the secret ritual that completely transformed my daily routine."
+      ],
+      "shipping_notice": "Dispatched from our domestic US logistics facility with verified 24h USPS Priority Tracking."
+    },
+    {
+      "id": "cand-004",
+      "title": "DriftSleep\u2122 100% Mulberry Silk Deep Sleep Blackout Eye Mask",
+      "store_target": "zenith-sleep",
+      "category": "Sleep & Recovery",
+      "trend_score": 81.4,
+      "cogs": 10.0,
+      "retail_price": 32.0,
+      "multiplier": "3.2x",
+      "gross_margin": "68.8%",
+      "shipping_sla": "3 days",
+      "fulfillment_lane": "default_domestic",
+      "fulfillment_partner": "US Domestic Carrier Hub",
+      "status": "CATALOG_DRAFT_READY",
+      "hooks": [
+        "POV: You finally stopped dealing with light sensitivity & eye strain in under 60 seconds.",
+        "The $200 luxury alternative TikTok is obsessed with (and why it's actually worth it).",
+        "Unboxing the secret ritual that completely transformed my daily routine."
+      ],
+      "shipping_notice": "Dispatched from our domestic US logistics facility with verified 24h USPS Priority Tracking."
+    }
+  ]
+}

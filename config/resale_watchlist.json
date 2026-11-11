@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-11T18:39:26.145040+00:00",
+  "hub": {
+    "zip": "84601",
+    "city": "Provo",
+    "state": "UT",
+    "radius_miles": 35
+  },
+  "total_deals": 3,
+  "total_projected_batch_profit": 689.3,
+  "watchlist": [
+    {
+      "id": "lot-book-vintage-50",
+      "title": "Estate Lot: 50 Mid-Century Vintage Classics (Signet, Penguin, Bantam)",
+      "source": "Estate Liquidation Lot (Salt Lake County, UT)",
+      "category": "Vintage Books",
+      "quantity": 50,
+      "condition": "Very Good (Spines intact, clean text)",
+      "unit_cost": "$1.50",
+      "resale_target": "$18.00",
+      "curated_as": "Blind Date with a Book Mystery Packages",
+      "net_profit_unit": "$10.57",
+      "net_margin": "58.7%",
+      "batch_profit": "$528.50",
+      "roi": "704.7%",
+      "status": "APPROVED_FOR_CURATION"
+    },
+    {
+      "id": "lot-games-retro-12",
+      "title": "Lot of 12 Mint-in-Box 1970s-1980s Retro Trivia & Family Card Games",
+      "source": "Regional Antique Toy Liquidator (Utah County, UT)",
+      "category": "Retro Games",
+      "quantity": 12,
+      "condition": "Complete 100% Verified Cards",
+      "unit_cost": "$4.00",
+      "resale_target": "$16.50",
+      "curated_as": "Nostalgia Game Night Vault Collection",
+      "net_profit_unit": "$6.40",
+      "net_margin": "38.8%",
+      "batch_profit": "$76.80",
+      "roi": "160.0%",
+      "status": "APPROVED_FOR_CURATION"
+    },
+    {
+      "id": "lot-botanical-tea-20",
+      "title": "Organic Herbal Tea Loose-Leaf Tins (Chamomile Lavender, Winter Spice)",
+      "source": "Utah Botanical Small-Batch Co-op",
+      "category": "Artisan Pantry",
+      "quantity": 20,
+      "condition": "Fresh 2026 Batch",
+      "unit_cost": "$3.00",
+      "resale_target": "$12.00",
+      "curated_as": "Cozy Crate Companion Inclusions",
+      "net_profit_unit": "$4.20",
+      "net_margin": "35.0%",
+      "batch_profit": "$84.00",
+      "roi": "140.0%",
+      "status": "APPROVED_FOR_CURATION"
+    }
+  ]
+}

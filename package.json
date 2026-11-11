@@ -10,6 +10,11 @@
     "lint": "next lint",
     "deploy:theme": "shopify theme push --path . --ignore config/settings_data.json --live --allow-live",
     "deploy:theme:development": "shopify theme push --path . --ignore config/settings_data.json --development",
+    "autopilot": ".venv/bin/python core/master_autopilot.py",
+    "sourcing": ".venv/bin/python core/autonomous_sourcing_engine.py",
+    "resale": ".venv/bin/python core/resale_arbitrage_scanner.py",
+    "ebay:sync": ".venv/bin/python scripts/ebay_marketplace_exporter.py",
+    "seo:generate": ".venv/bin/python scripts/seo_blog_generator.py",
     "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
     "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
     "test:report": "playwright show-report"

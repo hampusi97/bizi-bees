@@ -32,6 +32,14 @@ jobs:
         run: |
           python core/master_autopilot.py
 
+      - name: Commit & Push Updated Autopilot Reports & Feeds
+        if: success()
+        run: |
+          git config --global user.name "GitHub Autopilot Bot"
+          git config --global user.email "autopilot@bizibees-store.com"
+          git add REPORTS/ EXPORTS/ config/ || true
+          git diff --staged --quiet || (git commit -m "chore(autopilot): automated daily sync [skip ci]" && git push) || true
+
       - name: Fail-Safe Alert (If Workflow Itself Crashes)
         if: failure()
         env:
