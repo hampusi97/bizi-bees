@@ -69,10 +69,10 @@ export default function LiveStoresFleetSection({
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-[#0F172A] border border-[#1E293B] rounded-2xl p-5">
         <div>
           <h2 className="text-lg font-black tracking-tight text-white">
-            Live Shoppable Storefronts ({stores.length} Active Stores)
+            Live Shoppable Storefronts ({stores.length} Active Stores · 90 Categorized SKUs)
           </h2>
           <p className="text-xs text-[#94A3B8] mt-0.5">
-            Every store below is live with a 2-tier VIP bundle selector, automatic complimentary gift unlock, 4-product collection catalog, and express checkout.
+            Every store below is live with a 3-tier VIP &amp; Master bundle selector, automatic complimentary gift unlocks, 6 categorized products across 5 departments, Schema.org metadata, and express checkout.
           </p>
         </div>
 

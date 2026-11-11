@@ -1,0 +1,158 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated merchant operator profile with strict owner isolation.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Verified operator email address.",
+          "minLength": 3,
+          "maxLength": 254
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Operator display name.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        }
+      },
+      "required": ["uid", "email", "displayName", "createdAt"]
+    },
+    "StoreAuditRecord": {
+      "title": "StoreAuditRecord",
+      "description": "Storefront health, SEO metadata, and catalog compliance audit record.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "UID of the merchant who executed the audit.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "storeSlug": {
+          "type": "string",
+          "description": "Canonical slug of the audited storefront.",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "storeName": {
+          "type": "string",
+          "description": "Display name of the audited storefront.",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "auditScore": {
+          "type": "number",
+          "description": "Computed audit readiness score from 0 to 100."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "verified", "archived"],
+          "description": "Lifecycle state of the audit."
+        },
+        "summary": {
+          "type": "string",
+          "description": "Audit verification summary.",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when audit was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when audit was last updated."
+        }
+      },
+      "required": ["ownerId", "storeSlug", "storeName", "auditScore", "status", "summary", "createdAt", "updatedAt"]
+    },
+    "StoreOrderRecord": {
+      "title": "StoreOrderRecord",
+      "description": "Customer checkout order synchronized to Firestore.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "UID of the authenticated customer or operator.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "orderNumber": {
+          "type": "string",
+          "description": "Unique Utah dispatch order identifier.",
+          "minLength": 3,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "storeSlug": {
+          "type": "string",
+          "description": "Storefront slug.",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "tierLabel": {
+          "type": "string",
+          "description": "Selected bundle tier.",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Order total in USD."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["processing", "dispatched", "completed"],
+          "description": "Order fulfillment status."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp."
+        }
+      },
+      "required": ["ownerId", "orderNumber", "storeSlug", "tierLabel", "totalAmount", "status", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private operator profile isolated by userId."
+    },
+    "/storeAudits/{auditId}": {
+      "schema": { "$ref": "#/entities/StoreAuditRecord" },
+      "description": "Storefront audit records owned by the merchant operator."
+    },
+    "/storeOrders/{orderId}": {
+      "schema": { "$ref": "#/entities/StoreOrderRecord" },
+      "description": "Customer order records isolated by ownerId."
+    }
+  }
+}

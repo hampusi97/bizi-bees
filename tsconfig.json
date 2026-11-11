@@ -11,6 +11,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowImportingTsExtensions": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -29,6 +30,7 @@
     "components/**/*.ts",
     "components/**/*.tsx",
     "lib/**/*.ts",
+    "src/**/*.ts",
     "middleware.ts",
     ".next/types/**/*.ts"
   ],
@@ -37,6 +39,7 @@
     "dropper-os",
     "tests",
     "lib/**/*.test.ts",
+    "*.test.ts",
     "playwright.config.ts"
   ]
 }

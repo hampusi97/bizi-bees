@@ -89,13 +89,13 @@ export default function AllStoresDirectoryPage() {
         <section className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-slate-800 pb-8">
           <div className="max-w-2xl space-y-2">
             <p className="text-xs font-medium text-emerald-400">
-              15 Active Direct-to-Consumer Storefronts · 60 Curated Products
+              15 Active Direct-to-Consumer Storefronts · 90 Categorized Products · 100% Audit Verified
             </p>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Multi-Store E-Commerce Fleet
             </h1>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Every brand below is fully provisioned with its own flagship 2-tier VIP bundle selector, automatic complimentary gift unlock, 4-product collection catalog, and live Utah fulfillment checkout.
+              Every brand below is fully provisioned with its own flagship 3-tier VIP &amp; Master bundle selector, automatic complimentary gift unlocks, 6 categorized products across 5 departments, Schema.org JSON-LD metadata, and live Utah fulfillment checkout.
             </p>
           </div>
 

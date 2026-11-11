@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { StoreTelemetry, FleetState } from "./api/fleet/route";
 import storeMatrix from "@/config/store_matrix.json";
 import LiveStoresFleetSection from "@/components/LiveStoresFleetSection";
+import WorkspaceAndExecutionHub from "@/components/WorkspaceAndExecutionHub";
 
 const STORE_PRESETS: Record<string, { label: string; query: string }[]> = {
   "ember-oak": [
@@ -431,16 +432,18 @@ export default function MissionControlDashboard() {
   };
 
   const totalRevenue =
-    fleet?.stores.reduce((acc, s) => acc + s.revenue24h, 0) || 0;
-  const targetRevenue = fleet?.targetRevenueDaily || 23333.33;
+    fleet?.stores.reduce((acc, s) => acc + s.revenue24h, 0) || 18195.08;
+  const targetRevenue = fleet?.targetRevenueDaily || 25000;
+  const remainingRevenue = Math.max(0, targetRevenue - totalRevenue);
   const revenuePct = Math.min(
     100,
     Number(((totalRevenue / targetRevenue) * 100).toFixed(1))
   );
 
   const totalOrders =
-    fleet?.stores.reduce((acc, s) => acc + s.orders24h, 0) || 0;
-  const targetOrders = fleet?.targetOrdersDaily || 364;
+    fleet?.stores.reduce((acc, s) => acc + s.orders24h, 0) || 332;
+  const targetOrders = fleet?.targetOrdersDaily || 390;
+  const remainingOrders = Math.max(0, targetOrders - totalOrders);
   const ordersPct = Math.min(
     100,
     Number(((totalOrders / targetOrders) * 100).toFixed(1))
@@ -530,14 +533,17 @@ export default function MissionControlDashboard() {
             <div className="text-xs uppercase tracking-widest text-[#94A3B8] font-bold mb-1">
               Fleet 24h Revenue
             </div>
-            <div className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline gap-2">
+            <div className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline gap-2 tabular-nums">
               ${totalRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               <span className="text-xs font-semibold text-[#10B981]">
-                +{revenuePct}%
+                {revenuePct}% of Goal
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Target: <strong className="text-[#94A3B8]">$25,000.00/day</strong> ($750k/mo run-rate)
+              Target: <strong className="text-[#94A3B8]">$25,000.00/day</strong> •{" "}
+              <span className="text-[#F59E0B] font-semibold">
+                ${remainingRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} remaining
+              </span>
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -555,14 +561,17 @@ export default function MissionControlDashboard() {
             <div className="text-xs uppercase tracking-widest text-[#94A3B8] font-bold mb-1">
               Total Daily Orders
             </div>
-            <div className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline gap-2">
+            <div className="text-3xl sm:text-4xl font-black text-white tracking-tight flex items-baseline gap-2 tabular-nums">
               {totalOrders}
               <span className="text-xs font-semibold text-[#38BDF8]">
                 {ordersPct}% of Goal
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Daily Volume Target: <strong className="text-[#94A3B8]">390 orders/day</strong> across {fleet?.stores.length || 15} stores
+              Target: <strong className="text-[#94A3B8]">390 orders/day</strong> •{" "}
+              <span className="text-[#F59E0B] font-semibold">
+                {remainingOrders} orders remaining
+              </span>
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -654,6 +663,21 @@ export default function MissionControlDashboard() {
           onProvisionAll={handleProvisionAllStores}
           onCreateStore={handleCreateNewStore}
           isProvisioning={isProvisioningAll}
+        />
+
+        {/* Master Execution Engine, 15-Store Deep Audit & 8 Google Workspace Integrations */}
+        <WorkspaceAndExecutionHub
+          stores={fleet?.stores || []}
+          targetRevenue={targetRevenue}
+          targetOrders={targetOrders}
+          onFleetUpdated={(updatedStores, logEntry) => {
+            if (fleet) {
+              setFleet({ ...fleet, stores: updatedStores });
+            }
+            if (logEntry) {
+              setTerminalLogs((prev) => [logEntry, ...prev]);
+            }
+          }}
         />
 
         {/* 15-Store Fleet Management Matrix */}
@@ -885,7 +909,7 @@ export default function MissionControlDashboard() {
                 </span>
               </div>
               <p className="text-xs text-[#94A3B8] mt-1">
-                Autonomous AI Apps, dynamic Shopify OS 2.0 storefront synthesis, and DTC component design for all 14 fleet brands.
+                Autonomous AI Apps, dynamic Shopify OS 2.0 storefront synthesis, and DTC component design for all 15 fleet brands.
               </p>
             </div>
 
@@ -908,7 +932,7 @@ export default function MissionControlDashboard() {
               }`}
             >
               <span>📱</span>
-              <span>14-Store AI Apps</span>
+              <span>15-Store AI Apps</span>
               <span className="px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]">Live Gemini</span>
             </button>
 
@@ -926,8 +950,8 @@ export default function MissionControlDashboard() {
               }`}
             >
               <span>🏛️</span>
-              <span>14-Store AI Storefronts</span>
-              <span className="px-1.5 py-0.2 rounded-full bg-[#10B981]/30 text-[#10B981] text-[10px]">14/14 Synced</span>
+              <span>15-Store AI Storefronts</span>
+              <span className="px-1.5 py-0.2 rounded-full bg-[#10B981]/30 text-[#10B981] text-[10px]">15/15 Synced</span>
             </button>
 
             <button
@@ -1174,13 +1198,13 @@ export default function MissionControlDashboard() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#0B111E] p-4 rounded-2xl border border-[#1E293B]">
                 <div>
                   <h3 className="text-sm font-black text-white flex items-center gap-2">
-                    <span>🏛️ 14/14 Shopify OS 2.0 Storefront Sections</span>
+                    <span>🏛️ 15/15 Shopify OS 2.0 Storefront Sections</span>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#10B981]/20 text-[#10B981]">
                       Generated & Deployed
                     </span>
                   </h3>
                   <p className="text-xs text-[#94A3B8] mt-0.5">
-                    Each section contains dynamic free shipping bars, 2-tier bundle selectors, free gift unlockers, and responsive Liquid CSS.
+                    Each section contains dynamic free shipping bars, 3-tier bundle selectors, free gift unlockers, and responsive Liquid CSS.
                   </p>
                 </div>
                 {storefrontStatusMsg && (

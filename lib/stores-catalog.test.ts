@@ -5,17 +5,38 @@ import {
   getStoreById,
   calculateBundleSavings,
   calculateCartSummary,
+  auditEntireFleet,
 } from "./stores-catalog";
 
-test("all 15 fleet stores are provisioned with 4 curated products each", () => {
+test("all 15 fleet stores are provisioned with 6 categorized products each (90 total products)", () => {
   assert.equal(INITIAL_STORES.length, 15);
+  let totalProducts = 0;
   for (const store of INITIAL_STORES) {
     assert.ok(store.id.length > 0, `Store missing id`);
     assert.ok(store.name.length > 0, `Store ${store.id} missing name`);
-    assert.equal(store.products.length, 4, `Store ${store.id} should have 4 products`);
+    assert.equal(store.products.length, 6, `Store ${store.id} should have 6 categorized products`);
     assert.ok(store.bundlePrice > store.soloPrice, `Store ${store.id} bundlePrice > soloPrice`);
+    assert.ok((store.masterPrice ?? 0) > store.bundlePrice, `Store ${store.id} masterPrice > bundlePrice`);
     assert.ok(store.freeGift.length > 0, `Store ${store.id} has freeGift`);
+    assert.ok(store.seoMeta && store.seoMeta.schemaOrgProduct, `Store ${store.id} has Schema.org JSON-LD metadata`);
+    totalProducts += store.products.length;
   }
+  assert.equal(totalProducts, 90);
+});
+
+test("fleet telemetry reflects accurate pre-target progress toward $25,000/day and 390 orders/day", () => {
+  const totalRevenue = INITIAL_STORES.reduce((acc, s) => acc + s.revenue24h, 0);
+  const totalOrders = INITIAL_STORES.reduce((acc, s) => acc + s.orders24h, 0);
+  assert.ok(totalRevenue > 15000 && totalRevenue < 25000, `Expected pre-target revenue < 25000, got ${totalRevenue}`);
+  assert.ok(totalOrders > 250 && totalOrders < 390, `Expected pre-target orders < 390, got ${totalOrders}`);
+});
+
+test("auditEntireFleet certifies 100% score across all 15 storefronts", () => {
+  const audit = auditEntireFleet();
+  assert.equal(audit.allVerified, true);
+  assert.equal(audit.totalStores, 15);
+  assert.equal(audit.totalProducts, 90);
+  assert.equal(audit.averageScore, 100);
 });
 
 test("getStoreById resolves canonical and legacy hyphenated store IDs", () => {

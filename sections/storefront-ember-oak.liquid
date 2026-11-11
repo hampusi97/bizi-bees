@@ -1,0 +1,81 @@
+<section class="ember-oak-section" id="ember-oak-hero">
+  <style>
+    .ember-oak-section { background-color: #0D0B09; color: #F5EFE6; font-family: Georgia, serif; padding: 48px 20px; overflow: hidden; }
+    .ember-container { max-width: 1080px; margin: 0 auto; }
+    .sticky-banner { background: #B45309; color: #FFFBEB; text-align: center; padding: 9px; font-size: 0.85rem; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; margin-top: 32px; }
+    .headline { font-size: 2.75rem; line-height: 1.12; margin-bottom: 1rem; color: #FCD34D; }
+    .rating { color: #F59E0B; margin-bottom: 16px; font-weight: bold; font-family: sans-serif; font-size: 0.9rem; }
+    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; font-family: sans-serif; }
+    .tier-card { border: 1px solid #44403C; background: #1C1917; padding: 16px; border-radius: 12px; cursor: pointer; position: relative; }
+    .tier-card.active { border: 2px solid #F59E0B; background: #292524; }
+    .tier-badge { background: #B45309; color: #FFF; padding: 2px 8px; font-size: 0.65rem; border-radius: 4px; position: absolute; top: -10px; right: 10px; font-weight: bold; }
+    .cta-btn { background: #D97706; color: #090D16; padding: 16px; width: 100%; border: none; border-radius: 10px; font-size: 1rem; font-weight: 800; cursor: pointer; font-family: sans-serif; }
+    .guarantee-strip { display: flex; justify-content: space-between; margin-top: 28px; font-size: 0.8rem; border-top: 1px solid #292524; padding-top: 16px; color: #A8A29E; font-family: sans-serif; }
+    @media (max-width: 768px) { .hero-content, .tier-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="sticky-banner">BONDED UTAH VAULT DISPATCH | KILN-SEASONED SPANISH CEDAR | FREE SHIPPING $35+</div>
+
+  <div class="ember-container">
+    <div class="hero-content">
+      <div>
+        <div class="rating">★★★★★ 4.9/5 (640+ Verified Aficionados)</div>
+        <h1 class="headline">50-Count Spanish Cedar Humidor &amp; Aficionado Torch Kit</h1>
+        <p>Hand-rubbed walnut burl veneer lined with 5mm kiln-dried Spanish cedar, brass quadrant hinges, and precision triple-jet torch hardware.</p>
+
+        <div class="tier-grid">
+          <div class="tier-card" onclick="selectEmberTier(this, 48.00, false)">
+            <strong>Solo Humidor</strong><br>$48.00
+          </div>
+          <div class="tier-card active" onclick="selectEmberTier(this, 78.00, true)">
+            <span class="tier-badge">VIP Reserve</span>
+            <strong>Aficionado Bundle</strong><br>$78.00
+          </div>
+          <div class="tier-card" onclick="selectEmberTier(this, 128.70, true)">
+            <span class="tier-badge">Master Vault</span>
+            <strong>2x Lounge Suite</strong><br>$128.70
+          </div>
+        </div>
+
+        <div id="ember-gift-notice" style="margin-bottom: 18px; color: #FCD34D; font-weight: bold; font-family: sans-serif; font-size: 0.85rem;">
+          Complimentary VIP Gift Unlocked: Cut-Crystal Cigar &amp; Pipe Rest ($24 Value)
+        </div>
+
+        <button class="cta-btn" onclick="window.location.href='/stores/ember-oak'">Claim Reserve Suite — <span id="ember-price-display">$78.00</span></button>
+      </div>
+
+      <div class="hero-image" style="background: #1C1917; border: 1px solid #44403C; border-radius: 16px; height: 380px; display: flex; align-items: center; justify-content: center; color: #FCD34D;">
+        [Ember &amp; Oak Spanish Cedar Humidor Studio Render]
+      </div>
+    </div>
+
+    <div class="guarantee-strip">
+      <span>✓ 24h Provo Bonded Dispatch</span>
+      <span>✓ 70% RH Seal Guarantee</span>
+      <span>✓ 60-Day Private Lounge Trial</span>
+    </div>
+  </div>
+
+  <script>
+    function selectEmberTier(el, price, hasGift) {
+      document.querySelectorAll('.ember-oak-section .tier-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('ember-price-display').innerText = '$' + price.toFixed(2);
+      document.getElementById('ember-gift-notice').style.display = hasGift ? 'block' : 'none';
+    }
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Ember & Oak Storefront",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Ember & Oak Hero",
+      "category": "Conversion"
+    }
+  ]
+}
+{% endschema %}
