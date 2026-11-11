@@ -1,6 +1,6 @@
-<!-- REPO-OS MASTER GLOBAL SHIELD, DYNAMIC ISLAND & AI QUIZ -->
-<style id="repo-os-global-css">
-  /* 1. PERMANENTLY FIX GIANT RED "35% OFF TODAY" SQUARES COVERING PRODUCT PHOTOS */
+<!-- REPO-OS MASTER VISUAL SHIELD & INTERACTIVE ENGINE -->
+<style id="repo-os-master-css">
+  /* 1. FIX GIANT RED "35% OFF TODAY" IMAGE BLOCKERS ACROSS ENTIRE SITE */
   .card__badge,
   .product-card__badge,
   .badge--sale,
@@ -32,19 +32,27 @@
     justify-content: center !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.12) !important;
   }
+
   .card__badge::before, .card__badge::after, .badge::before, .badge::after {
     content: none !important;
     display: none !important;
   }
 
-  /* 2. ENSURE 100% UNOBSTRUCTED, CRISP PRODUCT PHOTOGRAPHY */
-  .card__media, .card-wrapper .media, .product-card .media, .media--square {
+  /* 2. GUARANTEE 100% VISIBLE, CRISP PRODUCT PHOTOS */
+  .card__media,
+  .card-wrapper .media,
+  .product-card .media,
+  .media--square {
     position: relative !important;
     background: #F8FAFC !important;
     border-radius: 14px !important;
     overflow: hidden !important;
   }
-  .card__media img, .card-wrapper .media img, .product-card img, .product__media img {
+
+  .card__media img,
+  .card-wrapper .media img,
+  .product-card img,
+  .product__media img {
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
@@ -55,11 +63,13 @@
     z-index: 2 !important;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   }
-  .card-wrapper:hover .card__media img, .product-card:hover img {
+
+  .card-wrapper:hover .card__media img,
+  .product-card:hover img {
     transform: scale(1.05) !important;
   }
 
-  /* 3. LUXURY CARD ELEVATION & CLEAN PRICING */
+  /* 3. ELEVATED PRODUCT CARDS & CLEAN PRICING */
   .card-wrapper, .product-card {
     background: #FFFFFF !important;
     border: 1px solid #E2E8F0 !important;
@@ -68,23 +78,26 @@
     box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
   }
+
   .card-wrapper:hover, .product-card:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10) !important;
     border-color: #CBD5E1 !important;
   }
+
   .price-item--sale, .price__regular .price-item {
     color: #0F172A !important;
     font-weight: 900 !important;
     font-size: 18px !important;
   }
+
   .price-item--regular {
     color: #94A3B8 !important;
     text-decoration: line-through !important;
     font-size: 13px !important;
   }
 
-  /* 4. REAL-TIME FREE SHIPPING TOP BAR */
+  /* 4. LIVE FREE SHIPPING TOP BAR */
   .ro-shipping-bar {
     background: #0F172A;
     color: #F8FAFC;
@@ -96,11 +109,28 @@
     position: relative;
     z-index: 9999;
   }
-  .ro-shipping-inner { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 5px; }
-  .ro-ship-track { width: 100%; height: 5px; background: #334155; border-radius: 10px; overflow: hidden; }
-  .ro-ship-fill { height: 100%; background: linear-gradient(90deg, #0D9488, #10B981); width: 0%; transition: width 0.4s ease; }
+  .ro-shipping-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .ro-ship-track {
+    width: 100%;
+    height: 5px;
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .ro-ship-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0D9488, #10B981);
+    width: 0%;
+    transition: width 0.4s ease;
+  }
 
-  /* 5. iOS DYNAMIC ISLAND CART PILL */
+  /* 5. iOS DYNAMIC ISLAND FLOATING CART PILL */
   .ro-dynamic-island {
     position: fixed;
     top: 16px;
@@ -120,14 +150,24 @@
     transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-  .ro-dynamic-island.active { transform: translateX(-50%) translateY(0) scale(1); }
-  .ro-island-btn { background: #10B981; color: #090D16 !important; text-decoration: none; font-size: 12px; font-weight: 900; padding: 7px 14px; border-radius: 30px; }
+  .ro-dynamic-island.active {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  .ro-island-btn {
+    background: #10B981;
+    color: #090D16 !important;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 7px 14px;
+    border-radius: 30px;
+  }
 
   /* 6. INTERACTIVE 3-STEP AI QUIZ MODAL */
   .ro-quiz-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(9, 13, 22, 0.78);
+    background: rgba(9, 13, 22, 0.75);
     backdrop-filter: blur(8px);
     z-index: 9999998;
     display: none;
@@ -147,7 +187,16 @@
     box-shadow: 0 25px 60px rgba(0,0,0,0.4);
     text-align: center;
   }
-  .ro-quiz-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 26px; color: #64748B; cursor: pointer; }
+  .ro-quiz-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #64748B;
+    cursor: pointer;
+  }
   .ro-q-btn {
     width: 100%;
     background: #F8FAFC;
@@ -162,10 +211,14 @@
     text-align: left;
     transition: all 0.2s ease;
   }
-  .ro-q-btn:hover { border-color: #0D9488; background: #F0FDFA; transform: translateY(-2px); }
+  .ro-q-btn:hover {
+    border-color: #0D9488;
+    background: #F0FDFA;
+    transform: translateY(-2px);
+  }
 </style>
 
-<!-- Live Free Shipping Bar -->
+<!-- Top Real-Time Free Shipping Progress Bar -->
 <div class="ro-shipping-bar" id="roShippingBar">
   <div class="ro-shipping-inner">
     <div id="roShippingText">🚚 Add <strong>$35.00</strong> more to unlock <strong>FREE Priority US Shipping + Free VIP Gift!</strong></div>
@@ -173,34 +226,33 @@
   </div>
 </div>
 
-<!-- iOS Dynamic Island Notification -->
+<!-- iOS Dynamic Island Floating Notification -->
 <div class="ro-dynamic-island" id="roDynamicIsland">
   <span style="font-size:13px;font-weight:700;" id="roIslandMsg">✓ Added to Your Bag!</span>
   <a href="/checkout" class="ro-island-btn">1-Tap Checkout ⚡</a>
 </div>
 
-<!-- 3-Step AI Concierge Matcher Modal -->
+<!-- Interactive 30-Second AI Matcher Modal -->
 <div class="ro-quiz-backdrop" id="roQuizBackdrop">
   <div class="ro-quiz-modal">
     <button type="button" class="ro-quiz-close" onclick="document.getElementById('roQuizBackdrop').style.display='none'">×</button>
     <div id="roQStep1">
-      <span style="font-size:11px;font-weight:800;color:#0D9488;letter-spacing:1px;">✨ STEP 1 OF 3 • AI CONCIERGE MATCHER</span>
-      <h3 style="font-size:24px;font-weight:900;margin:8px 0 20px;">What are you exploring today?</h3>
-      <button class="ro-q-btn" onclick="roNextQ(2, 'Sculpting')">🔬 Facial Sculpting, Red Light &amp; Anti-Aging</button>
-      <button class="ro-q-btn" onclick="roNextQ(2, 'Migraine')">🧊 Instant 360° Cold/Thermal Migraine Relief</button>
-      <button class="ro-q-btn" onclick="roNextQ(2, 'Lounge')">🥃 Ember &amp; Oak™ Cigars, Briar Pipes &amp; Humidors</button>
-      <button class="ro-q-btn" onclick="roNextQ(2, 'Boutique')">🐝 Bizi Bees Cozy Mystery Books &amp; Gift Crates</button>
+      <span style="font-size:11px;font-weight:800;color:#0D9488;letter-spacing:1px;">✨ STEP 1 OF 3 • PERSONALIZED MATCHER</span>
+      <h3 style="font-size:24px;font-weight:900;margin:8px 0 20px;">What is your primary goal today?</h3>
+      <button class="ro-q-btn" onclick="roNextQ(2, 'Sculpting & Anti-Aging')">🔬 Sculpt Jawline, Depuff Eyes &amp; Smooth Fine Lines</button>
+      <button class="ro-q-btn" onclick="roNextQ(2, 'Migraine & Tension Relief')">🧊 Instant Cold/Thermal Migraine &amp; Headache Relief</button>
+      <button class="ro-q-btn" onclick="roNextQ(2, 'Cozy Reading & Boutique Gifts')">📖 Cozy Mystery Books, Planners &amp; Boutique Gifts</button>
     </div>
     <div id="roQStep2" style="display:none;">
-      <span style="font-size:11px;font-weight:800;color:#0D9488;letter-spacing:1px;">✨ STEP 2 OF 3 • PACKAGE PREFERENCE</span>
-      <h3 style="font-size:24px;font-weight:900;margin:8px 0 20px;">Choose your package tier:</h3>
-      <button class="ro-q-btn" onclick="roNextQ(3, 'VIP Bundle')">🌟 Complete VIP Bundle (Includes Free Bonus Gift)</button>
-      <button class="ro-q-btn" onclick="roNextQ(3, 'Solo')">⚡ Single Flagship Starter Edition</button>
+      <span style="font-size:11px;font-weight:800;color:#0D9488;letter-spacing:1px;">✨ STEP 2 OF 3 • DAILY ROUTINE</span>
+      <h3 style="font-size:24px;font-weight:900;margin:8px 0 20px;">How do you want your package configured?</h3>
+      <button class="ro-q-btn" onclick="roNextQ(3, 'VIP Bundle')">🌟 Best Value VIP Bundle + Free Bonus Gift</button>
+      <button class="ro-q-btn" onclick="roNextQ(3, 'Solo Starter')">⚡ Single Flagship Starter Edition</button>
     </div>
     <div id="roQStep3" style="display:none;">
-      <span style="font-size:11px;font-weight:800;color:#10B981;letter-spacing:1px;">🎉 99.4% PERFECT MATCH UNLOCKED!</span>
+      <span style="font-size:11px;font-weight:800;color:#10B981;letter-spacing:1px;">🎉 99.4% PERFECT MATCH FOUND!</span>
       <h3 style="font-size:22px;font-weight:900;margin:8px 0 10px;" id="roMatchTitle">LumaGlow™ 4-in-1 Red Light Wand</h3>
-      <p style="font-size:13px;color:#64748B;margin-bottom:20px;">Backed by our 60-Day Risk-Free Trial &amp; 24-Hr Tracked US Dispatch.</p>
+      <p style="font-size:13px;color:#64748B;margin-bottom:20px;">Backed by our 60-Day Risk-Free Trial &amp; 24-Hr Tracked Utah Dispatch.</p>
       <button type="button" onclick="roAddMatchedProduct(this)" style="width:100%;background:#0F172A;color:#FFFFFF;border:none;padding:16px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer;">
         Claim My Match + Free Shipping →
       </button>
@@ -210,19 +262,23 @@
 
 <script>
   (function() {
-    function scrubClutter() {
+    // 1. SCRUB OLD "PROVOTODAY" POPUP & "$150,000" LEGAL THREAT FROM DOM
+    function scrubLegacyClutter() {
       document.querySelectorAll("div, section, footer, p, aside").forEach(function(el) {
         const txt = el.innerText || "";
         if (txt.includes("Wait! Don't Leave Empty Handed!") && el.tagName !== "BODY" && el.tagName !== "HTML") {
-          if (el.id.toLowerCase().includes("popup") || el.className.toLowerCase().includes("popup") || el.className.toLowerCase().includes("modal")) {
+          if (el.style && (el.id.toLowerCase().includes("popup") || el.className.toLowerCase().includes("popup") || el.className.toLowerCase().includes("modal"))) {
             el.style.display = "none";
           }
         }
-        if ((txt.includes("150,000") || txt.includes("Lanham Act")) && el.children.length < 5) {
-          el.style.display = "none";
+        if ((txt.includes("150,000") || txt.includes("Lanham Act")) && (el.tagName === "P" || el.tagName === "DIV" || el.tagName === "SMALL")) {
+          if (el.children.length < 5) {
+            el.style.display = "none";
+          }
         }
       });
 
+      // Fix any inline-styled "35% OFF" red block covering images
       document.querySelectorAll("span, div").forEach(function(el) {
         const t = (el.innerText || "").trim();
         if (t === "35% OFF TODAY" || t === "35% OFF" || t === "35% OFF LAUNCH DEAL") {
@@ -238,21 +294,27 @@
         }
       });
     }
-    document.addEventListener("DOMContentLoaded", scrubClutter);
-    setTimeout(scrubClutter, 1000);
-    setTimeout(scrubClutter, 3000);
 
+    document.addEventListener("DOMContentLoaded", scrubLegacyClutter);
+    setTimeout(scrubLegacyClutter, 1000);
+    setTimeout(scrubLegacyClutter, 3000);
+
+    // 2. AUTO-BIND REAL SHOPIFY PRODUCTS & VARIANTS
     window.RO_PRODUCTS = [];
     fetch('/products.json?limit=50')
       .then(r => r.json())
-      .then(data => { if (data && data.products) window.RO_PRODUCTS = data.products; })
-      .catch(() => {});
+      .then(data => {
+        if (data && data.products) {
+          window.RO_PRODUCTS = data.products;
+        }
+      }).catch(() => {});
 
+    // 3. REAL-TIME FREE SHIPPING BAR UPDATER
     window.updateRoShippingBar = function() {
       fetch('/cart.js')
         .then(r => r.json())
         .then(cart => {
-          const threshold = 3500;
+          const threshold = 3500; // $35.00
           const total = cart.total_price || 0;
           const pct = Math.min(100, (total / threshold) * 100);
           const fill = document.getElementById('roShipFill');
@@ -271,9 +333,13 @@
     document.addEventListener("DOMContentLoaded", window.updateRoShippingBar);
     document.addEventListener("cart:updated", window.updateRoShippingBar);
 
+    // 4. UNIVERSAL 1-CLICK AJAX ADD TO BAG (WITH DYNAMIC ISLAND)
     window.roQuickAdd = function(variantId, productTitle, btn) {
       const orig = btn ? btn.innerHTML : '';
-      if (btn) { btn.innerHTML = 'Adding... ⚡'; btn.disabled = true; }
+      if (btn) {
+        btn.innerHTML = 'Adding... ⚡';
+        btn.disabled = true;
+      }
       fetch('/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -291,12 +357,19 @@
         if (btn) {
           btn.innerHTML = '✓ Added to Bag!';
           btn.style.background = '#10B981';
-          setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; }, 1800);
+          setTimeout(() => {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 1800);
         }
       })
-      .catch(() => { window.location.href = '/collections/all'; });
+      .catch(() => {
+        window.location.href = '/collections/all';
+      });
     };
 
+    // 5. WIRE ALL "QUIZ" BUTTONS ON SITE TO OPEN INTERACTIVE AI QUIZ MODAL
     document.addEventListener("click", function(e) {
       const target = e.target.closest("a, button");
       if (target) {
@@ -323,7 +396,7 @@
         let matched = window.RO_PRODUCTS[0];
         if (goal.includes('Migraine')) {
           matched = window.RO_PRODUCTS.find(p => p.title.toLowerCase().includes('relief') || p.title.toLowerCase().includes('cap')) || matched;
-        } else if (goal.includes('Boutique')) {
+        } else if (goal.includes('Book')) {
           matched = window.RO_PRODUCTS.find(p => p.title.toLowerCase().includes('planner') || p.title.toLowerCase().includes('book')) || matched;
         } else {
           matched = window.RO_PRODUCTS.find(p => p.title.toLowerCase().includes('glow') || p.title.toLowerCase().includes('wand')) || matched;
@@ -339,7 +412,9 @@
       const m = window.RO_MATCHED_PRODUCT || window.RO_PRODUCTS[0];
       if (m && m.variants && m.variants[0]) {
         window.roQuickAdd(m.variants[0].id, m.title, btn);
-        setTimeout(() => { document.getElementById('roQuizBackdrop').style.display = 'none'; }, 900);
+        setTimeout(() => {
+          document.getElementById('roQuizBackdrop').style.display = 'none';
+        }, 900);
       } else {
         window.location.href = '/collections/all';
       }
