@@ -1,0 +1,13 @@
+sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
+DROP-LUMA-101,"Luma Clinical Edition #1",34,54,8,76.5
+DROP-LUMA-102,"Luma Clinical Edition #2",41,64,9.5,76.5
+DROP-LUMA-103,"Luma Clinical Edition #3",48,74,11,76.5
+DROP-LUMA-104,"Luma Clinical Edition #4",55,84,12.5,76.5
+DROP-LUMA-105,"Luma Clinical Edition #5",62,94,14,76.5
+DROP-LUMA-106,"Luma Clinical Edition #6",69,104,15.5,76.5
+DROP-LUMA-107,"Luma Clinical Edition #7",76,114,17,76.5
+DROP-LUMA-108,"Luma Clinical Edition #8",83,124,18.5,76.5
+DROP-LUMA-109,"Luma Clinical Edition #9",90,134,20,76.5
+DROP-LUMA-110,"Luma Clinical Edition #10",97,144,21.5,76.5
+DROP-LUMA-111,"Luma Clinical Edition #11",104,154,23,76.5
+DROP-LUMA-112,"Luma Clinical Edition #12",111,164,24.5,76.5

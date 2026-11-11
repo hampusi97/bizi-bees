@@ -1,0 +1,89 @@
+{
+  "store": "VerdeHydro",
+  "products": [
+    {
+      "handle": "store-15-verde-hydro-item-1",
+      "sku": "DROP-VERDE-200",
+      "title": "VerdeHydro Collection Item #1",
+      "priceUsd": 39,
+      "compareAtUsd": 65
+    },
+    {
+      "handle": "store-15-verde-hydro-item-2",
+      "sku": "DROP-VERDE-201",
+      "title": "VerdeHydro Collection Item #2",
+      "priceUsd": 47,
+      "compareAtUsd": 77
+    },
+    {
+      "handle": "store-15-verde-hydro-item-3",
+      "sku": "DROP-VERDE-202",
+      "title": "VerdeHydro Collection Item #3",
+      "priceUsd": 55,
+      "compareAtUsd": 89
+    },
+    {
+      "handle": "store-15-verde-hydro-item-4",
+      "sku": "DROP-VERDE-203",
+      "title": "VerdeHydro Collection Item #4",
+      "priceUsd": 63,
+      "compareAtUsd": 101
+    },
+    {
+      "handle": "store-15-verde-hydro-item-5",
+      "sku": "DROP-VERDE-204",
+      "title": "VerdeHydro Collection Item #5",
+      "priceUsd": 71,
+      "compareAtUsd": 113
+    },
+    {
+      "handle": "store-15-verde-hydro-item-6",
+      "sku": "DROP-VERDE-205",
+      "title": "VerdeHydro Collection Item #6",
+      "priceUsd": 79,
+      "compareAtUsd": 125
+    },
+    {
+      "handle": "store-15-verde-hydro-item-7",
+      "sku": "DROP-VERDE-206",
+      "title": "VerdeHydro Collection Item #7",
+      "priceUsd": 87,
+      "compareAtUsd": 137
+    },
+    {
+      "handle": "store-15-verde-hydro-item-8",
+      "sku": "DROP-VERDE-207",
+      "title": "VerdeHydro Collection Item #8",
+      "priceUsd": 95,
+      "compareAtUsd": 149
+    },
+    {
+      "handle": "store-15-verde-hydro-item-9",
+      "sku": "DROP-VERDE-208",
+      "title": "VerdeHydro Collection Item #9",
+      "priceUsd": 103,
+      "compareAtUsd": 161
+    },
+    {
+      "handle": "store-15-verde-hydro-item-10",
+      "sku": "DROP-VERDE-209",
+      "title": "VerdeHydro Collection Item #10",
+      "priceUsd": 111,
+      "compareAtUsd": 173
+    },
+    {
+      "handle": "store-15-verde-hydro-item-11",
+      "sku": "DROP-VERDE-210",
+      "title": "VerdeHydro Collection Item #11",
+      "priceUsd": 119,
+      "compareAtUsd": 185
+    },
+    {
+      "handle": "store-15-verde-hydro-item-12",
+      "sku": "DROP-VERDE-211",
+      "title": "VerdeHydro Collection Item #12",
+      "priceUsd": 127,
+      "compareAtUsd": 197
+    }
+  ]
+}

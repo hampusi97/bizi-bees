@@ -1,0 +1,89 @@
+{
+  "store": "KineticGrip",
+  "products": [
+    {
+      "handle": "store-13-kinetic-grip-item-1",
+      "sku": "DROP-GRIP-200",
+      "title": "KineticGrip Collection Item #1",
+      "priceUsd": 39,
+      "compareAtUsd": 65
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-2",
+      "sku": "DROP-GRIP-201",
+      "title": "KineticGrip Collection Item #2",
+      "priceUsd": 47,
+      "compareAtUsd": 77
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-3",
+      "sku": "DROP-GRIP-202",
+      "title": "KineticGrip Collection Item #3",
+      "priceUsd": 55,
+      "compareAtUsd": 89
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-4",
+      "sku": "DROP-GRIP-203",
+      "title": "KineticGrip Collection Item #4",
+      "priceUsd": 63,
+      "compareAtUsd": 101
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-5",
+      "sku": "DROP-GRIP-204",
+      "title": "KineticGrip Collection Item #5",
+      "priceUsd": 71,
+      "compareAtUsd": 113
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-6",
+      "sku": "DROP-GRIP-205",
+      "title": "KineticGrip Collection Item #6",
+      "priceUsd": 79,
+      "compareAtUsd": 125
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-7",
+      "sku": "DROP-GRIP-206",
+      "title": "KineticGrip Collection Item #7",
+      "priceUsd": 87,
+      "compareAtUsd": 137
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-8",
+      "sku": "DROP-GRIP-207",
+      "title": "KineticGrip Collection Item #8",
+      "priceUsd": 95,
+      "compareAtUsd": 149
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-9",
+      "sku": "DROP-GRIP-208",
+      "title": "KineticGrip Collection Item #9",
+      "priceUsd": 103,
+      "compareAtUsd": 161
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-10",
+      "sku": "DROP-GRIP-209",
+      "title": "KineticGrip Collection Item #10",
+      "priceUsd": 111,
+      "compareAtUsd": 173
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-11",
+      "sku": "DROP-GRIP-210",
+      "title": "KineticGrip Collection Item #11",
+      "priceUsd": 119,
+      "compareAtUsd": 185
+    },
+    {
+      "handle": "store-13-kinetic-grip-item-12",
+      "sku": "DROP-GRIP-211",
+      "title": "KineticGrip Collection Item #12",
+      "priceUsd": 127,
+      "compareAtUsd": 197
+    }
+  ]
+}

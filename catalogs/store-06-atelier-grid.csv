@@ -1,0 +1,13 @@
+sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
+DROP-GRID-101,"Atelier Grid Edition #1",34,54,8,76.5
+DROP-GRID-102,"Atelier Grid Edition #2",41,64,9.5,76.5
+DROP-GRID-103,"Atelier Grid Edition #3",48,74,11,76.5
+DROP-GRID-104,"Atelier Grid Edition #4",55,84,12.5,76.5
+DROP-GRID-105,"Atelier Grid Edition #5",62,94,14,76.5
+DROP-GRID-106,"Atelier Grid Edition #6",69,104,15.5,76.5
+DROP-GRID-107,"Atelier Grid Edition #7",76,114,17,76.5
+DROP-GRID-108,"Atelier Grid Edition #8",83,124,18.5,76.5
+DROP-GRID-109,"Atelier Grid Edition #9",90,134,20,76.5
+DROP-GRID-110,"Atelier Grid Edition #10",97,144,21.5,76.5
+DROP-GRID-111,"Atelier Grid Edition #11",104,154,23,76.5
+DROP-GRID-112,"Atelier Grid Edition #12",111,164,24.5,76.5

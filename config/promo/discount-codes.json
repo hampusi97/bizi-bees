@@ -1,0 +1,34 @@
+{
+  "codes": [
+    {
+      "code": "WELCOME15",
+      "title": "Welcome 15% Off",
+      "value": 15,
+      "valueType": "percentage"
+    },
+    {
+      "code": "BUNDLE20",
+      "title": "Bundle 20% Off",
+      "value": 20,
+      "valueType": "percentage"
+    },
+    {
+      "code": "VIP25",
+      "title": "VIP 25% Off",
+      "value": 25,
+      "valueType": "percentage"
+    },
+    {
+      "code": "FREESHIP",
+      "title": "Free Shipping",
+      "value": 0,
+      "valueType": "shipping"
+    }
+  ],
+  "provisionVia": "Shopify Admin API /admin/api/2024-01/price_rules.json",
+  "note": "Requires connected Shopify store + Admin API access token. OmegaBot self-debugs provisioning errors.",
+  "epsilonGreedy": {
+    "epsilon": 0.1,
+    "description": "Epsilon-Greedy Multi-Armed Bandit for promo A/B testing"
+  }
+}

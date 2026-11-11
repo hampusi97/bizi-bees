@@ -1,0 +1,152 @@
+[
+  {
+    "id": "store-01-bizi-bees",
+    "name": "Bizi Bees Boutique",
+    "grossSales": 157.18,
+    "discounts": 18.86,
+    "landedCogs": 47.15,
+    "shipping": 19.4,
+    "adSpend": 28.29,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-02-luma-clinical",
+    "name": "Luma Clinical",
+    "grossSales": 130.27,
+    "discounts": 15.63,
+    "landedCogs": 39.08,
+    "shipping": 9.7,
+    "adSpend": 23.45,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-03-cryo-halo",
+    "name": "CryoHalo Recovery",
+    "grossSales": 165.41,
+    "discounts": 19.85,
+    "landedCogs": 49.62,
+    "shipping": 33.95,
+    "adSpend": 29.77,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-04-sculpt-wave",
+    "name": "SculptWave Body",
+    "grossSales": 154.07,
+    "discounts": 18.49,
+    "landedCogs": 46.22,
+    "shipping": 9.7,
+    "adSpend": 27.73,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-05-wonder-hive",
+    "name": "WonderHive Play",
+    "grossSales": 149.25,
+    "discounts": 17.91,
+    "landedCogs": 44.77,
+    "shipping": 14.55,
+    "adSpend": 26.86,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-06-atelier-grid",
+    "name": "Atelier Grid",
+    "grossSales": 167.38,
+    "discounts": 20.09,
+    "landedCogs": 50.21,
+    "shipping": 19.4,
+    "adSpend": 30.13,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-07-aether-sleep",
+    "name": "Aether Sleep",
+    "grossSales": 171.69,
+    "discounts": 20.6,
+    "landedCogs": 51.51,
+    "shipping": 14.55,
+    "adSpend": 30.9,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-08-kova-brew",
+    "name": "Kova Brew",
+    "grossSales": 154.87,
+    "discounts": 18.58,
+    "landedCogs": 46.46,
+    "shipping": 9.7,
+    "adSpend": 27.88,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-09-spine-align",
+    "name": "SpineAlign Studio",
+    "grossSales": 149.26,
+    "discounts": 17.91,
+    "landedCogs": 44.78,
+    "shipping": 9.7,
+    "adSpend": 26.87,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-10-terra-paw",
+    "name": "TerraPaw Co.",
+    "grossSales": 156.52,
+    "discounts": 18.78,
+    "landedCogs": 46.96,
+    "shipping": 9.7,
+    "adSpend": 28.17,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-11-nomad-carry",
+    "name": "NomadCarry",
+    "grossSales": 144,
+    "discounts": 17.28,
+    "landedCogs": 43.2,
+    "shipping": 14.55,
+    "adSpend": 25.92,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-12-solace-aroma",
+    "name": "Solace Aroma",
+    "grossSales": 154.57,
+    "discounts": 18.55,
+    "landedCogs": 46.37,
+    "shipping": 24.25,
+    "adSpend": 27.82,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-13-kinetic-grip",
+    "name": "KineticGrip",
+    "grossSales": 159.56,
+    "discounts": 19.15,
+    "landedCogs": 47.87,
+    "shipping": 19.4,
+    "adSpend": 28.72,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-14-lumen-desk",
+    "name": "LumenDesk",
+    "grossSales": 153.3,
+    "discounts": 18.4,
+    "landedCogs": 45.99,
+    "shipping": 24.25,
+    "adSpend": 27.59,
+    "date": "2026-11-11"
+  },
+  {
+    "id": "store-15-verde-hydro",
+    "name": "VerdeHydro",
+    "grossSales": 149.58,
+    "discounts": 17.95,
+    "landedCogs": 44.87,
+    "shipping": 29.1,
+    "adSpend": 26.92,
+    "date": "2026-11-11"
+  }
+]

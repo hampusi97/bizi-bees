@@ -20,9 +20,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bizi Bees OS-X Fleet Command | 15-Store Autonomous Engine",
+  title: "Bizi Bees OS-X Fleet Command | 17-Store Autonomous Engine",
   description:
-    "Multi-Store E-Commerce Operating System, 15 Live DTC Storefronts, 90 Categorized Products, and Google Workspace Command Hub.",
+    "Multi-Store E-Commerce Operating System, 17 Live DTC Storefronts, 90 Categorized Products, and Google Workspace Command Hub.",
   keywords: [
     "Bizi Bees",
     "Luma Clinical",
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    title: "Bizi Bees OS-X Fleet Command | 15-Store Autonomous Engine",
+    title: "Bizi Bees OS-X Fleet Command | 17-Store Autonomous Engine",
     description:
-      "Unified Autonomous Shopify Fleet Command • 15 Live DTC Storefronts • 90 Categorized SKUs • Google Workspace Sync.",
+      "Unified Autonomous Shopify Fleet Command • 17 Live DTC Storefronts • 90 Categorized SKUs • Google Workspace Sync.",
     siteName: "Bizi Bees OS-X Fleet Command",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bizi Bees OS-X Fleet Command | 15-Store Autonomous Engine",
+    title: "Bizi Bees OS-X Fleet Command | 17-Store Autonomous Engine",
     description:
-      "Unified Autonomous Shopify Fleet Command • 15 Live DTC Storefronts • 90 Categorized SKUs • Google Workspace Sync.",
+      "Unified Autonomous Shopify Fleet Command • 17 Live DTC Storefronts • 90 Categorized SKUs • Google Workspace Sync.",
   },
 };
 

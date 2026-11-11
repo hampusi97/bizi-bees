@@ -1,0 +1,13 @@
+sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
+DROP-SPINE-101,"SpineAlign Studio Edition #1",34,54,8,76.5
+DROP-SPINE-102,"SpineAlign Studio Edition #2",41,64,9.5,76.5
+DROP-SPINE-103,"SpineAlign Studio Edition #3",48,74,11,76.5
+DROP-SPINE-104,"SpineAlign Studio Edition #4",55,84,12.5,76.5
+DROP-SPINE-105,"SpineAlign Studio Edition #5",62,94,14,76.5
+DROP-SPINE-106,"SpineAlign Studio Edition #6",69,104,15.5,76.5
+DROP-SPINE-107,"SpineAlign Studio Edition #7",76,114,17,76.5
+DROP-SPINE-108,"SpineAlign Studio Edition #8",83,124,18.5,76.5
+DROP-SPINE-109,"SpineAlign Studio Edition #9",90,134,20,76.5
+DROP-SPINE-110,"SpineAlign Studio Edition #10",97,144,21.5,76.5
+DROP-SPINE-111,"SpineAlign Studio Edition #11",104,154,23,76.5
+DROP-SPINE-112,"SpineAlign Studio Edition #12",111,164,24.5,76.5

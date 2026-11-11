@@ -1,0 +1,12 @@
+{
+  "algorithm": "epsilon-greedy",
+  "epsilon": 0.1,
+  "codes": [
+    "WELCOME15",
+    "BUNDLE20",
+    "VIP25",
+    "FREESHIP"
+  ],
+  "metric": "conversion_rate",
+  "updateIntervalHours": 24
+}

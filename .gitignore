@@ -51,3 +51,6 @@ blob-report/
 *.db
 .vercel
 .env*
+
+# Shopify compiled theme worktrees
+.build-themes/

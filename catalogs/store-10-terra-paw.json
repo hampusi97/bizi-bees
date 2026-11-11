@@ -1,0 +1,89 @@
+{
+  "store": "TerraPaw Co.",
+  "products": [
+    {
+      "handle": "store-10-terra-paw-item-1",
+      "sku": "DROP-PAW-200",
+      "title": "TerraPaw Co. Collection Item #1",
+      "priceUsd": 39,
+      "compareAtUsd": 65
+    },
+    {
+      "handle": "store-10-terra-paw-item-2",
+      "sku": "DROP-PAW-201",
+      "title": "TerraPaw Co. Collection Item #2",
+      "priceUsd": 47,
+      "compareAtUsd": 77
+    },
+    {
+      "handle": "store-10-terra-paw-item-3",
+      "sku": "DROP-PAW-202",
+      "title": "TerraPaw Co. Collection Item #3",
+      "priceUsd": 55,
+      "compareAtUsd": 89
+    },
+    {
+      "handle": "store-10-terra-paw-item-4",
+      "sku": "DROP-PAW-203",
+      "title": "TerraPaw Co. Collection Item #4",
+      "priceUsd": 63,
+      "compareAtUsd": 101
+    },
+    {
+      "handle": "store-10-terra-paw-item-5",
+      "sku": "DROP-PAW-204",
+      "title": "TerraPaw Co. Collection Item #5",
+      "priceUsd": 71,
+      "compareAtUsd": 113
+    },
+    {
+      "handle": "store-10-terra-paw-item-6",
+      "sku": "DROP-PAW-205",
+      "title": "TerraPaw Co. Collection Item #6",
+      "priceUsd": 79,
+      "compareAtUsd": 125
+    },
+    {
+      "handle": "store-10-terra-paw-item-7",
+      "sku": "DROP-PAW-206",
+      "title": "TerraPaw Co. Collection Item #7",
+      "priceUsd": 87,
+      "compareAtUsd": 137
+    },
+    {
+      "handle": "store-10-terra-paw-item-8",
+      "sku": "DROP-PAW-207",
+      "title": "TerraPaw Co. Collection Item #8",
+      "priceUsd": 95,
+      "compareAtUsd": 149
+    },
+    {
+      "handle": "store-10-terra-paw-item-9",
+      "sku": "DROP-PAW-208",
+      "title": "TerraPaw Co. Collection Item #9",
+      "priceUsd": 103,
+      "compareAtUsd": 161
+    },
+    {
+      "handle": "store-10-terra-paw-item-10",
+      "sku": "DROP-PAW-209",
+      "title": "TerraPaw Co. Collection Item #10",
+      "priceUsd": 111,
+      "compareAtUsd": 173
+    },
+    {
+      "handle": "store-10-terra-paw-item-11",
+      "sku": "DROP-PAW-210",
+      "title": "TerraPaw Co. Collection Item #11",
+      "priceUsd": 119,
+      "compareAtUsd": 185
+    },
+    {
+      "handle": "store-10-terra-paw-item-12",
+      "sku": "DROP-PAW-211",
+      "title": "TerraPaw Co. Collection Item #12",
+      "priceUsd": 127,
+      "compareAtUsd": 197
+    }
+  ]
+}
