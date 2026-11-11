@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Dropper OS — 15-Store Fleet Command",
+  title: "Dropper OS — 17-Store Fleet Command",
   description:
-    "Dropper OS master portal: 15 Shopify storefronts, 7 super-bots, 180 winning products, $50K/month pace."
+    "Dropper OS master portal: 17 independent Shopify storefronts, 7 super-bots, 204 winning products, $50K/month pace."
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
