@@ -19,10 +19,11 @@
     "books:curate": ".venv/bin/python core/open_library_curator.py",
     "suppliers:verify": ".venv/bin/python core/supplier_api_connector.py",
     "test": "node --import tsx --test lib/*.test.ts dropper-os/tests/*.test.ts firestore.rules.test.ts && npm run test:e2e",
-    "test:unit": "node --import tsx --test lib/*.test.ts dropper-os/tests/*.test.ts firestore.rules.test.ts",
+    "test:unit": "node --import tsx --test lib/*.test.ts dropper-os/tests/*.test.ts firestore.rules.test.ts tests/exploded-showcase.test.ts",
     "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
     "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "check:scrollytelling": "node --import tsx scripts/check-scrollytelling.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

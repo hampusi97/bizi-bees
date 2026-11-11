@@ -15,6 +15,8 @@ import {
   type StoreProduct,
 } from "@/lib/stores-catalog";
 import StoreProductVisual from "@/components/StoreProductVisual";
+import ExplodedShowcase from "@/components/ExplodedShowcase";
+import { getExplodedShowcase } from "@/lib/exploded-showcase";
 import {
   auth,
   db,
@@ -519,6 +521,33 @@ export default function StorefrontPage() {
     });
     triggerToast(`Added ${store.hero} (${baseTierName})`);
     setIsCartOpen(true);
+  };
+
+  const explodedShowcase = getExplodedShowcase(store.id);
+
+  const handleAddExplodedBundle = (productIds: string[]) => {
+    if (!explodedShowcase) return;
+    const bundleId = `${store.id}-exploded-${explodedShowcase.bundle.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")}`;
+    setConfirmedOrder(null);
+    setCart((prev) => {
+      if (prev.some((i) => i.productId === bundleId)) return prev;
+      return [
+        ...prev,
+        {
+          productId: bundleId,
+          storeId: store.id,
+          title: explodedShowcase.bundle.title,
+          variantLabel: `${explodedShowcase.bundle.tag} · ${productIds.length} pieces`,
+          unitPrice: explodedShowcase.bundle.price,
+          quantity: 1,
+          isVipBundle: true,
+        },
+      ];
+    });
+    triggerToast(`Added ${explodedShowcase.bundle.title}`);
   };
 
   const handleAddCustomBundleToBag = () => {
@@ -1272,7 +1301,16 @@ export default function StorefrontPage() {
           </div>
         </section>
 
-        {/* SECTION 2: Interactive "Build Your Own 3-Piece Custom Bundle" Architect */}
+                {/* SECTION 1B: Pinned exploded-view showcase (three-stage scrollytelling) */}
+        {explodedShowcase && (
+          <ExplodedShowcase
+            showcase={explodedShowcase}
+            onAddBundle={handleAddExplodedBundle}
+            onOpenCart={() => setIsCartOpen(true)}
+          />
+        )}
+
+{/* SECTION 2: Interactive "Build Your Own 3-Piece Custom Bundle" Architect */}
         <section
           id="custom-bundle"
           className="rounded-xl bg-[#0F172A] border border-slate-800 p-6 sm:p-8 space-y-6"
