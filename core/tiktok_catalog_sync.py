@@ -12,6 +12,7 @@ import json
 import time
 import re
 import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 
 # ==============================================================================
@@ -319,8 +320,87 @@ class TikTokShopSyncEngine:
             }, f, indent=2)
 
         print(f"\n📦 Saved TikTok Catalog Sync Manifest ({len(self.synced_products)} SKUs) to config/tiktok_catalog_sync_manifest.json")
+        self.sync_to_supabase()
         self.generate_report()
         return len(self.synced_products)
+
+    def sync_to_supabase(self):
+        """Syncs all TikTok SKUs directly into Supabase PostgreSQL database"""
+        supabase_url = os.getenv("NEXT_PUBLIC_SUPABASE_URL", "https://fnxxdjdskikbxavqclsy.supabase.co")
+        supabase_key = os.getenv("NEXT_PUBLIC_SUPABASE_ANON_KEY", os.getenv("SUPABASE_ANON_KEY", ""))
+        
+        if not supabase_key:
+            env_path = os.path.join(os.path.dirname(__file__), "..", ".env.local")
+            if os.path.exists(env_path):
+                with open(env_path) as ef:
+                    for line in ef:
+                        if "SUPABASE_ANON_KEY" in line:
+                            supabase_key = line.split("=", 1)[1].strip().strip('"\'')
+                            break
+
+        if not supabase_key:
+            print("⚠️ Skipping Supabase direct sync: No Supabase API key available.")
+            return
+
+        headers = {
+            "apikey": supabase_key,
+            "Authorization": f"Bearer {supabase_key}",
+            "Content-Type": "application/json",
+            "Prefer": "resolution=merge-duplicates"
+        }
+
+        db_rows = []
+        for p in self.synced_products:
+            sku_info = p["skus"][0]
+            db_rows.append({
+                "store_id": p.get("store_id", ""),
+                "seller_sku": sku_info["seller_sku"],
+                "title": p.get("title", ""),
+                "tiktok_category_id": p.get("tiktok_category_id", ""),
+                "tiktok_category_name": p.get("tiktok_category_name", ""),
+                "sale_price": float(sku_info.get("sale_price", 0)),
+                "original_price": float(sku_info.get("original_price", 0)),
+                "affiliate_commission_pct": int(sku_info.get("affiliate_commission_pct", 25)),
+                "affiliate_commission_amount": float(sku_info.get("affiliate_commission_amount", 0)),
+                "stock_quantity": int(sku_info.get("available_stock", 250)),
+                "sync_status": "active"
+            })
+
+        try:
+            req = urllib.request.Request(
+                f"{supabase_url}/rest/v1/tiktok_products?on_conflict=seller_sku",
+                data=json.dumps(db_rows).encode("utf-8"),
+                headers=headers,
+                method="POST"
+            )
+            with urllib.request.urlopen(req) as resp:
+                if resp.status in (200, 201):
+                    print(f"  ⚡ Live Supabase Database Synchronized: {len(db_rows)} TikTok products upserted.")
+        except Exception as e:
+            print(f"⚠️ Supabase product upsert notice: {e}")
+
+        # Insert log entry
+        try:
+            log_entry = {
+                "channel": "tiktok_shop",
+                "status": "success",
+                "items_synced": len(db_rows),
+                "details": {
+                    "total_stores": len(self.stores),
+                    "commission": f"{DEFAULT_AFFILIATE_COMMISSION_PCT}%",
+                    "timestamp": datetime.now(timezone.utc).isoformat()
+                }
+            }
+            req_log = urllib.request.Request(
+                f"{supabase_url}/rest/v1/catalog_sync_logs",
+                data=json.dumps(log_entry).encode("utf-8"),
+                headers=headers,
+                method="POST"
+            )
+            urllib.request.urlopen(req_log)
+            print("  📋 Live Supabase Sync Log recorded in catalog_sync_logs.")
+        except Exception as e:
+            print(f"⚠️ Supabase log notice: {e}")
 
     def generate_report(self):
         """Generates markdown status report for executive and creator review"""

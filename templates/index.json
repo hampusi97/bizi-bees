@@ -4,6 +4,10 @@
       "type": "bizi-bees-hero",
       "settings": {}
     },
+    "advanced_xray_bento": {
+      "type": "advanced-xray-bento",
+      "settings": {}
+    },
     "bizi_blind_date_builder": {
       "type": "bizi-blind-date-builder",
       "settings": {}
@@ -14,6 +18,14 @@
     },
     "ultra_dynamic_tabbed_catalog": {
       "type": "ultra-dynamic-tabbed-catalog",
+      "settings": {}
+    },
+    "advanced_ai_quiz": {
+      "type": "advanced-ai-quiz",
+      "settings": {}
+    },
+    "google_ai_storefront_apps": {
+      "type": "google-ai-storefront-apps",
       "settings": {}
     },
     "bizi_gemini_concierge": {
@@ -27,9 +39,12 @@
   },
   "order": [
     "bizi_bees_hero",
+    "advanced_xray_bento",
     "bizi_blind_date_builder",
     "bizi_crate_builder",
     "ultra_dynamic_tabbed_catalog",
+    "advanced_ai_quiz",
+    "google_ai_storefront_apps",
     "bizi_gemini_concierge",
     "shoppable_instagram_feed"
   ]
