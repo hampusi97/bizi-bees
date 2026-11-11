@@ -1,0 +1,125 @@
+/**
+ * Emergency Storefront Repair CSS
+ * Forces clean product photography, neutral DTC palette, and readable pricing.
+ * Safe to load on any theme version (high specificity + !important only where needed).
+ */
+
+:root {
+  --bizi-white: #FFFFFF;
+  --bizi-slate: #0F172A;
+  --bizi-muted: #64748B;
+  --bizi-teal: #0D9488;
+  --bizi-border: #E2E8F0;
+  --bizi-strike: #94A3B8;
+  --bizi-bg: #F8FAFC;
+}
+
+/* ─── 1. Kill giant red promo badges covering product photos ─── */
+.card-image > span[style*="d90429"],
+.card-image > span[style*="#d90429"],
+.card-image > span[style*="dc2626"],
+.card-image > span[style*="#dc2626"],
+.card-image > span[style*="background:#d9"],
+.card-image > span[style*="background: #d9"],
+.card-image > span[style*="background:#dc"],
+.card-image > span[style*="background: #dc"],
+span[style*="35% OFF TODAY"],
+div[style*="35% OFF LAUNCH"],
+.card-image span[style*="position:absolute"][style*="background"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ensure media is visible and not painted over */
+.card-image,
+.card__media,
+.bizi-card-media,
+.luma-card__image-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+  background: var(--bizi-bg) !important;
+}
+
+.card-image img,
+.card__media img,
+.bizi-card-img,
+.card-image svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Soft hover zoom (no layout shift) */
+.card:hover .card-image img,
+.bizi-product-card:hover .bizi-card-img {
+  transform: scale(1.04);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* ─── 2. Neutralize circus palette on common promo surfaces ─── */
+.announcement-bar,
+[class*="announcement"] {
+  background: var(--bizi-slate) !important;
+  color: var(--bizi-white) !important;
+}
+
+/* Loud red CTAs → teal/slate */
+a[style*="background:#dc2626"],
+a[style*="background: #dc2626"],
+button[style*="background:#dc2626"],
+button[style*="background: #dc2626"],
+.button[style*="#dc2626"],
+[class*="buy"][style*="#dc2626"] {
+  background: var(--bizi-slate) !important;
+  border-color: var(--bizi-slate) !important;
+  color: var(--bizi-white) !important;
+}
+
+/* ─── 3. Pricing: charcoal current, muted strikethrough ─── */
+.price,
+.card .price,
+.bizi-price-current,
+.luma-card__price,
+[class*="price"] span[style*="color:#d90429"],
+[class*="price"] span[style*="color: #d90429"],
+[class*="price"] span[style*="color:#dc2626"],
+[class*="price"] span[style*="color: #dc2626"],
+span[style*="color:#d90429"],
+span[style*="color:#dc2626"] {
+  color: var(--bizi-slate) !important;
+  font-weight: 700 !important;
+}
+
+.bizi-price-compare,
+.luma-card__compare,
+span[style*="text-decoration:line-through"],
+span[style*="text-decoration: line-through"] {
+  color: var(--bizi-strike) !important;
+  font-weight: 400 !important;
+}
+
+/* ─── 4. Soften aggressive legal threat blocks if present ─── */
+footer [class*="legal"],
+footer [class*="warning"],
+footer p:has(> strong:first-child) {
+  /* structural cleanup handled in footer liquid; CSS softens residual threat copy */
+}
+
+/* Prefer calm trust language surfaces */
+.luma-trust-footer,
+.luma-footer,
+.site-footer {
+  background: #0F172A !important;
+  color: #E2E8F0 !important;
+}
