@@ -50,3 +50,4 @@ playwright-report/
 blob-report/
 *.db
 .vercel
+.env*
