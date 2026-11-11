@@ -3,17 +3,38 @@ name: Deploy Shopify Theme
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy Theme to Shopify
-        uses: Shopify/theme-action@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          store: ${{ secrets.SHOPIFY_SHOP_URL }}
-          password: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
-          path: '.'
-          ignore: 'config/settings_data.json'
-          flags: '--ignore config/settings_data.json'
+          node-version: 20
+
+      - name: Validate Theme Ignore Guard
+        run: |
+          echo "Verifying safety guards: config/settings_data.json must be preserved..."
+          if grep -q "config/settings_data.json" .shopifyignore; then
+            echo "✓ .shopifyignore contains config/settings_data.json"
+          else
+            echo "::error::.shopifyignore missing config/settings_data.json protection"
+            exit 1
+          fi
+
+      - name: Deploy Theme to Shopify
+        if: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN != '' && secrets.SHOPIFY_SHOP_URL != '' }}
+        run: |
+          npm install -g @shopify/cli @shopify/theme
+          shopify theme push \
+            --store "${{ secrets.SHOPIFY_SHOP_URL }}" \
+            --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \
+            --path . \
+            --ignore config/settings_data.json \
+            --live \
+            --allow-live
