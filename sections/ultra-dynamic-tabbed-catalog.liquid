@@ -21,6 +21,9 @@
       <button class="dyn-tab-btn active" onclick="switchCategory('all', this)" type="button" role="tab" aria-selected="true">
         <span>✨ All Flagship Items</span>
       </button>
+      <button class="dyn-tab-btn" onclick="switchCategory('bizibees', this)" type="button" role="tab" aria-selected="false">
+        <span>🐝 Bizi Bees™ Finds</span>
+      </button>
       <button class="dyn-tab-btn" onclick="switchCategory('clinical', this)" type="button" role="tab" aria-selected="false">
         <span>🔬 Luma Clinical™</span>
       </button>
@@ -208,10 +211,10 @@
       </div>
     </div>
 
-    <!-- Item 7: Blind Date with a Book Mystery Box (Books / Gifts) -->
-    <div class="dyn-card" data-category="books gifts all" data-tilt>
+    <!-- Item 7: Blind Date with a Book Mystery Box (Bizi Bees / Books / Gifts) -->
+    <div class="dyn-card" data-category="bizibees books gifts all" data-tilt>
       <div class="dyn-card-media">
-        <span class="dyn-tag-vintage">📖 Handpicked Vintage</span>
+        <span class="dyn-tag-vintage">🐝 Bizi Bees Flagship</span>
         <img 
           src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
           alt="Blind Date with a Book"
@@ -236,8 +239,8 @@
       </div>
     </div>
 
-    <!-- Item 8: Weekly Luxury Planners (Gifts / Books) -->
-    <div class="dyn-card" data-category="gifts books all" data-tilt>
+    <!-- Item 8: Weekly Luxury Planners (Bizi Bees / Gifts / Books) -->
+    <div class="dyn-card" data-category="bizibees gifts books all" data-tilt>
       <div class="dyn-card-media">
         <span class="dyn-tag-bundle">✍️ Velvet &amp; Leather</span>
         <img 
@@ -264,8 +267,8 @@
       </div>
     </div>
 
-    <!-- Item 9: 10 Frame Fidgets (Gifts) -->
-    <div class="dyn-card" data-category="gifts all" data-tilt>
+    <!-- Item 9: 10 Frame Fidgets (Bizi Bees / Gifts) -->
+    <div class="dyn-card" data-category="bizibees gifts all" data-tilt>
       <div class="dyn-card-media">
         <span class="dyn-tag-hsa">🧩 Focus &amp; Sensory</span>
         <img 
@@ -288,6 +291,62 @@
         </div>
         <button class="dyn-buy-btn" onclick="instantAddToCart('10 Frame Fidgets Set', '9.74', this)" type="button">
           <span>Buy Set — $9.74 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 10: Storm Japanese Crystal Whisky Glass (Bizi Bees / Gifts) -->
+    <div class="dyn-card" data-category="bizibees gifts all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-vintage">🥃 Handcrafted Crystal</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="Storm Crystal Whisky Glass"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>5.0 (126+ reviews)</span></div>
+        <h3>Storm™ Japanese Handcrafted Crystal Whisky Glass</h3>
+        <p class="dyn-spec">Heavy 380g rock glass with 3D Mount Fuji topography base in luxury gift wooden box.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$24.99</strong>
+            <span class="dyn-strike">$38.00</span>
+          </div>
+          <span class="dyn-save">SAVE 34%</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('Storm Crystal Whisky Glass', '24.99', this)" type="button">
+          <span>Buy Glass — $24.99 ⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Item 11: Bizi Bees Mystery Reader Bundle (Bizi Bees / Books) -->
+    <div class="dyn-card" data-category="bizibees books gifts all" data-tilt>
+      <div class="dyn-card-media">
+        <span class="dyn-tag-bundle">👑 Collector's Set</span>
+        <img 
+          src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" 
+          alt="Bizi Bees Mystery Reader Bundle"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80';"
+        >
+      </div>
+      <div class="dyn-card-body">
+        <div class="dyn-rating">★★★★★ <span>5.0 (178+ reviews)</span></div>
+        <h3>Bizi Bees™ Deluxe 2-Book Mystery Reader Bundle</h3>
+        <p class="dyn-spec">2 hand-curated pre-loved vintage mysteries, custom brass bookmark &amp; organic botanical tea.</p>
+        <div class="dyn-price-row">
+          <div class="dyn-price">
+            <strong>$28.50</strong>
+            <span class="dyn-strike">$45.00</span>
+          </div>
+          <span class="dyn-save">BEST VALUE</span>
+        </div>
+        <button class="dyn-buy-btn" onclick="instantAddToCart('Bizi Bees Mystery Reader Bundle', '28.50', this)" type="button">
+          <span>Buy Bundle — $28.50 ⚡</span>
         </button>
       </div>
     </div>
@@ -629,7 +688,9 @@
     'LumaClean™ Brush Cleaner': '/products/lumaglow-4-in-1-facial-wand',
     'Blind Date with a Book': '/products/blind-date-book-mystery',
     'Luxury Weekly Planner': '/collections/books',
-    '10 Frame Fidgets Set': '/collections/games-puzzles'
+    '10 Frame Fidgets Set': '/collections/games-puzzles',
+    'Storm Crystal Whisky Glass': '/products/storm-japanese-crystal-whisky-glass',
+    'Bizi Bees Mystery Reader Bundle': '/products/blind-date-book-mystery'
   };
 
   function instantAddToCart(title, price, btn) {

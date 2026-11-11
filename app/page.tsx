@@ -342,8 +342,20 @@ export default function MissionControlDashboard() {
                       >
                         {/* Store Identity */}
                         <td className="py-4 px-4">
-                          <div className="font-bold text-white group-hover:text-[#38BDF8] transition-colors">
-                            {store.name}
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-white group-hover:text-[#38BDF8] transition-colors">
+                              {store.name}
+                            </span>
+                            {store.id === "bizi-bees" && (
+                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/40 uppercase tracking-wider">
+                                🐝 Flagship Store
+                              </span>
+                            )}
+                            {store.id === "luma-clinical" && (
+                              <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-[#38BDF8]/20 text-[#38BDF8] border border-[#38BDF8]/40 uppercase tracking-wider">
+                                🔬 Clinical Lab
+                              </span>
+                            )}
                           </div>
                           <div className="text-[11px] text-[#64748B]">
                             {store.niche} •{" "}
