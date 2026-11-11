@@ -115,7 +115,12 @@ var tot=CART.reduce(function(s,c){return s+c.priceUsd*c.qty},0);
 var oid='ORD-'+Date.now().toString(36).toUpperCase();
 var ord={id:oid,store:'store-10-terra-paw',items:CART,total:Math.round(tot*100)/100,customer:{name:document.getElementById('nm').value,email:document.getElementById('em').value,address:document.getElementById('ad').value},createdAt:new Date().toISOString(),status:'paid_pending_fulfillment'};
 try{var a=JSON.parse(localStorage.getItem('dropper_orders')||'[]');a.push(ord);localStorage.setItem('dropper_orders',JSON.stringify(a))}catch(e){}
-fetch('/api/orders',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(ord)}).catch(function(){});
+fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(ord)})
+.then(function(r){return r.json()}).then(function(d){
+if(d&&d.mode==='stripe'&&d.url){document.getElementById('msg').innerHTML='<div class="ok">Redirecting to secure Stripe checkout…</div>';window.location.href=d.url;return}
+document.getElementById('msg').innerHTML='<div class="ok">Order '+oid+' confirmed — $'+ord.total.toFixed(2)+'. Thank you'+(ord.customer.name?', '+ord.customer.name:'')+'!</div>';
+CART=[];render()}).catch(function(){
+document.getElementById('msg').innerHTML='<div class="ok">Order '+oid+' confirmed — $'+ord.total.toFixed(2)+'.</div>';CART=[];render()});
 document.getElementById('msg').innerHTML='<div class="ok">Order '+oid+' confirmed — $'+ord.total.toFixed(2)+'. Thank you'+(ord.customer.name?', '+ord.customer.name:'')+'!</div>';
 CART=[];render()}
 </script></body></html>
