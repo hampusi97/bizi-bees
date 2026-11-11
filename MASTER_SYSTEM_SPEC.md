@@ -1784,5 +1784,78 @@ To maintain maximum creator velocity and elevate basket sizes across the 13-stor
 
 ---
 
+### SECTION 31: Dropper OS — Standalone E-Commerce Operating System & Fleet Command Center
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        DROPPER OS DESKTOP COCKPIT                      │
+│                  Web-Based Fleet Manager (Next.js/Node)                │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │
+         ┌──────────────────────────┼──────────────────────────┐
+         │                          │                          │
+         ▼                          ▼                          ▼
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│ MULTI-STORE PING │       │  OCTOKIT GITHUB  │       │  DYNAMIC THEME   │
+│ Live Sales & AOV │       │  Auto-Git Push   │       │  Code Injector   │
+│ Low-Stock Alert  │       │  Daily Reports   │       │  1-Click Deploy  │
+└──────────────────┘       └──────────────────┘       └──────────────────┘
+```
+
+#### 1. Architecture Overview (`dropper-os/`)
+Dropper OS is an institutional-grade, web-based e-commerce operating system, fleet manager, and autonomous engine. It connects directly to the live internet, orchestrates all connected Shopify stores (starting with Bizi Bees Boutique), monitors real-time sales/health, injects high-converting dynamic code, and auto-syncs everything with GitHub.
+
+- **Framework:** Next.js (App Router), TypeScript, Tailwind CSS, Lucide Icons, Framer Motion.
+- **Backend Runtime:** Node/Edge runtime with scheduled cron workers (`node-cron`).
+- **Core Integrations:**
+  - **Shopify Admin API (GraphQL & REST):** Real-time store telemetry, sales, AOV, inventory levels, cart mutations (`dropper-os/lib/shopify-client.ts`).
+  - **GitHub API (Octokit):** Programmatically commits files, pushes theme updates, triggers GitHub Actions, and writes daily reports directly to repos (`dropper-os/lib/github-client.ts`).
+  - **Live Webhook Daemon:** Listens for Shopify order events and GitHub deployment events (`dropper-os/app/api/webhooks/shopify/route.ts`).
+- **Visual Aesthetic:** Dark Titanium & Cyber-Tactile (`#09090B` obsidian background, `#18181B` card surfaces, subtle emerald `#10B981` indicators, monospace metrics, and smooth macOS/Linear-style windowing).
+
+#### 2. Directory Layout
+```text
+dropper-os/
+├── app/
+│   ├── api/
+│   │   ├── dropper/
+│   │   │   ├── stores/route.ts        # GET/POST live store metrics across fleet
+│   │   │   ├── deploy/route.ts        # Triggers instant theme pushes to GitHub & Shopify
+│   │   │   ├── report/route.ts        # Manual & automated trigger for daily briefing
+│   │   │   └── telemetry/route.ts     # Pings stores for HTTP response time & SSL health
+│   │   └── webhooks/
+│   │       └── shopify/route.ts       # Live inbound order stream
+│   ├── layout.tsx
+│   ├── page.tsx                       # Dropper OS Desktop Command Center UI
+│   └── globals.css
+├── lib/
+│   ├── dropper-core.ts                # Central operating system kernel
+│   ├── shopify-client.ts              # Multi-tenant Shopify Admin API wrapper
+│   ├── github-client.ts               # Octokit GitHub git-push & workflow trigger
+│   └── dynamic-engine.ts              # Generates dynamic theme components (Cart, Sticky Bar)
+├── components/
+│   ├── DropperNav.tsx                 # Top OS menu bar (WiFi status, store switcher, clock)
+│   ├── FleetMatrix.tsx                # Grid of all connected stores with live revenue & health
+│   ├── LiveSalesFeed.tsx              # Real-time WebSocket/poll sales ticker
+│   ├── QuickDeployModal.tsx           # 1-click theme injector to GitHub
+│   └── SystemTerminal.tsx             # Interactive terminal output showing background tasks
+├── stores.config.json                 # Fleet registry (Bizi Bees + future stores)
+└── dropper-daemon.js                  # Standalone internet daemon for scheduled tasks
+```
+
+#### 3. Execution Commands
+```bash
+# Enter Dropper OS
+cd dropper-os
+
+# Boot Web Command Center
+npm run dev # Launches at http://localhost:3000
+
+# Launch Background Fleet Daemon
+node dropper-daemon.js
+```
+
+---
+
 ### Operating Philosophy
 Save this document as `MASTER_SYSTEM_SPEC.md` in the root of your project repository. It serves as the single source of truth for all code, styling, operational workflows, and marketing funnels across your e-commerce properties.

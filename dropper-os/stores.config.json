@@ -1,0 +1,73 @@
+{
+  "fleet_version": "1.0.0",
+  "updated_at": "2026-11-10T23:59:00Z",
+  "primary_store_id": "bizi-bees-boutique",
+  "stores": [
+    {
+      "id": "bizi-bees-boutique",
+      "name": "Bizi Bees Boutique",
+      "domain": "bizibees-store.myshopify.com",
+      "custom_domain": "bizibees.shop",
+      "niche": "Books, Secondhand Curations & Everyday Finds",
+      "status": "ONLINE",
+      "currency": "USD",
+      "target_daily_revenue": 1666.67,
+      "theme_name": "bizi-bees/main",
+      "theme_version": "v4.2-ultra-dynamic",
+      "last_commit_hash": "9c3eacd",
+      "last_ping_ms": 114,
+      "inventory_status": "HEALTHY",
+      "low_stock_threshold": 5,
+      "active_features": [
+        "Dynamic Free-Shipping Progress Bar",
+        "Mobile Sticky 1-Click Checkout Drawer",
+        "Live Social Proof Radar Toast",
+        "60 FPS 3D Holographic Card Tilt",
+        "Universal VIP Passport (13 Brands)"
+      ]
+    },
+    {
+      "id": "luma-clinical",
+      "name": "Luma Clinical™",
+      "domain": "luma-clinical.myshopify.com",
+      "custom_domain": "lumaclinical.com",
+      "niche": "Dermatology-Grade Phototherapy & QuadWave™ Microcurrent",
+      "status": "ONLINE",
+      "currency": "USD",
+      "target_daily_revenue": 1666.67,
+      "theme_name": "luma-clinical/v2",
+      "theme_version": "v4.2-luxury-clinical",
+      "last_commit_hash": "9c3eacd",
+      "last_ping_ms": 98,
+      "inventory_status": "HEALTHY",
+      "low_stock_threshold": 5,
+      "active_features": [
+        "3-Tier Freebies Ladder ($40/$65/$90)",
+        "Transit Insurance Booster ($1.98)",
+        "Pre-Dispute Instant Refund Shield",
+        "Predictive Serum Refill Bot"
+      ]
+    },
+    {
+      "id": "fizz-lab",
+      "name": "Fizz Lab™ Dirty Soda Co.",
+      "domain": "fizz-lab-dirty-soda.myshopify.com",
+      "custom_domain": "fizzlab.co",
+      "niche": "At-Home Dirty Soda Bar Kits, Syrups & Frothers",
+      "status": "ONLINE",
+      "currency": "USD",
+      "target_daily_revenue": 1666.67,
+      "theme_name": "fizz-lab/v1",
+      "theme_version": "v3.0-interactive-mixer",
+      "last_commit_hash": "9c3eacd",
+      "last_ping_ms": 126,
+      "inventory_status": "HEALTHY",
+      "low_stock_threshold": 5,
+      "active_features": [
+        "Interactive Dirty Soda Mixer Builder ($48)",
+        "Monthly Syrup Subscription Pod",
+        "Universal VIP Passport Network"
+      ]
+    }
+  ]
+}
