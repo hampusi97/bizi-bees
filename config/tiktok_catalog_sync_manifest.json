@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "synced_at": "2026-11-11T18:44:50.415468+00:00",
+  "synced_at": "2026-11-11T18:56:09.440480+00:00",
   "total_products": 30,
   "total_stores": 15,
   "default_affiliate_commission": "25%",
@@ -45,7 +45,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414291+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438180+00:00"
     },
     {
       "shopify_store_id": "ember-oak",
@@ -87,7 +87,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414451+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438456+00:00"
     },
     {
       "shopify_store_id": "bizi-bees",
@@ -130,7 +130,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414469+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438517+00:00"
     },
     {
       "shopify_store_id": "bizi-bees",
@@ -173,7 +173,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414480+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438541+00:00"
     },
     {
       "shopify_store_id": "luma-clinical",
@@ -216,7 +216,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414493+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438564+00:00"
     },
     {
       "shopify_store_id": "luma-clinical",
@@ -259,7 +259,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414504+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438578+00:00"
     },
     {
       "shopify_store_id": "luma-relief",
@@ -301,7 +301,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414515+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438592+00:00"
     },
     {
       "shopify_store_id": "luma-relief",
@@ -343,7 +343,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414524+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438602+00:00"
     },
     {
       "shopify_store_id": "fizz-lab",
@@ -386,7 +386,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414532+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438614+00:00"
     },
     {
       "shopify_store_id": "fizz-lab",
@@ -429,7 +429,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414540+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438631+00:00"
     },
     {
       "shopify_store_id": "crave-lab",
@@ -471,7 +471,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414548+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438664+00:00"
     },
     {
       "shopify_store_id": "crave-lab",
@@ -513,7 +513,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414557+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438678+00:00"
     },
     {
       "shopify_store_id": "aura-sculpt",
@@ -555,7 +555,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414566+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438692+00:00"
     },
     {
       "shopify_store_id": "aura-sculpt",
@@ -597,7 +597,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414573+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438701+00:00"
     },
     {
       "shopify_store_id": "pawglow",
@@ -639,7 +639,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414581+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438712+00:00"
     },
     {
       "shopify_store_id": "pawglow",
@@ -681,7 +681,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414588+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438721+00:00"
     },
     {
       "shopify_store_id": "zenith-sleep",
@@ -723,7 +723,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414595+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438731+00:00"
     },
     {
       "shopify_store_id": "zenith-sleep",
@@ -765,7 +765,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414602+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438740+00:00"
     },
     {
       "shopify_store_id": "aura-posture",
@@ -807,7 +807,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414611+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438749+00:00"
     },
     {
       "shopify_store_id": "aura-posture",
@@ -849,7 +849,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414618+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438758+00:00"
     },
     {
       "shopify_store_id": "lumicarve",
@@ -891,7 +891,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414626+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438767+00:00"
     },
     {
       "shopify_store_id": "lumicarve",
@@ -933,7 +933,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.414632+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.438775+00:00"
     },
     {
       "shopify_store_id": "dermasonic",
@@ -975,7 +975,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415309+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440021+00:00"
     },
     {
       "shopify_store_id": "dermasonic",
@@ -1017,7 +1017,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415324+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440032+00:00"
     },
     {
       "shopify_store_id": "calmcore",
@@ -1059,7 +1059,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415339+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440045+00:00"
     },
     {
       "shopify_store_id": "calmcore",
@@ -1101,7 +1101,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415348+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440055+00:00"
     },
     {
       "shopify_store_id": "floraspring",
@@ -1143,7 +1143,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415359+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440067+00:00"
     },
     {
       "shopify_store_id": "floraspring",
@@ -1185,7 +1185,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415368+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440078+00:00"
     },
     {
       "shopify_store_id": "velobrew",
@@ -1227,7 +1227,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415377+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440089+00:00"
     },
     {
       "shopify_store_id": "velobrew",
@@ -1269,7 +1269,7 @@
       ],
       "is_cod_open": false,
       "sync_status": "READY_FOR_TIKTOK_SHOP",
-      "last_synced_at": "2026-11-11T18:44:50.415384+00:00"
+      "last_synced_at": "2026-11-11T18:56:09.440098+00:00"
     }
   ]
 }
