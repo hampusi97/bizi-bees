@@ -124,7 +124,7 @@ const fleetData: FleetState = {
 let dbSeeded = false;
 
 async function syncStoresWithCloudSql() {
-  if (!process.env.SQL_HOST || !process.env.SQL_DB_NAME) {
+  if (!process.env.SQL_HOST && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
     return;
   }
   try {

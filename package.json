@@ -20,6 +20,7 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
     "@types/pg": "^8.23.1",
     "dotenv": "^18.0.10",
     "drizzle-kit": "^0.31.11",
