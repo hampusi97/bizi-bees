@@ -26,6 +26,14 @@ except ImportError:
 
 SHOP_URL = os.getenv("SHOPIFY_SHOP_URL", "bizibees-store.myshopify.com").replace("https://", "").replace("http://", "").strip("/")
 ACCESS_TOKEN = os.getenv("SHOPIFY_ADMIN_ACCESS_TOKEN", "").strip()
+if not ACCESS_TOKEN and os.path.exists(".env.local"):
+    with open(".env.local", "r") as f:
+        for line in f:
+            if line.startswith("SHOPIFY_ADMIN_ACCESS_TOKEN="):
+                ACCESS_TOKEN = line.split("=", 1)[1].strip().strip('"').strip("'")
+            elif line.startswith("SHOPIFY_SHOP_URL=") and not os.getenv("SHOPIFY_SHOP_URL"):
+                SHOP_URL = line.split("=", 1)[1].strip().strip('"').strip("'").replace("https://", "").replace("http://", "").strip("/")
+
 API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-04")
 BASE_URL = f"https://{SHOP_URL}/admin/api/{API_VERSION}"
 
@@ -169,8 +177,12 @@ def run_antigravity_fixer():
         "sections/bizi-blind-date-builder.liquid",
         "sections/bizi-crate-builder.liquid",
         "sections/ultra-dynamic-tabbed-catalog.liquid",
+        "sections/universal-luxury-buybox.liquid",
+        "sections/advanced-xray-bento.liquid",
+        "sections/advanced-ai-quiz.liquid",
         "snippets/wax-seal-popup.liquid",
         "snippets/dynamic-free-shipping-bar.liquid",
+        "snippets/dynamic-island-resolver.liquid",
         "snippets/seo-metadata-hub.liquid",
         "assets/bizi-bees-boutique.css",
         "assets/base.css",
@@ -217,9 +229,13 @@ def run_antigravity_fixer():
             ("sections/bizi-bees-hero.liquid", "sections/bizi-bees-hero.liquid"),
             ("sections/bizi-blind-date-builder.liquid", "sections/bizi-blind-date-builder.liquid"),
             ("sections/bizi-crate-builder.liquid", "sections/bizi-crate-builder.liquid"),
+            ("sections/universal-luxury-buybox.liquid", "sections/universal-luxury-buybox.liquid"),
+            ("sections/advanced-xray-bento.liquid", "sections/advanced-xray-bento.liquid"),
+            ("sections/advanced-ai-quiz.liquid", "sections/advanced-ai-quiz.liquid"),
             ("sections/ultra-dynamic-tabbed-catalog.liquid", "sections/ultra-dynamic-tabbed-catalog.liquid"),
             ("snippets/wax-seal-popup.liquid", "snippets/wax-seal-popup.liquid"),
             ("snippets/dynamic-free-shipping-bar.liquid", "snippets/dynamic-free-shipping-bar.liquid"),
+            ("snippets/dynamic-island-resolver.liquid", "snippets/dynamic-island-resolver.liquid"),
             ("snippets/seo-metadata-hub.liquid", "snippets/seo-metadata-hub.liquid"),
             ("snippets/cart-insurance-booster.liquid", "snippets/cart-insurance-booster.liquid"),
             ("snippets/anti-amazon-badges.liquid", "snippets/anti-amazon-badges.liquid"),

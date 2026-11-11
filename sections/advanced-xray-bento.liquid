@@ -1,0 +1,275 @@
+{% comment %}
+  APPLE-STYLE BENTO GRID & INTERACTIVE X-RAY HOTSPOT VISUALIZER
+  Repo: bizi-bees /sections/advanced-xray-bento.liquid
+{% endcomment %}
+
+<div class="bento-xray-wrap">
+  <div class="bento-xray-container">
+    
+    <div class="bento-header">
+      <span class="bento-eyebrow">PRECISION ENGINEERING &amp; CURATION</span>
+      <h2>Inside the Architecture.</h2>
+      <p>Tap any interactive node on the product below to inspect the materials, craftsmanship, and technology driving our 4.9-star clinical and boutique ratings.</p>
+    </div>
+
+    <div class="bento-master-grid">
+      
+      <!-- BENTO CELL 1: Interactive X-Ray Hotspot Stage (Spans 2 Columns) -->
+      <div class="bento-cell cell-xray">
+        <div class="xray-stage">
+          <img id="xrayProductImg" src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" alt="Interactive Product X-Ray" class="xray-img">
+          
+          <!-- Pulsing Interactive Hotspot Nodes -->
+          <button type="button" class="xray-node active" style="top: 25%; left: 48%;" onclick="selectHotspot(0, this)">+</button>
+          <button type="button" class="xray-node" style="top: 52%; left: 55%;" onclick="selectHotspot(1, this)">+</button>
+          <button type="button" class="xray-node" style="top: 75%; left: 42%;" onclick="selectHotspot(2, this)">+</button>
+        </div>
+
+        <div class="xray-info-panel">
+          <span class="xray-spec-tag" id="hotspotTag">NODE 01 // CORE SPECIFICATION</span>
+          <h3 id="hotspotTitle">Certified High-Grade Craftsmanship</h3>
+          <p id="hotspotDesc">Every unit undergoes a 4-point quality and authenticity inspection before dispatch, ensuring zero defects and immediate out-of-the-box performance.</p>
+          <div class="xray-Dynamic-metric">
+            <strong id="hotspotMetric">100%</strong>
+            <span id="hotspotMetricLabel">Verified Authentic Batch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENTO CELL 2: Interactive Annual Savings Calculator -->
+      <div class="bento-cell cell-calculator">
+        <span class="cell-label">INTERACTIVE VALUE CALCULATOR</span>
+        <h3>Calculate Your Annual Savings</h3>
+        <p>Slide to compare our direct-to-consumer pricing against traditional retail and salon markups:</p>
+        
+        <div class="calc-slider-box">
+          <label>Purchases / Sessions Per Year: <strong id="sessionCount">6</strong></label>
+          <input type="range" min="1" max="20" value="6" class="modern-range" id="savingsRange" oninput="updateSavingsCalc(this.value)">
+        </div>
+
+        <div class="calc-result-card">
+          <span>ESTIMATED ANNUAL SAVINGS:</span>
+          <strong id="annualSavingsAmount">$684.00 / yr</strong>
+          <small>✓ Plus Free US Priority Shipping Unlocked</small>
+        </div>
+      </div>
+
+      <!-- BENTO CELL 3: Instant Live Checkout Resolver -->
+      <div class="bento-cell cell-fast-action">
+        <div class="fast-badge">⚡ ZERO-FRICTION CHECKOUT</div>
+        <h3>Ready to Experience It Firsthand?</h3>
+        <p>Backed by our 60-Day Risk-Free Trial. If you aren't obsessed, return it with one click for a 100% refund.</p>
+        <button type="button" class="bento-primary-cta" onclick="triggerSmartAutoCheckout(this)">
+          <span>Instant 1-Click Buy Now →</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .bento-xray-wrap {
+    padding: 85px 20px;
+    background: #090D16;
+    color: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .bento-xray-container { max-width: 1140px; margin: 0 auto; }
+  .bento-header { text-align: center; max-width: 680px; margin: 0 auto 50px; }
+  .bento-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #38BDF8;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .bento-header h2 {
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 900;
+    letter-spacing: -1.2px;
+    margin: 0 0 14px;
+    color: #FFFFFF;
+  }
+  .bento-header p { font-size: 16px; color: #94A3B8; line-height: 1.6; margin: 0; }
+
+  /* Apple Bento Grid Layout */
+  .bento-master-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  .bento-cell {
+    background: #111827;
+    border: 1px solid #1E293B;
+    border-radius: 28px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .bento-cell:hover { border-color: #334155; }
+  .cell-xray {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: radial-gradient(circle at 50% 30%, #1E293B 0%, #0F172A 75%);
+  }
+
+  /* X-Ray Stage & Nodes */
+  .xray-stage {
+    position: relative;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .xray-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  }
+  .xray-node {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #38BDF8;
+    color: #090D16;
+    border: 3px solid #FFFFFF;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+    animation: nodePulse 2s infinite;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .xray-node:hover, .xray-node.active {
+    background: #FFFFFF;
+    transform: scale(1.2);
+  }
+  @keyframes nodePulse {
+    0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+    70% { box-shadow: 0 0 0 14px rgba(56, 189, 248, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+  }
+
+  .xray-info-panel {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid #334155;
+    border-radius: 20px;
+    padding: 24px;
+  }
+  .xray-spec-tag { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #38BDF8; display: block; margin-bottom: 6px; }
+  .xray-info-panel h3 { font-size: 22px; font-weight: 800; margin: 0 0 8px; color: #FFFFFF; }
+  .xray-info-panel p { font-size: 14px; color: #94A3B8; line-height: 1.5; margin: 0 0 16px; }
+  .xray-Dynamic-metric { display: flex; align-items: baseline; gap: 10px; border-top: 1px solid #1E293B; padding-top: 14px; }
+  .xray-Dynamic-metric strong { font-size: 28px; font-weight: 900; color: #10B981; }
+  .xray-Dynamic-metric span { font-size: 12px; color: #CBD5E1; font-weight: 600; }
+
+  /* Calculator Cell */
+  .cell-label { font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #94A3B8; display: block; margin-bottom: 8px; }
+  .cell-calculator h3, .cell-fast-action h3 { font-size: 22px; font-weight: 800; margin: 0 0 8px; color: #FFFFFF; }
+  .cell-calculator p, .cell-fast-action p { font-size: 13px; color: #94A3B8; line-height: 1.5; margin: 0 0 20px; }
+  .calc-slider-box { margin-bottom: 20px; }
+  .calc-slider-box label { display: block; font-size: 13px; color: #E2E8F0; margin-bottom: 10px; }
+  .modern-range { width: 100%; accent-color: #38BDF8; cursor: pointer; height: 6px; border-radius: 5px; }
+  .calc-result-card {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+  .calc-result-card span { font-size: 10px; font-weight: 800; color: #94A3B8; display: block; }
+  .calc-result-card strong { font-size: 32px; font-weight: 900; color: #10B981; display: block; margin: 4px 0; }
+  .calc-result-card small { font-size: 11px; color: #38BDF8; }
+
+  /* Fast Action Cell */
+  .fast-badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: #10B981; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .bento-primary-cta {
+    width: 100%;
+    background: #38BDF8;
+    color: #090D16;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .bento-primary-cta:hover { background: #FFFFFF; transform: translateY(-2px); }
+
+  @media (max-width: 850px) {
+    .bento-master-grid { grid-template-columns: 1fr; }
+    .cell-xray { grid-row: auto; }
+  }
+</style>
+
+<script>
+  const hotspotData = [
+    {
+      tag: "NODE 01 // PRECISION HEAD & FINISH",
+      title: "Inspected Boutique & Clinical Grade",
+      desc: "Every unit undergoes a strict 4-point inspection before dispatch, ensuring zero defects and immediate out-of-the-box performance.",
+      metric: "99.4%",
+      label: "Customer Satisfaction Score"
+    },
+    {
+      tag: "NODE 02 // CORE ARCHITECTURE",
+      title: "Engineered for Daily Rituals",
+      desc: "Designed to deliver maximum efficacy and tactile joy in just 3 to 5 minutes a day without expensive recurring appointments.",
+      metric: "3 Mins",
+      label: "Daily Protocol Time"
+    },
+    {
+      tag: "NODE 03 // SUSTAINABLE DURABILITY",
+      title: "Built to Last for Years",
+      desc: "Protected by our comprehensive 60-Day Trial Guarantee and priority domestic US replacement coverage.",
+      metric: "60 Days",
+      label: "100% Risk-Free Home Trial"
+    }
+  ];
+
+  function selectHotspot(index, btn) {
+    document.querySelectorAll('.xray-node').forEach(n => n.classList.remove('active'));
+    btn.classList.add('active');
+    const d = hotspotData[index];
+    document.getElementById('hotspotTag').innerText = d.tag;
+    document.getElementById('hotspotTitle').innerText = d.title;
+    document.getElementById('hotspotDesc').innerText = d.desc;
+    document.getElementById('hotspotMetric').innerText = d.metric;
+    document.getElementById('hotspotMetricLabel').innerText = d.label;
+  }
+
+  function updateSavingsCalc(val) {
+    document.getElementById('sessionCount').innerText = val;
+    const saved = val * 114;
+    document.getElementById('annualSavingsAmount').innerText = `$${saved.toLocaleString()}.00 / yr`;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Apple Bento X-Ray",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Apple Bento X-Ray Grid",
+      "category": "Interactive"
+    }
+  ]
+}
+{% endschema %}
