@@ -22,7 +22,10 @@
     "test:unit": "node --import tsx --test lib/*.test.ts dropper-os/tests/*.test.ts firestore.rules.test.ts",
     "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
     "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "check:fleet": "node --import tsx scripts/check-fleet-integrity.mjs",
+    "check:live": "node --import tsx scripts/check-live-storefronts.mjs",
+    "test:storefront": "node --import tsx --test tests/storefront-routes.test.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

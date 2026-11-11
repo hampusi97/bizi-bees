@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, notFound } from "next/navigation";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import {
   INITIAL_STORES,
@@ -207,16 +207,11 @@ export default function StorefrontPage() {
   const store: StoreDefinition = useMemo(() => {
     const found = getStoreById(rawStoreId);
     if (found) return found;
-    const titleName = rawStoreId
-      .split("-")
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(" ");
-    return {
-      ...INITIAL_STORES[0],
-      id: rawStoreId,
-      name: `${titleName}™`,
-      domain: `${rawStoreId}.myshopify.com`,
-    };
+    // An unknown store ID used to be faked as a copy of the first store in the
+    // catalog, so /stores/anything rendered Bizi Bees products under a
+    // "<Anything>™" brand and a made-up myshopify domain. A 404 is the honest
+    // answer, and it stops those URLs being indexed as real storefronts.
+    notFound();
   }, [rawStoreId]);
 
   const isEditorialSerifBrand =
