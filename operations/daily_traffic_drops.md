@@ -3621,3 +3621,66 @@
 - **1-Click Link:** https://bizibees-store.myshopify.com/clean
 
 ---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 20:01 MST [Campaign: Red Light Wand vs Solawave Teardown & Migraine Relief]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** The Dermatologist-Approved 4-in-1 Red Light Wand Dupe ($38.99 vs $169)
+- **Description:** Clinical-grade 630nm red light, 330µA microcurrent, 107°F warmth, and sonic depuffing for 77% less than Solawave. 35% OFF launch deal with code PROVOTODAY + free US shipping.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+- **Tags:** #redlighttherapy #solawavedupe #skincareroutine #antiaging #glowingskin
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "Stop paying $169 for celebrity skincare wands when the exact same 630nm clinical red light + microcurrent hardware is $38.99 shipped from Utah."
+- **Visual:** Side-by-side spec sheet of 630nm wavelength and 107°F thermal head gliding over peptide serum.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+### 💬 Reddit Deal Post (r/BudgetBeauty & r/30PlusSkinCare)
+- **Title:** [Deal] LumaGlow 4-in-1 630nm Red Light & Microcurrent Wand $38.99 shipped with code PROVOTODAY (Reg $89.99 / Solawave spec)
+- **Body:** Calibrated 630nm red LED + 330µA microcurrent + 107°F depuffing warmth + sonic massage. Ships free from Provo, UT with a 60-day trial.
+- **1-Click Link:** https://bizibees-store.myshopify.com/wand
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 21:01 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
+
+## 🎯 Hourly Traffic Drop — 2026-11-10 21:35 MST [Campaign: 360° Cold-Compression Migraine & Sinus Relief Protocol]
+
+### 📌 Pinterest High-Intent Pin
+- **Title:** 90-Second Drug-Free Migraine & Tension Headache Relief: 360° Cryo Gel Cap
+- **Description:** Slip-on darkroom blackout cold-compression cap cools throbbing temporal arteries and calms trigeminal nerve pain in 90 seconds. $22.74 with code PROVOTODAY.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+- **Tags:** #migrainerelief #tensionheadache #sinusrelief #chronicmigraine #coldtherapy
+
+### 📱 TikTok / Reels Viral Hook
+- **Hook (0-3s):** "If you suffer from migraines, TMJ jaw clenching, or screen headaches, stop waiting 60 minutes for pills to kick in—try this 360° freezer cap."
+- **Visual:** Pulling LumaRelief cap straight from freezer, sliding over eyes and temples, immediate relief.
+- **CTA:** "35% OFF with code PROVOTODAY + 60-day risk-free trial & free US shipping!"
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+### 💬 Reddit Deal Post (r/migraine & r/deals)
+- **Title:** [Deal] LumaRelief 360° Medical Hydrogel Cold/Warm Migraine Blackout Cap — $22.74 shipped (35% off code PROVOTODAY)
+- **Body:** Covers forehead, temples, eyes, and occipital base of skull. Stays cold 3x longer than ice packs and blocks 100% of light.
+- **1-Click Link:** https://bizibees-store.myshopify.com/caps
+
+---
