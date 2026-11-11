@@ -4,31 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#2D3B2D">
+    <meta name="theme-color" content="#FAF7F2">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     {%- if page_title -%}
       <title>{{ page_title }} &ndash; {{ shop.name }}</title>
     {%- else -%}
-      <title>Bizi Bees Boutique &ndash; Curated Literature & Botanical Goods</title>
+      <title>Bizi Bees Boutique & Bookshop &ndash; Curated Literature, Vintage Finds & Cozy Mystery Gifts</title>
     {%- endif -%}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- else -%}
-      <meta name="description" content="Bizi Bees Boutique — Handcrafted blind date book crates, botanical apothecary candles, and intentional home rituals. Dispatched nationwide with care.">
+      <meta name="description" content="Bizi Bees Boutique & Bookshop — Curated vintage paperbacks, Blind Date with a Book mystery packages, retro family games, and artisan boutique stationery.">
     {%- endif -%}
 
     {{ content_for_header }}
 
-    <!-- Editorial Boutique Design System -->
+    <!-- Bizi Bees Boutique Cozy Editorial Design System -->
+    {{ 'bizi-bees-boutique.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'dropper-editorial.css' | asset_url | stylesheet_tag }}
-    {{ 'ultra-dynamic-core.css' | asset_url | stylesheet_tag }}
 
     <!-- Scripts -->
     <script src="{{ 'ultra-dynamic-core.js' | asset_url }}" defer="defer"></script>
@@ -40,7 +41,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Bizi Bees Boutique",
+      "name": "Bizi Bees Boutique & Bookshop",
       "url": "https://bizibees-store.myshopify.com",
       "potentialAction": {
         "@type": "SearchAction",
@@ -52,23 +53,26 @@
   </head>
 
   <body>
-    <!-- Clean Editorial Announcement Bar -->
-    <div class="editorial-announcement-bar">
-      <span>Complimentary Standard US Shipping on Orders Over $50 • Handcrafted in Small Batches</span>
+    <!-- Real-Time Free Shipping Threshold Bar ($35.00) -->
+    {% render 'dynamic-free-shipping-bar' %}
+
+    <!-- Warm Announcement Bar -->
+    <div class="announcement-bar" style="text-align: center;">
+      <span>🐝 Free Tracked US Shipping on Orders Over $35 • Handpicked Vintage Classics &amp; Curated Cozy Gifts</span>
     </div>
 
     <!-- Editorial Navigation Header -->
     <header class="editorial-header">
       <div class="editorial-header-inner">
         <a href="/" class="editorial-logo">
-          Bizi Bees <span>Boutique</span>
+          Bizi Bees <span>Boutique &amp; Books</span>
         </a>
 
         <nav class="editorial-nav">
-          <a href="/collections/all" class="editorial-nav-link">All Curations</a>
-          <a href="/products/mystery-crate" class="editorial-nav-link">Book Crates</a>
-          <a href="/collections/candles" class="editorial-nav-link">Apothecary</a>
-          <a href="/products/lumaglow-4-in-1-facial-wand" class="editorial-nav-link">Signature Care</a>
+          <a href="/collections/all" class="editorial-nav-link">All Treasures</a>
+          <a href="#blindDateSection" class="editorial-nav-link">Blind Date with a Book</a>
+          <a href="/products/mystery-crate" class="editorial-nav-link">Mystery Crates</a>
+          <a href="/collections/candles" class="editorial-nav-link">Artisan Gifts</a>
           <a href="/pages/track-order" class="editorial-nav-link">Track Order</a>
         </nav>
 
@@ -102,5 +106,27 @@
     <!-- Self-Hosted Edge Telemetry & Rage-Click Tracker -->
     {% render 'dropper-telemetry' %}
 
+    <!-- DOM Sanitizer: Purge any residual $150,000 legal threat text -->
+    <script>
+      (function() {
+        function sanitizeThreatBlocks() {
+          var elements = document.querySelectorAll('p, div, span, small, footer');
+          elements.forEach(function(el) {
+            var txt = el.textContent || '';
+            if (txt.indexOf('150,000') !== -1 || txt.indexOf('Lanham Act') !== -1 || txt.indexOf('STRICT LEGAL WARNING') !== -1) {
+              if (el.tagName.toLowerCase() === 'p' || el.classList.contains('footer__content-bottom')) {
+                el.style.display = 'none';
+                el.remove();
+              }
+            }
+          });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', sanitizeThreatBlocks);
+        } else {
+          sanitizeThreatBlocks();
+        }
+      })();
+    </script>
   </body>
 </html>

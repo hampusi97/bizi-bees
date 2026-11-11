@@ -38,6 +38,15 @@ export async function commitAndPushFile(
   commitMessage: string,
   branch = "main"
 ): Promise<{ success: boolean; sha?: string; error?: string }> {
+  // Safety Guard: Protect theme customizer settings from automated overwrites
+  if (path.includes("config/settings_data.json")) {
+    console.warn(`[GitHubClient] Protected file ignore rule triggered: '${path}' is locked to preserve live theme settings.`);
+    return {
+      success: false,
+      error: "Protected file: config/settings_data.json is locked against automated overwrites to preserve live theme customizer settings.",
+    };
+  }
+
   const { octokit, owner, repo } = getOctokitInstance();
 
   if (!octokit) {

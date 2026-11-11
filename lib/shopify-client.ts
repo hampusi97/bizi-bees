@@ -180,6 +180,7 @@ export class ShopifyClient {
   }
 }
 
-// Export default singleton instance
+// Export default singleton instance & helper
 export const shopify = new ShopifyClient();
+export const fetchWithRetry = (url: string, init: RequestInit, attempt = 0) => shopify.fetchWithRetry(url, init, attempt);
 export default shopify;

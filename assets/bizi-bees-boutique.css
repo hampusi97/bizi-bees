@@ -1,0 +1,126 @@
+/* ==========================================================
+   BIZI BEES BOUTIQUE — COZY EDITORIAL DESIGN SYSTEM
+   ========================================================== */
+:root {
+  --bb-bg: #FAF7F2;          /* Warm Linen / Oatmeal */
+  --bb-surface: #FFFFFF;     /* Pure White Card */
+  --bb-espresso: #29231E;    /* Deep Coffee Text */
+  --bb-muted: #786C62;       /* Warm Earth Muted Text */
+  --bb-honey: #D9822B;       /* Signature Honey Gold */
+  --bb-honey-hover: #B86B1F;
+  --bb-olive: #4B5842;       /* Vintage Bookleaf Olive */
+  --bb-border: #EADBCE;      /* Soft Parchment Border */
+  --bb-radius: 18px;
+  --bb-shadow: 0 12px 30px rgba(75, 58, 43, 0.08);
+}
+
+body, .gradient {
+  background-color: var(--bb-bg) !important;
+  color: var(--bb-espresso) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif !important;
+}
+
+/* 1. EDITORIAL SERIF HEADINGS */
+h1, h2, h3, .h1, .h2, .h3, .card__heading a {
+  font-family: Georgia, "Playfair Display", "Times New Roman", serif !important;
+  color: var(--bb-espresso) !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* 2. PURGE ALL RED BADGES */
+.card__badge, .badge--sale, .badge, [class*="35-off"], [class*="sale-badge"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 3. TACTILE PRODUCT CARDS */
+.card-wrapper {
+  background: var(--bb-surface) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+  box-shadow: 0 4px 20px rgba(41, 35, 30, 0.04) !important;
+  padding: 14px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--bb-shadow) !important;
+  border-color: #D6C2AF !important;
+}
+
+.card__media, .card-wrapper .media {
+  background: #FDFBF7 !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+}
+
+.card__media img {
+  object-fit: contain !important;
+  transition: transform 0.4s ease !important;
+}
+
+.card-wrapper:hover .card__media img {
+  transform: scale(1.05) !important;
+}
+
+/* 4. HONEY GOLD & ESPRESSO PRICING */
+.price-item--sale, .price__regular .price-item {
+  color: var(--bb-espresso) !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.price-item--regular {
+  color: #9C8E82 !important;
+  text-decoration: line-through !important;
+  font-size: 13px !important;
+  margin-left: 6px !important;
+}
+
+/* 5. COZY BOUTIQUE PILL BUTTONS */
+.button, .button--primary, .btn {
+  background: var(--bb-espresso) !important;
+  color: #FFFFFF !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  padding: 14px 30px !important;
+  border: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.button:hover, .button--primary:hover {
+  background: var(--bb-honey) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(217, 130, 43, 0.3) !important;
+}
+
+/* 6. WARM ANNOUNCEMENT BAR */
+.announcement-bar {
+  background: var(--bb-espresso) !important;
+  color: #F7EFE6 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  padding: 9px 0 !important;
+}
+
+.announcement-bar a {
+  color: #FCD34D !important;
+  text-decoration: underline !important;
+}
+
+/* 7. SUPPRESS $150,000 LEGAL THREAT BLOCK IN FOOTER */
+footer p:contains("150,000"),
+footer p:contains("Lanham Act"),
+.footer__content-bottom:has(p:contains("STRICT LEGAL WARNING")) {
+  display: none !important;
+}

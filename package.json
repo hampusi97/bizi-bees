@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "deploy:theme": "shopify theme push --path . --ignore config/settings_data.json --live --allow-live",
+    "deploy:theme:development": "shopify theme push --path . --ignore config/settings_data.json --development",
     "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
     "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
     "test:report": "playwright show-report"

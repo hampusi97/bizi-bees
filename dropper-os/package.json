@@ -9,7 +9,7 @@
     "start": "next start -p 3000",
     "lint": "next lint",
     "report": "tsx scripts/run-daily-report.ts",
-    "test": "tsx tests/v2-algorithms.test.ts",
+    "test": "tsx tests/v2-algorithms.test.ts && tsx tests/safety-guards.test.ts",
     "daemon": "node dropper-daemon.js"
   },
   "dependencies": {

@@ -1941,5 +1941,37 @@ dropper-os/
 
 ---
 
+## 34. PRODUCTION HARDENING, SAFETY GUARDS & BIZI BEES BRAND ISOLATION
+
+### 1. Theme Deployment Safety Guard (`config/settings_data.json`)
+- Protected via `.shopifyignore` at root and `dropper-os/.shopifyignore`.
+- `.github/workflows/deploy-shopify.yml`: Validates `.shopifyignore` presence and executes `shopify theme push --ignore config/settings_data.json --live --allow-live`.
+- `dropper-os/lib/github-client.ts`: Intercepts and rejects any automated API commit or overwrite targeted at `config/settings_data.json`.
+- `package.json`: Provides explicit `npm run deploy:theme` script with built-in `--ignore config/settings_data.json` guard.
+
+### 2. Cryptographic Webhook Security (`HMAC-SHA256`)
+- Implemented in [`lib/shopify-hmac.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/lib/shopify-hmac.ts) and [`dropper-os/lib/shopify-hmac.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/dropper-os/lib/shopify-hmac.ts).
+- Routes [`app/api/webhooks/shopify/route.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/app/api/webhooks/shopify/route.ts) and [`dropper-os/app/api/webhooks/shopify/route.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/dropper-os/app/api/webhooks/shopify/route.ts) verify signature against `process.env.SHOPIFY_WEBHOOK_SECRET`.
+- Uses `crypto.timingSafeEqual` over raw UTF-8 buffers to prevent side-channel timing attacks.
+- Rejects unauthenticated calls with HTTP 401 Unauthorized.
+
+### 3. API Throttling Defense (`Exponential Backoff & HTTP 429`)
+- Integrated in [`lib/shopify-client.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/lib/shopify-client.ts) and [`dropper-os/lib/shopify-client.ts`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/dropper-os/lib/shopify-client.ts).
+- Detects HTTP 429 (Too Many Requests) and transient 5xx gateway errors.
+- Respects Shopify `Retry-After` header when provided; calculates exponential delay $d = \min(\text{base} \times 2^{\text{attempt}} + \text{jitter}, \text{maxDelay})$ otherwise.
+- Full jitter randomization eliminates thundering herd effects across multi-store fleet nodes.
+
+### 4. Complete Brand Separation & Cozy Boutique Isolation
+- **Store 1 (Bizi Bees Boutique & Books - `bizibees-store.myshopify.com`)**:
+  - Palette: Warm Linen (`#FAF7F2`), Deep Coffee (`#29231E`), Honey Amber (`#D9822B`), Bookleaf Olive (`#4B5842`).
+  - Catalog: Curated vintage paperbacks, "Blind Date with a Book" mystery gift packages ($14.99–$28.00), 120gsm luxury planners ($24.99), wooden brainteasers, brass bee bookmarks.
+  - Zero Clutter: 100% elimination of clinical devices, red sale badges, and threatening legal footer blocks.
+  - Interactive Sections: [`sections/bizi-bees-hero.liquid`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/sections/bizi-bees-hero.liquid) & [`sections/bizi-blind-date-builder.liquid`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/sections/bizi-blind-date-builder.liquid).
+  - Autonomous Isolation: [`scripts/bizi_bees_curator.py`](file:///Users/lars/.gemini/antigravity/scratch/bizi-bees/scripts/bizi_bees_curator.py) automatically quarantines any medical-tech products to draft status.
+- **Store 2 (Luma Clinical™ - `luma-clinical.myshopify.com`)**:
+  - Dedicated medical-grade phototherapy, QuadWave™ wands, and migraine relief cold caps with clinical comparison proof.
+
+---
+
 ### Operating Philosophy
 Save this document as `MASTER_SYSTEM_SPEC.md` in the root of your project repository. It serves as the single source of truth for all code, styling, operational workflows, and marketing funnels across your e-commerce properties.

@@ -1,13 +1,44 @@
 /* ==========================================================
-   BIZI BEES / LUMA CLINICAL - BASE STYLESHEET REFINEMENT
-   - Solid red badges hidden
-   - Product images fully visible and contained
-   - Sleek Obsidian pill buttons (#0F172A) with clinical teal hover (#0D9488)
+   BIZI BEES BOUTIQUE & BOOKSHOP — COZY EDITORIAL DESIGN SYSTEM
+   Design Tokens: Warm Linen (#FAF7F2), Deep Coffee (#29231E),
+   Honey Amber (#D9822B), Bookleaf Olive (#4B5842), Soft Parchment (#EADBCE)
    ========================================================== */
 
-/* 1. Hide product card badges with solid red backgrounds */
+:root {
+  --bb-bg: #FAF7F2;          /* Warm Linen / Oatmeal */
+  --bb-surface: #FFFFFF;     /* Pure White Card */
+  --bb-espresso: #29231E;    /* Deep Coffee Text */
+  --bb-muted: #786C62;       /* Warm Earth Muted Text */
+  --bb-honey: #D9822B;       /* Signature Honey Gold */
+  --bb-honey-hover: #B86B1F;
+  --bb-olive: #4B5842;       /* Vintage Bookleaf Olive */
+  --bb-border: #EADBCE;      /* Soft Parchment Border */
+  --bb-radius: 18px;
+  --bb-shadow: 0 12px 30px rgba(75, 58, 43, 0.08);
+}
+
+body, .gradient, main, #MainContent {
+  background-color: var(--bb-bg) !important;
+  color: var(--bb-espresso) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif !important;
+}
+
+/* 1. EDITORIAL SERIF HEADINGS */
+h1, h2, h3, .h1, .h2, .h3, .card__heading a, .product__title, .banner__heading {
+  font-family: Georgia, "Playfair Display", "Times New Roman", serif !important;
+  color: var(--bb-espresso) !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* 2. PURGE ALL RED BADGES & FLASH SALE CLUTTER */
+.card__badge,
+.product-card__badge,
 .badge--sale,
 .badge--red,
+.badge,
+[class*="35-off"],
+[class*="sale-badge"],
+[class*="badge--bottom"],
 [class*="badge"][style*="#d90429"],
 [class*="badge"][style*="#dc2626"],
 [class*="badge"][style*="red"],
@@ -18,59 +49,7 @@
 span[style*="35% OFF TODAY"],
 .card-image > span[style*="d90429"],
 .card-image > span[style*="dc2626"],
-div[style*="35% OFF LAUNCH"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* 2. Images in .card__media img have opacity: 1 and object-fit: contain */
-.card__media img,
-.card-image img,
-.dyn-card-media img,
-.bizi-card-img {
-  opacity: 1 !important;
-  object-fit: contain !important;
-  visibility: visible !important;
-}
-
-/* 3. Buttons styled into sleek Obsidian pills (#0F172A) with clinical teal hover effects (#0D9488) */
-button:not(.exit-close-btn),
-.button,
-.btn,
-.dyn-buy-btn,
-.sticky-action-btn,
-.boutique-btn-primary {
-  border-radius: 9999px !important;
-  background-color: #0F172A !important;
-  color: #FFFFFF !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-button:not(.exit-close-btn):hover,
-.button:hover,
-.btn:hover,
-.dyn-buy-btn:hover,
-.sticky-action-btn:hover,
-.boutique-btn-primary:hover {
-  background-color: #0D9488 !important;
-  color: #FFFFFF !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.25) !important;
-}
-
-/* ==========================================================
-   FORCED LIVE FIX: KILL RED BADGES & RESTORE LUXURY AESTHETIC
-   ========================================================== */
-
-/* 1. PERMANENTLY HIDE THE GIANT RED BADGES COVERING PHOTOS */
-.card__badge,
-.product-card__badge,
-.badge--sale,
-.badge,
-[class*="sale-badge"],
-[class*="badge--bottom"],
-[class*="35-off"],
+div[style*="35% OFF LAUNCH"],
 .card-wrapper [class*="badge"],
 .card-wrapper .card__content .badge {
   display: none !important;
@@ -82,13 +61,31 @@ button:not(.exit-close-btn):hover,
   margin: 0 !important;
 }
 
-/* 2. REVEAL & SHARPEN PRODUCT IMAGERY */
+/* 3. TACTILE PRODUCT CARDS */
+.card-wrapper {
+  background: var(--bb-surface) !important;
+  border: 1px solid var(--bb-border) !important;
+  border-radius: var(--bb-radius) !important;
+  box-shadow: 0 4px 20px rgba(41, 35, 30, 0.04) !important;
+  padding: 14px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--bb-shadow) !important;
+  border-color: #D6C2AF !important;
+}
+
 .card__media,
 .card-wrapper .media,
 .product-card .media,
-.media--square {
+.media--square,
+.card-image,
+.dyn-card-media {
   position: relative !important;
-  background: #FFFFFF !important;
+  background: #FDFBF7 !important;
   border-radius: 14px !important;
   overflow: hidden !important;
   padding: 10px !important;
@@ -96,78 +93,94 @@ button:not(.exit-close-btn):hover,
 
 .card__media img,
 .card-wrapper .media img,
-.product__media img {
+.product__media img,
+.card-image img,
+.dyn-card-media img,
+.bizi-card-img {
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
   object-fit: contain !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.4s ease !important;
 }
 
-.card-wrapper:hover .card__media img {
-  transform: scale(1.04) !important;
+.card-wrapper:hover .card__media img,
+.card-wrapper:hover .media img {
+  transform: scale(1.05) !important;
 }
 
-/* 3. CLEAN PRODUCT CARD ELEVATION */
-.card-wrapper {
-  background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-  padding: 14px !important;
-  overflow: hidden !important;
-}
-
-.card-wrapper:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
-  border-color: #CBD5E1 !important;
-}
-
-/* 4. CLEAN PRICING & BUTTONS (NO HARSH RED) */
+/* 4. HONEY GOLD & ESPRESSO PRICING */
 .price-item--sale,
-.price__regular .price-item {
-  color: #0F172A !important;
+.price__regular .price-item,
+.price-item {
+  color: var(--bb-espresso) !important;
   font-weight: 800 !important;
   font-size: 18px !important;
 }
 
 .price-item--regular {
-  color: #94A3B8 !important;
-  font-size: 13px !important;
+  color: #9C8E82 !important;
   text-decoration: line-through !important;
+  font-size: 13px !important;
   margin-left: 6px !important;
   font-weight: 500 !important;
 }
 
+/* 5. COZY BOUTIQUE PILL BUTTONS */
+button:not(.exit-close-btn),
 .button,
 .button--primary,
-.btn {
-  background: #0F172A !important;
-  color: #FFFFFF !important;
-  border: none !important;
+.btn,
+.dyn-buy-btn,
+.sticky-action-btn,
+.boutique-btn-primary,
+.product-form__submit {
   border-radius: 50px !important;
-  padding: 12px 28px !important;
+  background-color: var(--bb-espresso) !important;
+  color: #FFFFFF !important;
   font-weight: 700 !important;
   font-size: 14px !important;
-  letter-spacing: 0.3px !important;
-  transition: all 0.2s ease !important;
+  letter-spacing: 0.5px !important;
+  padding: 14px 30px !important;
+  border: none !important;
+  transition: all 0.25s ease !important;
 }
 
+button:not(.exit-close-btn):hover,
 .button:hover,
-.button--primary:hover {
-  background: #0D9488 !important;
+.button--primary:hover,
+.btn:hover,
+.dyn-buy-btn:hover,
+.sticky-action-btn:hover,
+.boutique-btn-primary:hover,
+.product-form__submit:hover {
+  background-color: var(--bb-honey) !important;
+  color: #FFFFFF !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25) !important;
+  box-shadow: 0 8px 24px rgba(217, 130, 43, 0.3) !important;
 }
 
-/* 5. NEUTRALIZE MINT GREEN STATS BAR */
+/* 6. WARM ANNOUNCEMENT BAR */
+.announcement-bar {
+  background: var(--bb-espresso) !important;
+  color: #F7EFE6 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  padding: 9px 0 !important;
+}
+
+.announcement-bar a {
+  color: #FCD34D !important;
+  text-decoration: underline !important;
+}
+
+/* 7. NEUTRALIZE CLINICAL STATS BAR & REPLACE WITH COZY PILLARS */
 .clinical-stats-bar,
 [class*="stats"],
 [class*="counter"] {
-  background: #F8FAFC !important;
-  border: 1px solid #E2E8F0 !important;
+  background: #FDFBF7 !important;
+  border: 1px solid var(--bb-border) !important;
   border-radius: 16px !important;
   padding: 24px 15px !important;
 }
@@ -175,19 +188,19 @@ button:not(.exit-close-btn):hover,
 .clinical-stats-bar strong,
 [class*="stats"] strong,
 [class*="stats"] h3 {
-  color: #0D9488 !important;
+  color: var(--bb-espresso) !important;
   font-size: 28px !important;
   font-weight: 900 !important;
 }
 
 .clinical-stats-bar span,
 [class*="stats"] p {
-  color: #64748B !important;
+  color: var(--bb-muted) !important;
   font-size: 12px !important;
   font-weight: 600 !important;
 }
 
-/* 6. HIDE THE $150,000 LEGAL THREAT TEXT IN FOOTER */
+/* 8. PURGE THE $150,000 LEGAL THREAT TEXT IN FOOTER */
 footer p:contains("150,000"),
 footer p:contains("Lanham Act"),
 .footer__content-bottom:has(p:contains("STRICT LEGAL WARNING")) {

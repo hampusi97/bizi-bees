@@ -1,0 +1,269 @@
+<div class="bdate-wrap" id="blindDateSection">
+  <div class="bdate-inner">
+    
+    <div class="bdate-badge">✨ CHOOSE YOUR NEXT ADVENTURE</div>
+    <h2>Blind Date with a Book</h2>
+    <p>Wrapped in recycled kraft paper, tied with butcher twine, and sealed with our signature wax stamp. Select your reading vibe to claim your mystery novel:</p>
+
+    <!-- Interactive Mood Tabs -->
+    <div class="bdate-moods">
+      <button class="m-btn active" onclick="pickVibe('rainy', this)">🌧️ Rainy Day Whodunit</button>
+      <button class="m-btn" onclick="pickVibe('cozy', this)">☕ Cozy Hearth &amp; Home</button>
+      <button class="m-btn" onclick="pickVibe('scifi', this)">🕰️ 1970s Retro Sci-Fi</button>
+      <button class="m-btn" onclick="pickVibe('thrill', this)">⚡ 3:00 AM Page Turner</button>
+    </div>
+
+    <!-- Live Mystery Package Card -->
+    <div class="bdate-display-card">
+      <div class="bdate-preview-box">
+        <div class="kraft-package">
+          <div class="wax-seal">🐝</div>
+          <div class="twine-line"></div>
+          <div class="package-clues" id="packageClues">
+            <span>• Rainy Scottish estate setting</span>
+            <span>• 1920s murder mystery pacing</span>
+            <span>• Atmospheric tea-sipping vibe</span>
+            <span>• Unexpected final chapter twist</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bdate-details">
+        <span class="bdate-edition" id="bdateGenre">CURATED MYSTERY EDITION</span>
+        <h3 id="bdateTitle">The Rainy Day Whodunit</h3>
+        <p id="bdateDesc">Includes handpicked vintage paperback, handwritten clue tag, brass honeybee bookmark, and artisanal chamomile tea bag.</p>
+        
+        <div class="bdate-pricing">
+          <strong>$14.99</strong>
+          <span class="bdate-strike">$24.00</span>
+          <span class="bdate-save">SAVE $9</span>
+        </div>
+
+        <button class="bdate-buy-btn" onclick="instantBuyBlindDate()">
+          Claim This Mystery Book ($14.99) →
+        </button>
+        <small class="bdate-guarantee">✓ Inspected intact spine • No missing pages guaranteed</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .bdate-wrap {
+    background: #FAF7F2;
+    padding: 80px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #29231E;
+    border-bottom: 1px solid #EADBCE;
+  }
+  .bdate-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .bdate-badge {
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .bdate-inner h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    margin: 0 0 12px;
+  }
+  .bdate-inner p {
+    font-size: 15px;
+    color: #6E6257;
+    max-width: 600px;
+    margin: 0 auto 35px;
+  }
+
+  .bdate-moods {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .m-btn {
+    background: #FFFFFF;
+    border: 1px solid #D6C2AF;
+    color: #29231E;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .m-btn:hover { background: #F5EFEB; }
+  .m-btn.active {
+    background: #29231E;
+    color: #FFFFFF;
+    border-color: #29231E;
+    box-shadow: 0 4px 14px rgba(41, 35, 30, 0.2);
+  }
+
+  .bdate-display-card {
+    background: #FFFFFF;
+    border: 1px solid #EADBCE;
+    border-radius: 20px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 35px;
+    align-items: center;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(41, 35, 30, 0.06);
+  }
+
+  /* Kraft Package Visual */
+  .bdate-preview-box {
+    background: #FDFBF7;
+    border-radius: 14px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kraft-package {
+    width: 200px;
+    height: 270px;
+    background: #C49F73;
+    border-radius: 6px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+    position: relative;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .wax-seal {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    background: #8B2500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .twine-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #8C6A48;
+  }
+  .package-clues {
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #2B1E14;
+    padding-left: 18px;
+    font-style: italic;
+  }
+
+  .bdate-details h3 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    margin: 6px 0 10px;
+    color: #29231E;
+  }
+  .bdate-edition { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #D9822B; }
+  .bdate-details p { font-size: 14px; color: #6E6257; line-height: 1.5; margin: 0 0 20px; }
+  .bdate-pricing { display: flex; align-items: baseline; gap: 10px; margin-bottom: 20px; }
+  .bdate-pricing strong { font-size: 28px; font-weight: 900; color: #29231E; }
+  .bdate-strike { font-size: 14px; color: #9C8E82; text-decoration: line-through; }
+  .bdate-save { background: #FEF3C7; color: #92400E; font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px; }
+  .bdate-buy-btn {
+    width: 100%;
+    background: #29231E;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .bdate-buy-btn:hover { background: #D9822B; transform: translateY(-2px); }
+  .bdate-guarantee { display: block; text-align: center; font-size: 11px; color: #786C62; margin-top: 10px; }
+
+  @media (max-width: 768px) {
+    .bdate-display-card { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const bdateVibes = {
+    rainy: {
+      title: "The Rainy Day Whodunit",
+      genre: "CURATED MYSTERY EDITION",
+      clues: ["• Rainy Scottish estate setting", "• 1920s murder mystery pacing", "• Atmospheric tea-sipping vibe", "• Unexpected final chapter twist"],
+      desc: "Includes handpicked vintage paperback, handwritten clue tag, brass honeybee bookmark, and chamomile tea bag."
+    },
+    cozy: {
+      title: "Warm Hearth & Found Family",
+      genre: "COMFORT FICTION EDITION",
+      clues: ["• Cozy coastal village backdrop", "• Heartwarming intergenerational cast", "• Slice-of-life storytelling", "• Guaranteed feel-good ending"],
+      desc: "A timeless vintage classic handpicked for slow Sunday mornings and warm blanket reading."
+    },
+    scifi: {
+      title: "1970s Retro Speculative Wonder",
+      genre: "VINTAGE SCI-FI EDITION",
+      clues: ["• Mind-bending retro cover art", "• Strange new alien civilizations", "• Thought-provoking philosophy", "• Golden age science fiction"],
+      desc: "Authentic pre-loved paperback from the golden age of sci-fi, inspected for collector quality."
+    },
+    thrill: {
+      title: "The 3:00 AM Page Turner",
+      genre: "SUSPENSE & PSYCHOLOGICAL THRILLER",
+      clues: ["• High-stakes race against time", "• Unreliable narrator perspective", "• Cliffhangers on every chapter", "• You will not sleep tonight"],
+      desc: "High-octane vintage suspense thoroughly inspected with zero missing pages."
+    }
+  };
+
+  function pickVibe(key, btn) {
+    document.querySelectorAll('.m-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const data = bdateVibes[key];
+    document.getElementById('bdateTitle').innerText = data.title;
+    document.getElementById('bdateGenre').innerText = data.genre;
+    document.getElementById('bdateDesc').innerText = data.desc;
+    
+    const clueBox = document.getElementById('packageClues');
+    if (clueBox) {
+      clueBox.innerHTML = data.clues.map(c => `<span>${c}</span>`).join('');
+    }
+  }
+
+  function instantBuyBlindDate() {
+    window.location.href = '/collections/all';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Blind Date Book Builder",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Blind Date Book Builder"
+    }
+  ]
+}
+{% endschema %}

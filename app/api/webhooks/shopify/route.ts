@@ -1,50 +1,19 @@
 import { NextResponse } from 'next/server';
+import { verifyShopifyHmac } from '@/lib/shopify-hmac';
 
-export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || '';
 const SUPPLIER_API_URL = process.env.SUPPLIER_API_ENDPOINT || 'https://api.cjdropshipping.com/order/create';
-
-// Constant-time string comparison to prevent timing attacks
-function constantTimeCompare(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let result = 0;
-  for (let i = 0; i < a.length; i++) {
-    result |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  }
-  return result === 0;
-}
-
-// Cryptographic HMAC-SHA256 validation (Edge runtime compliant via Web Crypto API)
-async function verifyShopifyHmac(rawBody: string, hmacHeader: string, secret: string): Promise<boolean> {
-  try {
-    const encoder = new TextEncoder();
-    const key = await crypto.subtle.importKey(
-      'raw',
-      encoder.encode(secret),
-      { name: 'HMAC', hash: 'SHA-256' },
-      false,
-      ['sign']
-    );
-
-    const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(rawBody));
-    const base64Signature = Buffer.from(signature).toString('base64');
-    
-    return constantTimeCompare(base64Signature, hmacHeader);
-  } catch (err) {
-    console.error('HMAC calculation error:', err);
-    return false;
-  }
-}
 
 export async function POST(req: Request) {
   try {
     const rawBody = await req.text();
     const hmacHeader = req.headers.get('x-shopify-hmac-sha256');
-    const topic = req.headers.get('x-shopify-topic');
+    const topic = req.headers.get('x-shopify-topic') || 'orders/create';
     const secret = process.env.SHOPIFY_WEBHOOK_SECRET;
 
-    // 1. Mandatory HMAC SHA256 Signature Verification
+    // 1. Mandatory HMAC SHA256 Signature Verification using process.env.SHOPIFY_WEBHOOK_SECRET
     if (!secret) {
       console.error('🚨 Webhook configuration error: SHOPIFY_WEBHOOK_SECRET environment variable is missing.');
       return new Response('Unauthorized: Webhook secret not configured on server', { status: 401 });
@@ -55,7 +24,7 @@ export async function POST(req: Request) {
       return new Response('Unauthorized: Missing HMAC signature header', { status: 401 });
     }
 
-    const isValid = await verifyShopifyHmac(rawBody, hmacHeader, secret);
+    const isValid = verifyShopifyHmac(rawBody, hmacHeader, secret);
     if (!isValid) {
       console.error('🚨 Webhook forgery attempt: Invalid HMAC SHA256 signature.');
       return new Response('Unauthorized Security Signature: Verification failed', { status: 401 });

@@ -57,6 +57,60 @@ function getStoreAccessToken(store: StoreConfig): string {
 }
 
 /**
+ * Exponential backoff retry mechanism handling HTTP 429 (Too Many Requests) & 5xx gateway errors
+ */
+export async function fetchWithRetry(
+  url: string,
+  options: RequestInit,
+  maxRetries = 4,
+  baseDelayMs = 500,
+  maxDelayMs = 8000
+): Promise<Response> {
+  let attempt = 0;
+  while (attempt <= maxRetries) {
+    try {
+      const response = await fetch(url, options);
+
+      // Handle HTTP 429 (Too Many Requests) or 5xx Gateway errors
+      if (response.status === 429 || (response.status >= 502 && response.status <= 504)) {
+        if (attempt === maxRetries) {
+          console.warn(`[Shopify API Throttled] Max retries (${maxRetries}) reached for ${url}. Status: ${response.status}.`);
+          return response;
+        }
+
+        const retryAfterHeader = response.headers.get("Retry-After");
+        let delayMs: number;
+        if (retryAfterHeader) {
+          const seconds = parseFloat(retryAfterHeader);
+          delayMs = !isNaN(seconds) ? Math.ceil(seconds * 1000) : baseDelayMs * Math.pow(2, attempt);
+        } else {
+          const exponential = baseDelayMs * Math.pow(2, attempt);
+          const jitter = Math.floor(Math.random() * (baseDelayMs / 2));
+          delayMs = Math.min(exponential + jitter, maxDelayMs);
+        }
+
+        console.warn(
+          `[Shopify Throttled 429] Rate limit hit on ${url}. Retrying attempt ${attempt + 1}/${maxRetries} after ${delayMs}ms backoff...`
+        );
+
+        await new Promise((resolve) => setTimeout(resolve, delayMs));
+        attempt++;
+        continue;
+      }
+
+      return response;
+    } catch (error: any) {
+      if (attempt === maxRetries) throw error;
+      const delayMs = Math.min(baseDelayMs * Math.pow(2, attempt), maxDelayMs);
+      console.warn(`[Shopify Network Error] ${error.message}. Retrying in ${delayMs}ms (${attempt + 1}/${maxRetries})...`);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+      attempt++;
+    }
+  }
+  throw new Error(`Shopify request to ${url} failed after ${maxRetries} retries`);
+}
+
+/**
  * Fetch 24-hour total gross sales
  */
 export async function fetchStoreSales(store: StoreConfig): Promise<{ grossSales24h: number; currency: string }> {
@@ -161,7 +215,7 @@ export async function getStoreFullReport(store: StoreConfig): Promise<StoreMetri
       }
     `;
 
-    const res = await fetch(graphqlUrl, {
+    const res = await fetchWithRetry(graphqlUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

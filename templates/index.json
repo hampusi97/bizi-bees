@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "bizi_bees_hero": {
+      "type": "bizi-bees-hero",
+      "settings": {}
+    },
+    "bizi_blind_date_builder": {
+      "type": "bizi-blind-date-builder",
+      "settings": {}
+    },
+    "bizi_mystery_builder": {
+      "type": "bizi-mystery-builder",
+      "settings": {}
+    },
+    "bizi_gemini_concierge": {
+      "type": "bizi-gemini-concierge",
+      "settings": {}
+    }
+  },
+  "order": [
+    "bizi_bees_hero",
+    "bizi_blind_date_builder",
+    "bizi_mystery_builder",
+    "bizi_gemini_concierge"
+  ]
+}
