@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "hero": {
+      "type": "scrollytelling-hero",
+      "settings": {}
+    },
+    "bundles": {
+      "type": "bundle-psychology",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "bundles"
+  ]
+}
