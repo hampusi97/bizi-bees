@@ -19,6 +19,26 @@ export default function MissionControlDashboard() {
     }>
   >([]);
 
+  // Google AI Studio Design State
+  const [selectedDesignStore, setSelectedDesignStore] = useState<string>("bizi-bees");
+  const [designGoal, setDesignGoal] = useState<string>("Hero Banner & Value Props");
+  const [designAesthetic, setDesignAesthetic] = useState<string>(
+    "Warm Tactile Craft & Vintage Kraft (Bizi Bees™ Heritage)"
+  );
+  const [designPromptCustom, setDesignPromptCustom] = useState<string>("");
+  const [isGeneratingDesign, setIsGeneratingDesign] = useState<boolean>(false);
+  const [designResult, setDesignResult] = useState<{
+    success: boolean;
+    content: string;
+    model?: string;
+    keyIndex?: number;
+    storeName?: string;
+    designGoal?: string;
+    aesthetic?: string;
+  } | null>(null);
+  const [designTab, setDesignTab] = useState<"spec" | "code" | "raw">("spec");
+  const [codeCopied, setCodeCopied] = useState<boolean>(false);
+
   // Fetch telemetry
   const fetchTelemetry = async () => {
     try {
@@ -45,7 +65,7 @@ export default function MissionControlDashboard() {
     return () => clearInterval(interval);
   }, []);
 
-  // Quick Action Handler
+  // Quick Action Handler for Store Table
   const handleStoreAction = async (
     storeId: string,
     action: "run_healer" | "publish_seo"
@@ -81,6 +101,75 @@ export default function MissionControlDashboard() {
     }
   };
 
+  // Google AI Studio Generator Handler
+  const handleGenerateDesign = async () => {
+    const currentStore =
+      fleet?.stores.find((s) => s.id === selectedDesignStore) ||
+      fleet?.stores[0] || {
+        id: "bizi-bees",
+        name: "Bizi Bees™",
+        niche: "Blind Date with a Book & Sensory Kits",
+      };
+
+    setIsGeneratingDesign(true);
+    setDesignResult(null);
+
+    try {
+      const fullGoal = designPromptCustom
+        ? `${designGoal} — Directive: ${designPromptCustom}`
+        : designGoal;
+
+      const res = await fetch("/api/ai/design", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          storeId: currentStore.id,
+          storeName: currentStore.name,
+          niche: currentStore.niche,
+          designGoal: fullGoal,
+          aesthetic: designAesthetic,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success && data.content) {
+        setDesignResult(data);
+        setTerminalLogs((prev) => [
+          {
+            id: `design-${Date.now()}`,
+            timestamp: new Date().toLocaleTimeString(),
+            store: currentStore.name,
+            level: "SUCCESS",
+            message: `🎨 Google AI Studio synthesized ${designGoal} (${data.model}, Key #${data.keyIndex})`,
+          },
+          ...prev,
+        ]);
+      } else {
+        alert("Design generation error: " + (data.error || "Please check API keys"));
+      }
+    } catch (e: any) {
+      console.error("Google AI Studio design generation failed", e);
+      alert("Failed to connect to Google AI Studio design endpoint");
+    } finally {
+      setIsGeneratingDesign(false);
+    }
+  };
+
+  // Extract code from generated markdown
+  const extractCode = (markdown: string) => {
+    const match = markdown.match(/```(?:liquid|html|css|javascript)?([\s\S]*?)```/i);
+    return match ? match[1].trim() : markdown;
+  };
+
+  const handleCopyCode = () => {
+    if (!designResult?.content) return;
+    const code = extractCode(designResult.content);
+    navigator.clipboard.writeText(code);
+    setCodeCopied(true);
+    setTimeout(() => setCodeCopied(false), 2500);
+  };
+
   const totalRevenue =
     fleet?.stores.reduce((acc, s) => acc + s.revenue24h, 0) || 0;
   const targetRevenue = fleet?.targetRevenueDaily || 21666.67;
@@ -108,13 +197,13 @@ export default function MissionControlDashboard() {
   return (
     <div className="min-h-screen bg-[#090D16] text-[#F8FAFC] pb-16 font-sans antialiased">
       {/* Top Ambient Glow Banner */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-gradient-to-b from-[#10B981]/10 via-[#38BDF8]/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-64 bg-gradient-to-b from-[#10B981]/10 via-[#8B5CF6]/10 to-transparent blur-3xl pointer-events-none" />
 
       {/* Header Bar */}
       <header className="sticky top-0 z-50 border-b border-[#1E293B] bg-[#090D16]/90 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#10B981] to-[#0D9488] flex items-center justify-center shadow-lg shadow-[#10B981]/20">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#10B981] to-[#8B5CF6] flex items-center justify-center shadow-lg shadow-[#10B981]/20">
               <span className="text-xl">🌐</span>
             </div>
             <div>
@@ -123,16 +212,25 @@ export default function MissionControlDashboard() {
                   REPO-OS™ MISSION CONTROL
                 </h1>
                 <span className="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-[#1E293B] text-[#94A3B8] rounded border border-[#334155]">
-                  v2.4 Enterprise
+                  v2.5 AI Studio
                 </span>
               </div>
               <p className="text-xs text-[#94A3B8] tracking-wide">
-                Unified Autonomous Shopify Fleet Command • 13 Direct DTC Storefronts
+                Unified Autonomous Shopify Fleet Command • 13 Direct DTC Storefronts • Dual Google AI Studio Keys
               </p>
             </div>
           </div>
 
           <div className="flex items-center space-x-3 sm:space-x-4">
+            {/* Quick jump to AI Studio */}
+            <a
+              href="#google-ai-design-studio"
+              className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#8B5CF6]/20 to-[#38BDF8]/20 border border-[#8B5CF6]/40 text-xs font-semibold text-[#C4B5FD] hover:bg-[#8B5CF6]/30 transition-all"
+            >
+              <span>🎨</span>
+              <span>AI Design Studio</span>
+            </a>
+
             {/* Live Fleet Health Badge */}
             <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-semibold tracking-wide">
               <span className="w-2 h-2 rounded-full bg-[#10B981] mr-2 animate-ping" />
@@ -147,7 +245,7 @@ export default function MissionControlDashboard() {
             >
               <span className={refreshing ? "animate-spin" : ""}>🔄</span>
               <span className="hidden sm:inline">
-                {refreshing ? "Polling..." : "Refresh Telemetry"}
+                {refreshing ? "Polling..." : "Refresh"}
               </span>
             </button>
           </div>
@@ -207,23 +305,26 @@ export default function MissionControlDashboard() {
             </div>
           </div>
 
-          {/* Card 3: Run-Rate Progress Bar */}
-          <div className="p-6 rounded-2xl bg-[#0F172A] border border-[#1E293B] shadow-xl relative overflow-hidden group hover:border-[#10B981]/40 transition-colors">
+          {/* Card 3: Google AI Studio Dual-Key Status */}
+          <div className="p-6 rounded-2xl bg-[#0F172A] border border-[#1E293B] shadow-xl relative overflow-hidden group hover:border-[#8B5CF6]/40 transition-colors">
             <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl select-none group-hover:scale-110 transition-transform">
-              ⚡
+              ✨
             </div>
             <div className="text-xs uppercase tracking-widest text-[#94A3B8] font-bold mb-1">
-              Monthly Run-Rate Progress
+              Google AI Studio Engines
             </div>
-            <div className="text-3xl sm:text-4xl font-black text-[#10B981] tracking-tight">
-              {revenuePct}%
+            <div className="text-2xl sm:text-3xl font-black text-[#A78BFA] tracking-tight flex items-center gap-2">
+              <span>Dual-Key Active</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 text-[#A78BFA] border border-[#8B5CF6]/40 font-mono">
+                Gemini 3.5
+              </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Current Paceline: <strong className="text-[#94A3B8]">${((totalRevenue * 30) / 1000).toFixed(1)}k / $650k mo</strong>
+              Keys: <strong className="text-[#10B981]">Key 1 Active</strong> • <strong className="text-[#38BDF8]">Key 2 Hot-Standby</strong>
             </p>
             <div className="mt-4 flex items-center gap-2 text-xs text-[#94A3B8]">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Real-time webhook sync & self-healing enabled</span>
+              <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#8B5CF6] animate-pulse" />
+              <span>Live theme design, catalog AI concierge & SEO auto-pilot</span>
             </div>
           </div>
         </section>
@@ -291,7 +392,7 @@ export default function MissionControlDashboard() {
                 </span>
               </h2>
               <p className="text-xs text-[#94A3B8]">
-                Direct telemetry and one-click autonomous intervention for each storefront
+                Direct telemetry, autonomous intervention, and 1-click Google AI Studio design synthesis
               </p>
             </div>
 
@@ -338,7 +439,9 @@ export default function MissionControlDashboard() {
                     return (
                       <tr
                         key={store.id}
-                        className="hover:bg-[#131D33] transition-colors group"
+                        className={`hover:bg-[#131D33] transition-colors group ${
+                          selectedDesignStore === store.id ? "bg-[#8B5CF6]/5" : ""
+                        }`}
                       >
                         {/* Store Identity */}
                         <td className="py-4 px-4">
@@ -399,7 +502,22 @@ export default function MissionControlDashboard() {
                         {/* Quick Actions */}
                         <td className="py-4 px-4">
                           <div className="flex items-center space-x-2">
-                            {/* Action 1: Run Healer */}
+                            {/* Action 1: Design with Google AI Studio */}
+                            <button
+                              onClick={() => {
+                                setSelectedDesignStore(store.id);
+                                document
+                                  .getElementById("google-ai-design-studio")
+                                  ?.scrollIntoView({ behavior: "smooth" });
+                              }}
+                              className="px-2.5 py-1 rounded bg-[#090D16] hover:bg-[#8B5CF6]/20 border border-[#8B5CF6]/40 hover:border-[#8B5CF6] text-[11px] font-semibold text-[#C4B5FD] transition-all flex items-center gap-1"
+                              title={`Launch Google AI Studio design synthesis for ${store.name}`}
+                            >
+                              <span>🎨</span>
+                              <span>Design</span>
+                            </button>
+
+                            {/* Action 2: Run Healer */}
                             <button
                               onClick={() => handleStoreAction(store.id, "run_healer")}
                               disabled={isHealing}
@@ -411,10 +529,10 @@ export default function MissionControlDashboard() {
                               ) : (
                                 <span>🛡️</span>
                               )}
-                              <span>Run Healer</span>
+                              <span>Heal</span>
                             </button>
 
-                            {/* Action 2: SEO Blog */}
+                            {/* Action 3: SEO Blog */}
                             <button
                               onClick={() => handleStoreAction(store.id, "publish_seo")}
                               disabled={isPublishing}
@@ -426,10 +544,10 @@ export default function MissionControlDashboard() {
                               ) : (
                                 <span>✍️</span>
                               )}
-                              <span>SEO Blog</span>
+                              <span>Blog</span>
                             </button>
 
-                            {/* Action 3: Admin ↗ */}
+                            {/* Action 4: Admin ↗ */}
                             <a
                               href={store.adminUrl}
                               target="_blank"
@@ -450,10 +568,237 @@ export default function MissionControlDashboard() {
           </div>
         </section>
 
+        {/* GOOGLE AI STUDIO DESIGN COMMAND CENTER */}
+        <section
+          id="google-ai-design-studio"
+          className="rounded-3xl bg-gradient-to-b from-[#0F172A] to-[#0A0E1A] border-2 border-[#8B5CF6]/30 shadow-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden"
+        >
+          {/* Background Ambient Glow */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#8B5CF6]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#38BDF8]/10 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1E293B] pb-5 relative z-10">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🎨</span>
+                <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                  Google AI Studio DTC Design Command
+                </h2>
+                <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#8B5CF6]/30 to-[#38BDF8]/30 border border-[#8B5CF6]/50 text-[10px] font-bold uppercase tracking-wider text-[#C4B5FD]">
+                  Gemini 3.5 Engine
+                </span>
+              </div>
+              <p className="text-xs text-[#94A3B8] mt-1">
+                Synthesize conversion-optimized Shopify Liquid components, CSS design tokens, and CRO psychological frameworks with Google AI Studio.
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
+                Dual Gemini API Keys Online
+              </span>
+            </div>
+          </div>
+
+          {/* Control Bar Form */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
+            {/* Control 1: Store Target */}
+            <div>
+              <label className="block text-xs font-bold text-[#CBD5E1] uppercase tracking-wider mb-2">
+                Target Storefront
+              </label>
+              <select
+                value={selectedDesignStore}
+                onChange={(e) => setSelectedDesignStore(e.target.value)}
+                className="w-full bg-[#090D16] border border-[#334155] focus:border-[#8B5CF6] text-xs text-white rounded-xl px-3 py-2.5 outline-none transition-colors"
+              >
+                {fleet?.stores.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.id === "bizi-bees" ? "🐝 " : ""}
+                    {s.name} ({s.niche})
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Control 2: Design Target Component */}
+            <div>
+              <label className="block text-xs font-bold text-[#CBD5E1] uppercase tracking-wider mb-2">
+                Component / Section Goal
+              </label>
+              <select
+                value={designGoal}
+                onChange={(e) => setDesignGoal(e.target.value)}
+                className="w-full bg-[#090D16] border border-[#334155] focus:border-[#8B5CF6] text-xs text-white rounded-xl px-3 py-2.5 outline-none transition-colors"
+              >
+                <option value="Hero Banner & Value Props">Hero Banner & High-AOV Value Props</option>
+                <option value="Interactive Blind Date Mystery Box Builder">Interactive Mystery Box Builder (Liquid)</option>
+                <option value="Product Showcase & Social Proof Grid">Product Showcase & Social Proof Grid</option>
+                <option value="Color Palette & CSS Design Tokens">Color Palette & CSS Design Tokens</option>
+                <option value="Trust Badges & Utah 24h Dispatch Guarantee">Trust Badges & Utah 24h Dispatch Bar</option>
+                <option value="Sticky Mobile Add-To-Cart Conversion Bar">Sticky Mobile Add-To-Cart Bar</option>
+              </select>
+            </div>
+
+            {/* Control 3: Aesthetic Tone */}
+            <div>
+              <label className="block text-xs font-bold text-[#CBD5E1] uppercase tracking-wider mb-2">
+                Aesthetic Direction
+              </label>
+              <select
+                value={designAesthetic}
+                onChange={(e) => setDesignAesthetic(e.target.value)}
+                className="w-full bg-[#090D16] border border-[#334155] focus:border-[#8B5CF6] text-xs text-white rounded-xl px-3 py-2.5 outline-none transition-colors"
+              >
+                <option value="Warm Tactile Craft & Vintage Kraft (Bizi Bees™ Heritage)">
+                  Warm Tactile Craft & Vintage Kraft (Bizi Bees™ Heritage)
+                </option>
+                <option value="Luxury Obsidian Dark Mode (Cyber-DTC)">
+                  Luxury Obsidian Dark Mode (Cyber-DTC)
+                </option>
+                <option value="Ultra-Clean Scandinavian White-Glove">
+                  Ultra-Clean Scandinavian White-Glove
+                </option>
+                <option value="High-Urgency Flash Sale & Conversion Blitz">
+                  High-Urgency Flash Sale & Conversion Blitz
+                </option>
+              </select>
+            </div>
+          </div>
+
+          {/* Custom Creative Prompt Directives */}
+          <div className="relative z-10">
+            <label className="block text-xs font-bold text-[#CBD5E1] uppercase tracking-wider mb-2">
+              Custom Creative Directives / Promotional Offer (Optional)
+            </label>
+            <input
+              type="text"
+              value={designPromptCustom}
+              onChange={(e) => setDesignPromptCustom(e.target.value)}
+              placeholder="e.g. Include real brass bookmark accents, wax seal selector, 1-click $24.00 bundle CTA, and 24h shipping guarantees..."
+              className="w-full bg-[#090D16] border border-[#334155] focus:border-[#8B5CF6] text-xs text-white placeholder-[#64748B] rounded-xl px-4 py-2.5 outline-none transition-colors"
+            />
+          </div>
+
+          {/* Action Trigger Button */}
+          <div className="flex items-center justify-between relative z-10 pt-2">
+            <div className="text-xs text-[#94A3B8]">
+              Target: <strong className="text-white">{fleet?.stores.find((s) => s.id === selectedDesignStore)?.name || "Bizi Bees™"}</strong> • Model: <span className="font-mono text-[#8B5CF6]">gemini-3.5-flash</span>
+            </div>
+
+            <button
+              onClick={handleGenerateDesign}
+              disabled={isGeneratingDesign}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#8B5CF6] via-[#6366F1] to-[#38BDF8] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#8B5CF6]/30 transition-all disabled:opacity-50 flex items-center space-x-2"
+            >
+              {isGeneratingDesign ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span>Synthesizing with Google AI Studio...</span>
+                </>
+              ) : (
+                <>
+                  <span>✨</span>
+                  <span>Synthesize Design with Gemini</span>
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Output Display Canvas */}
+          {designResult && (
+            <div className="mt-6 rounded-2xl bg-[#090D16] border border-[#8B5CF6]/40 overflow-hidden relative z-10 shadow-2xl">
+              {/* Output Sub-Header Bar */}
+              <div className="px-5 py-3.5 bg-[#0F172A] border-b border-[#1E293B] flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center space-x-3">
+                  <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                    <span className="text-[#10B981]">●</span>
+                    Generated for {designResult.storeName} ({designResult.designGoal})
+                  </span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#8B5CF6]/20 text-[#C4B5FD] border border-[#8B5CF6]/30">
+                    {designResult.model} • Key #{designResult.keyIndex}
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* View Mode Buttons */}
+                  <div className="inline-flex rounded-lg bg-[#090D16] p-0.5 border border-[#334155]">
+                    <button
+                      onClick={() => setDesignTab("spec")}
+                      className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                        designTab === "spec"
+                          ? "bg-[#8B5CF6] text-white"
+                          : "text-[#94A3B8] hover:text-white"
+                      }`}
+                    >
+                      Spec & CRO
+                    </button>
+                    <button
+                      onClick={() => setDesignTab("code")}
+                      className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                        designTab === "code"
+                          ? "bg-[#8B5CF6] text-white"
+                          : "text-[#94A3B8] hover:text-white"
+                      }`}
+                    >
+                      Liquid Code
+                    </button>
+                    <button
+                      onClick={() => setDesignTab("raw")}
+                      className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                        designTab === "raw"
+                          ? "bg-[#8B5CF6] text-white"
+                          : "text-[#94A3B8] hover:text-white"
+                      }`}
+                    >
+                      Full Response
+                    </button>
+                  </div>
+
+                  {/* Copy Button */}
+                  <button
+                    onClick={handleCopyCode}
+                    className="px-3 py-1 rounded-lg bg-[#1E293B] hover:bg-[#334155] border border-[#334155] text-xs font-medium text-white flex items-center gap-1.5 transition-colors"
+                  >
+                    <span>{codeCopied ? "✓ Copied!" : "📋 Copy Code"}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Output Content Body */}
+              <div className="p-6 max-h-[600px] overflow-y-auto">
+                {designTab === "spec" && (
+                  <div className="prose prose-invert max-w-none text-xs leading-relaxed space-y-4 text-[#CBD5E1]">
+                    <div className="whitespace-pre-wrap font-sans">
+                      {designResult.content}
+                    </div>
+                  </div>
+                )}
+
+                {designTab === "code" && (
+                  <div className="relative">
+                    <pre className="p-4 rounded-xl bg-[#06090F] border border-[#1E293B] font-mono text-xs text-[#38BDF8] overflow-x-auto whitespace-pre leading-normal">
+                      <code>{extractCode(designResult.content)}</code>
+                    </pre>
+                  </div>
+                )}
+
+                {designTab === "raw" && (
+                  <pre className="p-4 rounded-xl bg-[#06090F] border border-[#1E293B] font-mono text-[11px] text-[#94A3B8] overflow-x-auto whitespace-pre-wrap leading-normal">
+                    {designResult.content}
+                  </pre>
+                )}
+              </div>
+            </div>
+          )}
+        </section>
+
         {/* Footer System Telemetry Status */}
         <footer className="pt-6 border-t border-[#1E293B] flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748B] gap-4">
           <div>
-            RepoOS™ Autonomous E-Commerce Fleet Engine • Cloudflare Edge Mesh Protected
+            RepoOS™ Autonomous E-Commerce Fleet Engine • Cloudflare Edge Mesh Protected • Powered by Google AI Studio
           </div>
           <div className="flex items-center space-x-4">
             <span className="flex items-center gap-1">
