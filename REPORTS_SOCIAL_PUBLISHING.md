@@ -10,3 +10,9 @@
 - **Instagram Direct Publish:** ⏸️ Standby (Dry Run / Secrets Needed)
 - **TikTok Direct Publish:** ⏸️ Standby (Dry Run / Secrets Needed)
 
+### Social Dispatch &mdash; 2026-11-11T18:45:09.430636+00:00
+- **Angle:** Stop spending $1,500 on clinical lymphatic drainage appointments 🧖‍♀️
+- **Product:** LumaGlow™ 30-Day Complete System ($59.99)
+- **Instagram Direct Publish:** ⏸️ Standby (Dry Run / Secrets Needed)
+- **TikTok Direct Publish:** ⏸️ Standby (Dry Run / Secrets Needed)
+

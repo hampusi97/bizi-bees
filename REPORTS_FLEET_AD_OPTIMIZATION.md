@@ -1,5 +1,5 @@
 # Fleet Ad Portfolio Optimization Report
-*Run Timestamp: 2026-11-11 01:39:06 UTC*
+*Run Timestamp: 2026-11-11 18:45:06 UTC*
 
 ## Scaled High-ROAS Campaigns
 | Store | Campaign ID | ROAS | Action |

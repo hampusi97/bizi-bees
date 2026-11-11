@@ -1,86 +1,9 @@
-<section class="bizi-bees-section" id="bizi-bees-hero">
-  <style>
-    .bizi-bees-section { background-color: #FAF7F2; color: #29231E; font-family: Georgia, serif; padding: 40px 20px; overflow: hidden; }
-    .bizi-container { max-width: 1000px; margin: 0 auto; }
-    
-    /* Sticky Banner */
-    .sticky-banner { background: #D9822B; color: #fff; text-align: center; padding: 8px; font-size: 0.9rem; font-weight: bold; position: sticky; top: 0; z-index: 100; }
-
-    /* Hero Layout */
-    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .headline { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; }
-    .rating { color: #D9822B; margin-bottom: 20px; font-weight: bold; }
-
-    /* Tier Selector */
-    .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
-    .tier-card { border: 2px solid #29231E; padding: 20px; cursor: pointer; transition: 0.3s; position: relative; }
-    .tier-card.active { border-color: #D9822B; background: #fff; }
-    .tier-badge { background: #D9822B; color: white; padding: 2px 8px; font-size: 0.7rem; position: absolute; top: -10px; right: 10px; }
-
-    /* Buttons */
-    .cta-btn { background: #29231E; color: #FAF7F2; padding: 18px; width: 100%; border: none; font-size: 1.2rem; cursor: pointer; }
-    .guarantee-strip { display: flex; justify-content: space-between; margin-top: 30px; font-size: 0.85rem; border-top: 1px solid #ddd; padding-top: 20px; }
-
-    @media (max-width: 768px) { .hero-content { grid-template-columns: 1fr; } }
-  </style>
-
-  <div class="sticky-banner">🚚 FAST DISPATCH FROM UTAH | FREE US SHIPPING ON ALL ORDERS</div>
-
-  <div class="bizi-container">
-    <div class="hero-content">
-      <div>
-        <div class="rating">★★★★★ 4.9/5 (2,400+ Cozy Readers)</div>
-        <h1 class="headline">Blind Date with a Book & Cozy Evening Crate</h1>
-        <p>Curated vintage finds paired with artisan treats. The perfect night in, delivered to your doorstep.</p>
-        
-        <div class="tier-grid">
-          <div class="tier-card active" onclick="selectTier(this, 14.99)">
-            <strong>Solo</strong><br>$14.99
-          </div>
-          <div class="tier-card" onclick="selectTier(this, 38.00)">
-            <span class="tier-badge">Best Value</span>
-            <strong>VIP Bundle</strong><br>$38.00
-          </div>
-        </div>
-        
-        <div id="gift-notice" style="margin-bottom: 20px; color: #D9822B; font-weight: bold; display: none;">
-          🎁 Free Gift Unlocked: Solid Brass Honeybee Bookmark ($12 Value)
-        </div>
-
-        <button class="cta-btn" onclick="window.location.href='/collections/all'">Add to Cart - <span id="price-display">$14.99</span></button>
-      </div>
-      
-      <div class="hero-image" style="background: #e0dcd5; height: 400px; display: flex; align-items: center; justify-content: center;">
-        [Product Image Placeholder]
-      </div>
-    </div>
-
-    <div class="guarantee-strip">
-      <span>✓ Utah Dispatch</span>
-      <span>✓ 60-Day Trial</span>
-      <span>✓ Free US Delivery</span>
-    </div>
-  </div>
-
-  <script>
-    function selectTier(el, price) {
-      document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
-      document.getElementById('price-display').innerText = '$' + price.toFixed(2);
-      document.getElementById('gift-notice').style.display = (price === 38.00) ? 'block' : 'none';
-    }
-  </script>
-</section>
-
+{% comment %} Storefront fallback for Bizi Bees Boutique {% endcomment %}
+<div style="background: #FAF7F2; color: #1C1917; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>Bizi Bees Boutique</h2>
+  <p>Blind Date with a Book & Cozy Evening Crate — $38.00</p>
+  <a href="/collections/all" style="background: #D97706; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "Bizi Bees Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Bizi Bees Hero",
-      "category": "Conversion"
-    }
-  ]
-}
+{ "name": "Bizi Bees Boutique Storefront", "settings": [], "presets": [{ "name": "Bizi Bees Boutique Storefront" }] }
 {% endschema %}

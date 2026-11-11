@@ -1,82 +1,9 @@
-<section class="zenith-hero-section" style="background-color: #0F172A; color: #F8FAFC; font-family: -apple-system, sans-serif; padding: 40px 20px;">
-  <div class="zenith-container" style="max-width: 1000px; margin: 0 auto;">
-    
-    <!-- Sticky Conversion Banner -->
-    <div class="zenith-banner" style="background: #6366F1; padding: 8px; text-align: center; font-size: 0.85rem; font-weight: 600; border-radius: 8px; margin-bottom: 30px;">
-      ⚡ DISPATCHING FROM UTAH TODAY: FREE US EXPEDITED SHIPPING
-    </div>
-
-    <div class="zenith-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-      <!-- Hero Content -->
-      <div class="zenith-content">
-        <h1 style="font-size: 3rem; line-height: 1.1; margin-bottom: 20px;">Master Your Sleep With <span style="color: #6366F1;">Zenith™</span></h1>
-        <p style="font-size: 1.25rem; color: #cbd5e1; margin-bottom: 25px;">The world's first ergonomic 3D Bluetooth sleep mask designed for deep-cycle recovery. Zero pressure, total darkness.</p>
-        <div class="zenith-rating" style="margin-bottom: 30px;">⭐⭐⭐⭐⭐ <span style="margin-left: 10px;">4.9/5 from 12,000+ Sleepers</span></div>
-      </div>
-
-      <!-- Conversion Card -->
-      <div class="zenith-card" style="background: #1e293b; padding: 30px; border-radius: 16px; border: 1px solid #334155;">
-        <div class="tier-selector">
-          <!-- Tier 1 -->
-          <div class="tier-option" onclick="selectTier('solo')" id="solo-tier" style="border: 2px solid #334155; padding: 15px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; transition: 0.3s;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <strong>Solo Mask</strong>
-              <span>$34.99</span>
-            </div>
-          </div>
-          
-          <!-- Tier 2 (VIP) -->
-          <div class="tier-option active" onclick="selectTier('bundle')" id="bundle-tier" style="border: 2px solid #6366F1; background: rgba(99, 102, 241, 0.1); padding: 15px; border-radius: 12px; cursor: pointer; transition: 0.3s;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-              <strong>VIP Bundle (Best Value)</strong>
-              <span style="color: #6366F1; font-weight: bold;">$49.99</span>
-            </div>
-            <div class="free-gift-badge" style="font-size: 0.8rem; background: #6366F1; padding: 4px 8px; border-radius: 4px; display: inline-block;">
-              🎁 FREE: Satin Case + Earplugs ($14 Value)
-            </div>
-          </div>
-        </div>
-
-        <button onclick="window.location.href='/collections/all'" style="width: 100%; padding: 18px; margin-top: 20px; background: #6366F1; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: transform 0.2s;">
-          SECURE MY SLEEP NOW
-        </button>
-      </div>
-    </div>
-
-    <!-- 3-Pillar Guarantee -->
-    <div class="zenith-guarantee" style="display: flex; justify-content: space-around; margin-top: 50px; border-top: 1px solid #334155; padding-top: 30px; text-align: center;">
-      <div>📦 Utah Dispatch</div>
-      <div>🛡️ 60-Day Trial</div>
-      <div>🚚 Free US Delivery</div>
-    </div>
-  </div>
-</section>
-
-<script>
-  function selectTier(type) {
-    const solo = document.getElementById('solo-tier');
-    const bundle = document.getElementById('bundle-tier');
-    if(type === 'solo') {
-      solo.style.borderColor = '#6366F1';
-      bundle.style.borderColor = '#334155';
-      bundle.style.background = 'transparent';
-    } else {
-      bundle.style.borderColor = '#6366F1';
-      bundle.style.background = 'rgba(99, 102, 241, 0.1)';
-      solo.style.borderColor = '#334155';
-    }
-  }
-</script>
-
+{% comment %} Storefront fallback for Zenith Sleep™ {% endcomment %}
+<div style="background: #0F172A; color: #FFFFFF; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>Zenith Sleep™</h2>
+  <p>Bluetooth 3D Zero-Pressure Blackout Mask — $49.99</p>
+  <a href="/collections/all" style="background: #0D9488; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "Zenith Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Zenith Hero Section",
-      "category": "Conversion"
-    }
-  ]
-}
+{ "name": "Zenith Sleep™ Storefront", "settings": [], "presets": [{ "name": "Zenith Sleep™ Storefront" }] }
 {% endschema %}

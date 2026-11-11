@@ -11,12 +11,15 @@ export default defineConfig({
     baseURL: process.env.LIVE_STORE_URL || 'https://bizibees-store.myshopify.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'off',
   },
   projects: [
     {
       name: 'Mobile Chrome (Pixel 7)',
-      use: { ...devices['Pixel 7'] },
+      use: { 
+        ...devices['Pixel 7'],
+        channel: 'chrome'
+      },
     },
   ],
 });

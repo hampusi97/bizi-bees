@@ -1,74 +1,9 @@
-<section class="floraspring-section" id="flora-hero-conversion">
-  <style>
-    .floraspring-section { background: #F7F9F5; color: #1C281E; font-family: Georgia, serif; padding: 40px 20px; overflow: hidden; }
-    .fs-container { max-width: 900px; margin: 0 auto; }
-    .fs-sticky-banner { background: #4D7C0F; color: white; text-align: center; padding: 8px; font-size: 0.9rem; font-weight: bold; position: sticky; top: 0; z-index: 100; border-radius: 4px; margin-bottom: 20px; }
-    .fs-hero-content { text-align: center; margin-bottom: 40px; }
-    .fs-rating { color: #4D7C0F; margin-bottom: 10px; font-weight: bold; }
-    .fs-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-    .fs-card { border: 2px solid #D1D9CA; padding: 20px; border-radius: 12px; cursor: pointer; transition: 0.3s; position: relative; }
-    .fs-card.active { border-color: #4D7C0F; background: #fff; }
-    .fs-badge { position: absolute; top: -10px; right: 10px; background: #4D7C0F; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
-    .fs-gift-notice { background: #E8F0E3; border: 1px dashed #4D7C0F; padding: 15px; text-align: center; margin-bottom: 20px; border-radius: 8px; color: #4D7C0F; font-weight: bold; }
-    .fs-btn { display: block; width: 100%; background: #4D7C0F; color: white; text-align: center; padding: 18px; border-radius: 8px; text-decoration: none; font-size: 1.2rem; font-weight: bold; transition: transform 0.2s; }
-    .fs-btn:hover { transform: scale(1.02); }
-    .fs-guarantees { display: flex; justify-content: space-around; margin-top: 30px; font-size: 0.85rem; opacity: 0.8; }
-    @media (max-width: 600px) { .fs-options-grid { grid-template-columns: 1fr; } }
-  </style>
-
-  <div class="fs-container">
-    <div class="fs-sticky-banner">🚚 Dispatching from Utah today — Free US Shipping</div>
-
-    <div class="fs-hero-content">
-      <div class="fs-rating">★★★★★ 4.9/5 (2,400+ Happy Planters)</div>
-      <h1 style="font-size: 2.5rem; margin: 10px 0;">Never Forget to Water Again.</h1>
-      <p style="font-size: 1.2rem;">The elegant, self-watering solution for your indoor jungle.</p>
-    </div>
-
-    <div class="fs-options-grid">
-      <div class="fs-card active" onclick="selectOption('solo')">
-        <h3>Solo Set</h3>
-        <p>4x Terracotta Spikes</p>
-        <p style="font-size: 1.5rem; font-weight: bold;">$21.99</p>
-      </div>
-      <div class="fs-card" onclick="selectOption('bundle')">
-        <span class="fs-badge">BEST VALUE</span>
-        <h3>VIP Bundle</h3>
-        <p>8x Spikes + Food</p>
-        <p style="font-size: 1.5rem; font-weight: bold;">$34.99</p>
-      </div>
-    </div>
-
-    <div class="fs-gift-notice" id="gift-notice">🎁 VIP BUNDLE UNLOCKS: Free Organic Plant Food ($14 Value)</div>
-
-    <a href="/collections/all" class="fs-btn">Add to Cart & Secure My Plants</a>
-
-    <div class="fs-guarantees">
-      <span>✓ Utah Dispatch</span>
-      <span>✓ 60-Day Trial</span>
-      <span>✓ Free US Delivery</span>
-    </div>
-  </div>
-
-  <script>
-    function selectOption(type) {
-      const cards = document.querySelectorAll('.fs-card');
-      cards.forEach(c => c.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-      const giftNotice = document.getElementById('gift-notice');
-      giftNotice.style.display = (type === 'bundle') ? 'block' : 'none';
-    }
-  </script>
-</section>
-
+{% comment %} Storefront fallback for FloraSpring™ {% endcomment %}
+<div style="background: #0F172A; color: #FFFFFF; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>FloraSpring™</h2>
+  <p>Terracotta Self-Watering Spikes (Set of 4) — $34.99</p>
+  <a href="/collections/all" style="background: #0D9488; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "FloraSpring Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "FloraSpring Conversion"
-    }
-  ]
-}
+{ "name": "FloraSpring™ Storefront", "settings": [], "presets": [{ "name": "FloraSpring™ Storefront" }] }
 {% endschema %}

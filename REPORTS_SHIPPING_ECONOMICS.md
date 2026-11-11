@@ -1,6 +1,6 @@
 # Automated Shipping Profiles & Unit Economics Report
 
-Generated at: 2026-11-10 23:13:09 UTC
+Generated at: 2026-11-11 18:45:09 UTC
 
 Target Shop: `bizibees-store.myshopify.com`
 

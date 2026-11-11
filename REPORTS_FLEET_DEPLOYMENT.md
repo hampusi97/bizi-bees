@@ -1,20 +1,23 @@
 # The 10-Store Fleet Deployment Report
-*Compiled at: 2026-11-10 23:05:53 UTC*
+*Compiled at: 2026-11-11 18:45:09 UTC*
 
 | Brand Name | Niche | Hero Product | COGS | Retail | Margin | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Crave Lab** | Gourmet Candy & Confections | Custom 4-Bar Belgian Chocolate Bento Box | $6.20 | $38.00 | 83.6% | ✅ Ready for Traffic |
-| **Aura Sculpt** | Seamless Activewear & Apparel | CloudSoft™ 2-Piece Mix & Match Sculpt Set | $7.80 | $54.00 | 85.5% | ✅ Ready for Traffic |
-| **Luma Clinical** | Clinical Derm-Tech | LumaGlow™ QuadWave Pro 4-in-1 Facial Wand | $8.50 | $39.99 | 78.7% | ✅ Ready for Traffic |
-| **Luma Relief** | Therapeutic Pain Care | LumaRelief™ 360° Cold Compression Migraine Mask | $5.20 | $24.99 | 79.2% | ✅ Ready for Traffic |
-| **Bizi Bees Boutique** | Curated Books & Gifts | Blind Date with a Book Mystery Gift Bundle | $3.50 | $24.00 | 85.4% | ✅ Ready for Traffic |
-| **PawGlow Co** | Pet Grooming Tech | PawGlow™ Ultrasonic Steam Deshedding Pet Brush | $3.80 | $22.99 | 83.4% | ✅ Ready for Traffic |
-| **Zenith Sleep** | Sleep Optimization | ZenithPro™ Bluetooth 3D Zero-Pressure Sleep Mask | $6.40 | $34.99 | 81.7% | ✅ Ready for Traffic |
-| **Aura Posture** | Ergonomics & Posture | AuraVibe™ Smart Haptic Posture Realignment Sensor | $7.10 | $38.00 | 81.3% | ✅ Ready for Traffic |
-| **LumiCarve** | DIY & Crafting Tools | LumiCarve™ Cordless High-Speed Micro Engraving Pen | $8.20 | $42.00 | 80.5% | ✅ Ready for Traffic |
-| **Dermasonic** | Pore Care & Cleansing | DermaSonic™ Ultrasonic Blackhead & Comedone Extractor | $4.90 | $29.99 | 83.6% | ✅ Ready for Traffic |
-| **CalmCore** | Stress & Tension Relief | CalmCore™ Weighted Clay Thermal Neck & Shoulder Wrap | $8.00 | $44.00 | 81.8% | ✅ Ready for Traffic |
-| **FloraSpring** | Home & Garden Decor | FloraSpring™ Terracotta Self-Watering Spikes (Set of 4) | $3.20 | $21.99 | 85.4% | ✅ Ready for Traffic |
+| **Ember & Oak™ Reserve** | Luxury Cigars, Briar Pipes & Humidors | None | $N/A | $48.00 | 82.5% | ✅ Ready for Traffic |
+| **Bizi Bees Boutique** | Curated Vintage Books & Cozy Gifts | None | $N/A | $14.99 | 84.0% | ✅ Ready for Traffic |
+| **Luma Clinical™** | Clinical Derm-Tech | None | $N/A | $38.99 | 78.7% | ✅ Ready for Traffic |
+| **Luma Relief™** | Migraine & Tension Recovery | None | $N/A | $22.74 | 79.2% | ✅ Ready for Traffic |
+| **Fizz Lab™ Soda** | Utah Dirty Soda Bar Kits | None | $N/A | $32.00 | 76.0% | ✅ Ready for Traffic |
+| **Crave Lab™ Chocolates** | Artisanal Belgian Confections | None | $N/A | $24.00 | 83.6% | ✅ Ready for Traffic |
+| **Aura Sculpt™** | CloudSoft™ Seamless Activewear | None | $N/A | $38.00 | 85.5% | ✅ Ready for Traffic |
+| **PawGlow Co™** | Pet Grooming Tech | None | $N/A | $22.99 | 83.4% | ✅ Ready for Traffic |
+| **Zenith Sleep™** | Deep Sleep Biohacking | None | $N/A | $34.99 | 81.7% | ✅ Ready for Traffic |
+| **Aura Posture™** | Smart Spine Ergonomics | None | $N/A | $38.00 | 81.3% | ✅ Ready for Traffic |
+| **LumiCarve™** | Precision DIY & Crafting | None | $N/A | $42.00 | 80.5% | ✅ Ready for Traffic |
+| **Dermasonic™** | Ultrasonic Pore Care | None | $N/A | $29.99 | 83.6% | ✅ Ready for Traffic |
+| **CalmCore™** | Weighted Thermal Therapy | None | $N/A | $44.00 | 81.8% | ✅ Ready for Traffic |
+| **FloraSpring™** | Cottagecore Plant Tech | None | $N/A | $21.99 | 85.4% | ✅ Ready for Traffic |
+| **VeloBrew™** | Portable Barista Tech | None | $N/A | $54.00 | 79.5% | ✅ Ready for Traffic |
 
 ---
 ### Day-1 Customer Acquisition Playbook Summary

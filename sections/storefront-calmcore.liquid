@@ -1,72 +1,9 @@
-<section class="calmcore-hero-section" style="background-color: #FBF9F6; color: #27272A; font-family: Georgia, serif; padding: 40px 20px; overflow: hidden;">
-  <div class="cc-container" style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-    
-    <!-- Left: Content -->
-    <div class="cc-content">
-      <div class="cc-badge" style="background: #78716C; color: #fff; padding: 4px 12px; font-size: 12px; display: inline-block; margin-bottom: 16px; border-radius: 4px;">#1 RATED THERMAL RELIEF</div>
-      <h1 style="font-size: 48px; line-height: 1.1; margin-bottom: 20px;">Weighted Clay Herbal Neck & Shoulder Wrap</h1>
-      <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Experience deep-tissue relief through weighted thermal therapy. Naturally eases tension, anxiety, and muscle knots in minutes.</p>
-      
-      <!-- Interactive 2-Tier Selector -->
-      <div class="cc-selector-wrapper" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
-        <label class="cc-option" data-price="4400" style="border: 2px solid #78716C; padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 8px;">
-          <input type="radio" name="bundle" value="solo" checked style="accent-color: #78716C;">
-          <span>Solo Wrap</span>
-          <span style="font-weight: bold;">$44.00</span>
-        </label>
-        <label class="cc-option active" data-price="6400" style="border: 2px solid #78716C; padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; background: #f3f0ee;">
-          <input type="radio" name="bundle" value="vip" style="accent-color: #78716C;">
-          <span>VIP Bundle (Best Value)</span>
-          <span style="font-weight: bold;">$64.00</span>
-        </label>
-      </div>
-
-      <div id="gift-notice" style="background: #e7e5e4; padding: 12px; border-radius: 6px; font-size: 14px; margin-bottom: 20px; display: none;">
-        🎁 <strong>Gift Unlocked:</strong> Aromatherapy Essential Oil Roll-On ($16 Value) included!
-      </div>
-
-      <a href="/collections/all" class="cc-btn" style="display: block; text-align: center; background: #27272A; color: #FBF9F6; padding: 20px; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 18px;">Claim Your Relief Now</a>
-    </div>
-
-    <!-- Right: Visual -->
-    <div class="cc-visual" style="text-align: center;">
-      <div style="width: 100%; aspect-ratio: 1/1; background: #e7e5e4; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-style: italic;">[Product Image Placeholder]</div>
-      <div style="margin-top: 20px; font-size: 14px;">⭐ 4.9/5 from 2,500+ Happy Customers</div>
-    </div>
-  </div>
-
-  <!-- Guarantee Strip -->
-  <div class="cc-guarantee" style="max-width: 1000px; margin: 40px auto 0; display: flex; justify-content: space-between; border-top: 1px solid #d6d3d1; padding-top: 20px; text-align: center; font-size: 14px;">
-    <span>⚡ Utah Dispatch</span>
-    <span>🛡️ 60-Day Trial</span>
-    <span>🚚 Free US Delivery</span>
-  </div>
-</section>
-
-<style>
-  @media (max-width: 768px) { .cc-container { grid-template-columns: 1fr !important; } }
-  .cc-option.active { border-width: 3px; }
-</style>
-
-<script>
-  document.querySelectorAll('.cc-option').forEach(option => {
-    option.addEventListener('click', function() {
-      document.querySelectorAll('.cc-option').forEach(o => o.classList.remove('active'));
-      this.classList.add('active');
-      const giftNotice = document.getElementById('gift-notice');
-      giftNotice.style.display = this.querySelector('input').value === 'vip' ? 'block' : 'none';
-    });
-  });
-</script>
-
+{% comment %} Storefront fallback for CalmCore™ {% endcomment %}
+<div style="background: #0F172A; color: #FFFFFF; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>CalmCore™</h2>
+  <p>Weighted Clay Herbal Neck & Shoulder Wrap — $64.00</p>
+  <a href="/collections/all" style="background: #0D9488; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "CalmCore Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "CalmCore Hero Section"
-    }
-  ]
-}
+{ "name": "CalmCore™ Storefront", "settings": [], "presets": [{ "name": "CalmCore™ Storefront" }] }
 {% endschema %}

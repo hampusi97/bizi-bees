@@ -1,80 +1,9 @@
-<section class="luma-relief-section" style="background-color: #F8FAFC; color: #0F172A; font-family: -apple-system, Inter, sans-serif; padding: 40px 20px;">
-  <div class="luma-container" style="max-width: 1000px; margin: 0 auto;">
-    
-    <!-- Sticky Banner -->
-    <div class="shipping-banner" style="background: #0284C7; color: white; text-align: center; padding: 8px; font-weight: 600; font-size: 0.85rem; border-radius: 8px; margin-bottom: 30px;">
-      ⚡️ FAST DISPATCH FROM UTAH: Order now for Free US Delivery
-    </div>
-
-    <div class="luma-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <div class="rating" style="margin-bottom: 10px; color: #0284C7; font-weight: bold;">★★★★★ 5,000+ Happy Migraine Warriors</div>
-        <h1 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 20px;">The 360° Relief Your Head Deserves.</h1>
-        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 30px;">Experience instant, drug-free relief from migraines and tension headaches with the LumaRelief™ 360° Cold Compression Cap.</p>
-        
-        <!-- Interactive Selector -->
-        <div class="offer-selector" id="offer-selector">
-          <div class="option" data-price="24.99" style="border: 2px solid #0284C7; padding: 15px; border-radius: 12px; margin-bottom: 10px; cursor: pointer; transition: 0.3s;">
-            <div style="display: flex; justify-content: space-between; font-weight: bold;">
-              <span>LumaRelief™ Solo</span>
-              <span>$24.99</span>
-            </div>
-          </div>
-          <div class="option active" data-price="34.99" style="border: 2px solid #0284C7; padding: 15px; border-radius: 12px; background: #e0f2fe; cursor: pointer; position: relative;">
-            <span style="position: absolute; top: -10px; right: 10px; background: #0284C7; color: white; padding: 2px 8px; font-size: 0.7rem; border-radius: 4px;">BEST VALUE</span>
-            <div style="display: flex; justify-content: space-between; font-weight: bold;">
-              <span>VIP Bundle (Cap + Roller)</span>
-              <span>$34.99</span>
-            </div>
-            <div style="font-size: 0.85rem; margin-top: 5px; color: #0284C7;">🎁 Free Herbal Sinus Acupressure Roller ($18 Value)</div>
-          </div>
-        </div>
-
-        <button onclick="window.location.href='/cart'" style="width: 100%; background: #0284C7; color: white; border: none; padding: 18px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; margin-top: 20px; cursor: pointer; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);">
-          Claim My Relief Now
-        </button>
-      </div>
-
-      <!-- Visual Area -->
-      <div class="hero-visual" style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-        <div style="width: 100%; height: 400px; background: #e2e8f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
-          [Product Image Placeholder]
-        </div>
-      </div>
-    </div>
-
-    <!-- Guarantee Strip -->
-    <div class="guarantees" style="display: flex; justify-content: space-between; margin-top: 50px; padding: 20px; border-top: 1px solid #e2e8f0;">
-      <div style="text-align: center;">✅ Utah Dispatch</div>
-      <div style="text-align: center;">🛡️ 60-Day Trial</div>
-      <div style="text-align: center;">🚚 Free US Delivery</div>
-    </div>
-  </div>
-</section>
-
-<script>
-  document.querySelectorAll('.option').forEach(option => {
-    option.addEventListener('click', function() {
-      document.querySelectorAll('.option').forEach(o => {
-        o.style.background = 'transparent';
-        o.classList.remove('active');
-      });
-      this.style.background = '#e0f2fe';
-      this.classList.add('active');
-    });
-  });
-</script>
-
+{% comment %} Storefront fallback for Luma Relief™ {% endcomment %}
+<div style="background: #0F172A; color: #FFFFFF; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>Luma Relief™</h2>
+  <p>LumaRelief™ 360° Cold Compression Cap — $32.49</p>
+  <a href="/collections/all" style="background: #0D9488; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "Luma Relief Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Luma Relief Hero Section",
-      "category": "Conversion"
-    }
-  ]
-}
+{ "name": "Luma Relief™ Storefront", "settings": [], "presets": [{ "name": "Luma Relief™ Storefront" }] }
 {% endschema %}

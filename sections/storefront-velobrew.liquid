@@ -1,69 +1,9 @@
-<section class="velobrew-hero-section" style="background-color: #181412; color: #FAF5F0; font-family: -apple-system, sans-serif; padding: 40px 20px; overflow: hidden;">
-  <div class="velobrew-container" style="max-width: 1000px; margin: 0 auto;">
-    
-    <!-- Sticky Conversion Banner -->
-    <div class="vb-banner" style="text-align: center; font-size: 0.85rem; padding: 8px; background: #D97706; color: #181412; font-weight: 700; border-radius: 4px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px;">
-      ⚡️ Dispatching from Utah Warehouse - Ships in 24 Hours
-    </div>
-
-    <div class="vb-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-      <!-- Hero Content -->
-      <div class="vb-content">
-        <div class="vb-rating" style="color: #D97706; margin-bottom: 10px; font-weight: bold;">★★★★★ 5,000+ Happy Baristas</div>
-        <h1 style="font-size: 3rem; line-height: 1.1; margin-bottom: 20px;">The Cordless 20-Bar Thermal Espresso Maker</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px;">Barista-quality shots, anywhere. Thermal precision meets 20-bar pressure in a portable, indestructible frame.</p>
-
-        <!-- Interactive 2-Tier Selector -->
-        <div class="vb-selector" style="display: flex; flex-direction: column; gap: 15px;">
-          <label class="vb-option" data-price="54" onclick="selectTier('solo')" style="padding: 20px; border: 2px solid #333; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s;">
-            <span><strong>Solo Unit</strong></span>
-            <span>$54.00</span>
-          </label>
-          <label class="vb-option active" data-price="74" onclick="selectTier('bundle')" style="padding: 20px; border: 2px solid #D97706; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: rgba(217, 119, 6, 0.1);">
-            <div>
-              <strong>VIP Bundle</strong><br>
-              <small style="color: #D97706;">+ Free Gift: Dosing Ring & Tamper ($20 Value)</small>
-            </div>
-            <span>$74.00</span>
-          </label>
-        </div>
-
-        <button class="vb-buy-btn" onclick="window.location.href='/collections/all'" style="width: 100%; padding: 20px; background: #D97706; border: none; border-radius: 8px; color: #181412; font-weight: 900; font-size: 1.2rem; margin-top: 20px; cursor: pointer; transition: transform 0.2s;">
-          ORDER NOW - SAVE $20
-        </button>
-      </div>
-
-      <!-- Hero Visual -->
-      <div class="vb-visual" style="background: #222; height: 400px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
-        <p style="text-align: center; opacity: 0.5;">[Product Image Placeholder]</p>
-      </div>
-    </div>
-
-    <!-- 3-Pillar Guarantee -->
-    <div class="vb-guarantee" style="display: flex; justify-content: space-around; margin-top: 50px; border-top: 1px solid #333; padding-top: 30px; text-align: center;">
-      <div>🚚 Utah Dispatch</div>
-      <div>🛡️ 60-Day Trial</div>
-      <div>📦 Free US Delivery</div>
-    </div>
-  </div>
-
-  <script>
-    function selectTier(type) {
-      document.querySelectorAll('.vb-option').forEach(el => el.style.borderColor = '#333');
-      event.currentTarget.style.borderColor = '#D97706';
-    }
-  </script>
-</section>
-
+{% comment %} Storefront fallback for VeloBrew™ {% endcomment %}
+<div style="background: #0F172A; color: #FFFFFF; padding: 60px 20px; text-align: center; font-family: sans-serif;">
+  <h2>VeloBrew™</h2>
+  <p>Cordless 20-Bar Thermal Portable Espresso Maker — $74.00</p>
+  <a href="/collections/all" style="background: #0D9488; color: #FFF; padding: 12px 24px; border-radius: 8px; text-decoration: none;">Claim VIP Bundle →</a>
+</div>
 {% schema %}
-{
-  "name": "VeloBrew Hero Section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "VeloBrew Hero Section",
-      "category": "Custom"
-    }
-  ]
-}
+{ "name": "VeloBrew™ Storefront", "settings": [], "presets": [{ "name": "VeloBrew™ Storefront" }] }
 {% endschema %}
