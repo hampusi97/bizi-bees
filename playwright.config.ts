@@ -15,10 +15,6 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'Mobile Safari (iPhone 14 Pro)',
-      use: { ...devices['iPhone 14 Pro'] },
-    },
-    {
       name: 'Mobile Chrome (Pixel 7)',
       use: { ...devices['Pixel 7'] },
     },

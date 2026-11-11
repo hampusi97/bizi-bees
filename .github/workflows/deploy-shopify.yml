@@ -28,12 +28,19 @@ jobs:
           fi
 
       - name: Deploy Theme to Shopify
-        if: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN != '' && secrets.SHOPIFY_SHOP_URL != '' }}
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          SHOPIFY_SHOP_URL: ${{ secrets.SHOPIFY_SHOP_URL }}
         run: |
+          if [ -z "$SHOPIFY_CLI_THEME_TOKEN" ] || [ -z "$SHOPIFY_SHOP_URL" ]; then
+            echo "ℹ️ SHOPIFY_CLI_THEME_TOKEN or SHOPIFY_SHOP_URL not configured in GitHub Secrets."
+            echo "Skipping live theme push. Add secrets in GitHub Repo Settings -> Secrets to enable automated theme publishing."
+            exit 0
+          fi
           npm install -g @shopify/cli @shopify/theme
           shopify theme push \
-            --store "${{ secrets.SHOPIFY_SHOP_URL }}" \
-            --password "${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}" \
+            --store "$SHOPIFY_SHOP_URL" \
+            --password "$SHOPIFY_CLI_THEME_TOKEN" \
             --path . \
             --ignore config/settings_data.json \
             --live \
