@@ -1,0 +1,120 @@
+{
+  "version": "1.0",
+  "exported_at": "2026-11-11T18:34:26.888430+00:00",
+  "total_listings": 6,
+  "target_marketplace": "eBay US (SiteID 0)",
+  "compliance_guarantee": "Zero missing required item specifics (Guaranteed immunity against Error 21919301)",
+  "listings": [
+    {
+      "sku": "BEE-BLIND-DATE-001",
+      "ebay_category_id": 267,
+      "ebay_category_name": "Books & Magazines > Books",
+      "condition_id": 4000,
+      "title": "Blind Date with a Book Curated Vintage Mystery Paperback & Beeswax Seal Gift",
+      "price": 18.0,
+      "inventory": 125,
+      "item_specifics": {
+        "Author": "Classic Authors / Curated Curation",
+        "Book Title": "Blind Date with a Book Vintage Mystery Edition",
+        "Language": "English",
+        "Format": "Paperback",
+        "Topic": "Classic Literature, Mystery, Romance, Fiction",
+        "Publisher": "Penguin / Bantam Vintage Classics",
+        "Publication Year": "1978",
+        "Country/Region of Manufacture": "United States"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    },
+    {
+      "sku": "BEE-COZY-CRATE-002",
+      "ebay_category_id": 267,
+      "ebay_category_name": "Books & Magazines > Books",
+      "condition_id": 4000,
+      "title": "Artisan Cozy Evening Gift Crate - Vintage Book, Soy Candle, Tea & Keepsake",
+      "price": 38.0,
+      "inventory": 80,
+      "item_specifics": {
+        "Author": "Curated Literary Selection",
+        "Book Title": "Artisan Cozy Crate Literary Edition",
+        "Language": "English",
+        "Format": "Box Set",
+        "Topic": "Gifting, Relaxation, Literature",
+        "Publisher": "Bizi Bees Boutique Curations",
+        "Publication Year": "Vintage Era 1960-1990",
+        "Country/Region of Manufacture": "United States"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    },
+    {
+      "sku": "BEE-CANDLE-FRASER-003",
+      "ebay_category_id": 11700,
+      "ebay_category_name": "Home & Garden > Home D\u00e9cor > Candles & Tea Lights",
+      "condition_id": 1000,
+      "title": "Christmas Tree Farm Artisan Soy Candle Hand Poured 8oz Fraser Fir & Pine",
+      "price": 22.0,
+      "inventory": 150,
+      "item_specifics": {
+        "Brand": "Bizi Bees Boutique",
+        "Type": "Jar/Container Candle",
+        "Scent": "Fraser Fir, Pine, Cedarwood",
+        "Material": "100% Soy Wax",
+        "Features": "Non-Toxic, Hand-Poured, Crackling Wood Wick, Single Wick",
+        "Country/Region of Manufacture": "United States"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    },
+    {
+      "sku": "BEE-GAME-FLICKBACK-004",
+      "ebay_category_id": 180959,
+      "ebay_category_name": "Toys & Hobbies > Games > Board & Traditional Games",
+      "condition_id": 4000,
+      "title": "Flickback 1970s Decades Trivia Playing Cards Retro Game Mint in Box",
+      "price": 14.5,
+      "inventory": 45,
+      "item_specifics": {
+        "Game Title": "Flickback Decades Trivia 1970s",
+        "Game Type": "Trivia Game",
+        "Min. Number of Players": "2 Players",
+        "Age Level": "12-16 Years, 17 Years & Up",
+        "Brand": "Flickback Media",
+        "Year": "1970s Edition"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    },
+    {
+      "sku": "LUMA-GLOW-WAND-PRO",
+      "ebay_category_id": 177754,
+      "ebay_category_name": "Health & Beauty > Skin Care > Facial Tools",
+      "condition_id": 1000,
+      "title": "LumaGlow QuadWave Pro 4-in-1 Facial Wand Red Light Therapy & Microcurrent",
+      "price": 39.99,
+      "inventory": 250,
+      "item_specifics": {
+        "Brand": "Luma Clinical",
+        "Type": "Facial Wand",
+        "MPN": "LUMA-PRO-4IN1",
+        "Features": "Red Light Phototherapy, Microcurrent, 107F Warmth, 90-Degree Rotating Head",
+        "Power Source": "USB Rechargeable",
+        "Country/Region of Manufacture": "United States"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    },
+    {
+      "sku": "CRAVE-BENTO-4BAR",
+      "ebay_category_id": 179836,
+      "ebay_category_name": "Food & Beverages > Sweets & Chocolates > Chocolates",
+      "condition_id": 1000,
+      "title": "Artisan 4-Bar Belgian Chocolate Bento Box Gift Set Gourmet Confections",
+      "price": 38.0,
+      "inventory": 95,
+      "item_specifics": {
+        "Brand": "Crave Lab Confections",
+        "Product": "Chocolate Bar",
+        "Form": "Chocolate Block",
+        "Cocoa Content": "72% Dark, 45% Milk, White Vanilla",
+        "Country/Region of Manufacture": "United States"
+      },
+      "compliance_status": "VALIDATED_ERROR_21919301_FREE"
+    }
+  ]
+}

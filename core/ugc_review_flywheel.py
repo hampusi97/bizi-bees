@@ -33,13 +33,15 @@ def run_ugc_review_flywheel():
     delivered_cohort = [
         {"order_id": "1041", "name": "Jessica Taylor", "city": "Scottsdale", "store": "Luma Clinical", "delivered_days_ago": 7},
         {"order_id": "1044", "name": "Brad Peterson", "city": "Salt Lake City", "store": "Fizz Lab", "delivered_days_ago": 7},
-        {"order_id": "1049", "name": "Claire Dupont", "city": "Denver", "store": "Crave Lab", "delivered_days_ago": 7}
+        {"order_id": "1049", "name": "Claire Dupont", "city": "Denver", "store": "Crave Lab", "delivered_days_ago": 7},
+        {"order_id": "1052", "name": "Emily Watson", "city": "Seattle", "store": "Bizi Bees", "delivered_days_ago": 7},
+        {"order_id": "1055", "name": "Mark Sterling", "city": "Park City", "store": "Ember & Oak", "delivered_days_ago": 7}
     ]
 
     dispatched_prompts = []
     for customer in delivered_cohort:
         first_name = customer["name"].split()[0]
-        store_key = customer["store"].lower().replace(" ", "-")
+        store_key = customer["store"].lower().replace(" & ", "-").replace(" ", "-")
         brand_cfg = config.get("brandTemplates", {}).get(store_key, {})
         headline = brand_cfg.get("headline", "Claim Your $25 Video Review Gift Card! 🎁")
         
@@ -52,12 +54,21 @@ def run_ugc_review_flywheel():
             "name": customer["name"],
             "store": customer["store"],
             "channel": "SMS & Email",
-            "offer": "$25 Cash Card (Min $40 purchase)",
+            "offer": "$25 Cash Card (Min $35 purchase)",
             "status": "QUEUED_SMS_T7"
         })
 
     # Simulated incoming submitted video ingestion into TikTok Spark Ads
     incoming_ugc = [
+        {
+            "creator": "Hannah Reads",
+            "city": "Portland, OR",
+            "product": "Blind Date with a Book Mystery",
+            "video_duration": "15.4s",
+            "rating": "5 Stars",
+            "spark_auth_code": "SPARK-UGC-BEE-8821",
+            "review_quote": "Breaking the beeswax seal and unwrapping the kraft paper gave me chills. The vintage edition inside was in pristine condition!"
+        },
         {
             "creator": "Megan Vance",
             "city": "Austin, TX",

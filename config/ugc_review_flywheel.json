@@ -1,24 +1,24 @@
 {
-  "system": "5-Star UGC Review-to-Ad Flywheel (v1.0)",
+  "system": "5-Star UGC Review-to-Ad Flywheel (v2.0)",
   "triggerDelayDaysAfterDelivery": 7,
   "bountyReward": {
     "title": "$25 VIP Instant Cash Card",
     "creditAmount": 25.00,
-    "minimumOrderRequirement": 40.00,
+    "minimumOrderRequirement": 35.00,
     "marginalCost": 2.40,
     "estimatedAgencyCostAvoided": 250.00
   },
-  "submissionPortal": "https://reviews.lumaclinical.com/ugc-upload",
+  "submissionPortal": "https://bizibees-store.myshopify.com/pages/ugc-upload",
   "sparkAdsAutoIngest": {
     "enabled": true,
     "targetPlatform": "TikTok Spark Ads & Meta Advantage+",
     "authorizationCodePrefix": "SPARK-UGC-"
   },
   "brandTemplates": {
-    "luma-clinical": {
+    "bizi-bees": {
       "channel": "SMS & Email",
-      "headline": "Get a Free $25 Cash Card for a 15-Second Video 📱✨",
-      "copy": "Hey {first_name}! It's been 7 days since your LumaGlow™ QuadWave Pro arrived in {city}. Want a free $25 cash card on us? Record a quick 15-second phone video showing your glow routine, tap here to upload: {upload_url}. We'll send your $25 card instantly!"
+      "headline": "Break Your Wax Seal on Video & Get an Instant $25 Gift Card! 📖🐝",
+      "copy": "Hey {first_name}! It's been 7 days since your Bizi Bees parcel arrived in {city}. Want a free $25 gift card on us? Record a quick 15-second phone video breaking your wax seal and revealing your mystery book or cozy curation. Tap here to upload: {upload_url} — we'll send your $25 card instantly!"
     },
     "fizz-lab": {
       "channel": "SMS & Email",
@@ -29,6 +29,26 @@
       "channel": "SMS & Email",
       "headline": "Snap Your Chocolate Bar & Get $25 🍫",
       "copy": "Hey {first_name}! Hear that snap? Record a 15-second chocolate tasting ASMR video, upload at {upload_url}, and claim a $25 store gift card toward your next artisan bento box!"
+    },
+    "aura-sculpt": {
+      "channel": "SMS & Email",
+      "headline": "Show Your Posture Transformation & Claim $25 🧘‍♀️",
+      "copy": "Hey {first_name}! How does your posture feel after 7 days? Record a 15-second mirror video wearing your activewear sculpt set, upload at {upload_url}, and receive a $25 gift card!"
+    },
+    "ember-oak": {
+      "channel": "SMS & Email",
+      "headline": "Share Your Fireside Whiskey Ritual for $25 🥃🪵",
+      "copy": "Hey {first_name}! Did you light up the smoked oak chips? Record a 15-second cocktail smoker glass infusion, upload at {upload_url}, and claim an instant $25 credit!"
+    },
+    "paw-haven": {
+      "channel": "SMS & Email",
+      "headline": "Catch Your Pup Sleeping Cloud-9 for $25 🐾☁️",
+      "copy": "Hey {first_name}! Is your fur baby loving the orthopedic calming bed? Snap a 15-second phone clip of them snoozing, upload at {upload_url}, and claim $25 toward treats and gear!"
+    },
+    "luma-clinical": {
+      "channel": "SMS & Email",
+      "headline": "Get a Free $25 Cash Card for a 15-Second Video 📱✨",
+      "copy": "Hey {first_name}! It's been 7 days since your LumaGlow™ QuadWave Pro arrived in {city}. Want a free $25 cash card on us? Record a quick 15-second phone video showing your glow routine, tap here to upload: {upload_url}. We'll send your $25 card instantly!"
     }
   }
 }

@@ -1,38 +1,44 @@
 <!-- Native 1-Click Post-Purchase Upsell Ladder (snippets/post-purchase-upsell-ladder.liquid) -->
-<div id="lumaPostPurchaseModal" class="post-purchase-upsell-container" style="display: none;">
-  <div class="upsell-backdrop"></div>
+<div id="biziPostPurchaseModal" class="post-purchase-upsell-container" style="display: none;">
+  <div class="upsell-backdrop" onclick="dismissUpsell()"></div>
   <div class="upsell-card">
+    <button type="button" class="upsell-close-btn" onclick="dismissUpsell()" aria-label="Close offer">&times;</button>
+    
     <div class="upsell-header">
-      <div class="urgency-banner" style="background: #F5F3EF; color: #2D3B2D; font-weight: 600;">
-        Special Member Companion Curation
+      <div class="urgency-banner">
+        <span>⏱️ Special One-Time Offer • Reserved For <span id="upsellTimer">02:58</span></span>
       </div>
-      <h3 class="upsell-title" id="upsellHeadline">Complete Your Selection</h3>
-      <p class="upsell-subhead" id="upsellSubhead">Add this companion upgrade to your package with one click before dispatch.</p>
+      <h3 class="upsell-title" id="upsellHeadline">Add a Companion Mystery Book for Only $9.99</h3>
+      <p class="upsell-subhead" id="upsellSubhead">Double the surprise! Ships in the same hand-stamped package with artisan kraft paper, twine &amp; wax seal.</p>
     </div>
 
     <div class="upsell-product-preview">
-      <div class="upsell-badge" id="upsellDiscountBadge">Special Value</div>
-      <div class="upsell-product-info">
-        <h4 id="upsellProductName">Activating Botanical Peptide Conduction Serum (50ml)</h4>
-        <div class="upsell-pricing">
-          <span class="old-price" id="upsellOldPrice">$24.00</span>
-          <span class="new-price" id="upsellNewPrice">$14.00</span>
-          <span class="save-tag">SAVE $10.00</span>
+      <div class="upsell-badge" id="upsellDiscountBadge">44% OFF VIP EXCLUSIVE</div>
+      <div class="upsell-visual-row">
+        <div class="upsell-emoji">📖✨</div>
+        <div class="upsell-product-info">
+          <h4 id="upsellProductName">Blind Date with a Book — Companion Gift Edition</h4>
+          <p class="upsell-details" id="upsellDetails">Hand-selected vintage paperback • Clues stamped on kraft wrap • 100% curated condition</p>
+          <div class="upsell-pricing">
+            <span class="old-price" id="upsellOldPrice">$18.00</span>
+            <span class="new-price" id="upsellNewPrice">$9.99</span>
+            <span class="save-tag">SAVE $8.01</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="upsell-actions">
       <button type="button" class="btn-upsell-claim" id="btnClaimUpsell" onclick="executeOneClickUpsell()">
-        <span class="btn-text" id="upsellCtaText">Add to My Order &mdash; $14.00</span>
+        <span class="btn-text" id="upsellCtaText">Add Companion Book to Package — $9.99 →</span>
       </button>
       <button type="button" class="btn-upsell-decline" onclick="dismissUpsell()">
-        No thanks, proceed to confirmation
+        No thanks, keep my order as-is
       </button>
     </div>
 
     <div class="upsell-trust">
-      <span>🔒 256-Bit Encrypted • Ships in Same Package • 60-Day Guarantee</span>
+      <span>🔒 256-Bit SSL Encrypted • Ships in Same Eco-Parcel • Zero Extra Shipping Cost</span>
     </div>
   </div>
 </div>
@@ -41,160 +47,284 @@
   .post-purchase-upsell-container {
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 999999;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Playfair Display", Georgia, serif;
   }
   .upsell-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(4px);
+    background: rgba(28, 25, 23, 0.78);
+    backdrop-filter: blur(5px);
   }
   .upsell-card {
     position: relative;
-    background: #FFFFFF;
-    border-radius: 16px;
+    background: #FAF7F2;
+    border-radius: 20px;
     max-width: 480px;
     width: 100%;
-    padding: 24px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    border: 1px solid #E2E8F0;
+    padding: 28px 24px;
+    box-shadow: 0 25px 60px -15px rgba(28, 25, 23, 0.4);
+    border: 1px solid #E7E5E4;
     text-align: center;
-    animation: slideUp 0.3s ease-out;
+    animation: biziSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
   }
-  @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  @keyframes biziSlideUp {
+    from { transform: translateY(24px) scale(0.97); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
   }
+  .upsell-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    color: #78716C;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .upsell-close-btn:hover { color: #1C1917; }
   .urgency-banner {
     display: inline-block;
-    background: #FEF2F2;
-    color: #DC2626;
+    background: #FEF3C7;
+    color: #92400E;
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    letter-spacing: 0.02em;
     margin-bottom: 12px;
-    border: 1px solid #FECACA;
+    border: 1px solid #FDE68A;
   }
   .upsell-title {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 800;
-    color: #0F172A;
-    margin: 0 0 6px 0;
+    color: #1C1917;
+    margin: 0 0 8px 0;
     line-height: 1.3;
+    font-family: "Playfair Display", Georgia, serif;
   }
   .upsell-subhead {
-    font-size: 13px;
-    color: #64748B;
+    font-size: 13.5px;
+    color: #57534E;
     margin: 0 0 18px 0;
     line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
   .upsell-product-preview {
     position: relative;
-    background: #F8FAFC;
-    border: 2px dashed #0D9488;
-    border-radius: 12px;
+    background: #FFFFFF;
+    border: 2px dashed #D97706;
+    border-radius: 14px;
     padding: 16px;
     margin-bottom: 20px;
+    text-align: left;
   }
   .upsell-badge {
     position: absolute;
     top: -10px;
     right: 14px;
-    background: #0D9488;
+    background: #D97706;
     color: #FFFFFF;
     font-size: 11px;
     font-weight: 800;
     padding: 3px 10px;
     border-radius: 12px;
+    letter-spacing: 0.04em;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  }
+  .upsell-visual-row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .upsell-emoji {
+    font-size: 38px;
+    background: #FEF3C7;
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .upsell-product-info h4 {
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
     font-size: 15px;
     font-weight: 700;
-    color: #0F172A;
+    color: #1C1917;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .upsell-details {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: #78716C;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
   .upsell-pricing {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
   }
   .old-price {
     text-decoration: line-through;
-    color: #94A3B8;
+    color: #A8A29E;
     font-size: 14px;
   }
   .new-price {
-    color: #0D9488;
-    font-size: 22px;
+    color: #1E3A2B;
+    font-size: 20px;
     font-weight: 900;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
   .save-tag {
-    background: #CCFBF1;
-    color: #0F766E;
+    background: #DCFCE7;
+    color: #15803D;
     font-size: 11px;
     font-weight: 800;
     padding: 2px 8px;
     border-radius: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
   .btn-upsell-claim {
     width: 100%;
-    background: #0F172A;
-    color: #FFFFFF;
+    background: #1E3A2B;
+    color: #FAF7F2;
     border: none;
-    padding: 16px 20px;
+    padding: 15px 20px;
     border-radius: 40px;
     font-size: 15px;
-    font-weight: 800;
+    font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.3);
+    box-shadow: 0 6px 18px rgba(30, 58, 43, 0.28);
     transition: transform 0.15s ease, background 0.15s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
   .btn-upsell-claim:hover {
-    background: #0D9488;
+    background: #14261C;
     transform: translateY(-1px);
   }
   .btn-upsell-decline {
     background: transparent;
     border: none;
-    color: #94A3B8;
-    font-size: 12px;
+    color: #78716C;
+    font-size: 12.5px;
     font-weight: 600;
     margin-top: 12px;
     cursor: pointer;
     text-decoration: underline;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
+  .btn-upsell-decline:hover { color: #1C1917; }
   .upsell-trust {
     margin-top: 16px;
     font-size: 11px;
-    color: #64748B;
+    color: #78716C;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   }
 </style>
 
 <script>
-  function executeOneClickUpsell() {
-    const btn = document.getElementById("btnClaimUpsell");
-    if (btn) btn.innerHTML = "Adding to your package...";
-    setTimeout(() => {
-      dismissUpsell();
-    }, 500);
-  }
+  (function() {
+    var upsellConfig = {
+      variantId: '51838158733479',
+      price: 9.99,
+      properties: {
+        'Curation Edition': 'Companion Mystery Edition',
+        'Packaging': 'Kraft Paper, Twine & Beeswax Seal',
+        'Special Offer': 'One-Click Post-Purchase ($9.99)'
+      }
+    };
 
-  function dismissUpsell() {
-    const modal = document.getElementById("lumaPostPurchaseModal");
-    if (modal) modal.style.display = "none";
-  }
+    var timerSeconds = 178;
+    var timerInterval = null;
 
-  // Auto trigger after purchase if parameter exists
-  if (window.location.search.includes("upsell=true") || window.location.pathname.includes("thank_you")) {
-    const modal = document.getElementById("lumaPostPurchaseModal");
-    if (modal) modal.style.display = "flex";
-  }
+    function startTimer() {
+      var timerEl = document.getElementById('upsellTimer');
+      if (!timerEl) return;
+      if (timerInterval) clearInterval(timerInterval);
+      
+      timerInterval = setInterval(function() {
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          dismissUpsell();
+          return;
+        }
+        timerSeconds--;
+        var m = Math.floor(timerSeconds / 60);
+        var s = timerSeconds % 60;
+        timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      }, 1000);
+    }
+
+    window.openUpsellModal = function() {
+      var modal = document.getElementById('biziPostPurchaseModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        startTimer();
+      }
+    };
+
+    window.dismissUpsell = function() {
+      var modal = document.getElementById('biziPostPurchaseModal');
+      if (modal) modal.style.display = 'none';
+      if (timerInterval) clearInterval(timerInterval);
+    };
+
+    window.executeOneClickUpsell = function() {
+      var btn = document.getElementById('btnClaimUpsell');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>⏳ Adding to Your Parcel...</span>';
+      }
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          id: upsellConfig.variantId,
+          quantity: 1,
+          properties: upsellConfig.properties
+        })
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (btn) btn.innerHTML = '<span>✓ Added to Your Package!</span>';
+        setTimeout(function() {
+          dismissUpsell();
+          if (window.DropperCart && typeof window.DropperCart.refreshCart === 'function') {
+            window.DropperCart.refreshCart(true);
+          } else {
+            window.location.href = '/cart';
+          }
+        }, 600);
+      })
+      .catch(function(err) {
+        console.warn('Upsell add error:', err);
+        dismissUpsell();
+        window.location.href = '/cart';
+      });
+    };
+
+    // Auto-trigger if customer enters thank_you, order status, or ?upsell=true
+    if (window.location.search.includes('upsell=true') || 
+        window.location.pathname.includes('thank_you') || 
+        window.location.pathname.includes('orders/')) {
+      setTimeout(function() {
+        window.openUpsellModal();
+      }, 800);
+    }
+  })();
 </script>
