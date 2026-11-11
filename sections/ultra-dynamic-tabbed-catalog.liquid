@@ -620,10 +620,24 @@
   }
 
   // 2. Instant 1-Click Buy / Cart Add
+  var productUrlMap = {
+    'LumaGlow™ 4-in-1 Wand': '/products/lumaglow-4-in-1-facial-wand',
+    'LumaRelief™ Migraine Cap': '/products/lumarelief-migraine-cap',
+    'LumaRelief™ 2-Cap Bundle': '/products/lumarelief-migraine-cap',
+    'LumaMask™ LED Shield': '/products/lumaglow-4-in-1-facial-wand',
+    'LumaLift™ V-Face Sculptor': '/products/lumaglow-4-in-1-facial-wand',
+    'LumaClean™ Brush Cleaner': '/products/lumaglow-4-in-1-facial-wand',
+    'Blind Date with a Book': '/products/blind-date-book-mystery',
+    'Luxury Weekly Planner': '/collections/books',
+    '10 Frame Fidgets Set': '/collections/games-puzzles'
+  };
+
   function instantAddToCart(title, price, btn) {
     var originalText = btn.innerHTML;
     btn.innerHTML = '<span>Adding... ⏳</span>';
     btn.disabled = true;
+
+    var targetUrl = productUrlMap[title] || '/collections/all';
 
     // Check variant mapping for instant checkout or cart add
     var variantMap = {
@@ -641,7 +655,11 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] })
       })
-      .then(function() {
+      .then(function(res) {
+        if (!res.ok) {
+          window.location.href = targetUrl;
+          return;
+        }
         btn.innerHTML = '<span>✓ Added to Bag!</span>';
         btn.style.background = '#10B981';
         setTimeout(function() {
@@ -649,18 +667,18 @@
         }, 350);
       })
       .catch(function() {
-        btn.innerHTML = '<span>✓ Added to Bag!</span>';
+        btn.innerHTML = '<span>✓ Redirecting...</span>';
         btn.style.background = '#10B981';
         setTimeout(function() {
-          window.location.href = '/collections/all';
-        }, 400);
+          window.location.href = targetUrl;
+        }, 300);
       });
     } else {
       setTimeout(function() {
-        btn.innerHTML = '<span>✓ Added to Bag!</span>';
+        btn.innerHTML = '<span>✓ Redirecting...</span>';
         btn.style.background = '#10B981';
-        window.location.href = '/collections/all';
-      }, 400);
+        window.location.href = targetUrl;
+      }, 300);
     }
   }
 
