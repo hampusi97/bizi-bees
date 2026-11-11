@@ -1,0 +1,343 @@
+{% comment %}
+  Master Cart Page Template
+  Repo: bizi-bees /templates/cart.liquid
+  Features:
+  - 3-Tier Gamified Free Shipping & Gifts Progress Bar ($40 / $65 / $90)
+  - Pure Profit In-Cart Transit Protection ($1.98)
+  - Anti-Amazon Quality & Direct Guarantee Badges
+  - 13-Brand Universal VIP Passport Rewards
+{% endcomment %}
+
+<div class="cart-container-wrap">
+  <div class="cart-max-width">
+    
+    <!-- Top Gamified Spend & Unlock Reward Bar -->
+    {% render 'gamified-freebie-bar' %}
+
+    <div class="cart-header-row">
+      <h2>YOUR BAG ({{ cart.item_count }} {{ cart.item_count | pluralize: 'ITEM', 'ITEMS' }})</h2>
+      <a href="/collections/all" class="continue-link">&larr; Continue Exploring</a>
+    </div>
+
+    {% if cart.item_count > 0 %}
+      <div class="cart-layout-grid">
+        
+        <!-- Cart Items List -->
+        <div class="cart-items-column">
+          <form action="/cart" method="post" novalidate id="cartForm">
+            <div class="cart-items-list">
+              {% for item in cart.items %}
+                <div class="cart-item-card">
+                  <div class="cart-item-media">
+                    <img src="{{ item.image | img_url: '200x200', crop: 'center' }}" alt="{{ item.title | escape }}">
+                  </div>
+                  <div class="cart-item-info">
+                    <h4>{{ item.product.title }}</h4>
+                    {% unless item.variant.title contains 'Default' %}
+                      <span class="item-variant">{{ item.variant.title }}</span>
+                    {% endunless %}
+                    <span class="item-price">{{ item.price | money }}</span>
+                    
+                    <div class="cart-qty-row">
+                      <div class="qty-pill">
+                        <button type="button" onclick="updateItemQuantity('{{ item.key }}', {{ item.quantity | minus: 1 }})">-</button>
+                        <span>{{ item.quantity }}</span>
+                        <button type="button" onclick="updateItemQuantity('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                      </div>
+                      <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="remove-btn">Remove</a>
+                    </div>
+                  </div>
+                  <div class="cart-item-subtotal">
+                    {{ item.final_line_price | money }}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </form>
+
+          <!-- Anti-Amazon Guarantee Callout -->
+          {% render 'anti-amazon-badges' %}
+        </div>
+
+        <!-- Order Summary & Accelerated Checkout Column -->
+        <div class="cart-summary-column">
+          <div class="summary-box">
+            <!-- Dynamic "Only $10 More for Free Shipping" Bar -->
+            {% render 'dynamic-free-shipping-bar' %}
+
+            <h3>ORDER SUMMARY</h3>
+
+            <div class="summary-line">
+              <span>Subtotal:</span>
+              <strong>{{ cart.total_price | money }}</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Domestic US Shipping:</span>
+              <strong style="color: #0D9488;">
+                {% if cart.total_price >= 4000 %}
+                  FREE (USPS Priority)
+                {% else %}
+                  $4.95 (Add ${{ 4000 | minus: cart.total_price | money_without_currency }} for Free)
+                {% endif %}
+              </strong>
+            </div>
+
+            <!-- Smart Companion Cross-Sell Upsell Drawer Module -->
+            {% render 'cart-drawer-upsell' %}
+
+            <!-- Pure Profit $1.98 In-Cart Insurance Toggle -->
+            {% render 'cart-insurance-booster' %}
+
+            <div class="summary-total-line">
+              <span>Estimated Total:</span>
+              <span class="grand-total">{{ cart.total_price | money }}</span>
+            </div>
+
+            <form action="/cart" method="post">
+              <button type="submit" name="checkout" class="btn-checkout-primary">
+                PROCEED TO CHECKOUT &rarr;
+              </button>
+            </form>
+
+            <div class="summary-trust-perks">
+              <div class="perk-item">✓ 60-Day Satisfaction Money-Back Guarantee</div>
+              <div class="perk-item">✓ Dispatched Directly from Domestic US Logistics Hub</div>
+              <div class="perk-item">✓ Bank-Grade 256-Bit SSL Encrypted Checkout</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 13-Brand Universal VIP Passport -->
+      {% render 'universal-loyalty-passport' %}
+
+    {% else %}
+      <div class="cart-empty-state">
+        <div class="empty-icon">🛍️</div>
+        <h3>Your shopping bag is empty</h3>
+        <p>Explore our bestsellers and unlock free shipping at $40 + full-size gifts at $65!</p>
+        <a href="/" class="btn-start-shopping">DISCOVER BESTSELLERS &rarr;</a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<style>
+  .cart-container-wrap {
+    background: #F8FAFC;
+    min-height: 80vh;
+    padding: 40px 20px 80px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+  }
+  .cart-max-width {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .cart-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+  }
+  .cart-header-row h2 {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  .continue-link {
+    color: #0D9488;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .cart-layout-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    align-items: start;
+  }
+  .cart-item-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .cart-item-media img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .cart-item-info {
+    flex: 1;
+  }
+  .cart-item-info h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .item-variant {
+    font-size: 12px;
+    color: #64748B;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .item-price {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0D9488;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .cart-qty-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .qty-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    background: #F1F5F9;
+  }
+  .qty-pill button {
+    border: none;
+    background: none;
+    padding: 4px 10px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .qty-pill span {
+    padding: 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .remove-btn {
+    font-size: 11px;
+    color: #94A3B8;
+    text-decoration: underline;
+  }
+  .cart-item-subtotal {
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .summary-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  }
+  .summary-box h3 {
+    margin: 0 0 18px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #334155;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 10px;
+  }
+  .summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: #475569;
+  }
+  .summary-total-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 18px 0;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 14px;
+  }
+  .grand-total {
+    color: #0D9488;
+    font-size: 20px;
+  }
+  .btn-checkout-primary {
+    width: 100%;
+    background: #0F172A;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+    transition: background 0.2s ease;
+  }
+  .btn-checkout-primary:hover {
+    background: #0D9488;
+  }
+  .summary-trust-perks {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #F1F5F9;
+  }
+  .perk-item {
+    font-size: 11px;
+    color: #64748B;
+    margin-bottom: 6px;
+  }
+  .cart-empty-state {
+    background: #FFFFFF;
+    border: 1px dashed #CBD5E1;
+    border-radius: 20px;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; }
+  .cart-empty-state h3 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+  .cart-empty-state p { color: #64748B; font-size: 14px; max-width: 400px; margin: 0 auto 24px; }
+  .btn-start-shopping {
+    background: #0D9488;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    display: inline-block;
+  }
+
+  @media (max-width: 860px) {
+    .cart-layout-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  function updateItemQuantity(key, newQty) {
+    if (newQty < 0) return;
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: newQty })
+    })
+    .then(res => res.json())
+    .then(cart => {
+      window.location.reload();
+    })
+    .catch(err => {
+      console.error(err);
+      window.location.reload();
+    });
+  }
+</script>

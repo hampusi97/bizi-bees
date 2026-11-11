@@ -1,0 +1,197 @@
+{% comment %}
+  Gamified Free Shipping & Multi-Tier Gift Progress Engine
+  Repo: bizi-bees /snippets/gamified-freebie-bar.liquid
+  Engineered to destroy Amazon conversion by rewarding spend-and-unlock thresholds.
+{% endcomment %}
+
+{% assign tier_1 = 4000 %} <!-- $40.00 in cents: Free Shipping -->
+{% assign tier_2 = 6500 %} <!-- $65.00 in cents: Free Gift -->
+{% assign tier_3 = 9000 %} <!-- $90.00 in cents: VIP 15% Off -->
+{% assign cart_total = cart.total_price %}
+
+{%- comment %} Determine custom brand gift label {%- endcomment %}
+{%- assign gift_name = "FREE Full-Size Gift ($24 Value)" -%}
+{%- if template contains 'product' and product.title contains 'Soda' -%}
+  {%- assign gift_name = "FREE Electric Barista Foam Wand ($16 Value)" -%}
+{%- elsif template contains 'product' and product.title contains 'Chocolate' -%}
+  {%- assign gift_name = "FREE Smoked Sea Salt Tasting Bar ($9 Value)" -%}
+{%- elsif template contains 'product' and product.title contains 'Migraine' or product.title contains 'Relief' -%}
+  {%- assign gift_name = "FREE Herbal Acupressure Roller ($18 Value)" -%}
+{%- elsif template contains 'product' and product.title contains 'Book' or product.title contains 'Vintage' -%}
+  {%- assign gift_name = "FREE Mystery Book & Honey Bookmark ($15 Value)" -%}
+{%- endif -%}
+
+<div class="gamified-rewards-wrapper" id="rewardsEngine">
+  
+  <!-- Dynamic Motivation Heading -->
+  <div class="rewards-status-text" id="rewardsStatusText">
+    {% if cart_total < tier_1 %}
+      Add <strong class="highlight">${{ tier_1 | minus: cart_total | money_without_currency }}</strong> to unlock <strong>FREE US Priority Shipping</strong>! 🚚
+    {% elsif cart_total < tier_2 %}
+      🎉 <strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">${{ tier_2 | minus: cart_total | money_without_currency }}</strong> for a <strong>{{ gift_name }}</strong>! 🎁
+    {% elsif cart_total < tier_3 %}
+      🎁 <strong>Free Shipping + Free Gift Unlocked!</strong> Add <strong class="highlight">${{ tier_3 | minus: cart_total | money_without_currency }}</strong> for an <strong>Instant 15% VIP Discount</strong>! ⚡
+    {% else %}
+      🌟 <strong>MAXIMUM VIP REWARDS UNLOCKED!</strong> Free Shipping + Free Gift + 15% VIP Applied! 🏆
+    {% endif %}
+  </div>
+
+  <!-- Animated Progress Track -->
+  <div class="rewards-progress-track">
+    <div class="rewards-progress-fill" id="rewardsFill" style="width: {% if cart_total >= tier_3 %}100%{% else %}{{ cart_total | times: 100.0 | divided_by: tier_3 }}%{% endif %};"></div>
+    
+    <!-- Milestone Indicators -->
+    <div class="milestone-marker m1 {% if cart_total >= tier_1 %}achieved{% endif %}">
+      <div class="marker-dot">🚚</div>
+      <span>Free Ship</span>
+    </div>
+    
+    <div class="milestone-marker m2 {% if cart_total >= tier_2 %}achieved{% endif %}">
+      <div class="marker-dot">🎁</div>
+      <span>Free Gift</span>
+    </div>
+    
+    <div class="milestone-marker m3 {% if cart_total >= tier_3 %}achieved{% endif %}">
+      <div class="marker-dot">⚡</div>
+      <span>15% VIP</span>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .gamified-rewards-wrapper {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 16px 20px 22px;
+    margin: 15px 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  }
+  .rewards-status-text {
+    font-size: 13px;
+    color: #334155;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .rewards-status-text .highlight {
+    color: #0D9488;
+    font-weight: 800;
+  }
+  
+  /* Progress Bar */
+  .rewards-progress-track {
+    position: relative;
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: 20px;
+    margin: 0 15px;
+  }
+  .rewards-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0D9488 0%, #10B981 100%);
+    border-radius: 20px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Milestones */
+  .milestone-marker {
+    position: absolute;
+    top: -12px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .m1 { left: 44.4%; } /* $40 of $90 */
+  .m2 { left: 72.2%; } /* $65 of $90 */
+  .m3 { left: 100%; }  /* $90 of $90 */
+
+  .marker-dot {
+    width: 28px;
+    height: 28px;
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    transition: all 0.2s ease;
+  }
+  .milestone-marker.achieved .marker-dot {
+    background: #0D9488;
+    border-color: #0D9488;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+    color: #ffffff;
+  }
+  .milestone-marker span {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748B;
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+  .milestone-marker.achieved span {
+    color: #0D9488;
+  }
+</style>
+
+<script>
+  // Listens for AJAX Cart Updates & Re-evaluates Reward State Instantly
+  function updateGamifiedRewards(totalPriceCents) {
+    const t1 = 4000, t2 = 6500, t3 = 9000;
+    const fill = document.getElementById('rewardsFill');
+    const text = document.getElementById('rewardsStatusText');
+    const m1 = document.querySelector('.milestone-marker.m1');
+    const m2 = document.querySelector('.milestone-marker.m2');
+    const m3 = document.querySelector('.milestone-marker.m3');
+    
+    if (!fill || !text) return;
+
+    let pct = (totalPriceCents / t3) * 100;
+    if (pct > 100) pct = 100;
+    fill.style.width = pct + '%';
+
+    // Update marker styling
+    if (m1) m1.classList.toggle('achieved', totalPriceCents >= t1);
+    if (m2) m2.classList.toggle('achieved', totalPriceCents >= t2);
+    if (m3) m3.classList.toggle('achieved', totalPriceCents >= t3);
+
+    const giftDesc = "{{ gift_name }}";
+
+    if (totalPriceCents < t1) {
+      text.innerHTML = `Add <strong class="highlight">$${((t1 - totalPriceCents)/100).toFixed(2)}</strong> to unlock <strong>FREE US Priority Shipping</strong>! 🚚`;
+    } else if (totalPriceCents < t2) {
+      text.innerHTML = `🎉 <strong>Free Shipping Unlocked!</strong> Add <strong class="highlight">$${((t2 - totalPriceCents)/100).toFixed(2)}</strong> for a <strong>${giftDesc}</strong>! 🎁`;
+    } else if (totalPriceCents < t3) {
+      text.innerHTML = `🎁 <strong>Free Shipping + Free Gift Unlocked!</strong> Add <strong class="highlight">$${((t3 - totalPriceCents)/100).toFixed(2)}</strong> for an <strong>Instant 15% VIP Discount</strong>! ⚡`;
+    } else {
+      text.innerHTML = `🌟 <strong>MAXIMUM VIP REWARDS UNLOCKED!</strong> Free Shipping + Free Gift + 15% VIP Applied! 🏆`;
+    }
+  }
+
+  document.addEventListener('cart:updated', function(event) {
+    if (event.detail && event.detail.cart && event.detail.cart.total_price !== undefined) {
+      updateGamifiedRewards(event.detail.cart.total_price);
+    } else {
+      fetch('/cart.js')
+        .then(res => res.json())
+        .then(cart => {
+          updateGamifiedRewards(cart.total_price);
+        })
+        .catch(err => console.debug('Cart refresh notice:', err));
+    }
+  });
+
+  // Also support custom window event
+  window.addEventListener('cart-refresh', function() {
+    fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => updateGamifiedRewards(cart.total_price))
+      .catch(err => console.debug(err));
+  });
+</script>

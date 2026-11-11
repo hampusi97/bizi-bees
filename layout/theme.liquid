@@ -1,210 +1,165 @@
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}">
+<html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#0F172A">
-
-    <!-- Boutique + clinical design system fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <title>
-      {% if page_title %}
-        {{ page_title }}
-      {% else %}
-        {{ shop.name }}
-      {% endif %}
-      {% if current_tags %} — {{ current_tags | join: ', ' }}{% endif %}
-      {% if template.name == 'index' %} — Shop secondhand finds{% endif %}
-    </title>
-
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% elsif template == 'index' %}
-      <meta name="description" content="Shop pre-loved books, electronics, toys, and more at bizi bees. Curated finds, honest condition notes, and friendly pricing.">
-    {% else %}
-      <meta name="description" content="{{ shop.name }} offers thoughtfully curated secondhand finds with quality details and easy shopping.">
-    {% endif %}
-
-    <meta property="og:type" content="{% if request.page_type == 'product' %}product{% else %}website{% endif %}">
-    <meta property="og:title" content="{{ page_title | default: shop.name | escape }}">
-    <meta property="og:description" content="{{ page_description | default: 'Shop pre-loved books, electronics, toys, and more at bizi bees.' | escape }}">
-    <meta property="og:site_name" content="{{ shop.name }}">
-    <meta property="og:url" content="{{ canonical_url }}">
-    {% if request.page_type == 'product' %}
-      <meta property="product:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' | strip }}">
-      <meta property="product:price:currency" content="{{ shop.currency }}">
-      <meta property="og:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' | strip }}">
-      <meta property="og:price:currency" content="{{ shop.currency }}">
-      <meta property="product:availability" content="{% if product.available %}instock{% else %}outofstock{% endif %}">
-      <meta property="product:brand" content="{{ product.vendor | default: shop.name | escape }}">
-    {% endif %}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ page_title | default: shop.name | escape }}">
-    <meta name="twitter:description" content="{{ page_description | default: 'Shop pre-loved books, electronics, toys, and more at bizi bees.' | escape }}">
-    {% if request.page_type == 'product' and product.featured_image %}
-      <meta property="og:image" content="https:{{ product.featured_image | image_url: width: 1200 }}">
-      <meta name="twitter:image" content="https:{{ product.featured_image | image_url: width: 1200 }}">
-    {% elsif request.page_type == 'collection' and collection.image %}
-      <meta property="og:image" content="https:{{ collection.image | image_url: width: 1200 }}">
-      <meta name="twitter:image" content="https:{{ collection.image | image_url: width: 1200 }}">
-    {% endif %}
+    <meta name="theme-color" content="#0D9488">
     <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
-    <style id="inlined-critical-theme-css">
-/* Bizi Bees Boutique Critical CSS — Design System Implanted */
-:root {
-  --bizi-bg: #FAF7F2;
-  --bizi-surface: #FFFFFF;
-  --bizi-text-primary: #0F172A;
-  --bizi-text-secondary: #64748B;
-  --bizi-border: #E2E8F0;
-  --bizi-accent-olive: #2D3B2D;
-  --bizi-accent-olive-hover: #1F291F;
-  --bizi-accent-teal: #0D9488;
-  --bizi-accent-terracotta: #9A4C2E;
-  --bizi-font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --bizi-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bizi-bg);
-  color:var(--bizi-text-primary);
-  font-family:var(--bizi-font-sans);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-h1,h2,h3,h4,.serif-heading{
-  font-family:var(--bizi-font-serif);
-  color:var(--bizi-text-primary);
-  font-weight:600;
-  letter-spacing:-0.02em;
-  line-height:1.15;
-}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-button,input,select,textarea{font:inherit}
-.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
-.skip{position:absolute;left:-10000px}
-.skip:focus{left:10px;top:10px;background:white;padding:12px;z-index:9}
-:focus-visible{outline:2px solid var(--bizi-accent-teal);outline-offset:3px}
+    {%- if page_title -%}
+      <title>{{ page_title }} &ndash; {{ shop.name }}</title>
+    {%- else -%}
+      <title>{{ shop.name }} &ndash; Dermatology-Grade Phototherapy</title>
+    {%- endif -%}
 
-/* Buttons */
-.boutique-btn-primary,button.bizi-btn-primary,.button:not(.secondary){
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--bizi-accent-olive);color:#fff;font-weight:600;font-size:15px;
-  padding:13px 26px;border-radius:6px;border:1px solid var(--bizi-accent-olive);
-  cursor:pointer;transition:all .2s cubic-bezier(.16,1,.3,1);
-}
-.boutique-btn-primary:hover,.button:not(.secondary):hover{
-  background:var(--bizi-accent-olive-hover);border-color:var(--bizi-accent-olive-hover);
-  transform:translateY(-1px);
-}
-.boutique-btn-secondary,.secondary{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:transparent;color:var(--bizi-text-primary);font-weight:600;font-size:15px;
-  padding:13px 24px;border-radius:6px;border:1px solid var(--bizi-border);cursor:pointer;
-}
-.boutique-btn-secondary:hover,.secondary:hover{
-  background:#fff;border-color:var(--bizi-accent-teal);color:var(--bizi-accent-teal);
-}
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- else -%}
+      <meta name="description" content="LUMA CLINICAL™ — Dermatology-Grade Phototherapy & QuadWave™ Microcurrent Sculpting Engineered for Daily Home Rituals. Dispatched from Utah, USA.">
+    {%- endif -%}
 
-/* Cards */
-.card,.card-wrapper,.boutique-card{
-  background:var(--bizi-surface);border:1px solid var(--bizi-border);
-  border-radius:10px;box-shadow:0 4px 20px rgba(15,23,42,.05);
-  transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s ease;
-  overflow:hidden;
-}
-.card:hover,.card-wrapper:hover,.boutique-card:hover{
-  transform:translateY(-4px);box-shadow:0 12px 32px rgba(15,23,42,.10);
-}
-
-/* Basic layout helpers */
-.announcement-bar{background:#0F172A;color:#F8FAFC;text-align:center;font-size:12.5px;padding:8px 16px;letter-spacing:.03em}
-.site-header{background:var(--bizi-bg);border-bottom:1px solid var(--bizi-border)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:20px 0}
-.logo-text{font-family:var(--bizi-font-serif);font-size:26px;font-weight:700;letter-spacing:-.02em}
-.nav-link{font-size:14px;font-weight:500;color:var(--bizi-text-primary)}
-
-@media(max-width:900px){
-  .header-inner{flex-wrap:wrap;gap:16px}
-  .header-nav{order:3;width:100%;overflow-x:auto}
-}
-</style>
-{{ 'theme.css' | asset_url | stylesheet_tag }}
-{{ 'bizi-boutique-theme.css' | asset_url | stylesheet_tag }}
-{{ 'emergency-storefront-repair.css' | asset_url | stylesheet_tag }}
-{{ 'ultra-dynamic-core.css' | asset_url | stylesheet_tag }}
-    <style>
-      .collection-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin:4px 0 22px}
-      .collection-links a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
-      .trust-points{display:flex;flex-wrap:wrap;gap:8px 16px;margin:14px 0 4px;font-size:14px}
-      .trust-points span{background:#e5ebdd;border-radius:999px;padding:6px 12px}
-      .seo-copy a{text-decoration:underline;text-underline-offset:3px}
-    </style>
     {{ content_for_header }}
-      {% render 'bizi-bees-schema' %}
-      {% render 'fulfillment-automation-tags' %}
-      {% render 'luma-meta-tiktok-tracking' %}
+
+    <!-- Master DTC Modern Luxury Design System -->
+    {{ 'luma-modern-luxury.css' | asset_url | stylesheet_tag }}
+    {{ 'ultra-dynamic-luxury.css' | asset_url | stylesheet_tag }}
+    {{ 'ultra-dynamic-core.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'ultra-dynamic-core.js' | asset_url }}" defer="defer"></script>
+
+    <!-- Google Position 0 Rich Snippet Schema (Product & Aggregate Review) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
+      "image": "https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg",
+      "description": "Medical-grade 630nm phototherapy, 330µA microcurrent, and 107°F thermal massage.",
+      "brand": { "@type": "Brand", "name": "Luma Clinical" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://bizibees-store.myshopify.com/products/lumaglow-4-in-1-facial-wand",
+        "priceCurrency": "USD",
+        "price": "39.99",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "Luma Clinical LLC"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "184"
+      }
+    }
+    </script>
+
+    <!-- Google Position 0 Rich Snippet Schema (WebSite & Breadcrumbs) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Luma Clinical",
+      "url": "https://bizibees-store.myshopify.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://bizibees-store.myshopify.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bizibees-store.myshopify.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Protocols",
+          "item": "https://bizibees-store.myshopify.com/collections/all"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LumaGlow™ QuadWave Pro 4-in-1",
+          "item": "https://bizibees-store.myshopify.com/products/lumaglow-4-in-1-facial-wand"
+        }
+      ]
+    }
+    </script>
   </head>
 
-  <body>
-    <a class="skip" href="#MainContent">Skip to content</a>
+  <body class="gradient">
+    <!-- Announcement Bar -->
+    <div class="luma-announcement-bar">
+      <span>⚡ <strong>FAST US PRIORITY DISPATCH:</strong> Free Domestic Shipping on Orders $35+ • HSA/FSA Eligible • 60-Day Trial Guarantee</span>
+    </div>
+
+    <!-- Dynamic Real-Time Free Shipping Threshold Bar -->
     {% render 'dynamic-free-shipping-bar' %}
-    {% section 'header' %}
-    <main id="MainContent">
+
+    <!-- Navigation Header -->
+    <header class="luma-main-header">
+      <div class="luma-header-inner">
+        <a href="/" class="luma-brand-logo">
+          <img src="{{ 'luma-logo.svg' | asset_url }}" alt="LUMA CLINICAL™" width="220" height="44" style="height: 40px; width: auto; display: block;">
+        </a>
+        <nav class="luma-nav-menu">
+          <a href="/collections/all" class="nav-link">Protocols</a>
+          <a href="/products/lumaglow-4-in-1-facial-wand" class="nav-link">LumaGlow™ Pro</a>
+          <a href="/products/lumarelief-migraine-cap" class="nav-link">LumaRelief™ Cap</a>
+          <a href="/pages/track-order" class="nav-link">Track Shipment</a>
+        </nav>
+        <div class="luma-header-actions">
+          <a href="/cart" class="luma-cart-btn">
+            Cart <span class="cart-pill">({{ cart.item_count }})</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-    {% section 'footer' %}
 
-    {% if request.page_type == 'index' %}
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "OnlineStore",
-        "name": {{ shop.name | json }},
-        "url": {{ shop.url | json }},
-        "description": "Shop pre-loved books, used electronics, pre-owned toys, secondhand clothing, and more curated thrift finds at bizi bees.",
-        "email": "kharter15@gmail.com"
-      }
-      </script>
-    {% endif %}
+    <!-- VIP Conglomerate Pass - Cross-Brand Loyalty Ecosystem -->
+    {% render 'conglomerate-loyalty-pass' %}
 
-    {% if request.page_type == 'product' %}
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": {{ product.title | json }},
-        "url": {{ canonical_url | json }},
-        {% if product.selected_or_first_available_variant.sku != blank %}
-        "sku": {{ product.selected_or_first_available_variant.sku | json }},
-        {% endif %}
-        "brand": {
-          "@type": "Brand",
-          "name": {{ product.vendor | default: shop.name | json }}
-        },
-        "description": {{ product.description | strip_html | truncate: 5000 | json }}{% if product.featured_image %},
-        "image": {{ product.featured_image | image_url: width: 1200 | prepend: "https:" | json }}{% endif %},
-        "offers": {
-          "@type": "Offer",
-          "url": {{ canonical_url | json }},
-          "priceCurrency": {{ shop.currency | json }},
-          "price": {{ product.selected_or_first_available_variant.price | money_without_currency | replace: ",", "" | strip | json }},
-          "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
-          "itemCondition": "https://schema.org/{% if product.tags contains 'Shopify Collective' or product.metafields.custom.condition.value == 'New / unused' %}NewCondition{% else %}UsedCondition{% endif %}"
-        }
+    <!-- 13-Brand Universal VIP Passport -->
+    {% render 'universal-loyalty-passport' %}
+
+    <!-- Bank / Stripe Compliance Trust Shield -->
+    {% render 'compliance-trust-shield' %}
+
+    <!-- Sticky Mobile 1-Click Buy Drawer -->
+    {% render 'luma-sticky-cart' %}
+
+    <style>
+      .luma-announcement-bar { background: #0F172A; color: #FFFFFF; text-align: center; padding: 10px 16px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.03em; }
+      .luma-announcement-bar strong { color: #99F6E4; }
+      .luma-main-header { background: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 16px 24px; position: sticky; top: 0; z-index: 1000; }
+      .luma-header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+      .luma-nav-menu { display: flex; gap: 28px; }
+      .nav-link { color: #334155; text-decoration: none; font-size: 13.5px; font-weight: 700; transition: color 0.2s ease; }
+      .nav-link:hover { color: #0D9488; }
+      .luma-cart-btn { background: #F8FAFC; border: 1px solid #E2E8F0; color: #0F172A; text-decoration: none; padding: 8px 18px; border-radius: 40px; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; }
+      .cart-pill { color: #0D9488; }
+      @media(max-width: 768px) {
+        .luma-nav-menu { display: none; }
       }
-      </script>
-    {% endif %}
-  {% render 'conversion-booster' %}
-  <script src="{{ 'ultra-dynamic-core.js' | asset_url }}" defer></script>
+    </style>
+    <!-- Ultra-Dynamic Live Social Proof Toast -->
+    {% render 'live-social-proof-toast' %}
   </body>
 </html>

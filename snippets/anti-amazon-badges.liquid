@@ -1,0 +1,103 @@
+{% comment %}
+  The "Anti-Amazon" Trust Badge Matrix
+  Repo: bizi-bees /snippets/anti-amazon-badges.liquid
+  Highlights physical and guarantee benefits of direct purchasing vs Amazon commingled inventory.
+{% endcomment %}
+
+<div class="direct-vs-amazon-box">
+  <div class="dva-header">
+    <span class="dva-shield-icon">🛡️</span>
+    <h4>Why Buying Direct Beats Amazon Third-Party:</h4>
+  </div>
+  <div class="dva-grid">
+    <div class="dva-row">
+      <span class="dva-feat">🔒 Verified 100% Authentic Batch:</span>
+      <span class="dva-direct">✓ Direct Hub</span>
+      <span class="dva-amazon">✕ Commingled Stock</span>
+    </div>
+    <div class="dva-row">
+      <span class="dva-feat">⏳ Extended In-Home Trial:</span>
+      <span class="dva-direct">✓ 60 Days</span>
+      <span class="dva-amazon">✕ 30 Days</span>
+    </div>
+    <div class="dva-row">
+      <span class="dva-feat">🎁 Free Physical Gifts ($15–$24):</span>
+      <span class="dva-direct">✓ Included Free</span>
+      <span class="dva-amazon">✕ Never</span>
+    </div>
+    <div class="dva-row">
+      <span class="dva-feat">🏥 HSA / FSA Eligible Receipt:</span>
+      <span class="dva-direct">✓ Instant PDF</span>
+      <span class="dva-amazon">✕ Difficult / Absent</span>
+    </div>
+    <div class="dva-row">
+      <span class="dva-feat">📦 Anti-Crush Luxury Packaging:</span>
+      <span class="dva-direct">✓ Protected Gift Box</span>
+      <span class="dva-amazon">✕ Poly Mailer Bag</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .direct-vs-amazon-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  }
+  .dva-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .dva-shield-icon {
+    font-size: 16px;
+  }
+  .direct-vs-amazon-box h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.2px;
+  }
+  .dva-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+  }
+  .dva-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #F1F5F9; 
+    padding-bottom: 7px; 
+  }
+  .dva-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .dva-feat { 
+    color: #334155; 
+    font-weight: 600; 
+    font-size: 12px; 
+  }
+  .dva-direct { 
+    color: #0D9488; 
+    font-weight: 800; 
+    font-size: 12px; 
+    background: rgba(13, 148, 136, 0.08);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .dva-amazon { 
+    color: #94A3B8; 
+    font-size: 12px; 
+    text-decoration: line-through; 
+    font-weight: 500;
+  }
+</style>

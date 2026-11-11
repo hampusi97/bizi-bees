@@ -1,0 +1,210 @@
+{% comment %}
+  CRAVE LAB™ INTERACTIVE 4-BAR CUSTOM BENTO BUILDER
+  Repo: bizi-bees /sections/crave-bento-builder.liquid
+{% endcomment %}
+
+<div class="crave-builder-wrap" id="crave-bento-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="crave-inner">
+    
+    <div class="crave-header">
+      <span class="crave-tag">{{ section.settings.badge_text | default: "✨ THE ARTISAN TASTING RITUAL" }}</span>
+      <h2>{{ section.settings.heading | default: "Build Your Custom 4-Bar Chocolate Bento Box" }}</h2>
+      <p>{{ section.settings.subheading | default: "Select any 4 micro-batch Belgian flavors below. Packaged in our insulated gold-embossed box with melt-proof cold shipping guaranteed." }}</p>
+    </div>
+
+    <!-- Live Bento Box Visualizer -->
+    <div class="bento-box-display">
+      <div class="bento-tray">
+        <div class="bento-slot empty" id="slot0" onclick="removeBar(0)"><span>+ Slot 1</span></div>
+        <div class="bento-slot empty" id="slot1" onclick="removeBar(1)"><span>+ Slot 2</span></div>
+        <div class="bento-slot empty" id="slot2" onclick="removeBar(2)"><span>+ Slot 3</span></div>
+        <div class="bento-slot empty" id="slot3" onclick="removeBar(3)"><span>+ Slot 4</span></div>
+      </div>
+      
+      <div class="bento-status">
+        <div class="bento-counter"><span id="barCount">0</span> of 4 Bars Selected</div>
+        <button id="addBentoBtn" class="bento-btn disabled" onclick="checkoutBento()" disabled>
+          Complete Bento Box &mdash; $38.00
+        </button>
+      </div>
+    </div>
+
+    <!-- Flavor Selection Grid -->
+    <div class="crave-flavor-grid">
+      <div class="flavor-card" onclick="addBar('Smoked Sea Salt Toffee', '🍫')">
+        <div class="f-icon">🍫</div>
+        <h4>Smoked Sea Salt Toffee</h4>
+        <small>72% Dark Cocoa • Crunchy Caramel</small>
+        <button type="button" class="add-mini-btn">+ Add to Box</button>
+      </div>
+
+      <div class="flavor-card" onclick="addBar('Kyoto Matcha Crisp', '🍵')">
+        <div class="f-icon">🍵</div>
+        <h4>Kyoto Matcha Crisp</h4>
+        <small>Ceremonial Green Tea • White Chocolate</small>
+        <button type="button" class="add-mini-btn">+ Add to Box</button>
+      </div>
+
+      <div class="flavor-card" onclick="addBar('Freeze-Dried Ruby Berry', '🍓')">
+        <div class="f-icon">🍓</div>
+        <h4>Freeze-Dried Ruby Berry</h4>
+        <small>Tangy Ruby Cocoa • Whole Strawberries</small>
+        <button type="button" class="add-mini-btn">+ Add to Box</button>
+      </div>
+
+      <div class="flavor-card" onclick="addBar('Espresso Bean Velvet', '☕')">
+        <div class="f-icon">☕</div>
+        <h4>Espresso Bean Velvet</h4>
+        <small>Arabica Roast • Creamy Milk Chocolate</small>
+        <button type="button" class="add-mini-btn">+ Add to Box</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .crave-builder-wrap { background: #FAF6F0; padding: 75px 20px; font-family: Georgia, serif; color: #2B1810; }
+  .crave-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+  .crave-tag { background: #EFE4D6; color: #6E473B; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 6px 14px; border-radius: 40px; font-family: sans-serif; display: inline-block; }
+  .crave-header h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin: 16px 0 10px; color: #2B1810; }
+  .crave-header p { font-size: 15px; color: #705B53; max-width: 620px; margin: 0 auto 40px; font-family: sans-serif; line-height: 1.5; }
+
+  /* Bento Visualizer */
+  .bento-box-display { background: #FFFFFF; border: 2px solid #E5D6C5; border-radius: 20px; padding: 30px; box-shadow: 0 15px 35px rgba(67, 40, 24, 0.08); margin-bottom: 40px; }
+  .bento-tray { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 25px; }
+  .bento-slot { height: 110px; border-radius: 12px; border: 2px dashed #D6C2AF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: sans-serif; font-size: 13px; font-weight: 700; color: #9C8276; background: #FCFAF7; cursor: pointer; transition: all 0.2s ease; }
+  .bento-slot.filled { border: 2px solid #6E473B; background: #F4ECE1; color: #2B1810; box-shadow: 0 6px 15px rgba(0,0,0,0.06); }
+  .bento-slot.filled:hover { border-color: #C0392B; }
+  
+  .bento-status { display: flex; align-items: center; justify-content: space-between; font-family: sans-serif; }
+  .bento-counter { font-size: 15px; font-weight: 700; color: #6E473B; }
+  .bento-btn { background: #2B1810; color: #FFFFFF; border: none; padding: 14px 32px; border-radius: 50px; font-weight: 800; font-size: 15px; cursor: pointer; transition: all 0.2s ease; }
+  .bento-btn.disabled { background: #D5C7BA; cursor: not-allowed; }
+  .bento-btn:not(.disabled):hover { background: #6E473B; transform: scale(1.02); }
+
+  /* Flavors Grid */
+  .crave-flavor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: left; font-family: sans-serif; }
+  .flavor-card { background: #FFFFFF; border: 1px solid #EADECE; border-radius: 16px; padding: 20px; cursor: pointer; transition: all 0.2s ease; }
+  .flavor-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(67, 40, 24, 0.1); border-color: #B8977E; }
+  .f-icon { font-size: 32px; margin-bottom: 10px; }
+  .flavor-card h4 { margin: 0 0 6px; font-size: 15px; font-weight: 800; color: #2B1810; }
+  .flavor-card small { display: block; font-size: 12px; color: #876E64; margin-bottom: 15px; }
+  .add-mini-btn { background: #F4ECE1; border: none; color: #6E473B; font-weight: 700; font-size: 12px; padding: 8px 14px; border-radius: 20px; cursor: pointer; }
+
+  @media(max-width: 768px) {
+    .bento-tray { grid-template-columns: repeat(2, 1fr); }
+    .crave-flavor-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-status { flex-direction: column; gap: 15px; }
+  }
+</style>
+
+<script>
+  let bentoSlots = [];
+
+  // Web Audio API: High-frequency crisp chocolate snap feedback
+  function playChocolateSnapAudio() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(820, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.07);
+      gain.gain.setValueAtTime(0.35, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.07);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.07);
+    } catch(e) {
+      // Graceful fallback for muted audio environments
+    }
+  }
+
+  function addBar(name, icon) {
+    if (bentoSlots.length >= 4) {
+      alert("Your Bento Box is full! Tap any slot in the box to remove or replace a flavor.");
+      return;
+    }
+    playChocolateSnapAudio();
+    bentoSlots.push({ name, icon });
+    renderBento();
+  }
+
+  function removeBar(index) {
+    if (bentoSlots[index]) {
+      playChocolateSnapAudio();
+      bentoSlots.splice(index, 1);
+      renderBento();
+    }
+  }
+
+  function renderBento() {
+    for (let i = 0; i < 4; i++) {
+      const slot = document.getElementById('slot' + i);
+      if (bentoSlots[i]) {
+        slot.className = 'bento-slot filled';
+        slot.innerHTML = `<span style="font-size:24px;">${bentoSlots[i].icon}</span><span style="font-size:11px;margin-top:4px;">${bentoSlots[i].name}</span>`;
+      } else {
+        slot.className = 'bento-slot empty';
+        slot.innerHTML = `<span>+ Slot ${i + 1}</span>`;
+      }
+    }
+    document.getElementById('barCount').innerText = bentoSlots.length;
+    const btn = document.getElementById('addBentoBtn');
+    if (bentoSlots.length === 4) {
+      btn.classList.remove('disabled');
+      btn.disabled = false;
+      btn.innerText = 'Add Bento Box to Cart — $38.00 ➔';
+    } else {
+      btn.classList.add('disabled');
+      btn.disabled = true;
+      btn.innerText = `Select ${4 - bentoSlots.length} More Bar${4 - bentoSlots.length > 1 ? 's' : ''}`;
+    }
+  }
+
+  function checkoutBento() {
+    const flavors = bentoSlots.map(b => b.name).join(", ");
+    window.location.href = `/cart/add?id={{ section.settings.bento_variant_id | default: "YOUR_BENTO_VARIANT_ID" }}&quantity=1&properties[Flavors]=${encodeURIComponent(flavors)}`;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Crave Bento Builder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "✨ THE ARTISAN TASTING RITUAL"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build Your Custom 4-Bar Chocolate Bento Box"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Select any 4 micro-batch Belgian flavors below. Packaged in our insulated gold-embossed box with melt-proof cold shipping guaranteed."
+    },
+    {
+      "type": "text",
+      "id": "bento_variant_id",
+      "label": "Shopify Variant ID",
+      "default": "YOUR_BENTO_VARIANT_ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Crave Bento Builder"
+    }
+  ]
+}
+{% endschema %}

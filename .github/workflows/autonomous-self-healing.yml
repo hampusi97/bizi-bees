@@ -1,0 +1,40 @@
+name: Autonomous Catalog & Inventory Cron
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  execute-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: pip install requests
+      - name: Run Synthetic Shopper, Safety Guard, Audit & Social Engine
+        env:
+          SHOPIFY_SHOP_URL: ${{ secrets.SHOPIFY_SHOP_URL }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+          TIKTOK_OPEN_API_TOKEN: ${{ secrets.TIKTOK_OPEN_API_TOKEN }}
+          META_GRAPH_API_TOKEN: ${{ secrets.META_GRAPH_API_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python scripts/synthetic_shopper.py
+          python scripts/inventory_safety_guard.py
+          python scripts/autonomous_engine.py
+          python scripts/auto_social_poster.py
+          python scripts/seo_blog_generator.py
+          python scripts/configure_shipping_rates.py
+      - name: Commit Audit & Social Logs
+        run: |
+          git config --global user.name "Luma-Autonomous-Bot"
+          git config --global user.email "bot@lumaclinical.internal"
+          git add REPORTS_DAILY_AUDIT.md REPORTS_SOCIAL_PUBLISHING.md REPORTS_SEO_BLOGS.md REPORTS_SHIPPING_ECONOMICS.md || true
+          git commit -m "chore: nightly audit, seo blog and shipping economics updates [skip ci]" || exit 0
+          git push origin main

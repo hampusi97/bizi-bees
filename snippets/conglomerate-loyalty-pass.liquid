@@ -1,0 +1,167 @@
+{% comment %}
+  The VIP Conglomerate Pass - Multi-Store Cross-Brand Loyalty Ecosystem
+  Repo: bizi-bees /snippets/conglomerate-loyalty-pass.liquid
+  Cross-sells sister brands at $0 CAC post-checkout.
+{% endcomment %}
+
+<div class="conglomerate-pass-wrap" id="conglomeratePass">
+  <div class="pass-header">
+    <div class="pass-badge">👑 VIP CONGLOMERATE REWARD UNLOCKED</div>
+    <h3>Exclusive Sister-Brand Privileges</h3>
+    <p>As a verified client, you have unlocked complimentary store credits and private member pricing across our luxury brand portfolio.</p>
+  </div>
+
+  <div class="rewards-grid">
+    <!-- Reward 1: Fizz Lab -->
+    <div class="reward-card">
+      <div class="reward-tag">COMPLIMENTARY $10</div>
+      <div class="reward-icon">🥤</div>
+      <h4>Fizz Lab™ Provo</h4>
+      <p>Enjoy a <strong>$10 Gift Credit</strong> on your first At-Home Utah Dirty Soda Starter Kit.</p>
+      <a href="https://bizibees-store.myshopify.com/products/dirty-soda-starter-kit?discount=FIZZVIP10" class="btn-claim-reward" target="_blank">
+        Claim $10 Soda Credit &rarr;
+      </a>
+      <span class="code-copy">Code: <code>FIZZVIP10</code></span>
+    </div>
+
+    <!-- Reward 2: Crave Lab -->
+    <div class="reward-card">
+      <div class="reward-tag">20% MEMBER TIER</div>
+      <div class="reward-icon">🍫</div>
+      <h4>Crave Lab™ Confections</h4>
+      <p>Save <strong>20% on your custom 4-Bar Belgian Chocolate Bento Box</strong> (Shipped in cold packs).</p>
+      <a href="https://bizibees-store.myshopify.com/products/crave-chocolate-bento?discount=CRAVEVIP20" class="btn-claim-reward" target="_blank">
+        Claim 20% Off Bento &rarr;
+      </a>
+      <span class="code-copy">Code: <code>CRAVEVIP20</code></span>
+    </div>
+
+    <!-- Reward 3: Bizi Bees Boutique -->
+    <div class="reward-card">
+      <div class="reward-tag">VIP BOOK GIFT</div>
+      <div class="reward-icon">📖</div>
+      <h4>Bizi Bees Boutique</h4>
+      <p>Free surprise literary keepsake with any <strong>Blind Date with a Book</strong> gift box.</p>
+      <a href="https://bizibees-store.myshopify.com/products/blind-date-book-mystery?discount=BEEVIPBOOK" class="btn-claim-reward" target="_blank">
+        Explore Vintage Gifts &rarr;
+      </a>
+      <span class="code-copy">Code: <code>BEEVIPBOOK</code></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .conglomerate-pass-wrap {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    border-radius: 20px;
+    padding: 36px 24px;
+    color: #FFFFFF;
+    margin: 35px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+    text-align: center;
+  }
+  .pass-badge {
+    display: inline-block;
+    background: #0D9488;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+  }
+  .pass-header h3 {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 900;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+  }
+  .pass-header p {
+    font-size: 14px;
+    color: #94A3B8;
+    max-width: 620px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+  .rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: left;
+  }
+  .reward-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .reward-card:hover {
+    transform: translateY(-3px);
+    border-color: #0D9488;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .reward-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: #5EEAD4;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .reward-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .reward-card h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .reward-card p {
+    font-size: 12.5px;
+    color: #CBD5E1;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+  .btn-claim-reward {
+    display: block;
+    text-align: center;
+    background: #0D9488;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 10px 14px;
+    border-radius: 30px;
+    transition: background 0.2s ease;
+  }
+  .btn-claim-reward:hover {
+    background: #14B8A6;
+  }
+  .code-copy {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 8px;
+  }
+  .code-copy code {
+    background: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #5EEAD4;
+  }
+
+  @media(max-width: 768px) {
+    .rewards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

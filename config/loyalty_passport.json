@@ -1,0 +1,61 @@
+{
+  "passport_program_name": "RepoOS™ Universal VIP Passport",
+  "version": "1.0",
+  "conglomerate_network_size": 13,
+  "currency_rules": {
+    "points_per_dollar_spent": 10,
+    "points_expiration_days": 365,
+    "eligible_channels": ["Shop Pay", "Apple Pay", "Google Pay", "Direct Credit Card"]
+  },
+  "redemption_tiers": [
+    {
+      "tier_name": "Silver Explorer",
+      "required_points": 500,
+      "spend_equivalent_usd": 50.00,
+      "perk": "$5 Off Order or Free Priority US Shipping",
+      "discount_code": "PASSPORT5"
+    },
+    {
+      "tier_name": "Gold Connoisseur",
+      "required_points": 1000,
+      "spend_equivalent_usd": 100.00,
+      "perk": "$15 Off Across Any Sister Store in Portfolio",
+      "discount_code": "PASSPORT15"
+    },
+    {
+      "tier_name": "Platinum Conglomerate VIP",
+      "required_points": 2000,
+      "spend_equivalent_usd": 200.00,
+      "perk": "Free Full-Size Specialty Gift Box + Lifetime 20% Off",
+      "discount_code": "PASSPORTVIP20"
+    }
+  ],
+  "refer_a_friend": {
+    "advocate_reward_credit_usd": 15.00,
+    "friend_discount_usd": 15.00,
+    "minimum_order_threshold_usd": 40.00,
+    "referral_link_pattern": "https://bizibees-store.myshopify.com/?ref={customer_id}"
+  },
+  "cross_brand_redemption_matrix": {
+    "luma-clinical": {
+      "earned_store": "Luma Clinical",
+      "unlocks_in": ["fizz-lab", "crave-lab", "aura-sculpt", "bizi-bees"],
+      "highlight_perk": "$10 Dirty Soda Credit + 20% Off Artisan Chocolates"
+    },
+    "fizz-lab": {
+      "earned_store": "Fizz Lab Provo",
+      "unlocks_in": ["crave-lab", "luma-clinical", "bizi-bees"],
+      "highlight_perk": "Free Tasting Bar + $15 Wand Discount"
+    },
+    "crave-lab": {
+      "earned_store": "Crave Lab Confections",
+      "unlocks_in": ["bizi-bees", "luma-relief", "fizz-lab"],
+      "highlight_perk": "Free Vintage Paperback Gift + Free Cold Soda Pump"
+    },
+    "bizi-bees": {
+      "earned_store": "Bizi Bees Boutique",
+      "unlocks_in": ["luma-clinical", "crave-lab", "aura-sculpt"],
+      "highlight_perk": "15% VIP Off Activewear + Conductive Serum Upgrade"
+    }
+  }
+}

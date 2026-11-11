@@ -1,0 +1,193 @@
+{% comment %}
+  FIZZ LAB™ INTERACTIVE DIRTY SODA MIXER & KIT BUILDER
+  Repo: bizi-bees /sections/fizz-soda-builder.liquid
+  Store 13: Viral Utah "Dirty Soda" At-Home Starter Kit ($48.00)
+{% endcomment %}
+
+<div class="soda-builder-wrap">
+  <div class="soda-inner">
+    
+    <div class="soda-header">
+      <span class="soda-badge">🥤 THE ORIGINAL PROVO RECIPE LAB</span>
+      <h2>Build Your Custom At-Home Dirty Soda Kit</h2>
+      <p>Mix your dream combination below. We ship the barista syrup pumps, coconut cream float base, and recipe cards straight from Utah.</p>
+    </div>
+
+    <!-- Live Cup Visualizer -->
+    <div class="soda-cup-display">
+      <div class="soda-cup-graphic">
+        <div class="cup-foam" id="cupFoam">Sweet Cream Float</div>
+        <div class="cup-soda" id="cupSoda">Select Your Soda</div>
+      </div>
+      <div class="soda-selection-summary">
+        <h4>Your Custom Creation:</h4>
+        <div class="summary-line"><strong>Base:</strong> <span id="summaryBase">None</span></div>
+        <div class="summary-line"><strong>Syrups:</strong> <span id="summarySyrup">None</span></div>
+        <div class="summary-line"><strong>Float:</strong> <span id="summaryCream">Sweet Coconut Cream</span></div>
+        <button id="sodaCheckoutBtn" class="soda-btn disabled" onclick="checkoutSodaKit()" disabled>
+          Order My Custom Soda Kit — $48.00
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 1: Base Soda -->
+    <div class="soda-step">
+      <h3>Step 1: Choose Your Soda Base</h3>
+      <div class="soda-pill-group">
+        <button type="button" class="s-pill" onclick="setBase('Diet Cola / Coke', '#3B2418', this)">🥤 Diet Coke Style</button>
+        <button type="button" class="s-pill" onclick="setBase('Dr Pepper Style', '#4A1521', this)">🍒 23-Flavor Pepper</button>
+        <button type="button" class="s-pill" onclick="setBase('Lemon-Lime Fizz', '#E2EF9F', this)">🍋 Lemon-Lime</button>
+        <button type="button" class="s-pill" onclick="setBase('Mountain Citrus', '#D4E157', this)">⚡ Mountain Citrus</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Flavors (Pick 2) -->
+    <div class="soda-step">
+      <h3>Step 2: Choose 2 Barista Syrups</h3>
+      <div class="soda-flavor-cards">
+        <div class="s-card" onclick="toggleSyrup('Artisan Coconut', this)">
+          <span class="s-icon">🥥</span>
+          <strong>Toasted Coconut</strong>
+          <small>The Utah Classic</small>
+        </div>
+        <div class="s-card" onclick="toggleSyrup('Peach Purée', this)">
+          <span class="s-icon">🍑</span>
+          <strong>Ripe Peach Purée</strong>
+          <small>Sweet & Fruity</small>
+        </div>
+        <div class="s-card" onclick="toggleSyrup('Fresh Raspberry', this)">
+          <span class="s-icon">🍇</span>
+          <strong>Wild Raspberry</strong>
+          <small>Tart & Vibrant</small>
+        </div>
+        <div class="s-card" onclick="toggleSyrup('Bourbon Vanilla', this)">
+          <span class="s-icon">🍦</span>
+          <strong>French Vanilla</strong>
+          <small>Smooth & Velvety</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .soda-builder-wrap { background: #FFF9F5; padding: 75px 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #2C1810; }
+  .soda-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .soda-badge { background: #FFE0D3; color: #D84315; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 30px; }
+  .soda-header h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin: 16px 0 10px; color: #2C1810; letter-spacing: -0.5px; }
+  .soda-header p { font-size: 15px; color: #7A5C50; max-width: 600px; margin: 0 auto 35px; line-height: 1.6; }
+
+  /* Live Cup Box */
+  .soda-cup-display { background: #FFFFFF; border: 2px solid #F3DDD4; border-radius: 20px; padding: 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 15px 35px rgba(216, 67, 21, 0.08); margin-bottom: 40px; }
+  .soda-cup-graphic { width: 140px; height: 190px; border: 4px solid #4E342E; border-top: none; border-radius: 0 0 24px 24px; position: relative; overflow: hidden; background: #FFFDFB; }
+  
+  /* Animated Rising Carbonation Bubbles */
+  .soda-cup-graphic::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 20px -20px rgba(255,255,255,0.4), 40px -50px rgba(255,255,255,0.7), 15px -80px rgba(255,255,255,0.5);
+    animation: risingBubbles 2.5s infinite linear;
+    pointer-events: none;
+    z-index: 10;
+  }
+  @keyframes risingBubbles {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120px); opacity: 0; }
+  }
+
+  .cup-foam { position: absolute; top: 0; left: 0; width: 100%; height: 35px; background: #FFF8E7; border-bottom: 2px dashed #E2D6C5; font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center; color: #8D6E63; }
+  .cup-soda { position: absolute; bottom: 0; left: 0; width: 100%; height: 155px; background: #D7CCC8; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #FFFFFF; transition: all 0.3s ease; text-align: center; padding: 8px; box-sizing: border-box; }
+  
+  .soda-selection-summary { text-align: left; }
+  .soda-selection-summary h4 { margin: 0 0 10px; font-size: 18px; color: #2C1810; }
+  .summary-line { font-size: 13px; margin-bottom: 6px; color: #5D4037; }
+  .soda-btn { background: #D84315; color: #FFFFFF; border: none; padding: 14px 28px; border-radius: 50px; font-weight: 800; font-size: 14px; cursor: pointer; margin-top: 15px; transition: all 0.2s ease; }
+  .soda-btn.disabled { background: #BCAAA4; cursor: not-allowed; }
+  .soda-btn:not(.disabled):hover { background: #BF360C; transform: scale(1.02); }
+
+  /* Steps */
+  .soda-step { margin-bottom: 35px; text-align: left; }
+  .soda-step h3 { font-size: 17px; font-weight: 800; margin-bottom: 15px; color: #2C1810; }
+  .soda-pill-group { display: flex; gap: 10px; flex-wrap: wrap; }
+  .s-pill { background: #FFFFFF; border: 1px solid #D7CCC8; padding: 10px 18px; border-radius: 40px; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.2s ease; }
+  .s-pill.active { background: #2C1810; color: #FFFFFF; border-color: #2C1810; }
+
+  .soda-flavor-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .s-card { background: #FFFFFF; border: 1px solid #EFEBE9; border-radius: 14px; padding: 18px; text-align: center; cursor: pointer; transition: all 0.2s ease; }
+  .s-card:hover { transform: translateY(-3px); border-color: #D84315; }
+  .s-card.selected { border: 2px solid #D84315; background: #FBE9E7; }
+  .s-icon { font-size: 28px; display: block; margin-bottom: 8px; }
+  .s-card strong { font-size: 13px; display: block; color: #2C1810; }
+  .s-card small { font-size: 11px; color: #8D6E63; }
+
+  @media(max-width: 768px) {
+    .soda-cup-display { flex-direction: column; gap: 20px; }
+    .soda-flavor-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<script>
+  let selectedBase = null;
+  let selectedSyrups = [];
+
+  function setBase(name, color, btn) {
+    selectedBase = name;
+    document.querySelectorAll('.s-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cup = document.getElementById('cupSoda');
+    if (cup) {
+      cup.style.backgroundColor = color;
+      cup.innerText = name;
+    }
+    const summaryBase = document.getElementById('summaryBase');
+    if (summaryBase) summaryBase.innerText = name;
+    checkReady();
+  }
+
+  function toggleSyrup(name, card) {
+    const idx = selectedSyrups.indexOf(name);
+    if (idx > -1) {
+      selectedSyrups.splice(idx, 1);
+      card.classList.remove('selected');
+    } else {
+      if (selectedSyrups.length >= 2) {
+        alert("You can select up to 2 specialty syrups for your kit!");
+        return;
+      }
+      selectedSyrups.push(name);
+      card.classList.add('selected');
+    }
+    const summarySyrup = document.getElementById('summarySyrup');
+    if (summarySyrup) {
+      summarySyrup.innerText = selectedSyrups.length > 0 ? selectedSyrups.join(" + ") : "None";
+    }
+    checkReady();
+  }
+
+  function checkReady() {
+    const btn = document.getElementById('sodaCheckoutBtn');
+    if (!btn) return;
+    if (selectedBase && selectedSyrups.length === 2) {
+      btn.classList.remove('disabled');
+      btn.disabled = false;
+      btn.innerText = "Order Custom Kit ($48.00) ➔";
+    } else {
+      btn.classList.add('disabled');
+      btn.disabled = true;
+      btn.innerText = "Select Base + 2 Syrups";
+    }
+  }
+
+  function checkoutSodaKit() {
+    const notes = `Base: ${selectedBase} | Syrups: ${selectedSyrups.join(', ')}`;
+    window.location.href = `/cart/add?id=SODA_KIT_VARIANT_ID&quantity=1&properties[Recipe]=${encodeURIComponent(notes)}`;
+  }
+</script>

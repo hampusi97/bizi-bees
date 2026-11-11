@@ -1,0 +1,54 @@
+name: 🛡️ Enterprise E-Commerce CI/CD & Verification Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *' # Executes a full automated test every 6 hours
+  workflow_dispatch:
+
+jobs:
+  smoke-test-and-verify:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright & Test Dependencies
+        run: |
+          npm ci || npm install
+          npx playwright install --with-deps chromium
+
+      - name: Run End-to-End Headless Mobile Checkout Tests
+        env:
+          LIVE_STORE_URL: ${{ secrets.LIVE_STORE_URL || 'https://bizibees-store.myshopify.com' }}
+        run: |
+          npx playwright test tests/e2e_storefront.spec.ts
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Execute Inventory Safety Guard & Stockout Auditor
+        env:
+          SHOPIFY_SHOP_URL: ${{ secrets.SHOPIFY_SHOP_URL }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+        run: |
+          pip install requests
+          python scripts/inventory_safety_guard.py
+
+      - name: Upload Test Report Artifacts (If Failed)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failure-report
+          path: playwright-report/
+          retention-days: 7

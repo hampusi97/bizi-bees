@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  luma-autonomous-swarm:
+    build: .
+    container_name: luma-swarm-daemon
+    restart: always  # Automatically restarts on server reboot or crash
+    environment:
+      - LUMA_SHOP_URL=${LUMA_SHOP_URL:-bizibees-store.myshopify.com}
+      - LUMA_ADMIN_TOKEN=${LUMA_ADMIN_TOKEN}
+      - SHOPIFY_ADMIN_ACCESS_TOKEN=${SHOPIFY_ADMIN_ACCESS_TOKEN}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - TIKTOK_OPEN_API_TOKEN=${TIKTOK_OPEN_API_TOKEN}
+      - META_GRAPH_API_TOKEN=${META_GRAPH_API_TOKEN}
+      - INSTAGRAM_ACCOUNT_ID=${INSTAGRAM_ACCOUNT_ID}
+    volumes:
+      - ./config:/app/config:ro
+      - ./REPORTS_SWARM_DAEMON.md:/app/REPORTS_SWARM_DAEMON.md
+      - ./REPORTS_DAILY_AUDIT.md:/app/REPORTS_DAILY_AUDIT.md
+      - ./REPORTS_SOCIAL_PUBLISHING.md:/app/REPORTS_SOCIAL_PUBLISHING.md

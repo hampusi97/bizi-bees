@@ -1,0 +1,462 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-11-10T23:14:00Z",
+  "description": "Bespoke brand profiles, typography tokens, color palettes, and trust seals for the OS-X multi-store fleet.",
+  "brands": [
+    {
+      "store_id": "luma-clinical",
+      "name": "Luma Clinical",
+      "niche": "Clinical Derm-Tech & Phototherapy",
+      "tagline": "Dermatology-Grade Phototherapy & Microcurrent Sculpting",
+      "tone_of_voice": "Authoritative, clinical, evidence-backed, precise, luxury medical",
+      "theme_tokens": {
+        "primary_color": "#0D9488",
+        "secondary_color": "#0F172A",
+        "accent_color": "#99F6E4",
+        "background_color": "#FFFFFF",
+        "surface_color": "#F8FAFC",
+        "text_color": "#0F172A",
+        "muted_text_color": "#64748B",
+        "border_color": "#E2E8F0",
+        "button_radius": "40px",
+        "font_heading": "'Plus Jakarta Sans', -apple-system, sans-serif",
+        "font_body": "'Inter', -apple-system, sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Dermatologist Endorsed & Clinically Calibrated",
+        "certifications": [
+          "630nm Medical Red Wave",
+          "330\u00b5A Safe Microcurrent",
+          "CE / RoHS Certified"
+        ],
+        "guarantee": "60-Day Clinical Risk-Free Guarantee & 1-Year Comprehensive Replacement Warranty",
+        "shipping_badge": "\u26a1 Fast Tracked Priority Dispatch from Salt Lake City, Utah Hub"
+      },
+      "hero_copy": {
+        "eyebrow": "CLINICAL AT-HOME RITUALS",
+        "headline": "Sculpt, Smooth & Rejuvenate In 5 Minutes Daily",
+        "subhead": "QuadWave\u2122 combines 630nm phototherapy, 330\u00b5A microcurrent, 107\u00b0F thermal massage, and sonic lymphatic drainage."
+      }
+    },
+    {
+      "store_id": "crave-lab",
+      "name": "Crave Lab",
+      "niche": "Gourmet Candy & Confections",
+      "tagline": "Artisanal Belgian Chocolate & Sensory Bento Boxes",
+      "tone_of_voice": "Sensory, decadent, playful, artisanal luxury, viral foodie aesthetic",
+      "theme_tokens": {
+        "primary_color": "#78350F",
+        "secondary_color": "#D97706",
+        "accent_color": "#FDE68A",
+        "background_color": "#FFFDF7",
+        "surface_color": "#FEF3C7",
+        "text_color": "#292524",
+        "muted_text_color": "#78716C",
+        "border_color": "#FDE68A",
+        "button_radius": "16px",
+        "font_heading": "'Playfair Display', Georgia, serif",
+        "font_body": "'Plus Jakarta Sans', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "100% Single-Origin Belgian Cocoa Certified",
+        "certifications": [
+          "Fair Trade Certified",
+          "Non-GMO Ingredients",
+          "Gluten-Free Options"
+        ],
+        "guarantee": "100% Melt-Free Freshness Guarantee or Instant Free Replacement",
+        "shipping_badge": "\u2744\ufe0f Temperature-Shielded Cold-Pack Shipping from Chicago, IL"
+      },
+      "hero_copy": {
+        "eyebrow": "BESPOKE ARTISAN CONFECTIONS",
+        "headline": "Build Your Custom 4-Bar Belgian Chocolate Box",
+        "subhead": "Hand-poured single-origin chocolate bars topped with freeze-dried berries, sea salt caramel, and roasted pistachios."
+      }
+    },
+    {
+      "store_id": "aura-sculpt",
+      "name": "Aura Sculpt",
+      "niche": "Seamless Activewear & Apparel",
+      "tagline": "CloudSoft\u2122 4-Way Stretch Compression & Sculpting",
+      "tone_of_voice": "Aspirational, bold, empowering, minimalist streetwear aesthetic",
+      "theme_tokens": {
+        "primary_color": "#18181B",
+        "secondary_color": "#52525B",
+        "accent_color": "#D4A373",
+        "background_color": "#FAFAFA",
+        "surface_color": "#F4F4F5",
+        "text_color": "#18181B",
+        "muted_text_color": "#71717A",
+        "border_color": "#E4E4E7",
+        "button_radius": "8px",
+        "font_heading": "'Syne', 'Montserrat', sans-serif",
+        "font_body": "'Inter', -apple-system, sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "100% Squat-Proof & High-Density Weave Verified",
+        "certifications": [
+          "OEKO-TEX\u00ae Standard 100",
+          "Zero-Chafe Flatlock Seams",
+          "Sweat-Wicking"
+        ],
+        "guarantee": "30-Day Perfect Fit Guarantee & Free Hassle-Free Size Exchanges",
+        "shipping_badge": "\ud83d\ude80 2-Day Priority Dispatch from Los Angeles, CA Distribution Center"
+      },
+      "hero_copy": {
+        "eyebrow": "SECOND-SKIN COMPRESSION",
+        "headline": "CloudSoft\u2122 Mix & Match 2-Piece Sculpt Set",
+        "subhead": "Ultra-flattering contouring knit that sculpts without digging, pinching, or rolling down."
+      }
+    },
+    {
+      "store_id": "luma-relief",
+      "name": "Luma Relief",
+      "niche": "Therapeutic Pain Care & Neurological Wellness",
+      "tagline": "Targeted 360\u00b0 Cold Compression & Tension Relief",
+      "tone_of_voice": "Empathetic, soothing, scientific, restorative, physician-trusted",
+      "theme_tokens": {
+        "primary_color": "#1E3A8A",
+        "secondary_color": "#0284C7",
+        "accent_color": "#BAE6FD",
+        "background_color": "#FFFFFF",
+        "surface_color": "#F0F9FF",
+        "text_color": "#0F172A",
+        "muted_text_color": "#475569",
+        "border_color": "#E2E8F0",
+        "button_radius": "30px",
+        "font_heading": "'Plus Jakarta Sans', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Neurologist Endorsed Cranial Cold Therapy",
+        "certifications": [
+          "Medical Grade Solid Gel",
+          "Zero-Leak Dual Seam",
+          "Odorless Latex-Free"
+        ],
+        "guarantee": "60-Night Tension Relief Guarantee (Full Refund If Pain Persists)",
+        "shipping_badge": "\ud83d\udce6 Priority Relief Express from Salt Lake City, Utah Facility"
+      },
+      "hero_copy": {
+        "eyebrow": "ACUTE TENSION RELIEF",
+        "headline": "Stop Migraines Fast With 360\u00b0 Radial Cold Gel",
+        "subhead": "Total blackout design and dual-zone compression relieve vascular tension in under 15 minutes."
+      }
+    },
+    {
+      "store_id": "bizi-bees",
+      "name": "Bizi Bees Boutique",
+      "niche": "Curated Books, Vintage Crafts & Nostalgic Gifts",
+      "tagline": "Small-Batch Handcrafted Treasures & Literary Keepsakes",
+      "tone_of_voice": "Warm, nostalgic, cozy, wholesome, curated community handmade",
+      "theme_tokens": {
+        "primary_color": "#D97706",
+        "secondary_color": "#92400E",
+        "accent_color": "#FEF3C7",
+        "background_color": "#FFFBEB",
+        "surface_color": "#FEF9C3",
+        "text_color": "#451A03",
+        "muted_text_color": "#78350F",
+        "border_color": "#FDE68A",
+        "button_radius": "24px",
+        "font_heading": "'Cinzel', Garamond, serif",
+        "font_body": "'Lora', Georgia, serif"
+      },
+      "trust_shield": {
+        "badge_title": "Hand-Inspected Artisan Quality Guarantee",
+        "certifications": [
+          "100% Recycled Kraft Packaging",
+          "Handmade & Small Batch",
+          "Fair Trade Sourced"
+        ],
+        "guarantee": "100% Happiness Guarantee (Free Exchanges on Any Gift Item)",
+        "shipping_badge": "\ud83d\udc8c Curated & Dispatched with Love from Austin, Texas"
+      },
+      "hero_copy": {
+        "eyebrow": "TIMELESS TREASURES",
+        "headline": "Curated Vintage Books & Wholesome Craft Gifts",
+        "subhead": "Each piece is handpicked to bring warmth, wonder, and inspiration to your home library."
+      }
+    },
+    {
+      "store_id": "pawglow",
+      "name": "PawGlow Co",
+      "niche": "Pet Grooming Tech & Red Light Wellness",
+      "tagline": "Veterinarian-Grade Home Grooming & Pet Wellness",
+      "tone_of_voice": "Friendly, caring, reassuring, joyful, pet-health obsessed",
+      "theme_tokens": {
+        "primary_color": "#15803D",
+        "secondary_color": "#166534",
+        "accent_color": "#FACC15",
+        "background_color": "#F0FDF4",
+        "surface_color": "#DCFCE7",
+        "text_color": "#14532D",
+        "muted_text_color": "#166534",
+        "border_color": "#BBF7D0",
+        "button_radius": "28px",
+        "font_heading": "'Outfit', 'Poppins', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Veterinarian Recommended & Animal Safe",
+        "certifications": [
+          "Whisper-Quiet (<50dB)",
+          "Rounded Blade Safety Guard",
+          "USB-C Rechargeable"
+        ],
+        "guarantee": "30-Day Pet Happiness Guarantee (If your dog isn't calm, full refund)",
+        "shipping_badge": "\ud83d\udc3e USPS Pet Priority Dispatch from Denver, Colorado"
+      },
+      "hero_copy": {
+        "eyebrow": "STRESS-FREE PET CARE",
+        "headline": "Salon-Level Grooming Without The Anxiety",
+        "subhead": "Ultra-quiet motor and precision ceramic blades prevent pulling and protect nervous paws."
+      }
+    },
+    {
+      "store_id": "zenith-sleep",
+      "name": "Zenith Sleep",
+      "niche": "Sleep Optimization & Circadian Lighting",
+      "tagline": "Deep REM Sleep Restoratives & Low-EMF Grounding",
+      "tone_of_voice": "Restful, nocturnal, scientific, serene, circadian wellness",
+      "theme_tokens": {
+        "primary_color": "#1E1B4B",
+        "secondary_color": "#4338CA",
+        "accent_color": "#C7D2FE",
+        "background_color": "#0B0C16",
+        "surface_color": "#1E1B4B",
+        "text_color": "#F8FAFC",
+        "muted_text_color": "#94A3B8",
+        "border_color": "#312E81",
+        "button_radius": "12px",
+        "font_heading": "'Space Grotesk', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Circadian Rhythm Clinical Certification",
+        "certifications": [
+          "Zero Blue Light Emission (<0.1%)",
+          "Flicker-Free Driver",
+          "EMF Shielded"
+        ],
+        "guarantee": "100-Night Deep Sleep Trial (Wake up refreshed or 100% money back)",
+        "shipping_badge": "\ud83c\udf19 Express Dark-Night Dispatch from Atlanta, Georgia"
+      },
+      "hero_copy": {
+        "eyebrow": "RESTORE YOUR CIRCADIAN CYCLE",
+        "headline": "Fall Asleep Faster. Wake Up Truly Recharged.",
+        "subhead": "Calibrated amber wavelength lighting triggers natural melatonin synthesis within 30 minutes."
+      }
+    },
+    {
+      "store_id": "aura-posture",
+      "name": "Aura Posture",
+      "niche": "Ergonomics & Posture Alignment",
+      "tagline": "Biomechanical Spine Alignment & Desk Ergonomics",
+      "tone_of_voice": "Direct, corrective, active, orthopedic, posture-improving",
+      "theme_tokens": {
+        "primary_color": "#0369A1",
+        "secondary_color": "#0F172A",
+        "accent_color": "#38BDF8",
+        "background_color": "#F8FAFC",
+        "surface_color": "#F0F9FF",
+        "text_color": "#0F172A",
+        "muted_text_color": "#64748B",
+        "border_color": "#E2E8F0",
+        "button_radius": "8px",
+        "font_heading": "'Plus Jakarta Sans', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Chiropractic Association Approved Alignment",
+        "certifications": [
+          "Breathable Air-Mesh Weave",
+          "High-Elasticity Memory Stays",
+          "Latex-Free"
+        ],
+        "guarantee": "45-Day Posture Correction Guarantee",
+        "shipping_badge": "\ud83d\udce6 Fast Tracked Shipping from Dallas, Texas Distribution Hub"
+      },
+      "hero_copy": {
+        "eyebrow": "ERGO-ALIGNMENT TECH",
+        "headline": "End Neck & Shoulder Slouching In 14 Days",
+        "subhead": "Gentle kinetic biofeedback retrains deep postural muscles while you work at your desk."
+      }
+    },
+    {
+      "store_id": "lumicarve",
+      "name": "LumiCarve",
+      "niche": "Precision DIY & Micro-Crafting Tools",
+      "tagline": "High-Torque Wireless Engraving & Detail Crafting",
+      "tone_of_voice": "Energetic, maker-driven, precision engineering, tactile craft",
+      "theme_tokens": {
+        "primary_color": "#EA580C",
+        "secondary_color": "#18181B",
+        "accent_color": "#FED7AA",
+        "background_color": "#18181B",
+        "surface_color": "#27272A",
+        "text_color": "#FAFAFA",
+        "muted_text_color": "#A1A1AA",
+        "border_color": "#3F3F46",
+        "button_radius": "6px",
+        "font_heading": "'Cabinet Grotesk', -apple-system, sans-serif",
+        "font_body": "'DM Sans', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "German Tungsten Carbide Precision",
+        "certifications": [
+          "15,000 RPM Brushless Motor",
+          "USB-C Quick-Charge",
+          "Overload Auto-Shutoff"
+        ],
+        "guarantee": "3-Year Craftsmanship & Motor Replacement Warranty",
+        "shipping_badge": "\u26a1 Priority Tool Dispatch from Columbus, Ohio"
+      },
+      "hero_copy": {
+        "eyebrow": "PRECISION IN YOUR HAND",
+        "headline": "Engrave Glass, Wood & Metal with Pen-Like Control",
+        "subhead": "Cordless ultra-light micro rotary engraver for custom jewelry, leathercraft, and personalized gifts."
+      }
+    },
+    {
+      "store_id": "dermasonic",
+      "name": "Dermasonic",
+      "niche": "Ultrasonic Pore Care & Cleansing",
+      "tagline": "30kHz Ultrasonic Pore Clarifying & Blackhead Extraction",
+      "tone_of_voice": "Aesthetic, clean, spa-luxury, clarifying, luminous",
+      "theme_tokens": {
+        "primary_color": "#BE185D",
+        "secondary_color": "#831843",
+        "accent_color": "#FCE7F3",
+        "background_color": "#FFF1F2",
+        "surface_color": "#FFE4E6",
+        "text_color": "#4C0519",
+        "muted_text_color": "#9D174D",
+        "border_color": "#FECDD3",
+        "button_radius": "32px",
+        "font_heading": "'Cormorant Garamond', Georgia, serif",
+        "font_body": "'Montserrat', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "30,000 Hz Ultrasonic Cavitation Tested",
+        "certifications": [
+          "Surgical Stainless Steel Spatula",
+          "IPX7 100% Waterproof",
+          "Ion+ / Ion- Modes"
+        ],
+        "guarantee": "30-Day Pore Refinement Guarantee",
+        "shipping_badge": "\u2728 Priority Spa Dispatch from Miami, Florida"
+      },
+      "hero_copy": {
+        "eyebrow": "CLINICAL PORE PURIFYING",
+        "headline": "Extract Blackheads & Impurities Without Squeezing",
+        "subhead": "High-frequency ultrasonic waves atomize water into micro-droplets, dislodging trapped sebum and dead skin."
+      }
+    },
+    {
+      "store_id": "calmcore",
+      "name": "CalmCore",
+      "niche": "Acupressure & Mindful Somatic Therapy",
+      "tagline": "Therapeutic Acupressure Mats & Vagus Nerve Stimulation",
+      "tone_of_voice": "Zen, grounding, restorative, mindful, holistic calm",
+      "theme_tokens": {
+        "primary_color": "#047857",
+        "secondary_color": "#064E3B",
+        "accent_color": "#A7F3D0",
+        "background_color": "#F7FDF9",
+        "surface_color": "#ECFDF5",
+        "text_color": "#064E3B",
+        "muted_text_color": "#047857",
+        "border_color": "#A7F3D0",
+        "button_radius": "20px",
+        "font_heading": "'Plus Jakarta Sans', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Certified Non-Toxic Eco Coconut Fiber & Cotton",
+        "certifications": [
+          "100% GOTS Organic Cotton",
+          "Plant-Based Recycled Foam",
+          "BPA-Free Points"
+        ],
+        "guarantee": "60-Day Calm Mind Guarantee (Return anytime if stress remains)",
+        "shipping_badge": "\ud83c\udf3f Carbon-Neutral Eco Dispatch from Seattle, Washington"
+      },
+      "hero_copy": {
+        "eyebrow": "SOMATIC TENSION RELEASE",
+        "headline": "Release Deep Back Tension & Reset Your Nervous System",
+        "subhead": "Over 6,000 calibrated acupressure spikes trigger endorphin release and deep muscular relaxation in 20 minutes."
+      }
+    },
+    {
+      "store_id": "floraspring",
+      "name": "FloraSpring",
+      "niche": "Home Garden Decor & Self-Watering Systems",
+      "tagline": "Hydro-Smart Indoor Planters & Living Greenery",
+      "tone_of_voice": "Botanical, fresh, vibrant, uplifting, biophilic interior sanctuary",
+      "theme_tokens": {
+        "primary_color": "#15803D",
+        "secondary_color": "#854D0E",
+        "accent_color": "#FEF08A",
+        "background_color": "#FCFDF7",
+        "surface_color": "#FEFCE8",
+        "text_color": "#1C1917",
+        "muted_text_color": "#78716C",
+        "border_color": "#E7E5E4",
+        "button_radius": "16px",
+        "font_heading": "'Playfair Display', Georgia, serif",
+        "font_body": "'Nunito', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Zero-Leak Sub-Irrigation Technology",
+        "certifications": [
+          "Food-Grade BPA Free Resin",
+          "UV-Stabilized Anti-Fade",
+          "Water Reservoir Gauge"
+        ],
+        "guarantee": "1-Year Plant Health & Planter Durability Guarantee",
+        "shipping_badge": "\ud83c\udf31 Nursery-Inspected Secure Pack from Charlotte, North Carolina"
+      },
+      "hero_copy": {
+        "eyebrow": "BIOPHILIC LIVING",
+        "headline": "Keep Houseplants Thriving For 30 Days Without Watering",
+        "subhead": "Sub-irrigation wicking draws water directly to roots on demand, preventing root rot and underwatering."
+      }
+    },
+    {
+      "store_id": "fizz-lab",
+      "name": "Fizz Lab",
+      "niche": "Utah Dirty Soda & Artisan Drink Kits",
+      "tagline": "Authentic Provo Utah Dirty Soda Kits Delivered Fresh",
+      "tone_of_voice": "Fun, vibrant, bubbly, nostalgic, viral Utah foodie culture",
+      "theme_tokens": {
+        "primary_color": "#D84315",
+        "secondary_color": "#2C1810",
+        "accent_color": "#FFE0D3",
+        "background_color": "#FFF9F5",
+        "surface_color": "#FFFFFF",
+        "text_color": "#2C1810",
+        "muted_text_color": "#7A5C50",
+        "border_color": "#F3DDD4",
+        "button_radius": "50px",
+        "font_heading": "'Plus Jakarta Sans', sans-serif",
+        "font_body": "'Inter', sans-serif"
+      },
+      "trust_shield": {
+        "badge_title": "Original Provo, Utah Recipe Calibration",
+        "certifications": [
+          "Barista Grade Pure Cane Syrups",
+          "Dairy-Free Coconut Cream Base",
+          "BPA-Free Pumps"
+        ],
+        "guarantee": "100% Crave-Worthy Flavor Guarantee (Free Exchanges on Any Flavor)",
+        "shipping_badge": "\ud83e\udd64 Insulated Fresh Food Pack from US Food Co-Packer Hub"
+      },
+      "hero_copy": {
+        "eyebrow": "PROVO UT'S VIRAL PHENOMENON",
+        "headline": "Build Your Custom At-Home Dirty Soda Bar",
+        "subhead": "Mix barista flavor pumps, sweet coconut cream floats, and authentic Utah recipes straight in your kitchen."
+      }
+    }
+  ]
+}

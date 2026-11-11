@@ -1,0 +1,57 @@
+[
+  {
+    "store_id": "luma-clinical",
+    "name": "Luma Clinical",
+    "shop_url": "bizibees-store.myshopify.com",
+    "custom_domain": "lumaclinical.com",
+    "niche": "clinical_beauty",
+    "hero_product": "LumaGlow 4-in-1 Wand",
+    "target_channel": "tiktok_shop_and_meta",
+    "min_price_floor": 19.99,
+    "env_token_key": "LUMA_ADMIN_TOKEN"
+  },
+  {
+    "store_id": "crave-lab",
+    "name": "Crave Lab Chocolate",
+    "shop_url": "cravelab.myshopify.com",
+    "custom_domain": "cravelab.com",
+    "niche": "gourmet_candy",
+    "hero_product": "Custom 4-Bar Bento Box",
+    "target_channel": "tiktok_shop_asmr",
+    "min_price_floor": 24.00,
+    "env_token_key": "CRAVE_ADMIN_TOKEN"
+  },
+  {
+    "store_id": "aura-sculpt",
+    "name": "Aura Sculpt Apparel",
+    "shop_url": "aurasculpt.myshopify.com",
+    "custom_domain": "aurasculpt.com",
+    "niche": "activewear_shapewear",
+    "hero_product": "2-Piece Mix & Match Sculpt Set",
+    "target_channel": "meta_and_gymtok",
+    "min_price_floor": 28.00,
+    "env_token_key": "AURA_ADMIN_TOKEN"
+  },
+  {
+    "store_id": "luma-relief",
+    "name": "Luma Relief",
+    "shop_url": "luma-relief.myshopify.com",
+    "custom_domain": "lumarelief.com",
+    "niche": "pain_and_recovery",
+    "hero_product": "360 Migraine Cap",
+    "target_channel": "meta_and_google_search",
+    "min_price_floor": 19.99,
+    "env_token_key": "LUMA_RELIEF_TOKEN"
+  },
+  {
+    "store_id": "bizi-bees-boutique",
+    "name": "Bizi Bees Boutique",
+    "shop_url": "bizibees-store.myshopify.com",
+    "custom_domain": "shopbizibees.com",
+    "niche": "curated_vintage_thrift",
+    "hero_product": "Blind Date with a Book Bundles",
+    "target_channel": "ebay_and_organic_tiktok",
+    "min_price_floor": 14.99,
+    "env_token_key": "SHOPIFY_ADMIN_ACCESS_TOKEN"
+  }
+]

@@ -1,0 +1,19 @@
+name: Deploy Shopify Theme
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy Theme to Shopify
+        uses: Shopify/theme-action@v3
+        with:
+          store: ${{ secrets.SHOPIFY_SHOP_URL }}
+          password: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          path: '.'
+          ignore: 'config/settings_data.json'
+          flags: '--ignore config/settings_data.json'

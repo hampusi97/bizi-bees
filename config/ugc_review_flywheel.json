@@ -1,0 +1,34 @@
+{
+  "system": "5-Star UGC Review-to-Ad Flywheel (v1.0)",
+  "triggerDelayDaysAfterDelivery": 7,
+  "bountyReward": {
+    "title": "$25 VIP Instant Cash Card",
+    "creditAmount": 25.00,
+    "minimumOrderRequirement": 40.00,
+    "marginalCost": 2.40,
+    "estimatedAgencyCostAvoided": 250.00
+  },
+  "submissionPortal": "https://reviews.lumaclinical.com/ugc-upload",
+  "sparkAdsAutoIngest": {
+    "enabled": true,
+    "targetPlatform": "TikTok Spark Ads & Meta Advantage+",
+    "authorizationCodePrefix": "SPARK-UGC-"
+  },
+  "brandTemplates": {
+    "luma-clinical": {
+      "channel": "SMS & Email",
+      "headline": "Get a Free $25 Cash Card for a 15-Second Video 📱✨",
+      "copy": "Hey {first_name}! It's been 7 days since your LumaGlow™ QuadWave Pro arrived in {city}. Want a free $25 cash card on us? Record a quick 15-second phone video showing your glow routine, tap here to upload: {upload_url}. We'll send your $25 card instantly!"
+    },
+    "fizz-lab": {
+      "channel": "SMS & Email",
+      "headline": "Show Us Your Dirty Soda Pour & Claim $25 🥤",
+      "copy": "Hey {first_name}! How did your at-home dirty soda turn out? Take a quick 15-second video pouring your coconut creamer over ice and upload it here: {upload_url} to get an instant $25 credit on your next flavor syrup restock!"
+    },
+    "crave-lab": {
+      "channel": "SMS & Email",
+      "headline": "Snap Your Chocolate Bar & Get $25 🍫",
+      "copy": "Hey {first_name}! Hear that snap? Record a 15-second chocolate tasting ASMR video, upload at {upload_url}, and claim a $25 store gift card toward your next artisan bento box!"
+    }
+  }
+}

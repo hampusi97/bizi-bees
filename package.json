@@ -1,12 +1,16 @@
 {
-  "name": "repo-os-mission-control",
+  "name": "bizi-bees-os-x",
   "version": "1.0.0",
+  "description": "Multi-Store E-Commerce Operating System (OS-X) & Autonomous Fleet Engine",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
+    "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
     "next": "^14.2.0",
@@ -14,7 +18,8 @@
     "react-dom": "^18.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",

@@ -1,0 +1,42 @@
+name: ⚡ 100% Full-Stack E-Commerce Autopilot
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # Runs at 8:00 AM UTC daily for morning digest
+    - cron: '0 */6 * * *' # Health check every 6 hours
+  workflow_dispatch:
+
+jobs:
+  run-autopilot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Network & System Dependencies
+        run: pip install requests
+
+      - name: Execute Full Autopilot Orchestrator
+        env:
+          SHOPIFY_SHOP_URL: ${{ secrets.SHOPIFY_SHOP_URL }}
+          SHOPIFY_ADMIN_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ADMIN_ACCESS_TOKEN }}
+          ALERT_SENDER_EMAIL: ${{ secrets.ALERT_SENDER_EMAIL }}
+          ALERT_SENDER_PASSWORD: ${{ secrets.ALERT_SENDER_PASSWORD }}
+          FOUNDER_EMAIL: ${{ secrets.FOUNDER_EMAIL }}
+        run: |
+          python core/master_autopilot.py
+
+      - name: Fail-Safe Alert (If Workflow Itself Crashes)
+        if: failure()
+        env:
+          ALERT_SENDER_EMAIL: ${{ secrets.ALERT_SENDER_EMAIL }}
+          ALERT_SENDER_PASSWORD: ${{ secrets.ALERT_SENDER_PASSWORD }}
+          FOUNDER_EMAIL: ${{ secrets.FOUNDER_EMAIL }}
+        run: |
+          python -c "from core.executive_alerts import trigger_action_required_alert; trigger_action_required_alert('GitHub Autopilot Workflow Failed', 'A scheduled cron job failed during runtime. Please inspect GitHub Action logs.', 'https://github.com/${{ github.repository }}/actions', 'View GitHub Logs')"

@@ -1,145 +1,106 @@
 {% comment %}
-  In-cart 1-click upsell — Activating Conductive Peptide Serum
-  Place inside cart drawer / cart page near line items.
+  Dynamic In-Cart 1-Click Upsell Module
+  Repo: bizi-bees /snippets/cart-drawer-upsell.liquid
 {% endcomment %}
 
-{% assign serum_handle = section.settings.serum_handle | default: 'lumaglow-activating-conductive-peptide-serum' %}
-{% assign serum = all_products[serum_handle] %}
+<div class="cart-upsell-module" id="cartUpsellModule">
+  <div class="upsell-header">
+    <span class="sparkle">✨</span>
+    <strong>Frequently Added by VIP Customers:</strong>
+  </div>
 
-{% if serum != blank and serum.available %}
-<div class="cart-upsell" id="cart-upsell-serum" data-variant-id="{{ serum.selected_or_first_available_variant.id }}">
-  <div class="cart-upsell__media">
-    {% if serum.featured_image %}
-      {{ serum.featured_image | image_url: width: 120 | image_tag: loading: 'lazy', class: 'cart-upsell__img', alt: serum.title }}
-    {% endif %}
-  </div>
-  <div class="cart-upsell__body">
-    <div class="cart-upsell__eyebrow">Complete your ritual</div>
-    <div class="cart-upsell__title">{{ serum.title | truncate: 48 }}</div>
-    <div class="cart-upsell__price-row">
-      <span class="cart-upsell__price">{{ serum.price | money }}</span>
-      {% if serum.compare_at_price > serum.price %}
-        <span class="cart-upsell__save">Save {{ serum.compare_at_price | minus: serum.price | times: 100.0 | divided_by: serum.compare_at_price | round }}%</span>
-      {% else %}
-        <span class="cart-upsell__save">Add-on</span>
-      {% endif %}
+  <div class="upsell-card">
+    <img src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" alt="Companion Product" class="upsell-thumb" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=120&auto=format&fit=crop&q=80'">
+    
+    <div class="upsell-details">
+      <span class="upsell-title">Activating Peptide Conductive Serum</span>
+      <div class="upsell-pricing">
+        <strong>$14.00</strong>
+        <span class="strike">$24.00</span>
+        <span class="save-tag">SAVE 42%</span>
+      </div>
+      <small>Boosts microcurrent conductivity by 300%</small>
     </div>
+
+    <button type="button" class="inline-add-btn" onclick="addInstantUpsell('SERUM-CONDUCTION-50ML', this)">
+      + Add
+    </button>
   </div>
-  <button type="button" class="cart-upsell__btn" data-cart-upsell-add>
-    + Add
-  </button>
 </div>
 
 <style>
-  .cart-upsell {
+  .cart-upsell-module {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .upsell-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #0F172A;
+    margin-bottom: 10px;
+  }
+  .upsell-card {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px;
-    background: #F0FDFA;
-    border: 1px solid #99F6E4;
-    border-radius: 12px;
-    margin: 12px 0;
   }
-  .cart-upsell__media {
-    width: 56px;
-    height: 56px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-    flex-shrink: 0;
-  }
-  .cart-upsell__img {
-    width: 100%;
-    height: 100%;
+  .upsell-thumb {
+    width: 52px;
+    height: 52px;
     object-fit: cover;
-  }
-  .cart-upsell__body {
-    flex: 1;
-    min-width: 0;
-  }
-  .cart-upsell__eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #0D9488;
-  }
-  .cart-upsell__title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #0F172A;
-    line-height: 1.3;
-    margin: 2px 0 4px;
-  }
-  .cart-upsell__price-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cart-upsell__price {
-    font-size: 14px;
-    font-weight: 700;
-    color: #0F172A;
-  }
-  .cart-upsell__save {
-    font-size: 11px;
-    font-weight: 600;
-    color: #0D9488;
-  }
-  .cart-upsell__btn {
-    flex-shrink: 0;
-    background: #0F172A;
-    color: #fff;
-    border: none;
     border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    font-weight: 700;
+    border: 1px solid #E2E8F0;
+  }
+  .upsell-details { flex-grow: 1; text-align: left; }
+  .upsell-title { font-size: 13px; font-weight: 700; color: #0F172A; display: block; }
+  .upsell-pricing { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+  .upsell-pricing strong { font-size: 14px; color: #0D9488; }
+  .upsell-pricing .strike { font-size: 11px; color: #94A3B8; text-decoration: line-through; }
+  .save-tag { font-size: 9px; font-weight: 800; background: #E6FFFA; color: #0F766E; padding: 2px 6px; border-radius: 4px; }
+  .upsell-details small { font-size: 10px; color: #64748B; display: block; }
+
+  .inline-add-btn {
+    background: #0F172A;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 12px;
     cursor: pointer;
-    transition: background 0.15s ease;
+    white-space: nowrap;
+    transition: all 0.2s ease;
   }
-  .cart-upsell__btn:hover {
-    background: #0D9488;
-  }
-  .cart-upsell__btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+  .inline-add-btn:hover { background: #0D9488; transform: scale(1.05); }
+  .inline-add-btn.added { background: #10B981; cursor: default; }
 </style>
 
 <script>
-(function () {
-  var root = document.getElementById('cart-upsell-serum');
-  if (!root) return;
-  var btn = root.querySelector('[data-cart-upsell-add]');
-  var variantId = root.getAttribute('data-variant-id');
-  if (!btn || !variantId) return;
-
-  btn.addEventListener('click', function () {
+  function addInstantUpsell(variantId, btn) {
+    btn.innerText = 'Adding...';
     btn.disabled = true;
-    btn.textContent = 'Adding…';
+
     fetch('/cart/add.js', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ id: Number(variantId), quantity: 1 })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [{ id: variantId, quantity: 1 }] })
     })
-      .then(function (r) { return r.json(); })
-      .then(function () {
-        btn.textContent = 'Added';
-        document.dispatchEvent(new CustomEvent('cart:updated'));
-        // Optional: refresh drawer if theme exposes a method
-        if (window.theme && typeof window.theme.refreshCart === 'function') {
-          window.theme.refreshCart();
-        } else {
-          setTimeout(function () { window.location.href = '/cart'; }, 600);
-        }
-      })
-      .catch(function () {
-        btn.disabled = false;
-        btn.textContent = '+ Add';
-      });
-  });
-})();
+    .then(res => res.json())
+    .then(data => {
+      btn.innerText = '✓ Added';
+      btn.classList.add('added');
+      // Triggers the Gamified Free Shipping bar & Dynamic Engine to recalculate live!
+      document.dispatchEvent(new CustomEvent('cart:updated'));
+    })
+    .catch(err => {
+      btn.innerText = '+ Add';
+      btn.disabled = false;
+    });
+  }
 </script>
-{% endif %}

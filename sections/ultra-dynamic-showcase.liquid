@@ -1,0 +1,199 @@
+{% comment %}
+  ULTRA-DYNAMIC FLAGSHIP PRODUCT SHOWCASE
+  Repo: bizi-bees /sections/ultra-dynamic-showcase.liquid
+  Features:
+  - 3D Holographic Card Tilt with Dynamic Specular Glare
+  - Reactive Ambient Aura (Color Swatches Morph Canvas)
+  - Magnetic Cursor Checkout Button
+  - Real-Time Live Radar City Dispatch Pulse
+{% endcomment %}
+
+<div class="dynamic-showcase-wrap">
+  <div class="ambient-glow-canvas" id="dynamicAmbientAura"></div>
+
+  <div class="dynamic-showcase-inner">
+    
+    <!-- Top Radar Dispatch Pill -->
+    <div class="live-radar-pill">
+      <span class="radar-ping"></span>
+      <span>Verified Priority Dispatch: <strong id="liveRadarCity">Salt Lake City, UT</strong> • 4m ago</span>
+    </div>
+
+    <!-- Main Dynamic 3D Card -->
+    <div class="dynamic-product-stage tilt-card">
+      
+      <div class="stage-media">
+        <img id="dynamicProductImg" src="https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg" alt="LumaGlow Pro" class="floating-hero-device">
+      </div>
+
+      <div class="stage-details">
+        <span class="device-tag">630NM CHROMOPHORE PROTOCOL</span>
+        <h2>LumaGlow™ QuadWave Pro</h2>
+        <p>Medical-grade phototherapy, galvanic microcurrent, and thermal massage engineered for immediate facial sculpting and depuffing.</p>
+
+        <!-- Dynamic Color Swatches that Morph Background -->
+        <div class="swatch-picker-group">
+          <label>Select Aesthetic Edition:</label>
+          <div class="swatch-dots">
+            <span class="swatch-btn active" style="background: #E2A98B;" title="Rose Gold" onclick="switchEdition(this, '#E2A98B', 'https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg')"></span>
+            <span class="swatch-btn" style="background: #0D9488;" title="Clinical Teal" onclick="switchEdition(this, '#0D9488', 'https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg')"></span>
+            <span class="swatch-btn" style="background: #1C1C1E;" title="Obsidian Midnight" onclick="switchEdition(this, '#1C1C1E', 'https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg')"></span>
+          </div>
+        </div>
+
+        <div class="price-and-cta">
+          <div class="dynamic-pricing">
+            <h3>$39.99</h3>
+            <span class="regular-strike">$79.99</span>
+          </div>
+          
+          <button class="magnetic-btn luma-buy-now-btn" onclick="directCheckout()">
+            <span>CLAIM MY DEVICE — $39.99 ➔</span>
+            <small>⚡ 1-Click Fast Checkout • 60-Day Trial</small>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .dynamic-showcase-wrap {
+    position: relative;
+    padding: 80px 20px;
+    background: #FAFAFC;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .dynamic-showcase-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  /* 3D Glass Stage Card */
+  .dynamic-product-stage {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08);
+  }
+
+  .stage-media {
+    background: radial-gradient(circle, #F1F5F9 0%, #FFFFFF 70%);
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .floating-hero-device {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(15, 23, 42, 0.15));
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .device-tag {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #0D9488;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .stage-details h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 900;
+    color: #0F172A;
+    margin: 0 0 12px;
+    letter-spacing: -1px;
+  }
+  .stage-details p {
+    font-size: 15px;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+
+  /* Swatches */
+  .swatch-picker-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .swatch-dots { display: flex; gap: 10px; margin-bottom: 30px; }
+  .swatch-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 0 1px #CBD5E1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .swatch-btn:hover { transform: scale(1.15); }
+  .swatch-btn.active {
+    box-shadow: 0 0 0 2px #0F172A;
+    transform: scale(1.1);
+  }
+
+  /* Pricing and CTA */
+  .price-and-cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .dynamic-pricing h3 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0F172A;
+    margin: 0;
+  }
+  .regular-strike {
+    font-size: 14px;
+    color: #94A3B8;
+    text-decoration: line-through;
+  }
+
+  @media (max-width: 768px) {
+    .dynamic-product-stage { grid-template-columns: 1fr; padding: 25px; }
+    .price-and-cta { flex-direction: column; align-items: stretch; }
+  }
+</style>
+
+<script>
+  function switchEdition(btn, colorHex, imgUrl) {
+    document.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Morph Ambient Background Aura in real time
+    if (window.morphAmbientAura) {
+      window.morphAmbientAura(colorHex);
+    }
+  }
+
+  function directCheckout() {
+    window.location.href = '/cart/add?id=YOUR_VARIANT_ID&quantity=1';
+  }
+</script>

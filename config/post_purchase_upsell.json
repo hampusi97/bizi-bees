@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-11-10T23:20:00Z",
+  "description": "Native 1-Click Post-Purchase Upsell Ladder configuration for the OS-X fleet.",
+  "rules": [
+    {
+      "trigger_product_id": "lumaglow-4-in-1-facial-wand",
+      "trigger_product_name": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
+      "trigger_price": 39.99,
+      "upsell_product_name": "Activating Botanical Peptide Conduction Serum (Full-Size 50ml)",
+      "upsell_handle": "botanical-peptide-conduction-serum",
+      "regular_price": 24.00,
+      "offer_price": 14.00,
+      "discount_percent": "42% OFF",
+      "expected_take_rate": "42%",
+      "aov_lift": "+$5.88",
+      "timer_duration_seconds": 180,
+      "headline": "Wait! Boost Cellular Microcurrent Conduction by 300%",
+      "subheadline": "Add the clinical conduction serum to your package with 1-click before your order dispatches from Utah.",
+      "cta_text": "Add Serum to My Order for $14.00 (One-Click) →"
+    },
+    {
+      "trigger_product_id": "lumarelief-migraine-cap",
+      "trigger_product_name": "LumaRelief™ 360° Cold Compression Migraine Mask",
+      "trigger_price": 24.99,
+      "upsell_product_name": "Second Freeze-Rotation Backup Cap",
+      "upsell_handle": "lumarelief-backup-cap",
+      "regular_price": 24.99,
+      "offer_price": 12.00,
+      "discount_percent": "52% OFF",
+      "expected_take_rate": "55%",
+      "aov_lift": "+$6.60",
+      "timer_duration_seconds": 180,
+      "headline": "Continuous Cold Therapy: Never Wait for a Cap to Re-Freeze",
+      "subheadline": "Keep one in the freezer while wearing the other. Add a rotation backup for just $12.00.",
+      "cta_text": "Add Backup Freeze-Cap for $12.00 →"
+    },
+    {
+      "trigger_product_id": "crave-bento-box",
+      "trigger_product_name": "Custom 4-Bar Belgian Chocolate Bento Box",
+      "trigger_price": 38.00,
+      "upsell_product_name": "Mystery Limited-Edition Dark Chocolate Crunch Bar",
+      "upsell_handle": "mystery-dark-chocolate-crunch",
+      "regular_price": 10.00,
+      "offer_price": 5.00,
+      "discount_percent": "50% OFF",
+      "expected_take_rate": "60%",
+      "aov_lift": "+$3.00",
+      "timer_duration_seconds": 180,
+      "headline": "Tuck a Secret Mystery Bar Into Your Bento Box",
+      "subheadline": "Our master chocolatier's single-batch recipe of the month for only $5.00.",
+      "cta_text": "Slip In Mystery Bar for $5.00 →"
+    }
+  ]
+}

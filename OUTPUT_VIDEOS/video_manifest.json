@@ -1,0 +1,105 @@
+{
+  "version": "2.4.0",
+  "engine": "Remotion-Headless-CLI",
+  "generatedAt": "2026-11-11T01:54:04.840Z",
+  "jobs": [
+    {
+      "jobId": "vid_render_luma_wand_1080x1920",
+      "brand": "Luma Clinical",
+      "product": "LumaGlow™ QuadWave Pro 4-in-1 Facial Wand",
+      "resolution": {
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "aspectRatio": "9:16"
+      },
+      "durationSeconds": 14,
+      "mediaAssetUrl": "https://bizibees-store.myshopify.com/cdn/shop/files/lumaglow.jpg",
+      "voiceover": {
+        "provider": "ElevenLabs",
+        "voiceId": "21m00Tcm4TlvDq8ikWAM",
+        "model": "eleven_multilingual_v2",
+        "script": "Stop spending $170 on facial wands that break in a month. This medical-grade 4-in-1 wand does red phototherapy, microcurrent, and thermal massage for under $40."
+      },
+      "audioTrack": {
+        "title": "Lo-Fi Clinical Ambient Chill",
+        "bpm": 110,
+        "duckingPct": 35
+      },
+      "scenes": [
+        {
+          "startTime": 0,
+          "endTime": 3.5,
+          "hookText": "SOLAWAVE VS. $40 DUP",
+          "captionStyle": "kinetic-pop-yellow",
+          "visualEffect": "3D_specular_zoom"
+        },
+        {
+          "startTime": 3.5,
+          "endTime": 9,
+          "hookText": "630nm Medical Red Light + 330µA Microcurrent",
+          "captionStyle": "subtle-badge-pill",
+          "visualEffect": "clinical_split_comparison"
+        },
+        {
+          "startTime": 9,
+          "endTime": 14,
+          "hookText": "Free US Shipping + Free Peptide Serum",
+          "captionStyle": "urgency-pulse-emerald",
+          "visualEffect": "cta_cart_unlock"
+        }
+      ],
+      "outputFile": "vid_render_luma_wand_1080x1920.mp4",
+      "status": "READY_FOR_FFMPEG_DISPATCH"
+    },
+    {
+      "jobId": "vid_render_fizz_soda_1080x1920",
+      "brand": "Fizz Lab",
+      "product": "At-Home Dirty Soda Bar Mixology Kit",
+      "resolution": {
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "aspectRatio": "9:16"
+      },
+      "durationSeconds": 14,
+      "mediaAssetUrl": "https://fizz-lab.myshopify.com/cdn/shop/files/dirty-soda-hero.jpg",
+      "voiceover": {
+        "provider": "ElevenLabs",
+        "voiceId": "AZnzlk1XvdvUeBnXmlld",
+        "model": "eleven_multilingual_v2",
+        "script": "POV: You live anywhere in the US and can now make Utah dirty soda right in your own kitchen for 60 cents a glass."
+      },
+      "audioTrack": {
+        "title": "Effervescent Pop Upbeat ASMR",
+        "bpm": 124,
+        "duckingPct": 40
+      },
+      "scenes": [
+        {
+          "startTime": 0,
+          "endTime": 4,
+          "hookText": "DIRTY SODA AT HOME IN 30 SECONDS",
+          "captionStyle": "bubble-bouncy-white",
+          "visualEffect": "carbonation_foam_pour"
+        },
+        {
+          "startTime": 4,
+          "endTime": 9.5,
+          "hookText": "Coconut Cream + Peach Purée + Tart Lime",
+          "captionStyle": "flavor-swatch-slide",
+          "visualEffect": "ice_swirl_macro"
+        },
+        {
+          "startTime": 9.5,
+          "endTime": 14,
+          "hookText": "Includes Free Barista Whisk & Syrup Pumps",
+          "captionStyle": "urgency-pulse-gold",
+          "visualEffect": "unboxing_spread"
+        }
+      ],
+      "outputFile": "vid_render_fizz_soda_1080x1920.mp4",
+      "status": "READY_FOR_FFMPEG_DISPATCH"
+    }
+  ]
+}
