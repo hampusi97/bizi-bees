@@ -1,41 +1,36 @@
 {
   "sections": {
-    "master_flagship_storefront": {
-      "type": "master-flagship-storefront",
-      "settings": {}
-    },
-    "advanced_xray_bento": {
-      "type": "advanced-xray-bento",
-      "settings": {}
-    },
-    "advanced_ai_quiz": {
-      "type": "advanced-ai-quiz",
-      "settings": {}
-    },
-    "bizi_crate_builder": {
-      "type": "bizi-crate-builder",
+    "bizi_bees_hero": {
+      "type": "bizi-bees-hero",
       "settings": {}
     },
     "bizi_blind_date_builder": {
       "type": "bizi-blind-date-builder",
       "settings": {}
     },
-    "google_ai_storefront_apps": {
-      "type": "google-ai-storefront-apps",
+    "bizi_crate_builder": {
+      "type": "bizi-crate-builder",
       "settings": {}
     },
-    "cross_store_network": {
-      "type": "cross-store-network",
+    "ultra_dynamic_tabbed_catalog": {
+      "type": "ultra-dynamic-tabbed-catalog",
+      "settings": {}
+    },
+    "bizi_gemini_concierge": {
+      "type": "bizi-gemini-concierge",
+      "settings": {}
+    },
+    "shoppable_instagram_feed": {
+      "type": "shoppable-instagram-feed",
       "settings": {}
     }
   },
   "order": [
-    "master_flagship_storefront",
-    "advanced_xray_bento",
-    "advanced_ai_quiz",
-    "bizi_crate_builder",
+    "bizi_bees_hero",
     "bizi_blind_date_builder",
-    "google_ai_storefront_apps",
-    "cross_store_network"
+    "bizi_crate_builder",
+    "ultra_dynamic_tabbed_catalog",
+    "bizi_gemini_concierge",
+    "shoppable_instagram_feed"
   ]
 }
