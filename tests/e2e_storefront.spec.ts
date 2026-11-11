@@ -43,9 +43,15 @@ test.describe('LUMA CLINICAL™ & BIZI BEES™ E-Commerce Verification Suite', (
   });
 
   test('High-ticket product page and 1-Click Sticky Checkout bypass work', async ({ page }) => {
-    // Navigate directly to the flagship LumaGlow wand (or fallback to catalog/showcase)
-    const targetUrl = `${STORE_URL}/products/lumaglow-4-in-1-facial-wand`;
-    const response = await page.goto(targetUrl, { waitUntil: 'domcontentloaded' });
+    // Test live flagship product detail page (Bizi Bees live catalog with fallback to Luma)
+    const livePdpUrl = `${STORE_URL}/products/amber-santal-soy-blend-candle-sweet-amber-creamy-sandalwood-vanilla-orchid`;
+    let response = await page.goto(livePdpUrl, { waitUntil: 'domcontentloaded' });
+    let targetUrl = livePdpUrl;
+
+    if (!response || response.status() !== 200) {
+      targetUrl = `${STORE_URL}/products/lumaglow-4-in-1-facial-wand`;
+      response = await page.goto(targetUrl, { waitUntil: 'domcontentloaded' });
+    }
 
     if (response && response.status() === 200) {
       // 1. Verify product image is rendered and visible
@@ -95,12 +101,16 @@ test.describe('LUMA CLINICAL™ & BIZI BEES™ E-Commerce Verification Suite', (
   });
 
   test('Delivery Estimator displays valid future calendar date', async ({ page }) => {
-    const response = await page.goto(`${STORE_URL}/products/lumaglow-4-in-1-facial-wand`, { waitUntil: 'domcontentloaded' });
+    const pdpUrl = `${STORE_URL}/products/amber-santal-soy-blend-candle-sweet-amber-creamy-sandalwood-vanilla-orchid`;
+    let response = await page.goto(pdpUrl, { waitUntil: 'domcontentloaded' });
+    if (!response || response.status() !== 200) {
+      response = await page.goto(`${STORE_URL}/products/lumaglow-4-in-1-facial-wand`, { waitUntil: 'domcontentloaded' });
+    }
     if (response?.status() === 429) {
       console.log('ℹ️ Shopify returned 429 Too Many Requests. Skipping delivery estimator assertion.');
       return;
     }
-    const deliveryDateEl = page.locator('#dateDelivery, .delivery-date, [id*="delivery"]');
+    const deliveryDateEl = page.locator('#estDelivDate, #dateDelivery, .delivery-date').first();
     
     if (await deliveryDateEl.count() > 0) {
       const dateText = await deliveryDateEl.innerText();

@@ -1,5 +1,5 @@
 # Curated Vintage Book Vault (Open Library Integration)
-*Curated: 2026-11-11 18:45:06 UTC*
+*Curated: 2026-11-11 18:56:45 UTC*
 *Source: Open Library / Internet Archive Open Data API*
 
 ## Curation Methodology

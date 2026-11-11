@@ -1269,34 +1269,27 @@ def write_all_empire_files():
             sections = idx_data.get("sections", {})
             order = idx_data.get("order", [])
 
-            if "master_flagship_storefront" not in sections:
-                sections["master_flagship_storefront"] = {
-                    "type": "master-flagship-storefront",
-                    "settings": {}
-                }
-            if "ember_oak_smoke_lounge" not in sections:
-                sections["ember_oak_smoke_lounge"] = {
-                    "type": "ember-oak-smoke-lounge",
-                    "settings": {}
-                }
-
-            # Position master_flagship_storefront and ember_oak_smoke_lounge in the order
-            new_order = []
-            for s in order:
-                if s not in ["master_flagship_storefront", "ember_oak_smoke_lounge"]:
-                    new_order.append(s)
-            
-            # Place right after hero if hero exists, or at the top
-            insert_pos = 1 if "bizi_bees_hero" in new_order else 0
-            new_order.insert(insert_pos, "master_flagship_storefront")
-            new_order.append("ember_oak_smoke_lounge")
-
-            idx_data["sections"] = sections
-            idx_data["order"] = new_order
+            # Strictly enforce clean brand separation:
+            # Bizi Bees homepage is dedicated to cozy books, crates, and gifts.
+            # Ember & Oak belongs on templates/page.ember-oak.liquid.
+            # Master flagship sections belong on dedicated fleet routes.
+            clean_sections = {
+                "bizi_bees_hero": {"type": "bizi-bees-hero", "settings": {}},
+                "bizi_blind_date_builder": {"type": "bizi-blind-date-builder", "settings": {}},
+                "bizi_crate_builder": {"type": "bizi-crate-builder", "settings": {}},
+                "ultra_dynamic_tabbed_catalog": {"type": "ultra-dynamic-tabbed-catalog", "settings": {}},
+                "advanced_ai_quiz": {"type": "advanced-ai-quiz", "settings": {}},
+                "google_ai_storefront_apps": {"type": "google-ai-storefront-apps", "settings": {}},
+                "bizi_gemini_concierge": {"type": "bizi-gemini-concierge", "settings": {}},
+                "bizi_ugc_community": {"type": "bizi-ugc-community", "settings": {}},
+                "cross_store_network": {"type": "cross-store-network", "settings": {}}
+            }
+            idx_data["sections"] = clean_sections
+            idx_data["order"] = list(clean_sections.keys())
 
             with open(index_json_path, "w", encoding="utf-8") as f:
                 json.dump(idx_data, f, indent=2)
-            print("  ✓ Registered master-flagship-storefront and ember-oak-smoke-lounge in templates/index.json")
+            print("  ✓ Preserved 100% Brand Separation in templates/index.json (Bizi Bees Cozy Boutique)")
         except Exception as e:
             print(f"  ⚠️ Note on index.json: {e}")
 

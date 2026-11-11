@@ -1,5 +1,5 @@
 # DTC Competitor Intelligence & Margin Opportunity Audit
-*Generated: 2026-11-11 18:45:06 UTC*
+*Generated: 2026-11-11 18:56:45 UTC*
 
 ## Executive Summary
 - **Competitors Monitored:** 4

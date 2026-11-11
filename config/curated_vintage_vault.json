@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "source": "Open Library Public Archive",
-  "curated_at": "2026-11-11T18:45:06.255626+00:00",
+  "curated_at": "2026-11-11T18:56:45.655534+00:00",
   "total_curated": 8,
   "books": [
     {
@@ -14,7 +14,7 @@
       "packaging_clues": "A locked room, an eccentric detective, and a secret that won't stay buried.",
       "curated_edition": "Vintage Edition (~1930)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-30-2891",
+      "bizi_sku": "BEE-OL-30-9060",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL39160W"
     },
@@ -28,7 +28,7 @@
       "packaging_clues": "A locked room, an eccentric detective, and a secret that won't stay buried.",
       "curated_edition": "Vintage Edition (~1932)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-32-0181",
+      "bizi_sku": "BEE-OL-32-6317",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL472165W"
     },
@@ -42,7 +42,7 @@
       "packaging_clues": "Fog upon the moors, creaking staircases, and love tainted by ancient curses.",
       "curated_edition": "Vintage Edition (~1962)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-62-0858",
+      "bizi_sku": "BEE-OL-62-6445",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL3171087W"
     },
@@ -56,7 +56,7 @@
       "packaging_clues": "Fog upon the moors, creaking staircases, and love tainted by ancient curses.",
       "curated_edition": "Vintage Edition (~1959)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-59-4076",
+      "bizi_sku": "BEE-OL-59-5301",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL3171069W"
     },
@@ -70,7 +70,7 @@
       "packaging_clues": "First contact, gleaming starships, and the thrilling dawn of the space age.",
       "curated_edition": "Vintage Edition (~1953)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-53-7198",
+      "bizi_sku": "BEE-OL-53-9878",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL46401W"
     },
@@ -84,7 +84,7 @@
       "packaging_clues": "First contact, gleaming starships, and the thrilling dawn of the space age.",
       "curated_edition": "Vintage Edition (~1950)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-50-3191",
+      "bizi_sku": "BEE-OL-50-3483",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL46390W"
     },
@@ -98,7 +98,7 @@
       "packaging_clues": "Dusty country roads, unforgettable summers, and friendships that span a lifetime.",
       "curated_edition": "Vintage Edition (~2018)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-18-1063",
+      "bizi_sku": "BEE-OL-18-4906",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL18766691W"
     },
@@ -112,7 +112,7 @@
       "packaging_clues": "Dusty country roads, unforgettable summers, and friendships that span a lifetime.",
       "curated_edition": "Vintage Edition (~2020)",
       "condition": "Hand-Inspected Very Good (Intact Spine, Supple Pages)",
-      "bizi_sku": "BEE-OL-20-1969",
+      "bizi_sku": "BEE-OL-20-6040",
       "suggested_price": 18.0,
       "open_library_key": "/works/OL28952677W"
     }
