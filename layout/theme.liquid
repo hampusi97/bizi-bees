@@ -109,12 +109,25 @@
     <!-- Self-Hosted Edge Telemetry & Rage-Click Tracker -->
     {% render 'dropper-telemetry' %}
 
-    <!-- Footer Legal Sanitizer & DOM Cleaner -->
+    <!-- Interactive "Break the Wax Seal" VIP Modal -->
+    {% render 'wax-seal-popup' %}
+
+    <!-- Footer Legal Sanitizer & PROVOTODAY DOM Cleaner -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
+        // Suppress $150,000 legal threat blocks in footer
         document.querySelectorAll("footer p, .footer p, .disclaimer, .footer__content-bottom").forEach(function(el) {
           if (el.innerText && (el.innerText.includes("150,000") || el.innerText.includes("Lanham Act") || el.innerText.includes("STRICT LEGAL WARNING"))) {
             el.style.display = "none";
+          }
+        });
+
+        // Suppress legacy PROVOTODAY popups & flash sale modals
+        document.querySelectorAll("[class*='popup'], [class*='modal'], [id*='popup'], [id*='modal'], div").forEach(function(el) {
+          if (el.id === 'waxModal' || el.closest('#waxModal')) return;
+          if (el.innerText && (el.innerText.includes("PROVOTODAY") || el.innerText.includes("PROVO TODAY"))) {
+            el.style.display = "none";
+            if (el.remove) el.remove();
           }
         });
       });

@@ -12,6 +12,10 @@
       "type": "bizi-blind-date-builder",
       "settings": {}
     },
+    "bizi_crate_builder": {
+      "type": "bizi-crate-builder",
+      "settings": {}
+    },
     "bizi_mystery_builder": {
       "type": "bizi-mystery-builder",
       "settings": {}
@@ -25,6 +29,7 @@
     "bizi_bees_hero",
     "ultra_dynamic_catalog",
     "bizi_blind_date_builder",
+    "bizi_crate_builder",
     "bizi_mystery_builder",
     "bizi_gemini_concierge"
   ]

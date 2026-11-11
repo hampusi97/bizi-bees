@@ -27,15 +27,52 @@ h1, h2, h3, .h1, .h2, .h3, .card__heading a {
   letter-spacing: -0.5px !important;
 }
 
-/* 2. PURGE ALL RED BADGES */
-.card__badge, .badge--sale, .badge, [class*="35-off"], [class*="sale-badge"] {
+/* 2. PURGE ALL RED BADGES & FLASH SALE CLUTTER */
+.card__badge,
+.product-card__badge,
+.badge--sale,
+.badge--red,
+.badge,
+[class*="sale-badge"],
+[class*="35-off"],
+[class*="badge--bottom"],
+[class*="badge"][style*="#d90429"],
+[class*="badge"][style*="#dc2626"],
+[class*="badge"][style*="red"],
+.card-image > span[style*="background:#d90429"],
+.card-image > span[style*="background:#dc2626"],
+.card-image > span[style*="background: #d90429"],
+.card-image > span[style*="background: #dc2626"],
+span[style*="35% OFF TODAY"],
+.card-image > span[style*="d90429"],
+.card-image > span[style*="dc2626"],
+div[style*="35% OFF LAUNCH"],
+.card-wrapper [class*="badge"],
+.card-wrapper .card__content .badge {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  height: 0 !important;
   width: 0 !important;
-  padding: 0 !important;
+  height: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+.card__badge::before,
+.card__badge::after,
+.product-card__badge::before,
+.product-card__badge::after,
+.badge--sale::before,
+.badge--sale::after,
+.badge::before,
+.badge::after,
+[class*="sale-badge"]::before,
+[class*="sale-badge"]::after,
+[class*="35-off"]::before,
+[class*="35-off"]::after {
+  content: none !important;
+  display: none !important;
 }
 
 /* 3. TACTILE PRODUCT CARDS */
