@@ -7,6 +7,7 @@ import storeMatrix from "@/config/store_matrix.json";
 import LiveStoresFleetSection from "@/components/LiveStoresFleetSection";
 import WorkspaceAndExecutionHub from "@/components/WorkspaceAndExecutionHub";
 import DropperOsV2CommandPanel from "@/components/DropperOsV2CommandPanel";
+import TikTokShopSyncHub from "@/components/TikTokShopSyncHub";
 
 const STORE_PRESETS: Record<string, { label: string; query: string }[]> = {
   "ember-oak": [
@@ -672,6 +673,9 @@ export default function MissionControlDashboard() {
           onCreateStore={handleCreateNewStore}
           isProvisioning={isProvisioningAll}
         />
+
+        {/* TikTok Shop Product Catalog & Inventory Sync Engine */}
+        <TikTokShopSyncHub />
 
         {/* Dropper OS V2.0.0 Master Architectural Blueprint Subsystems */}
         <DropperOsV2CommandPanel />

@@ -16,9 +16,9 @@ export async function GET(request: Request) {
       domain: s.domain,
       productsCount: s.products.length,
       hero: s.hero,
-      price: s.heroPrice,
+      price: s.soloPrice,
       bundlePrice: s.bundlePrice,
-      creatorCommission: `$${(s.heroPrice * 0.25).toFixed(2)} (25%)`,
+      creatorCommission: `$${(s.soloPrice * 0.25).toFixed(2)} (25%)`,
       syncStatus: "ACTIVE",
     };
   });
