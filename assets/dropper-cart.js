@@ -4,7 +4,7 @@
    ========================================================================== */
 
 (function() {
-  let activeThresholdCents = 5000; // Default $50.00 fallback
+  let activeThresholdCents = 3500; // Default $35.00 threshold for Bizi Bees
   let activeBanditVariant = 'tier-50';
 
   // Autonomous MAB calibration

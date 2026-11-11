@@ -233,14 +233,26 @@ def run_antigravity_fixer():
             ("sections/advanced-xray-bento.liquid", "sections/advanced-xray-bento.liquid"),
             ("sections/advanced-ai-quiz.liquid", "sections/advanced-ai-quiz.liquid"),
             ("sections/ultra-dynamic-tabbed-catalog.liquid", "sections/ultra-dynamic-tabbed-catalog.liquid"),
+            ("sections/main-product.liquid", "sections/main-product.liquid"),
+            ("sections/bizi-gemini-concierge.liquid", "sections/bizi-gemini-concierge.liquid"),
             ("snippets/wax-seal-popup.liquid", "snippets/wax-seal-popup.liquid"),
             ("snippets/dynamic-free-shipping-bar.liquid", "snippets/dynamic-free-shipping-bar.liquid"),
             ("snippets/dynamic-island-resolver.liquid", "snippets/dynamic-island-resolver.liquid"),
             ("snippets/seo-metadata-hub.liquid", "snippets/seo-metadata-hub.liquid"),
             ("snippets/cart-insurance-booster.liquid", "snippets/cart-insurance-booster.liquid"),
             ("snippets/anti-amazon-badges.liquid", "snippets/anti-amazon-badges.liquid"),
+            ("snippets/cart-drawer.liquid", "snippets/cart-drawer.liquid"),
+            ("snippets/editorial-footer.liquid", "snippets/editorial-footer.liquid"),
+            ("snippets/repo-os-global-shield.liquid", "snippets/repo-os-global-shield.liquid"),
+            ("assets/dropper-cart.js", "assets/dropper-cart.js"),
+            ("assets/bizi-bees-boutique.css", "assets/bizi-bees-boutique.css"),
             ("layout/theme.liquid", "layout/theme.liquid"),
-            ("templates/index.json", "templates/index.json")
+            ("templates/index.json", "templates/index.json"),
+            ("templates/index.liquid", "templates/index.liquid"),
+            ("templates/product.liquid", "templates/product.liquid"),
+            ("templates/page.fleet.liquid", "templates/page.fleet.liquid"),
+            ("templates/page.ember-oak.liquid", "templates/page.ember-oak.liquid"),
+            ("templates/page.luma-clinical.liquid", "templates/page.luma-clinical.liquid")
         ]
 
         print("\n🚀 Injecting Assets into Live Theme...")
