@@ -1,0 +1,13 @@
+sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
+DROP-DESK-101,"LumenDesk Edition #1",34,54,8,76.5
+DROP-DESK-102,"LumenDesk Edition #2",41,64,9.5,76.5
+DROP-DESK-103,"LumenDesk Edition #3",48,74,11,76.5
+DROP-DESK-104,"LumenDesk Edition #4",55,84,12.5,76.5
+DROP-DESK-105,"LumenDesk Edition #5",62,94,14,76.5
+DROP-DESK-106,"LumenDesk Edition #6",69,104,15.5,76.5
+DROP-DESK-107,"LumenDesk Edition #7",76,114,17,76.5
+DROP-DESK-108,"LumenDesk Edition #8",83,124,18.5,76.5
+DROP-DESK-109,"LumenDesk Edition #9",90,134,20,76.5
+DROP-DESK-110,"LumenDesk Edition #10",97,144,21.5,76.5
+DROP-DESK-111,"LumenDesk Edition #11",104,154,23,76.5
+DROP-DESK-112,"LumenDesk Edition #12",111,164,24.5,76.5

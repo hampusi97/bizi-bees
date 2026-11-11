@@ -1,0 +1,632 @@
+[
+  {
+    "id": "store-01-bizi-bees",
+    "name": "Bizi Bees Boutique",
+    "branch": "store-01-bizi-bees",
+    "myshopify": "bizibees-store.myshopify.com",
+    "domain": "shopbizibees.com",
+    "mode": "UTAH_PHYSICAL_HUB",
+    "skuPrefix": "UTAH-",
+    "niche": "Curated Pre-Loved Books, Complete Board Games & Utah Finds",
+    "palette": {
+      "background": "#12100E",
+      "surface": "#1C1917",
+      "accent": "#F59E0B"
+    },
+    "vipClub": "The Bizi Hive Society",
+    "cartMilestones": [
+      {
+        "threshold": 35,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 65,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 95,
+        "reward": "Free Solid Brass Bookmark ($16 Value)",
+        "value": 95
+      }
+    ],
+    "explodedHero": "The Utah Reader & Game Night Box",
+    "explodedLayers": [
+      "01 / VINTAGE HARDCOVER EDITION",
+      "02 / COMPLETE BOARD GAME SET",
+      "03 / SOLID BRASS PAGE ANCHOR",
+      "04 / UTAH KRAFT COLLECTOR BOX"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-02-luma-clinical",
+    "name": "Luma Clinical",
+    "branch": "store-02-luma-clinical",
+    "myshopify": "luma-clinical.myshopify.com",
+    "domain": "lumaclinical.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-LUMA-",
+    "niche": "630nm Red-Light Facial Wands & Microcurrent Sculpting",
+    "palette": {
+      "background": "#090A0F",
+      "surface": "#12151F",
+      "accent": "#E11D48"
+    },
+    "vipClub": "Luma Clinical Society",
+    "cartMilestones": [
+      {
+        "threshold": 65,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 110,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 145,
+        "reward": "Free Hyaluronic Conductive Serum ($34 Value)",
+        "value": 145
+      }
+    ],
+    "explodedHero": "LumaGlow 4-in-1 Red Light Sculpting Wand",
+    "explodedLayers": [
+      "01 / 90 ROTATING ALLOY HEAD",
+      "02 / 630nm RED LED MATRIX",
+      "03 / 350uA MICROCURRENT CORE",
+      "04 / 42C THERMAL + SONIC ENGINE"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-03-cryo-halo",
+    "name": "CryoHalo Recovery",
+    "branch": "store-03-cryo-halo",
+    "myshopify": "cryo-halo.myshopify.com",
+    "domain": "cryohalo.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-CRYO-",
+    "niche": "360 Cryotherapy Migraine Caps & Cold Compression",
+    "palette": {
+      "background": "#070B14",
+      "surface": "#0F172A",
+      "accent": "#38BDF8"
+    },
+    "vipClub": "CryoHalo Relief Club",
+    "cartMilestones": [
+      {
+        "threshold": 45,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 80,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 110,
+        "reward": "Free Freezer Vault Pouch ($22 Value)",
+        "value": 110
+      }
+    ],
+    "explodedHero": "CryoHalo 2-Cap Continuous Rotation System",
+    "explodedLayers": [
+      "01 / 100% BLACKOUT LYCRA SHELL",
+      "02 / MEDICAL HYDRO-GEL MATRIX",
+      "03 / TARGETED TEMPLE COMPRESSION",
+      "04 / DUAL-CAP ROTATION VAULT"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-04-sculpt-wave",
+    "name": "SculptWave Body",
+    "branch": "store-04-sculpt-wave",
+    "myshopify": "sculpt-wave.myshopify.com",
+    "domain": "sculptwavebody.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-WAVE-",
+    "niche": "40kHz Ultrasonic Cavitation & Lymphatic Body Sculptors",
+    "palette": {
+      "background": "#110C14",
+      "surface": "#1E1624",
+      "accent": "#C084FC"
+    },
+    "vipClub": "SculptWave Atelier",
+    "cartMilestones": [
+      {
+        "threshold": 65,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 115,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 150,
+        "reward": "Free Botanical Firming Oil ($38 Value)",
+        "value": 150
+      }
+    ],
+    "explodedHero": "SculptWave Pro Ultrasonic Body Sculptor",
+    "explodedLayers": [
+      "01 / BI-POLAR RF RING",
+      "02 / 40kHz ULTRASONIC TRANSDUCER",
+      "03 / FAR-INFRARED LED ARRAY",
+      "04 / CORDLESS PALM CHASSIS"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-05-wonder-hive",
+    "name": "WonderHive Play",
+    "branch": "store-05-wonder-hive",
+    "myshopify": "wonder-hive.myshopify.com",
+    "domain": "wonderhiveplay.com",
+    "mode": "HYBRID_FULFILLMENT",
+    "skuPrefix": "DROP-HIVE-",
+    "niche": "Tactile 10-Frame Math Fidgets & Montessori Sensory STEM",
+    "palette": {
+      "background": "#0F141C",
+      "surface": "#1E293B",
+      "accent": "#FBBF24"
+    },
+    "vipClub": "WonderHive Educators Club",
+    "cartMilestones": [
+      {
+        "threshold": 35,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 65,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 95,
+        "reward": "Free 50-Card Math Challenge Deck ($19 Value)",
+        "value": 95
+      }
+    ],
+    "explodedHero": "WonderHive 10-Frame Sensory Math Kit",
+    "explodedLayers": [
+      "01 / WHISPER-QUIET SILICONE BUBBLES",
+      "02 / BASE-10 VISUAL NUMBER GRID",
+      "03 / FOOD-GRADE WASHABLE CORE",
+      "04 / 50-CARD MATH GAME DECK"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-06-atelier-grid",
+    "name": "Atelier Grid",
+    "branch": "store-06-atelier-grid",
+    "myshopify": "atelier-grid.myshopify.com",
+    "domain": "ateliergrid.com",
+    "mode": "HYBRID_FULFILLMENT",
+    "skuPrefix": "DROP-GRID-",
+    "niche": "2027 Checkered Archival Weekly Planners & Brass Stationery",
+    "palette": {
+      "background": "#0C0C0C",
+      "surface": "#171717",
+      "accent": "#E5E5E5"
+    },
+    "vipClub": "Atelier Archival Collective",
+    "cartMilestones": [
+      {
+        "threshold": 40,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 75,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 105,
+        "reward": "Free Solid Brass Index Clip ($24 Value)",
+        "value": 105
+      }
+    ],
+    "explodedHero": "2027 Checkered Lay-Flat Weekly Planner",
+    "explodedLayers": [
+      "01 / WOVEN BOOKCLOTH HARDCOVER",
+      "02 / SMYTHE-SEWN 180 SPINE",
+      "03 / 120GSM FOUNTAIN-PEN PAPER",
+      "04 / SOLID BRASS INDEX CLIP"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-07-aether-sleep",
+    "name": "Aether Sleep",
+    "branch": "store-07-aether-sleep",
+    "myshopify": "aether-sleep.myshopify.com",
+    "domain": "aethersleep.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-SLEEP-",
+    "niche": "22-Momme Mulberry Silk 3D Zero-Pressure Sleep Masks",
+    "palette": {
+      "background": "#080711",
+      "surface": "#131124",
+      "accent": "#818CF8"
+    },
+    "vipClub": "Aether Night Sanctuary",
+    "cartMilestones": [
+      {
+        "threshold": 45,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 80,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 115,
+        "reward": "Free Silk Pillow Mist ($26 Value)",
+        "value": 115
+      }
+    ],
+    "explodedHero": "Aether 3D Mulberry Silk Sleep System",
+    "explodedLayers": [
+      "01 / 22-MOMME GRADE 6A SILK",
+      "02 / ZERO-EYE-PRESSURE 3D CUPS",
+      "03 / SOUND-DAMPENING EAR WINGS",
+      "04 / SILK WASH POUCH + EARPLUGS"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-08-kova-brew",
+    "name": "Kova Brew",
+    "branch": "store-08-kova-brew",
+    "myshopify": "kova-brew.myshopify.com",
+    "domain": "kovabrew.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-BREW-",
+    "niche": "0.1g Flow-Rate Espresso Scales & Barista Hardware",
+    "palette": {
+      "background": "#0F0C0A",
+      "surface": "#1C1613",
+      "accent": "#D97706"
+    },
+    "vipClub": "Kova Roasters Guild",
+    "cartMilestones": [
+      {
+        "threshold": 50,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 90,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 125,
+        "reward": "Free Magnetic WDT Espresso Needles ($29 Value)",
+        "value": 125
+      }
+    ],
+    "explodedHero": "Kova Auto-Timer Flow-Rate Coffee Scale",
+    "explodedLayers": [
+      "01 / WATERPROOF SILICONE PAD",
+      "02 / HIDDEN LED FLOW-RATE MATRIX",
+      "03 / 0.1g HIGH-PRECISION LOAD CELL",
+      "04 / USB-C ALUMINUM CHASSIS"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-09-spine-align",
+    "name": "SpineAlign Studio",
+    "branch": "store-09-spine-align",
+    "myshopify": "spine-align.myshopify.com",
+    "domain": "spinealignstudio.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-SPINE-",
+    "niche": "Heated Graphene 26 Cervical Neck Traction Cradles",
+    "palette": {
+      "background": "#071013",
+      "surface": "#0F2027",
+      "accent": "#2DD4BF"
+    },
+    "vipClub": "SpineAlign Mobility Club",
+    "cartMilestones": [
+      {
+        "threshold": 50,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 90,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 130,
+        "reward": "Free Acupressure Trigger Ball ($24 Value)",
+        "value": 130
+      }
+    ],
+    "explodedHero": "SpineAlign 3-in-1 Heated Cervical Cradle",
+    "explodedLayers": [
+      "01 / BREATHABLE COOLING MESH",
+      "02 / GRAPHENE FAR-INFRARED HEAT",
+      "03 / DYNAMIC AIRBAG TRACTION",
+      "04 / 26 ORTHOPEDIC CURVE BASE"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-10-terra-paw",
+    "name": "TerraPaw Co.",
+    "branch": "store-10-terra-paw",
+    "myshopify": "terra-paw.myshopify.com",
+    "domain": "terrapawco.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-PAW-",
+    "niche": "Human-Grade Orthopedic Calming Dog Beds & Grooming Vacuums",
+    "palette": {
+      "background": "#0D130E",
+      "surface": "#18221A",
+      "accent": "#4ADE80"
+    },
+    "vipClub": "TerraPaw Pack Club",
+    "cartMilestones": [
+      {
+        "threshold": 55,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 100,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 140,
+        "reward": "Free Calming Silicone Lick Mat ($24 Value)",
+        "value": 140
+      }
+    ],
+    "explodedHero": "TerraPaw Human-Grade Orthopedic Bolster Bed",
+    "explodedLayers": [
+      "01 / VEGAN CALMING FAUX-FUR",
+      "02 / 100% WATERPROOF INNER LINER",
+      "03 / EGG-CRATE ORTHOPEDIC FOAM",
+      "04 / NON-SKID OXFORD CANVAS BASE"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-11-nomad-carry",
+    "name": "NomadCarry",
+    "branch": "store-11-nomad-carry",
+    "myshopify": "nomad-carry.myshopify.com",
+    "domain": "nomadcarry.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-NOMAD-",
+    "niche": "40L Vacuum-Compression Carry-On Backpacks + Micro-Pump",
+    "palette": {
+      "background": "#090A0B",
+      "surface": "#141619",
+      "accent": "#F97316"
+    },
+    "vipClub": "Nomad Frequent Flyer Club",
+    "cartMilestones": [
+      {
+        "threshold": 65,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 130,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 175,
+        "reward": "Free RFID MagSafe Passport Wallet ($39 Value)",
+        "value": 175
+      }
+    ],
+    "explodedHero": "NomadCarry AirVac 40L Carry-On Backpack",
+    "explodedLayers": [
+      "01 / 900D BALLISTIC WATERPROOF SHELL",
+      "02 / AIRTIGHT VACUUM VAULT",
+      "03 / SUSPENDED 17in LAPTOP BUNKER",
+      "04 / USB-C POCKET AIR PUMP"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-12-solace-aroma",
+    "name": "Solace Aroma",
+    "branch": "store-12-solace-aroma",
+    "myshopify": "solace-aroma.myshopify.com",
+    "domain": "solacearoma.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-AROMA-",
+    "niche": "Waterless Cold-Air Nebulizing Diffusers & Hotel Scent Oils",
+    "palette": {
+      "background": "#120F0D",
+      "surface": "#1F1A17",
+      "accent": "#EAB308"
+    },
+    "vipClub": "Solace Scent Society",
+    "cartMilestones": [
+      {
+        "threshold": 50,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 95,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 135,
+        "reward": "Free Santal Hotel Fragrance Oil ($32 Value)",
+        "value": 135
+      }
+    ],
+    "explodedHero": "Solace Anodized Cold-Air Nebulizing Diffuser",
+    "explodedLayers": [
+      "01 / CNC ANODIZED ALLOY TOWER",
+      "02 / COLD-AIR MICRO-NEBULIZER",
+      "03 / 20mL ESSENTIAL OIL CHAMBER",
+      "04 / 5-STAR HOTEL OIL TRIO"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-13-kinetic-grip",
+    "name": "KineticGrip",
+    "branch": "store-13-kinetic-grip",
+    "myshopify": "kinetic-grip.myshopify.com",
+    "domain": "kineticgrip.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-GRIP-",
+    "niche": "50-350 lb CNC Billet Forearm Dynamometers & Pocket Massagers",
+    "palette": {
+      "background": "#09090B",
+      "surface": "#18181B",
+      "accent": "#EF4444"
+    },
+    "vipClub": "Kinetic Iron Club",
+    "cartMilestones": [
+      {
+        "threshold": 45,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 80,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 115,
+        "reward": "Free Silicone Finger Extensor Bands ($19 Value)",
+        "value": 115
+      }
+    ],
+    "explodedHero": "KineticGrip Pro Knurled Aluminum Gripper Set",
+    "explodedLayers": [
+      "01 / DIAMOND-KNURLED BILLET HANDLES",
+      "02 / 50-350 LB CARBON-STEEL SPRING",
+      "03 / FINGER EXTENSOR BAND MATRIX",
+      "04 / HARD EVA CARRY VAULT"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-14-lumen-desk",
+    "name": "LumenDesk",
+    "branch": "store-14-lumen-desk",
+    "myshopify": "lumen-desk.myshopify.com",
+    "domain": "lumendesk.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-DESK-",
+    "niche": "Asymmetric CRI 98+ Zero-Glare Monitor Light Bars & Merino Mats",
+    "palette": {
+      "background": "#0B0D10",
+      "surface": "#161A20",
+      "accent": "#60A5FA"
+    },
+    "vipClub": "LumenDesk Studio Club",
+    "cartMilestones": [
+      {
+        "threshold": 55,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 95,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 135,
+        "reward": "Free Merino Wool Felt Desk Mat ($36 Value)",
+        "value": 135
+      }
+    ],
+    "explodedHero": "LumenDesk Pro Wireless Puck Monitor Bar",
+    "explodedLayers": [
+      "01 / 45 ASYMMETRIC OPTICAL LENS",
+      "02 / CRI 98+ CIRCADIAN LED ARRAY",
+      "03 / CURVED MONITOR COUNTERWEIGHT",
+      "04 / WIRELESS ALUMINUM ROTARY PUCK"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  },
+  {
+    "id": "store-15-verde-hydro",
+    "name": "VerdeHydro",
+    "branch": "store-15-verde-hydro",
+    "myshopify": "verde-hydro.myshopify.com",
+    "domain": "verdehydro.com",
+    "mode": "AUTO_API_DROPSHIP",
+    "skuPrefix": "DROP-VERDE-",
+    "niche": "4000K Full-Spectrum Brass Halo Grow Lights & Self-Watering Glass",
+    "palette": {
+      "background": "#08120E",
+      "surface": "#11221B",
+      "accent": "#34D399"
+    },
+    "vipClub": "Verde Botanical Society",
+    "cartMilestones": [
+      {
+        "threshold": 45,
+        "reward": "Free Shipping",
+        "value": 0
+      },
+      {
+        "threshold": 80,
+        "reward": "Extra 10% Off",
+        "value": 10
+      },
+      {
+        "threshold": 115,
+        "reward": "Free Solid Brass Botanical Mister ($24 Value)",
+        "value": 115
+      }
+    ],
+    "explodedHero": "VerdeHydro Brass Halo Grow Light & Planter",
+    "explodedLayers": [
+      "01 / 4000K SUNLIGHT HALO RING",
+      "02 / 60in TELESCOPIC BRASS ROD",
+      "03 / AUTO-CYCLE 8H/12H/16H TIMER",
+      "04 / SELF-WATERING GLASS VESSEL"
+    ],
+    "dailyTargetUSD": 111.11,
+    "monthlyTargetUSD": 3333.33
+  }
+]
