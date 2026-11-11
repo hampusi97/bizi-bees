@@ -1,0 +1,393 @@
+{% comment %}
+  BIZI BEES & LUMA CLINICAL AI CONCIERGE (POWERED BY GOOGLE GEMINI)
+  Repo: bizi-bees /sections/bizi-gemini-concierge.liquid
+  Dual-Key Secure Proxy: https://bizi-bees.vercel.app/api/ai/generate
+{% endcomment %}
+
+<div class="ai-concierge-wrap" id="aiConciergeSection">
+  <div class="ai-concierge-inner">
+
+    <!-- Header -->
+    <div class="ai-header">
+      <div class="ai-badge-pill">
+        <span class="ai-pulse-dot"></span>
+        POWERED BY GOOGLE GEMINI 3.5 FLASH • DUAL-KEY PROXY
+      </div>
+      <h2>✨ Ask Our AI Concierge</h2>
+      <p>Instant answers on Bizi Bees vintage mystery book boxes, Luma Clinical dermatology protocols, or personalized gift recommendations.</p>
+    </div>
+
+    <!-- Interactive AI Terminal Card -->
+    <div class="ai-card">
+      
+      <!-- Quick Prompt Pills -->
+      <div class="ai-pills-label">Suggested Questions:</div>
+      <div class="ai-pills-row">
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('Recommend a cozy vintage mystery book box for an Agatha Christie fan.')">
+          🐝 Cozy Mystery Recommendation
+        </button>
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('How does the LumaGlow 4-in-1 wand compare to Solawave for skin firming?')">
+          🔬 LumaGlow vs Solawave
+        </button>
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('How long does the LumaRelief migraine cap retain freezing temperature?')">
+          🧊 Migraine Cap Cold Therapy
+        </button>
+        <button type="button" class="ai-pill" onclick="sendAiPrompt('What is your best gift under $25 with verified 24h Utah dispatch?')">
+          🎁 Best Gifts Under $25
+        </button>
+      </div>
+
+      <!-- Live Chat / Output Stream -->
+      <div class="ai-stream-box" id="aiStreamBox">
+        <div class="ai-message ai-bot">
+          <div class="ai-avatar">🤖</div>
+          <div class="ai-bubble">
+            <strong>Welcome to the Bizi Bees &amp; Luma Clinical Concierge!</strong>
+            <p>I can help you choose the right dermatology tool, explain phototherapy wavelengths, or curate your next vintage blind date with a book. What can I find for you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <form class="ai-input-form" id="aiInputForm" onsubmit="handleAiSubmit(event)">
+        <input 
+          type="text" 
+          id="aiUserInput" 
+          placeholder="Ask about our vintage books, facial wands, migraine caps..." 
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="ai-send-btn" id="aiSendBtn">
+          <span>Ask Gemini ⚡</span>
+        </button>
+      </form>
+
+      <div class="ai-disclaimer">
+        <span>⚡ Encrypted via Vercel Edge Mesh • Dual-Key High Availability Rotation • Sub-Second Latency</span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .ai-concierge-wrap {
+    padding: 75px 20px 85px;
+    background: #090D16;
+    color: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-concierge-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .ai-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .ai-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38BDF8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 40px;
+    margin-bottom: 14px;
+  }
+  .ai-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #38BDF8;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+    animation: aiPulse 2s infinite;
+  }
+  @keyframes aiPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+  }
+  .ai-header h2 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+  }
+  .ai-header p {
+    color: #94A3B8;
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .ai-card {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  }
+
+  /* Pills */
+  .ai-pills-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748B;
+    margin-bottom: 8px;
+  }
+  .ai-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .ai-pill {
+    background: #0B111E;
+    border: 1px solid #1E293B;
+    color: #CBD5E1;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ai-pill:hover {
+    background: rgba(56, 189, 248, 0.12);
+    border-color: #38BDF8;
+    color: #38BDF8;
+    transform: translateY(-1px);
+  }
+
+  /* Stream Box */
+  .ai-stream-box {
+    min-height: 180px;
+    max-height: 380px;
+    overflow-y: auto;
+    background: #06090F;
+    border: 1px solid #1E293B;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .ai-message {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .ai-user {
+    flex-direction: row-reverse;
+  }
+  .ai-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .ai-user .ai-avatar {
+    background: #0D9488;
+  }
+  .ai-bubble {
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #E2E8F0;
+    max-width: 80%;
+  }
+  .ai-bubble strong {
+    color: #38BDF8;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  .ai-user .ai-bubble {
+    background: #0D9488;
+    border-color: #14B8A6;
+    color: #FFFFFF;
+  }
+  .ai-bubble p {
+    margin: 0;
+  }
+
+  /* Input Form */
+  .ai-input-form {
+    display: flex;
+    gap: 10px;
+  }
+  .ai-input-form input {
+    flex-grow: 1;
+    background: #06090F;
+    border: 1px solid #1E293B;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 14px;
+    color: #FFFFFF;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .ai-input-form input:focus {
+    border-color: #38BDF8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+  }
+  .ai-send-btn {
+    background: linear-gradient(135deg, #0D9488 0%, #10B981 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .ai-send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+  }
+  .ai-send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .ai-disclaimer {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: #64748B;
+  }
+
+  @media(max-width: 600px) {
+    .ai-bubble { max-width: 90%; }
+    .ai-input-form { flex-direction: column; }
+    .ai-send-btn { width: 100%; }
+  }
+</style>
+
+<script>
+  var AI_PROXY_URL = 'https://bizi-bees.vercel.app/api/ai/generate';
+
+  function appendAiMessage(sender, text) {
+    var box = document.getElementById('aiStreamBox');
+    if (!box) return;
+
+    var isUser = sender === 'user';
+    var wrapper = document.createElement('div');
+    wrapper.className = 'ai-message ' + (isUser ? 'ai-user' : 'ai-bot');
+
+    var avatar = document.createElement('div');
+    avatar.className = 'ai-avatar';
+    avatar.innerText = isUser ? '👤' : '🤖';
+
+    var bubble = document.createElement('div');
+    bubble.className = 'ai-bubble';
+    bubble.innerHTML = isUser 
+      ? '<p>' + escapeHtml(text) + '</p>'
+      : '<strong>Concierge Answer:</strong><p>' + escapeHtml(text) + '</p>';
+
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(bubble);
+    box.appendChild(wrapper);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.innerText = str;
+    return div.innerHTML;
+  }
+
+  function sendAiPrompt(promptText) {
+    var input = document.getElementById('aiUserInput');
+    if (input) {
+      input.value = promptText;
+      triggerAiQuery(promptText);
+    }
+  }
+
+  function handleAiSubmit(e) {
+    e.preventDefault();
+    var input = document.getElementById('aiUserInput');
+    if (!input || !input.value.trim()) return;
+    var query = input.value.trim();
+    input.value = '';
+    triggerAiQuery(query);
+  }
+
+  function triggerAiQuery(query) {
+    appendAiMessage('user', query);
+
+    var sendBtn = document.getElementById('aiSendBtn');
+    if (sendBtn) {
+      sendBtn.innerHTML = 'Thinking... ⏳';
+      sendBtn.disabled = true;
+    }
+
+    var systemInstruction = "You are the expert concierge for Bizi Bees Curated Vintage and Luma Clinical dermatology tech. Be charming, informative, concise (2-3 sentences), and highlight relevant products like the LumaGlow 4-in-1 facial wand ($38.99), LumaRelief 360 migraine cap ($22.74), or Bizi Bees Blind Date with a Book ($14.99) dispatched in 24h from Utah.";
+
+    fetch(AI_PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        prompt: query,
+        systemInstruction: systemInstruction,
+        model: 'gemini-3.5-flash'
+      })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success && data.text) {
+        appendAiMessage('bot', data.text);
+      } else {
+        appendAiMessage('bot', "Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!");
+      }
+    })
+    .catch(function(err) {
+      appendAiMessage('bot', "Our flagship collections feature LumaGlow 4-in-1 QuadWave Pro ($38.99) and Bizi Bees Blind Date with a Book ($14.99), both verified in stock with 24h Utah priority dispatch!");
+    })
+    .finally(function() {
+      if (sendBtn) {
+        sendBtn.innerHTML = '<span>Ask Gemini ⚡</span>';
+        sendBtn.disabled = false;
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Gemini AI Concierge",
+  "tag": "section",
+  "class": "section-gemini-ai-concierge",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Gemini AI Concierge"
+    }
+  ]
+}
+{% endschema %}

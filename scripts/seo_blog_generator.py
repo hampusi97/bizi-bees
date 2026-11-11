@@ -22,6 +22,38 @@ TARGET_STORE_ID = os.getenv("TARGET_STORE_ID", "default")
 TARGET_NICHE = os.getenv("TARGET_NICHE", "beauty")
 ACCESS_TOKEN = os.getenv("SHOPIFY_ADMIN_ACCESS_TOKEN", "")
 
+# Google AI Studio Gemini Dual-Key Configuration
+GEMINI_KEYS = [
+    os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6KRf7i2xt6JjcOVLKjeKIF-br2sjig4qCnDmqivh4KioQ"),
+    os.getenv("GEMINI_API_KEY_SECONDARY", "AQ.Ab8RN6IDgU9VlbJIFYAeXXv8ctsEQGXJuoZPq4jU5cYmZLDbAQ")
+]
+
+def generate_article_with_gemini(topic: str, niche: str = "dermatology"):
+    """Dynamically drafts high-DA articles using Google AI Studio Gemini API with dual-key failover."""
+    if not requests:
+        return None
+    models = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.8-flash"]
+    for key in GEMINI_KEYS:
+        if not key:
+            continue
+        for m in models:
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={key}"
+                prompt = (
+                    f"Write an authoritative 600-word clinical comparison guide for '{topic}' in the '{niche}' space. "
+                    f"Format as HTML with headers, direct comparisons, and 3 clinical FAQs."
+                )
+                res = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=12)
+                if res.status_code == 200:
+                    data = res.json()
+                    candidates = data.get("candidates", [])
+                    if candidates and candidates[0].get("content", {}).get("parts"):
+                        print(f"  ✓ [Gemini AI Engine] Generated article via {m} using API Key")
+                        return candidates[0]["content"]["parts"][0].get("text")
+            except Exception:
+                continue
+    return None
+
 # High-converting programmatic blog blueprints targeting commercial and transactional search queries
 ARTICLES_BLUEPRINT = [
     {
