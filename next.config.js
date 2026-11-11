@@ -5,5 +5,8 @@ module.exports = (phase) => {
     distDir: isDev ? ".next-dev" : ".next",
     output: "standalone",
     reactStrictMode: true,
+    experimental: {
+      serverComponentsExternalPackages: ["firebase-admin", "jose", "jwks-rsa", "pg"],
+    },
   };
 };
