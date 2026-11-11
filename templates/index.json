@@ -4,6 +4,10 @@
       "type": "bizi-bees-hero",
       "settings": {}
     },
+    "ultra_dynamic_catalog": {
+      "type": "ultra-dynamic-tabbed-catalog",
+      "settings": {}
+    },
     "bizi_blind_date_builder": {
       "type": "bizi-blind-date-builder",
       "settings": {}
@@ -19,6 +23,7 @@
   },
   "order": [
     "bizi_bees_hero",
+    "ultra_dynamic_catalog",
     "bizi_blind_date_builder",
     "bizi_mystery_builder",
     "bizi_gemini_concierge"

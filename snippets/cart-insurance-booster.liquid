@@ -1,15 +1,15 @@
 {% comment %}
-  Package Transit Protection Booster
+  Priority US Transit Protection Booster ($1.98)
   Repo: bizi-bees /snippets/cart-insurance-booster.liquid
 {% endcomment %}
 
 <div class="cart-protection-wrap" id="cartProtectionBox">
   <div class="protection-left">
     <div class="shield-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D3B2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
     </div>
     <div class="protection-text">
-      <strong>Priority Domestic Transit Protection</strong>
+      <strong>Priority US Transit Protection</strong>
       <small>Immediate replacement dispatched if parcel is lost, stolen, or damaged in transit.</small>
     </div>
   </div>
@@ -28,11 +28,12 @@
     align-items: center;
     justify-content: space-between;
     background: #FFFFFF;
-    border: 1px solid #E7E5E4;
-    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
     padding: 12px 16px;
     margin: 14px 0;
-    font-family: var(--font-sans, -apple-system, sans-serif);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   }
   .protection-left {
     display: flex;
@@ -48,13 +49,13 @@
   .protection-text strong {
     display: block;
     font-size: 13px;
-    font-weight: 600;
-    color: #1C1917;
+    font-weight: 700;
+    color: #0F172A;
   }
   .protection-text small {
     display: block;
     font-size: 11.5px;
-    color: #78716C;
+    color: #64748B;
     line-height: 1.35;
     margin-top: 2px;
   }
@@ -65,16 +66,15 @@
     flex-shrink: 0;
   }
   .protection-price {
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #2D3B2D;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0D9488;
   }
-  /* The switch - the box around the slider */
   .switch {
     position: relative;
     display: inline-block;
-    width: 36px;
-    height: 20px;
+    width: 38px;
+    height: 22px;
   }
   .switch input { 
     opacity: 0;
@@ -88,15 +88,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #D6D3D1;
+    background-color: #CBD5E1;
     transition: .3s cubic-bezier(0.16, 1, 0.3, 1);
     border-radius: 20px;
   }
   .slider:before {
     position: absolute;
     content: "";
-    height: 14px;
-    width: 14px;
+    height: 16px;
+    width: 16px;
     left: 3px;
     bottom: 3px;
     background-color: white;
@@ -104,7 +104,7 @@
     border-radius: 50%;
   }
   input:checked + .slider {
-    background-color: #2D3B2D;
+    background-color: #0D9488;
   }
   input:checked + .slider:before {
     transform: translateX(16px);
@@ -117,10 +117,12 @@
       if (window.DropperCart) {
         window.DropperCart.addItem({ id: '44991283999999', quantity: 1 }, false);
       }
+      document.dispatchEvent(new CustomEvent('insurance:added', { detail: { price: 1.98 } }));
     } else {
       if (window.DropperCart) {
         window.DropperCart.updateQty('44991283999999', 0);
       }
+      document.dispatchEvent(new CustomEvent('insurance:removed', { detail: { price: 1.98 } }));
     }
   }
 </script>

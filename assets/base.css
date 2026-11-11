@@ -1,43 +1,27 @@
 /* ==========================================================
-   BIZI BEES BOUTIQUE & BOOKSHOP — COZY EDITORIAL DESIGN SYSTEM
-   Design Tokens: Warm Linen (#FAF7F2), Deep Coffee (#29231E),
-   Honey Amber (#D9822B), Bookleaf Olive (#4B5842), Soft Parchment (#EADBCE)
+   BIZI BEES BOUTIQUE & DTC FLEET — IMMEDIATE VISUAL REPAIR STYLESHEET
+   W3C-Compliant Global Overrides & Visual Harmonization
    ========================================================== */
 
 :root {
-  --bb-bg: #FAF7F2;          /* Warm Linen / Oatmeal */
-  --bb-surface: #FFFFFF;     /* Pure White Card */
-  --bb-espresso: #29231E;    /* Deep Coffee Text */
-  --bb-muted: #786C62;       /* Warm Earth Muted Text */
-  --bb-honey: #D9822B;       /* Signature Honey Gold */
-  --bb-honey-hover: #B86B1F;
-  --bb-olive: #4B5842;       /* Vintage Bookleaf Olive */
-  --bb-border: #EADBCE;      /* Soft Parchment Border */
-  --bb-radius: 18px;
-  --bb-shadow: 0 12px 30px rgba(75, 58, 43, 0.08);
+  --bb-bg: #FAF7F2;          /* Warm Linen / Editorial Oatmeal */
+  --bb-surface: #FFFFFF;     /* Clean White Surface */
+  --bb-espresso: #0F172A;    /* Obsidian Deep Slate */
+  --bb-muted: #64748B;       /* Slate Muted Text */
+  --bb-teal: #0D9488;        /* Clinical Teal Accent */
+  --bb-teal-hover: #0F766E;
+  --bb-honey: #D9822B;       /* Honey Gold Accent */
+  --bb-border: #E2E8F0;      /* Crisp Structural Border */
+  --bb-strike: #94A3B8;      /* Neutral Strikethrough */
 }
 
-body, .gradient, main, #MainContent {
-  background-color: var(--bb-bg) !important;
-  color: var(--bb-espresso) !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif !important;
-}
-
-/* 1. EDITORIAL SERIF HEADINGS */
-h1, h2, h3, .h1, .h2, .h3, .card__heading a, .product__title, .banner__heading {
-  font-family: Georgia, "Playfair Display", "Times New Roman", serif !important;
-  color: var(--bb-espresso) !important;
-  letter-spacing: -0.5px !important;
-}
-
-/* 2. PURGE ALL RED BADGES & FLASH SALE CLUTTER */
+/* 1. ERADICATE ALL GIANT RED RECTANGULAR BADGES */
 .card__badge,
 .product-card__badge,
 .badge--sale,
-.badge--red,
 .badge,
-[class*="35-off"],
 [class*="sale-badge"],
+[class*="35-off"],
 [class*="badge--bottom"],
 [class*="badge"][style*="#d90429"],
 [class*="badge"][style*="#dc2626"],
@@ -55,44 +39,46 @@ div[style*="35% OFF LAUNCH"],
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  height: 0 !important;
   width: 0 !important;
-  padding: 0 !important;
+  height: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
 }
 
-/* 3. TACTILE PRODUCT CARDS */
-.card-wrapper {
-  background: var(--bb-surface) !important;
-  border: 1px solid var(--bb-border) !important;
-  border-radius: var(--bb-radius) !important;
-  box-shadow: 0 4px 20px rgba(41, 35, 30, 0.04) !important;
-  padding: 14px !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  overflow: hidden !important;
+.card__badge::before,
+.card__badge::after,
+.product-card__badge::before,
+.product-card__badge::after,
+.badge--sale::before,
+.badge--sale::after,
+.badge::before,
+.badge::after,
+[class*="sale-badge"]::before,
+[class*="sale-badge"]::after,
+[class*="35-off"]::before,
+[class*="35-off"]::after {
+  content: none !important;
+  display: none !important;
 }
 
-.card-wrapper:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: var(--bb-shadow) !important;
-  border-color: #D6C2AF !important;
-}
-
+/* 2. RESTORE PRODUCT PHOTOGRAPHY */
 .card__media,
 .card-wrapper .media,
 .product-card .media,
 .media--square,
 .card-image,
 .dyn-card-media {
-  position: relative !important;
-  background: #FDFBF7 !important;
+  background: #FFFFFF !important;
   border-radius: 14px !important;
   overflow: hidden !important;
   padding: 10px !important;
+  position: relative !important;
 }
 
 .card__media img,
 .card-wrapper .media img,
+.product-card .media img,
 .product__media img,
 .card-image img,
 .dyn-card-media img,
@@ -101,32 +87,65 @@ div[style*="35% OFF LAUNCH"],
   visibility: visible !important;
   display: block !important;
   object-fit: contain !important;
-  transition: transform 0.4s ease !important;
+  transition: transform 0.35s ease !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 .card-wrapper:hover .card__media img,
-.card-wrapper:hover .media img {
-  transform: scale(1.05) !important;
+.card-wrapper:hover .media img,
+.product-card:hover .media img,
+.card:hover .card__media img,
+.dyn-card:hover .dyn-card-media img {
+  transform: scale(1.04) !important;
 }
 
-/* 4. HONEY GOLD & ESPRESSO PRICING */
+/* 3. ELEVATE PRODUCT CARDS */
+.card-wrapper,
+.product-card,
+.card,
+.dyn-card {
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+  padding: 14px !important;
+  background: #FFFFFF !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+}
+
+.card-wrapper:hover,
+.product-card:hover,
+.card:hover,
+.dyn-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1) !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* 4. PRICING: OBSIDIAN & MUTED STRIKETHROUGH */
 .price-item--sale,
 .price__regular .price-item,
-.price-item {
-  color: var(--bb-espresso) !important;
-  font-weight: 800 !important;
+.price-item,
+.dyn-price strong,
+.product__price .price {
+  color: #0F172A !important;
   font-size: 18px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.3px !important;
 }
 
-.price-item--regular {
-  color: #9C8E82 !important;
-  text-decoration: line-through !important;
+.price-item--regular,
+.price__sale .price-item--regular,
+.dyn-price .dyn-strike,
+.product-card .compare-at-price {
+  color: #94A3B8 !important;
   font-size: 13px !important;
-  margin-left: 6px !important;
+  text-decoration: line-through !important;
   font-weight: 500 !important;
+  margin-left: 6px !important;
 }
 
-/* 5. COZY BOUTIQUE PILL BUTTONS */
+/* 5. MODERNIZE BUTTONS INTO SLEEK PILLS WITH CLINICAL TEAL HOVER */
 button:not(.exit-close-btn),
 .button,
 .button--primary,
@@ -136,14 +155,15 @@ button:not(.exit-close-btn),
 .boutique-btn-primary,
 .product-form__submit {
   border-radius: 50px !important;
-  background-color: var(--bb-espresso) !important;
+  background: #0F172A !important;
   color: #FFFFFF !important;
+  padding: 12px 28px !important;
   font-weight: 700 !important;
-  font-size: 14px !important;
-  letter-spacing: 0.5px !important;
-  padding: 14px 30px !important;
   border: none !important;
-  transition: all 0.25s ease !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 button:not(.exit-close-btn):hover,
@@ -154,55 +174,68 @@ button:not(.exit-close-btn):hover,
 .sticky-action-btn:hover,
 .boutique-btn-primary:hover,
 .product-form__submit:hover {
-  background-color: var(--bb-honey) !important;
+  background: #0D9488 !important;
   color: #FFFFFF !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(217, 130, 43, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(13, 148, 136, 0.25) !important;
 }
 
-/* 6. WARM ANNOUNCEMENT BAR */
-.announcement-bar {
-  background: var(--bb-espresso) !important;
-  color: #F7EFE6 !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 1px !important;
-  padding: 9px 0 !important;
-}
-
-.announcement-bar a {
-  color: #FCD34D !important;
-  text-decoration: underline !important;
-}
-
-/* 7. NEUTRALIZE CLINICAL STATS BAR & REPLACE WITH COZY PILLARS */
+/* 6. NEUTRALIZE STATS BAR WITH CLINICAL TEAL ACCENTS */
 .clinical-stats-bar,
 [class*="stats"],
-[class*="counter"] {
-  background: #FDFBF7 !important;
-  border: 1px solid var(--bb-border) !important;
+[class*="counter"],
+.stats-banner,
+.social-proof-stats {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
   border-radius: 16px !important;
-  padding: 24px 15px !important;
+  padding: 20px 16px !important;
 }
 
 .clinical-stats-bar strong,
+.clinical-stats-bar h3,
 [class*="stats"] strong,
-[class*="stats"] h3 {
-  color: var(--bb-espresso) !important;
-  font-size: 28px !important;
+[class*="stats"] h3,
+[class*="counter"] strong,
+.stat-number {
+  color: #0D9488 !important;
+  font-size: 26px !important;
   font-weight: 900 !important;
+  line-height: 1.2 !important;
 }
 
 .clinical-stats-bar span,
-[class*="stats"] p {
-  color: var(--bb-muted) !important;
-  font-size: 12px !important;
+.clinical-stats-bar p,
+[class*="stats"] span,
+[class*="stats"] p,
+[class*="counter"] p,
+.stat-label {
+  color: #64748B !important;
+  font-size: 13px !important;
   font-weight: 600 !important;
 }
 
-/* 8. PURGE THE $150,000 LEGAL THREAT TEXT IN FOOTER */
-footer p:contains("150,000"),
-footer p:contains("Lanham Act"),
-.footer__content-bottom:has(p:contains("STRICT LEGAL WARNING")) {
-  display: none !important;
+/* 7. GLOBAL EDITORIAL TYPOGRAPHY & BODY HARMONIZATION */
+body, .gradient, main, #MainContent {
+  background-color: var(--bb-bg) !important;
+  color: var(--bb-espresso) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .h1, .h2, .h3, .card__heading a, .product__title, .banner__heading {
+  font-family: Georgia, "Playfair Display", "Times New Roman", serif !important;
+  color: #0F172A !important;
+  letter-spacing: -0.4px !important;
+}
+
+/* Clean Header & Navigation */
+.header, .header-wrapper, .announcement-bar {
+  background-color: #FAF7F2 !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+.header__menu-item, .header__heading-link {
+  color: #0F172A !important;
+  font-weight: 600 !important;
 }

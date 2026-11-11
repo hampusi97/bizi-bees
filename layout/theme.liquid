@@ -24,6 +24,9 @@
       <meta name="description" content="Bizi Bees Boutique & Bookshop — Curated vintage paperbacks, Blind Date with a Book mystery packages, retro family games, and artisan boutique stationery.">
     {%- endif -%}
 
+    <!-- Universal SEO Metadata Hub -->
+    {% render 'seo-metadata-hub' %}
+
     {{ content_for_header }}
 
     <!-- Bizi Bees Boutique Cozy Editorial Design System -->
@@ -106,27 +109,15 @@
     <!-- Self-Hosted Edge Telemetry & Rage-Click Tracker -->
     {% render 'dropper-telemetry' %}
 
-    <!-- DOM Sanitizer: Purge any residual $150,000 legal threat text -->
+    <!-- Footer Legal Sanitizer & DOM Cleaner -->
     <script>
-      (function() {
-        function sanitizeThreatBlocks() {
-          var elements = document.querySelectorAll('p, div, span, small, footer');
-          elements.forEach(function(el) {
-            var txt = el.textContent || '';
-            if (txt.indexOf('150,000') !== -1 || txt.indexOf('Lanham Act') !== -1 || txt.indexOf('STRICT LEGAL WARNING') !== -1) {
-              if (el.tagName.toLowerCase() === 'p' || el.classList.contains('footer__content-bottom')) {
-                el.style.display = 'none';
-                el.remove();
-              }
-            }
-          });
-        }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', sanitizeThreatBlocks);
-        } else {
-          sanitizeThreatBlocks();
-        }
-      })();
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("footer p, .footer p, .disclaimer, .footer__content-bottom").forEach(function(el) {
+          if (el.innerText && (el.innerText.includes("150,000") || el.innerText.includes("Lanham Act") || el.innerText.includes("STRICT LEGAL WARNING"))) {
+            el.style.display = "none";
+          }
+        });
+      });
     </script>
   </body>
 </html>

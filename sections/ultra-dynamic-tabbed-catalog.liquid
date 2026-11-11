@@ -19,25 +19,19 @@
   <div class="dyn-tabs-container">
     <div class="dyn-tabs-track" role="tablist" aria-label="Catalog Categories">
       <button class="dyn-tab-btn active" onclick="switchCategory('all', this)" type="button" role="tab" aria-selected="true">
-        <span>All Curations</span>
-      </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('bizibees', this)" type="button" role="tab" aria-selected="false">
-        <span>Bizi Bees™ Curations</span>
+        <span>✨ All Flagship Items</span>
       </button>
       <button class="dyn-tab-btn" onclick="switchCategory('clinical', this)" type="button" role="tab" aria-selected="false">
-        <span>Clinical Rituals</span>
+        <span>🔬 Luma Clinical™</span>
       </button>
       <button class="dyn-tab-btn" onclick="switchCategory('relief', this)" type="button" role="tab" aria-selected="false">
-        <span>Therapeutic Relief</span>
+        <span>🧊 Migraine &amp; Relief</span>
       </button>
       <button class="dyn-tab-btn" onclick="switchCategory('books', this)" type="button" role="tab" aria-selected="false">
-        <span>Books &amp; Literature</span>
+        <span>📖 Books &amp; Puzzles</span>
       </button>
       <button class="dyn-tab-btn" onclick="switchCategory('gifts', this)" type="button" role="tab" aria-selected="false">
-        <span>Gifts Under $25</span>
-      </button>
-      <button class="dyn-tab-btn" onclick="switchCategory('ai-concierge', this)" type="button" role="tab" aria-selected="false">
-        <span>🤖 Ask Gemini AI</span>
+        <span>🎁 Gifts Under $25</span>
       </button>
       <div class="dyn-tab-slider" id="tabSlider"></div>
     </div>
@@ -270,8 +264,8 @@
       </div>
     </div>
 
-    <!-- Item 9: 10 Frame Fidgets (Bizi Bees / Gifts) -->
-    <div class="dyn-card" data-category="bizibees gifts all" data-tilt>
+    <!-- Item 9: 10 Frame Fidgets (Books & Puzzles / Gifts) -->
+    <div class="dyn-card" data-category="books gifts all" data-tilt>
       <div class="dyn-card-media">
         <span class="dyn-tag-hsa">🧩 Focus &amp; Sensory</span>
         <img 
@@ -914,17 +908,43 @@
       .then(function(res) {
         if (!res.ok) {
           window.location.href = targetUrl;
-          return;
+          return null;
         }
+        return res.json();
+      })
+      .then(function(item) {
+        if (!item) return;
         btn.innerHTML = '<span>✓ Added to Bag!</span>';
-        btn.style.background = '#10B981';
-        setTimeout(function() {
-          window.location.href = '/checkout';
-        }, 350);
+        btn.style.background = '#0D9488';
+
+        // Broadcast cart:updated event and refresh cart state
+        fetch('/cart.js')
+          .then(function(cRes) { return cRes.json(); })
+          .then(function(cart) {
+            document.dispatchEvent(new CustomEvent('cart:updated', { detail: cart }));
+            document.dispatchEvent(new CustomEvent('cart:change', { detail: cart }));
+
+            // Open cart drawer if present
+            var drawer = document.querySelector('cart-drawer') || document.getElementById('cartDrawer') || document.querySelector('.cart-drawer');
+            if (window.openCartDrawer) {
+              window.openCartDrawer();
+            } else if (drawer && typeof drawer.open === 'function') {
+              drawer.open();
+            } else if (drawer && drawer.classList) {
+              drawer.classList.add('is-open', 'active');
+            } else {
+              setTimeout(function() {
+                window.location.href = '/checkout';
+              }, 400);
+            }
+          })
+          .catch(function() {
+            window.location.href = '/checkout';
+          });
       })
       .catch(function() {
         btn.innerHTML = '<span>✓ Redirecting...</span>';
-        btn.style.background = '#10B981';
+        btn.style.background = '#0D9488';
         setTimeout(function() {
           window.location.href = targetUrl;
         }, 300);
@@ -932,7 +952,7 @@
     } else {
       setTimeout(function() {
         btn.innerHTML = '<span>✓ Redirecting...</span>';
-        btn.style.background = '#10B981';
+        btn.style.background = '#0D9488';
         window.location.href = targetUrl;
       }, 300);
     }

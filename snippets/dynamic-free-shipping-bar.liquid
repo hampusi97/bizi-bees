@@ -1,10 +1,9 @@
 {% comment %}
-  Dynamic Real-Time Free Shipping Threshold Bar — Bizi Bees Boutique
+  Dynamic Real-Time Free Shipping Threshold Bar — $40.00 Target
   Repo: bizi-bees /snippets/dynamic-free-shipping-bar.liquid
-  Threshold: $35.00 (3500 cents)
 {% endcomment %}
 
-{% assign free_shipping_threshold = 3500 %} <!-- Threshold set to $35.00 (in cents) -->
+{% assign free_shipping_threshold = 4000 %} <!-- Threshold set to $40.00 (4000 cents) -->
 {% assign cart_total = cart.total_price %}
 {% assign remaining_amount = free_shipping_threshold | minus: cart_total %}
 {% assign progress_pct = cart_total | times: 100.0 | divided_by: free_shipping_threshold %}
@@ -13,7 +12,7 @@
 <div class="dynamic-shipping-bar-container" id="shippingBarContainer">
   <div class="shipping-bar-text" id="shippingBarText">
     {% if cart_total >= free_shipping_threshold %}
-      🎉 <strong style="color: #29231E;">Unlocked! You've qualified for FREE US Tracked Shipping! 📦</strong>
+      🎉 <strong class="shipping-unlocked-msg">Unlocked! You've qualified for FREE US Tracked Shipping! 📦</strong>
     {% else %}
       🐝 You are only <strong class="shipping-highlight" id="shippingRemaining">${{ remaining_amount | money_without_currency }}</strong> away from <strong>FREE US Tracked Shipping</strong>!
     {% endif %}
@@ -30,7 +29,7 @@
   .dynamic-shipping-bar-container {
     width: 100%;
     background: #FAF7F2;
-    border-bottom: 1px solid #EADBCE;
+    border-bottom: 1px solid #E2E8F0;
     padding: 10px 16px 12px;
     box-sizing: border-box;
     text-align: center;
@@ -41,20 +40,25 @@
   .shipping-bar-text {
     font-size: 13px;
     font-weight: 600;
-    color: #29231E;
+    color: #0F172A;
     margin-bottom: 8px;
     letter-spacing: -0.2px;
   }
   .shipping-highlight {
-    color: #D9822B;
+    color: #0D9488;
     font-weight: 800;
     font-size: 14px;
   }
+  .shipping-unlocked-msg {
+    color: #059669;
+    font-weight: 800;
+    font-size: 13.5px;
+  }
   .shipping-progress-track {
     position: relative;
-    max-width: 500px;
-    height: 7px;
-    background: #EADBCE;
+    max-width: 520px;
+    height: 8px;
+    background: #E2E8F0;
     border-radius: 20px;
     margin: 0 auto;
     overflow: visible;
@@ -62,19 +66,19 @@
   .shipping-progress-bar {
     position: relative;
     height: 100%;
-    background: linear-gradient(90deg, #D9822B 0%, #B86B1F 100%);
+    background: linear-gradient(90deg, #0D9488 0%, #14B8A6 100%);
     border-radius: 20px;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
   }
   .shipping-progress-bar.completed {
-    background: #4B5842;
-    box-shadow: 0 0 10px rgba(75, 88, 66, 0.4);
+    background: #10B981 !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.45) !important;
   }
   .truck-icon {
     position: absolute;
     right: -10px;
     top: -9px;
-    font-size: 13px;
+    font-size: 14px;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
     transition: all 0.3s ease;
   }
@@ -86,13 +90,12 @@
 
 <script>
   (function() {
-    const THRESHOLD = 3500; // $35.00 in cents
+    const THRESHOLD = 4000; // $40.00 in cents
 
-    // Real-Time Interceptor: Listens for any Add to Cart or Quantity Change
     function refreshShippingBar() {
       fetch('/cart.js')
-        .then(res => res.json())
-        .then(cart => {
+        .then(function(res) { return res.json(); })
+        .then(function(cart) {
           const total = cart.total_price;
           const container = document.getElementById('shippingBarContainer');
           const textEl = document.getElementById('shippingBarText');
@@ -106,29 +109,33 @@
 
           if (total >= THRESHOLD) {
             barEl.classList.add('completed');
-            textEl.innerHTML = `🎉 <strong style="color: #29231E;">Unlocked! You've qualified for FREE US Tracked Shipping! 📦</strong>`;
+            textEl.innerHTML = '🎉 <strong class="shipping-unlocked-msg">Unlocked! You\'ve qualified for FREE US Tracked Shipping! 📦</strong>';
           } else {
             barEl.classList.remove('completed');
             const diff = ((THRESHOLD - total) / 100).toFixed(2);
-            textEl.innerHTML = `🐝 You are only <strong class="shipping-highlight">$${diff}</strong> away from <strong>FREE US Tracked Shipping</strong>!`;
+            textEl.innerHTML = '🐝 You are only <strong class="shipping-highlight">$' + diff + '</strong> away from <strong>FREE US Tracked Shipping</strong>!';
           }
         })
-        .catch(err => console.debug('Shipping bar refresh notice:', err));
+        .catch(function(err) {
+          console.debug('Shipping bar refresh notice:', err);
+        });
     }
 
-    // Automatically recalculates when cart drawer opens or items change
+    // Automatically recalculates when cart is updated or changed
     document.addEventListener('cart:updated', refreshShippingBar);
     document.addEventListener('cart:change', refreshShippingBar);
 
-    // Global fetch listener to catch any custom theme AJAX cart updates
-    const origFetch = window.fetch;
-    window.fetch = function() {
-      return origFetch.apply(this, arguments).then(response => {
-        if (arguments[0] && typeof arguments[0] === 'string' && (arguments[0].includes('/cart/add') || arguments[0].includes('/cart/change'))) {
-          setTimeout(refreshShippingBar, 300);
-        }
-        return response;
-      });
-    };
+    // Global fetch interceptor to catch any AJAX cart operations
+    if (typeof window !== 'undefined' && window.fetch) {
+      const origFetch = window.fetch;
+      window.fetch = function() {
+        return origFetch.apply(this, arguments).then(function(response) {
+          if (arguments[0] && typeof arguments[0] === 'string' && (arguments[0].includes('/cart/add') || arguments[0].includes('/cart/change') || arguments[0].includes('/cart/update'))) {
+            setTimeout(refreshShippingBar, 300);
+          }
+          return response;
+        });
+      };
+    }
   })();
 </script>
