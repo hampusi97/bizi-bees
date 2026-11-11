@@ -1,0 +1,1275 @@
+{
+  "version": "2.0",
+  "synced_at": "2026-11-11T18:20:09.524227+00:00",
+  "total_products": 30,
+  "total_stores": 15,
+  "default_affiliate_commission": "25%",
+  "products": [
+    {
+      "shopify_store_id": "ember-oak",
+      "shopify_domain": "ember-oak.myshopify.com",
+      "shopify_product_id": "ember-oak-hero",
+      "tiktok_product_name": "Ember & Oak\u2122 Reserve Spanish Cedar Humidor & Aficionado Torch Kit (Solo)",
+      "tiktok_category_id": "100800",
+      "tiktok_category_name": "Home & Kitchen > Bar & Smoking Accessories > Humidors & Cutters",
+      "description": "The flagship Spanish Cedar Humidor & Aficionado Torch Kit engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Cut-Crystal Cigar & Pipe Rest ($24 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Ember & Oak\u2122 Reserve",
+      "main_images": [
+        {
+          "url": "https://ember-oak.myshopify.com/cdn/shop/files/ember-oak-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "EMBEROAK-EMBER-OAK-HERO",
+          "original_price": "86.40",
+          "sale_price": "48.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "12.00"
+        }
+      ],
+      "package_weight_lbs": 3.8,
+      "package_weight_grams": 1723,
+      "package_dimensions_in": {
+        "length": 12,
+        "width": 10,
+        "height": 5
+      },
+      "viral_hashtags": [
+        "#cigarlife",
+        "#whiskeyandcigars",
+        "#gentlemanstyle",
+        "#mensluxury"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523029+00:00"
+    },
+    {
+      "shopify_store_id": "ember-oak",
+      "shopify_domain": "ember-oak.myshopify.com",
+      "shopify_product_id": "ember-oak-vip-bundle",
+      "tiktok_product_name": "Ember & Oak\u2122 Reserve Spanish Cedar Humidor & Aficionado Torch Kit [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "100800",
+      "tiktok_category_name": "Home & Kitchen > Bar & Smoking Accessories > Humidors & Cutters",
+      "description": "The ultimate Spanish Cedar Humidor & Aficionado Torch Kit VIP Bundle. Automatically unlocks complimentary Cut-Crystal Cigar & Pipe Rest ($24 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Cut-Crystal Cigar & Pipe Rest ($24 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Cut-Crystal Cigar & Pipe Rest ($24 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Ember & Oak\u2122 Reserve",
+      "main_images": [
+        {
+          "url": "https://ember-oak.myshopify.com/cdn/shop/files/ember-oak-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "EMBEROAK-EMBER-OAK-VIP-BUNDLE",
+          "original_price": "124.80",
+          "sale_price": "78.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "19.50"
+        }
+      ],
+      "package_weight_lbs": 3.8,
+      "package_weight_grams": 1723,
+      "package_dimensions_in": {
+        "length": 12,
+        "width": 10,
+        "height": 5
+      },
+      "viral_hashtags": [
+        "#cigarlife",
+        "#whiskeyandcigars",
+        "#gentlemanstyle",
+        "#mensluxury"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523409+00:00"
+    },
+    {
+      "shopify_store_id": "bizi-bees",
+      "shopify_domain": "bizibees-store.myshopify.com",
+      "shopify_product_id": "bizi-bees-hero",
+      "tiktok_product_name": "Bizi Bees Boutique Blind Date with a Book & Cozy Evening Crate (Solo)",
+      "tiktok_category_id": "700300",
+      "tiktok_category_name": "Books, Movies & Music > Books > Curated Fiction & Gift Editions",
+      "description": "The flagship Blind Date with a Book & Cozy Evening Crate engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Solid Brass Honeybee Bookmark ($12 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Bizi Bees Boutique",
+      "main_images": [
+        {
+          "url": "https://bizibees-store.myshopify.com/cdn/shop/files/bizi-bees-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "BIZIBEES-BIZI-BEES-HERO",
+          "original_price": "26.98",
+          "sale_price": "14.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "3.75"
+        }
+      ],
+      "package_weight_lbs": 1.75,
+      "package_weight_grams": 793,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 7,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#booktok",
+        "#blinddatewithabook",
+        "#cozytok",
+        "#darkacademia",
+        "#giftideas"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523427+00:00"
+    },
+    {
+      "shopify_store_id": "bizi-bees",
+      "shopify_domain": "bizibees-store.myshopify.com",
+      "shopify_product_id": "bizi-bees-vip-bundle",
+      "tiktok_product_name": "Bizi Bees Boutique Blind Date with a Book & Cozy Evening Crate [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "700300",
+      "tiktok_category_name": "Books, Movies & Music > Books > Curated Fiction & Gift Editions",
+      "description": "The ultimate Blind Date with a Book & Cozy Evening Crate VIP Bundle. Automatically unlocks complimentary Solid Brass Honeybee Bookmark ($12 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Solid Brass Honeybee Bookmark ($12 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Solid Brass Honeybee Bookmark ($12 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Bizi Bees Boutique",
+      "main_images": [
+        {
+          "url": "https://bizibees-store.myshopify.com/cdn/shop/files/bizi-bees-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "BIZIBEES-BIZI-BEES-VIP-BUNDLE",
+          "original_price": "60.80",
+          "sale_price": "38.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "9.50"
+        }
+      ],
+      "package_weight_lbs": 1.75,
+      "package_weight_grams": 793,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 7,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#booktok",
+        "#blinddatewithabook",
+        "#cozytok",
+        "#darkacademia",
+        "#giftideas"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523438+00:00"
+    },
+    {
+      "shopify_store_id": "luma-clinical",
+      "shopify_domain": "luma-clinical.myshopify.com",
+      "shopify_product_id": "luma-clinical-hero",
+      "tiktok_product_name": "Luma Clinical\u2122 LumaGlow\u2122 QuadWave Pro 4-in-1 Wand (Solo)",
+      "tiktok_category_id": "600102",
+      "tiktok_category_name": "Beauty & Personal Care > Skin Care Tools > Facial Cleansing & Toning Devices",
+      "description": "The flagship LumaGlow\u2122 QuadWave Pro 4-in-1 Wand engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Full-Size Activating Peptide Serum ($24 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Luma Clinical\u2122",
+      "main_images": [
+        {
+          "url": "https://luma-clinical.myshopify.com/cdn/shop/files/luma-clinical-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMACLINICAL-LUMA-CLINICAL-HERO",
+          "original_price": "70.18",
+          "sale_price": "38.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "9.75"
+        }
+      ],
+      "package_weight_lbs": 0.85,
+      "package_weight_grams": 385,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 4,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#skintok",
+        "#redlighttherapy",
+        "#microcurrent",
+        "#jawlinecheck",
+        "#antiaging"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523450+00:00"
+    },
+    {
+      "shopify_store_id": "luma-clinical",
+      "shopify_domain": "luma-clinical.myshopify.com",
+      "shopify_product_id": "luma-clinical-vip-bundle",
+      "tiktok_product_name": "Luma Clinical\u2122 LumaGlow\u2122 QuadWave Pro 4-in-1 Wand [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "600102",
+      "tiktok_category_name": "Beauty & Personal Care > Skin Care Tools > Facial Cleansing & Toning Devices",
+      "description": "The ultimate LumaGlow\u2122 QuadWave Pro 4-in-1 Wand VIP Bundle. Automatically unlocks complimentary Full-Size Activating Peptide Serum ($24 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Full-Size Activating Peptide Serum ($24 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Full-Size Activating Peptide Serum ($24 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Luma Clinical\u2122",
+      "main_images": [
+        {
+          "url": "https://luma-clinical.myshopify.com/cdn/shop/files/luma-clinical-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMACLINICAL-LUMA-CLINICAL-VIP-BUNDLE",
+          "original_price": "95.98",
+          "sale_price": "59.99",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "15.00"
+        }
+      ],
+      "package_weight_lbs": 0.85,
+      "package_weight_grams": 385,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 4,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#skintok",
+        "#redlighttherapy",
+        "#microcurrent",
+        "#jawlinecheck",
+        "#antiaging"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523460+00:00"
+    },
+    {
+      "shopify_store_id": "luma-relief",
+      "shopify_domain": "luma-relief.myshopify.com",
+      "shopify_product_id": "luma-relief-hero",
+      "tiktok_product_name": "Luma Relief\u2122 LumaRelief\u2122 360\u00b0 Cold Compression Cap (Solo)",
+      "tiktok_category_id": "601200",
+      "tiktok_category_name": "Health & Personal Care > Pain Relief & Therapy > Hot & Cold Compresses",
+      "description": "The flagship LumaRelief\u2122 360\u00b0 Cold Compression Cap engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Herbal Sinus Acupressure Roller ($18 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Luma Relief\u2122",
+      "main_images": [
+        {
+          "url": "https://luma-relief.myshopify.com/cdn/shop/files/luma-relief-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMARELIEF-LUMA-RELIEF-HERO",
+          "original_price": "40.93",
+          "sale_price": "22.74",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "5.68"
+        }
+      ],
+      "package_weight_lbs": 1.4,
+      "package_weight_grams": 635,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 6,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#migrainerelief",
+        "#tensionheadache",
+        "#headachehat",
+        "#holistichealing"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523472+00:00"
+    },
+    {
+      "shopify_store_id": "luma-relief",
+      "shopify_domain": "luma-relief.myshopify.com",
+      "shopify_product_id": "luma-relief-vip-bundle",
+      "tiktok_product_name": "Luma Relief\u2122 LumaRelief\u2122 360\u00b0 Cold Compression Cap [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "601200",
+      "tiktok_category_name": "Health & Personal Care > Pain Relief & Therapy > Hot & Cold Compresses",
+      "description": "The ultimate LumaRelief\u2122 360\u00b0 Cold Compression Cap VIP Bundle. Automatically unlocks complimentary Herbal Sinus Acupressure Roller ($18 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Herbal Sinus Acupressure Roller ($18 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Herbal Sinus Acupressure Roller ($18 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Luma Relief\u2122",
+      "main_images": [
+        {
+          "url": "https://luma-relief.myshopify.com/cdn/shop/files/luma-relief-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMARELIEF-LUMA-RELIEF-VIP-BUNDLE",
+          "original_price": "51.98",
+          "sale_price": "32.49",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "8.12"
+        }
+      ],
+      "package_weight_lbs": 1.4,
+      "package_weight_grams": 635,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 6,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#migrainerelief",
+        "#tensionheadache",
+        "#headachehat",
+        "#holistichealing"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523482+00:00"
+    },
+    {
+      "shopify_store_id": "fizz-lab",
+      "shopify_domain": "fizz-lab.myshopify.com",
+      "shopify_product_id": "fizz-lab-hero",
+      "tiktok_product_name": "Fizz Lab\u2122 Soda Custom At-Home Dirty Soda Bar Kit (Solo)",
+      "tiktok_category_id": "800200",
+      "tiktok_category_name": "Food & Beverages > Beverage Flavoring & Drink Mixes > Syrups & Frothers",
+      "description": "The flagship Custom At-Home Dirty Soda Bar Kit engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes High-Speed Electric Cream Frother ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Fizz Lab\u2122 Soda",
+      "main_images": [
+        {
+          "url": "https://fizz-lab.myshopify.com/cdn/shop/files/fizz-lab-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "FIZZLAB-FIZZ-LAB-HERO",
+          "original_price": "57.60",
+          "sale_price": "32.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "8.00"
+        }
+      ],
+      "package_weight_lbs": 2.2,
+      "package_weight_grams": 997,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#dirtysoda",
+        "#sodatok",
+        "#asmrdrinks",
+        "#utahdirtysoda",
+        "#mocktails"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523492+00:00"
+    },
+    {
+      "shopify_store_id": "fizz-lab",
+      "shopify_domain": "fizz-lab.myshopify.com",
+      "shopify_product_id": "fizz-lab-vip-bundle",
+      "tiktok_product_name": "Fizz Lab\u2122 Soda Custom At-Home Dirty Soda Bar Kit [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "800200",
+      "tiktok_category_name": "Food & Beverages > Beverage Flavoring & Drink Mixes > Syrups & Frothers",
+      "description": "The ultimate Custom At-Home Dirty Soda Bar Kit VIP Bundle. Automatically unlocks complimentary High-Speed Electric Cream Frother ($16 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and High-Speed Electric Cream Frother ($16 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes High-Speed Electric Cream Frother ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Fizz Lab\u2122 Soda",
+      "main_images": [
+        {
+          "url": "https://fizz-lab.myshopify.com/cdn/shop/files/fizz-lab-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "FIZZLAB-FIZZ-LAB-VIP-BUNDLE",
+          "original_price": "76.80",
+          "sale_price": "48.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "12.00"
+        }
+      ],
+      "package_weight_lbs": 2.2,
+      "package_weight_grams": 997,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#dirtysoda",
+        "#sodatok",
+        "#asmrdrinks",
+        "#utahdirtysoda",
+        "#mocktails"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523500+00:00"
+    },
+    {
+      "shopify_store_id": "crave-lab",
+      "shopify_domain": "crave-lab.myshopify.com",
+      "shopify_product_id": "crave-lab-hero",
+      "tiktok_product_name": "Crave Lab\u2122 Chocolates Custom 4-Bar Chocolate Bento Box (Solo)",
+      "tiktok_category_id": "800250",
+      "tiktok_category_name": "Food & Beverages > Confectionery & Chocolate > Artisanal Chocolate Boxes",
+      "description": "The flagship Custom 4-Bar Chocolate Bento Box engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Smoked Sea Salt Dark Tasting Bar ($9 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Crave Lab\u2122 Chocolates",
+      "main_images": [
+        {
+          "url": "https://crave-lab.myshopify.com/cdn/shop/files/crave-lab-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "CRAVELAB-CRAVE-LAB-HERO",
+          "original_price": "43.20",
+          "sale_price": "24.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "6.00"
+        }
+      ],
+      "package_weight_lbs": 1.1,
+      "package_weight_grams": 498,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 8,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#chocolatetok",
+        "#asmrfood",
+        "#belgianchocolate",
+        "#gourmetfood"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523519+00:00"
+    },
+    {
+      "shopify_store_id": "crave-lab",
+      "shopify_domain": "crave-lab.myshopify.com",
+      "shopify_product_id": "crave-lab-vip-bundle",
+      "tiktok_product_name": "Crave Lab\u2122 Chocolates Custom 4-Bar Chocolate Bento Box [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "800250",
+      "tiktok_category_name": "Food & Beverages > Confectionery & Chocolate > Artisanal Chocolate Boxes",
+      "description": "The ultimate Custom 4-Bar Chocolate Bento Box VIP Bundle. Automatically unlocks complimentary Smoked Sea Salt Dark Tasting Bar ($9 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Smoked Sea Salt Dark Tasting Bar ($9 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Smoked Sea Salt Dark Tasting Bar ($9 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Crave Lab\u2122 Chocolates",
+      "main_images": [
+        {
+          "url": "https://crave-lab.myshopify.com/cdn/shop/files/crave-lab-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "CRAVELAB-CRAVE-LAB-VIP-BUNDLE",
+          "original_price": "60.80",
+          "sale_price": "38.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "9.50"
+        }
+      ],
+      "package_weight_lbs": 1.1,
+      "package_weight_grams": 498,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 8,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#chocolatetok",
+        "#asmrfood",
+        "#belgianchocolate",
+        "#gourmetfood"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523544+00:00"
+    },
+    {
+      "shopify_store_id": "aura-sculpt",
+      "shopify_domain": "aura-sculpt.myshopify.com",
+      "shopify_product_id": "aura-sculpt-hero",
+      "tiktok_product_name": "Aura Sculpt\u2122 2-Piece Mix & Match Sculpt Set (Solo)",
+      "tiktok_category_id": "900100",
+      "tiktok_category_name": "Apparel & Accessories > Women's Activewear > Leggings & Sports Bra Sets",
+      "description": "The flagship 2-Piece Mix & Match Sculpt Set engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Non-Slip Pilates Grip Socks ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Aura Sculpt\u2122",
+      "main_images": [
+        {
+          "url": "https://aura-sculpt.myshopify.com/cdn/shop/files/aura-sculpt-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "AURASCULPT-AURA-SCULPT-HERO",
+          "original_price": "68.40",
+          "sale_price": "38.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "9.50"
+        }
+      ],
+      "package_weight_lbs": 0.95,
+      "package_weight_grams": 430,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 8,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#pilatestok",
+        "#gymtok",
+        "#seamlessactivewear",
+        "#activewearhaul"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523560+00:00"
+    },
+    {
+      "shopify_store_id": "aura-sculpt",
+      "shopify_domain": "aura-sculpt.myshopify.com",
+      "shopify_product_id": "aura-sculpt-vip-bundle",
+      "tiktok_product_name": "Aura Sculpt\u2122 2-Piece Mix & Match Sculpt Set [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "900100",
+      "tiktok_category_name": "Apparel & Accessories > Women's Activewear > Leggings & Sports Bra Sets",
+      "description": "The ultimate 2-Piece Mix & Match Sculpt Set VIP Bundle. Automatically unlocks complimentary Non-Slip Pilates Grip Socks ($16 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Non-Slip Pilates Grip Socks ($16 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Non-Slip Pilates Grip Socks ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Aura Sculpt\u2122",
+      "main_images": [
+        {
+          "url": "https://aura-sculpt.myshopify.com/cdn/shop/files/aura-sculpt-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "AURASCULPT-AURA-SCULPT-VIP-BUNDLE",
+          "original_price": "86.40",
+          "sale_price": "54.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "13.50"
+        }
+      ],
+      "package_weight_lbs": 0.95,
+      "package_weight_grams": 430,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 8,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#pilatestok",
+        "#gymtok",
+        "#seamlessactivewear",
+        "#activewearhaul"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523570+00:00"
+    },
+    {
+      "shopify_store_id": "pawglow",
+      "shopify_domain": "pawglow.myshopify.com",
+      "shopify_product_id": "pawglow-hero",
+      "tiktok_product_name": "PawGlow Co\u2122 Ultrasonic Steam Deshedding Pet Brush (Solo)",
+      "tiktok_category_id": "500400",
+      "tiktok_category_name": "Pet Supplies > Dogs > Grooming Tools > Brushes & Deshedders",
+      "description": "The flagship Ultrasonic Steam Deshedding Pet Brush engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Organic Lavender Coat Mist ($15 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "PawGlow Co\u2122",
+      "main_images": [
+        {
+          "url": "https://pawglow.myshopify.com/cdn/shop/files/pawglow-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "PAWGLOW-PAWGLOW-HERO",
+          "original_price": "41.38",
+          "sale_price": "22.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "5.75"
+        }
+      ],
+      "package_weight_lbs": 0.75,
+      "package_weight_grams": 340,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 5,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#dogsoftiktok",
+        "#petgrooming",
+        "#satisfyingpets",
+        "#goldenretriever"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523582+00:00"
+    },
+    {
+      "shopify_store_id": "pawglow",
+      "shopify_domain": "pawglow.myshopify.com",
+      "shopify_product_id": "pawglow-vip-bundle",
+      "tiktok_product_name": "PawGlow Co\u2122 Ultrasonic Steam Deshedding Pet Brush [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "500400",
+      "tiktok_category_name": "Pet Supplies > Dogs > Grooming Tools > Brushes & Deshedders",
+      "description": "The ultimate Ultrasonic Steam Deshedding Pet Brush VIP Bundle. Automatically unlocks complimentary Organic Lavender Coat Mist ($15 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Organic Lavender Coat Mist ($15 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Organic Lavender Coat Mist ($15 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "PawGlow Co\u2122",
+      "main_images": [
+        {
+          "url": "https://pawglow.myshopify.com/cdn/shop/files/pawglow-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "PAWGLOW-PAWGLOW-VIP-BUNDLE",
+          "original_price": "55.98",
+          "sale_price": "34.99",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "8.75"
+        }
+      ],
+      "package_weight_lbs": 0.75,
+      "package_weight_grams": 340,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 5,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#dogsoftiktok",
+        "#petgrooming",
+        "#satisfyingpets",
+        "#goldenretriever"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523592+00:00"
+    },
+    {
+      "shopify_store_id": "zenith-sleep",
+      "shopify_domain": "zenith-sleep.myshopify.com",
+      "shopify_product_id": "zenith-sleep-hero",
+      "tiktok_product_name": "Zenith Sleep\u2122 Bluetooth 3D Zero-Pressure Blackout Mask (Solo)",
+      "tiktok_category_id": "601400",
+      "tiktok_category_name": "Health & Wellness > Sleep & Sound Therapy > Bluetooth Sleep Masks",
+      "description": "The flagship Bluetooth 3D Zero-Pressure Blackout Mask engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Satin Travel Case + Earplugs ($14 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Zenith Sleep\u2122",
+      "main_images": [
+        {
+          "url": "https://zenith-sleep.myshopify.com/cdn/shop/files/zenith-sleep-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "ZENITHSLEEP-ZENITH-SLEEP-HERO",
+          "original_price": "62.98",
+          "sale_price": "34.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "8.75"
+        }
+      ],
+      "package_weight_lbs": 0.65,
+      "package_weight_grams": 294,
+      "package_dimensions_in": {
+        "length": 7,
+        "width": 5,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#sleephacks",
+        "#insomniarelief",
+        "#biohacking",
+        "#deeprem"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523603+00:00"
+    },
+    {
+      "shopify_store_id": "zenith-sleep",
+      "shopify_domain": "zenith-sleep.myshopify.com",
+      "shopify_product_id": "zenith-sleep-vip-bundle",
+      "tiktok_product_name": "Zenith Sleep\u2122 Bluetooth 3D Zero-Pressure Blackout Mask [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "601400",
+      "tiktok_category_name": "Health & Wellness > Sleep & Sound Therapy > Bluetooth Sleep Masks",
+      "description": "The ultimate Bluetooth 3D Zero-Pressure Blackout Mask VIP Bundle. Automatically unlocks complimentary Satin Travel Case + Earplugs ($14 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Satin Travel Case + Earplugs ($14 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Satin Travel Case + Earplugs ($14 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Zenith Sleep\u2122",
+      "main_images": [
+        {
+          "url": "https://zenith-sleep.myshopify.com/cdn/shop/files/zenith-sleep-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "ZENITHSLEEP-ZENITH-SLEEP-VIP-BUNDLE",
+          "original_price": "79.98",
+          "sale_price": "49.99",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "12.50"
+        }
+      ],
+      "package_weight_lbs": 0.65,
+      "package_weight_grams": 294,
+      "package_dimensions_in": {
+        "length": 7,
+        "width": 5,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#sleephacks",
+        "#insomniarelief",
+        "#biohacking",
+        "#deeprem"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523616+00:00"
+    },
+    {
+      "shopify_store_id": "aura-posture",
+      "shopify_domain": "aura-posture.myshopify.com",
+      "shopify_product_id": "aura-posture-hero",
+      "tiktok_product_name": "Aura Posture\u2122 Smart Haptic Posture Alignment Sensor (Solo)",
+      "tiktok_category_id": "400100",
+      "tiktok_category_name": "Health & Wellness > Ergonomics & Posture Correctors > Smart Sensors",
+      "description": "The flagship Smart Haptic Posture Alignment Sensor engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Ergonomic Gel Wrist Rest ($18 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Aura Posture\u2122",
+      "main_images": [
+        {
+          "url": "https://aura-posture.myshopify.com/cdn/shop/files/aura-posture-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "AURAPOSTURE-AURA-POSTURE-HERO",
+          "original_price": "68.40",
+          "sale_price": "38.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "9.50"
+        }
+      ],
+      "package_weight_lbs": 0.55,
+      "package_weight_grams": 249,
+      "package_dimensions_in": {
+        "length": 6,
+        "width": 4,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#posturecheck",
+        "#ergonomics",
+        "#desksetup",
+        "#techgadgets"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523626+00:00"
+    },
+    {
+      "shopify_store_id": "aura-posture",
+      "shopify_domain": "aura-posture.myshopify.com",
+      "shopify_product_id": "aura-posture-vip-bundle",
+      "tiktok_product_name": "Aura Posture\u2122 Smart Haptic Posture Alignment Sensor [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "400100",
+      "tiktok_category_name": "Health & Wellness > Ergonomics & Posture Correctors > Smart Sensors",
+      "description": "The ultimate Smart Haptic Posture Alignment Sensor VIP Bundle. Automatically unlocks complimentary Ergonomic Gel Wrist Rest ($18 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Ergonomic Gel Wrist Rest ($18 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Ergonomic Gel Wrist Rest ($18 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Aura Posture\u2122",
+      "main_images": [
+        {
+          "url": "https://aura-posture.myshopify.com/cdn/shop/files/aura-posture-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "AURAPOSTURE-AURA-POSTURE-VIP-BUNDLE",
+          "original_price": "86.40",
+          "sale_price": "54.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "13.50"
+        }
+      ],
+      "package_weight_lbs": 0.55,
+      "package_weight_grams": 249,
+      "package_dimensions_in": {
+        "length": 6,
+        "width": 4,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#posturecheck",
+        "#ergonomics",
+        "#desksetup",
+        "#techgadgets"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523633+00:00"
+    },
+    {
+      "shopify_store_id": "lumicarve",
+      "shopify_domain": "lumicarve.myshopify.com",
+      "shopify_product_id": "lumicarve-hero",
+      "tiktok_product_name": "LumiCarve\u2122 Cordless High-Speed Micro Engraving Pen (Solo)",
+      "tiktok_category_id": "300200",
+      "tiktok_category_name": "Tools & Home Improvement > Power Rotary Tools > Cordless Engravers",
+      "description": "The flagship Cordless High-Speed Micro Engraving Pen engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes 30-Piece Diamond Burr Bit Kit ($22 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "LumiCarve\u2122",
+      "main_images": [
+        {
+          "url": "https://lumicarve.myshopify.com/cdn/shop/files/lumicarve-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMICARVE-LUMICARVE-HERO",
+          "original_price": "75.60",
+          "sale_price": "42.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "10.50"
+        }
+      ],
+      "package_weight_lbs": 0.85,
+      "package_weight_grams": 385,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 4,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#engraving",
+        "#satisfyingcrafts",
+        "#laserengraving",
+        "#diygifts"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523641+00:00"
+    },
+    {
+      "shopify_store_id": "lumicarve",
+      "shopify_domain": "lumicarve.myshopify.com",
+      "shopify_product_id": "lumicarve-vip-bundle",
+      "tiktok_product_name": "LumiCarve\u2122 Cordless High-Speed Micro Engraving Pen [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "300200",
+      "tiktok_category_name": "Tools & Home Improvement > Power Rotary Tools > Cordless Engravers",
+      "description": "The ultimate Cordless High-Speed Micro Engraving Pen VIP Bundle. Automatically unlocks complimentary 30-Piece Diamond Burr Bit Kit ($22 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and 30-Piece Diamond Burr Bit Kit ($22 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes 30-Piece Diamond Burr Bit Kit ($22 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "LumiCarve\u2122",
+      "main_images": [
+        {
+          "url": "https://lumicarve.myshopify.com/cdn/shop/files/lumicarve-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "LUMICARVE-LUMICARVE-VIP-BUNDLE",
+          "original_price": "92.80",
+          "sale_price": "58.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "14.50"
+        }
+      ],
+      "package_weight_lbs": 0.85,
+      "package_weight_grams": 385,
+      "package_dimensions_in": {
+        "length": 9,
+        "width": 4,
+        "height": 3
+      },
+      "viral_hashtags": [
+        "#engraving",
+        "#satisfyingcrafts",
+        "#laserengraving",
+        "#diygifts"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.523649+00:00"
+    },
+    {
+      "shopify_store_id": "dermasonic",
+      "shopify_domain": "dermasonic.myshopify.com",
+      "shopify_product_id": "dermasonic-hero",
+      "tiktok_product_name": "Dermasonic\u2122 Ultrasonic Water-Ion Blackhead Scrubber (Solo)",
+      "tiktok_category_id": "600105",
+      "tiktok_category_name": "Beauty & Personal Care > Skin Care Tools > Pore Extractors & Scrubbers",
+      "description": "The flagship Ultrasonic Water-Ion Blackhead Scrubber engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Pore-Melting Botanical Toner ($19 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Dermasonic\u2122",
+      "main_images": [
+        {
+          "url": "https://dermasonic.myshopify.com/cdn/shop/files/dermasonic-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "DERMASONIC-DERMASONIC-HERO",
+          "original_price": "53.98",
+          "sale_price": "29.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "7.50"
+        }
+      ],
+      "package_weight_lbs": 0.6,
+      "package_weight_grams": 272,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 4,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#poredetox",
+        "#satisfyingcleaning",
+        "#blackheadremoval",
+        "#esthetician"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524057+00:00"
+    },
+    {
+      "shopify_store_id": "dermasonic",
+      "shopify_domain": "dermasonic.myshopify.com",
+      "shopify_product_id": "dermasonic-vip-bundle",
+      "tiktok_product_name": "Dermasonic\u2122 Ultrasonic Water-Ion Blackhead Scrubber [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "600105",
+      "tiktok_category_name": "Beauty & Personal Care > Skin Care Tools > Pore Extractors & Scrubbers",
+      "description": "The ultimate Ultrasonic Water-Ion Blackhead Scrubber VIP Bundle. Automatically unlocks complimentary Pore-Melting Botanical Toner ($19 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Pore-Melting Botanical Toner ($19 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Pore-Melting Botanical Toner ($19 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "Dermasonic\u2122",
+      "main_images": [
+        {
+          "url": "https://dermasonic.myshopify.com/cdn/shop/files/dermasonic-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "DERMASONIC-DERMASONIC-VIP-BUNDLE",
+          "original_price": "71.98",
+          "sale_price": "44.99",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "11.25"
+        }
+      ],
+      "package_weight_lbs": 0.6,
+      "package_weight_grams": 272,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 4,
+        "height": 2
+      },
+      "viral_hashtags": [
+        "#poredetox",
+        "#satisfyingcleaning",
+        "#blackheadremoval",
+        "#esthetician"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524066+00:00"
+    },
+    {
+      "shopify_store_id": "calmcore",
+      "shopify_domain": "calmcore.myshopify.com",
+      "shopify_product_id": "calmcore-hero",
+      "tiktok_product_name": "CalmCore\u2122 Weighted Clay Herbal Neck & Shoulder Wrap (Solo)",
+      "tiktok_category_id": "601250",
+      "tiktok_category_name": "Health & Wellness > Aromatherapy & Thermal Relief > Weighted Wraps",
+      "description": "The flagship Weighted Clay Herbal Neck & Shoulder Wrap engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Aromatherapy Essential Oil Roll-On ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "CalmCore\u2122",
+      "main_images": [
+        {
+          "url": "https://calmcore.myshopify.com/cdn/shop/files/calmcore-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "CALMCORE-CALMCORE-HERO",
+          "original_price": "79.20",
+          "sale_price": "44.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "11.00"
+        }
+      ],
+      "package_weight_lbs": 4.6,
+      "package_weight_grams": 2086,
+      "package_dimensions_in": {
+        "length": 14,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#selfcare",
+        "#tensionrelief",
+        "#weightedblanket",
+        "#aromatherapy"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524075+00:00"
+    },
+    {
+      "shopify_store_id": "calmcore",
+      "shopify_domain": "calmcore.myshopify.com",
+      "shopify_product_id": "calmcore-vip-bundle",
+      "tiktok_product_name": "CalmCore\u2122 Weighted Clay Herbal Neck & Shoulder Wrap [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "601250",
+      "tiktok_category_name": "Health & Wellness > Aromatherapy & Thermal Relief > Weighted Wraps",
+      "description": "The ultimate Weighted Clay Herbal Neck & Shoulder Wrap VIP Bundle. Automatically unlocks complimentary Aromatherapy Essential Oil Roll-On ($16 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Aromatherapy Essential Oil Roll-On ($16 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Aromatherapy Essential Oil Roll-On ($16 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "CalmCore\u2122",
+      "main_images": [
+        {
+          "url": "https://calmcore.myshopify.com/cdn/shop/files/calmcore-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "CALMCORE-CALMCORE-VIP-BUNDLE",
+          "original_price": "102.40",
+          "sale_price": "64.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "16.00"
+        }
+      ],
+      "package_weight_lbs": 4.6,
+      "package_weight_grams": 2086,
+      "package_dimensions_in": {
+        "length": 14,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#selfcare",
+        "#tensionrelief",
+        "#weightedblanket",
+        "#aromatherapy"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524082+00:00"
+    },
+    {
+      "shopify_store_id": "floraspring",
+      "shopify_domain": "floraspring.myshopify.com",
+      "shopify_product_id": "floraspring-hero",
+      "tiktok_product_name": "FloraSpring\u2122 Terracotta Self-Watering Spikes (Set of 4) (Solo)",
+      "tiktok_category_id": "200500",
+      "tiktok_category_name": "Patio, Lawn & Garden > Watering Equipment > Self-Watering Spikes",
+      "description": "The flagship Terracotta Self-Watering Spikes (Set of 4) engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Organic Liquid Plant Food Drops ($14 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "FloraSpring\u2122",
+      "main_images": [
+        {
+          "url": "https://floraspring.myshopify.com/cdn/shop/files/floraspring-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "FLORASPRING-FLORASPRING-HERO",
+          "original_price": "39.58",
+          "sale_price": "21.99",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "5.50"
+        }
+      ],
+      "package_weight_lbs": 1.8,
+      "package_weight_grams": 816,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#planttok",
+        "#monsteracare",
+        "#houseplants",
+        "#urbanjungle"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524091+00:00"
+    },
+    {
+      "shopify_store_id": "floraspring",
+      "shopify_domain": "floraspring.myshopify.com",
+      "shopify_product_id": "floraspring-vip-bundle",
+      "tiktok_product_name": "FloraSpring\u2122 Terracotta Self-Watering Spikes (Set of 4) [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "200500",
+      "tiktok_category_name": "Patio, Lawn & Garden > Watering Equipment > Self-Watering Spikes",
+      "description": "The ultimate Terracotta Self-Watering Spikes (Set of 4) VIP Bundle. Automatically unlocks complimentary Organic Liquid Plant Food Drops ($14 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Organic Liquid Plant Food Drops ($14 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Organic Liquid Plant Food Drops ($14 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "FloraSpring\u2122",
+      "main_images": [
+        {
+          "url": "https://floraspring.myshopify.com/cdn/shop/files/floraspring-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "FLORASPRING-FLORASPRING-VIP-BUNDLE",
+          "original_price": "55.98",
+          "sale_price": "34.99",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "8.75"
+        }
+      ],
+      "package_weight_lbs": 1.8,
+      "package_weight_grams": 816,
+      "package_dimensions_in": {
+        "length": 8,
+        "width": 8,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#planttok",
+        "#monsteracare",
+        "#houseplants",
+        "#urbanjungle"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524098+00:00"
+    },
+    {
+      "shopify_store_id": "velobrew",
+      "shopify_domain": "velobrew.myshopify.com",
+      "shopify_product_id": "velobrew-hero",
+      "tiktok_product_name": "VeloBrew\u2122 Cordless 20-Bar Thermal Portable Espresso Maker (Solo)",
+      "tiktok_category_id": "800400",
+      "tiktok_category_name": "Kitchen & Dining > Coffee, Tea & Espresso > Portable Espresso Makers",
+      "description": "The flagship Cordless 20-Bar Thermal Portable Espresso Maker engineered for high performance.\n\n\u2728 SPECIFICATIONS & RITUAL:\nFlagship edition with 60-day trial guarantee.\n\n\ud83d\udce6 INCLUDED BONUS: Includes Stainless Steel Dosing Ring & Tamper ($20 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "VeloBrew\u2122",
+      "main_images": [
+        {
+          "url": "https://velobrew.myshopify.com/cdn/shop/files/velobrew-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "VELOBREW-VELOBREW-HERO",
+          "original_price": "97.20",
+          "sale_price": "54.00",
+          "currency": "USD",
+          "available_stock": 320,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "13.50"
+        }
+      ],
+      "package_weight_lbs": 1.9,
+      "package_weight_grams": 861,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 4,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#coffeetiktok",
+        "#portableespresso",
+        "#crema",
+        "#campinggear"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524105+00:00"
+    },
+    {
+      "shopify_store_id": "velobrew",
+      "shopify_domain": "velobrew.myshopify.com",
+      "shopify_product_id": "velobrew-vip-bundle",
+      "tiktok_product_name": "VeloBrew\u2122 Cordless 20-Bar Thermal Portable Espresso Maker [Complete VIP Bundle + Gift]",
+      "tiktok_category_id": "800400",
+      "tiktok_category_name": "Kitchen & Dining > Coffee, Tea & Espresso > Portable Espresso Makers",
+      "description": "The ultimate Cordless 20-Bar Thermal Portable Espresso Maker VIP Bundle. Automatically unlocks complimentary Stainless Steel Dosing Ring & Tamper ($20 Value).\n\n\u2728 SPECIFICATIONS & RITUAL:\nIncludes full accessory suite and Stainless Steel Dosing Ring & Tamper ($20 Value).\n\n\ud83d\udce6 INCLUDED BONUS: Includes Stainless Steel Dosing Ring & Tamper ($20 Value) with qualifying bundle.\n\u26a1 DISPATCH GUARANTEE: Priority 24-hour dispatch from our Salt Lake City, Utah fulfillment hub with tracked delivery.",
+      "brand_name": "VeloBrew\u2122",
+      "main_images": [
+        {
+          "url": "https://velobrew.myshopify.com/cdn/shop/files/velobrew-hero.jpg"
+        }
+      ],
+      "skus": [
+        {
+          "seller_sku": "VELOBREW-VELOBREW-VIP-BUNDLE",
+          "original_price": "118.40",
+          "sale_price": "74.00",
+          "currency": "USD",
+          "available_stock": 180,
+          "affiliate_commission_pct": 25,
+          "affiliate_commission_amount": "18.50"
+        }
+      ],
+      "package_weight_lbs": 1.9,
+      "package_weight_grams": 861,
+      "package_dimensions_in": {
+        "length": 10,
+        "width": 4,
+        "height": 4
+      },
+      "viral_hashtags": [
+        "#coffeetiktok",
+        "#portableespresso",
+        "#crema",
+        "#campinggear"
+      ],
+      "is_cod_open": false,
+      "sync_status": "READY_FOR_TIKTOK_SHOP",
+      "last_synced_at": "2026-11-11T18:20:09.524112+00:00"
+    }
+  ]
+}
