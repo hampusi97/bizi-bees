@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "🌐 REPO-OS™ MISSION CONTROL | 13-Store Fleet Command",
-  description: "Executive Multi-Store E-Commerce Command Center & Real-Time Telemetry Dashboard",
+  title: "Bizi Bees OS-X Fleet Command | 15-Store Autonomous Engine",
+  description: "Multi-Store E-Commerce Operating System and Autonomous Fleet Engine",
 };
 
 export const viewport: Viewport = {

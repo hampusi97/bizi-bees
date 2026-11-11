@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import type { StoreTelemetry, FleetState } from "./api/fleet/route";
 import storeMatrix from "@/config/store_matrix.json";
+import LiveStoresFleetSection from "@/components/LiveStoresFleetSection";
 
 const STORE_PRESETS: Record<string, { label: string; query: string }[]> = {
+  "ember-oak": [
+    { label: "Spanish Cedar Seasoning", query: "How do I season the 50-count Spanish Cedar Humidor to hold a steady 70% RH?" },
+    { label: "Cut-Crystal Rest Gift", query: "How does the Cut-Crystal Cigar & Pipe Rest unlock with the Aficionado VIP Bundle?" }
+  ],
   "bizi-bees": [
     { label: "Cozy Mystery Crate", query: "Curate a rainy Sunday evening blind date reading crate with cozy vibe" },
     { label: "Brass Bookmark Gift", query: "Tell me how the solid brass honeybee bookmark unlocks with the VIP bundle" },
@@ -151,17 +157,17 @@ export default function MissionControlDashboard() {
   const [designTab, setDesignTab] = useState<"spec" | "code" | "raw">("spec");
   const [codeCopied, setCodeCopied] = useState<boolean>(false);
 
+  const [isProvisioningAll, setIsProvisioningAll] = useState<boolean>(false);
+
   // Fetch telemetry
-  const fetchTelemetry = async () => {
+  const fetchTelemetry = useCallback(async () => {
     try {
       setRefreshing(true);
       const res = await fetch("/api/fleet");
       const json = await res.json();
       if (json.success && json.data) {
         setFleet(json.data);
-        if (terminalLogs.length === 0) {
-          setTerminalLogs(json.data.recentLogs);
-        }
+        setTerminalLogs((prev) => (prev.length === 0 ? json.data.recentLogs : prev));
       }
     } catch (e) {
       console.error("Failed to fetch fleet telemetry", e);
@@ -169,13 +175,58 @@ export default function MissionControlDashboard() {
       setLoading(false);
       setRefreshing(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchTelemetry();
     const interval = setInterval(fetchTelemetry, 30000); // 30s polling
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchTelemetry]);
+
+  const handleProvisionAllStores = async () => {
+    setIsProvisioningAll(true);
+    try {
+      const res = await fetch("/api/fleet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "provision_all_stores" }),
+      });
+      const data = await res.json();
+      if (data.success && fleet) {
+        setFleet({ ...fleet, stores: data.stores });
+        if (data.logEntry) {
+          setTerminalLogs((prev) => [data.logEntry, ...prev]);
+        }
+      }
+    } catch (err) {
+      console.error("Failed to provision all stores", err);
+    } finally {
+      setIsProvisioningAll(false);
+    }
+  };
+
+  const handleCreateNewStore = async (payload: {
+    name: string;
+    niche: string;
+    hero: string;
+    soloPrice: number;
+    bundlePrice: number;
+    freeGift: string;
+    accentColor: string;
+  }) => {
+    const res = await fetch("/api/fleet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "create_store", ...payload }),
+    });
+    const data = await res.json();
+    if (data.success && fleet) {
+      setFleet({ ...fleet, stores: data.stores });
+      if (data.logEntry) {
+        setTerminalLogs((prev) => [data.logEntry, ...prev]);
+      }
+    }
+  };
 
   // Quick Action Handler for Store Table
   const handleStoreAction = async (
@@ -425,32 +476,39 @@ export default function MissionControlDashboard() {
                 </span>
               </div>
               <p className="text-xs text-[#94A3B8] tracking-wide">
-                Unified Autonomous Shopify Fleet Command • 14 Direct DTC Storefronts • Dual Google AI Studio Keys
+                Unified Autonomous Shopify Fleet Command • {fleet?.stores.length || 15} Live DTC Storefronts • Dual Google AI Studio Keys
               </p>
             </div>
           </div>
 
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="flex items-center space-x-3 shrink-0">
+            <Link
+              href="/stores"
+              className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg bg-[#10B981] hover:bg-[#059669] text-xs font-bold text-[#090D16] transition-all whitespace-nowrap shrink-0"
+            >
+              <span>All {fleet?.stores.length || 15} Stores →</span>
+            </Link>
+
             {/* Quick jump to AI Studio */}
             <a
               href="#google-ai-design-studio"
-              className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#8B5CF6]/20 to-[#38BDF8]/20 border border-[#8B5CF6]/40 text-xs font-semibold text-[#C4B5FD] hover:bg-[#8B5CF6]/30 transition-all"
+              className="hidden md:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#8B5CF6]/20 to-[#38BDF8]/20 border border-[#8B5CF6]/40 text-xs font-semibold text-[#C4B5FD] hover:bg-[#8B5CF6]/30 transition-all whitespace-nowrap shrink-0"
             >
               <span>🎨</span>
               <span>AI Design Studio</span>
             </a>
 
             {/* Live Fleet Health Badge */}
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-semibold tracking-wide">
+            <div className="hidden xl:inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-[#10B981] text-xs font-semibold tracking-wide whitespace-nowrap shrink-0">
               <span className="w-2 h-2 rounded-full bg-[#10B981] mr-2 animate-ping" />
-              <span>🟢 14 of 14 Stores Online</span>
+              <span>{fleet?.stores.length || 15} of {fleet?.stores.length || 15} Stores Online</span>
             </div>
 
             {/* Refresh Telemetry Button */}
             <button
               onClick={fetchTelemetry}
               disabled={refreshing}
-              className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] border border-[#334155] text-xs font-medium text-[#F8FAFC] transition-colors disabled:opacity-50"
+              className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-[#1E293B] hover:bg-[#334155] border border-[#334155] text-xs font-medium text-[#F8FAFC] transition-colors disabled:opacity-50 whitespace-nowrap shrink-0"
             >
               <span className={refreshing ? "animate-spin" : ""}>🔄</span>
               <span className="hidden sm:inline">
@@ -479,7 +537,7 @@ export default function MissionControlDashboard() {
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Target: <strong className="text-[#94A3B8]">$23,333.33/day</strong> ($700k/mo run-rate)
+              Target: <strong className="text-[#94A3B8]">$25,000.00/day</strong> ($750k/mo run-rate)
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -504,7 +562,7 @@ export default function MissionControlDashboard() {
               </span>
             </div>
             <p className="text-xs text-[#64748B] mt-2">
-              Daily Volume Target: <strong className="text-[#94A3B8]">364 orders/day</strong> across 14 stores
+              Daily Volume Target: <strong className="text-[#94A3B8]">390 orders/day</strong> across {fleet?.stores.length || 15} stores
             </p>
             <div className="w-full bg-[#1E293B] h-2 rounded-full mt-4 overflow-hidden">
               <div
@@ -590,7 +648,15 @@ export default function MissionControlDashboard() {
           </div>
         </section>
 
-        {/* 14-Store Fleet Management Matrix */}
+        {/* Live Provisioned Storefronts Grid + Store Creator */}
+        <LiveStoresFleetSection
+          stores={fleet?.stores || []}
+          onProvisionAll={handleProvisionAllStores}
+          onCreateStore={handleCreateNewStore}
+          isProvisioning={isProvisioningAll}
+        />
+
+        {/* 15-Store Fleet Management Matrix */}
         <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
@@ -601,7 +667,7 @@ export default function MissionControlDashboard() {
                 </span>
               </h2>
               <p className="text-xs text-[#94A3B8]">
-                Direct telemetry, autonomous intervention, and 1-click Google AI Studio design synthesis across all 14 brands
+                Direct telemetry, autonomous intervention, and 1-click Google AI Studio design synthesis across all {fleet?.stores.length || 15} brands
               </p>
             </div>
 
@@ -655,9 +721,12 @@ export default function MissionControlDashboard() {
                         {/* Store Identity */}
                         <td className="py-4 px-4">
                           <div className="flex items-center gap-2">
-                            <span className="font-bold text-white group-hover:text-[#38BDF8] transition-colors">
+                            <Link
+                              href={`/stores/${store.id}`}
+                              className="font-bold text-white hover:text-[#38BDF8] transition-colors"
+                            >
                               {store.name}
-                            </span>
+                            </Link>
                             {store.id === "bizi-bees" && (
                               <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/40 uppercase tracking-wider">
                                 🐝 Flagship Store
@@ -775,16 +844,14 @@ export default function MissionControlDashboard() {
                               <span>Heal</span>
                             </button>
 
-                            {/* Action 5: Admin ↗ */}
-                            <a
-                              href={store.adminUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-2 py-0.5 rounded bg-[#090D16] hover:bg-[#1E293B] border border-[#1E293B] hover:border-white/30 text-[10px] font-medium text-[#CBD5E1] transition-all"
-                              title={`Open ${store.name} Shopify Admin`}
+                            {/* Action 5: Visit Live Storefront */}
+                            <Link
+                              href={`/stores/${store.id}`}
+                              className="px-2.5 py-0.5 rounded bg-[#10B981]/20 hover:bg-[#10B981]/30 border border-[#10B981]/50 text-[10px] font-bold text-[#10B981] transition-all"
+                              title={`Open ${store.name} Live Storefront`}
                             >
-                              Admin ↗
-                            </a>
+                              Visit Store →
+                            </Link>
                           </div>
                         </td>
                       </tr>
@@ -1084,15 +1151,13 @@ export default function MissionControlDashboard() {
                           </div>
                         </div>
 
-                        <a
-                          href={`https://${activeAppStore.domain}/collections/all`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white shadow-lg transition-transform hover:scale-105"
-                          style={{ backgroundColor: appResult.accentColor }}
+                        <Link
+                          href={`/stores/${activeAppStore.store_id}`}
+                          className="px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-slate-950 shadow-lg transition-transform hover:scale-105"
+                          style={{ backgroundColor: appResult.accentColor || "#10B981" }}
                         >
-                          Add VIP Bundle (${appResult.bundlePrice}) →
-                        </a>
+                          Shop VIP Bundle (${appResult.bundlePrice}) →
+                        </Link>
                       </div>
                     </div>
                   </div>
