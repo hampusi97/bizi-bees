@@ -1,34 +1,22 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
+import { timingSafeEqualStrings } from "@/lib/server/api-auth";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Constant-time comparison to prevent timing attacks.
- */
-function timingSafeCompare(a: string, b: string): boolean {
-  if (typeof a !== "string" || typeof b !== "string") return false;
-  try {
-    const bufA = Buffer.from(a, "utf8");
-    const bufB = Buffer.from(b, "utf8");
-    if (bufA.length !== bufB.length) return false;
-    return crypto.timingSafeEqual(bufA, bufB);
-  } catch {
-    return false;
-  }
-}
-
-/**
- * Validates TikTok Shop webhook signature if secret is configured.
+ * Validates TikTok Shop webhook signature.
  */
 function verifyTikTokSignature(
   rawBody: string,
   signature: string | null,
   secret: string | undefined = process.env.TIKTOK_SHOP_WEBHOOK_SECRET
 ): boolean {
+  // Fail closed. An unset secret used to mean "accept everything", which turned
+  // this endpoint into an open door in any environment missing the variable.
   if (!secret) {
-    // If webhook secret isn't configured in development, allow processing with warning
-    return true;
+    console.error("TIKTOK_SHOP_WEBHOOK_SECRET is not configured; rejecting webhook.");
+    return false;
   }
   if (!signature) return false;
 
@@ -37,7 +25,7 @@ function verifyTikTokSignature(
       .createHmac("sha256", secret)
       .update(rawBody, "utf8")
       .digest("hex");
-    return timingSafeCompare(generated, signature);
+    return timingSafeEqualStrings(generated, signature);
   } catch (err) {
     console.error("TikTok HMAC verification error:", err);
     return false;

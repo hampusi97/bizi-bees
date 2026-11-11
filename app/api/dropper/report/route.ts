@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { INITIAL_STORES } from "@/lib/stores-catalog";
 import { getFleetInventoryForecast } from "@/lib/algorithms/inventory-forecaster";
 import { commitDailyReports } from "@/lib/github-client";
+import { checkBearerSecret } from "@/lib/server/api-auth";
 
 function buildDailyExecutiveReportMarkdown(dateStr: string): string {
   const totalRev = INITIAL_STORES.reduce((acc, s) => acc + s.revenue24h, 0);
@@ -69,7 +70,20 @@ export async function GET() {
   });
 }
 
-export async function POST() {
+export async function POST(request: Request) {
+  // POST commits reports to the repository, so it must be authenticated.
+  const authFailure = checkBearerSecret(
+    request.headers.get("authorization"),
+    "DROPPER_DEPLOY_SECRET"
+  );
+  if (authFailure) {
+    console.warn(`Dropper report rejected: ${authFailure}`);
+    return NextResponse.json(
+      { success: false, error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+
   try {
     const dateStr = new Date().toISOString().split("T")[0];
     const markdown = buildDailyExecutiveReportMarkdown(dateStr);

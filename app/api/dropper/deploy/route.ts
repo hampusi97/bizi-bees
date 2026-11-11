@@ -1,7 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { commitAndPushFile } from "@/lib/github-client";
+import { checkBearerSecret } from "@/lib/server/api-auth";
 
 export async function POST(req: NextRequest) {
+  // This route commits to the repository with a GitHub token, so it must be
+  // authenticated. It was previously reachable by anyone who could load the site.
+  const authFailure = checkBearerSecret(
+    req.headers.get("authorization"),
+    "DROPPER_DEPLOY_SECRET"
+  );
+  if (authFailure) {
+    console.warn(`Dropper deploy rejected: ${authFailure}`);
+    return NextResponse.json(
+      { success: false, error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+
   try {
     const body = await req.json();
     const targetPath = String(

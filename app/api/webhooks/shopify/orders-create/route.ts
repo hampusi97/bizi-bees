@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import crypto from 'crypto';
+import { checkShopifyHmac } from '@/lib/server/api-auth';
 
 export const runtime = 'nodejs'; // Node runtime for crypto HMAC verification
 
@@ -7,19 +7,14 @@ export async function POST(request: Request) {
   try {
     const rawBody = await request.text();
     const hmacHeader = request.headers.get('x-shopify-hmac-sha256');
-    const secret = process.env.SHOPIFY_WEBHOOK_SECRET;
 
-    // 1. Verify Shopify HMAC Signature if secret is configured
-    if (secret && hmacHeader) {
-      const generatedHash = crypto
-        .createHmac('sha256', secret)
-        .update(rawBody, 'utf8')
-        .digest('base64');
-
-      if (generatedHash !== hmacHeader) {
-        console.warn('⚠️ Webhook HMAC verification failed');
-        return new Response('Unauthorized Webhook Signature', { status: 401 });
-      }
+    // 1. Shopify HMAC signature is mandatory. This used to be skipped whenever
+    // the secret was unset or the header was simply omitted, which let anyone
+    // POST a fake paid order and trigger the supplier forward and Discord alert.
+    const hmacFailure = checkShopifyHmac(rawBody, hmacHeader);
+    if (hmacFailure) {
+      console.warn(`Unauthorized webhook rejected: ${hmacFailure}`);
+      return new Response('Unauthorized Webhook Signature', { status: 401 });
     }
 
     const order = JSON.parse(rawBody);
