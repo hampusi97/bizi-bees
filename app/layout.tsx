@@ -1,17 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import {
-  Cormorant_Garamond,
   Plus_Jakarta_Sans,
   JetBrains_Mono,
 } from "next/font/google";
 import "./globals.css";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -96,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${cormorant.variable} ${jakarta.variable} ${jetbrains.variable}`}
+      className={`dark ${jakarta.variable} ${jetbrains.variable}`}
     >
       <head>
         <script
