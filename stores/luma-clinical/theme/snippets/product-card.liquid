@@ -1,26 +1,154 @@
-<a class="card" href="{{ product.url }}" style="position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
-  <div class="card-image" style="position:relative;overflow:hidden;border-radius:6px;">
-    {% if product.available %}
-      <span style="position:absolute;top:8px;left:8px;background:#d90429;color:#fff;font-weight:800;font-size:11px;padding:3px 8px;border-radius:4px;letter-spacing:0.05em;box-shadow:0 2px 4px rgba(0,0,0,0.2);z-index:2;">35% OFF TODAY</span>
-    {% endif %}
+{% comment %}
+  Luma / Bizi product card — clean DTC presentation
+  - No full-bleed promo badges over photography
+  - Real variant prices (never invent discount math)
+  - Subtle condition tag only when present
+{% endcomment %}
+
+<a class="card bizi-product-card" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+  <div class="card-image bizi-card-media">
     {% if product.featured_image %}
-      {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '200,400,600', sizes: '(max-width:600px) 45vw, 23vw' }}
+      {{ product.featured_image
+        | image_url: width: 800
+        | image_tag:
+          loading: 'lazy',
+          widths: '200,400,600,800',
+          sizes: '(max-width:600px) 45vw, 23vw',
+          class: 'bizi-card-img',
+          alt: product.title
+      }}
     {% else %}
-      {{ 'product-1' | placeholder_svg_tag }}
+      <div class="bizi-card-placeholder">{{ 'product-1' | placeholder_svg_tag }}</div>
+    {% endif %}
+
+    {% if product.metafields.custom.condition != blank %}
+      <span class="bizi-condition-tag">{{ product.metafields.custom.condition.value | escape }}</span>
     {% endif %}
   </div>
-  <h3 style="margin:8px 0 4px;font-size:15px;line-height:1.3;">{{ product.title | escape }}</h3>
-  {% if product.available %}
-    <p style="margin:0 0 4px;font-size:11px;color:#b91c1c;font-weight:700;">🔥 Limited Stock · Sells Fast</p>
-  {% endif %}
-  {% if product.metafields.custom.condition != blank %}
-    <span class="badge">{{ product.metafields.custom.condition.value | escape }}</span>
-  {% endif %}
-  {% assign sale_price = product.price | times: 0.65 %}
-  <p class="price" style="margin:4px 0 0;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;">
-    {% if product.price_varies %}From {% endif %}
-    <span style="color:#d90429;font-weight:800;font-size:16px;">{{ sale_price | money }}</span>
-    <span style="text-decoration:line-through;color:#71717a;font-size:13px;">{{ product.price | money }}</span>
-    {% unless product.available %} · <span style="color:#888;">Sold out</span>{% endunless %}
-  </p>
+
+  <div class="bizi-card-body">
+    <h3 class="bizi-card-title">{{ product.title | escape }}</h3>
+
+    <div class="bizi-card-price-row">
+      {% if product.available %}
+        {% if product.price_varies %}
+          <span class="bizi-price-current">From {{ product.price_min | money }}</span>
+        {% else %}
+          <span class="bizi-price-current">{{ product.price | money }}</span>
+        {% endif %}
+        {% if product.compare_at_price > product.price %}
+          <span class="bizi-price-compare">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+      {% else %}
+        <span class="bizi-price-current">{{ product.price | money }}</span>
+        <span class="bizi-sold-out">Sold out</span>
+      {% endif %}
+    </div>
+  </div>
 </a>
+
+<style>
+  .bizi-product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #0F172A;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .bizi-product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+  .bizi-card-media {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #F8FAFC;
+    overflow: hidden;
+  }
+  .bizi-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .bizi-product-card:hover .bizi-card-img {
+    transform: scale(1.04);
+  }
+  .bizi-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.25;
+  }
+  .bizi-condition-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.94);
+    color: #0F172A;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+  }
+  .bizi-card-body {
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bizi-card-title {
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0F172A;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .bizi-card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .bizi-price-current {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .bizi-price-compare {
+    font-size: 13px;
+    color: #94A3B8;
+    text-decoration: line-through;
+  }
+  .bizi-sold-out {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Kill legacy inline red badges if any residual HTML remains */
+  .card-image > span[style*="d90429"],
+  .card-image > span[style*="#d90429"],
+  .card-image > span[style*="dc2626"],
+  .card-image > span[style*="#dc2626"] {
+    display: none !important;
+  }
+</style>
