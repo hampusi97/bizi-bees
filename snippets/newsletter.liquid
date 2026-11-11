@@ -1,50 +1,176 @@
+{% comment %}
+  Bizi Bees - Editorial Newsletter Signup
+  Matches boutique design system (olive / warm linen / serif headings).
+{% endcomment %}
 
-<section class="wrap block" style="padding: 40px 0;">
-  <div class="story" style="background: radial-gradient(120% 120% at 50% 0%, #fffbeb 0%, #ffffff 100%); border: 2px solid #fde68a; border-radius: 20px; padding: 42px 36px; box-shadow: 0 10px 25px rgba(217,119,6,0.06);">
-    <div>
-      <div style="display:inline-flex; align-items:center; gap:6px; background:#fef3c7; border:1px solid #fcd34d; padding:4px 12px; border-radius:999px; font-size:11px; font-weight:800; color:#92400e; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;">
-        🎁 VIP LAUNCH SPECIAL
-      </div>
-      <h2 style="font-size:clamp(28px, 4vw, 38px); font-weight:900; margin:0 0 12px; color:#111827; line-height:1.15;">
-        Get 35% Off Your Order.<br><span style="color:#b45309;">Plus 100% Free US Shipping.</span>
-      </h2>
-      <p style="font-size:15px; color:#4b5563; line-height:1.5; margin:0 0 16px; max-width:480px;">
-        Join our VIP insider circle. Unlock your instant 35% discount code, secret flash sales, and early access to fresh vintage book drops and clinical wellness tools.
+<section class="boutique-newsletter wrap">
+  <div class="newsletter-card">
+    <div class="newsletter-copy">
+      <span class="newsletter-eyebrow">Insider Circle</span>
+      <h2 class="newsletter-heading">Quiet updates. Honest finds.</h2>
+      <p class="newsletter-text">
+        Occasional notes on new shelf arrivals, careful condition guides, and a standing 35% welcome offer with code <strong>PROVOTODAY</strong>. Free standard shipping on US orders over $35.
       </p>
-      <div style="display:flex; gap:16px; font-size:12px; font-weight:700; color:#059669; flex-wrap:wrap;">
-        <span>✓ Instant Discount Code</span>
-        <span>✓ Zero Spam Ever</span>
-        <span>✓ Unsubscribe Anytime</span>
-      </div>
+      <ul class="newsletter-perks">
+        <li>Instant welcome discount</li>
+        <li>No spam — only useful drops</li>
+        <li>Unsubscribe anytime</li>
+      </ul>
     </div>
-    <div style="display:flex; flex-direction:column; justify-content:center;">
+
+    <div class="newsletter-form-wrap">
       {% form 'customer', id: 'WeeklyNewsletter' %}
         <input type="hidden" name="contact[tags]" value="newsletter,vip-launch,35-off">
         {% if form.posted_successfully? %}
-          <div style="background:#ecfdf5; border:2px solid #34d399; padding:20px; border-radius:14px; text-align:center;">
-            <div style="font-size:24px; margin-bottom:6px;">🎉</div>
-            <h3 style="margin:0 0 6px; color:#065f46; font-size:18px; font-weight:900;">You're on the VIP List!</h3>
-            <p style="margin:0 0 14px; font-size:14px; color:#047857;">Your 35% off promo code is: <strong style="font-family:monospace; font-size:18px; background:#ffffff; padding:2px 8px; border-radius:6px; border:1px dashed #059669; color:#dc2626;">PROVOTODAY</strong></p>
-            <a href="/discount/PROVOTODAY?redirect=/collections/all" style="display:inline-block; background:#059669; color:#ffffff; font-weight:800; font-size:14px; padding:12px 22px; border-radius:8px; text-decoration:none;">
-              Shop Now (35% Auto-Applied) →
-            </a>
+          <div class="newsletter-success">
+            <h3>You're on the list</h3>
+            <p>Your welcome code is <strong class="code-pill">PROVOTODAY</strong></p>
+            <a href="/discount/PROVOTODAY?redirect=/collections/all" class="boutique-btn-primary">Shop with 35% off</a>
           </div>
         {% else %}
           {{ form.errors | default_errors }}
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <label for="NewsletterEmail" style="font-size:13px; font-weight:700; color:#374151; margin:0;">Enter your email address:</label>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <input id="NewsletterEmail" type="email" name="contact[email]" autocomplete="email" required placeholder="Enter your email for 35% off..." style="flex:1; min-width:220px; padding:14px 16px; border:2px solid #d1d5db; border-radius:10px; font-size:15px;">
-              <button type="submit" style="background:#dc2626; color:#ffffff; font-weight:900; font-size:15px; padding:14px 26px; border-radius:10px; border:none; cursor:pointer; box-shadow:0 4px 12px rgba(220,38,38,0.3); white-space:nowrap;">
-                Claim 35% Off ⚡
-              </button>
-            </div>
-            <p style="font-size:11px; color:#9ca3af; margin:6px 0 0;">
-              By signing up, you agree to receive marketing updates from Bizi Bees &amp; Luma Wellness. Unsubscribe at any time.
-            </p>
+          <label for="NewsletterEmail" class="newsletter-label">Email address</label>
+          <div class="newsletter-row">
+            <input
+              id="NewsletterEmail"
+              type="email"
+              name="contact[email]"
+              autocomplete="email"
+              required
+              placeholder="you@example.com"
+              class="newsletter-input"
+            >
+            <button type="submit" class="boutique-btn-primary newsletter-submit">Join</button>
           </div>
+          <p class="newsletter-fineprint">
+            By signing up you agree to receive occasional marketing from Bizi Bees. Unsubscribe anytime.
+          </p>
         {% endif %}
       {% endform %}
     </div>
   </div>
 </section>
+
+<style>
+  .boutique-newsletter {
+    padding: 48px 24px 64px;
+  }
+  .newsletter-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    border-radius: 16px;
+    padding: 40px 36px;
+    box-shadow: 0 4px 20px rgba(28, 25, 23, 0.04);
+  }
+  .newsletter-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2D3B2D;
+    margin-bottom: 10px;
+  }
+  .newsletter-heading {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+  .newsletter-text {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #78716C;
+    margin: 0 0 16px;
+    max-width: 460px;
+  }
+  .newsletter-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2D3B2D;
+  }
+  .newsletter-perks li::before {
+    content: "✓ ";
+  }
+  .newsletter-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #44403C;
+    margin-bottom: 8px;
+  }
+  .newsletter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .newsletter-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 13px 14px;
+    border: 1px solid #E7E5E4;
+    border-radius: 8px;
+    background: #FAF7F2;
+    color: #1C1917;
+    font-size: 14px;
+  }
+  .newsletter-input:focus {
+    outline: 2px solid #2D3B2D;
+    outline-offset: 1px;
+    border-color: #2D3B2D;
+  }
+  .newsletter-submit {
+    white-space: nowrap;
+  }
+  .newsletter-fineprint {
+    font-size: 11px;
+    color: #A8A29E;
+    margin: 10px 0 0;
+  }
+  .newsletter-success {
+    background: #EEF2ED;
+    border: 1px solid #D6D3D1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .newsletter-success h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    margin: 0 0 8px;
+    color: #1C1917;
+  }
+  .newsletter-success p {
+    margin: 0 0 14px;
+    color: #57534E;
+    font-size: 14px;
+  }
+  .code-pill {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #FFFFFF;
+    border: 1px dashed #2D3B2D;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: #2D3B2D;
+  }
+  @media (max-width: 768px) {
+    .newsletter-card {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 28px 22px;
+    }
+  }
+</style>
