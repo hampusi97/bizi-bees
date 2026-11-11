@@ -28,7 +28,7 @@ async function verifyShopifyHmac(rawBody: string, hmacHeader: string, secret: st
     );
 
     const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(rawBody));
-    const base64Signature = btoa(String.fromCharCode(...new Uint8Array(signature)));
+    const base64Signature = Buffer.from(signature).toString('base64');
     
     return constantTimeCompare(base64Signature, hmacHeader);
   } catch (err) {
