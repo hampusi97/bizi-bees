@@ -1,89 +1,165 @@
 {
   "store": "WonderHive Play",
+  "count": 12,
   "products": [
     {
-      "handle": "store-05-wonder-hive-item-1",
-      "sku": "DROP-HIVE-200",
-      "title": "WonderHive Play Collection Item #1",
+      "handle": "wonderhive-10-frame-sensory-math-kit",
+      "sku": "DROP-HIVE-001",
+      "title": "WonderHive 10-Frame Sensory Math Kit",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Ten frames, 120 silicone counters, and 40 double-sided task cards in a cotton drawstring bag.",
+      "features": [
+        "Aligned to K-2 number sense",
+        "Wipe-clean, no batteries",
+        "Silicone counters, no plastic burrs",
+        "Classroom packs available"
+      ],
+      "marginPct": 73.2,
+      "category": "Math Manipulatives"
+    },
+    {
+      "handle": "sensory-bin-filler-kit",
+      "sku": "DROP-HIVE-002",
+      "title": "Sensory Bin Filler Kit",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "4 lb of coloured rice, scoops, and cups.",
+      "features": [
+        "4 lb of coloured rice, scoops, and cups."
+      ],
+      "marginPct": 75.3,
+      "category": "Sensory"
+    },
+    {
+      "handle": "montessori-counting-peg-board",
+      "sku": "DROP-HIVE-003",
+      "title": "Montessori Counting Peg Board",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Wooden peg board with 55 pegs.",
+      "features": [
+        "Wooden peg board with 55 pegs."
+      ],
+      "marginPct": 75.5,
+      "category": "Math"
+    },
+    {
+      "handle": "magnetic-tile-set-32-pc",
+      "sku": "DROP-HIVE-004",
+      "title": "Magnetic Tile Set (32 pc)",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "32 translucent magnetic tiles.",
+      "features": [
+        "32 translucent magnetic tiles."
+      ],
+      "marginPct": 72.3,
+      "category": "STEM"
+    },
+    {
+      "handle": "pattern-block-classroom-pack-250",
+      "sku": "DROP-HIVE-005",
+      "title": "Pattern Block Classroom Pack (250)",
+      "priceUsd": 49,
+      "compareAtUsd": 74,
+      "summary": "250 blocks in six shapes.",
+      "features": [
+        "250 blocks in six shapes."
+      ],
+      "marginPct": 72.7,
+      "category": "Math"
+    },
+    {
+      "handle": "stem-challenge-card-deck",
+      "sku": "DROP-HIVE-006",
+      "title": "STEM Challenge Card Deck",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "60 build challenges, K-5.",
+      "features": [
+        "60 build challenges, K-5."
+      ],
+      "marginPct": 77.5,
+      "category": "STEM"
+    },
+    {
+      "handle": "fidget-focus-tool-kit",
+      "sku": "DROP-HIVE-007",
+      "title": "Fidget & Focus Tool Kit",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Six silent focus tools.",
+      "features": [
+        "Six silent focus tools."
+      ],
+      "marginPct": 73.3,
+      "category": "Sensory"
+    },
+    {
+      "handle": "wooden-number-line-roll",
+      "sku": "DROP-HIVE-008",
+      "title": "Wooden Number Line Roll",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Roll-up 0-120 number line.",
+      "features": [
+        "Roll-up 0-120 number line."
+      ],
+      "marginPct": 75.8,
+      "category": "Math"
+    },
+    {
+      "handle": "fine-motor-tweezer-tray",
+      "sku": "DROP-HIVE-009",
+      "title": "Fine Motor Tweezer Tray",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Tray, tweezers, and sorting cups.",
+      "features": [
+        "Tray, tweezers, and sorting cups."
+      ],
+      "marginPct": 75.8,
+      "category": "Sensory"
+    },
+    {
+      "handle": "story-dice-retell-set",
+      "sku": "DROP-HIVE-010",
+      "title": "Story Dice & Retell Set",
+      "priceUsd": 19,
+      "compareAtUsd": 29,
+      "summary": "Nine story dice plus prompt cards.",
+      "features": [
+        "Nine story dice plus prompt cards."
+      ],
+      "marginPct": 73.2,
+      "category": "Literacy"
+    },
+    {
+      "handle": "balance-scale-explorer-kit",
+      "sku": "DROP-HIVE-011",
+      "title": "Balance Scale Explorer Kit",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Balance scale with weights.",
+      "features": [
+        "Balance scale with weights."
+      ],
+      "marginPct": 75.4,
+      "category": "STEM"
     },
     {
-      "handle": "store-05-wonder-hive-item-2",
-      "sku": "DROP-HIVE-201",
-      "title": "WonderHive Play Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
-    },
-    {
-      "handle": "store-05-wonder-hive-item-3",
-      "sku": "DROP-HIVE-202",
-      "title": "WonderHive Play Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
-    },
-    {
-      "handle": "store-05-wonder-hive-item-4",
-      "sku": "DROP-HIVE-203",
-      "title": "WonderHive Play Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
-    },
-    {
-      "handle": "store-05-wonder-hive-item-5",
-      "sku": "DROP-HIVE-204",
-      "title": "WonderHive Play Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
-    },
-    {
-      "handle": "store-05-wonder-hive-item-6",
-      "sku": "DROP-HIVE-205",
-      "title": "WonderHive Play Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-05-wonder-hive-item-7",
-      "sku": "DROP-HIVE-206",
-      "title": "WonderHive Play Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-05-wonder-hive-item-8",
-      "sku": "DROP-HIVE-207",
-      "title": "WonderHive Play Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-05-wonder-hive-item-9",
-      "sku": "DROP-HIVE-208",
-      "title": "WonderHive Play Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-05-wonder-hive-item-10",
-      "sku": "DROP-HIVE-209",
-      "title": "WonderHive Play Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-05-wonder-hive-item-11",
-      "sku": "DROP-HIVE-210",
-      "title": "WonderHive Play Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-05-wonder-hive-item-12",
-      "sku": "DROP-HIVE-211",
-      "title": "WonderHive Play Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "sensory-sand-play-mat",
+      "sku": "DROP-HIVE-012",
+      "title": "Sensory Sand Play Mat",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Foldable mat with a raised lip.",
+      "features": [
+        "Foldable mat with a raised lip."
+      ],
+      "marginPct": 72.8,
+      "category": "Sensory"
     }
   ]
 }

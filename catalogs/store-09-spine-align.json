@@ -1,89 +1,165 @@
 {
   "store": "SpineAlign Studio",
+  "count": 12,
   "products": [
     {
-      "handle": "store-09-spine-align-item-1",
-      "sku": "DROP-SPINE-200",
-      "title": "SpineAlign Studio Collection Item #1",
+      "handle": "spinealign-3-in-1-heated-cervical-traction-cradle",
+      "sku": "DROP-SPINE-001",
+      "title": "SpineAlign 3-in-1 Heated Cervical Traction Cradle",
+      "priceUsd": 59,
+      "compareAtUsd": 84,
+      "summary": "A cervical cradle with heat, a 10-minute timer, and three height settings for the at-desk decompression routine.",
+      "features": [
+        "Heat plus traction in one tool",
+        "10-minute auto-off timer",
+        "Three height settings",
+        "Includes a desk routine card"
+      ],
+      "marginPct": 73.1,
+      "category": "Posture"
+    },
+    {
+      "handle": "ergonomic-acupressure-mat",
+      "sku": "DROP-SPINE-002",
+      "title": "Ergonomic Acupressure Mat",
+      "priceUsd": 49,
+      "compareAtUsd": 74,
+      "summary": "6,000 points plus a neck pillow.",
+      "features": [
+        "6,000 points plus a neck pillow."
+      ],
+      "marginPct": 72.7,
+      "category": "Recovery"
+    },
+    {
+      "handle": "posture-corrector-brace",
+      "sku": "DROP-SPINE-003",
+      "title": "Posture Corrector Brace",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Adjustable, breathable mesh.",
+      "features": [
+        "Adjustable, breathable mesh."
+      ],
+      "marginPct": 75.3,
+      "category": "Posture"
+    },
+    {
+      "handle": "lumbar-support-cushion",
+      "sku": "DROP-SPINE-004",
+      "title": "Lumbar Support Cushion",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Memory foam with a strap.",
+      "features": [
+        "Memory foam with a strap."
+      ],
+      "marginPct": 75.4,
+      "category": "Desk"
     },
     {
-      "handle": "store-09-spine-align-item-2",
-      "sku": "DROP-SPINE-201",
-      "title": "SpineAlign Studio Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
-    },
-    {
-      "handle": "store-09-spine-align-item-3",
-      "sku": "DROP-SPINE-202",
-      "title": "SpineAlign Studio Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
-    },
-    {
-      "handle": "store-09-spine-align-item-4",
-      "sku": "DROP-SPINE-203",
-      "title": "SpineAlign Studio Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
-    },
-    {
-      "handle": "store-09-spine-align-item-5",
-      "sku": "DROP-SPINE-204",
-      "title": "SpineAlign Studio Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
-    },
-    {
-      "handle": "store-09-spine-align-item-6",
-      "sku": "DROP-SPINE-205",
-      "title": "SpineAlign Studio Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-09-spine-align-item-7",
-      "sku": "DROP-SPINE-206",
-      "title": "SpineAlign Studio Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-09-spine-align-item-8",
-      "sku": "DROP-SPINE-207",
-      "title": "SpineAlign Studio Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-09-spine-align-item-9",
-      "sku": "DROP-SPINE-208",
-      "title": "SpineAlign Studio Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-09-spine-align-item-10",
-      "sku": "DROP-SPINE-209",
-      "title": "SpineAlign Studio Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-09-spine-align-item-11",
-      "sku": "DROP-SPINE-210",
-      "title": "SpineAlign Studio Collection Item #11",
+      "handle": "standing-desk-converter",
+      "sku": "DROP-SPINE-005",
+      "title": "Standing Desk Converter",
       "priceUsd": 119,
-      "compareAtUsd": 185
+      "compareAtUsd": 169,
+      "summary": "Sit-stand riser, gas spring.",
+      "features": [
+        "Sit-stand riser, gas spring."
+      ],
+      "marginPct": 73.6,
+      "category": "Desk"
     },
     {
-      "handle": "store-09-spine-align-item-12",
-      "sku": "DROP-SPINE-211",
-      "title": "SpineAlign Studio Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "neck-stretcher",
+      "sku": "DROP-SPINE-006",
+      "title": "Neck Stretcher",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Inflatable cervical traction.",
+      "features": [
+        "Inflatable cervical traction."
+      ],
+      "marginPct": 75.5,
+      "category": "Posture"
+    },
+    {
+      "handle": "deep-tissue-massage-gun",
+      "sku": "DROP-SPINE-007",
+      "title": "Deep Tissue Massage Gun",
+      "priceUsd": 79,
+      "compareAtUsd": 119,
+      "summary": "Four heads, 6 speeds.",
+      "features": [
+        "Four heads, 6 speeds."
+      ],
+      "marginPct": 72.3,
+      "category": "Recovery"
+    },
+    {
+      "handle": "footrest-rocker",
+      "sku": "DROP-SPINE-008",
+      "title": "Footrest Rocker",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Non-slip rocking footrest.",
+      "features": [
+        "Non-slip rocking footrest."
+      ],
+      "marginPct": 72.1,
+      "category": "Desk"
+    },
+    {
+      "handle": "heat-ice-neck-wrap",
+      "sku": "DROP-SPINE-009",
+      "title": "Heat & Ice Neck Wrap",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "Microwave or freezer ready.",
+      "features": [
+        "Microwave or freezer ready."
+      ],
+      "marginPct": 72.5,
+      "category": "Recovery"
+    },
+    {
+      "handle": "ergonomic-wrist-rest-set",
+      "sku": "DROP-SPINE-010",
+      "title": "Ergonomic Wrist Rest Set",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Keyboard and mouse rests.",
+      "features": [
+        "Keyboard and mouse rests."
+      ],
+      "marginPct": 75.4,
+      "category": "Desk"
+    },
+    {
+      "handle": "resistance-band-posture-set",
+      "sku": "DROP-SPINE-011",
+      "title": "Resistance Band Posture Set",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Five bands plus a door anchor.",
+      "features": [
+        "Five bands plus a door anchor."
+      ],
+      "marginPct": 77.5,
+      "category": "Posture"
+    },
+    {
+      "handle": "cervical-traction-cover",
+      "sku": "DROP-SPINE-012",
+      "title": "Cervical Traction Cover",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Washable cover for the cradle.",
+      "features": [
+        "Washable cover for the cradle."
+      ],
+      "marginPct": 75.8,
+      "category": "Accessories"
     }
   ]
 }

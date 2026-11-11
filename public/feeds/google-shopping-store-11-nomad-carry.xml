@@ -3,111 +3,111 @@
 <channel>
 <title>NomadCarry Google Shopping Feed</title>
 <link>https://nomadcarry.com</link>
-<description>100% verified catalog for 40L Vacuum-Compression Carry-On Backpacks + Micro-Pump</description>
+<description>40L Vacuum-Compression Carry-On Backpacks + Micro-Pump</description>
   <item>
-    <g:id>DROP-NOMAD-200</g:id>
-    <title><![CDATA[NomadCarry Collection Item #1]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-1</link>
-    <g:price>39.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-201</g:id>
-    <title><![CDATA[NomadCarry Collection Item #2]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-2</link>
-    <g:price>47.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-202</g:id>
-    <title><![CDATA[NomadCarry Collection Item #3]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-3</link>
-    <g:price>55.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-203</g:id>
-    <title><![CDATA[NomadCarry Collection Item #4]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-4</link>
-    <g:price>63.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-204</g:id>
-    <title><![CDATA[NomadCarry Collection Item #5]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-5</link>
-    <g:price>71.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-205</g:id>
-    <title><![CDATA[NomadCarry Collection Item #6]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-6</link>
-    <g:price>79.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-206</g:id>
-    <title><![CDATA[NomadCarry Collection Item #7]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-7</link>
-    <g:price>87.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-207</g:id>
-    <title><![CDATA[NomadCarry Collection Item #8]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-208</g:id>
-    <title><![CDATA[NomadCarry Collection Item #9]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-209</g:id>
-    <title><![CDATA[NomadCarry Collection Item #10]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>NomadCarry</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-NOMAD-210</g:id>
-    <title><![CDATA[NomadCarry Collection Item #11]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-11</link>
+    <g:id>DROP-NOMAD-001</g:id>
+    <title><![CDATA[NomadCarry AirVac 40L Vacuum Backpack + Pump]]></title>
+    <link>https://nomadcarry.com/products/nomadcarry-airvac-40l-vacuum-backpack-pump</link>
     <g:price>119.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>NomadCarry</g:brand>
   </item>
   <item>
-    <g:id>DROP-NOMAD-211</g:id>
-    <title><![CDATA[NomadCarry Collection Item #12]]></title>
-    <link>https://nomadcarry.com/products/store-11-nomad-carry-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-NOMAD-002</g:id>
+    <title><![CDATA[Vacuum Packing Cube Set (3)]]></title>
+    <link>https://nomadcarry.com/products/vacuum-packing-cube-set-3</link>
+    <g:price>39.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-003</g:id>
+    <title><![CDATA[Tech Organizer Pouch]]></title>
+    <link>https://nomadcarry.com/products/tech-organizer-pouch</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-004</g:id>
+    <title><![CDATA[Travel Bottle Kit (TSA)]]></title>
+    <link>https://nomadcarry.com/products/travel-bottle-kit-tsa</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-005</g:id>
+    <title><![CDATA[Compression Socks (2 pr)]]></title>
+    <link>https://nomadcarry.com/products/compression-socks-2-pr</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-006</g:id>
+    <title><![CDATA[Modular Toiletry Bag]]></title>
+    <link>https://nomadcarry.com/products/modular-toiletry-bag</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-007</g:id>
+    <title><![CDATA[USB-C Micro Pump (Spare)]]></title>
+    <link>https://nomadcarry.com/products/usb-c-micro-pump-spare</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-008</g:id>
+    <title><![CDATA[Luggage Scale & Tag Set]]></title>
+    <link>https://nomadcarry.com/products/luggage-scale-tag-set</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-009</g:id>
+    <title><![CDATA[Travel Laundry Kit]]></title>
+    <link>https://nomadcarry.com/products/travel-laundry-kit</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-010</g:id>
+    <title><![CDATA[Passport & Document Organizer]]></title>
+    <link>https://nomadcarry.com/products/passport-document-organizer</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-011</g:id>
+    <title><![CDATA[Neck Pillow (Memory Foam)]]></title>
+    <link>https://nomadcarry.com/products/neck-pillow-memory-foam</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>NomadCarry</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-NOMAD-012</g:id>
+    <title><![CDATA[Universal Travel Adapter]]></title>
+    <link>https://nomadcarry.com/products/universal-travel-adapter</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>NomadCarry</g:brand>

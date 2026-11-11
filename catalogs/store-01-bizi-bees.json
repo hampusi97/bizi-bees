@@ -1,89 +1,165 @@
 {
   "store": "Bizi Bees Boutique",
+  "count": 12,
   "products": [
     {
-      "handle": "store-01-bizi-bees-item-1",
-      "sku": "UTAH-200",
-      "title": "Bizi Bees Boutique Collection Item #1",
+      "handle": "the-utah-reader-game-night-box",
+      "sku": "UTAH-001",
+      "title": "The Utah Reader & Game Night Box",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "One hand-graded hardcover, one verified-complete board game, a solid brass page anchor, and a Utah kraft collector box.",
+      "features": [
+        "Book graded A/B on a 5-point spine test",
+        "Board game pieces counted vs. manual",
+        "Ships in 1 business day from Utah",
+        "60-day swap guarantee"
+      ],
+      "marginPct": 73.6,
+      "category": "Gift Box"
+    },
+    {
+      "handle": "vintage-hardcover-reading-bundle-3-books",
+      "sku": "UTAH-002",
+      "title": "Vintage Hardcover Reading Bundle (3 Books)",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Three graded hardcovers from one theme, no duplicates.",
+      "features": [
+        "Three graded hardcovers from one theme, no duplicates."
+      ],
+      "marginPct": 72.8,
+      "category": "Books"
+    },
+    {
+      "handle": "complete-board-game-rescue-box",
+      "sku": "UTAH-003",
+      "title": "Complete Board Game Rescue Box",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 59,
+      "summary": "Two out-of-print board games, both piece-verified.",
+      "features": [
+        "Two out-of-print board games, both piece-verified."
+      ],
+      "marginPct": 72.8,
+      "category": "Board Games"
     },
     {
-      "handle": "store-01-bizi-bees-item-2",
-      "sku": "UTAH-201",
-      "title": "Bizi Bees Boutique Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "utah-made-beeswax-candle-trio",
+      "sku": "UTAH-004",
+      "title": "Utah Made Beeswax Candle Trio",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Three 6 oz pours from a Cache Valley apiary.",
+      "features": [
+        "Three 6 oz pours from a Cache Valley apiary."
+      ],
+      "marginPct": 75.3,
+      "category": "Utah Finds"
     },
     {
-      "handle": "store-01-bizi-bees-item-3",
-      "sku": "UTAH-202",
-      "title": "Bizi Bees Boutique Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "brass-bookmark-page-anchor-set",
+      "sku": "UTAH-005",
+      "title": "Brass Bookmark & Page Anchor Set",
+      "priceUsd": 14,
+      "compareAtUsd": 24,
+      "summary": "Two solid brass markers in a felt sleeve.",
+      "features": [
+        "Two solid brass markers in a felt sleeve."
+      ],
+      "marginPct": 72.1,
+      "category": "Accessories"
     },
     {
-      "handle": "store-01-bizi-bees-item-4",
-      "sku": "UTAH-203",
-      "title": "Bizi Bees Boutique Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "salt-flats-desk-print-set-5",
+      "sku": "UTAH-006",
+      "title": "Salt Flats Desk Print Set (5)",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Giclee prints of the Bonneville salt flats at five hours.",
+      "features": [
+        "Giclee prints of the Bonneville salt flats at five hours."
+      ],
+      "marginPct": 74.6,
+      "category": "Home"
     },
     {
-      "handle": "store-01-bizi-bees-item-5",
-      "sku": "UTAH-204",
-      "title": "Bizi Bees Boutique Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "puzzle-board-game-night-kit",
+      "sku": "UTAH-007",
+      "title": "Puzzle & Board Game Night Kit",
+      "priceUsd": 49,
+      "compareAtUsd": 69,
+      "summary": "Two complete classics, timer, scorepad, snack tins.",
+      "features": [
+        "Two complete classics, timer, scorepad, snack tins."
+      ],
+      "marginPct": 74.7,
+      "category": "Board Games"
     },
     {
-      "handle": "store-01-bizi-bees-item-6",
-      "sku": "UTAH-205",
-      "title": "Bizi Bees Boutique Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "used-manga-starter-stack-10-vols",
+      "sku": "UTAH-008",
+      "title": "Used Manga Starter Stack (10 vols)",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Ten consecutive volumes, spine-matched.",
+      "features": [
+        "Ten consecutive volumes, spine-matched."
+      ],
+      "marginPct": 73.2,
+      "category": "Books"
     },
     {
-      "handle": "store-01-bizi-bees-item-7",
-      "sku": "UTAH-206",
-      "title": "Bizi Bees Boutique Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "cast-iron-camp-skillet-10in",
+      "sku": "UTAH-009",
+      "title": "Cast Iron Camp Skillet (10in)",
+      "priceUsd": 39,
+      "compareAtUsd": 54,
+      "summary": "Pre-seasoned, Utah-forged handle.",
+      "features": [
+        "Pre-seasoned, Utah-forged handle."
+      ],
+      "marginPct": 73.8,
+      "category": "Utah Finds"
     },
     {
-      "handle": "store-01-bizi-bees-item-8",
-      "sku": "UTAH-207",
-      "title": "Bizi Bees Boutique Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "beehive-state-trivia-card-deck",
+      "sku": "UTAH-010",
+      "title": "Beehive State Trivia Card Deck",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "300 Utah questions, plastic-coated cards.",
+      "features": [
+        "300 Utah questions, plastic-coated cards."
+      ],
+      "marginPct": 75.8,
+      "category": "Games"
     },
     {
-      "handle": "store-01-bizi-bees-item-9",
-      "sku": "UTAH-208",
-      "title": "Bizi Bees Boutique Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "kid-s-read-aloud-chapter-book-bundle",
+      "sku": "UTAH-011",
+      "title": "Kid's Read-Aloud Chapter Book Bundle",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Four age-graded chapter books for ages 7-10.",
+      "features": [
+        "Four age-graded chapter books for ages 7-10."
+      ],
+      "marginPct": 76.2,
+      "category": "Books"
     },
     {
-      "handle": "store-01-bizi-bees-item-10",
-      "sku": "UTAH-209",
-      "title": "Bizi Bees Boutique Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-01-bizi-bees-item-11",
-      "sku": "UTAH-210",
-      "title": "Bizi Bees Boutique Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-01-bizi-bees-item-12",
-      "sku": "UTAH-211",
-      "title": "Bizi Bees Boutique Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "wooden-dice-tower-tray",
+      "sku": "UTAH-012",
+      "title": "Wooden Dice Tower & Tray",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Solid oak tower with a felt catch tray.",
+      "features": [
+        "Solid oak tower with a felt catch tray."
+      ],
+      "marginPct": 75.5,
+      "category": "Games"
     }
   ]
 }

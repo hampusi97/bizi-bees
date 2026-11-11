@@ -1,89 +1,165 @@
 {
   "store": "KineticGrip",
+  "count": 12,
   "products": [
     {
-      "handle": "store-13-kinetic-grip-item-1",
-      "sku": "DROP-GRIP-200",
-      "title": "KineticGrip Collection Item #1",
+      "handle": "kineticgrip-50-350-lb-cnc-aluminum-gripper-set",
+      "sku": "DROP-GRIP-001",
+      "title": "KineticGrip 50-350 lb CNC Aluminum Gripper Set",
+      "priceUsd": 44,
+      "compareAtUsd": 59,
+      "summary": "A 50-350 lb adjustable CNC aluminium gripper with knurled handles and a carry case.",
+      "features": [
+        "50-350 lb in 25 lb steps",
+        "6061 CNC aluminium",
+        "Knurled chalk-friendly handles",
+        "Carry case included"
+      ],
+      "marginPct": 74.5,
+      "category": "Training"
+    },
+    {
+      "handle": "mobility-floss-bands-3",
+      "sku": "DROP-GRIP-002",
+      "title": "Mobility Floss Bands (3)",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Three widths for wrist and elbow.",
+      "features": [
+        "Three widths for wrist and elbow."
+      ],
+      "marginPct": 76.2,
+      "category": "Recovery"
+    },
+    {
+      "handle": "liquid-chalk-refill",
+      "sku": "DROP-GRIP-003",
+      "title": "Liquid Chalk Refill",
+      "priceUsd": 14,
+      "compareAtUsd": 24,
+      "summary": "8 oz liquid chalk.",
+      "features": [
+        "8 oz liquid chalk."
+      ],
+      "marginPct": 72.1,
+      "category": "Consumables"
+    },
+    {
+      "handle": "climbing-chalk-block-2",
+      "sku": "DROP-GRIP-004",
+      "title": "Climbing Chalk Block (2)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Two 2 oz chalk blocks.",
+      "features": [
+        "Two 2 oz chalk blocks."
+      ],
+      "marginPct": 75.8,
+      "category": "Consumables"
+    },
+    {
+      "handle": "finger-trainer-board",
+      "sku": "DROP-GRIP-005",
+      "title": "Finger Trainer Board",
+      "priceUsd": 49,
+      "compareAtUsd": 74,
+      "summary": "Adjustable hangboard.",
+      "features": [
+        "Adjustable hangboard."
+      ],
+      "marginPct": 72.7,
+      "category": "Training"
+    },
+    {
+      "handle": "wrist-strengthener-roller",
+      "sku": "DROP-GRIP-006",
+      "title": "Wrist Strengthener Roller",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Roller with a removable weight.",
+      "features": [
+        "Roller with a removable weight."
+      ],
+      "marginPct": 75.4,
+      "category": "Training"
     },
     {
-      "handle": "store-13-kinetic-grip-item-2",
-      "sku": "DROP-GRIP-201",
-      "title": "KineticGrip Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "grip-strengthener-set-3",
+      "sku": "DROP-GRIP-007",
+      "title": "Grip Strengthener Set (3)",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Three resistances.",
+      "features": [
+        "Three resistances."
+      ],
+      "marginPct": 75.5,
+      "category": "Training"
     },
     {
-      "handle": "store-13-kinetic-grip-item-3",
-      "sku": "DROP-GRIP-202",
-      "title": "KineticGrip Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "forearm-recovery-sleeve",
+      "sku": "DROP-GRIP-008",
+      "title": "Forearm Recovery Sleeve",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Pair of compression sleeves.",
+      "features": [
+        "Pair of compression sleeves."
+      ],
+      "marginPct": 73.3,
+      "category": "Recovery"
     },
     {
-      "handle": "store-13-kinetic-grip-item-4",
-      "sku": "DROP-GRIP-203",
-      "title": "KineticGrip Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "tendon-massage-tool",
+      "sku": "DROP-GRIP-009",
+      "title": "Tendon Massage Tool",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Stainless tendon massage bar.",
+      "features": [
+        "Stainless tendon massage bar."
+      ],
+      "marginPct": 77.5,
+      "category": "Recovery"
     },
     {
-      "handle": "store-13-kinetic-grip-item-5",
-      "sku": "DROP-GRIP-204",
-      "title": "KineticGrip Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "chalk-bucket",
+      "sku": "DROP-GRIP-010",
+      "title": "Chalk Bucket",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Roll-top chalk bucket.",
+      "features": [
+        "Roll-top chalk bucket."
+      ],
+      "marginPct": 72.8,
+      "category": "Accessories"
     },
     {
-      "handle": "store-13-kinetic-grip-item-6",
-      "sku": "DROP-GRIP-205",
-      "title": "KineticGrip Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "resistance-bar-medium",
+      "sku": "DROP-GRIP-011",
+      "title": "Resistance Bar (Medium)",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Medium resistance bar.",
+      "features": [
+        "Medium resistance bar."
+      ],
+      "marginPct": 72.1,
+      "category": "Training"
     },
     {
-      "handle": "store-13-kinetic-grip-item-7",
-      "sku": "DROP-GRIP-206",
-      "title": "KineticGrip Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-13-kinetic-grip-item-8",
-      "sku": "DROP-GRIP-207",
-      "title": "KineticGrip Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-13-kinetic-grip-item-9",
-      "sku": "DROP-GRIP-208",
-      "title": "KineticGrip Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-13-kinetic-grip-item-10",
-      "sku": "DROP-GRIP-209",
-      "title": "KineticGrip Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-13-kinetic-grip-item-11",
-      "sku": "DROP-GRIP-210",
-      "title": "KineticGrip Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-13-kinetic-grip-item-12",
-      "sku": "DROP-GRIP-211",
-      "title": "KineticGrip Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "hand-care-balm",
+      "sku": "DROP-GRIP-012",
+      "title": "Hand Care Balm",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Climbing hand balm, 2 oz.",
+      "features": [
+        "Climbing hand balm, 2 oz."
+      ],
+      "marginPct": 76.8,
+      "category": "Recovery"
     }
   ]
 }

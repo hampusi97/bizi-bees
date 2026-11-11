@@ -1,89 +1,165 @@
 {
   "store": "Luma Clinical",
+  "count": 12,
   "products": [
     {
-      "handle": "store-02-luma-clinical-item-1",
-      "sku": "DROP-LUMA-200",
-      "title": "Luma Clinical Collection Item #1",
+      "handle": "lumaglow-4-in-1-red-light-sculpting-wand",
+      "sku": "DROP-LUMA-001",
+      "title": "LumaGlow 4-in-1 Red Light Sculpting Wand",
+      "priceUsd": 84,
+      "compareAtUsd": 119,
+      "summary": "630nm red LED, 350\u00b5A microcurrent, 42\u00b0C thermal, and 10,000 RPM sonic in one rotating head.",
+      "features": [
+        "4 modes: LED, microcurrent, thermal, sonic",
+        "USB-C, 90-minute battery",
+        "Fits 3.5mm treatment pads",
+        "FDA-registered facility, 1-year warranty"
+      ],
+      "marginPct": 73.3,
+      "category": "Skincare Device"
+    },
+    {
+      "handle": "hyaluronic-conductive-gel-8-oz",
+      "sku": "DROP-LUMA-002",
+      "title": "Hyaluronic Conductive Gel (8 oz)",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Fragrance-free gel for microcurrent contact.",
+      "features": [
+        "Fragrance-free gel for microcurrent contact."
+      ],
+      "marginPct": 74.2,
+      "category": "Consumables"
+    },
+    {
+      "handle": "collagen-eye-renewal-patches-30-pr",
+      "sku": "DROP-LUMA-003",
+      "title": "Collagen Eye Renewal Patches (30 pr)",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Hydrogel patches for under-eye use.",
+      "features": [
+        "Hydrogel patches for under-eye use."
+      ],
+      "marginPct": 72.1,
+      "category": "Skincare"
+    },
+    {
+      "handle": "lumaglow-replacement-head",
+      "sku": "DROP-LUMA-004",
+      "title": "LumaGlow Replacement Head",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Spare rotating alloy head with LED matrix.",
+      "features": [
+        "Spare rotating alloy head with LED matrix."
+      ],
+      "marginPct": 75.4,
+      "category": "Device Parts"
     },
     {
-      "handle": "store-02-luma-clinical-item-2",
-      "sku": "DROP-LUMA-201",
-      "title": "Luma Clinical Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "nano-ion-facial-steamer",
+      "sku": "DROP-LUMA-005",
+      "title": "Nano-Ion Facial Steamer",
+      "priceUsd": 74,
+      "compareAtUsd": 109,
+      "summary": "10-minute warm mist, 200 ml tank.",
+      "features": [
+        "10-minute warm mist, 200 ml tank."
+      ],
+      "marginPct": 73.8,
+      "category": "Skincare Device"
     },
     {
-      "handle": "store-02-luma-clinical-item-3",
-      "sku": "DROP-LUMA-202",
-      "title": "Luma Clinical Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
-    },
-    {
-      "handle": "store-02-luma-clinical-item-4",
-      "sku": "DROP-LUMA-203",
-      "title": "Luma Clinical Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
-    },
-    {
-      "handle": "store-02-luma-clinical-item-5",
-      "sku": "DROP-LUMA-204",
-      "title": "Luma Clinical Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
-    },
-    {
-      "handle": "store-02-luma-clinical-item-6",
-      "sku": "DROP-LUMA-205",
-      "title": "Luma Clinical Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-02-luma-clinical-item-7",
-      "sku": "DROP-LUMA-206",
-      "title": "Luma Clinical Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-02-luma-clinical-item-8",
-      "sku": "DROP-LUMA-207",
-      "title": "Luma Clinical Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-02-luma-clinical-item-9",
-      "sku": "DROP-LUMA-208",
-      "title": "Luma Clinical Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-02-luma-clinical-item-10",
-      "sku": "DROP-LUMA-209",
-      "title": "Luma Clinical Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-02-luma-clinical-item-11",
-      "sku": "DROP-LUMA-210",
-      "title": "Luma Clinical Collection Item #11",
+      "handle": "630nm-led-neck-chest-panel",
+      "sku": "DROP-LUMA-006",
+      "title": "630nm LED Neck & Chest Panel",
       "priceUsd": 119,
-      "compareAtUsd": 185
+      "compareAtUsd": 169,
+      "summary": "Foldable silicone panel, 60 diodes.",
+      "features": [
+        "Foldable silicone panel, 60 diodes."
+      ],
+      "marginPct": 73.6,
+      "category": "Skincare Device"
     },
     {
-      "handle": "store-02-luma-clinical-item-12",
-      "sku": "DROP-LUMA-211",
-      "title": "Luma Clinical Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "clinical-serum-refill-duo",
+      "sku": "DROP-LUMA-007",
+      "title": "Clinical Serum Refill Duo",
+      "priceUsd": 44,
+      "compareAtUsd": 59,
+      "summary": "Two 1 oz serums: peptide and niacinamide.",
+      "features": [
+        "Two 1 oz serums: peptide and niacinamide."
+      ],
+      "marginPct": 74.5,
+      "category": "Consumables"
+    },
+    {
+      "handle": "ice-roller-gua-sha-set",
+      "sku": "DROP-LUMA-008",
+      "title": "Ice Roller & Gua Sha Set",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Stainless roller plus bian stone gua sha.",
+      "features": [
+        "Stainless roller plus bian stone gua sha."
+      ],
+      "marginPct": 75.3,
+      "category": "Tools"
+    },
+    {
+      "handle": "microcurrent-treatment-pads-12",
+      "sku": "DROP-LUMA-009",
+      "title": "Microcurrent Treatment Pads (12)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Single-use conductive pads.",
+      "features": [
+        "Single-use conductive pads."
+      ],
+      "marginPct": 75.8,
+      "category": "Consumables"
+    },
+    {
+      "handle": "travel-led-wand-case",
+      "sku": "DROP-LUMA-010",
+      "title": "Travel LED Wand Case",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Hard shell with charging pocket.",
+      "features": [
+        "Hard shell with charging pocket."
+      ],
+      "marginPct": 75.5,
+      "category": "Accessories"
+    },
+    {
+      "handle": "post-treatment-barrier-cream",
+      "sku": "DROP-LUMA-011",
+      "title": "Post-Treatment Barrier Cream",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Ceramide-rich cream for after-session use.",
+      "features": [
+        "Ceramide-rich cream for after-session use."
+      ],
+      "marginPct": 75.2,
+      "category": "Skincare"
+    },
+    {
+      "handle": "at-home-facial-protocol-cards",
+      "sku": "DROP-LUMA-012",
+      "title": "At-Home Facial Protocol Cards",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Laminated 12-protocol routine deck.",
+      "features": [
+        "Laminated 12-protocol routine deck."
+      ],
+      "marginPct": 77.5,
+      "category": "Education"
     }
   ]
 }

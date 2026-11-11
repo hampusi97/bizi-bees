@@ -3,111 +3,111 @@
 <channel>
 <title>WonderHive Play Google Shopping Feed</title>
 <link>https://wonderhiveplay.com</link>
-<description>100% verified catalog for Tactile 10-Frame Math Fidgets & Montessori Sensory STEM</description>
+<description>Tactile 10-Frame Math Fidgets &amp; Montessori Sensory STEM</description>
   <item>
-    <g:id>DROP-HIVE-200</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #1]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-1</link>
+    <g:id>DROP-HIVE-001</g:id>
+    <title><![CDATA[WonderHive 10-Frame Sensory Math Kit]]></title>
+    <link>https://wonderhiveplay.com/products/wonderhive-10-frame-sensory-math-kit</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-002</g:id>
+    <title><![CDATA[Sensory Bin Filler Kit]]></title>
+    <link>https://wonderhiveplay.com/products/sensory-bin-filler-kit</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-003</g:id>
+    <title><![CDATA[Montessori Counting Peg Board]]></title>
+    <link>https://wonderhiveplay.com/products/montessori-counting-peg-board</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-004</g:id>
+    <title><![CDATA[Magnetic Tile Set (32 pc)]]></title>
+    <link>https://wonderhiveplay.com/products/magnetic-tile-set-32-pc</link>
+    <g:price>44.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-005</g:id>
+    <title><![CDATA[Pattern Block Classroom Pack (250)]]></title>
+    <link>https://wonderhiveplay.com/products/pattern-block-classroom-pack-250</link>
+    <g:price>49.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-006</g:id>
+    <title><![CDATA[STEM Challenge Card Deck]]></title>
+    <link>https://wonderhiveplay.com/products/stem-challenge-card-deck</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-007</g:id>
+    <title><![CDATA[Fidget & Focus Tool Kit]]></title>
+    <link>https://wonderhiveplay.com/products/fidget-focus-tool-kit</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-008</g:id>
+    <title><![CDATA[Wooden Number Line Roll]]></title>
+    <link>https://wonderhiveplay.com/products/wooden-number-line-roll</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-009</g:id>
+    <title><![CDATA[Fine Motor Tweezer Tray]]></title>
+    <link>https://wonderhiveplay.com/products/fine-motor-tweezer-tray</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-010</g:id>
+    <title><![CDATA[Story Dice & Retell Set]]></title>
+    <link>https://wonderhiveplay.com/products/story-dice-retell-set</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>WonderHive Play</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-HIVE-011</g:id>
+    <title><![CDATA[Balance Scale Explorer Kit]]></title>
+    <link>https://wonderhiveplay.com/products/balance-scale-explorer-kit</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>WonderHive Play</g:brand>
   </item>
   <item>
-    <g:id>DROP-HIVE-201</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #2]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-2</link>
-    <g:price>47.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-202</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #3]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-3</link>
-    <g:price>55.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-203</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #4]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-4</link>
-    <g:price>63.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-204</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #5]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-5</link>
-    <g:price>71.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-205</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #6]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-6</link>
-    <g:price>79.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-206</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #7]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-7</link>
-    <g:price>87.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-207</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #8]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-208</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #9]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-209</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #10]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-210</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #11]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-11</link>
-    <g:price>119.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>WonderHive Play</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-HIVE-211</g:id>
-    <title><![CDATA[WonderHive Play Collection Item #12]]></title>
-    <link>https://wonderhiveplay.com/products/store-05-wonder-hive-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-HIVE-012</g:id>
+    <title><![CDATA[Sensory Sand Play Mat]]></title>
+    <link>https://wonderhiveplay.com/products/sensory-sand-play-mat</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>WonderHive Play</g:brand>

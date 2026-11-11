@@ -1,89 +1,165 @@
 {
   "store": "VerdeHydro",
+  "count": 12,
   "products": [
     {
-      "handle": "store-15-verde-hydro-item-1",
-      "sku": "DROP-VERDE-200",
-      "title": "VerdeHydro Collection Item #1",
+      "handle": "verdehydro-4000k-brass-halo-grow-light-planter",
+      "sku": "DROP-VERDE-001",
+      "title": "VerdeHydro 4000K Brass Halo Grow Light & Planter",
+      "priceUsd": 49,
+      "compareAtUsd": 69,
+      "summary": "A 4000K full-spectrum halo grow light in a solid brass ring, set into a self-watering ceramic planter.",
+      "features": [
+        "4000K full spectrum",
+        "PPFD 120 at 12 in",
+        "Self-watering reservoir",
+        "Solid brass, patinas naturally"
+      ],
+      "marginPct": 74.7,
+      "category": "Plant Lighting"
+    },
+    {
+      "handle": "organic-liquid-plant-food-8-oz",
+      "sku": "DROP-VERDE-002",
+      "title": "Organic Liquid Plant Food (8 oz)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Balanced organic feed.",
+      "features": [
+        "Balanced organic feed."
+      ],
+      "marginPct": 76.8,
+      "category": "Consumables"
+    },
+    {
+      "handle": "hydro-wick-refill-pack-10",
+      "sku": "DROP-VERDE-003",
+      "title": "Hydro-Wick Refill Pack (10)",
+      "priceUsd": 14,
+      "compareAtUsd": 24,
+      "summary": "Ten replacement wicks.",
+      "features": [
+        "Ten replacement wicks."
+      ],
+      "marginPct": 72.1,
+      "category": "Consumables"
+    },
+    {
+      "handle": "propagation-station-6-tubes",
+      "sku": "DROP-VERDE-004",
+      "title": "Propagation Station (6 Tubes)",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Glass tubes on a brass stand.",
+      "features": [
+        "Glass tubes on a brass stand."
+      ],
+      "marginPct": 72.4,
+      "category": "Propagation"
+    },
+    {
+      "handle": "aroid-soil-mix-4-qt",
+      "sku": "DROP-VERDE-005",
+      "title": "Aroid Soil Mix (4 qt)",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Chunky aroid mix.",
+      "features": [
+        "Chunky aroid mix."
+      ],
+      "marginPct": 75.4,
+      "category": "Consumables"
+    },
+    {
+      "handle": "plant-mister-brass",
+      "sku": "DROP-VERDE-006",
+      "title": "Plant Mister (Brass)",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Brass-bodied fine mister.",
+      "features": [
+        "Brass-bodied fine mister."
+      ],
+      "marginPct": 75.5,
+      "category": "Tools"
+    },
+    {
+      "handle": "clip-on-grow-light",
+      "sku": "DROP-VERDE-007",
+      "title": "Clip-On Grow Light",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 59,
+      "summary": "Clip light with a timer.",
+      "features": [
+        "Clip light with a timer."
+      ],
+      "marginPct": 72.1,
+      "category": "Plant Lighting"
     },
     {
-      "handle": "store-15-verde-hydro-item-2",
-      "sku": "DROP-VERDE-201",
-      "title": "VerdeHydro Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "self-watering-planter-medium",
+      "sku": "DROP-VERDE-008",
+      "title": "Self-Watering Planter (Medium)",
+      "priceUsd": 49,
+      "compareAtUsd": 74,
+      "summary": "Ceramic with a reservoir.",
+      "features": [
+        "Ceramic with a reservoir."
+      ],
+      "marginPct": 72.7,
+      "category": "Planters"
     },
     {
-      "handle": "store-15-verde-hydro-item-3",
-      "sku": "DROP-VERDE-202",
-      "title": "VerdeHydro Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "propagation-heat-mat",
+      "sku": "DROP-VERDE-009",
+      "title": "Propagation Heat Mat",
+      "priceUsd": 39,
+      "compareAtUsd": 54,
+      "summary": "10x20 in heat mat.",
+      "features": [
+        "10x20 in heat mat."
+      ],
+      "marginPct": 75.4,
+      "category": "Propagation"
     },
     {
-      "handle": "store-15-verde-hydro-item-4",
-      "sku": "DROP-VERDE-203",
-      "title": "VerdeHydro Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "pruning-shears-brass",
+      "sku": "DROP-VERDE-010",
+      "title": "Pruning Shears (Brass)",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Bypass shears, brass handles.",
+      "features": [
+        "Bypass shears, brass handles."
+      ],
+      "marginPct": 72.8,
+      "category": "Tools"
     },
     {
-      "handle": "store-15-verde-hydro-item-5",
-      "sku": "DROP-VERDE-204",
-      "title": "VerdeHydro Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "rare-aroid-cutting-pack",
+      "sku": "DROP-VERDE-011",
+      "title": "Rare Aroid Cutting Pack",
+      "priceUsd": 64,
+      "compareAtUsd": 89,
+      "summary": "Three rooted cuttings.",
+      "features": [
+        "Three rooted cuttings."
+      ],
+      "marginPct": 73.8,
+      "category": "Plants"
     },
     {
-      "handle": "store-15-verde-hydro-item-6",
-      "sku": "DROP-VERDE-205",
-      "title": "VerdeHydro Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-15-verde-hydro-item-7",
-      "sku": "DROP-VERDE-206",
-      "title": "VerdeHydro Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-15-verde-hydro-item-8",
-      "sku": "DROP-VERDE-207",
-      "title": "VerdeHydro Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-15-verde-hydro-item-9",
-      "sku": "DROP-VERDE-208",
-      "title": "VerdeHydro Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-15-verde-hydro-item-10",
-      "sku": "DROP-VERDE-209",
-      "title": "VerdeHydro Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-15-verde-hydro-item-11",
-      "sku": "DROP-VERDE-210",
-      "title": "VerdeHydro Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-15-verde-hydro-item-12",
-      "sku": "DROP-VERDE-211",
-      "title": "VerdeHydro Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "moisture-meter",
+      "sku": "DROP-VERDE-012",
+      "title": "Moisture Meter",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Soil moisture and pH meter.",
+      "features": [
+        "Soil moisture and pH meter."
+      ],
+      "marginPct": 77.5,
+      "category": "Tools"
     }
   ]
 }

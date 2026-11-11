@@ -1,89 +1,165 @@
 {
   "store": "NomadCarry",
+  "count": 12,
   "products": [
     {
-      "handle": "store-11-nomad-carry-item-1",
-      "sku": "DROP-NOMAD-200",
-      "title": "NomadCarry Collection Item #1",
-      "priceUsd": 39,
-      "compareAtUsd": 65
-    },
-    {
-      "handle": "store-11-nomad-carry-item-2",
-      "sku": "DROP-NOMAD-201",
-      "title": "NomadCarry Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
-    },
-    {
-      "handle": "store-11-nomad-carry-item-3",
-      "sku": "DROP-NOMAD-202",
-      "title": "NomadCarry Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
-    },
-    {
-      "handle": "store-11-nomad-carry-item-4",
-      "sku": "DROP-NOMAD-203",
-      "title": "NomadCarry Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
-    },
-    {
-      "handle": "store-11-nomad-carry-item-5",
-      "sku": "DROP-NOMAD-204",
-      "title": "NomadCarry Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
-    },
-    {
-      "handle": "store-11-nomad-carry-item-6",
-      "sku": "DROP-NOMAD-205",
-      "title": "NomadCarry Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-11-nomad-carry-item-7",
-      "sku": "DROP-NOMAD-206",
-      "title": "NomadCarry Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-11-nomad-carry-item-8",
-      "sku": "DROP-NOMAD-207",
-      "title": "NomadCarry Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-11-nomad-carry-item-9",
-      "sku": "DROP-NOMAD-208",
-      "title": "NomadCarry Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-11-nomad-carry-item-10",
-      "sku": "DROP-NOMAD-209",
-      "title": "NomadCarry Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-11-nomad-carry-item-11",
-      "sku": "DROP-NOMAD-210",
-      "title": "NomadCarry Collection Item #11",
+      "handle": "nomadcarry-airvac-40l-vacuum-backpack-pump",
+      "sku": "DROP-NOMAD-001",
+      "title": "NomadCarry AirVac 40L Vacuum Backpack + Pump",
       "priceUsd": 119,
-      "compareAtUsd": 185
+      "compareAtUsd": 169,
+      "summary": "A 40L carry-on backpack with vacuum compression, a USB-C pump, and a modular packing cube set.",
+      "features": [
+        "40L carry-on size",
+        "Vacuum compresses to 60%",
+        "USB-C pump included",
+        "Laptop sleeve to 16 in"
+      ],
+      "marginPct": 73.6,
+      "category": "Luggage"
     },
     {
-      "handle": "store-11-nomad-carry-item-12",
-      "sku": "DROP-NOMAD-211",
-      "title": "NomadCarry Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "vacuum-packing-cube-set-3",
+      "sku": "DROP-NOMAD-002",
+      "title": "Vacuum Packing Cube Set (3)",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Three compression cubes.",
+      "features": [
+        "Three compression cubes."
+      ],
+      "marginPct": 72.1,
+      "category": "Packing"
+    },
+    {
+      "handle": "tech-organizer-pouch",
+      "sku": "DROP-NOMAD-003",
+      "title": "Tech Organizer Pouch",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Cable and adapter organizer.",
+      "features": [
+        "Cable and adapter organizer."
+      ],
+      "marginPct": 75.5,
+      "category": "Packing"
+    },
+    {
+      "handle": "travel-bottle-kit-tsa",
+      "sku": "DROP-NOMAD-004",
+      "title": "Travel Bottle Kit (TSA)",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Six leak-proof 3 oz bottles.",
+      "features": [
+        "Six leak-proof 3 oz bottles."
+      ],
+      "marginPct": 77.5,
+      "category": "Travel"
+    },
+    {
+      "handle": "compression-socks-2-pr",
+      "sku": "DROP-NOMAD-005",
+      "title": "Compression Socks (2 pr)",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "15-20 mmHg, two pairs.",
+      "features": [
+        "15-20 mmHg, two pairs."
+      ],
+      "marginPct": 75.3,
+      "category": "Travel"
+    },
+    {
+      "handle": "modular-toiletry-bag",
+      "sku": "DROP-NOMAD-006",
+      "title": "Modular Toiletry Bag",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Hanging modular toiletry bag.",
+      "features": [
+        "Hanging modular toiletry bag."
+      ],
+      "marginPct": 72.8,
+      "category": "Packing"
+    },
+    {
+      "handle": "usb-c-micro-pump-spare",
+      "sku": "DROP-NOMAD-007",
+      "title": "USB-C Micro Pump (Spare)",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Spare pump for the AirVac.",
+      "features": [
+        "Spare pump for the AirVac."
+      ],
+      "marginPct": 72.4,
+      "category": "Device Parts"
+    },
+    {
+      "handle": "luggage-scale-tag-set",
+      "sku": "DROP-NOMAD-008",
+      "title": "Luggage Scale & Tag Set",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Digital scale plus tags.",
+      "features": [
+        "Digital scale plus tags."
+      ],
+      "marginPct": 76.8,
+      "category": "Travel"
+    },
+    {
+      "handle": "travel-laundry-kit",
+      "sku": "DROP-NOMAD-009",
+      "title": "Travel Laundry Kit",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Scrubba-style wash bag.",
+      "features": [
+        "Scrubba-style wash bag."
+      ],
+      "marginPct": 75.4,
+      "category": "Travel"
+    },
+    {
+      "handle": "passport-document-organizer",
+      "sku": "DROP-NOMAD-010",
+      "title": "Passport & Document Organizer",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "RFID-blocking organizer.",
+      "features": [
+        "RFID-blocking organizer."
+      ],
+      "marginPct": 72.5,
+      "category": "Travel"
+    },
+    {
+      "handle": "neck-pillow-memory-foam",
+      "sku": "DROP-NOMAD-011",
+      "title": "Neck Pillow (Memory Foam)",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Adjustable memory-foam pillow.",
+      "features": [
+        "Adjustable memory-foam pillow."
+      ],
+      "marginPct": 73.8,
+      "category": "Travel"
+    },
+    {
+      "handle": "universal-travel-adapter",
+      "sku": "DROP-NOMAD-012",
+      "title": "Universal Travel Adapter",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "200+ country adapter, USB-C PD.",
+      "features": [
+        "200+ country adapter, USB-C PD."
+      ],
+      "marginPct": 73.8,
+      "category": "Travel"
     }
   ]
 }

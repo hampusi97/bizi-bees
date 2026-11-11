@@ -1,89 +1,162 @@
 {
   "store": "ApexStride",
+  "count": 12,
   "products": [
     {
-      "handle": "store-16-apex-stride-item-1",
-      "sku": "DROP-APEX-200",
-      "title": "ApexStride Collection Item #1",
-      "priceUsd": 39,
-      "compareAtUsd": 65
+      "handle": "store-16-apex-stride-apexstride-carbon-plate-energy-insoles",
+      "sku": "DROP-APEX-300",
+      "title": "ApexStride Carbon-Plate Energy Insoles",
+      "priceUsd": 59,
+      "compareAtUsd": 92,
+      "summary": "Carbon plate + dual-density EVA, trim-to-fit",
+      "features": [
+        "Carbon plate + dual-density EVA, trim-to-fit"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-2",
-      "sku": "DROP-APEX-201",
-      "title": "ApexStride Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "store-16-apex-stride-apexstride-pneumatic-recovery-boots",
+      "sku": "DROP-APEX-301",
+      "title": "ApexStride Pneumatic Recovery Boots",
+      "priceUsd": 149,
+      "compareAtUsd": 219,
+      "summary": "Compression recovery for legs post-run",
+      "features": [
+        "Compression recovery for legs post-run"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-3",
-      "sku": "DROP-APEX-202",
-      "title": "ApexStride Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "store-16-apex-stride-apexstride-merino-running-socks-3-pack",
+      "sku": "DROP-APEX-302",
+      "title": "ApexStride Merino Running Socks 3-Pack",
+      "priceUsd": 28,
+      "compareAtUsd": 42,
+      "summary": "Blister-free merino blend",
+      "features": [
+        "Blister-free merino blend"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-4",
-      "sku": "DROP-APEX-203",
-      "title": "ApexStride Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "store-16-apex-stride-apexstride-night-reflective-running-bel",
+      "sku": "DROP-APEX-303",
+      "title": "ApexStride Night-Reflective Running Belt",
+      "priceUsd": 34,
+      "compareAtUsd": 52,
+      "summary": "LED + pocket bounce-free belt",
+      "features": [
+        "LED + pocket bounce-free belt"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-5",
-      "sku": "DROP-APEX-204",
-      "title": "ApexStride Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "store-16-apex-stride-apexstride-foam-roller-pro-18in",
+      "sku": "DROP-APEX-304",
+      "title": "ApexStride Foam Roller Pro 18in",
+      "priceUsd": 42,
+      "compareAtUsd": 64,
+      "summary": "Deep-tissue high-density roller",
+      "features": [
+        "Deep-tissue high-density roller"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-6",
-      "sku": "DROP-APEX-205",
-      "title": "ApexStride Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "store-16-apex-stride-apexstride-calf-compression-sleeves",
+      "sku": "DROP-APEX-305",
+      "title": "ApexStride Calf Compression Sleeves",
+      "priceUsd": 32,
+      "compareAtUsd": 48,
+      "summary": "Graduated 20-30mmHg support",
+      "features": [
+        "Graduated 20-30mmHg support"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-7",
-      "sku": "DROP-APEX-206",
-      "title": "ApexStride Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "store-16-apex-stride-apexstride-lightweight-running-cap",
+      "sku": "DROP-APEX-306",
+      "title": "ApexStride Lightweight Running Cap",
+      "priceUsd": 26,
+      "compareAtUsd": 39,
+      "summary": "Sweat-wicking + reflective",
+      "features": [
+        "Sweat-wicking + reflective"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-8",
-      "sku": "DROP-APEX-207",
-      "title": "ApexStride Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "store-16-apex-stride-apexstride-hydration-vest-5l",
+      "sku": "DROP-APEX-307",
+      "title": "ApexStride Hydration Vest 5L",
+      "priceUsd": 89,
+      "compareAtUsd": 135,
+      "summary": "Ultralight vest with 2 flasks",
+      "features": [
+        "Ultralight vest with 2 flasks"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-9",
-      "sku": "DROP-APEX-208",
-      "title": "ApexStride Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "store-16-apex-stride-apexstride-trail-gaiters",
+      "sku": "DROP-APEX-308",
+      "title": "ApexStride Trail Gaiters",
+      "priceUsd": 24,
+      "compareAtUsd": 36,
+      "summary": "Debris-proof ankle seal",
+      "features": [
+        "Debris-proof ankle seal"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-10",
-      "sku": "DROP-APEX-209",
-      "title": "ApexStride Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
+      "handle": "store-16-apex-stride-apexstride-massage-ball-trio",
+      "sku": "DROP-APEX-309",
+      "title": "ApexStride Massage Ball Trio",
+      "priceUsd": 22,
+      "compareAtUsd": 33,
+      "summary": "Trigger-point recovery set",
+      "features": [
+        "Trigger-point recovery set"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-11",
-      "sku": "DROP-APEX-210",
-      "title": "ApexStride Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
+      "handle": "store-16-apex-stride-apexstride-tempo-running-shorts",
+      "sku": "DROP-APEX-310",
+      "title": "ApexStride Tempo Running Shorts",
+      "priceUsd": 46,
+      "compareAtUsd": 69,
+      "summary": "Split-leg breathable shorts",
+      "features": [
+        "Split-leg breathable shorts"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-16-apex-stride-item-12",
-      "sku": "DROP-APEX-211",
-      "title": "ApexStride Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "store-16-apex-stride-apexstride-winter-running-gloves",
+      "sku": "DROP-APEX-311",
+      "title": "ApexStride Winter Running Gloves",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Touchscreen thermal gloves",
+      "features": [
+        "Touchscreen thermal gloves"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     }
   ]
 }

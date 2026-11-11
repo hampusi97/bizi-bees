@@ -1,89 +1,165 @@
 {
   "store": "Atelier Grid",
+  "count": 12,
   "products": [
     {
-      "handle": "store-06-atelier-grid-item-1",
-      "sku": "DROP-GRID-200",
-      "title": "Atelier Grid Collection Item #1",
+      "handle": "2027-checkered-lay-flat-weekly-planner",
+      "sku": "DROP-GRID-001",
+      "title": "2027 Checkered Lay-Flat Weekly Planner",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "A sewn lay-flat weekly planner on 120gsm archival paper with a checkered linen cover and 12 tabbed months.",
+      "features": [
+        "Undated weeks plus 2027 months",
+        "180\u00b0 lay-flat sewn binding",
+        "Fountain-pen-safe paper",
+        "Back pocket and two ribbons"
+      ],
+      "marginPct": 73.3,
+      "category": "Planner"
     },
     {
-      "handle": "store-06-atelier-grid-item-2",
-      "sku": "DROP-GRID-201",
-      "title": "Atelier Grid Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "a5-dotted-archival-notebook",
+      "sku": "DROP-GRID-002",
+      "title": "A5 Dotted Archival Notebook",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "160 dot-grid pages, lay-flat.",
+      "features": [
+        "160 dot-grid pages, lay-flat."
+      ],
+      "marginPct": 73.3,
+      "category": "Notebooks"
     },
     {
-      "handle": "store-06-atelier-grid-item-3",
-      "sku": "DROP-GRID-202",
-      "title": "Atelier Grid Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "weekly-desk-pad-52-sheets",
+      "sku": "DROP-GRID-003",
+      "title": "Weekly Desk Pad (52 sheets)",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "52 undated weekly sheets.",
+      "features": [
+        "52 undated weekly sheets."
+      ],
+      "marginPct": 75.4,
+      "category": "Desk"
     },
     {
-      "handle": "store-06-atelier-grid-item-4",
-      "sku": "DROP-GRID-203",
-      "title": "Atelier Grid Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "grid-ruler-stencil-set",
+      "sku": "DROP-GRID-004",
+      "title": "Grid Ruler & Stencil Set",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Brass ruler plus three stencils.",
+      "features": [
+        "Brass ruler plus three stencils."
+      ],
+      "marginPct": 76.8,
+      "category": "Tools"
     },
     {
-      "handle": "store-06-atelier-grid-item-5",
-      "sku": "DROP-GRID-204",
-      "title": "Atelier Grid Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "gel-ink-pen-set-5",
+      "sku": "DROP-GRID-005",
+      "title": "Gel Ink Pen Set (5)",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "0.5mm archival gel ink.",
+      "features": [
+        "0.5mm archival gel ink."
+      ],
+      "marginPct": 77.5,
+      "category": "Tools"
     },
     {
-      "handle": "store-06-atelier-grid-item-6",
-      "sku": "DROP-GRID-205",
-      "title": "Atelier Grid Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "wax-seal-envelope-kit",
+      "sku": "DROP-GRID-006",
+      "title": "Wax Seal & Envelope Kit",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Seal, 200 stickers, 20 envelopes.",
+      "features": [
+        "Seal, 200 stickers, 20 envelopes."
+      ],
+      "marginPct": 75.3,
+      "category": "Stationery"
     },
     {
-      "handle": "store-06-atelier-grid-item-7",
-      "sku": "DROP-GRID-206",
-      "title": "Atelier Grid Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "linen-portfolio-folder",
+      "sku": "DROP-GRID-007",
+      "title": "Linen Portfolio Folder",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "A4 portfolio with a grid insert.",
+      "features": [
+        "A4 portfolio with a grid insert."
+      ],
+      "marginPct": 72.4,
+      "category": "Desk"
     },
     {
-      "handle": "store-06-atelier-grid-item-8",
-      "sku": "DROP-GRID-207",
-      "title": "Atelier Grid Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "desk-cable-grid-tray",
+      "sku": "DROP-GRID-008",
+      "title": "Desk Cable Grid Tray",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Anodised aluminium cable channel.",
+      "features": [
+        "Anodised aluminium cable channel."
+      ],
+      "marginPct": 75.5,
+      "category": "Desk"
     },
     {
-      "handle": "store-06-atelier-grid-item-9",
-      "sku": "DROP-GRID-208",
-      "title": "Atelier Grid Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "monthly-wall-grid-calendar",
+      "sku": "DROP-GRID-009",
+      "title": "Monthly Wall Grid Calendar",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "A2 undated wall grid.",
+      "features": [
+        "A2 undated wall grid."
+      ],
+      "marginPct": 72.5,
+      "category": "Desk"
     },
     {
-      "handle": "store-06-atelier-grid-item-10",
-      "sku": "DROP-GRID-209",
-      "title": "Atelier Grid Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
+      "handle": "archive-storage-box-3",
+      "sku": "DROP-GRID-010",
+      "title": "Archive Storage Box (3)",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Three acid-free document boxes.",
+      "features": [
+        "Three acid-free document boxes."
+      ],
+      "marginPct": 72.1,
+      "category": "Storage"
     },
     {
-      "handle": "store-06-atelier-grid-item-11",
-      "sku": "DROP-GRID-210",
-      "title": "Atelier Grid Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
+      "handle": "ink-swatch-journal",
+      "sku": "DROP-GRID-011",
+      "title": "Ink Swatch Journal",
+      "priceUsd": 19,
+      "compareAtUsd": 29,
+      "summary": "52 sheets of 12 ink-friendly papers.",
+      "features": [
+        "52 sheets of 12 ink-friendly papers."
+      ],
+      "marginPct": 73.2,
+      "category": "Notebooks"
     },
     {
-      "handle": "store-06-atelier-grid-item-12",
-      "sku": "DROP-GRID-211",
-      "title": "Atelier Grid Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "grid-sticky-note-bundle",
+      "sku": "DROP-GRID-012",
+      "title": "Grid Sticky Note Bundle",
+      "priceUsd": 14,
+      "compareAtUsd": 24,
+      "summary": "Six pads in a grid pattern.",
+      "features": [
+        "Six pads in a grid pattern."
+      ],
+      "marginPct": 72.1,
+      "category": "Stationery"
     }
   ]
 }

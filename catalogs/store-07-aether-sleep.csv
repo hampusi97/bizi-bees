@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-SLEEP-101,"Aether Sleep Edition #1",34,54,8,76.5
-DROP-SLEEP-102,"Aether Sleep Edition #2",41,64,9.5,76.5
-DROP-SLEEP-103,"Aether Sleep Edition #3",48,74,11,76.5
-DROP-SLEEP-104,"Aether Sleep Edition #4",55,84,12.5,76.5
-DROP-SLEEP-105,"Aether Sleep Edition #5",62,94,14,76.5
-DROP-SLEEP-106,"Aether Sleep Edition #6",69,104,15.5,76.5
-DROP-SLEEP-107,"Aether Sleep Edition #7",76,114,17,76.5
-DROP-SLEEP-108,"Aether Sleep Edition #8",83,124,18.5,76.5
-DROP-SLEEP-109,"Aether Sleep Edition #9",90,134,20,76.5
-DROP-SLEEP-110,"Aether Sleep Edition #10",97,144,21.5,76.5
-DROP-SLEEP-111,"Aether Sleep Edition #11",104,154,23,76.5
-DROP-SLEEP-112,"Aether Sleep Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+aether-3d-contoured-22-momme-silk-sleep-system,"Aether 3D Contoured 22-Momme Silk Sleep System",DROP-SLEEP-001,44,64,TRUE
+silk-pillowcase-queen,"Silk Pillowcase (Queen)",DROP-SLEEP-002,39,54,TRUE
+lavender-silk-pillow-mist,"Lavender Silk Pillow Mist",DROP-SLEEP-003,24,29,TRUE
+silk-sleep-bonnet,"Silk Sleep Bonnet",DROP-SLEEP-004,29,39,TRUE
+blackout-curtain-panels-pair,"Blackout Curtain Panels (Pair)",DROP-SLEEP-005,74,109,TRUE
+silk-mouth-tape-60-nights,"Silk Mouth Tape (60 nights)",DROP-SLEEP-006,19,24,TRUE
+weighted-blanket-15-lb,"Weighted Blanket 15 lb",DROP-SLEEP-007,109,169,TRUE
+sunrise-alarm-lamp,"Sunrise Alarm Lamp",DROP-SLEEP-008,64,89,TRUE
+silk-eye-pillow,"Silk Eye Pillow",DROP-SLEEP-009,24,34,TRUE
+white-noise-machine,"White Noise Machine",DROP-SLEEP-010,39,59,TRUE
+silk-scrunchies-3,"Silk Scrunchies (3)",DROP-SLEEP-011,19,24,TRUE
+travel-sleep-kit,"Travel Sleep Kit",DROP-SLEEP-012,34,44,TRUE

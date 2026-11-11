@@ -3,111 +3,111 @@
 <channel>
 <title>Kova Brew Google Shopping Feed</title>
 <link>https://kovabrew.com</link>
-<description>100% verified catalog for 0.1g Flow-Rate Espresso Scales & Barista Hardware</description>
+<description>0.1g Flow-Rate Espresso Scales &amp; Barista Hardware</description>
   <item>
-    <g:id>DROP-BREW-200</g:id>
-    <title><![CDATA[Kova Brew Collection Item #1]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-1</link>
+    <g:id>DROP-BREW-001</g:id>
+    <title><![CDATA[Kova 0.1g Auto-Timer Flow-Rate Espresso Scale]]></title>
+    <link>https://kovabrew.com/products/kova-0-1g-auto-timer-flow-rate-espresso-scale</link>
+    <g:price>54.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Kova Brew</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-BREW-002</g:id>
+    <title><![CDATA[Precision Filter Papers (200)]]></title>
+    <link>https://kovabrew.com/products/precision-filter-papers-200</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Kova Brew</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-BREW-003</g:id>
+    <title><![CDATA[Descaling Care Kit]]></title>
+    <link>https://kovabrew.com/products/descaling-care-kit</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Kova Brew</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-BREW-004</g:id>
+    <title><![CDATA[Pour-Over Dripper]]></title>
+    <link>https://kovabrew.com/products/pour-over-dripper</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Kova Brew</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-BREW-005</g:id>
+    <title><![CDATA[Distribution Tool & Leveler]]></title>
+    <link>https://kovabrew.com/products/distribution-tool-leveler</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-201</g:id>
-    <title><![CDATA[Kova Brew Collection Item #2]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-2</link>
-    <g:price>47.00 USD</g:price>
+    <g:id>DROP-BREW-006</g:id>
+    <title><![CDATA[Tamper 58.5mm (Walnut)]]></title>
+    <link>https://kovabrew.com/products/tamper-58-5mm-walnut</link>
+    <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-202</g:id>
-    <title><![CDATA[Kova Brew Collection Item #3]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-3</link>
-    <g:price>55.00 USD</g:price>
+    <g:id>DROP-BREW-007</g:id>
+    <title><![CDATA[Milk Pitcher (12 oz)]]></title>
+    <link>https://kovabrew.com/products/milk-pitcher-12-oz</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-203</g:id>
-    <title><![CDATA[Kova Brew Collection Item #4]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-4</link>
-    <g:price>63.00 USD</g:price>
+    <g:id>DROP-BREW-008</g:id>
+    <title><![CDATA[Bean Cellar (4 Canisters)]]></title>
+    <link>https://kovabrew.com/products/bean-cellar-4-canisters</link>
+    <g:price>44.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-204</g:id>
-    <title><![CDATA[Kova Brew Collection Item #5]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-5</link>
-    <g:price>71.00 USD</g:price>
+    <g:id>DROP-BREW-009</g:id>
+    <title><![CDATA[Puck Screen Set]]></title>
+    <link>https://kovabrew.com/products/puck-screen-set</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-205</g:id>
-    <title><![CDATA[Kova Brew Collection Item #6]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-6</link>
-    <g:price>79.00 USD</g:price>
+    <g:id>DROP-BREW-010</g:id>
+    <title><![CDATA[WDT Needle Tool]]></title>
+    <link>https://kovabrew.com/products/wdt-needle-tool</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-206</g:id>
-    <title><![CDATA[Kova Brew Collection Item #7]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-7</link>
-    <g:price>87.00 USD</g:price>
+    <g:id>DROP-BREW-011</g:id>
+    <title><![CDATA[Barista Knock Box]]></title>
+    <link>https://kovabrew.com/products/barista-knock-box</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>
   </item>
   <item>
-    <g:id>DROP-BREW-207</g:id>
-    <title><![CDATA[Kova Brew Collection Item #8]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Kova Brew</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-BREW-208</g:id>
-    <title><![CDATA[Kova Brew Collection Item #9]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Kova Brew</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-BREW-209</g:id>
-    <title><![CDATA[Kova Brew Collection Item #10]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Kova Brew</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-BREW-210</g:id>
-    <title><![CDATA[Kova Brew Collection Item #11]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-11</link>
-    <g:price>119.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Kova Brew</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-BREW-211</g:id>
-    <title><![CDATA[Kova Brew Collection Item #12]]></title>
-    <link>https://kovabrew.com/products/store-08-kova-brew-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-BREW-012</g:id>
+    <title><![CDATA[Reusable Filter Cup]]></title>
+    <link>https://kovabrew.com/products/reusable-filter-cup</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Kova Brew</g:brand>

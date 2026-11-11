@@ -1,89 +1,165 @@
 {
   "store": "Aether Sleep",
+  "count": 12,
   "products": [
     {
-      "handle": "store-07-aether-sleep-item-1",
-      "sku": "DROP-SLEEP-200",
-      "title": "Aether Sleep Collection Item #1",
+      "handle": "aether-3d-contoured-22-momme-silk-sleep-system",
+      "sku": "DROP-SLEEP-001",
+      "title": "Aether 3D Contoured 22-Momme Silk Sleep System",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "A 3D contoured silk mask, a mulberry silk pillowcase, and an ear-plug pair in a travel case.",
+      "features": [
+        "22-momme mulberry silk",
+        "Zero-pressure eye contour",
+        "28 dB ear plugs included",
+        "Machine washable on cold"
+      ],
+      "marginPct": 74.1,
+      "category": "Sleep"
+    },
+    {
+      "handle": "silk-pillowcase-queen",
+      "sku": "DROP-SLEEP-002",
+      "title": "Silk Pillowcase (Queen)",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "22-momme with a hidden zip.",
+      "features": [
+        "22-momme with a hidden zip."
+      ],
+      "marginPct": 75.4,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-2",
-      "sku": "DROP-SLEEP-201",
-      "title": "Aether Sleep Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "lavender-silk-pillow-mist",
+      "sku": "DROP-SLEEP-003",
+      "title": "Lavender Silk Pillow Mist",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "4 oz, alcohol-free.",
+      "features": [
+        "4 oz, alcohol-free."
+      ],
+      "marginPct": 77.5,
+      "category": "Consumables"
     },
     {
-      "handle": "store-07-aether-sleep-item-3",
-      "sku": "DROP-SLEEP-202",
-      "title": "Aether Sleep Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "silk-sleep-bonnet",
+      "sku": "DROP-SLEEP-004",
+      "title": "Silk Sleep Bonnet",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Adjustable, 19-momme.",
+      "features": [
+        "Adjustable, 19-momme."
+      ],
+      "marginPct": 76.2,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-4",
-      "sku": "DROP-SLEEP-203",
-      "title": "Aether Sleep Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "blackout-curtain-panels-pair",
+      "sku": "DROP-SLEEP-005",
+      "title": "Blackout Curtain Panels (Pair)",
+      "priceUsd": 74,
+      "compareAtUsd": 109,
+      "summary": "99.9% blackout, 52x84.",
+      "features": [
+        "99.9% blackout, 52x84."
+      ],
+      "marginPct": 73.8,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-5",
-      "sku": "DROP-SLEEP-204",
-      "title": "Aether Sleep Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "silk-mouth-tape-60-nights",
+      "sku": "DROP-SLEEP-006",
+      "title": "Silk Mouth Tape (60 nights)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Medical-grade, silk-backed.",
+      "features": [
+        "Medical-grade, silk-backed."
+      ],
+      "marginPct": 75.8,
+      "category": "Consumables"
     },
     {
-      "handle": "store-07-aether-sleep-item-6",
-      "sku": "DROP-SLEEP-205",
-      "title": "Aether Sleep Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "weighted-blanket-15-lb",
+      "sku": "DROP-SLEEP-007",
+      "title": "Weighted Blanket 15 lb",
+      "priceUsd": 109,
+      "compareAtUsd": 169,
+      "summary": "Glass-bead fill, cotton shell.",
+      "features": [
+        "Glass-bead fill, cotton shell."
+      ],
+      "marginPct": 73,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-7",
-      "sku": "DROP-SLEEP-206",
-      "title": "Aether Sleep Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "sunrise-alarm-lamp",
+      "sku": "DROP-SLEEP-008",
+      "title": "Sunrise Alarm Lamp",
+      "priceUsd": 64,
+      "compareAtUsd": 89,
+      "summary": "30-minute sunrise simulation.",
+      "features": [
+        "30-minute sunrise simulation."
+      ],
+      "marginPct": 73.8,
+      "category": "Circadian"
     },
     {
-      "handle": "store-07-aether-sleep-item-8",
-      "sku": "DROP-SLEEP-207",
-      "title": "Aether Sleep Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "silk-eye-pillow",
+      "sku": "DROP-SLEEP-009",
+      "title": "Silk Eye Pillow",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Flaxseed-filled, chilled or warmed.",
+      "features": [
+        "Flaxseed-filled, chilled or warmed."
+      ],
+      "marginPct": 75.4,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-9",
-      "sku": "DROP-SLEEP-208",
-      "title": "Aether Sleep Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "white-noise-machine",
+      "sku": "DROP-SLEEP-010",
+      "title": "White Noise Machine",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "24 sounds, 12-hour timer.",
+      "features": [
+        "24 sounds, 12-hour timer."
+      ],
+      "marginPct": 72.1,
+      "category": "Sleep"
     },
     {
-      "handle": "store-07-aether-sleep-item-10",
-      "sku": "DROP-SLEEP-209",
-      "title": "Aether Sleep Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
+      "handle": "silk-scrunchies-3",
+      "sku": "DROP-SLEEP-011",
+      "title": "Silk Scrunchies (3)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "22-momme, no-crease.",
+      "features": [
+        "22-momme, no-crease."
+      ],
+      "marginPct": 76.8,
+      "category": "Accessories"
     },
     {
-      "handle": "store-07-aether-sleep-item-11",
-      "sku": "DROP-SLEEP-210",
-      "title": "Aether Sleep Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-07-aether-sleep-item-12",
-      "sku": "DROP-SLEEP-211",
-      "title": "Aether Sleep Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "travel-sleep-kit",
+      "sku": "DROP-SLEEP-012",
+      "title": "Travel Sleep Kit",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Mask, plugs, and a neck wrap.",
+      "features": [
+        "Mask, plugs, and a neck wrap."
+      ],
+      "marginPct": 75.3,
+      "category": "Travel"
     }
   ]
 }

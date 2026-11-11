@@ -1,89 +1,165 @@
 {
   "store": "TerraPaw Co.",
+  "count": 12,
   "products": [
     {
-      "handle": "store-10-terra-paw-item-1",
-      "sku": "DROP-PAW-200",
-      "title": "TerraPaw Co. Collection Item #1",
+      "handle": "terrapaw-human-grade-orthopedic-bolster-dog-bed",
+      "sku": "DROP-PAW-001",
+      "title": "TerraPaw Human-Grade Orthopedic Bolster Dog Bed",
+      "priceUsd": 74,
+      "compareAtUsd": 109,
+      "summary": "A 4-inch CertiPUR-US memory foam base with a bolster rim, a waterproof liner, and a washable cover.",
+      "features": [
+        "CertiPUR-US memory foam",
+        "Waterproof liner included",
+        "Machine-washable cover",
+        "Sizes M-XL"
+      ],
+      "marginPct": 73.8,
+      "category": "Dog Beds"
+    },
+    {
+      "handle": "waterproof-liner-spare",
+      "sku": "DROP-PAW-002",
+      "title": "Waterproof Liner (Spare)",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Spare liner for any bed size.",
+      "features": [
+        "Spare liner for any bed size."
+      ],
+      "marginPct": 73.3,
+      "category": "Bed Parts"
+    },
+    {
+      "handle": "calming-chew-box",
+      "sku": "DROP-PAW-003",
+      "title": "Calming Chew Box",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Six long-lasting chews.",
+      "features": [
+        "Six long-lasting chews."
+      ],
+      "marginPct": 75.3,
+      "category": "Enrichment"
+    },
+    {
+      "handle": "snuffle-mat",
+      "sku": "DROP-PAW-004",
+      "title": "Snuffle Mat",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Slow-feeder enrichment mat.",
+      "features": [
+        "Slow-feeder enrichment mat."
+      ],
+      "marginPct": 75.5,
+      "category": "Enrichment"
+    },
+    {
+      "handle": "orthopedic-bed-cover-replacement",
+      "sku": "DROP-PAW-005",
+      "title": "Orthopedic Bed Cover (Replacement)",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Linen weave, hidden zip.",
+      "features": [
+        "Linen weave, hidden zip."
+      ],
+      "marginPct": 75.4,
+      "category": "Bed Parts"
     },
     {
-      "handle": "store-10-terra-paw-item-2",
-      "sku": "DROP-PAW-201",
-      "title": "TerraPaw Co. Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "puzzle-feeder-bowl",
+      "sku": "DROP-PAW-006",
+      "title": "Puzzle Feeder Bowl",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Non-slip puzzle bowl.",
+      "features": [
+        "Non-slip puzzle bowl."
+      ],
+      "marginPct": 75.4,
+      "category": "Enrichment"
     },
     {
-      "handle": "store-10-terra-paw-item-3",
-      "sku": "DROP-PAW-202",
-      "title": "TerraPaw Co. Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "joint-support-chews-60",
+      "sku": "DROP-PAW-007",
+      "title": "Joint Support Chews (60)",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Glucosamine and green-lipped mussel.",
+      "features": [
+        "Glucosamine and green-lipped mussel."
+      ],
+      "marginPct": 72.4,
+      "category": "Health"
     },
     {
-      "handle": "store-10-terra-paw-item-4",
-      "sku": "DROP-PAW-203",
-      "title": "TerraPaw Co. Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "elevated-cooling-cot",
+      "sku": "DROP-PAW-008",
+      "title": "Elevated Cooling Cot",
+      "priceUsd": 59,
+      "compareAtUsd": 84,
+      "summary": "Raised cot for hot days.",
+      "features": [
+        "Raised cot for hot days."
+      ],
+      "marginPct": 73.2,
+      "category": "Beds"
     },
     {
-      "handle": "store-10-terra-paw-item-5",
-      "sku": "DROP-PAW-204",
-      "title": "TerraPaw Co. Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "anxiety-vest",
+      "sku": "DROP-PAW-009",
+      "title": "Anxiety Vest",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Pressure vest, four sizes.",
+      "features": [
+        "Pressure vest, four sizes."
+      ],
+      "marginPct": 72.1,
+      "category": "Calming"
     },
     {
-      "handle": "store-10-terra-paw-item-6",
-      "sku": "DROP-PAW-205",
-      "title": "TerraPaw Co. Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "travel-bed-roll",
+      "sku": "DROP-PAW-010",
+      "title": "Travel Bed Roll",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "Roll-up foam bed with a strap.",
+      "features": [
+        "Roll-up foam bed with a strap."
+      ],
+      "marginPct": 73,
+      "category": "Beds"
     },
     {
-      "handle": "store-10-terra-paw-item-7",
-      "sku": "DROP-PAW-206",
-      "title": "TerraPaw Co. Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "grooming-deshedding-kit",
+      "sku": "DROP-PAW-011",
+      "title": "Grooming Deshedding Kit",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Deshedder plus a slicker brush.",
+      "features": [
+        "Deshedder plus a slicker brush."
+      ],
+      "marginPct": 72.8,
+      "category": "Grooming"
     },
     {
-      "handle": "store-10-terra-paw-item-8",
-      "sku": "DROP-PAW-207",
-      "title": "TerraPaw Co. Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-10-terra-paw-item-9",
-      "sku": "DROP-PAW-208",
-      "title": "TerraPaw Co. Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-10-terra-paw-item-10",
-      "sku": "DROP-PAW-209",
-      "title": "TerraPaw Co. Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-10-terra-paw-item-11",
-      "sku": "DROP-PAW-210",
-      "title": "TerraPaw Co. Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-10-terra-paw-item-12",
-      "sku": "DROP-PAW-211",
-      "title": "TerraPaw Co. Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "pet-first-aid-pouch",
+      "sku": "DROP-PAW-012",
+      "title": "Pet First Aid Pouch",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "26-piece first aid kit.",
+      "features": [
+        "26-piece first aid kit."
+      ],
+      "marginPct": 72.5,
+      "category": "Health"
     }
   ]
 }

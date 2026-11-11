@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-LUMA-101,"Luma Clinical Edition #1",34,54,8,76.5
-DROP-LUMA-102,"Luma Clinical Edition #2",41,64,9.5,76.5
-DROP-LUMA-103,"Luma Clinical Edition #3",48,74,11,76.5
-DROP-LUMA-104,"Luma Clinical Edition #4",55,84,12.5,76.5
-DROP-LUMA-105,"Luma Clinical Edition #5",62,94,14,76.5
-DROP-LUMA-106,"Luma Clinical Edition #6",69,104,15.5,76.5
-DROP-LUMA-107,"Luma Clinical Edition #7",76,114,17,76.5
-DROP-LUMA-108,"Luma Clinical Edition #8",83,124,18.5,76.5
-DROP-LUMA-109,"Luma Clinical Edition #9",90,134,20,76.5
-DROP-LUMA-110,"Luma Clinical Edition #10",97,144,21.5,76.5
-DROP-LUMA-111,"Luma Clinical Edition #11",104,154,23,76.5
-DROP-LUMA-112,"Luma Clinical Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+lumaglow-4-in-1-red-light-sculpting-wand,"LumaGlow 4-in-1 Red Light Sculpting Wand",DROP-LUMA-001,84,119,TRUE
+hyaluronic-conductive-gel-8-oz,"Hyaluronic Conductive Gel (8 oz)",DROP-LUMA-002,24,34,TRUE
+collagen-eye-renewal-patches-30-pr,"Collagen Eye Renewal Patches (30 pr)",DROP-LUMA-003,29,44,TRUE
+lumaglow-replacement-head,"LumaGlow Replacement Head",DROP-LUMA-004,39,54,TRUE
+nano-ion-facial-steamer,"Nano-Ion Facial Steamer",DROP-LUMA-005,74,109,TRUE
+630nm-led-neck-chest-panel,"630nm LED Neck & Chest Panel",DROP-LUMA-006,119,169,TRUE
+clinical-serum-refill-duo,"Clinical Serum Refill Duo",DROP-LUMA-007,44,59,TRUE
+ice-roller-gua-sha-set,"Ice Roller & Gua Sha Set",DROP-LUMA-008,34,44,TRUE
+microcurrent-treatment-pads-12,"Microcurrent Treatment Pads (12)",DROP-LUMA-009,19,24,TRUE
+travel-led-wand-case,"Travel LED Wand Case",DROP-LUMA-010,29,39,TRUE
+post-treatment-barrier-cream,"Post-Treatment Barrier Cream",DROP-LUMA-011,29,39,TRUE
+at-home-facial-protocol-cards,"At-Home Facial Protocol Cards",DROP-LUMA-012,24,29,TRUE

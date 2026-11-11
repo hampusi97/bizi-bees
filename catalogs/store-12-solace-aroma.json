@@ -1,89 +1,165 @@
 {
   "store": "Solace Aroma",
+  "count": 12,
   "products": [
     {
-      "handle": "store-12-solace-aroma-item-1",
-      "sku": "DROP-AROMA-200",
-      "title": "Solace Aroma Collection Item #1",
+      "handle": "solace-anodized-waterless-cold-air-diffuser",
+      "sku": "DROP-AROMA-001",
+      "title": "Solace Anodized Waterless Cold-Air Diffuser",
+      "priceUsd": 69,
+      "compareAtUsd": 99,
+      "summary": "A waterless cold-air diffuser with an anodized aluminium shell, a 300 sq ft throw, and a 4-hour cycle timer.",
+      "features": [
+        "Waterless cold-air nebuliser",
+        "No dilution, no residue",
+        "300 sq ft coverage",
+        "Ships with a 10 ml starter oil"
+      ],
+      "marginPct": 73.6,
+      "category": "Diffusers"
+    },
+    {
+      "handle": "hotel-scent-oil-refill-30-ml",
+      "sku": "DROP-AROMA-002",
+      "title": "Hotel Scent Oil Refill (30 ml)",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Five-star hotel signature blend.",
+      "features": [
+        "Five-star hotel signature blend."
+      ],
+      "marginPct": 72.8,
+      "category": "Oils"
+    },
+    {
+      "handle": "nebuliser-replacement-nozzle",
+      "sku": "DROP-AROMA-003",
+      "title": "Nebuliser Replacement Nozzle",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Spare cold-air nozzle.",
+      "features": [
+        "Spare cold-air nozzle."
+      ],
+      "marginPct": 75.4,
+      "category": "Device Parts"
+    },
+    {
+      "handle": "reed-diffuser-set",
+      "sku": "DROP-AROMA-004",
+      "title": "Reed Diffuser Set",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Glass vessel with 8 reeds.",
+      "features": [
+        "Glass vessel with 8 reeds."
+      ],
+      "marginPct": 75.3,
+      "category": "Diffusers"
+    },
+    {
+      "handle": "scent-sachets-6",
+      "sku": "DROP-AROMA-005",
+      "title": "Scent Sachets (6)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Six linen drawer sachets.",
+      "features": [
+        "Six linen drawer sachets."
+      ],
+      "marginPct": 75.8,
+      "category": "Oils"
+    },
+    {
+      "handle": "aromatherapy-car-vent-clip",
+      "sku": "DROP-AROMA-006",
+      "title": "Aromatherapy Car Vent Clip",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Two vent clips plus oils.",
+      "features": [
+        "Two vent clips plus oils."
+      ],
+      "marginPct": 77.5,
+      "category": "Oils"
+    },
+    {
+      "handle": "ceramic-oil-warmer",
+      "sku": "DROP-AROMA-007",
+      "title": "Ceramic Oil Warmer",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Tealight-free electric warmer.",
+      "features": [
+        "Tealight-free electric warmer."
+      ],
+      "marginPct": 72.4,
+      "category": "Diffusers"
+    },
+    {
+      "handle": "essential-oil-trio",
+      "sku": "DROP-AROMA-008",
+      "title": "Essential Oil Trio",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 59,
+      "summary": "Lavender, cedar, and citrus.",
+      "features": [
+        "Lavender, cedar, and citrus."
+      ],
+      "marginPct": 72.1,
+      "category": "Oils"
     },
     {
-      "handle": "store-12-solace-aroma-item-2",
-      "sku": "DROP-AROMA-201",
-      "title": "Solace Aroma Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "diffuser-cleaning-kit",
+      "sku": "DROP-AROMA-009",
+      "title": "Diffuser Cleaning Kit",
+      "priceUsd": 19,
+      "compareAtUsd": 29,
+      "summary": "Solvent and swabs.",
+      "features": [
+        "Solvent and swabs."
+      ],
+      "marginPct": 73.2,
+      "category": "Accessories"
     },
     {
-      "handle": "store-12-solace-aroma-item-3",
-      "sku": "DROP-AROMA-202",
-      "title": "Solace Aroma Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "scent-zoning-room-spray",
+      "sku": "DROP-AROMA-010",
+      "title": "Scent Zoning Room Spray",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "4 oz alcohol-free spray.",
+      "features": [
+        "4 oz alcohol-free spray."
+      ],
+      "marginPct": 73.3,
+      "category": "Oils"
     },
     {
-      "handle": "store-12-solace-aroma-item-4",
-      "sku": "DROP-AROMA-203",
-      "title": "Solace Aroma Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "timer-smart-plug",
+      "sku": "DROP-AROMA-011",
+      "title": "Timer Smart Plug",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Schedules any diffuser.",
+      "features": [
+        "Schedules any diffuser."
+      ],
+      "marginPct": 76.8,
+      "category": "Accessories"
     },
     {
-      "handle": "store-12-solace-aroma-item-5",
-      "sku": "DROP-AROMA-204",
-      "title": "Solace Aroma Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
-    },
-    {
-      "handle": "store-12-solace-aroma-item-6",
-      "sku": "DROP-AROMA-205",
-      "title": "Solace Aroma Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
-    },
-    {
-      "handle": "store-12-solace-aroma-item-7",
-      "sku": "DROP-AROMA-206",
-      "title": "Solace Aroma Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-12-solace-aroma-item-8",
-      "sku": "DROP-AROMA-207",
-      "title": "Solace Aroma Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-12-solace-aroma-item-9",
-      "sku": "DROP-AROMA-208",
-      "title": "Solace Aroma Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-12-solace-aroma-item-10",
-      "sku": "DROP-AROMA-209",
-      "title": "Solace Aroma Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-12-solace-aroma-item-11",
-      "sku": "DROP-AROMA-210",
-      "title": "Solace Aroma Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-12-solace-aroma-item-12",
-      "sku": "DROP-AROMA-211",
-      "title": "Solace Aroma Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "travel-nebuliser",
+      "sku": "DROP-AROMA-012",
+      "title": "Travel Nebuliser",
+      "priceUsd": 54,
+      "compareAtUsd": 74,
+      "summary": "USB rechargeable travel unit.",
+      "features": [
+        "USB rechargeable travel unit."
+      ],
+      "marginPct": 74.3,
+      "category": "Diffusers"
     }
   ]
 }

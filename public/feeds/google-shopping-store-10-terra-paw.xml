@@ -3,111 +3,111 @@
 <channel>
 <title>TerraPaw Co. Google Shopping Feed</title>
 <link>https://terrapawco.com</link>
-<description>100% verified catalog for Human-Grade Orthopedic Calming Dog Beds & Grooming Vacuums</description>
+<description>Human-Grade Orthopedic Calming Dog Beds &amp; Grooming Vacuums</description>
   <item>
-    <g:id>DROP-PAW-200</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #1]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-1</link>
+    <g:id>DROP-PAW-001</g:id>
+    <title><![CDATA[TerraPaw Human-Grade Orthopedic Bolster Dog Bed]]></title>
+    <link>https://terrapawco.com/products/terrapaw-human-grade-orthopedic-bolster-dog-bed</link>
+    <g:price>74.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>TerraPaw Co.</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-PAW-002</g:id>
+    <title><![CDATA[Waterproof Liner (Spare)]]></title>
+    <link>https://terrapawco.com/products/waterproof-liner-spare</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>TerraPaw Co.</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-PAW-003</g:id>
+    <title><![CDATA[Calming Chew Box]]></title>
+    <link>https://terrapawco.com/products/calming-chew-box</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>TerraPaw Co.</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-PAW-004</g:id>
+    <title><![CDATA[Snuffle Mat]]></title>
+    <link>https://terrapawco.com/products/snuffle-mat</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>TerraPaw Co.</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-PAW-005</g:id>
+    <title><![CDATA[Orthopedic Bed Cover (Replacement)]]></title>
+    <link>https://terrapawco.com/products/orthopedic-bed-cover-replacement</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-201</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #2]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-2</link>
-    <g:price>47.00 USD</g:price>
+    <g:id>DROP-PAW-006</g:id>
+    <title><![CDATA[Puzzle Feeder Bowl]]></title>
+    <link>https://terrapawco.com/products/puzzle-feeder-bowl</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-202</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #3]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-3</link>
-    <g:price>55.00 USD</g:price>
+    <g:id>DROP-PAW-007</g:id>
+    <title><![CDATA[Joint Support Chews (60)]]></title>
+    <link>https://terrapawco.com/products/joint-support-chews-60</link>
+    <g:price>34.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-203</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #4]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-4</link>
-    <g:price>63.00 USD</g:price>
+    <g:id>DROP-PAW-008</g:id>
+    <title><![CDATA[Elevated Cooling Cot]]></title>
+    <link>https://terrapawco.com/products/elevated-cooling-cot</link>
+    <g:price>59.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-204</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #5]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-5</link>
-    <g:price>71.00 USD</g:price>
+    <g:id>DROP-PAW-009</g:id>
+    <title><![CDATA[Anxiety Vest]]></title>
+    <link>https://terrapawco.com/products/anxiety-vest</link>
+    <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-205</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #6]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-6</link>
-    <g:price>79.00 USD</g:price>
+    <g:id>DROP-PAW-010</g:id>
+    <title><![CDATA[Travel Bed Roll]]></title>
+    <link>https://terrapawco.com/products/travel-bed-roll</link>
+    <g:price>44.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-206</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #7]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-7</link>
-    <g:price>87.00 USD</g:price>
+    <g:id>DROP-PAW-011</g:id>
+    <title><![CDATA[Grooming Deshedding Kit]]></title>
+    <link>https://terrapawco.com/products/grooming-deshedding-kit</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>
   </item>
   <item>
-    <g:id>DROP-PAW-207</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #8]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>TerraPaw Co.</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-PAW-208</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #9]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>TerraPaw Co.</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-PAW-209</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #10]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>TerraPaw Co.</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-PAW-210</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #11]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-11</link>
-    <g:price>119.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>TerraPaw Co.</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-PAW-211</g:id>
-    <title><![CDATA[TerraPaw Co. Collection Item #12]]></title>
-    <link>https://terrapawco.com/products/store-10-terra-paw-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-PAW-012</g:id>
+    <title><![CDATA[Pet First Aid Pouch]]></title>
+    <link>https://terrapawco.com/products/pet-first-aid-pouch</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>TerraPaw Co.</g:brand>

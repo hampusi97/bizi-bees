@@ -1,89 +1,165 @@
 {
   "store": "Kova Brew",
+  "count": 12,
   "products": [
     {
-      "handle": "store-08-kova-brew-item-1",
-      "sku": "DROP-BREW-200",
-      "title": "Kova Brew Collection Item #1",
+      "handle": "kova-0-1g-auto-timer-flow-rate-espresso-scale",
+      "sku": "DROP-BREW-001",
+      "title": "Kova 0.1g Auto-Timer Flow-Rate Espresso Scale",
+      "priceUsd": 54,
+      "compareAtUsd": 79,
+      "summary": "A 0.1g scale with auto-tare-on-flow, an espresso shot timer, and a live flow-rate readout in a heat-proof pad.",
+      "features": [
+        "0.1g resolution, 2kg max",
+        "Auto-tare and auto-timer",
+        "Live g/s flow rate",
+        "USB-C, 40-hour battery"
+      ],
+      "marginPct": 73.3,
+      "category": "Brewing"
+    },
+    {
+      "handle": "precision-filter-papers-200",
+      "sku": "DROP-BREW-002",
+      "title": "Precision Filter Papers (200)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "2-cup, oxygen-bleached.",
+      "features": [
+        "2-cup, oxygen-bleached."
+      ],
+      "marginPct": 75.8,
+      "category": "Consumables"
+    },
+    {
+      "handle": "descaling-care-kit",
+      "sku": "DROP-BREW-003",
+      "title": "Descaling Care Kit",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Descaler, brush, and cloth.",
+      "features": [
+        "Descaler, brush, and cloth."
+      ],
+      "marginPct": 75.4,
+      "category": "Consumables"
+    },
+    {
+      "handle": "pour-over-dripper",
+      "sku": "DROP-BREW-004",
+      "title": "Pour-Over Dripper",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Ceramic flat-bottom dripper.",
+      "features": [
+        "Ceramic flat-bottom dripper."
+      ],
+      "marginPct": 75.3,
+      "category": "Brewing"
+    },
+    {
+      "handle": "distribution-tool-leveler",
+      "sku": "DROP-BREW-005",
+      "title": "Distribution Tool & Leveler",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "58.5mm distribution tool.",
+      "features": [
+        "58.5mm distribution tool."
+      ],
+      "marginPct": 75.4,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-2",
-      "sku": "DROP-BREW-201",
-      "title": "Kova Brew Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "tamper-58-5mm-walnut",
+      "sku": "DROP-BREW-006",
+      "title": "Tamper 58.5mm (Walnut)",
+      "priceUsd": 39,
+      "compareAtUsd": 59,
+      "summary": "Walnut handle, stainless base.",
+      "features": [
+        "Walnut handle, stainless base."
+      ],
+      "marginPct": 72.1,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-3",
-      "sku": "DROP-BREW-202",
-      "title": "Kova Brew Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "milk-pitcher-12-oz",
+      "sku": "DROP-BREW-007",
+      "title": "Milk Pitcher (12 oz)",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Tapered spout, induction safe.",
+      "features": [
+        "Tapered spout, induction safe."
+      ],
+      "marginPct": 75.5,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-4",
-      "sku": "DROP-BREW-203",
-      "title": "Kova Brew Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "bean-cellar-4-canisters",
+      "sku": "DROP-BREW-008",
+      "title": "Bean Cellar (4 Canisters)",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "Four single-dose canisters.",
+      "features": [
+        "Four single-dose canisters."
+      ],
+      "marginPct": 73,
+      "category": "Storage"
     },
     {
-      "handle": "store-08-kova-brew-item-5",
-      "sku": "DROP-BREW-204",
-      "title": "Kova Brew Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "puck-screen-set",
+      "sku": "DROP-BREW-009",
+      "title": "Puck Screen Set",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "1.7mm mesh screens, pair.",
+      "features": [
+        "1.7mm mesh screens, pair."
+      ],
+      "marginPct": 73.3,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-6",
-      "sku": "DROP-BREW-205",
-      "title": "Kova Brew Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "wdt-needle-tool",
+      "sku": "DROP-BREW-010",
+      "title": "WDT Needle Tool",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Nine-needle distribution tool.",
+      "features": [
+        "Nine-needle distribution tool."
+      ],
+      "marginPct": 77.5,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-7",
-      "sku": "DROP-BREW-206",
-      "title": "Kova Brew Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "barista-knock-box",
+      "sku": "DROP-BREW-011",
+      "title": "Barista Knock Box",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Walnut knock bar, rubber base.",
+      "features": [
+        "Walnut knock bar, rubber base."
+      ],
+      "marginPct": 72.8,
+      "category": "Tools"
     },
     {
-      "handle": "store-08-kova-brew-item-8",
-      "sku": "DROP-BREW-207",
-      "title": "Kova Brew Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-08-kova-brew-item-9",
-      "sku": "DROP-BREW-208",
-      "title": "Kova Brew Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-08-kova-brew-item-10",
-      "sku": "DROP-BREW-209",
-      "title": "Kova Brew Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-08-kova-brew-item-11",
-      "sku": "DROP-BREW-210",
-      "title": "Kova Brew Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-08-kova-brew-item-12",
-      "sku": "DROP-BREW-211",
-      "title": "Kova Brew Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "reusable-filter-cup",
+      "sku": "DROP-BREW-012",
+      "title": "Reusable Filter Cup",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "Stainless cup that fits most drippers.",
+      "features": [
+        "Stainless cup that fits most drippers."
+      ],
+      "marginPct": 72.5,
+      "category": "Brewing"
     }
   ]
 }

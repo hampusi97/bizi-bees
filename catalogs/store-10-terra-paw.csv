@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-PAW-101,"TerraPaw Co. Edition #1",34,54,8,76.5
-DROP-PAW-102,"TerraPaw Co. Edition #2",41,64,9.5,76.5
-DROP-PAW-103,"TerraPaw Co. Edition #3",48,74,11,76.5
-DROP-PAW-104,"TerraPaw Co. Edition #4",55,84,12.5,76.5
-DROP-PAW-105,"TerraPaw Co. Edition #5",62,94,14,76.5
-DROP-PAW-106,"TerraPaw Co. Edition #6",69,104,15.5,76.5
-DROP-PAW-107,"TerraPaw Co. Edition #7",76,114,17,76.5
-DROP-PAW-108,"TerraPaw Co. Edition #8",83,124,18.5,76.5
-DROP-PAW-109,"TerraPaw Co. Edition #9",90,134,20,76.5
-DROP-PAW-110,"TerraPaw Co. Edition #10",97,144,21.5,76.5
-DROP-PAW-111,"TerraPaw Co. Edition #11",104,154,23,76.5
-DROP-PAW-112,"TerraPaw Co. Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+terrapaw-human-grade-orthopedic-bolster-dog-bed,"TerraPaw Human-Grade Orthopedic Bolster Dog Bed",DROP-PAW-001,74,109,TRUE
+waterproof-liner-spare,"Waterproof Liner (Spare)",DROP-PAW-002,24,34,TRUE
+calming-chew-box,"Calming Chew Box",DROP-PAW-003,34,44,TRUE
+snuffle-mat,"Snuffle Mat",DROP-PAW-004,29,39,TRUE
+orthopedic-bed-cover-replacement,"Orthopedic Bed Cover (Replacement)",DROP-PAW-005,39,54,TRUE
+puzzle-feeder-bowl,"Puzzle Feeder Bowl",DROP-PAW-006,24,34,TRUE
+joint-support-chews-60,"Joint Support Chews (60)",DROP-PAW-007,34,49,TRUE
+elevated-cooling-cot,"Elevated Cooling Cot",DROP-PAW-008,59,84,TRUE
+anxiety-vest,"Anxiety Vest",DROP-PAW-009,39,59,TRUE
+travel-bed-roll,"Travel Bed Roll",DROP-PAW-010,44,64,TRUE
+grooming-deshedding-kit,"Grooming Deshedding Kit",DROP-PAW-011,29,44,TRUE
+pet-first-aid-pouch,"Pet First Aid Pouch",DROP-PAW-012,24,39,TRUE

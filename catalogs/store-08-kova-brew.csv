@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-BREW-101,"Kova Brew Edition #1",34,54,8,76.5
-DROP-BREW-102,"Kova Brew Edition #2",41,64,9.5,76.5
-DROP-BREW-103,"Kova Brew Edition #3",48,74,11,76.5
-DROP-BREW-104,"Kova Brew Edition #4",55,84,12.5,76.5
-DROP-BREW-105,"Kova Brew Edition #5",62,94,14,76.5
-DROP-BREW-106,"Kova Brew Edition #6",69,104,15.5,76.5
-DROP-BREW-107,"Kova Brew Edition #7",76,114,17,76.5
-DROP-BREW-108,"Kova Brew Edition #8",83,124,18.5,76.5
-DROP-BREW-109,"Kova Brew Edition #9",90,134,20,76.5
-DROP-BREW-110,"Kova Brew Edition #10",97,144,21.5,76.5
-DROP-BREW-111,"Kova Brew Edition #11",104,154,23,76.5
-DROP-BREW-112,"Kova Brew Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+kova-0-1g-auto-timer-flow-rate-espresso-scale,"Kova 0.1g Auto-Timer Flow-Rate Espresso Scale",DROP-BREW-001,54,79,TRUE
+precision-filter-papers-200,"Precision Filter Papers (200)",DROP-BREW-002,19,24,TRUE
+descaling-care-kit,"Descaling Care Kit",DROP-BREW-003,24,34,TRUE
+pour-over-dripper,"Pour-Over Dripper",DROP-BREW-004,34,44,TRUE
+distribution-tool-leveler,"Distribution Tool & Leveler",DROP-BREW-005,39,54,TRUE
+tamper-58-5mm-walnut,"Tamper 58.5mm (Walnut)",DROP-BREW-006,39,59,TRUE
+milk-pitcher-12-oz,"Milk Pitcher (12 oz)",DROP-BREW-007,29,39,TRUE
+bean-cellar-4-canisters,"Bean Cellar (4 Canisters)",DROP-BREW-008,44,64,TRUE
+puck-screen-set,"Puck Screen Set",DROP-BREW-009,24,34,TRUE
+wdt-needle-tool,"WDT Needle Tool",DROP-BREW-010,24,29,TRUE
+barista-knock-box,"Barista Knock Box",DROP-BREW-011,29,44,TRUE
+reusable-filter-cup,"Reusable Filter Cup",DROP-BREW-012,24,39,TRUE

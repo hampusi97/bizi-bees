@@ -1,89 +1,165 @@
 {
   "store": "LumenDesk",
+  "count": 12,
   "products": [
     {
-      "handle": "store-14-lumen-desk-item-1",
-      "sku": "DROP-DESK-200",
-      "title": "LumenDesk Collection Item #1",
+      "handle": "lumendesk-cri-98-asymmetric-monitor-light-bar",
+      "sku": "DROP-DESK-001",
+      "title": "LumenDesk CRI 98+ Asymmetric Monitor Light Bar",
+      "priceUsd": 64,
+      "compareAtUsd": 89,
+      "summary": "A 45 cm asymmetric light bar at CRI 98+ with no screen glare, five colour temperatures, and a USB-C dial.",
+      "features": [
+        "CRI 98+ colour accuracy",
+        "Asymmetric optic, no glare",
+        "5 colour temperatures",
+        "USB-C powered"
+      ],
+      "marginPct": 73.8,
+      "category": "Desk Lighting"
+    },
+    {
+      "handle": "merino-felt-desk-mat",
+      "sku": "DROP-DESK-002",
+      "title": "Merino Felt Desk Mat",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 59,
+      "summary": "Large merino felt desk mat.",
+      "features": [
+        "Large merino felt desk mat."
+      ],
+      "marginPct": 72.1,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-2",
-      "sku": "DROP-DESK-201",
-      "title": "LumenDesk Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "cable-management-kit",
+      "sku": "DROP-DESK-003",
+      "title": "Cable Management Kit",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Tray, clips, and sleeves.",
+      "features": [
+        "Tray, clips, and sleeves."
+      ],
+      "marginPct": 75.5,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-3",
-      "sku": "DROP-DESK-202",
-      "title": "LumenDesk Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "monitor-arm-single",
+      "sku": "DROP-DESK-004",
+      "title": "Monitor Arm (Single)",
+      "priceUsd": 74,
+      "compareAtUsd": 109,
+      "summary": "Gas-spring monitor arm.",
+      "features": [
+        "Gas-spring monitor arm."
+      ],
+      "marginPct": 73.8,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-4",
-      "sku": "DROP-DESK-203",
-      "title": "LumenDesk Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "under-desk-light-strip",
+      "sku": "DROP-DESK-005",
+      "title": "Under-Desk Light Strip",
+      "priceUsd": 34,
+      "compareAtUsd": 44,
+      "summary": "Warm strip with a dimmer.",
+      "features": [
+        "Warm strip with a dimmer."
+      ],
+      "marginPct": 75.3,
+      "category": "Desk Lighting"
     },
     {
-      "handle": "store-14-lumen-desk-item-5",
-      "sku": "DROP-DESK-204",
-      "title": "LumenDesk Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "laptop-riser-aluminium",
+      "sku": "DROP-DESK-006",
+      "title": "Laptop Riser (Aluminium)",
+      "priceUsd": 44,
+      "compareAtUsd": 64,
+      "summary": "Ventilated aluminium riser.",
+      "features": [
+        "Ventilated aluminium riser."
+      ],
+      "marginPct": 73,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-6",
-      "sku": "DROP-DESK-205",
-      "title": "LumenDesk Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "desk-organizer-tray-set",
+      "sku": "DROP-DESK-007",
+      "title": "Desk Organizer Tray Set",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Modular felt trays.",
+      "features": [
+        "Modular felt trays."
+      ],
+      "marginPct": 72.8,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-7",
-      "sku": "DROP-DESK-206",
-      "title": "LumenDesk Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "hardware-care-kit",
+      "sku": "DROP-DESK-008",
+      "title": "Hardware Care Kit",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Cloth, brush, and lubricant.",
+      "features": [
+        "Cloth, brush, and lubricant."
+      ],
+      "marginPct": 75.4,
+      "category": "Accessories"
     },
     {
-      "handle": "store-14-lumen-desk-item-8",
-      "sku": "DROP-DESK-207",
-      "title": "LumenDesk Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "keyboard-wrist-rest",
+      "sku": "DROP-DESK-009",
+      "title": "Keyboard Wrist Rest",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Merino felt wrist rest.",
+      "features": [
+        "Merino felt wrist rest."
+      ],
+      "marginPct": 73.8,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-9",
-      "sku": "DROP-DESK-208",
-      "title": "LumenDesk Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "focus-timer-cube",
+      "sku": "DROP-DESK-010",
+      "title": "Focus Timer Cube",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Flip timer with four presets.",
+      "features": [
+        "Flip timer with four presets."
+      ],
+      "marginPct": 76.2,
+      "category": "Deep Work"
     },
     {
-      "handle": "store-14-lumen-desk-item-10",
-      "sku": "DROP-DESK-209",
-      "title": "LumenDesk Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
+      "handle": "cable-sleeve-pack-3",
+      "sku": "DROP-DESK-011",
+      "title": "Cable Sleeve Pack (3)",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Three zip cable sleeves.",
+      "features": [
+        "Three zip cable sleeves."
+      ],
+      "marginPct": 75.8,
+      "category": "Desk"
     },
     {
-      "handle": "store-14-lumen-desk-item-11",
-      "sku": "DROP-DESK-210",
-      "title": "LumenDesk Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-14-lumen-desk-item-12",
-      "sku": "DROP-DESK-211",
-      "title": "LumenDesk Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "monitor-light-bar-clamp",
+      "sku": "DROP-DESK-012",
+      "title": "Monitor Light Bar Clamp",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Spare counterweight clamp.",
+      "features": [
+        "Spare counterweight clamp."
+      ],
+      "marginPct": 73.3,
+      "category": "Accessories"
     }
   ]
 }

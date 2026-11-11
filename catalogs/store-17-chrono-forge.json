@@ -1,89 +1,162 @@
 {
   "store": "ChronoForge",
+  "count": 12,
   "products": [
     {
-      "handle": "store-17-chrono-forge-item-1",
-      "sku": "DROP-CHRONO-200",
-      "title": "ChronoForge Collection Item #1",
+      "handle": "store-17-chrono-forge-chronoforge-grade-5-titanium-field-wat",
+      "sku": "DROP-CHRONO-300",
+      "title": "ChronoForge Grade-5 Titanium Field Watch",
+      "priceUsd": 145,
+      "compareAtUsd": 220,
+      "summary": "Seiko NH35 auto, sapphire, 200m",
+      "features": [
+        "Seiko NH35 auto, sapphire, 200m"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
+    },
+    {
+      "handle": "store-17-chrono-forge-chronoforge-titanium-carabiner-multi-t",
+      "sku": "DROP-CHRONO-301",
+      "title": "ChronoForge Titanium Carabiner Multi-Tool",
+      "priceUsd": 49,
+      "compareAtUsd": 75,
+      "summary": "12-in-1 EDC pry/wrench/driver",
+      "features": [
+        "12-in-1 EDC pry/wrench/driver"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
+    },
+    {
+      "handle": "store-17-chrono-forge-chronoforge-horween-leather-strap",
+      "sku": "DROP-CHRONO-302",
+      "title": "ChronoForge Horween Leather Strap",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 59,
+      "summary": "Full-grain quick-release strap",
+      "features": [
+        "Full-grain quick-release strap"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-2",
-      "sku": "DROP-CHRONO-201",
-      "title": "ChronoForge Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "store-17-chrono-forge-chronoforge-titanium-pocket-pry-bar",
+      "sku": "DROP-CHRONO-303",
+      "title": "ChronoForge Titanium Pocket Pry Bar",
+      "priceUsd": 34,
+      "compareAtUsd": 52,
+      "summary": "Mini pry + bottle opener",
+      "features": [
+        "Mini pry + bottle opener"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-3",
-      "sku": "DROP-CHRONO-202",
-      "title": "ChronoForge Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "store-17-chrono-forge-chronoforge-brass-field-compass",
+      "sku": "DROP-CHRONO-304",
+      "title": "ChronoForge Brass Field Compass",
+      "priceUsd": 42,
+      "compareAtUsd": 64,
+      "summary": "Luminous mil-spec compass",
+      "features": [
+        "Luminous mil-spec compass"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-4",
-      "sku": "DROP-CHRONO-203",
-      "title": "ChronoForge Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "store-17-chrono-forge-chronoforge-edc-organizer-pouch",
+      "sku": "DROP-CHRONO-305",
+      "title": "ChronoForge EDC Organizer Pouch",
+      "priceUsd": 36,
+      "compareAtUsd": 55,
+      "summary": "Waxed canvas + titanium zip",
+      "features": [
+        "Waxed canvas + titanium zip"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-5",
-      "sku": "DROP-CHRONO-204",
-      "title": "ChronoForge Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "store-17-chrono-forge-chronoforge-titanium-keychain-tool",
+      "sku": "DROP-CHRONO-306",
+      "title": "ChronoForge Titanium Keychain Tool",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "7-function key tool",
+      "features": [
+        "7-function key tool"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-6",
-      "sku": "DROP-CHRONO-205",
-      "title": "ChronoForge Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "store-17-chrono-forge-chronoforge-canvas-watch-roll",
+      "sku": "DROP-CHRONO-307",
+      "title": "ChronoForge Canvas Watch Roll",
+      "priceUsd": 32,
+      "compareAtUsd": 49,
+      "summary": "3-watch travel roll",
+      "features": [
+        "3-watch travel roll"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-7",
-      "sku": "DROP-CHRONO-206",
-      "title": "ChronoForge Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
+      "handle": "store-17-chrono-forge-chronoforge-tritium-key-fob",
+      "sku": "DROP-CHRONO-308",
+      "title": "ChronoForge Tritium Key Fob",
+      "priceUsd": 27,
+      "compareAtUsd": 41,
+      "summary": "Glow marker fob",
+      "features": [
+        "Glow marker fob"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-8",
-      "sku": "DROP-CHRONO-207",
-      "title": "ChronoForge Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
+      "handle": "store-17-chrono-forge-chronoforge-titanium-pen",
+      "sku": "DROP-CHRONO-309",
+      "title": "ChronoForge Titanium Pen",
+      "priceUsd": 59,
+      "compareAtUsd": 89,
+      "summary": "Bolt-action EDC pen",
+      "features": [
+        "Bolt-action EDC pen"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-9",
-      "sku": "DROP-CHRONO-208",
-      "title": "ChronoForge Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
+      "handle": "store-17-chrono-forge-chronoforge-paracord-survival-bracelet",
+      "sku": "DROP-CHRONO-310",
+      "title": "ChronoForge Paracord Survival Bracelet",
+      "priceUsd": 22,
+      "compareAtUsd": 33,
+      "summary": "Fire-starter + whistle",
+      "features": [
+        "Fire-starter + whistle"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     },
     {
-      "handle": "store-17-chrono-forge-item-10",
-      "sku": "DROP-CHRONO-209",
-      "title": "ChronoForge Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-17-chrono-forge-item-11",
-      "sku": "DROP-CHRONO-210",
-      "title": "ChronoForge Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-17-chrono-forge-item-12",
-      "sku": "DROP-CHRONO-211",
-      "title": "ChronoForge Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "store-17-chrono-forge-chronoforge-field-notebook-set",
+      "sku": "DROP-CHRONO-311",
+      "title": "ChronoForge Field Notebook Set",
+      "priceUsd": 19,
+      "compareAtUsd": 29,
+      "summary": "Waterproof notebooks 3-pack",
+      "features": [
+        "Waterproof notebooks 3-pack"
+      ],
+      "marginPct": 72.0,
+      "category": "Core"
     }
   ]
 }

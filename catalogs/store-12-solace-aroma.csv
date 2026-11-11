@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-AROMA-101,"Solace Aroma Edition #1",34,54,8,76.5
-DROP-AROMA-102,"Solace Aroma Edition #2",41,64,9.5,76.5
-DROP-AROMA-103,"Solace Aroma Edition #3",48,74,11,76.5
-DROP-AROMA-104,"Solace Aroma Edition #4",55,84,12.5,76.5
-DROP-AROMA-105,"Solace Aroma Edition #5",62,94,14,76.5
-DROP-AROMA-106,"Solace Aroma Edition #6",69,104,15.5,76.5
-DROP-AROMA-107,"Solace Aroma Edition #7",76,114,17,76.5
-DROP-AROMA-108,"Solace Aroma Edition #8",83,124,18.5,76.5
-DROP-AROMA-109,"Solace Aroma Edition #9",90,134,20,76.5
-DROP-AROMA-110,"Solace Aroma Edition #10",97,144,21.5,76.5
-DROP-AROMA-111,"Solace Aroma Edition #11",104,154,23,76.5
-DROP-AROMA-112,"Solace Aroma Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+solace-anodized-waterless-cold-air-diffuser,"Solace Anodized Waterless Cold-Air Diffuser",DROP-AROMA-001,69,99,TRUE
+hotel-scent-oil-refill-30-ml,"Hotel Scent Oil Refill (30 ml)",DROP-AROMA-002,29,44,TRUE
+nebuliser-replacement-nozzle,"Nebuliser Replacement Nozzle",DROP-AROMA-003,24,34,TRUE
+reed-diffuser-set,"Reed Diffuser Set",DROP-AROMA-004,34,44,TRUE
+scent-sachets-6,"Scent Sachets (6)",DROP-AROMA-005,19,24,TRUE
+aromatherapy-car-vent-clip,"Aromatherapy Car Vent Clip",DROP-AROMA-006,24,29,TRUE
+ceramic-oil-warmer,"Ceramic Oil Warmer",DROP-AROMA-007,34,49,TRUE
+essential-oil-trio,"Essential Oil Trio",DROP-AROMA-008,39,59,TRUE
+diffuser-cleaning-kit,"Diffuser Cleaning Kit",DROP-AROMA-009,19,29,TRUE
+scent-zoning-room-spray,"Scent Zoning Room Spray",DROP-AROMA-010,24,34,TRUE
+timer-smart-plug,"Timer Smart Plug",DROP-AROMA-011,19,24,TRUE
+travel-nebuliser,"Travel Nebuliser",DROP-AROMA-012,54,74,TRUE

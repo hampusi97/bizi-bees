@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-DESK-101,"LumenDesk Edition #1",34,54,8,76.5
-DROP-DESK-102,"LumenDesk Edition #2",41,64,9.5,76.5
-DROP-DESK-103,"LumenDesk Edition #3",48,74,11,76.5
-DROP-DESK-104,"LumenDesk Edition #4",55,84,12.5,76.5
-DROP-DESK-105,"LumenDesk Edition #5",62,94,14,76.5
-DROP-DESK-106,"LumenDesk Edition #6",69,104,15.5,76.5
-DROP-DESK-107,"LumenDesk Edition #7",76,114,17,76.5
-DROP-DESK-108,"LumenDesk Edition #8",83,124,18.5,76.5
-DROP-DESK-109,"LumenDesk Edition #9",90,134,20,76.5
-DROP-DESK-110,"LumenDesk Edition #10",97,144,21.5,76.5
-DROP-DESK-111,"LumenDesk Edition #11",104,154,23,76.5
-DROP-DESK-112,"LumenDesk Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+lumendesk-cri-98-asymmetric-monitor-light-bar,"LumenDesk CRI 98+ Asymmetric Monitor Light Bar",DROP-DESK-001,64,89,TRUE
+merino-felt-desk-mat,"Merino Felt Desk Mat",DROP-DESK-002,39,59,TRUE
+cable-management-kit,"Cable Management Kit",DROP-DESK-003,29,39,TRUE
+monitor-arm-single,"Monitor Arm (Single)",DROP-DESK-004,74,109,TRUE
+under-desk-light-strip,"Under-Desk Light Strip",DROP-DESK-005,34,44,TRUE
+laptop-riser-aluminium,"Laptop Riser (Aluminium)",DROP-DESK-006,44,64,TRUE
+desk-organizer-tray-set,"Desk Organizer Tray Set",DROP-DESK-007,29,44,TRUE
+hardware-care-kit,"Hardware Care Kit",DROP-DESK-008,24,34,TRUE
+keyboard-wrist-rest,"Keyboard Wrist Rest",DROP-DESK-009,34,49,TRUE
+focus-timer-cube,"Focus Timer Cube",DROP-DESK-010,29,39,TRUE
+cable-sleeve-pack-3,"Cable Sleeve Pack (3)",DROP-DESK-011,19,24,TRUE
+monitor-light-bar-clamp,"Monitor Light Bar Clamp",DROP-DESK-012,24,34,TRUE

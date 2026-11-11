@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-GRID-101,"Atelier Grid Edition #1",34,54,8,76.5
-DROP-GRID-102,"Atelier Grid Edition #2",41,64,9.5,76.5
-DROP-GRID-103,"Atelier Grid Edition #3",48,74,11,76.5
-DROP-GRID-104,"Atelier Grid Edition #4",55,84,12.5,76.5
-DROP-GRID-105,"Atelier Grid Edition #5",62,94,14,76.5
-DROP-GRID-106,"Atelier Grid Edition #6",69,104,15.5,76.5
-DROP-GRID-107,"Atelier Grid Edition #7",76,114,17,76.5
-DROP-GRID-108,"Atelier Grid Edition #8",83,124,18.5,76.5
-DROP-GRID-109,"Atelier Grid Edition #9",90,134,20,76.5
-DROP-GRID-110,"Atelier Grid Edition #10",97,144,21.5,76.5
-DROP-GRID-111,"Atelier Grid Edition #11",104,154,23,76.5
-DROP-GRID-112,"Atelier Grid Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+2027-checkered-lay-flat-weekly-planner,"2027 Checkered Lay-Flat Weekly Planner",DROP-GRID-001,39,54,TRUE
+a5-dotted-archival-notebook,"A5 Dotted Archival Notebook",DROP-GRID-002,24,34,TRUE
+weekly-desk-pad-52-sheets,"Weekly Desk Pad (52 sheets)",DROP-GRID-003,24,34,TRUE
+grid-ruler-stencil-set,"Grid Ruler & Stencil Set",DROP-GRID-004,19,24,TRUE
+gel-ink-pen-set-5,"Gel Ink Pen Set (5)",DROP-GRID-005,24,29,TRUE
+wax-seal-envelope-kit,"Wax Seal & Envelope Kit",DROP-GRID-006,34,44,TRUE
+linen-portfolio-folder,"Linen Portfolio Folder",DROP-GRID-007,34,49,TRUE
+desk-cable-grid-tray,"Desk Cable Grid Tray",DROP-GRID-008,29,39,TRUE
+monthly-wall-grid-calendar,"Monthly Wall Grid Calendar",DROP-GRID-009,24,39,TRUE
+archive-storage-box-3,"Archive Storage Box (3)",DROP-GRID-010,39,59,TRUE
+ink-swatch-journal,"Ink Swatch Journal",DROP-GRID-011,19,29,TRUE
+grid-sticky-note-bundle,"Grid Sticky Note Bundle",DROP-GRID-012,14,24,TRUE

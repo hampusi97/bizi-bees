@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-SPINE-101,"SpineAlign Studio Edition #1",34,54,8,76.5
-DROP-SPINE-102,"SpineAlign Studio Edition #2",41,64,9.5,76.5
-DROP-SPINE-103,"SpineAlign Studio Edition #3",48,74,11,76.5
-DROP-SPINE-104,"SpineAlign Studio Edition #4",55,84,12.5,76.5
-DROP-SPINE-105,"SpineAlign Studio Edition #5",62,94,14,76.5
-DROP-SPINE-106,"SpineAlign Studio Edition #6",69,104,15.5,76.5
-DROP-SPINE-107,"SpineAlign Studio Edition #7",76,114,17,76.5
-DROP-SPINE-108,"SpineAlign Studio Edition #8",83,124,18.5,76.5
-DROP-SPINE-109,"SpineAlign Studio Edition #9",90,134,20,76.5
-DROP-SPINE-110,"SpineAlign Studio Edition #10",97,144,21.5,76.5
-DROP-SPINE-111,"SpineAlign Studio Edition #11",104,154,23,76.5
-DROP-SPINE-112,"SpineAlign Studio Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+spinealign-3-in-1-heated-cervical-traction-cradle,"SpineAlign 3-in-1 Heated Cervical Traction Cradle",DROP-SPINE-001,59,84,TRUE
+ergonomic-acupressure-mat,"Ergonomic Acupressure Mat",DROP-SPINE-002,49,74,TRUE
+posture-corrector-brace,"Posture Corrector Brace",DROP-SPINE-003,34,44,TRUE
+lumbar-support-cushion,"Lumbar Support Cushion",DROP-SPINE-004,39,54,TRUE
+standing-desk-converter,"Standing Desk Converter",DROP-SPINE-005,119,169,TRUE
+neck-stretcher,"Neck Stretcher",DROP-SPINE-006,29,39,TRUE
+deep-tissue-massage-gun,"Deep Tissue Massage Gun",DROP-SPINE-007,79,119,TRUE
+footrest-rocker,"Footrest Rocker",DROP-SPINE-008,39,59,TRUE
+heat-ice-neck-wrap,"Heat & Ice Neck Wrap",DROP-SPINE-009,24,39,TRUE
+ergonomic-wrist-rest-set,"Ergonomic Wrist Rest Set",DROP-SPINE-010,24,34,TRUE
+resistance-band-posture-set,"Resistance Band Posture Set",DROP-SPINE-011,24,29,TRUE
+cervical-traction-cover,"Cervical Traction Cover",DROP-SPINE-012,19,24,TRUE

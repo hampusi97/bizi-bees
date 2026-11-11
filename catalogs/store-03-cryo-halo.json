@@ -1,89 +1,165 @@
 {
   "store": "CryoHalo Recovery",
+  "count": 12,
   "products": [
     {
-      "handle": "store-03-cryo-halo-item-1",
-      "sku": "DROP-CRYO-200",
-      "title": "CryoHalo Recovery Collection Item #1",
+      "handle": "cryohalo-2-cap-continuous-rotation-system",
+      "sku": "DROP-CRYO-001",
+      "title": "CryoHalo 2-Cap Continuous Rotation System",
+      "priceUsd": 49,
+      "compareAtUsd": 74,
+      "summary": "Two gel caps on a 30-minute rotation so one is always frozen, plus a fit dial for frontal or occipital pressure.",
+      "features": [
+        "Two caps = zero cold gaps",
+        "Stays pliable at -18\u00b0C",
+        "Machine washable inner liner",
+        "Designed with a neurologist's timing protocol"
+      ],
+      "marginPct": 72.2,
+      "category": "Cold Therapy"
+    },
+    {
+      "handle": "replacement-gel-cap-pair",
+      "sku": "DROP-CRYO-002",
+      "title": "Replacement Gel Cap Pair",
+      "priceUsd": 24,
+      "compareAtUsd": 29,
+      "summary": "Same caps, fresh pair.",
+      "features": [
+        "Same caps, fresh pair."
+      ],
+      "marginPct": 76.7,
+      "category": "Cold Therapy"
+    },
+    {
+      "handle": "cold-therapy-eye-mask",
+      "sku": "DROP-CRYO-003",
+      "title": "Cold Therapy Eye Mask",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Freezer gel eye mask with a silky liner.",
+      "features": [
+        "Freezer gel eye mask with a silky liner."
+      ],
+      "marginPct": 76.2,
+      "category": "Cold Therapy"
+    },
+    {
+      "handle": "neck-shoulder-ice-wrap",
+      "sku": "DROP-CRYO-004",
+      "title": "Neck & Shoulder Ice Wrap",
+      "priceUsd": 34,
+      "compareAtUsd": 49,
+      "summary": "Moldable wrap for the cervical spine.",
+      "features": [
+        "Moldable wrap for the cervical spine."
+      ],
+      "marginPct": 74.7,
+      "category": "Cold Therapy"
+    },
+    {
+      "handle": "freezer-storage-rack",
+      "sku": "DROP-CRYO-005",
+      "title": "Freezer Storage Rack",
+      "priceUsd": 19,
+      "compareAtUsd": 24,
+      "summary": "Slim rack that keeps two caps standing.",
+      "features": [
+        "Slim rack that keeps two caps standing."
+      ],
+      "marginPct": 75.8,
+      "category": "Accessories"
+    },
+    {
+      "handle": "blue-light-sleep-glasses",
+      "sku": "DROP-CRYO-006",
+      "title": "Blue-Light Sleep Glasses",
       "priceUsd": 39,
-      "compareAtUsd": 65
+      "compareAtUsd": 54,
+      "summary": "Blocks 99% of 400-495nm light.",
+      "features": [
+        "Blocks 99% of 400-495nm light."
+      ],
+      "marginPct": 74.9,
+      "category": "Sleep"
     },
     {
-      "handle": "store-03-cryo-halo-item-2",
-      "sku": "DROP-CRYO-201",
-      "title": "CryoHalo Recovery Collection Item #2",
-      "priceUsd": 47,
-      "compareAtUsd": 77
+      "handle": "weighted-sleep-mask-1-2-lb",
+      "sku": "DROP-CRYO-007",
+      "title": "Weighted Sleep Mask (1.2 lb)",
+      "priceUsd": 29,
+      "compareAtUsd": 44,
+      "summary": "Beaded mask with a blackout seal.",
+      "features": [
+        "Beaded mask with a blackout seal."
+      ],
+      "marginPct": 72.1,
+      "category": "Sleep"
     },
     {
-      "handle": "store-03-cryo-halo-item-3",
-      "sku": "DROP-CRYO-202",
-      "title": "CryoHalo Recovery Collection Item #3",
-      "priceUsd": 55,
-      "compareAtUsd": 89
+      "handle": "cooling-pillow-insert",
+      "sku": "DROP-CRYO-008",
+      "title": "Cooling Pillow Insert",
+      "priceUsd": 44,
+      "compareAtUsd": 59,
+      "summary": "Phase-change gel insert for pillowcases.",
+      "features": [
+        "Phase-change gel insert for pillowcases."
+      ],
+      "marginPct": 74.5,
+      "category": "Sleep"
     },
     {
-      "handle": "store-03-cryo-halo-item-4",
-      "sku": "DROP-CRYO-203",
-      "title": "CryoHalo Recovery Collection Item #4",
-      "priceUsd": 63,
-      "compareAtUsd": 101
+      "handle": "migraine-trigger-log-journal",
+      "sku": "DROP-CRYO-009",
+      "title": "Migraine Trigger Log Journal",
+      "priceUsd": 19,
+      "compareAtUsd": 29,
+      "summary": "90-day trigger and sleep log.",
+      "features": [
+        "90-day trigger and sleep log."
+      ],
+      "marginPct": 74.7,
+      "category": "Education"
     },
     {
-      "handle": "store-03-cryo-halo-item-5",
-      "sku": "DROP-CRYO-204",
-      "title": "CryoHalo Recovery Collection Item #5",
-      "priceUsd": 71,
-      "compareAtUsd": 113
+      "handle": "cryo-travel-pouch",
+      "sku": "DROP-CRYO-010",
+      "title": "Cryo Travel Pouch",
+      "priceUsd": 24,
+      "compareAtUsd": 34,
+      "summary": "Insulated pouch that fits two caps.",
+      "features": [
+        "Insulated pouch that fits two caps."
+      ],
+      "marginPct": 74.6,
+      "category": "Accessories"
     },
     {
-      "handle": "store-03-cryo-halo-item-6",
-      "sku": "DROP-CRYO-205",
-      "title": "CryoHalo Recovery Collection Item #6",
-      "priceUsd": 79,
-      "compareAtUsd": 125
+      "handle": "magnesium-recovery-balm",
+      "sku": "DROP-CRYO-011",
+      "title": "Magnesium Recovery Balm",
+      "priceUsd": 24,
+      "compareAtUsd": 39,
+      "summary": "Topical magnesium in a 3 oz tin.",
+      "features": [
+        "Topical magnesium in a 3 oz tin."
+      ],
+      "marginPct": 72.5,
+      "category": "Recovery"
     },
     {
-      "handle": "store-03-cryo-halo-item-7",
-      "sku": "DROP-CRYO-206",
-      "title": "CryoHalo Recovery Collection Item #7",
-      "priceUsd": 87,
-      "compareAtUsd": 137
-    },
-    {
-      "handle": "store-03-cryo-halo-item-8",
-      "sku": "DROP-CRYO-207",
-      "title": "CryoHalo Recovery Collection Item #8",
-      "priceUsd": 95,
-      "compareAtUsd": 149
-    },
-    {
-      "handle": "store-03-cryo-halo-item-9",
-      "sku": "DROP-CRYO-208",
-      "title": "CryoHalo Recovery Collection Item #9",
-      "priceUsd": 103,
-      "compareAtUsd": 161
-    },
-    {
-      "handle": "store-03-cryo-halo-item-10",
-      "sku": "DROP-CRYO-209",
-      "title": "CryoHalo Recovery Collection Item #10",
-      "priceUsd": 111,
-      "compareAtUsd": 173
-    },
-    {
-      "handle": "store-03-cryo-halo-item-11",
-      "sku": "DROP-CRYO-210",
-      "title": "CryoHalo Recovery Collection Item #11",
-      "priceUsd": 119,
-      "compareAtUsd": 185
-    },
-    {
-      "handle": "store-03-cryo-halo-item-12",
-      "sku": "DROP-CRYO-211",
-      "title": "CryoHalo Recovery Collection Item #12",
-      "priceUsd": 127,
-      "compareAtUsd": 197
+      "handle": "deep-sleep-white-noise-puck",
+      "sku": "DROP-CRYO-012",
+      "title": "Deep-Sleep White Noise Puck",
+      "priceUsd": 29,
+      "compareAtUsd": 39,
+      "summary": "Rechargeable 30-hour white noise.",
+      "features": [
+        "Rechargeable 30-hour white noise."
+      ],
+      "marginPct": 74.8,
+      "category": "Sleep"
     }
   ]
 }

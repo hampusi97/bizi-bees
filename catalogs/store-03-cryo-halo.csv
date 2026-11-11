@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-CRYO-101,"CryoHalo Recovery Edition #1",34,54,8,76.5
-DROP-CRYO-102,"CryoHalo Recovery Edition #2",41,64,9.5,76.5
-DROP-CRYO-103,"CryoHalo Recovery Edition #3",48,74,11,76.5
-DROP-CRYO-104,"CryoHalo Recovery Edition #4",55,84,12.5,76.5
-DROP-CRYO-105,"CryoHalo Recovery Edition #5",62,94,14,76.5
-DROP-CRYO-106,"CryoHalo Recovery Edition #6",69,104,15.5,76.5
-DROP-CRYO-107,"CryoHalo Recovery Edition #7",76,114,17,76.5
-DROP-CRYO-108,"CryoHalo Recovery Edition #8",83,124,18.5,76.5
-DROP-CRYO-109,"CryoHalo Recovery Edition #9",90,134,20,76.5
-DROP-CRYO-110,"CryoHalo Recovery Edition #10",97,144,21.5,76.5
-DROP-CRYO-111,"CryoHalo Recovery Edition #11",104,154,23,76.5
-DROP-CRYO-112,"CryoHalo Recovery Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+cryohalo-2-cap-continuous-rotation-system,"CryoHalo 2-Cap Continuous Rotation System",DROP-CRYO-001,49,74,TRUE
+replacement-gel-cap-pair,"Replacement Gel Cap Pair",DROP-CRYO-002,24,29,TRUE
+cold-therapy-eye-mask,"Cold Therapy Eye Mask",DROP-CRYO-003,29,39,TRUE
+neck-shoulder-ice-wrap,"Neck & Shoulder Ice Wrap",DROP-CRYO-004,34,49,TRUE
+freezer-storage-rack,"Freezer Storage Rack",DROP-CRYO-005,19,24,TRUE
+blue-light-sleep-glasses,"Blue-Light Sleep Glasses",DROP-CRYO-006,39,54,TRUE
+weighted-sleep-mask-1-2-lb,"Weighted Sleep Mask (1.2 lb)",DROP-CRYO-007,29,44,TRUE
+cooling-pillow-insert,"Cooling Pillow Insert",DROP-CRYO-008,44,59,TRUE
+migraine-trigger-log-journal,"Migraine Trigger Log Journal",DROP-CRYO-009,19,29,TRUE
+cryo-travel-pouch,"Cryo Travel Pouch",DROP-CRYO-010,24,34,TRUE
+magnesium-recovery-balm,"Magnesium Recovery Balm",DROP-CRYO-011,24,39,TRUE
+deep-sleep-white-noise-puck,"Deep-Sleep White Noise Puck",DROP-CRYO-012,29,39,TRUE

@@ -3,111 +3,111 @@
 <channel>
 <title>Bizi Bees Boutique Google Shopping Feed</title>
 <link>https://shopbizibees.com</link>
-<description>100% verified catalog for Curated Pre-Loved Books, Complete Board Games & Utah Finds</description>
+<description>Curated Pre-Loved Books, Complete Board Games &amp; Utah Finds</description>
   <item>
-    <g:id>UTAH-200</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #1]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-1</link>
+    <g:id>UTAH-001</g:id>
+    <title><![CDATA[The Utah Reader & Game Night Box]]></title>
+    <link>https://shopbizibees.com/products/the-utah-reader-game-night-box</link>
+    <g:price>44.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Bizi Bees Boutique</g:brand>
+  </item>
+  <item>
+    <g:id>UTAH-002</g:id>
+    <title><![CDATA[Vintage Hardcover Reading Bundle (3 Books)]]></title>
+    <link>https://shopbizibees.com/products/vintage-hardcover-reading-bundle-3-books</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Bizi Bees Boutique</g:brand>
+  </item>
+  <item>
+    <g:id>UTAH-003</g:id>
+    <title><![CDATA[Complete Board Game Rescue Box]]></title>
+    <link>https://shopbizibees.com/products/complete-board-game-rescue-box</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-201</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #2]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-2</link>
-    <g:price>47.00 USD</g:price>
+    <g:id>UTAH-004</g:id>
+    <title><![CDATA[Utah Made Beeswax Candle Trio]]></title>
+    <link>https://shopbizibees.com/products/utah-made-beeswax-candle-trio</link>
+    <g:price>34.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-202</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #3]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-3</link>
-    <g:price>55.00 USD</g:price>
+    <g:id>UTAH-005</g:id>
+    <title><![CDATA[Brass Bookmark & Page Anchor Set]]></title>
+    <link>https://shopbizibees.com/products/brass-bookmark-page-anchor-set</link>
+    <g:price>14.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-203</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #4]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-4</link>
-    <g:price>63.00 USD</g:price>
+    <g:id>UTAH-006</g:id>
+    <title><![CDATA[Salt Flats Desk Print Set (5)]]></title>
+    <link>https://shopbizibees.com/products/salt-flats-desk-print-set-5</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-204</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #5]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-5</link>
-    <g:price>71.00 USD</g:price>
+    <g:id>UTAH-007</g:id>
+    <title><![CDATA[Puzzle & Board Game Night Kit]]></title>
+    <link>https://shopbizibees.com/products/puzzle-board-game-night-kit</link>
+    <g:price>49.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-205</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #6]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-6</link>
-    <g:price>79.00 USD</g:price>
+    <g:id>UTAH-008</g:id>
+    <title><![CDATA[Used Manga Starter Stack (10 vols)]]></title>
+    <link>https://shopbizibees.com/products/used-manga-starter-stack-10-vols</link>
+    <g:price>34.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-206</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #7]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-7</link>
-    <g:price>87.00 USD</g:price>
+    <g:id>UTAH-009</g:id>
+    <title><![CDATA[Cast Iron Camp Skillet (10in)]]></title>
+    <link>https://shopbizibees.com/products/cast-iron-camp-skillet-10in</link>
+    <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-207</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #8]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-8</link>
-    <g:price>95.00 USD</g:price>
+    <g:id>UTAH-010</g:id>
+    <title><![CDATA[Beehive State Trivia Card Deck]]></title>
+    <link>https://shopbizibees.com/products/beehive-state-trivia-card-deck</link>
+    <g:price>19.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-208</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #9]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-9</link>
-    <g:price>103.00 USD</g:price>
+    <g:id>UTAH-011</g:id>
+    <title><![CDATA[Kid's Read-Aloud Chapter Book Bundle]]></title>
+    <link>https://shopbizibees.com/products/kid-s-read-aloud-chapter-book-bundle</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>
   </item>
   <item>
-    <g:id>UTAH-209</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #10]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Bizi Bees Boutique</g:brand>
-  </item>
-  <item>
-    <g:id>UTAH-210</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #11]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-11</link>
-    <g:price>119.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Bizi Bees Boutique</g:brand>
-  </item>
-  <item>
-    <g:id>UTAH-211</g:id>
-    <title><![CDATA[Bizi Bees Boutique Collection Item #12]]></title>
-    <link>https://shopbizibees.com/products/store-01-bizi-bees-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>UTAH-012</g:id>
+    <title><![CDATA[Wooden Dice Tower & Tray]]></title>
+    <link>https://shopbizibees.com/products/wooden-dice-tower-tray</link>
+    <g:price>29.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Bizi Bees Boutique</g:brand>

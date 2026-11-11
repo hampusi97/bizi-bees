@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-DROP-VERDE-101,"VerdeHydro Edition #1",34,54,8,76.5
-DROP-VERDE-102,"VerdeHydro Edition #2",41,64,9.5,76.5
-DROP-VERDE-103,"VerdeHydro Edition #3",48,74,11,76.5
-DROP-VERDE-104,"VerdeHydro Edition #4",55,84,12.5,76.5
-DROP-VERDE-105,"VerdeHydro Edition #5",62,94,14,76.5
-DROP-VERDE-106,"VerdeHydro Edition #6",69,104,15.5,76.5
-DROP-VERDE-107,"VerdeHydro Edition #7",76,114,17,76.5
-DROP-VERDE-108,"VerdeHydro Edition #8",83,124,18.5,76.5
-DROP-VERDE-109,"VerdeHydro Edition #9",90,134,20,76.5
-DROP-VERDE-110,"VerdeHydro Edition #10",97,144,21.5,76.5
-DROP-VERDE-111,"VerdeHydro Edition #11",104,154,23,76.5
-DROP-VERDE-112,"VerdeHydro Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+verdehydro-4000k-brass-halo-grow-light-planter,"VerdeHydro 4000K Brass Halo Grow Light & Planter",DROP-VERDE-001,49,69,TRUE
+organic-liquid-plant-food-8-oz,"Organic Liquid Plant Food (8 oz)",DROP-VERDE-002,19,24,TRUE
+hydro-wick-refill-pack-10,"Hydro-Wick Refill Pack (10)",DROP-VERDE-003,14,24,TRUE
+propagation-station-6-tubes,"Propagation Station (6 Tubes)",DROP-VERDE-004,34,49,TRUE
+aroid-soil-mix-4-qt,"Aroid Soil Mix (4 qt)",DROP-VERDE-005,24,34,TRUE
+plant-mister-brass,"Plant Mister (Brass)",DROP-VERDE-006,29,39,TRUE
+clip-on-grow-light,"Clip-On Grow Light",DROP-VERDE-007,39,59,TRUE
+self-watering-planter-medium,"Self-Watering Planter (Medium)",DROP-VERDE-008,49,74,TRUE
+propagation-heat-mat,"Propagation Heat Mat",DROP-VERDE-009,39,54,TRUE
+pruning-shears-brass,"Pruning Shears (Brass)",DROP-VERDE-010,29,44,TRUE
+rare-aroid-cutting-pack,"Rare Aroid Cutting Pack",DROP-VERDE-011,64,89,TRUE
+moisture-meter,"Moisture Meter",DROP-VERDE-012,24,29,TRUE

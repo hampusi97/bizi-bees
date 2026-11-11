@@ -1,13 +1,13 @@
-sku,title,priceUsd,compareAtUsd,cogsUsd,marginPct
-UTAH-101,"Bizi Bees Boutique Edition #1",34,54,8,76.5
-UTAH-102,"Bizi Bees Boutique Edition #2",41,64,9.5,76.5
-UTAH-103,"Bizi Bees Boutique Edition #3",48,74,11,76.5
-UTAH-104,"Bizi Bees Boutique Edition #4",55,84,12.5,76.5
-UTAH-105,"Bizi Bees Boutique Edition #5",62,94,14,76.5
-UTAH-106,"Bizi Bees Boutique Edition #6",69,104,15.5,76.5
-UTAH-107,"Bizi Bees Boutique Edition #7",76,114,17,76.5
-UTAH-108,"Bizi Bees Boutique Edition #8",83,124,18.5,76.5
-UTAH-109,"Bizi Bees Boutique Edition #9",90,134,20,76.5
-UTAH-110,"Bizi Bees Boutique Edition #10",97,144,21.5,76.5
-UTAH-111,"Bizi Bees Boutique Edition #11",104,154,23,76.5
-UTAH-112,"Bizi Bees Boutique Edition #12",111,164,24.5,76.5
+Handle,Title,Variant SKU,Variant Price,Variant Compare At Price,Published
+the-utah-reader-game-night-box,"The Utah Reader & Game Night Box",UTAH-001,44,64,TRUE
+vintage-hardcover-reading-bundle-3-books,"Vintage Hardcover Reading Bundle (3 Books)",UTAH-002,29,44,TRUE
+complete-board-game-rescue-box,"Complete Board Game Rescue Box",UTAH-003,39,59,TRUE
+utah-made-beeswax-candle-trio,"Utah Made Beeswax Candle Trio",UTAH-004,34,44,TRUE
+brass-bookmark-page-anchor-set,"Brass Bookmark & Page Anchor Set",UTAH-005,14,24,TRUE
+salt-flats-desk-print-set-5,"Salt Flats Desk Print Set (5)",UTAH-006,24,34,TRUE
+puzzle-board-game-night-kit,"Puzzle & Board Game Night Kit",UTAH-007,49,69,TRUE
+used-manga-starter-stack-10-vols,"Used Manga Starter Stack (10 vols)",UTAH-008,34,49,TRUE
+cast-iron-camp-skillet-10in,"Cast Iron Camp Skillet (10in)",UTAH-009,39,54,TRUE
+beehive-state-trivia-card-deck,"Beehive State Trivia Card Deck",UTAH-010,19,24,TRUE
+kid-s-read-aloud-chapter-book-bundle,"Kid's Read-Aloud Chapter Book Bundle",UTAH-011,29,39,TRUE
+wooden-dice-tower-tray,"Wooden Dice Tower & Tray",UTAH-012,29,39,TRUE

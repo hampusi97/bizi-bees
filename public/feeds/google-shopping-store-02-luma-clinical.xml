@@ -3,111 +3,111 @@
 <channel>
 <title>Luma Clinical Google Shopping Feed</title>
 <link>https://lumaclinical.com</link>
-<description>100% verified catalog for 630nm Red-Light Facial Wands & Microcurrent Sculpting</description>
+<description>630nm Red-Light Facial Wands &amp; Microcurrent Sculpting</description>
   <item>
-    <g:id>DROP-LUMA-200</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #1]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-1</link>
+    <g:id>DROP-LUMA-001</g:id>
+    <title><![CDATA[LumaGlow 4-in-1 Red Light Sculpting Wand]]></title>
+    <link>https://lumaclinical.com/products/lumaglow-4-in-1-red-light-sculpting-wand</link>
+    <g:price>84.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-002</g:id>
+    <title><![CDATA[Hyaluronic Conductive Gel (8 oz)]]></title>
+    <link>https://lumaclinical.com/products/hyaluronic-conductive-gel-8-oz</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-003</g:id>
+    <title><![CDATA[Collagen Eye Renewal Patches (30 pr)]]></title>
+    <link>https://lumaclinical.com/products/collagen-eye-renewal-patches-30-pr</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-004</g:id>
+    <title><![CDATA[LumaGlow Replacement Head]]></title>
+    <link>https://lumaclinical.com/products/lumaglow-replacement-head</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Luma Clinical</g:brand>
   </item>
   <item>
-    <g:id>DROP-LUMA-201</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #2]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-2</link>
-    <g:price>47.00 USD</g:price>
+    <g:id>DROP-LUMA-005</g:id>
+    <title><![CDATA[Nano-Ion Facial Steamer]]></title>
+    <link>https://lumaclinical.com/products/nano-ion-facial-steamer</link>
+    <g:price>74.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Luma Clinical</g:brand>
   </item>
   <item>
-    <g:id>DROP-LUMA-202</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #3]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-3</link>
-    <g:price>55.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-203</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #4]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-4</link>
-    <g:price>63.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-204</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #5]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-5</link>
-    <g:price>71.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-205</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #6]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-6</link>
-    <g:price>79.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-206</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #7]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-7</link>
-    <g:price>87.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-207</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #8]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-208</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #9]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-209</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #10]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Luma Clinical</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-LUMA-210</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #11]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-11</link>
+    <g:id>DROP-LUMA-006</g:id>
+    <title><![CDATA[630nm LED Neck & Chest Panel]]></title>
+    <link>https://lumaclinical.com/products/630nm-led-neck-chest-panel</link>
     <g:price>119.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Luma Clinical</g:brand>
   </item>
   <item>
-    <g:id>DROP-LUMA-211</g:id>
-    <title><![CDATA[Luma Clinical Collection Item #12]]></title>
-    <link>https://lumaclinical.com/products/store-02-luma-clinical-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-LUMA-007</g:id>
+    <title><![CDATA[Clinical Serum Refill Duo]]></title>
+    <link>https://lumaclinical.com/products/clinical-serum-refill-duo</link>
+    <g:price>44.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-008</g:id>
+    <title><![CDATA[Ice Roller & Gua Sha Set]]></title>
+    <link>https://lumaclinical.com/products/ice-roller-gua-sha-set</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-009</g:id>
+    <title><![CDATA[Microcurrent Treatment Pads (12)]]></title>
+    <link>https://lumaclinical.com/products/microcurrent-treatment-pads-12</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-010</g:id>
+    <title><![CDATA[Travel LED Wand Case]]></title>
+    <link>https://lumaclinical.com/products/travel-led-wand-case</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-011</g:id>
+    <title><![CDATA[Post-Treatment Barrier Cream]]></title>
+    <link>https://lumaclinical.com/products/post-treatment-barrier-cream</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Luma Clinical</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-LUMA-012</g:id>
+    <title><![CDATA[At-Home Facial Protocol Cards]]></title>
+    <link>https://lumaclinical.com/products/at-home-facial-protocol-cards</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Luma Clinical</g:brand>

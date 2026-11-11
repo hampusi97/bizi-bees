@@ -3,111 +3,111 @@
 <channel>
 <title>Solace Aroma Google Shopping Feed</title>
 <link>https://solacearoma.com</link>
-<description>100% verified catalog for Waterless Cold-Air Nebulizing Diffusers & Hotel Scent Oils</description>
+<description>Waterless Cold-Air Nebulizing Diffusers &amp; Hotel Scent Oils</description>
   <item>
-    <g:id>DROP-AROMA-200</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #1]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-1</link>
+    <g:id>DROP-AROMA-001</g:id>
+    <title><![CDATA[Solace Anodized Waterless Cold-Air Diffuser]]></title>
+    <link>https://solacearoma.com/products/solace-anodized-waterless-cold-air-diffuser</link>
+    <g:price>69.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-002</g:id>
+    <title><![CDATA[Hotel Scent Oil Refill (30 ml)]]></title>
+    <link>https://solacearoma.com/products/hotel-scent-oil-refill-30-ml</link>
+    <g:price>29.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-003</g:id>
+    <title><![CDATA[Nebuliser Replacement Nozzle]]></title>
+    <link>https://solacearoma.com/products/nebuliser-replacement-nozzle</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-004</g:id>
+    <title><![CDATA[Reed Diffuser Set]]></title>
+    <link>https://solacearoma.com/products/reed-diffuser-set</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-005</g:id>
+    <title><![CDATA[Scent Sachets (6)]]></title>
+    <link>https://solacearoma.com/products/scent-sachets-6</link>
+    <g:price>19.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-006</g:id>
+    <title><![CDATA[Aromatherapy Car Vent Clip]]></title>
+    <link>https://solacearoma.com/products/aromatherapy-car-vent-clip</link>
+    <g:price>24.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-007</g:id>
+    <title><![CDATA[Ceramic Oil Warmer]]></title>
+    <link>https://solacearoma.com/products/ceramic-oil-warmer</link>
+    <g:price>34.00 USD</g:price>
+    <g:condition>new</g:condition>
+    <g:availability>in_stock</g:availability>
+    <g:brand>Solace Aroma</g:brand>
+  </item>
+  <item>
+    <g:id>DROP-AROMA-008</g:id>
+    <title><![CDATA[Essential Oil Trio]]></title>
+    <link>https://solacearoma.com/products/essential-oil-trio</link>
     <g:price>39.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Solace Aroma</g:brand>
   </item>
   <item>
-    <g:id>DROP-AROMA-201</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #2]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-2</link>
-    <g:price>47.00 USD</g:price>
+    <g:id>DROP-AROMA-009</g:id>
+    <title><![CDATA[Diffuser Cleaning Kit]]></title>
+    <link>https://solacearoma.com/products/diffuser-cleaning-kit</link>
+    <g:price>19.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Solace Aroma</g:brand>
   </item>
   <item>
-    <g:id>DROP-AROMA-202</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #3]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-3</link>
-    <g:price>55.00 USD</g:price>
+    <g:id>DROP-AROMA-010</g:id>
+    <title><![CDATA[Scent Zoning Room Spray]]></title>
+    <link>https://solacearoma.com/products/scent-zoning-room-spray</link>
+    <g:price>24.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Solace Aroma</g:brand>
   </item>
   <item>
-    <g:id>DROP-AROMA-203</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #4]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-4</link>
-    <g:price>63.00 USD</g:price>
+    <g:id>DROP-AROMA-011</g:id>
+    <title><![CDATA[Timer Smart Plug]]></title>
+    <link>https://solacearoma.com/products/timer-smart-plug</link>
+    <g:price>19.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Solace Aroma</g:brand>
   </item>
   <item>
-    <g:id>DROP-AROMA-204</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #5]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-5</link>
-    <g:price>71.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-205</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #6]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-6</link>
-    <g:price>79.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-206</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #7]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-7</link>
-    <g:price>87.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-207</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #8]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-8</link>
-    <g:price>95.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-208</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #9]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-9</link>
-    <g:price>103.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-209</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #10]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-10</link>
-    <g:price>111.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-210</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #11]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-11</link>
-    <g:price>119.00 USD</g:price>
-    <g:condition>new</g:condition>
-    <g:availability>in_stock</g:availability>
-    <g:brand>Solace Aroma</g:brand>
-  </item>
-  <item>
-    <g:id>DROP-AROMA-211</g:id>
-    <title><![CDATA[Solace Aroma Collection Item #12]]></title>
-    <link>https://solacearoma.com/products/store-12-solace-aroma-item-12</link>
-    <g:price>127.00 USD</g:price>
+    <g:id>DROP-AROMA-012</g:id>
+    <title><![CDATA[Travel Nebuliser]]></title>
+    <link>https://solacearoma.com/products/travel-nebuliser</link>
+    <g:price>54.00 USD</g:price>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:brand>Solace Aroma</g:brand>
