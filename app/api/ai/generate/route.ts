@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {
-    const { prompt, systemInstruction, model = "gemini-3.5-flash" } = await request.json();
+    const { prompt, systemInstruction, model = "gemini-flash-latest" } = await request.json();
 
     if (!prompt) {
       return NextResponse.json({ success: false, error: "Prompt is required" }, { status: 400 });
@@ -22,14 +22,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: "No GEMINI_API_KEY configured" }, { status: 500 });
     }
 
-    const modelsToTry = [model, "gemini-flash-latest", "gemini-3.8-flash"];
+    const modelsToTry = [model, "gemini-flash-latest", "gemini-3.5-flash", "gemini-3.8-flash"];
+    const uniqueModels = Array.from(new Set(modelsToTry));
     let lastError: any = null;
 
     // Loop through available keys and models for maximum redundancy
     for (let kIdx = 0; kIdx < availableKeys.length; kIdx++) {
       const apiKey = availableKeys[kIdx];
 
-      for (const m of modelsToTry) {
+      for (const m of uniqueModels) {
         try {
           const payload: any = {
             contents: [
@@ -54,21 +55,30 @@ export async function POST(request: Request) {
 
           const data = await res.json();
 
-          if (res.ok && data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
-            const text = data.candidates[0].content.parts[0].text;
-            return NextResponse.json({
-              success: true,
-              model: m,
-              keyIndex: kIdx + 1,
-              text,
-              usage: data.usageMetadata
-            });
+          if (res.ok && data.candidates && data.candidates[0]?.content?.parts) {
+            const parts = data.candidates[0].content.parts;
+            const text = parts
+              .filter((p: any) => !p.thought)
+              .map((p: any) => p.text)
+              .join("\n") || parts[0]?.text || "";
+
+            if (text) {
+              return NextResponse.json({
+                success: true,
+                model: m,
+                keyIndex: kIdx + 1,
+                text,
+                usage: data.usageMetadata
+              });
+            }
           } else {
             lastError = data.error || { message: "Generation failed" };
-            // If rate limited (429) or high demand (503), break to next key immediately
-            if (data.error?.code === 429 || data.error?.code === 503) {
+            // If quota exhausted (429), break to next key
+            if (data.error?.code === 429) {
               break;
             }
+            // If model error / high demand (503), continue to next model
+            continue;
           }
         } catch (err: any) {
           lastError = err;

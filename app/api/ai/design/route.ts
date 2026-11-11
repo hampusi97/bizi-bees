@@ -53,7 +53,7 @@ Desired Aesthetic: ${aesthetic}
 
 Please produce a comprehensive, ultra-professional design spec with ready-to-use Shopify Liquid code.`;
 
-    const modelsToTry = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.8-flash"];
+    const modelsToTry = ["gemini-flash-latest", "gemini-3.5-flash", "gemini-3.8-flash"];
     let lastError: any = null;
 
     for (let kIdx = 0; kIdx < availableKeys.length; kIdx++) {
@@ -93,7 +93,12 @@ Please produce a comprehensive, ultra-professional design spec with ready-to-use
             }
           } else {
             lastError = data.error || { message: "Design generation failed" };
-            if (data.error?.code === 429 || data.error?.code === 503) break;
+            // If 429 quota exhausted on this key, break to next key
+            if (data.error?.code === 429) {
+              break;
+            }
+            // If 503 high demand or model error, continue to next model in loop
+            continue;
           }
         } catch (err: any) {
           lastError = err;
@@ -103,7 +108,7 @@ Please produce a comprehensive, ultra-professional design spec with ready-to-use
 
     return NextResponse.json({
       success: false,
-      error: lastError?.message || "Failed to generate design"
+      error: lastError?.message || "All Gemini API models and keys temporarily busy. Please retry in a few moments."
     }, { status: 502 });
 
   } catch (error: any) {
