@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-11T18:42:55.014820+00:00",
+  "stores_analyzed": 4,
+  "intelligence": [
+    {
+      "brand": "Solawave",
+      "domain": "solawave.com",
+      "niche": "Clinical Derm-Tech",
+      "hero_product": "Radiant Renewal 4-in-1 Skincare Wand",
+      "competitor_price": 169.0,
+      "our_cogs": 12.0,
+      "margin_opportunity": 157.0,
+      "margin_pct": 92.9,
+      "multiplier": 14.1,
+      "fleet_store": "luma-clinical",
+      "strategy": "Underprice competitor by 20% to capture organic search and ad traffic while maintaining a 92.9% gross margin."
+    },
+    {
+      "brand": "Dirty Soda Kits (Utah Craft)",
+      "domain": "fizzsoda.com",
+      "niche": "Beverage & Flavor Mixers",
+      "hero_product": "At-Home Dirty Soda Crafter Starter Kit",
+      "competitor_price": 42.0,
+      "our_cogs": 11.5,
+      "margin_opportunity": 30.5,
+      "margin_pct": 72.6,
+      "multiplier": 3.7,
+      "fleet_store": "fizz-lab",
+      "strategy": "Underprice competitor by 20% to capture organic search and ad traffic while maintaining a 72.6% gross margin."
+    },
+    {
+      "brand": "Artisan Chocolatier (Bento)",
+      "domain": "vosgeschocolate.com",
+      "niche": "Gourmet Confections",
+      "hero_product": "Exotic Truffle & Chocolate Tasting Box",
+      "competitor_price": 52.0,
+      "our_cogs": 14.0,
+      "margin_opportunity": 38.0,
+      "margin_pct": 73.1,
+      "multiplier": 3.7,
+      "fleet_store": "crave-lab",
+      "strategy": "Underprice competitor by 20% to capture organic search and ad traffic while maintaining a 73.1% gross margin."
+    },
+    {
+      "brand": "Vintage Paperback Curators",
+      "domain": "bookishbox.com",
+      "niche": "Literary Gifting & Blind Date",
+      "hero_product": "Blind Date with a Book Luxury Edition",
+      "competitor_price": 26.0,
+      "our_cogs": 3.3,
+      "margin_opportunity": 22.7,
+      "margin_pct": 87.3,
+      "multiplier": 7.9,
+      "fleet_store": "bizi-bees",
+      "strategy": "Underprice competitor by 20% to capture organic search and ad traffic while maintaining a 87.3% gross margin."
+    }
+  ]
+}

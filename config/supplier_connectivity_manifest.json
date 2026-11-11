@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "verified_at": "2026-11-11T18:42:55.015867+00:00",
+  "total_suppliers": 3,
+  "suppliers": [
+    {
+      "supplier": "CJ Dropshipping US",
+      "location": "Chino, CA (US West)",
+      "sla": "3-5 Business Days",
+      "carriers": "USPS Ground Advantage, UPS Ground",
+      "skus_managed": 3,
+      "status": "ACTIVE_CONNECTED"
+    },
+    {
+      "supplier": "Zendrop US Logistics",
+      "location": "Allentown, PA (US East)",
+      "sla": "2-4 Business Days",
+      "carriers": "USPS Priority, DHL eCommerce US",
+      "skus_managed": 3,
+      "status": "ACTIVE_CONNECTED"
+    },
+    {
+      "supplier": "Bizi Bees Utah Fulfillment Hub",
+      "location": "Salt Lake City / Provo, UT",
+      "sla": "1-3 Business Days",
+      "carriers": "USPS Ground Advantage, USPS Media Mail",
+      "skus_managed": 3,
+      "status": "ACTIVE_CONNECTED"
+    }
+  ]
+}

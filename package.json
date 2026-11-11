@@ -15,6 +15,9 @@
     "resale": ".venv/bin/python core/resale_arbitrage_scanner.py",
     "ebay:sync": ".venv/bin/python scripts/ebay_marketplace_exporter.py",
     "seo:generate": ".venv/bin/python scripts/seo_blog_generator.py",
+    "harvest": ".venv/bin/python core/shopify_competitor_harvester.py",
+    "books:curate": ".venv/bin/python core/open_library_curator.py",
+    "suppliers:verify": ".venv/bin/python core/supplier_api_connector.py",
     "test:e2e": "playwright test tests/e2e_storefront.spec.ts",
     "test:e2e:headed": "playwright test tests/e2e_storefront.spec.ts --headed",
     "test:report": "playwright show-report"
