@@ -1,0 +1,12 @@
+<section style="max-width:1200px;margin:0 auto;padding:56px 24px;">
+  <h2 style="font-family:'Syne',sans-serif;font-size:1.85rem;margin-bottom:28px;">Featured WonderHive Play Collection</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;">
+    {% for product in collections.all.products limit: 12 %}
+      <div style="background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px;">
+        <h3 style="font-size:1rem;margin-bottom:6px;">{{ product.title }}</h3>
+        <p style="font-family:'JetBrains Mono',monospace;color:var(--accent);margin-bottom:14px;">{{ product.price | money }}</p>
+        <button onclick="window.DropperCart.add({{ product.selected_or_first_available_variant.id }})" class="btn-cta" style="width:100%;justify-content:center;padding:10px;">Add to Bag</button>
+      </div>
+    {% endfor %}
+  </div>
+</section>{% schema %}{"name":"Product Grid","settings":[]}{% endschema %}
