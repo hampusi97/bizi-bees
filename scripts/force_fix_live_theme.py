@@ -358,6 +358,11 @@ def force_update_live_theme():
 
     all_success = True
     for rel_path, asset_key in files_to_deploy:
+        # Safety Guard: Never overwrite live theme customizer settings
+        if "config/settings_data.json" in asset_key:
+            print(f"🛡️ Safety Guard: Ignoring '{asset_key}' to preserve live theme customizer settings.")
+            continue
+
         full_path = os.path.join(base_dir, rel_path)
         if not os.path.exists(full_path):
             print(f"⚠️ Skipping missing local file: {rel_path}")
